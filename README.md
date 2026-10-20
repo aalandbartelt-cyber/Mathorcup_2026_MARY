@@ -1,0 +1,2 @@
+# Mathorcup_2026_MARY
+Mathorcup_2026项目仓库
