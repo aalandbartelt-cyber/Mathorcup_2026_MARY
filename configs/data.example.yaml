@@ -1,0 +1,9 @@
+# 模板: 复制为 configs/data.yaml 后按实际数据修改
+path: /home/mary/mathorcup/data/<数据集名>
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: class_0
+  1: class_1
