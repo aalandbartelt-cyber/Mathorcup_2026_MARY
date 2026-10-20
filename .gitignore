@@ -5,3 +5,4 @@ weights/*.pt
 __pycache__/
 *.pyc
 .env
+docs/reference/
