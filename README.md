@@ -5,6 +5,7 @@
 ## 环境
 - conda 环境: `mathorcup` (Python 3.10, torch 2.12+cu128, ultralytics 8.4, opencv 5.0)
 - 激活: `conda activate mathorcup`
+- R 绘图环境: conda env `r`(ggplot2 4.0 + ragg,见 docs/runbook.md 的 R 章节)
 - 已验证: RTX 5070 Ti Laptop GPU 训练可用
 
 ## 目录结构

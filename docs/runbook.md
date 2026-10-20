@@ -46,6 +46,16 @@
 3. 用 `--conf` 扫 0.15/0.25/0.4 看行数变化，选合理阈值
 4. 提交前备份 `outputs/test_result.csv` 到 `docs/`
 
+
+## R 绘图(可选,用户常用)
+- 环境: conda env `r`(R 4.5.3 / ggplot2 4.0 / dplyr / tidyr / readr / data.table / patchwork / ggrepel / ragg / svglite / showtext / languageserver)
+- 激活: `conda activate r`；或直接 `~/miniconda3/envs/r/bin/Rscript scripts/xxx.R`
+- 模板: `source("scripts/plot_style.R")` → `theme_paper()` + `save_paper(p, "figures/fig1.png")`(300dpi PNG)
+- 字体: paper 模式 = 宋体 SimSun(中英统一,拉丁字形为 Times 风格衬线);sans 模式 = 黑体 SimHei;纯英文图可用 `family = \"Times New Roman\"`
+- 已知限制(2026-10-20 实测): 本机 ragg/systemfonts 逐字回退会落到 Noto Sans CJK,fontconfig 规则也无法强制宋体回退,故模板直接用 SimSun 作主字体
+- VS Code: 安装 R 扩展(REditorSupport.R),解释器指向 `~/miniconda3/envs/r/bin/R`
+- 环境重建: `bash scripts/setup_r.sh`
+
 ## 常见坑 checklist
 - [ ] 数据泄漏: 划分后同图不同名副本、同一视频抽帧
 - [ ] 负样本缺失(全图都有目标): 分类问题只能用检测阈值或裁背景 patch
