@@ -23,6 +23,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import plot_style  # noqa: F401
@@ -106,6 +107,8 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(6, 4))
     ax.hist(areas, bins=60, color="#C44E52", edgecolor="white")
     ax.set_xscale("log")
+    ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+    ax.xaxis.set_minor_formatter(FuncFormatter(lambda v, _: ""))
     ax.set_xlabel("归一化框面积(对数)")
     ax.set_ylabel("数量")
     ax.set_title("标注框面积分布(多尺度分析)")
