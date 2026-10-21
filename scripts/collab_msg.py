@@ -109,7 +109,7 @@ def main() -> None:
     ap.add_argument("--related", default="", help="关联文件/提交/任务ID")
     ap.add_argument("--owner", default=None, help="发起人（默认按 --to 推断）")
     ap.add_argument("--mark", metavar="MSG-ID", help="更新某条消息的状态")
-    ap.add_argument("--status", default="DONE", choices=["OPEN", "ACK", "DONE", "BLOCKED"])
+    ap.add_argument("--status", default="DONE", choices=["OPEN", "ACK", "DONE", "BLOCKED", "PAUSED"])
     ap.add_argument("--note", default=None, help="状态附注")
     args = ap.parse_args()
 
