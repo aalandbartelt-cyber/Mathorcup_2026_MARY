@@ -1,0 +1,13 @@
+{
+  "smoke_test_only": true,
+  "head": "untrained binary head, seed=42",
+  "probability": "predicted-class softmax; uncalibrated",
+  "rows": 577,
+  "positive_count": 557,
+  "positive_ratio": 0.9653379549393414,
+  "device": "cuda",
+  "weights_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+  "inference_including_preprocessing_seconds": 4.794071021999116,
+  "mean_seconds_per_image": 0.008308615289426544,
+  "total_including_model_load_and_csv_seconds": 52.58387013799802
+}
