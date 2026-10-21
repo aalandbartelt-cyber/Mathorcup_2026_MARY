@@ -1,0 +1,419 @@
+[
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-2",
+  "charts": 8,
+  "palette": {},
+  "grayscale": 3,
+  "white": 0.84,
+  "ar": 1.9
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-8",
+  "charts": 35,
+  "palette": {
+   "excel": 4,
+   "mpl_tab10": 4
+  },
+  "grayscale": 10,
+  "white": 0.89,
+  "ar": 1.8
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-1",
+  "charts": 9,
+  "palette": {
+   "mpl_tab10": 7
+  },
+  "grayscale": 0,
+  "white": 0.77,
+  "ar": 2.1
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-7",
+  "charts": 6,
+  "palette": {
+   "origin": 1
+  },
+  "grayscale": 0,
+  "white": 0.84,
+  "ar": 1.69
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-3",
+  "charts": 10,
+  "palette": {
+   "excel": 6,
+   "mpl_tab10": 1
+  },
+  "grayscale": 4,
+  "white": 0.78,
+  "ar": 1.96
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-6",
+  "charts": 11,
+  "palette": {
+   "mpl_tab10": 1,
+   "sns_deep": 1,
+   "excel": 3
+  },
+  "grayscale": 2,
+  "white": 0.8,
+  "ar": 1.45
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-5",
+  "charts": 12,
+  "palette": {},
+  "grayscale": 2,
+  "white": 0.87,
+  "ar": 1.58
+ },
+ {
+  "paper": "2025年MathorCup大数据竞赛优秀论文-4",
+  "charts": 9,
+  "palette": {},
+  "grayscale": 2,
+  "white": 0.82,
+  "ar": 1.6
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-6",
+  "charts": 33,
+  "palette": {
+   "excel": 31,
+   "sns_deep": 4,
+   "mpl_tab10": 1
+  },
+  "grayscale": 11,
+  "white": 0.75,
+  "ar": 1.76
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-5",
+  "charts": 13,
+  "palette": {
+   "excel": 2
+  },
+  "grayscale": 3,
+  "white": 0.79,
+  "ar": 2.26
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-4",
+  "charts": 3,
+  "palette": {},
+  "grayscale": 1,
+  "white": 0.88,
+  "ar": 1.0
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-1",
+  "charts": 39,
+  "palette": {
+   "sns_deep": 3,
+   "excel": 9,
+   "mpl_tab10": 19
+  },
+  "grayscale": 20,
+  "white": 0.87,
+  "ar": 1.52
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-8",
+  "charts": 33,
+  "palette": {
+   "mpl_tab10": 2,
+   "excel": 13,
+   "sns_deep": 2
+  },
+  "grayscale": 13,
+  "white": 0.8,
+  "ar": 1.6
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-2",
+  "charts": 4,
+  "palette": {
+   "mpl_tab10": 1
+  },
+  "grayscale": 1,
+  "white": 0.83,
+  "ar": 1.61
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-3",
+  "charts": 2,
+  "palette": {},
+  "grayscale": 0,
+  "white": 0.71,
+  "ar": 1.82
+ },
+ {
+  "paper": "2022年MathorCup大数据竞赛优秀论文-7",
+  "charts": 3,
+  "palette": {
+   "origin": 1
+  },
+  "grayscale": 2,
+  "white": 0.89,
+  "ar": 0.93
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-2",
+  "charts": 18,
+  "palette": {
+   "excel": 1,
+   "origin": 3
+  },
+  "grayscale": 3,
+  "white": 0.87,
+  "ar": 1.23
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-8",
+  "charts": 34,
+  "palette": {
+   "excel": 4,
+   "sns_deep": 2,
+   "mpl_tab10": 1
+  },
+  "grayscale": 9,
+  "white": 0.89,
+  "ar": 1.5
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-1",
+  "charts": 14,
+  "palette": {
+   "excel": 3,
+   "sns_deep": 2
+  },
+  "grayscale": 9,
+  "white": 0.81,
+  "ar": 1.64
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-5",
+  "charts": 9,
+  "palette": {
+   "excel": 1,
+   "origin": 1
+  },
+  "grayscale": 2,
+  "white": 0.88,
+  "ar": 1.93
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-7",
+  "charts": 16,
+  "palette": {
+   "mpl_tab10": 1,
+   "excel": 1
+  },
+  "grayscale": 1,
+  "white": 0.84,
+  "ar": 1.65
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-3",
+  "charts": 16,
+  "palette": {
+   "excel": 7,
+   "sns_deep": 1
+  },
+  "grayscale": 9,
+  "white": 0.82,
+  "ar": 1.71
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-4",
+  "charts": 13,
+  "palette": {
+   "excel": 1
+  },
+  "grayscale": 8,
+  "white": 0.91,
+  "ar": 1.76
+ },
+ {
+  "paper": "2024年MathorCup大数据竞赛优秀论文-6",
+  "charts": 37,
+  "palette": {
+   "mpl_tab10": 1,
+   "excel": 1,
+   "sns_deep": 1
+  },
+  "grayscale": 6,
+  "white": 0.87,
+  "ar": 1.11
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文5",
+  "charts": 10,
+  "palette": {
+   "excel": 4,
+   "sns_deep": 1
+  },
+  "grayscale": 4,
+  "white": 0.87,
+  "ar": 2.08
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文2",
+  "charts": 14,
+  "palette": {},
+  "grayscale": 7,
+  "white": 0.9,
+  "ar": 1.44
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文3",
+  "charts": 3,
+  "palette": {},
+  "grayscale": 0,
+  "white": 0.85,
+  "ar": 1.08
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文4",
+  "charts": 10,
+  "palette": {
+   "excel": 3,
+   "mpl_tab10": 1,
+   "sns_deep": 2
+  },
+  "grayscale": 3,
+  "white": 0.85,
+  "ar": 1.54
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文6",
+  "charts": 6,
+  "palette": {
+   "mpl_tab10": 1,
+   "excel": 2,
+   "sns_deep": 1
+  },
+  "grayscale": 3,
+  "white": 0.84,
+  "ar": 1.45
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文8",
+  "charts": 6,
+  "palette": {
+   "excel": 1,
+   "origin": 3
+  },
+  "grayscale": 2,
+  "white": 0.75,
+  "ar": 1.95
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文7",
+  "charts": 8,
+  "palette": {
+   "origin": 1,
+   "excel": 7
+  },
+  "grayscale": 1,
+  "white": 0.83,
+  "ar": 1.72
+ },
+ {
+  "paper": "2021年MathorCup大数据竞优秀论文1",
+  "charts": 16,
+  "palette": {},
+  "grayscale": 1,
+  "white": 0.86,
+  "ar": 1.61
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-1",
+  "charts": 11,
+  "palette": {
+   "origin": 1
+  },
+  "grayscale": 0,
+  "white": 0.74,
+  "ar": 1.4
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-8",
+  "charts": 6,
+  "palette": {
+   "sns_deep": 1
+  },
+  "grayscale": 5,
+  "white": 0.91,
+  "ar": 1.59
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-6",
+  "charts": 25,
+  "palette": {
+   "origin": 2,
+   "sns_deep": 1,
+   "excel": 1
+  },
+  "grayscale": 3,
+  "white": 0.9,
+  "ar": 1.91
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-4",
+  "charts": 13,
+  "palette": {
+   "sns_deep": 2,
+   "excel": 1
+  },
+  "grayscale": 4,
+  "white": 0.82,
+  "ar": 1.67
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-2",
+  "charts": 18,
+  "palette": {
+   "sns_deep": 2,
+   "mpl_tab10": 2
+  },
+  "grayscale": 3,
+  "white": 0.78,
+  "ar": 1.57
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-5",
+  "charts": 50,
+  "palette": {
+   "excel": 12,
+   "mpl_tab10": 3,
+   "sns_deep": 7
+  },
+  "grayscale": 15,
+  "white": 0.86,
+  "ar": 1.51
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-7",
+  "charts": 23,
+  "palette": {
+   "mpl_tab10": 2
+  },
+  "grayscale": 2,
+  "white": 0.86,
+  "ar": 1.69
+ },
+ {
+  "paper": "2023年MathorCup大数据竞赛优秀论文-3",
+  "charts": 9,
+  "palette": {
+   "origin": 4,
+   "mpl_tab10": 2
+  },
+  "grayscale": 0,
+  "white": 0.82,
+  "ar": 1.4
+ }
+]
