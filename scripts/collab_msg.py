@@ -104,6 +104,8 @@ def main() -> None:
     ap.add_argument("--title", help="一句话标题")
     ap.add_argument("--body", default="", help="正文（背景/要求/约束）")
     ap.add_argument("--accept", default="", help="验收标准（命令/产物/指标）")
+    ap.add_argument("--body-file", default=None, help="从文件读取正文（长消息推荐）")
+    ap.add_argument("--accept-file", default=None, help="从文件读取验收标准")
     ap.add_argument("--related", default="", help="关联文件/提交/任务ID")
     ap.add_argument("--owner", default=None, help="发起人（默认按 --to 推断）")
     ap.add_argument("--mark", metavar="MSG-ID", help="更新某条消息的状态")
@@ -120,8 +122,9 @@ def main() -> None:
     else:
         if not args.to or not args.title:
             raise SystemExit("追加消息需要 --to 与 --title")
-        append_msg(root, args.to, args.kind, args.title, args.body,
-                   args.accept, args.related, args.owner)
+        body = Path(args.body_file).read_text(encoding="utf-8").strip() if args.body_file else args.body
+        accept = Path(args.accept_file).read_text(encoding="utf-8").strip() if args.accept_file else args.accept
+        append_msg(root, args.to, args.kind, args.title, body, accept, args.related, args.owner)
 
 
 if __name__ == "__main__":
