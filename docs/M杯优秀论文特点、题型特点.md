@@ -350,6 +350,7 @@ plot_feature_importance(names, values, file = "figures/imp.png")
 - 字体：`SimSun`（中文宋体、拉丁 Times 风格，一次设置中英统一）；`mode="sans"` 切换为黑体 `SimHei`
 - R 示例：`scripts/plot_demo_mcup.R` → `figures/demo_m_cup_style_R.png`
 - Python 示例：`scripts/plot_demo_m_cup.py` → **`figures/demo_m_cup_style.png`（当前偏好的参考风格）**
+- 双栈并排对比：`figures/demo_style_compare.png`（左 matplotlib / 右 ggplot2，便于按观感选择）
 
 Python 版同款调用（matplotlib）：
 
