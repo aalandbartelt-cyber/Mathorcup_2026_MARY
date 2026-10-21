@@ -82,6 +82,16 @@ mathorcup/
 └── README.md
 ```
 
+## AI 协作（ZCode ↔ Codex）
+
+两个 AI 通过仓库内的文件信箱交接工作，协议见 `docs/collab/README.md`：
+
+- `docs/collab/board.md` — 任务板（当前任务/状态/阻塞/日志）
+- `docs/collab/to_codex.md` — ZCode → Codex（Codex 只改状态行）
+- `docs/collab/to_zcode.md` — Codex → ZCode（ZCode 只改状态行）
+- 追加消息：`python scripts/collab_msg.py --to codex --kind task --title "..." --body "..." --accept "..."`
+- 给 Codex 的启动指令见协议 §0（复制粘贴即可）
+
 ## 赛前 48 小时清单（开赛 2026-10-23 18:00）
 
 打印版：`docs/比赛执行清单.md`（含官方答卷六大问题自查表、结果文件模板说明、提交前 20 项终检）。
