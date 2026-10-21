@@ -240,7 +240,7 @@
 - 分辨率：300 DPI；正文图宽 8–16 cm；字体 ≥9 pt。
 - 中英文：英文/数字 Times New Roman，中文宋体（黑体用于强调）；黑白打印可辨（颜色+线型/标记双编码）。
 - 图表编号连续、标题在图下方、表标题在表上方；正文必须引用（"如图 X 所示"）。
-- 本项目已配置好 `scripts/plot_style.py`（matplotlib）与 `scripts/plot_style.R`（ggplot2），导入即得规范样式。
+- 本项目以 **R/ggplot2 为主**：`scripts/plot_style.R` 提供 `theme_mcup()` 与四类图表函数（用法见 §4.5.6）；Python 版 `scripts/plot_style.py` 保留备用。
 
 ### 4.5 图表视觉风格（615 张图表实测 + 逐页目检）
 
@@ -311,27 +311,31 @@
 | 饼图类别过多（>5 类） | 部分 EDA 图 | 改为条形图或“Top5+其他” |
 | 图内字体与正文不一致（如宋体+黑体+Times 三种） | 个别论文 | 全篇统一字体链，图内字号不小于 8 pt |
 
-#### 4.5.6 复用代码（已实现并出图验证）
+#### 4.5.6 复用代码（R / ggplot2 为主，已出图验证）
 
-`scripts/plot_style.py` 现在提供三种风格与四类图表函数：
+比赛绘图栈是 **R**，因此模板以 ggplot2 实现；matplotlib 版仅保留备用。
 
-```python
-import sys; sys.path.insert(0, "scripts")
-import plot_style as ps
+```r
+source("scripts/plot_style.R")        # 载入 M 杯风格与四类图表函数
 
-ps.set_style("m杯")            # Times+宋体、白底黑框、无网格、图例内嵌
-fig, ax = ps.fig_ax()          # 6×4 英寸（3:2）
+# 通用图：白底、黑框、无网格、图例内嵌（br=右下 / tr=右上）
+p <- ggplot(df, aes(x, y)) + theme_mcup(legend = "br")
+save_paper(p, "figures/fig1.png")     # 300dpi PNG
 
-ps.plot_confusion_matrix(cm, ["dent","hole","rusty"], save_path="figures/cm.png")
-ps.plot_pr_curves({"dent": (r, p, 0.804), "all": (r, p, 0.810)},
-                  save_path="figures/pr.png")
-ps.plot_corr_heatmap(df, save_path="figures/corr.png")     # hot + 全格数值
-ps.plot_feature_importance(names, values, save_path="figures/imp.png")
+# 四类常用图
+plot_confusion_matrix(cm, c("dent", "hole", "rusty"), file = "figures/cm.png")
+plot_pr_curves(list(
+  dent = list(recall = r, precision = p, ap = 0.804),
+  all  = list(recall = r, precision = p, ap = 0.810)
+), file = "figures/pr.png")
+plot_corr_heatmap(cor_mat, file = "figures/corr.png")        # hot + 全格数值
+plot_feature_importance(names, values, file = "figures/imp.png")
 ```
 
-- 示例脚本：`scripts/plot_demo_m_cup.py`
-- 示例输出：`figures/demo_m_cup_style.png`（四联图：训练曲线/混淆矩阵/PR/特征重要性，已按上述惯例渲染验证）
-- 其它两种风格保留：`set_style("paper")`（浅网格通用版）、`set_style("sans")`（黑体版）
+- 主题参数：`theme_mcup(mode = "paper" | "sans", base_size = 10, legend = "br" | "tr" | "none")`
+- 字体：`SimSun`（中文宋体、拉丁 Times 风格，一次设置中英统一）；`mode="sans"` 切换为黑体 `SimHei`
+- 示例脚本：`scripts/plot_demo_mcup.R` → `figures/demo_m_cup_style_R.png`（训练曲线/混淆矩阵/PR/特征重要性四联，已目检）
+- Python 备用：`scripts/plot_style.py` 的 `set_style("m杯")` 提供同款设定（matplotlib）
 
 ---
 
