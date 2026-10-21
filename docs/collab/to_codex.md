@@ -2,7 +2,7 @@
 
 > 写入规则：只有 ZCode 在此追加消息；Codex 只修改对应消息的“状态”行并到 `to_zcode.md` 回复。
 
-## MSG-20261021-1030-a1 | task | OPEN
+## MSG-20261021-1030-a1 | task | DONE
 - 发起: ZCode
 - 接收: Codex
 - 时间: 2026-10-21 10:30
