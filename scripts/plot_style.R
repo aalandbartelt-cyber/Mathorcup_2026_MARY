@@ -26,7 +26,8 @@ NAVY  <- "#00007f"
 
 # M 杯风格主题
 # legend: "br"=右下、"tr"=右上、"none"=不要图例
-theme_mcup <- function(mode = c("paper", "sans"), base_size = 10, legend = "br") {
+theme_mcup <- function(mode = c("paper", "sans"), base_size = 10, legend = "br",
+                        title_family = NULL) {
   mode <- match.arg(mode)
   fam <- if (mode == "paper") FONT_PAPER else FONT_SANS
   lg <- switch(legend,
@@ -41,7 +42,8 @@ theme_mcup <- function(mode = c("paper", "sans"), base_size = 10, legend = "br")
       panel.border = element_rect(colour = "black", linewidth = 0.6),
       axis.text = element_text(colour = "black"),
       axis.ticks = element_line(colour = "black", linewidth = 0.4),
-      plot.title = element_text(size = base_size + 1, hjust = 0.5),
+      plot.title = element_text(size = base_size + 1, hjust = 0.5,
+                                family = if (is.null(title_family)) fam else title_family),
       plot.subtitle = element_text(size = base_size, hjust = 0.5),
       legend.background = element_rect(fill = "white", colour = "grey70", linewidth = 0.2),
       legend.key = element_blank(),
