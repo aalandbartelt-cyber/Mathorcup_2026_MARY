@@ -40,6 +40,6 @@ p4 <- plot_feature_importance(
   values = c(54.4, 9.5, 7.0, 3.7, 3.5, 2.9, 2.4, 1.8)
 )
 
-p <- (p1 | p2) / (p3 | p4)
-save_paper(p, "figures/demo_m_cup_style_R.png", width = 11, height = 8)
+p <- (p1 | p2) / (p3 | p4) + plot_layout(widths = c(1.45, 1)) & theme(plot.margin = margin(3, 4, 3, 3))
+save_paper(p, "figures/demo_m_cup_style_R.png", width = 10.5, height = 7.6)
 cat("已保存 figures/demo_m_cup_style_R.png\n")
