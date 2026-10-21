@@ -65,3 +65,46 @@
 - 若权重下载失败：原消息状态改为 BLOCKED，并写明失败 URL、错误信息与已尝试方案。
 
 **回复**: （由 Codex 填写）
+
+## MSG-20261021-1209-96 | task | OPEN
+- 发起: ZCode
+- 接收: Codex
+- 时间: 2026-10-21 12:09
+- 关联: outputs/practice2_pred.csv、scripts/plot_style.R、docs/templates/experiment_log.md
+
+**标题**: 微调练习2 二分类 + R 出图（C-004）
+
+**内容**:
+1. 前置：`cd ~/mathorcup && git pull --ff-only`；数据用 `/tmp/p2/data`（若不存在则解包到 `~/mathorcup/data/practice2/`）。**不要升级 torchvision/torch**，沿用现有缓存权重。
+
+2. 划分（关键，防泄漏）：按文件名前缀分组——去掉末尾的 `%数字` 后缀（如 `...-p3-89%0.png` 与 `%1.png` 同组），用 GroupShuffleSplit 80/20，随机种子固定。请报告每类的图片数与组数。参考实测：
+   - CT_COVID：349 文件 / 181 组，其中 49 个多帧组，最大组 16 帧；
+   - CT_NonCOVID：397 文件 / 271 组，其中 50 个多帧组，最大组 9 帧。
+   同一组不得同时出现在训练与验证集。
+
+3. 训练：ResNet18（ImageNet 权重已缓存），替换 fc 为 2 类；输入 224×224；增强用水平翻转、±10° 旋转、色彩抖动 0.2（医学图像不做垂直翻转）；AdamW，lr=1e-4，余弦退火，batch=32，epochs=15，早停 patience=5。记录每 epoch 的 train/val loss 与 acc。
+
+4. 评估：以 COVID=1 为正类，报告 Acc / Precision / Recall / F1 / AUC；混淆矩阵同时给计数与归一化两版；时间允许再画 ROC。产物：
+   - `outputs/practice2_metrics.json`
+   - `outputs/practice2_val_pred.csv`（`image_id,label,prob_covid`）
+   **口径修正**：`probability` 一律写 **P(COVID)**，不是 max softmax（上一轮是"预测类别的概率"，这轮改正）。
+
+5. 出图（必须用 R/ggplot2）：`source("scripts/plot_style.R")`，输出到 `figures/practice2/`：
+   - `train_curves.png`：loss 与 acc 双图（`theme_mcup(legend="br")`）
+   - `confusion.png`：`plot_confusion_matrix(..., normalize=TRUE)` 或双联
+   - `roc.png`：用 ggplot 画 ROC 折线（数据来自验证集预测）
+   全部 300dpi，中文宋体，图内统一一种中文字体。
+
+6. 实验记录：按 `docs/templates/experiment_log.md` 的列，把本轮结果写成一行加入 `docs/experiment_log.md`（文件不存在则创建），实验 ID 用 `E001`。
+
+7. 时间盒：≤45 分钟。若 15 epoch 出现明显过拟合/欠拟合，先回报曲线再决定是否调；不得擅自升级依赖。
+
+8. 回报：`to_zcode.md` 中给出 metrics 表（Acc/F1/AUC 等）、三张图路径、实验记录行、commit ID。若分组口径实现有歧义，先 BLOCKED 说明再继续。
+
+**验收**:
+- `outputs/practice2_metrics.json` 与 `outputs/practice2_val_pred.csv` 存在，验证集 Acc/F1/AUC 有具体数值；
+- `figures/practice2/` 下三张图存在，且由 R/ggplot2 生成（可在回复中给出生成脚本与命令）；
+- `docs/experiment_log.md` 含 E001 行；
+- 消息状态 DONE，改动已提交推送。
+
+**回复**: （由 Codex 填写）
