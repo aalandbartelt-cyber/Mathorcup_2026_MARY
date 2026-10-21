@@ -12,7 +12,7 @@
 | 预训练权重 | `weights/`：yolov8n / yolov8s / yolov8m / yolo26n | ✅ |
 
 - Python 激活：`conda activate mathorcup`；R 激活：`conda activate r`
-- 出图：R（ggplot2）与 Python（matplotlib）两版模板等价，任选；见 `scripts/plot_style.R` / `scripts/plot_style.py`，参考示例 `figures/demo_m_cup_style.png`
+- 出图：固定 R/ggplot2（`scripts/plot_style.R`，参考图 `figures/demo_m_cup_style_R.png`）；Python/matplotlib 版保底
 - GPU：RTX 5070 Ti Laptop（12GB，Blackwell sm_120），WSL GPU 直通
 
 ## 协作流（设备与分工）

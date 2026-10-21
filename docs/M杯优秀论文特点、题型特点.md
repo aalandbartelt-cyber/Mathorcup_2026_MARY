@@ -241,7 +241,7 @@
 - 分辨率：300 DPI；正文图宽 8–16 cm；字体 ≥9 pt。
 - 中英文：英文/数字 Times New Roman，中文宋体（黑体用于强调）；黑白打印可辨（颜色+线型/标记双编码）。
 - 图表编号连续、标题在图下方、表标题在表上方；正文必须引用（"如图 X 所示"）。
-- 出图语言不限定：项目提供 **R 与 Python 双栈模板**（`scripts/plot_style.R` 的 `theme_mcup()` 与 `scripts/plot_style.py` 的 `set_style("m杯")`），两版输出同一套视觉规范，按习惯选用（用法见 §4.5.6）。
+- 出图以 **R/ggplot2 为首选**：`scripts/plot_style.R` 的 `theme_mcup()` 与四类图表函数是固定路线；Python/matplotlib 版为**保底**（`scripts/plot_style.py` 的 `set_style("m杯")`，环境异常或临时脚本时用）。两版输出同一套视觉规范（用法见 §4.5.6）。
 
 ### 4.5 图表视觉风格（615 张图表实测 + 逐页目检）
 
@@ -325,9 +325,9 @@
 | 饼图类别过多（>5 类） | 部分 EDA 图 | 改为条形图或“Top5+其他” |
 | 图内字体与正文不一致（如宋体+黑体+Times 三种） | 个别论文 | 全篇统一字体链，图内字号不小于 8 pt |
 
-#### 4.5.6 复用代码（R 与 Python 双栈，均已出图验证）
+#### 4.5.6 复用代码（R/ggplot2 为首选，Python 保底）
 
-出图语言不设限制：R 与 Python 两版模板输出**同一套视觉规范**（白底、黑框、无网格、图例内嵌、3:2、宋体/Times），按团队习惯与任务类型选用。两版示例均已渲染验证；其中 matplotlib 版 `figures/demo_m_cup_style.png` 是当前偏好的参考风格。
+比赛出图固定以 **R/ggplot2 为主**：`theme_mcup()` 与四类图表函数是首选实现；Python/matplotlib 版保留为**保底**（环境异常、临时脚本时使用）。两版遵循同一套视觉规范（白底、黑框、无网格、图例内嵌、3:2、宋体/Times）。R 版已完成观感优化（紧凑主题、无边框图例、colorbar 修复、PR 图例左下、逐条配色），并排对比见 `figures/demo_style_compare.png`。
 
 ```r
 source("scripts/plot_style.R")        # 载入 M 杯风格与四类图表函数
@@ -348,11 +348,11 @@ plot_feature_importance(names, values, file = "figures/imp.png")
 
 - 主题参数：`theme_mcup(mode = "paper" | "sans", base_size = 10, legend = "br" | "tr" | "none")`
 - 字体：`SimSun`（中文宋体、拉丁 Times 风格，一次设置中英统一）；`mode="sans"` 切换为黑体 `SimHei`
-- R 示例：`scripts/plot_demo_mcup.R` → `figures/demo_m_cup_style_R.png`
-- Python 示例：`scripts/plot_demo_m_cup.py` → **`figures/demo_m_cup_style.png`（当前偏好的参考风格）**
-- 双栈并排对比：`figures/demo_style_compare.png`（左 matplotlib / 右 ggplot2，便于按观感选择）
+- R 示例（首选）：`scripts/plot_demo_mcup.R` → **`figures/demo_m_cup_style_R.png`（参考风格）**
+- Python 示例（保底）：`scripts/plot_demo_m_cup.py` → `figures/demo_m_cup_style.png`
+- 并排对比：`figures/demo_style_compare.png`（左 matplotlib 保底 / 右 ggplot2 首选）
 
-Python 版同款调用（matplotlib）：
+保底方案（matplotlib）：
 
 ```python
 import sys; sys.path.insert(0, "scripts")
@@ -365,7 +365,7 @@ ps.plot_corr_heatmap(df, save_path="figures/corr.png")
 ps.plot_feature_importance(names, values, save_path="figures/imp.png")
 ```
 
-- 两边参数一一对应：图例位置、配色（Blues/hot）、字号、图例数值格式一致；可按手感任选。
+- 两边参数一一对应：图例位置、配色（Blues/hot）、字号、图例数值格式一致；日常固定 R，Python 仅在 R 环境异常时保底。
 
 ---
 
