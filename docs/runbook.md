@@ -49,9 +49,10 @@
 4. 提交前备份 `outputs/test_result.csv` 到 `docs/`
 
 
-## R 绘图(可选,用户常用)
+## 出图（R 与 Python 均可）
 - 环境: conda env `r`(R 4.5.3 / ggplot2 4.0 / dplyr / tidyr / readr / data.table / patchwork / ggrepel / ragg / svglite / showtext / languageserver)
-- 激活: `conda activate r`；或直接 `~/miniconda3/envs/r/bin/Rscript scripts/xxx.R`
+- R 激活: `conda activate r`；或直接 `~/miniconda3/envs/r/bin/Rscript scripts/xxx.R`
+- Python 出图: `scripts/plot_style.py` 的 `set_style("m杯")`，与 R 版规范一致（参考图 `figures/demo_m_cup_style.png`）
 - 模板: `source("scripts/plot_style.R")` → `theme_paper()` + `save_paper(p, "figures/fig1.png")`(300dpi PNG)
 - 字体: paper 模式 = 宋体 SimSun(中英统一,拉丁字形为 Times 风格衬线);sans 模式 = 黑体 SimHei;纯英文图可用 `family = \"Times New Roman\"`
 - 已知限制(2026-10-20 实测): 本机 ragg/systemfonts 逐字回退会落到 Noto Sans CJK,fontconfig 规则也无法强制宋体回退,故模板直接用 SimSun 作主字体
