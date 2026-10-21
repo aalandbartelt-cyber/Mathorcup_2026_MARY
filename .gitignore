@@ -7,3 +7,4 @@ __pycache__/
 .env
 docs/reference/
 docs/analysis/txt/
+docs/analysis/txt_official/
