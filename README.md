@@ -81,6 +81,23 @@ mathorcup/
 └── README.md
 ```
 
+## 赛前 48 小时清单（开赛 2026-10-23 18:00）
+
+打印版：`docs/比赛执行清单.md`（含官方答卷六大问题自查表、结果文件模板说明、提交前 20 项终检）。
+
+```bash
+# 1) 结果文件校验（提交前必跑）
+python scripts/check_result.py --file outputs/result_detection.csv --images-dir data/<数据集>/images/test
+python scripts/check_result.py --file outputs/result_classification.csv
+
+# 2) 环境快照（写论文附录/复现说明用）
+Rscript scripts/session_info.R          # → docs/env_r.txt
+pip freeze > docs/env_py.txt
+
+# 3) 结果模板
+ls docs/templates/                      # 分类 CSV / 检测 CSV / 分配 TXT / 实验记录表
+```
+
 ## 开赛流程
 
 1. 数据放入 `data/<数据集名>/`，按 `configs/data.example.yaml` 生成 `configs/data.yaml`
