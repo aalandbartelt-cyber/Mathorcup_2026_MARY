@@ -181,7 +181,7 @@ python scripts/audit_mcup_submission.py --root . --paper 05_论文/论文.pdf \
 
 - 目录：`docs/collab/`，单一写入者：`to_codex.md` 只有 ZCode 写、`to_zcode.md` 只有 Codex 写，收件方只改状态行。
 - 状态机：`OPEN → ACK → DONE / BLOCKED / PAUSED`；**静默模式**：只在交接/阻塞/决策时发消息。
-- dsh 的建议以 `decision` 类型消息记录（注明“dsh 建议”），由 Codex 实现、ZCode 验收。
+- dsh 的评审写入 `docs/collab/reviews/REV-*.md`（六维 rubric + P0/P1/P2 建议），由 ZCode 转成 task 消息交 Codex 落实；dsh 不改代码/结果/建模主张。
 - 提交：`collab(MSG-ID): ...`；开工先 `git pull --ff-only`，处理完立即推送。
 
 细节见 `references/08_协作与恢复.md`。
@@ -227,6 +227,7 @@ python scripts/audit_mcup_submission.py --root . --paper 05_论文/论文.pdf \
 | `references/07_提交与红线.md` | 提交前 3 小时 |
 | `references/08_协作与恢复.md` | 分工、换 AI、中断恢复 |
 | `references/09_案例库与官方口径.md` | 开局通读，找同类题 |
+| `references/10_论文评审与优化.md` | dsh 评审时（六维 rubric、P0/P1/P2、输出模板） |
 | `assets/project_tree.txt` | 建目录时对照 |
 | `assets/paper_outline.md` | 论文骨架 |
 | `assets/r_theme_mcup.R` | 出图主题 |

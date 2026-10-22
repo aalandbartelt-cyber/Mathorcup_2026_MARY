@@ -29,6 +29,7 @@ references/
   07_提交与红线.md            结果格式、审计脚本、20 项清单、元数据清理
   08_协作与恢复.md            Codex/ZCode 信箱、静默模式、阻塞、恢复
   09_案例库与官方口径.md      2025 A/B、2022 讲解、2026 练习、40 篇统计、官方六问
+  10_论文评审与优化.md        dsh 专用：六维 rubric、P0/P1/P2、评审输出模板
 assets/
   project_tree.txt            目录骨架
   paper_outline.md            论文骨架

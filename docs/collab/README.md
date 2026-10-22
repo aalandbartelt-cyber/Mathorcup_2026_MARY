@@ -37,6 +37,7 @@
 | `to_zcode.md` | **只有 Codex** | ZCode | Codex 发给 ZCode 的消息；ZCode 只改“状态”行 |
 | `decisions.md` | 双方追加 | 双方 | 已定事项（编号 D-xxx），只追加不删除 |
 | `handoffs/` | 交接方 | 接手方 | 大任务交接文档（可选，按任务建 `<MSG-ID>.md`） |
+| `reviews/` | **dsh** | Codex/ZCode | 论文评审报告（`REV-日期-序号.md`），由 ZCode 转 task 消息 |
 
 **铁律**：不删别人的消息、不改别人的正文；只追加、只改状态行。
 
