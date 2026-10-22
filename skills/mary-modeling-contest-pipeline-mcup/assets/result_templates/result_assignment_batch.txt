@@ -1,0 +1,6 @@
+# 分批决策结果模板（对应 2022 赛道A的 result22.txt）
+# 官方格式无表头，每行：currentTime,id,serviceStartTime,auntId,retainable
+# teach 提示：压单时 serviceStartTime=-1、auntId=-1、retainable=1
+# 示例（请替换为真实数据）：
+# 1661423400,0,-1,-1,1
+# 1662778800,0,1662786000,260,0

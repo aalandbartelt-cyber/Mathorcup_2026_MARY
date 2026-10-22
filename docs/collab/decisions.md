@@ -13,8 +13,10 @@
 - 决定：按官方讲座口径，预计 **2026-10-23 18:00** 开赛（saikr.com/vse/bigdata2026）；赛前按 D-2/D-1 清单执行。
 - 影响：docs/比赛执行清单.md。
 
-## D-003 双 AI 分工
-- 决定：Codex（WSL）负责核心开发与实验；ZCode（Windows）负责环境运维、数据整理、文档、复核与替补。
+## D-003 三方分工
+- 决定：Codex（WSL）负责核心开发与实验；ZCode（Windows）负责环境运维、数据整理、文档、复核与替补；
+  **dsh（DeepSeek Harness，独立 AI）负责建模推理、模型选型、结果解读与评审建议**。
+- 边界：ZCode 不扮演 dsh；dsh 的结论以 `decision` 消息进入协作通道，经 Codex 落地、ZCode 验收。
 - 沟通方式：本目录文件信箱（见 README.md），不依赖对话上下文。
 
 ## D-004 代码与资产同步

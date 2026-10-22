@@ -1,0 +1,14 @@
+<赛季根>/
+├── 00_赛题与规则/          题面、赛事参数.md、选题结论.md
+├── 01_数据/                原始数据（只读）、划分、数据对账表.md
+├── 02_代码/                scripts/（训练/推理/评估/绘图入口）
+├── 03_结果/                result.csv、metrics.json、templates/
+├── 04_图表/                figures/（300dpi PNG）
+├── 05_论文/                论文源文件、figures 副本、参考文献
+├── 06_交付/                论文.pdf、结果文件、支撑材料.zip（只进不出）
+├── docs/
+│   ├── collab/             board.md、to_codex.md、to_zcode.md、decisions.md
+│   ├── experiment_log.md
+│   ├── env_r.txt
+│   └── env_py.txt
+└── _archive/               旧方案、zip 快照、废弃实验
