@@ -12,9 +12,9 @@
 
 | 角色 | 位置 | 职责 |
 |---|---|---|
-| Codex | WSL（VS Code Remote-WSL 扩展） | 核心开发：代码、实验、调试、论文 LaTeX |
-| ZCode | Windows 宿主 | 辅助：环境运维、数据整理、文档、复核、替补（不扮演 dsh） |
-| dsh | 独立 AI（DeepSeek Harness） | 建模推理、模型选型、结果解读、评审建议 |
+| Codex | WSL（VS Code Remote-WSL 扩展） | 核心：建模推理、选型、结果解读、代码/实验/论文 LaTeX |
+| ZCode | Windows 宿主 | 辅助：环境运维、数据整理、文档、复核、替补 |
+| dsh | Windows（DeepSeek Harness） | 论文评审与优化（不承担建模/选型/结果解读） |
 
 ## ZCode 维护区
 

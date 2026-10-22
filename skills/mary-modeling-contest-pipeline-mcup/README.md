@@ -2,8 +2,8 @@
 
 MathorCup 大数据竞赛（MCup）特化版流水线 skill。
 
-协作角色：**Codex**（WSL，实现）、**ZCode**（Windows，环境/复核）、**dsh（DeepSeek Harness，独立 AI，建模推理/评审）**。
-ZCode 不扮演 dsh；dsh 的结论经 Codex 落地、ZCode 验收。
+协作角色：**Codex**（WSL，核心：建模推理/选型/结果解读/实现）、**ZCode**（Windows，环境/复核）、
+**dsh（DeepSeek Harness，Windows，论文评审与优化）**。dsh 不承担建模与选型；评审意见经 Codex/ZCode 落实。
 
 - 继承：`mary-modeling-contest-pipeline` 的通用方法（口径统一、逐问求解、验证优先、R 出图、交接包、提交红线）。
 - 替换：赛制层为 MathorCup 大数据竞赛——A/B 双赛道、初赛/复赛、结果 CSV、30 页论文、官方六大答卷问题。

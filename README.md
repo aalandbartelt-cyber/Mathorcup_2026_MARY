@@ -84,7 +84,7 @@ mathorcup/
 
 ## AI 协作（ZCode ↔ Codex）
 
-三个角色通过仓库内的文件信箱交接：**Codex**（WSL，实现）、**ZCode**（Windows，辅助/复核）、**dsh（DeepSeek Harness，独立 AI，建模推理/评审）**。ZCode 不扮演 dsh。协议见 `docs/collab/README.md`：
+三个角色通过仓库内的文件信箱交接：**Codex**（WSL，核心：建模/选型/结果解读/实现）、**ZCode**（Windows，环境/复核）、**dsh（DeepSeek Harness，Windows，论文评审与优化）**。协议见 `docs/collab/README.md`：
 
 - `docs/collab/board.md` — 任务板（当前任务/状态/阻塞/日志）
 - `docs/collab/to_codex.md` — ZCode → Codex（Codex 只改状态行）

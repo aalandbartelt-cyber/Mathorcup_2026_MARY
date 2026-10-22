@@ -7,9 +7,9 @@
 
 | 角色 | 位置 | 职责 | 边界 |
 |---|---|---|---|
-| Codex | WSL | 实现、训练、推理、评估、论文 | 不替 dsh 做建模主张 |
-| ZCode | Windows | 环境、数据、文档、复核 | **不扮演 dsh** |
-| dsh（DeepSeek Harness） | 独立 AI | 建模推理、选型、结果解读、评审 | 结论以 decision 消息进入，经 Codex 落地 |
+| Codex | WSL | **核心**：建模推理、选型、结果解读、实现、训练、评估、论文 | 技术主张负责人 |
+| ZCode | Windows | 环境、数据、文档、复核、提交 | 能力与 dsh 相近，不代做评审 |
+| dsh（DeepSeek Harness） | Windows | **论文评审与优化** | 不承担建模/选型/结果解读 |
 
 ## 0. 给 Codex 的启动指令（用户复制粘贴即可）
 

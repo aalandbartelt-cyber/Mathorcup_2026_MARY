@@ -175,9 +175,9 @@ python scripts/audit_mcup_submission.py --root . --paper 05_论文/论文.pdf \
 
 | 角色 | 位置 | 职责 | 边界 |
 |---|---|---|---|
-| **Codex** | WSL | 代码、训练、推理、评估、论文 LaTeX | 不替 dsh 做建模主张 |
-| **ZCode** | Windows | 环境、数据、文档、复核、提交检查 | **不扮演 dsh**：不代做 dsh 的建模/推理角色 |
-| **dsh（DeepSeek Harness）** | 独立 AI | 方案推理、模型选择、结果解读、评审建议 | 产出经 Codex 落地、ZCode 复核；不直接改仓库 |
+| **Codex** | WSL | **核心工作**：建模推理、模型选型、结果解读、代码/训练/评估、论文 LaTeX | 最终技术主张由 Codex 负责 |
+| **ZCode** | Windows | 辅助：环境、数据、文档、复核、提交检查 | 能力与 dsh 相近，但不代做 dsh 的评审 |
+| **dsh（DeepSeek Harness）** | Windows | **论文评审与优化**：结构/逻辑/表达/格式/一致性审查，给出修改建议 | 不承担建模推理、选型、结果解读 |
 
 - 目录：`docs/collab/`，单一写入者：`to_codex.md` 只有 ZCode 写、`to_zcode.md` 只有 Codex 写，收件方只改状态行。
 - 状态机：`OPEN → ACK → DONE / BLOCKED / PAUSED`；**静默模式**：只在交接/阻塞/决策时发消息。

@@ -14,9 +14,10 @@
 - 影响：docs/比赛执行清单.md。
 
 ## D-003 三方分工
-- 决定：Codex（WSL）负责核心开发与实验；ZCode（Windows）负责环境运维、数据整理、文档、复核与替补；
-  **dsh（DeepSeek Harness，独立 AI）负责建模推理、模型选型、结果解读与评审建议**。
-- 边界：ZCode 不扮演 dsh；dsh 的结论以 `decision` 消息进入协作通道，经 Codex 落地、ZCode 验收。
+- 决定：Codex（WSL）负责核心工作（建模推理、模型选型、结果解读、实现与论文）；
+  ZCode（Windows）负责环境运维、数据整理、文档、复核与替补；
+  **dsh（DeepSeek Harness，Windows）负责论文评审与优化**，能力与 ZCode 相近但分工不同。
+- 边界：dsh 不承担建模推理、选型、结果解读；其评审意见以 `review` 消息进入协作通道，由 Codex/ZCode 落实。
 - 沟通方式：本目录文件信箱（见 README.md），不依赖对话上下文。
 
 ## D-004 代码与资产同步
