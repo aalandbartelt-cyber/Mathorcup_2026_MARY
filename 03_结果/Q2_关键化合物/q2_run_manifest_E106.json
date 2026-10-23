@@ -1,0 +1,30 @@
+{
+  "experiment": "E106",
+  "status": "complete",
+  "main_methods": [
+    "E101_SpearmanTop3",
+    "E103_ElasticNet",
+    "E105_ExtraTreesConditionalPermutation"
+  ],
+  "aggregation": "equal-weight support-aware reciprocal rank fusion",
+  "rrf_k": 60,
+  "targets": 50,
+  "top3_rows": 150,
+  "consensus_tier_counts": {
+    "S2_moderate": 90,
+    "S1_strong": 41,
+    "S3_exploratory": 19
+  },
+  "direction_counts": {
+    "positive": 119,
+    "negative": 30,
+    "uncertain": 1
+  },
+  "four_method_sensitivity": {
+    "mean_jaccard": 0.652,
+    "median_jaccard": 0.5,
+    "exact_top3_targets": 17
+  },
+  "gpu_used": false,
+  "decision": "E106 is a candidate consensus; final Top-3 requires E107/E108"
+}

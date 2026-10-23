@@ -1,0 +1,22 @@
+experiment: E106
+question: Q2
+status: registered
+main_methods:
+  - E101_SpearmanTop3
+  - E103_ElasticNet
+  - E105_ExtraTreesConditionalPermutation
+excluded_from_main:
+  E102_PLS_VIP: four_method_sensitivity_only
+  E104_GraphElasticNet: failed_prediction_non_degradation_gate
+aggregation:
+  method_weights: equal
+  method_top10_support_priority: true
+  method_top3_support_priority: true
+  reciprocal_rank_fusion_k: 60
+  tie_break: [rrf_score, best_method_rank, feature_code]
+direction:
+  signed_methods: [E101_SpearmanTop3, E103_ElasticNet]
+  importance_only_methods: [E105_ExtraTreesConditionalPermutation]
+candidate_scope: strict_compounds_218
+outputs: 03_结果/Q2_关键化合物
+gpu_used: false
