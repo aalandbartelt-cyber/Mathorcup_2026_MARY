@@ -6,6 +6,7 @@ aligns samples by ``beer``, and exports metadata needed by later pipelines.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -104,6 +105,197 @@ def target_dictionary(y: pd.DataFrame) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
+
+
+def feature_scale_audit(chemistry: pd.DataFrame) -> pd.DataFrame:
+    """Identify fields already stored as log10 by comparison with attachment 8.
+
+    Only positive calibrated values are compared because attachment 8 uses zero
+    for some measurements at/below detection limits. A field is labelled
+    ``log10`` when ``1.csv == log10(calibrated value)`` matches more positive
+    entries than the raw-value identity; otherwise it is labelled ``raw``.
+    No values in ``1.csv`` are transformed by this audit.
+    """
+    calibrated = pd.read_excel(
+        ATTACHMENTS / "8.xlsx", sheet_name="Calibrated chemical dataset"
+    )
+    if not chemistry["beer"].is_unique or not calibrated["beer"].is_unique:
+        raise ValueError("beer must be unique before scale audit")
+    if set(chemistry["beer"]) != set(calibrated["beer"]):
+        raise ValueError("attachment 1 and calibrated attachment 8 beer keys disagree")
+    calibrated = calibrated.set_index("beer").loc[chemistry["beer"]]
+    feature_columns = [column for column in chemistry.columns if column not in META_COLUMNS]
+    shared = [column for column in feature_columns if column in calibrated.columns]
+    rows = []
+    for column in shared:
+        stored = chemistry[column].to_numpy(float)
+        raw = calibrated[column].to_numpy(float)
+        positive = np.isfinite(stored) & np.isfinite(raw) & (raw > 0)
+        if not positive.any():
+            raise ValueError(f"no positive calibrated values for {column}")
+        raw_match = np.isclose(
+            stored[positive], raw[positive], rtol=1e-7, atol=2e-6
+        )
+        log10_match = np.isclose(
+            stored[positive], np.log10(raw[positive]), rtol=1e-7, atol=2e-6
+        )
+        scale = "log10" if log10_match.mean() > raw_match.mean() else "raw"
+        selected_match = log10_match if scale == "log10" else raw_match
+        rows.append(
+            {
+                "feature_code": column,
+                "scale_in_1_csv": scale,
+                "n_positive_comparisons": int(positive.sum()),
+                "positive_value_match_rate": float(selected_match.mean()),
+                "raw_identity_match_rate": float(raw_match.mean()),
+                "log10_identity_match_rate": float(log10_match.mean()),
+                "calibrated_zero_count": int(np.sum(np.isfinite(raw) & (raw == 0))),
+                "negative_values_in_1_csv": int(np.sum(stored < 0)),
+                "model_action": (
+                    "keep supplied log10 values; do not log again"
+                    if scale == "log10"
+                    else "keep supplied raw values"
+                ),
+            }
+        )
+    audit = pd.DataFrame(rows)
+    if len(audit) != 70:
+        raise ValueError(f"expected 70 attachment-8 comparable fields, got {len(audit)}")
+    if (audit["scale_in_1_csv"] == "log10").sum() != 37:
+        raise ValueError("official scale audit no longer identifies 37 log10 fields")
+    return audit
+
+
+def missingness_audit(x: pd.DataFrame) -> pd.DataFrame:
+    """Return per-feature missingness without imputing the full dataset."""
+    missing = x.isna().sum()
+    return pd.DataFrame(
+        {
+            "feature_code": x.columns,
+            "missing_cells": missing.to_numpy(int),
+            "missing_rate": (missing / len(x)).to_numpy(float),
+            "model_action": np.where(
+                missing.to_numpy() > 0,
+                "training-fold median + training-fold missing indicator",
+                "retain as supplied",
+            ),
+        }
+    )
+
+
+def preprocessing_steps(x: pd.DataFrame, y: pd.DataFrame) -> pd.DataFrame:
+    """Build the paper-facing cleaning table with explicit shape changes."""
+    missing_columns = int((x.isna().sum() > 0).sum())
+    rows = [
+        {
+            "step_id": "P0",
+            "stage": "读取",
+            "operation": "读取附件1与附件4，核对字段和数值类型",
+            "shape_before": "1.csv 250×234; 4.csv 250×53",
+            "shape_after": "1.csv 250×234; 4.csv 250×53",
+            "rows_before": "250",
+            "cols_before": "234/53",
+            "rows_after": "250",
+            "cols_after": "234/53",
+            "fit_scope": "全数据契约核验，不估计模型参数",
+            "sample_deletion": "no",
+            "reason": "确认实际附件规模，避免按题面约数预设列数",
+        },
+        {
+            "step_id": "P1",
+            "stage": "连接",
+            "operation": "以beer唯一键对齐附件1与附件4；禁用beer_id",
+            "shape_before": "两个250行表",
+            "shape_after": "250个一一对应样本",
+            "rows_before": "250",
+            "cols_before": "—",
+            "rows_after": "250",
+            "cols_after": "—",
+            "fit_scope": "全数据键约束",
+            "sample_deletion": "no",
+            "reason": "beer_id在附件4中有浮点精度损失，beer完整且唯一",
+        },
+        {
+            "step_id": "P2",
+            "stage": "拆分",
+            "operation": "移除标识字段，形成231维X和50维连续Y",
+            "shape_before": "250×234; 250×53",
+            "shape_after": f"250×{x.shape[1]}; 250×{y.shape[1]}",
+            "rows_before": "250",
+            "cols_before": "234/53",
+            "rows_after": "250",
+            "cols_after": f"{x.shape[1]}/{y.shape[1]}",
+            "fit_scope": "字段白名单",
+            "sample_deletion": "no",
+            "reason": "beer仅作主键，beer_id不连接/建模，风格仅作分层和基线",
+        },
+        {
+            "step_id": "P3",
+            "stage": "尺度",
+            "operation": "附件8可核验的70个字段中，37个log10字段保持附件尺度",
+            "shape_before": f"250×{x.shape[1]}",
+            "shape_after": f"250×{x.shape[1]}",
+            "rows_before": "250",
+            "cols_before": str(x.shape[1]),
+            "rows_after": "250",
+            "cols_after": str(x.shape[1]),
+            "fit_scope": "由附件8原量纲表核验",
+            "sample_deletion": "no",
+            "reason": "其余33个可核验字段为原尺度；对数字段负值表示原浓度小于1，不重复取对数",
+        },
+        {
+            "step_id": "P4",
+            "stage": "缺失",
+            "operation": "训练折中位数填补，并为训练折含缺失的列添加指示变量",
+            "shape_before": "n_train×231",
+            "shape_after": "n_train×(231+k)",
+            "rows_before": "n_train",
+            "cols_before": "231",
+            "rows_after": "n_train",
+            "cols_after": f"231+k (0≤k≤{missing_columns})",
+            "fit_scope": "每个训练折单独拟合并应用到对应验证折",
+            "sample_deletion": "no",
+            "reason": "保留63个含缺失样本并防止全数据统计泄漏",
+        },
+        {
+            "step_id": "P5",
+            "stage": "异常值",
+            "operation": "保留全部样本；不按全数据分位数删样本或截尾",
+            "shape_before": f"250×{x.shape[1]}",
+            "shape_after": f"250×{x.shape[1]}",
+            "rows_before": "250",
+            "cols_before": str(x.shape[1]),
+            "rows_after": "250",
+            "cols_after": str(x.shape[1]),
+            "fit_scope": "主分析；winsorize仅允许在线性模型训练折内做消融",
+            "sample_deletion": "no",
+            "reason": "极端值可能是真实啤酒化学差异，全数据删样会泄漏并损伤小样本",
+        },
+        {
+            "step_id": "P6",
+            "stage": "目标与输出",
+            "operation": "在标准化连续值上拟合；折外预测用训练折经验CDF映射到0—6",
+            "shape_before": "n_test×50 z预测",
+            "shape_after": "n_test×50 z预测 + n_test×50相对等级",
+            "rows_before": "n_test",
+            "cols_before": "50",
+            "rows_after": "n_test",
+            "cols_after": "50+50",
+            "fit_scope": "每个外层训练折单独构造经验分布",
+            "sample_deletion": "no",
+            "reason": "附件4不是原始0—6评分，不能做逆标准化",
+        },
+    ]
+    return pd.DataFrame(rows)
+
+
+def attachment_hashes() -> dict[str, str]:
+    """Fingerprint official attachments 1--8 used by the contract."""
+    names = ["1.csv", "2.csv", "3.xlsx", "4.csv", "5.csv", "6.csv", "7.csv", "8.xlsx"]
+    return {
+        name: hashlib.sha256((ATTACHMENTS / name).read_bytes()).hexdigest()
+        for name in names
+    }
 
 
 def compound_name_map(x: pd.DataFrame) -> pd.DataFrame:
@@ -248,13 +440,21 @@ def main() -> None:
     RESULT_DIR.mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     x, y, style = load_q1()
+    chemistry = pd.read_csv(ATTACHMENTS / "1.csv")
+    sensory = pd.read_csv(ATTACHMENTS / "4.csv")
     dictionary = target_dictionary(y)
     name_map = compound_name_map(x)
     map_audit = validate_compound_name_map(name_map, x)
+    scale_audit = feature_scale_audit(chemistry)
+    missing_audit = missingness_audit(x)
+    cleaning_steps = preprocessing_steps(x, y)
     corr_audit, row_map = audit_correlations(x, y)
 
     dictionary.to_csv(RESULT_DIR / "q1_target_dictionary.csv", index=False)
     row_map.to_csv(RESULT_DIR / "q1_attachment6_row_map.csv", index=False)
+    scale_audit.to_csv(RESULT_DIR / "q1_feature_scale_audit.csv", index=False)
+    missing_audit.to_csv(RESULT_DIR / "q1_missingness_by_feature.csv", index=False)
+    cleaning_steps.to_csv(RESULT_DIR / "q1_preprocessing_steps.csv", index=False)
     name_map.to_csv(DATA_DIR / "compound_name_map.csv", index=False)
 
     audit = {
@@ -264,9 +464,43 @@ def main() -> None:
         "n_styles": int(style.nunique()),
         "x_missing_cells": int(x.isna().sum().sum()),
         "x_missing_columns": int((x.isna().sum() > 0).sum()),
+        "x_rows_with_missing": int(x.isna().any(axis=1).sum()),
         "y_missing_cells": int(y.isna().sum().sum()),
         "beer_key": "beer",
-        "forbidden_model_fields": ["beer", "beer_id"],
+        "beer_unique_1_csv": int(chemistry["beer"].nunique()),
+        "beer_unique_4_csv": int(sensory["beer"].nunique()),
+        "beer_id_unique_1_csv": int(chemistry["beer_id"].nunique()),
+        "beer_id_unique_4_csv": int(sensory["beer_id"].nunique()),
+        "beer_id_exact_matches_after_beer_alignment": int(
+            np.sum(
+                chemistry["beer_id"].to_numpy()
+                == sensory.set_index("beer").loc[chemistry["beer"], "beer_id"].to_numpy()
+            )
+        ),
+        "forbidden_model_fields": ["beer", "beer_id", "tasting_category_fine"],
+        "stratification_field": "tasting_category_fine",
+        "preprocessing": {
+            "log10_fields_kept_without_retransform": int(
+                (scale_audit["scale_in_1_csv"] == "log10").sum()
+            ),
+            "raw_fields_verified_against_attachment8": int(
+                (scale_audit["scale_in_1_csv"] == "raw").sum()
+            ),
+            "missing_imputation": "training-fold median",
+            "missing_indicator": "training-fold missing-only columns",
+            "sample_deletion": "none",
+            "outlier_policy": "retain all samples; optional winsorize only as training-fold linear-model ablation",
+            "target_scale": "standardized continuous values from 4.csv",
+            "grade_mapping": "training-fold empirical CDF, monotone to [0, 6]",
+        },
+        "existing_experiment_compatibility": {
+            "E001": "compliant: fold-local median + missing indicator; no row deletion or extra log",
+            "E002": "compliant: fold-local median + missing indicator + rank-Gaussian model transform; no row deletion or extra log",
+            "E003": "compliant: fold-local median + missing indicator; tree model keeps supplied scales; no row deletion",
+            "rerun_required": False,
+            "reason": "the clarified cleaning policy matches the already executed pipelines and supplied attachment files are unchanged",
+        },
+        "official_attachment_sha256": attachment_hashes(),
         "compound_name_map": map_audit,
         "correlation_audit": corr_audit,
     }

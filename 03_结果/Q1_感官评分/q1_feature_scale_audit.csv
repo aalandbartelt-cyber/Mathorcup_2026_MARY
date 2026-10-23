@@ -1,0 +1,71 @@
+feature_code,scale_in_1_csv,n_positive_comparisons,positive_value_match_rate,raw_identity_match_rate,log10_identity_match_rate,calibrated_zero_count,negative_values_in_1_csv,model_action
+acetaldehyde,log10,249,1.0,0.0,1.0,1,11,keep supplied log10 values; do not log again
+CS2,log10,41,1.0,0.0,1.0,209,250,keep supplied log10 values; do not log again
+DES,log10,221,1.0,0.0,1.0,29,181,keep supplied log10 values; do not log again
+DMS,log10,249,1.0,0.0,1.0,1,0,keep supplied log10 values; do not log again
+ethyl_2.methyl_butyrate,log10,165,1.0,0.0,1.0,85,250,keep supplied log10 values; do not log again
+ethyl_acetate,log10,250,1.0,0.0,1.0,0,4,keep supplied log10 values; do not log again
+ethyl_decanoate,log10,249,1.0,0.0,1.0,1,250,keep supplied log10 values; do not log again
+ethyl_hexanoate,log10,249,1.0,0.0,1.0,1,250,keep supplied log10 values; do not log again
+ethyl_isovalerate,log10,167,1.0,0.0,1.0,83,250,keep supplied log10 values; do not log again
+ethyl_octanoate,log10,250,1.0,0.0,1.0,0,231,keep supplied log10 values; do not log again
+ethyl_propionate,log10,240,1.0,0.0,1.0,10,250,keep supplied log10 values; do not log again
+H2S,log10,240,1.0,0.0,1.0,10,12,keep supplied log10 values; do not log again
+isoamyl_alcohol,log10,248,1.0,0.0,1.0,2,4,keep supplied log10 values; do not log again
+isobutanol,log10,245,1.0,0.0,1.0,5,11,keep supplied log10 values; do not log again
+isobutyl_acetate,log10,242,1.0,0.0,1.0,8,250,keep supplied log10 values; do not log again
+isopentyl_acetate,log10,249,1.0,0.0,1.0,1,62,keep supplied log10 values; do not log again
+MeSH,log10,250,1.0,0.0,1.0,0,155,keep supplied log10 values; do not log again
+octyl_acetate,log10,140,1.0,0.0,1.0,110,250,keep supplied log10 values; do not log again
+phenethyl_acetate,log10,249,1.0,0.0,1.0,1,248,keep supplied log10 values; do not log again
+phenethyl_alcohol,log10,250,1.0,0.0,1.0,0,4,keep supplied log10 values; do not log again
+X4VG,log10,82,1.0,0.0,1.0,168,250,keep supplied log10 values; do not log again
+SO2.mg.L.,log10,249,1.0,0.0,1.0,1,20,keep supplied log10 values; do not log again
+acetic_acid.g.L.,log10,248,1.0,0.0,1.0,2,243,keep supplied log10 values; do not log again
+ammonia.mg.L.,log10,244,1.0,0.0,1.0,5,15,keep supplied log10 values; do not log again
+color.EBC.,log10,250,1.0,0.0,1.0,0,0,keep supplied log10 values; do not log again
+betaglucan.mg.L.,log10,238,1.0,0.0,1.0,10,0,keep supplied log10 values; do not log again
+lactic_acid.mg.L.,log10,250,1.0,0.0,1.0,0,0,keep supplied log10 values; do not log again
+glycerol,log10,250,1.0,0.0,1.0,0,7,keep supplied log10 values; do not log again
+iron,log10,247,1.0,0.0,1.0,3,241,keep supplied log10 values; do not log again
+pH,log10,250,1.0,0.0,1.0,0,0,keep supplied log10 values; do not log again
+protein.g.L.,log10,250,1.0,0.0,1.0,0,1,keep supplied log10 values; do not log again
+bitterness,log10,248,1.0,0.0,1.0,2,5,keep supplied log10 values; do not log again
+GFS,log10,244,1.0,0.0,1.0,6,184,keep supplied log10 values; do not log again
+ethanol..v.v.,log10,249,1.0,0.0,1.0,1,5,keep supplied log10 values; do not log again
+CO2.PSI.,log10,211,1.0,0.0,1.0,0,39,keep supplied log10 values; do not log again
+unfermentables,log10,249,1.0,0.0,1.0,0,0,keep supplied log10 values; do not log again
+kcalperc,log10,250,1.0,0.0,1.0,0,0,keep supplied log10 values; do not log again
+X2.3.butanedione,raw,241,0.9875518672199171,0.9875518672199171,0.0,9,0,keep supplied raw values
+X3.methylbutanal,raw,242,0.9958677685950413,0.9958677685950413,0.0,7,0,keep supplied raw values
+ethyl.isobutyrate,raw,246,0.9796747967479674,0.9796747967479674,0.0,1,0,keep supplied raw values
+X2.methyltetrahydrofuran.3.one,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+ethyl.butyrate,raw,249,0.9879518072289156,0.9879518072289156,0.0,0,0,keep supplied raw values
+methylpyrazine,raw,238,0.9789915966386554,0.9789915966386554,0.0,12,0,keep supplied raw values
+furfural,raw,248,0.9879032258064516,0.9879032258064516,0.0,1,0,keep supplied raw values
+X3Z.hexenol,raw,250,0.984,0.984,0.0,0,0,keep supplied raw values
+n.hexanol,raw,250,0.976,0.976,0.0,0,0,keep supplied raw values
+styrene,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+amyl.acetate,raw,223,0.9955156950672646,0.9955156950672646,0.0,27,0,keep supplied raw values
+benzaldehyde,raw,247,0.9959514170040485,0.9959514170040485,0.0,0,0,keep supplied raw values
+X5.methylfurfural,raw,249,0.9919678714859438,0.9919678714859438,0.0,0,0,keep supplied raw values
+hexyl.acetate,raw,250,0.984,0.984,0.0,0,0,keep supplied raw values
+benzyl.alcohol,raw,246,0.991869918699187,0.991869918699187,0.0,0,0,keep supplied raw values
+phenylacetaldehyde,raw,248,0.9959677419354839,0.9959677419354839,0.0,1,0,keep supplied raw values
+X.E..beta.ocimene,raw,249,0.9759036144578314,0.9759036144578314,0.0,0,0,keep supplied raw values
+linalool,raw,247,0.9878542510121457,0.9878542510121457,0.0,0,0,keep supplied raw values
+X.E..2.nonenal,raw,249,0.9919678714859438,0.9919678714859438,0.0,0,0,keep supplied raw values
+diethyl.succinate,raw,247,1.0,1.0,0.0,0,0,keep supplied raw values
+X1.alpha.terpineol,raw,250,0.992,0.992,0.0,0,0,keep supplied raw values
+ethyl.nicotinate,raw,248,0.9838709677419355,0.9838709677419355,0.0,2,0,keep supplied raw values
+citronellol,raw,250,0.992,0.992,0.0,0,0,keep supplied raw values
+geraniol,raw,246,0.9878048780487805,0.9878048780487805,0.0,0,0,keep supplied raw values
+X.E.E..2.4.decadienal,raw,249,0.9959839357429718,0.9959839357429718,0.0,0,0,keep supplied raw values
+eugenol,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+gamma.nonalactone,raw,250,0.992,0.992,0.0,0,0,keep supplied raw values
+X.E..beta.damascenone,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+E.caryophyllene,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+alpha.humulene,raw,250,0.996,0.996,0.0,0,0,keep supplied raw values
+Z.nerolidol,raw,250,0.992,0.992,0.0,0,0,keep supplied raw values
+ethyl.pentanoate,raw,250,0.984,0.984,0.0,0,0,keep supplied raw values
+X2.ethyl.3.methylpyrazine,raw,249,0.9919678714859438,0.9919678714859438,0.0,0,0,keep supplied raw values

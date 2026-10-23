@@ -9,7 +9,39 @@ inputs:
   correlation_sensory: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/5.csv
   correlation_cross: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/6.csv
 primary_key: beer
-forbidden_features: [beer, beer_id]
+forbidden_features: [beer, beer_id, tasting_category_fine]
+stratification_field: tasting_category_fine
 correlation_method: spearman
+preprocessing_contract:
+  key:
+    join_on: beer
+    never_join_or_model: beer_id
+  supplied_scales:
+    comparable_fields_in_attachment8: 70
+    verified_log10_fields: 37
+    verified_raw_fields: 33
+    unverified_fields_action: keep_as_supplied
+    action: keep_as_supplied_do_not_log_again
+    negative_value_meaning: original_concentration_below_1
+  missing:
+    observed_cells: 73
+    observed_rows: 63
+    observed_columns: 9
+    imputer: training_fold_median
+    add_indicator: training_fold_missing_columns
+  target:
+    source: 4.csv
+    scale: standardized_continuous
+    grade_0_6: training_fold_empirical_cdf_monotone_mapping
+  outliers:
+    delete_samples: false
+    full_data_quantile_filtering: forbidden
+    optional_ablation: training_fold_winsorize_for_linear_models_only
+artifacts:
+  - 03_结果/Q1_感官评分/q1_data_contract.json
+  - 03_结果/Q1_感官评分/q1_preprocessing_steps.csv
+  - 03_结果/Q1_感官评分/q1_feature_scale_audit.csv
+  - 03_结果/Q1_感官评分/q1_missingness_by_feature.csv
+  - 01_数据/compound_name_map.csv
 random_state: 20261023
 
