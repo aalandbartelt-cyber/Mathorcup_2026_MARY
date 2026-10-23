@@ -2,7 +2,7 @@
 
 本目录用于每个感官维度 Top-3 化合物、bootstrap 入选频率、方法间 Jaccard、共线化合物组和化学合理性证据。任何相关网络、特征筛选与重要性模型必须在重采样训练子集中重算。
 
-当前状态：Q1 的 OOF 模型和公共预处理契约已冻结；路线 B 已获确认。E100—E107 及 E109 已完成。E107 的 500 次风格内 bootstrap 中，150 条候选的入选频率中位数为 0.428；尚需 E108 风格校正与化学证据分级。
+当前状态：Q1 的 OOF 模型和公共预处理契约已冻结；路线 B 已获确认。E100—E109 的主线与敏感性实验已完成。匹配 10×3 原始/风格校正 Top-3 Jaccard 为 0.264，说明最终证据必须区分总关联与风格内关联；下一步为四路稳健秩融合和化学证据分级。
 
 运行 E100：
 
@@ -29,6 +29,18 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=1 \
   conda run --no-capture-output -n mathorcup \
   python 02_代码/Q2_关键化合物/src/run_e107_bootstrap.py \
   --n-bootstraps 500 --run-label ''
+```
+
+运行 E108 风格校正与逐风格删除，并补匹配原始数据对照：
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=1 \
+  conda run --no-capture-output -n mathorcup \
+  python 02_代码/Q2_关键化合物/src/run_e108_style_sensitivity.py
+
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=1 \
+  conda run --no-capture-output -n mathorcup \
+  python 02_代码/Q2_关键化合物/src/run_e108_raw_calibration.py
 ```
 
 运行 E105 折外条件/模块置换：

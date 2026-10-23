@@ -1,0 +1,12 @@
+target_code,target_name_en,direct_anchor,consensus_rank,method_top3_support,method_top10_support
+A_malt_cara,Malt aroma - caramel,color.EBC.,,,
+acidity,Acidity,pH,,,
+bitternes,Bitterness,bitterness,,,
+X4vg,4-vinyl guaiacol,X4VG,1.0,3.0,3.0
+diacetyl,Diacetyl,X2.3.butanedione,158.0,0.0,0.0
+dms,Dimethyl sulfide,DMS,127.0,0.0,0.0
+t2n,Trans-2-nonenal,X.E..2.nonenal,144.0,0.0,0.0
+lactic,Lactic acid,acids_sum,,,
+alcohol,Alcohol,ethanol..v.v.,2.0,2.0,3.0
+body,Body,ethanol..v.v.,5.0,1.0,2.0
+co2,Carbonation,CO2.PSI.,3.0,1.0,3.0

@@ -1,0 +1,29 @@
+experiment: E108
+question: Q2
+status: registered
+style_field: tasting_category_fine
+style_adjustment:
+  method: subtract_training_fold_style_mean
+  unseen_style_fallback: training_fold_global_mean
+  outer_folds: frozen_10x3
+leave_one_style_out:
+  styles: all_22_observed_styles
+  folds_per_deletion: frozen_repeat_0_three_folds_after_row_deletion
+methods:
+  E101: absolute_spearman
+  E103:
+    lambda_l1: 0.03
+    lambda_l2: 1.00
+  E105:
+    n_estimators: 300
+    max_features: 1.00
+    min_samples_leaf: 2
+    conditional_neighbor_bins: 4
+consensus:
+  rule: same_as_E106_support_aware_equal_weight_RRF
+  rrf_k: 60
+references:
+  style_adjusted: E106_all_style_consensus
+  leave_one_style_out: E108_fixed_parameter_repeat_0_consensus
+random_state: 20261024
+gpu_used: false

@@ -1,0 +1,39 @@
+{
+  "experiment": "E108",
+  "status": "complete",
+  "style_count": 22,
+  "style_adjustment": "training-fold style means for both X and Y",
+  "style_adjusted_vs_E106": {
+    "mean_jaccard": 0.25999999999999995,
+    "median_jaccard": 0.2,
+    "exact_top3_targets": 0
+  },
+  "repeat0_fixed_parameter_vs_E106": {
+    "mean_jaccard": 0.5660000000000001,
+    "median_jaccard": 0.5,
+    "exact_top3_targets": 12
+  },
+  "leave_one_style_out": {
+    "mean_jaccard": 0.5227272727272727,
+    "median_jaccard": 0.5,
+    "minimum_jaccard": 0.0,
+    "mean_reference_candidate_survival": 0.6406060606060606
+  },
+  "gpu_used": false,
+  "random_state": 20261024,
+  "elapsed_seconds": 588.409,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "matched_raw_10x3_vs_E106": {
+    "mean_jaccard": 0.672,
+    "median_jaccard": 0.5,
+    "exact_top3_targets": 19
+  },
+  "matched_raw_vs_style_adjusted_10x3": {
+    "mean_jaccard": 0.264,
+    "median_jaccard": 0.2,
+    "exact_top3_targets": 2
+  }
+}

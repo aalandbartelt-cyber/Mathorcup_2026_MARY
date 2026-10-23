@@ -1,0 +1,1101 @@
+omitted_style,comparison,target_code,intersection,union,jaccard,exact_top3
+Amber,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_hops_all,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_malt_burn,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,F_malt_burn,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Amber,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,acidity,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,orange,1,5,0.2,False
+Amber,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Amber,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_hops_woody,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_malt_burn,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,A_malt_grain,0,6,0.0,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_malt_bread,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,aftertaste,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Blond,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Blond,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Blond,repeat0_reference_vs_leave_one_style_out,t2n,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_hops_woody,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,A_malt_grain,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_hops_all,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,diacetyl,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,orange,3,3,1.0,True
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Brett/cofermented,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_hops_all,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_hops_woody,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Brown,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,stale_hops,3,3,1.0,True
+Brown,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Brown,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_hops_woody,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,acetic,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,diacetyl,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,lactic,1,5,0.2,False
+Brut,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Brut,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Brut,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_hops_woody,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_malt_burn,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_malt_burn,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,F_malt_cara,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,bitternes,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Christmas,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,lactic,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,stale_hops,1,5,0.2,False
+Christmas,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Christmas,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_hops_all,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_hops_woody,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Dubbel,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,orange,1,5,0.2,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Dubbel,repeat0_reference_vs_leave_one_style_out,t2n,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_malt_burn,0,6,0.0,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,F_malt_burn,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,co2,1,5,0.2,False
+Faro,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,overall,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Faro,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Faro,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_hops_woody,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,acidity,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,alcohol,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Flanders old brown,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_hops_woody,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_malt_bread,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_malt_burn,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_hops_all,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,aftertaste,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,alcohol,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,co2,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,diacetyl,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,metallic,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,stale_hops,3,3,1.0,True
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Fruitbeer,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_hops_all,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_hops_woody,0,6,0.0,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,aftertaste,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,body,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,co2,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,lactic,3,3,1.0,True
+Hoppy,repeat0_reference_vs_leave_one_style_out,metallic,1,5,0.2,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Hoppy,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_hops_woody,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,0,6,0.0,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_hops_all,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,lactic,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,metallic,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,orange,1,5,0.2,False
+Kriek,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Kriek,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Kriek,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_esters_flower,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_hops_all,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,A_hops_woody,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_malt_burn,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,A_malt_grain,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,F_esters_flower,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_malt_all,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,diacetyl,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,lactic,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,orange,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Lambic,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Lambic,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Lambic,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_malt_bread,0,6,0.0,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_malt_burn,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,A_malt_grain,0,6,0.0,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_esters_flower,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,barnyard,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,orange,3,3,1.0,True
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,stale_hops,1,5,0.2,False
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Low/No alcohol,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_hops_noble,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_malt_burn,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_hops_all,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,acidity,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,aftertaste,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,metallic,3,3,1.0,True
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,stale_hops,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,sweetness,1,5,0.2,False
+Pils/Lager,repeat0_reference_vs_leave_one_style_out,t2n,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,bitternes,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,diacetyl,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Saison,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Saison,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Saison,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_malt_cara,0,6,0.0,False
+Scotch,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_hops_all,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_hops_noble,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,acetic,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,aftertaste,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,orange,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,overall,1,5,0.2,False
+Scotch,repeat0_reference_vs_leave_one_style_out,stale_hops,3,3,1.0,True
+Scotch,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Scotch,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_esters_flower,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_hops_noble,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_malt_bread,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_malt_burn,0,6,0.0,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_malt_all,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_malt_burn,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_malt_cara,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,X4vg,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,barnyard,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,co2,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,diacetyl,0,6,0.0,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,overall,3,3,1.0,True
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Stout/Porter,repeat0_reference_vs_leave_one_style_out,t2n,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_malt_burn,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,A_malt_grain,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,3,3,1.0,True
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,3,3,1.0,True
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_malt_bread,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,bitternes,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,body,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,lactic,1,5,0.2,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Strong ale,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,A_esters_all,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_hops_noble,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_esters_all,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_hops_woody,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,F_malt_bread,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,alcohol,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+Tripel,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,coriander,0,6,0.0,False
+Tripel,repeat0_reference_vs_leave_one_style_out,diacetyl,1,5,0.2,False
+Tripel,repeat0_reference_vs_leave_one_style_out,dms,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+Tripel,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_esters_flower,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_hops_noble,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_malt_all,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_malt_bread,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_malt_cara,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,A_malt_grain,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_esters_flower,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_malt_bread,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_malt_burn,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,F_malt_grain,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,acetic,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,body,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,clove,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,co2,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,coriander,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,stale_hops,3,3,1.0,True
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,sweetness,2,4,0.5,False
+West Flanders ale,repeat0_reference_vs_leave_one_style_out,t2n,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_esters_all,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_esters_ethac,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_esters_flower,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_esters_fruity,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_esters_isoaa,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,A_hops_all,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_hops_citrus,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_hops_noble,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,A_hops_tropical,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_hops_woody,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_malt_all,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_malt_bread,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_malt_burn,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_malt_cara,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,A_malt_grain,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_esters_all,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_esters_ethac,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,F_esters_flower,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_esters_fruity,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_esters_isoaa,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_hops_all,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_hops_citrus,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_hops_noble,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,F_hops_tropical,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_hops_woody,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_malt_all,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,F_malt_bread,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,F_malt_burn,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,F_malt_cara,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,F_malt_grain,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,X4vg,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,acetic,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,acidity,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,aftertaste,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,alcohol,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,barnyard,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,bitternes,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,body,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,clove,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,co2,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,coriander,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,diacetyl,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,dms,1,5,0.2,False
+Wheat,repeat0_reference_vs_leave_one_style_out,lactic,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,metallic,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,orange,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,overall,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,stale_hops,2,4,0.5,False
+Wheat,repeat0_reference_vs_leave_one_style_out,sweetness,3,3,1.0,True
+Wheat,repeat0_reference_vs_leave_one_style_out,t2n,3,3,1.0,True
