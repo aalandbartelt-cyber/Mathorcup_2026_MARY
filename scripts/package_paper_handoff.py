@@ -13,6 +13,13 @@ from datetime import datetime
 from pathlib import Path
 
 QNUM = {"Q1": "第一问", "Q2": "第二问", "Q3": "第三问"}
+Q1_REQUIRED_FIGURES = [
+    "图1_模型对比.png",
+    "图2_目标分布与逐目标R2.png",
+    "图3_OOF观测预测.png",
+    "图4_风格误差与量表映射.png",
+    "附图S1_残差诊断.png",
+]
 
 
 def git_head(root: Path) -> str:
@@ -47,12 +54,22 @@ def main() -> None:
     assumptions = find_one(qdir, "模型假设*.docx") or find_one(qdir, "模型假设*.md")
     analysis = find_one(qdir, "问题分析*.docx") or find_one(qdir, "问题分析*.md")
     figs = sorted([p for p in figdir.glob("*") if p.suffix.lower() in {".png", ".pdf", ".svg"}]) if figdir.exists() else []
+    qlist = figdir / f"{key}_图清单.csv" if figdir.exists() else None
+
+    if key == "Q1":
+        docx = qdir / "第一问_论文正文_v1.docx"
+        assumptions = qdir / "模型假设_Q1.docx"
+        analysis = qdir / "问题分析_Q1.docx"
+        figs = [figdir / name for name in Q1_REQUIRED_FIGURES]
 
     missing = []
-    if not docx: missing.append(f"论文正文 docx（{qdir}/{qnum}_论文正文_v1.docx）")
-    if not assumptions: missing.append(f"模型假设（{qdir}/模型假设_*.docx|md）")
-    if not analysis: missing.append(f"问题分析（{qdir}/问题分析_*.docx|md）")
+    if not docx or not docx.is_file(): missing.append(f"论文正文 docx（{qdir}/{qnum}_论文正文_v1.docx）")
+    if not assumptions or not assumptions.is_file(): missing.append(f"模型假设（{qdir}/模型假设_*.docx|md）")
+    if not analysis or not analysis.is_file(): missing.append(f"问题分析（{qdir}/问题分析_*.docx|md）")
     if not figs: missing.append(f"图片源文件（{figdir}/*.png|pdf|svg）")
+    for fig in figs:
+        if not fig.is_file(): missing.append(f"指定图片（{fig}）")
+    if not qlist or not qlist.is_file(): missing.append(f"图清单（{figdir}/{key}_图清单.csv）")
     if missing:
         raise SystemExit("交付包缺项：\n- " + "\n- ".join(missing))
 
@@ -60,15 +77,13 @@ def main() -> None:
     zip_path = outdir / f"{args.question}_交付包.zip"
     with tempfile.TemporaryDirectory() as td:
         stage = Path(td) / args.question
-        (stage / "图片" / "附图").mkdir(parents=True, exist_ok=True)
+        (stage / "图片").mkdir(parents=True, exist_ok=True)
         shutil.copy2(docx, stage / docx.name)
         shutil.copy2(assumptions, stage / assumptions.name)
         shutil.copy2(analysis, stage / analysis.name)
         for f in figs:
             shutil.copy2(f, stage / "图片" / f.name)
-        qlist = figdir / f"{key}_图清单.csv" if figdir.exists() else None
-        if qlist and qlist.exists():
-            shutil.copy2(qlist, stage / "图片" / qlist.name)
+        shutil.copy2(qlist, stage / "图片" / qlist.name)
         manifest = [
             f"# 交付说明（{args.question}）",
             f"- 生成时间：{datetime.now():%Y-%m-%d %H:%M}",
@@ -76,12 +91,12 @@ def main() -> None:
             f"- 正文：{docx.name}",
             f"- 模型假设：{assumptions.name}",
             f"- 问题分析：{analysis.name}",
-            f"- 图片：{len(figs)} 张（图片/）；附图放 图片/附图/",
+            f"- 图片：{len(figs)} 张 + {qlist.name}（图片/）",
             "",
-            "## 待确认",
-            "- 图质量是否通过用户检查",
-            "- 正文数字是否与 03_结果 最新指标一致",
-            "- 0–6 映射口径是否按训练折经验分布",
+            "## 交付状态",
+            "- Q1 图质量已通过用户检查",
+            "- 正文数字已与 03_结果 E001—E003 指标一致",
+            "- 0–6 相对强度等级仅按训练折经验分布映射",
         ]
         (stage / "交付说明.md").write_text("\n".join(manifest), encoding="utf-8")
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
