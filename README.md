@@ -82,6 +82,14 @@ mathorcup/
 └── README.md
 ```
 
+## 2026 提交（MCB2601605）
+
+- 队号 **MCB2601605** → 文件名 **A2601605 / B2601605**（题号 + 7 位数字）
+- 提交区：`06_交付/`（00 官方模板、01 论文、02 结果、03 承诺书、04 支撑材料）
+- 规范速查：`docs/2026提交规范速查.md`；逐项清单：`06_交付/提交清单.md`
+- 归档改名：`python scripts/prepare_submission.py --root . --team MCB2601605 --track A --paper ... --result ...`
+- 提交入口：https://www.saikr.com/vse/bigdata2026
+
 ## AI 协作（ZCode ↔ Codex）
 
 三个角色通过仓库内的文件信箱交接：**Codex**（WSL，核心：建模/选型/结果解读/实现）、**ZCode**（Windows，环境/复核）、**dsh（DeepSeek Harness，Windows，论文评审与优化）**。协议见 `docs/collab/README.md`：

@@ -8,3 +8,9 @@ __pycache__/
 docs/reference/
 docs/analysis/txt/
 docs/analysis/txt_official/
+06_交付/00_官方模板与规范/
+06_交付/01_论文/*.pdf
+06_交付/03_承诺书/*
+!06_交付/03_承诺书/.gitkeep
+06_交付/04_支撑材料/*
+!06_交付/04_支撑材料/.gitkeep

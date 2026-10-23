@@ -24,6 +24,7 @@ dsh 的评审写在 `docs/collab/reviews/REV-*.md`；ZCode 会转成 task 消息
 - 赛事：MathorCup 大数据竞赛（2026 第七届），预计 **2026-10-23 18:00** 开赛。
 - 赛道：A（视觉）/ B（表格）二选一；**赛道与内容不符取消资格**。
 - 交付：论文 PDF（第 1 页摘要+关键词、第 2 页目录、正文 ≤30 页、无页眉/身份）、结果文件 CSV/TXT、承诺书；支撑材料可选。
+- 2026 命名：队号 7 位，论文 `A2601605.pdf`、承诺书 `A2601605承诺书`、附件 `A2601605附件.rar|zip`；入口 saikr.com/vse/bigdata2026。
 - 结果模板：`docs/templates/`；校验：`scripts/check_result.py`；提交审计：`scripts/audit_mcup_submission.py`。
 
 ## 4. 必读（按顺序）
