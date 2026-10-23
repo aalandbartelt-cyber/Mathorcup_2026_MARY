@@ -1,0 +1,201 @@
+{
+  "experiment": "E109",
+  "comparison": "e109_wide minus registered E101-E104 grid",
+  "summary": [
+    {
+      "method": "E103_ElasticNet",
+      "wide_minus_registered_macro_mae_mean": 0.0,
+      "wide_minus_registered_macro_r2_mean": 0.0,
+      "wide_minus_registered_macro_spearman_mean": 0.0,
+      "top3_jaccard_mean": 1.0,
+      "top3_jaccard_median": 1.0,
+      "exact_top3_targets": 50,
+      "n_targets": 50,
+      "selected_l1_below_registered_folds": 0,
+      "selected_l2_above_registered_folds": 0,
+      "selected_beta_above_registered_folds": 0
+    },
+    {
+      "method": "E104_GraphElasticNet",
+      "wide_minus_registered_macro_mae_mean": 7.098419997818573e-05,
+      "wide_minus_registered_macro_r2_mean": 3.67222367867015e-05,
+      "wide_minus_registered_macro_spearman_mean": 0.00016477915371896357,
+      "top3_jaccard_mean": 0.91,
+      "top3_jaccard_median": 1.0,
+      "exact_top3_targets": 41,
+      "n_targets": 50,
+      "selected_l1_below_registered_folds": 0,
+      "selected_l2_above_registered_folds": 0,
+      "selected_beta_above_registered_folds": 20
+    }
+  ],
+  "details": {
+    "E103_ElasticNet": {
+      "paired_repeat_deltas": [
+        {
+          "repeat": 0,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 1,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 2,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 3,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 4,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 5,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 6,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 7,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 8,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        },
+        {
+          "repeat": 9,
+          "macro_mae": 0.0,
+          "macro_r2": 0.0,
+          "macro_spearman": 0.0
+        }
+      ],
+      "selected_parameter_counts": {
+        "lambda_l1": {
+          "0.01": 11,
+          "0.03": 16,
+          "0.06": 3
+        },
+        "lambda_l2": {
+          "0.1": 3,
+          "1.0": 27
+        },
+        "beta": {},
+        "lambda_graph": {}
+      }
+    },
+    "E104_GraphElasticNet": {
+      "paired_repeat_deltas": [
+        {
+          "repeat": 0,
+          "macro_mae": -1.6977428553888174e-05,
+          "macro_r2": 7.387634553640554e-05,
+          "macro_spearman": 4.5748000010281675e-05
+        },
+        {
+          "repeat": 1,
+          "macro_mae": 1.1065645087127152e-05,
+          "macro_r2": -2.7060886510305027e-05,
+          "macro_spearman": 2.0698233398008803e-05
+        },
+        {
+          "repeat": 2,
+          "macro_mae": 3.418387055031946e-06,
+          "macro_r2": 1.4753733390104884e-05,
+          "macro_spearman": -0.00012451239575822504
+        },
+        {
+          "repeat": 3,
+          "macro_mae": -0.0001532308996199383,
+          "macro_r2": 0.000649208134805318,
+          "macro_spearman": 0.0008305454362546039
+        },
+        {
+          "repeat": 4,
+          "macro_mae": 0.0003302921703993156,
+          "macro_r2": 4.1710361695701526e-05,
+          "macro_spearman": 0.0009749964627990826
+        },
+        {
+          "repeat": 5,
+          "macro_mae": 0.0002364489059931696,
+          "macro_r2": 9.66359948189055e-05,
+          "macro_spearman": 1.1464560782437072e-05
+        },
+        {
+          "repeat": 6,
+          "macro_mae": 5.187601485912019e-05,
+          "macro_r2": -0.00032783587553100735,
+          "macro_spearman": 0.0001238182753484085
+        },
+        {
+          "repeat": 7,
+          "macro_mae": -0.0001381621049187931,
+          "macro_r2": 0.0007699269719183832,
+          "macro_spearman": 0.0005531780492408767
+        },
+        {
+          "repeat": 8,
+          "macro_mae": -4.609678304179354e-06,
+          "macro_r2": 2.9241025301801615e-05,
+          "macro_spearman": -5.276853054630992e-05
+        },
+        {
+          "repeat": 9,
+          "macro_mae": 0.0003897209877848917,
+          "macro_r2": -0.0009532334375582929,
+          "macro_spearman": -0.0007353765543395285
+        }
+      ],
+      "selected_parameter_counts": {
+        "lambda_l1": {
+          "0.01": 11,
+          "0.03": 16,
+          "0.06": 3
+        },
+        "lambda_l2": {
+          "0.1": 3,
+          "1.0": 27
+        },
+        "beta": {
+          "1.0": 10,
+          "8.0": 1,
+          "12.0": 19
+        },
+        "lambda_graph": {
+          "0.0": 10,
+          "0.01": 3,
+          "0.1": 12,
+          "1.0": 5
+        }
+      }
+    }
+  },
+  "decision": {
+    "E103": "retain registered grid; wide run is identical",
+    "E104": "do not promote graph penalty; wider beta does not improve OOF MAE"
+  }
+}

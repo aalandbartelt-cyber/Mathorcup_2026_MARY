@@ -66,6 +66,27 @@ RANKING_METHODS = (METHOD_SPEARMAN, METHOD_PLS, METHOD_ELASTIC, METHOD_GRAPH)
 PREDICTION_METHODS = (METHOD_MEAN,) + RANKING_METHODS
 
 
+def resolve_grid_profile(profile: str) -> dict[str, tuple[float, ...]]:
+    """Return registered grids or the boundary-triggered E109 sensitivity grids."""
+    registered = {
+        "pls_components": tuple(PLS_COMPONENTS),
+        "lambda_l1": tuple(L1_GRID),
+        "lambda_l2": tuple(L2_GRID),
+        "graph_beta": tuple(GRAPH_BETAS),
+        "lambda_graph": tuple(GRAPH_LAMBDAS),
+    }
+    if profile == "registered":
+        return registered
+    if profile == "e109_wide":
+        return {
+            **registered,
+            "lambda_l1": (0.003, 0.006, 0.01, 0.03, 0.06, 0.10, 0.20, 0.30),
+            "lambda_l2": (0.0, 0.01, 0.10, 1.0, 3.0, 10.0),
+            "graph_beta": (1, 2, 4, 6, 8, 12),
+        }
+    raise ValueError(f"unknown grid profile: {profile}")
+
+
 def artifact_suffix(run_label: str) -> str:
     """Return a safe optional suffix used by every artifact in one run."""
     if run_label == "":
@@ -100,8 +121,9 @@ def _tune_pls(
     x_train: pd.DataFrame,
     y_train: np.ndarray,
     inner: list[tuple[np.ndarray, np.ndarray]],
+    components: tuple[float, ...],
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    candidates = [{"n_components": value} for value in PLS_COMPONENTS]
+    candidates = [{"n_components": int(value)} for value in components]
     scores = []
     for candidate in candidates:
         fold_scores = []
@@ -129,10 +151,12 @@ def _tune_elasticnet(
     x_train: pd.DataFrame,
     y_train: np.ndarray,
     inner: list[tuple[np.ndarray, np.ndarray]],
+    l1_grid: tuple[float, ...],
+    l2_grid: tuple[float, ...],
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     candidates = [
         {"lambda_l1": l1, "lambda_l2": l2}
-        for l1, l2 in itertools.product(L1_GRID, L2_GRID)
+        for l1, l2 in itertools.product(l1_grid, l2_grid)
     ]
     fold_cache = []
     for inner_train, inner_validation in inner:
@@ -173,6 +197,8 @@ def _tune_graph(
     y_train: np.ndarray,
     inner: list[tuple[np.ndarray, np.ndarray]],
     elastic_parameters: dict[str, Any],
+    graph_betas: tuple[float, ...],
+    graph_lambdas: tuple[float, ...],
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     candidates = [
         {
@@ -180,7 +206,7 @@ def _tune_graph(
             "beta": beta,
             "lambda_graph": lambda_graph,
         }
-        for beta, lambda_graph in itertools.product(GRAPH_BETAS, GRAPH_LAMBDAS)
+        for beta, lambda_graph in itertools.product(graph_betas, graph_lambdas)
     ]
     fold_cache = []
     for inner_train, inner_validation in inner:
@@ -189,7 +215,7 @@ def _tune_graph(
         )
         correlation = fold_spearman_graph(x_train, inner_train)
         laplacians = {}
-        for beta in GRAPH_BETAS:
+        for beta in graph_betas:
             base = signed_normalized_laplacian(correlation, beta)
             laplacians[beta] = extend_laplacian(
                 base, processed.x_train.shape[1]
@@ -304,11 +330,13 @@ def run_experiments(
     *,
     repeats: int,
     run_label: str,
+    grid_profile: str = "registered",
     output_dir: Path = RESULT_DIR,
 ) -> dict[str, Any]:
     """Run E101--E104 and write OOF metrics and fold-stable rankings."""
     started = time.perf_counter()
     suffix = artifact_suffix(run_label)
+    grids = resolve_grid_profile(grid_profile)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     x, y, _, beer = load_q2()
@@ -346,10 +374,23 @@ def run_experiments(
         fold_rankings.append(spearman_ranking)
 
         inner = _inner_indices(len(train), RANDOM_STATE + outer_position)
-        pls_selected, pls_audit = _tune_pls(x_train, y_train, inner)
-        elastic_selected, elastic_audit = _tune_elasticnet(x_train, y_train, inner)
+        pls_selected, pls_audit = _tune_pls(
+            x_train, y_train, inner, grids["pls_components"]
+        )
+        elastic_selected, elastic_audit = _tune_elasticnet(
+            x_train,
+            y_train,
+            inner,
+            grids["lambda_l1"],
+            grids["lambda_l2"],
+        )
         graph_selected, graph_audit = _tune_graph(
-            x_train, y_train, inner, elastic_selected
+            x_train,
+            y_train,
+            inner,
+            elastic_selected,
+            grids["graph_beta"],
+            grids["lambda_graph"],
         )
         for experiment, selected in (
             ("E102", pls_selected),
@@ -566,6 +607,7 @@ def run_experiments(
         "experiments": ["E101", "E102", "E103", "E104"],
         "status": "complete" if repeats == 10 else "pilot_complete",
         "run_label": run_label,
+        "grid_profile": grid_profile,
         "outer_repeats": repeats,
         "outer_folds": len(folds),
         "inner_splits": INNER_SPLITS,
@@ -590,11 +632,7 @@ def run_experiments(
         "pandas": pd.__version__,
         "sklearn": sklearn.__version__,
         "grids": {
-            "pls_components": list(PLS_COMPONENTS),
-            "lambda_l1": list(L1_GRID),
-            "lambda_l2": list(L2_GRID),
-            "graph_beta": list(GRAPH_BETAS),
-            "lambda_graph": list(GRAPH_LAMBDAS),
+            key: list(values) for key, values in grids.items()
         },
     }
     (output_dir / f"q2_run_manifest_E101_E104{suffix}.json").write_text(
@@ -607,8 +645,17 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repeats", type=int, default=1, choices=range(1, 11))
     parser.add_argument("--run-label", default="pilot_R1")
+    parser.add_argument(
+        "--grid-profile",
+        default="registered",
+        choices=("registered", "e109_wide"),
+    )
     args = parser.parse_args()
-    manifest = run_experiments(repeats=args.repeats, run_label=args.run_label)
+    manifest = run_experiments(
+        repeats=args.repeats,
+        run_label=args.run_label,
+        grid_profile=args.grid_profile,
+    )
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 
 

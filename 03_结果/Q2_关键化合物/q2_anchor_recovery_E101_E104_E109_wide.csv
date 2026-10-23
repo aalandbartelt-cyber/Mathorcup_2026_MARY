@@ -1,0 +1,29 @@
+method,target_code,target_name_en,direct_anchor,aggregate_rank,median_rank,median_score,median_nonzero_score,selection_frequency,direction
+E101_SpearmanTop3,X4vg,4-vinyl guaiacol,X4VG,1,1.0,0.4739068177469856,0.4739068177469856,1.0,positive
+E102_PLS_VIP,X4vg,4-vinyl guaiacol,X4VG,51,60.0,1.0871493471464015,1.0871493471464015,1.0,positive
+E103_ElasticNet,X4vg,4-vinyl guaiacol,X4VG,1,1.0,0.07686444440166304,0.07686444440166304,1.0,positive
+E104_GraphElasticNet,X4vg,4-vinyl guaiacol,X4VG,1,1.0,0.07134676237036813,0.07134676237036813,1.0,positive
+E101_SpearmanTop3,alcohol,Alcohol,ethanol..v.v.,1,1.0,0.814994475027409,0.814994475027409,1.0,positive
+E102_PLS_VIP,alcohol,Alcohol,ethanol..v.v.,7,7.0,2.015631728223184,2.015631728223184,1.0,positive
+E103_ElasticNet,alcohol,Alcohol,ethanol..v.v.,2,2.0,0.04025088661121415,0.04025088661121415,1.0,positive
+E104_GraphElasticNet,alcohol,Alcohol,ethanol..v.v.,1,1.0,0.04245337215365996,0.04245337215365996,1.0,positive
+E101_SpearmanTop3,body,Body,ethanol..v.v.,1,1.0,0.7167836200737459,0.7167836200737459,1.0,positive
+E102_PLS_VIP,body,Body,ethanol..v.v.,5,6.0,1.9170545981812581,1.9170545981812581,1.0,positive
+E103_ElasticNet,body,Body,ethanol..v.v.,5,4.5,0.02370581039720189,0.02370581039720189,1.0,positive
+E104_GraphElasticNet,body,Body,ethanol..v.v.,2,2.5,0.025724866411268418,0.025724866411268418,1.0,positive
+E101_SpearmanTop3,co2,Carbonation,CO2.PSI.,4,4.0,0.46004723820067195,0.46004723820067195,1.0,positive
+E102_PLS_VIP,co2,Carbonation,CO2.PSI.,29,29.5,1.3617631567215356,1.3617631567215356,1.0,positive
+E103_ElasticNet,co2,Carbonation,CO2.PSI.,4,25.0,0.011366745798370142,0.011366745798370142,1.0,positive
+E104_GraphElasticNet,co2,Carbonation,CO2.PSI.,8,26.5,0.010552373917854227,0.010552373917854227,1.0,positive
+E101_SpearmanTop3,diacetyl,Diacetyl,X2.3.butanedione,79,82.0,-0.10177338456472389,-0.10177338456472389,1.0,negative
+E102_PLS_VIP,diacetyl,Diacetyl,X2.3.butanedione,132,134.0,-0.7881857215503087,-0.7881857215503087,1.0,negative
+E103_ElasticNet,diacetyl,Diacetyl,X2.3.butanedione,134,94.0,0.0,0.0023037604982179155,0.3,positive
+E104_GraphElasticNet,diacetyl,Diacetyl,X2.3.butanedione,146,94.5,0.0,0.002626875499353423,0.3,positive
+E101_SpearmanTop3,dms,Dimethyl sulfide,DMS,82,89.5,0.08961542429652938,0.08961542429652938,1.0,positive
+E102_PLS_VIP,dms,Dimethyl sulfide,DMS,56,77.5,-0.9016126456678277,-0.9016126456678277,1.0,negative
+E103_ElasticNet,dms,Dimethyl sulfide,DMS,14,44.0,0.003838800833874534,0.0041988904088024505,0.8,positive
+E104_GraphElasticNet,dms,Dimethyl sulfide,DMS,15,40.5,0.0037202910044338688,0.004199732694918707,0.8,positive
+E101_SpearmanTop3,t2n,Trans-2-nonenal,X.E..2.nonenal,15,28.5,-0.15267051682591287,-0.15267051682591287,1.0,negative
+E102_PLS_VIP,t2n,Trans-2-nonenal,X.E..2.nonenal,98,94.5,0.5137183381179111,0.5137183381179111,1.0,positive
+E103_ElasticNet,t2n,Trans-2-nonenal,X.E..2.nonenal,206,63.5,0.0,0.00035246966945822605,0.06666666666666667,positive
+E104_GraphElasticNet,t2n,Trans-2-nonenal,X.E..2.nonenal,206,63.5,0.0,0.0003451638791335888,0.06666666666666667,positive

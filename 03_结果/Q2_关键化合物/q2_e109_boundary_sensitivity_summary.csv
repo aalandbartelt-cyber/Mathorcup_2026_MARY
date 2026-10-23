@@ -1,0 +1,3 @@
+method,wide_minus_registered_macro_mae_mean,wide_minus_registered_macro_r2_mean,wide_minus_registered_macro_spearman_mean,top3_jaccard_mean,top3_jaccard_median,exact_top3_targets,n_targets,selected_l1_below_registered_folds,selected_l2_above_registered_folds,selected_beta_above_registered_folds
+E103_ElasticNet,0.0,0.0,0.0,1.0,1.0,50,50,0,0,0
+E104_GraphElasticNet,7.098419997818573e-05,3.67222367867015e-05,0.00016477915371896357,0.91,1.0,41,50,0,0,20

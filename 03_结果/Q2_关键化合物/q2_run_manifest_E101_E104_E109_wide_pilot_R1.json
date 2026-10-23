@@ -1,0 +1,85 @@
+{
+  "experiments": [
+    "E101",
+    "E102",
+    "E103",
+    "E104"
+  ],
+  "status": "pilot_complete",
+  "run_label": "E109_wide_pilot_R1",
+  "grid_profile": "e109_wide",
+  "outer_repeats": 1,
+  "outer_folds": 3,
+  "inner_splits": 3,
+  "ranking_scope": "strict single compounds",
+  "strict_candidate_count": 218,
+  "graph_recomputed_inside_outer_and_inner_training_splits": true,
+  "preprocessing": {
+    "winsor_quantiles": [
+      0.01,
+      0.99
+    ],
+    "bounds_fitted_on_training_fold_only": true,
+    "order": [
+      "winsorize",
+      "median_impute",
+      "missing_indicator",
+      "standardize"
+    ]
+  },
+  "solver": {
+    "lasso_max_iter": 50000,
+    "automatic_retry_multiplier": 4,
+    "unresolved_convergence_warning": false
+  },
+  "gpu_used": false,
+  "random_state": 20261024,
+  "elapsed_seconds": 93.043,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "grids": {
+    "pls_components": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16
+    ],
+    "lambda_l1": [
+      0.003,
+      0.006,
+      0.01,
+      0.03,
+      0.06,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "lambda_l2": [
+      0.0,
+      0.01,
+      0.1,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "graph_beta": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "lambda_graph": [
+      0.0,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  }
+}

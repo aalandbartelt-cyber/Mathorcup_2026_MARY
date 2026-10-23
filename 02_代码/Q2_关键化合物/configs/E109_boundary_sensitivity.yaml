@@ -1,0 +1,27 @@
+experiment: E109
+question: Q2
+trigger:
+  E103_lambda_l2_upper_boundary_folds: 27
+  E103_total_outer_folds: 30
+  active_graph_beta_at_registered_upper_boundary: true
+comparison_run: E101_E104_registered
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+outer_repeats: 10
+inner_splits: 3
+selection_metric: macro_mae_across_50_targets
+preprocessing:
+  winsor_quantiles: [0.01, 0.99]
+  fit_scope: training_fold_only
+registered_grid:
+  lambda_l1: [0.01, 0.03, 0.06, 0.10, 0.20, 0.30]
+  lambda_l2: [0.00, 0.01, 0.10, 1.00]
+  graph_beta: [1, 2, 4, 6]
+expanded_grid:
+  lambda_l1: [0.003, 0.006, 0.01, 0.03, 0.06, 0.10, 0.20, 0.30]
+  lambda_l2: [0.00, 0.01, 0.10, 1.00, 3.00, 10.00]
+  graph_beta: [1, 2, 4, 6, 8, 12]
+  lambda_graph: [0.00, 0.01, 0.10, 1.00, 10.00]
+decision_rule:
+  promote_only_if: paired_OOF_improvement_exceeds_repeat_variability_or_rank_stability_materially_improves
+  boundary_alone_is_not_evidence: true
+gpu_used: false

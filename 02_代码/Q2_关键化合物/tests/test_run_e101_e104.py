@@ -36,6 +36,17 @@ class E101E104RunnerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             module.artifact_suffix("bad label/with slash")
 
+    def test_e109_grid_profile_expands_boundary_values(self) -> None:
+        module = self.require_module()
+        registered = module.resolve_grid_profile("registered")
+        wide = module.resolve_grid_profile("e109_wide")
+        self.assertEqual(max(registered["lambda_l2"]), 1.0)
+        self.assertGreater(max(wide["lambda_l2"]), 1.0)
+        self.assertLess(min(wide["lambda_l1"]), min(registered["lambda_l1"]))
+        self.assertGreater(max(wide["graph_beta"]), max(registered["graph_beta"]))
+        with self.assertRaises(ValueError):
+            module.resolve_grid_profile("unknown")
+
 
 if __name__ == "__main__":
     unittest.main()
