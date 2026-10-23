@@ -1,0 +1,27 @@
+{
+  "experiment": "E105",
+  "status": "complete",
+  "outer_repeats": 10,
+  "outer_folds": 30,
+  "model": "native multi-output ExtraTreesRegressor",
+  "n_estimators": 300,
+  "hyperparameters": "reuse leakage-safe Q1 E003 selections on identical folds",
+  "conditional_permutation": {
+    "conditioning_variable": "strongest absolute training-fold Spearman neighbor",
+    "training_quantile_bins": 4,
+    "permutations_per_outer_fold": 1
+  },
+  "module_permutation": {
+    "training_fold_abs_spearman_threshold": 0.7,
+    "joint_row_permutation_preserves_within_module_structure": true
+  },
+  "strict_candidate_count": 218,
+  "gpu_used": false,
+  "model_random_state_base": 20261023,
+  "permutation_random_state_base": 20261024,
+  "elapsed_seconds": 39.91,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2"
+}

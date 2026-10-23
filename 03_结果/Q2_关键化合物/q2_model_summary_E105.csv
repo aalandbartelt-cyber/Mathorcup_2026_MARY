@@ -1,0 +1,2 @@
+method,macro_r2_mean,macro_r2_sd,macro_mae_mean,macro_mae_sd,macro_rmse_mean,macro_spearman_mean,positive_r2_targets_mean,n_repeats
+E105_ExtraTreesConditionalPermutation,0.23586953810854286,0.005815051035957718,0.3422216060090302,0.0010766743627378488,0.47943921701294795,0.4143762959072421,48.1,10

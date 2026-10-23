@@ -1,0 +1,29 @@
+experiment: E105
+question: Q2
+status: registered
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+outer_repeats: 10
+model:
+  name: ExtraTreesRegressor
+  native_multi_output: true
+  n_estimators: 300
+  hyperparameters: reuse_Q1_E003_inner_CV_selection_on_identical_outer_fold
+preprocessing:
+  imputer: training_fold_median
+  missing_indicator: training_fold_missing_columns
+importance:
+  feature_method: validation_conditional_permutation_delta_MAE
+  conditioning_neighbor: strongest_absolute_training_fold_spearman
+  conditioning_bins: 4
+  bin_edges_fit_scope: training_fold_only
+  permutations_per_outer_fold: 1
+  module_method: validation_joint_module_permutation_delta_MAE
+  module_graph: training_fold_absolute_spearman
+  module_threshold: 0.70
+  module_internal_rows_permuted_jointly: true
+ranking:
+  primary_order: [top3_frequency, positive_fraction, median_delta_mae]
+  negative_delta_not_rewarded: true
+candidate_scope: strict_compounds_218
+random_state: 20261024
+gpu_used: false

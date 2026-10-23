@@ -1,0 +1,38 @@
+{
+  "experiment": "E105",
+  "performance_vs_E103": {
+    "mean_delta_mae": -0.01069535453229592,
+    "mean_delta_r2": 0.027260302970734514,
+    "mean_delta_spearman": 0.022633067807075948,
+    "mae_wins": 10,
+    "n_repeats": 10
+  },
+  "top3_stability": {
+    "median_top3_frequency": 0.4,
+    "minimum_top3_frequency": 0.1666666666666666,
+    "nonpositive_median_importance_in_top3": 0
+  },
+  "agreement": {
+    "E101_SpearmanTop3": {
+      "mean_jaccard": 0.11199999999999999,
+      "median_jaccard": 0.0,
+      "mean_kuncheva": 0.16179844961240306
+    },
+    "E102_PLS_VIP": {
+      "mean_jaccard": 0.12,
+      "median_jaccard": 0.0,
+      "mean_kuncheva": 0.1685581395348837
+    },
+    "E103_ElasticNet": {
+      "mean_jaccard": 0.12399999999999999,
+      "median_jaccard": 0.0,
+      "mean_kuncheva": 0.17531782945736432
+    },
+    "E104_GraphElasticNet": {
+      "mean_jaccard": 0.12399999999999999,
+      "median_jaccard": 0.0,
+      "mean_kuncheva": 0.17531782945736432
+    }
+  },
+  "decision": "promote E105 prediction model; do not finalize compounds before E106-E108"
+}
