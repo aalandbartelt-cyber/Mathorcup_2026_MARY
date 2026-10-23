@@ -1,0 +1,52 @@
+target_code,target_name_en,target_group,attachment4_position,attachment5_position,direct_anchor
+A_malt_all,Malt aroma - overall,Aroma,0,0,
+A_malt_grain,Malt aroma - grain,Aroma,1,1,
+A_malt_bread,Malt aroma - bread,Aroma,2,2,
+A_malt_cara,Malt aroma - caramel,Aroma,3,3,color.EBC.
+A_malt_burn,Malt aroma - smoked,Aroma,4,4,
+A_hops_all,Hops aroma - overall,Aroma,5,5,
+A_hops_citrus,Hops aroma - citrus,Aroma,6,6,
+A_hops_tropical,Hops aroma - tropical fruit,Aroma,7,7,
+A_hops_noble,Hops aroma - grassy,Aroma,8,8,
+A_hops_woody,Hops aroma - woody,Aroma,9,9,
+A_esters_all,Esters aroma - overall,Aroma,10,10,
+A_esters_ethac,Esters aroma - nail polish,Aroma,11,11,
+A_esters_isoaa,Esters aroma - banana,Aroma,12,12,
+A_esters_flower,Esters aroma - floral,Aroma,13,13,
+A_esters_fruity,Esters aroma - fruity,Aroma,14,14,
+F_malt_all,Malt taste - overall,Flavour-core,15,15,
+F_malt_grain,Malt taste - grain,Flavour-core,16,16,
+F_malt_bread,Malt taste - bread,Flavour-core,17,17,
+F_malt_cara,Malt taste - caramel,Flavour-core,18,18,
+F_malt_burn,Malt taste - smoked,Flavour-core,19,19,
+F_hops_all,Hops taste - overall,Flavour-core,20,20,
+F_hops_citrus,Hops taste - citrus,Flavour-core,21,21,
+F_hops_tropical,Hops taste - tropical fruit,Flavour-core,22,22,
+F_hops_noble,Hops taste - grassy,Flavour-core,23,23,
+F_hops_woody,Hops taste - woody,Flavour-core,24,24,
+F_esters_all,Esters taste - overall,Flavour-core,25,25,
+F_esters_ethac,Esters taste - nail polish,Flavour-core,26,26,
+F_esters_isoaa,Esters taste - banana,Flavour-core,27,27,
+F_esters_flower,Esters taste - floral,Flavour-core,28,28,
+F_esters_fruity,Esters taste - fruity,Flavour-core,29,29,
+acidity,Acidity,Taste-other,30,30,pH
+bitternes,Bitterness,Taste-other,31,31,bitterness
+sweetness,Sweetness,Taste-other,32,32,
+X4vg,4-vinyl guaiacol,Taste-other,33,33,X4VG
+diacetyl,Diacetyl,Taste-other,34,34,X2.3.butanedione
+dms,Dimethyl sulfide,Taste-other,35,35,DMS
+metallic,Metallic,Taste-other,36,36,
+stale_hops,Stale hops,Taste-other,37,37,
+t2n,Trans-2-nonenal,Taste-other,38,38,X.E..2.nonenal
+orange,Orange,Taste-other,39,39,
+coriander,Coriander,Taste-other,40,40,
+clove,Clove,Taste-other,41,41,
+lactic,Lactic acid,Taste-other,42,42,acids_sum
+acetic,Acetic acid,Taste-other,43,43,
+barnyard,Barnyard,Taste-other,44,44,
+alcohol,Alcohol,Palate,45,45,ethanol..v.v.
+aftertaste,Aftertaste,Palate,46,47,
+body,Body,Palate,47,48,ethanol..v.v.
+co2,Carbonation,Palate,48,46,CO2.PSI.
+overall,"Overall appreciation
+(Trained panel)",Overall,49,49,

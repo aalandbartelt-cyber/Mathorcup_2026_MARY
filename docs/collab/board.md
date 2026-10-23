@@ -36,7 +36,7 @@
 | C-002 | 登记 WSL 环境状态 | DONE | CUDA/NMS通过；R独立环境可用；固定时段未提供，详见 MSG-20261021-1203-c1 |
 | C-003 | 练习2 的 577 张最小推理闭环 | DONE | 577行校验通过；仅流程测试；提交0f8b818；回复MSG-20261021-1207-c2 |
 | C-005 | 2026 初赛 A/B 首轮题面与数据盘点 | DONE | 推荐锁定 A；报告见 docs/analysis/2026初赛/首轮赛道判断.md；未训练、未占 GPU |
-| C-006 | A 题数据字典、CV 与 Q1 baseline | IN_PROGRESS | 231 行名称映射与 E001/E002 OOF 已完成；正在补 E003 ExtraTrees 和论文图稿 |
+| C-006 | A 题数据字典、CV 与 Q1 baseline | IN_PROGRESS | E003 ExtraTrees 与 7 张首批图稿已完成并交付检查；DOCX v1 等待图稿确认 |
 
 ## 阻塞
 
@@ -68,3 +68,4 @@
 
 - [2026-10-23 19:00] ZCode: 复核 A 题附件盘点，回复 $ID；标记 1817-a5/1827-c6 DONE
 - [2026-10-23 19:11] Codex: 完成 MSG-20261023-1857-13；新增 231 行 `compound_name_map.csv`，附件 1/2 同序与附件 8 字段覆盖校验均通过，回复 MSG-20261023-1911-c7。
+- [2026-10-23 19:22] Codex: 完成 E003 ExtraTrees 严格嵌套 OOF 与 7 张 R/ggplot2 300 dpi 图稿；mean-OOF 宏平均 R² 0.2502、MAE 0.3389，图清单交付 MSG-20261023-1922-c8，DOCX v1 等待用户确认图稿。

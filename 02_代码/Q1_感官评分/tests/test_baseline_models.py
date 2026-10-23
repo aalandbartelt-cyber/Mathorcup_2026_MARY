@@ -19,12 +19,20 @@ from baseline_models import (  # noqa: E402
     fit_predict_ridge,
     fit_predict_ridge_quantile,
     fit_predict_shrunk_style,
+    empirical_cdf_grade,
     regression_metrics,
     select_parameter_by_mae,
 )
 
 
 class BaselineModelTests(unittest.TestCase):
+    def test_empirical_cdf_grade_uses_only_reference_distribution(self) -> None:
+        reference = np.array([[0.0, 10.0], [1.0, 20.0], [2.0, 30.0]])
+        prediction = np.array([[-1.0, 20.0], [1.0, 40.0]])
+        grade = empirical_cdf_grade(reference, prediction)
+        np.testing.assert_allclose(grade, [[0.0, 4.0], [4.0, 6.0]])
+        self.assertTrue(((grade >= 0.0) & (grade <= 6.0)).all())
+
     def test_global_mean_uses_training_targets_only(self) -> None:
         y_train = np.array([[0.0, 2.0], [2.0, 4.0]])
         prediction = fit_predict_global_mean(y_train, n_validation=2)

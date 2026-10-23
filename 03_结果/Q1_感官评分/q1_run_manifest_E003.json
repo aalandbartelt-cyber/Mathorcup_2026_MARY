@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E003",
+  "status": "complete",
+  "model": "extra_trees",
+  "n_estimators": 300,
+  "candidate_count": 12,
+  "outer_cv": "same frozen 10x3 splits as E001/E002",
+  "inner_cv": "3-fold shuffled KFold",
+  "selection_metric": "macro multi-output MAE",
+  "preprocessing": "fold-local median + missing indicator",
+  "random_state": 20261023,
+  "elapsed_seconds": 177.218,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2"
+}

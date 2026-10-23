@@ -196,6 +196,26 @@ def fit_predict_extra_trees(
     return np.asarray(pipeline.predict(x_validation))
 
 
+def empirical_cdf_grade(
+    reference_targets: np.ndarray, predicted_targets: np.ndarray
+) -> np.ndarray:
+    """Map predictions to [0, 6] using training-only empirical CDFs."""
+    reference_targets = np.asarray(reference_targets, dtype=float)
+    predicted_targets = np.asarray(predicted_targets, dtype=float)
+    if reference_targets.ndim != 2 or predicted_targets.ndim != 2:
+        raise ValueError("reference_targets and predicted_targets must be 2-D")
+    if reference_targets.shape[1] != predicted_targets.shape[1]:
+        raise ValueError("reference and prediction target counts disagree")
+    grades = np.empty_like(predicted_targets, dtype=float)
+    for target_position in range(reference_targets.shape[1]):
+        ordered = np.sort(reference_targets[:, target_position])
+        ranks = np.searchsorted(
+            ordered, predicted_targets[:, target_position], side="right"
+        )
+        grades[:, target_position] = 6.0 * ranks / len(ordered)
+    return grades
+
+
 def select_parameter_by_mae(
     targets: np.ndarray,
     candidates: Sequence[Any],

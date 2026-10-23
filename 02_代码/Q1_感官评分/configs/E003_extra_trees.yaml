@@ -1,0 +1,23 @@
+experiment_id: E003
+question: Q1
+status: registered
+purpose: nonlinear multi-output tree baseline robust to skew and extreme values
+features: chemistry_231
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+inner_cv:
+  method: KFold
+  n_splits: 3
+  shuffle: true
+  random_state: 20261023
+preprocessing:
+  imputer: training_fold_median
+  missing_indicator: true
+model:
+  name: ExtraTreesRegressor
+  native_multi_output: true
+  n_estimators: 300
+  max_depth: null
+  max_features: [0.33, 0.60, 1.00]
+  min_samples_leaf: [1, 2, 4, 8]
+selection_metric: macro_mae
+outputs: 03_结果/Q1_感官评分
