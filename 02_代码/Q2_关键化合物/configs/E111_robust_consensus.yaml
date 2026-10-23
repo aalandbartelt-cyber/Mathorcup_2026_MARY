@@ -1,0 +1,31 @@
+experiment: E111
+question: Q2
+status: registered_after_E108
+lenses:
+  - E106_total_association_consensus
+  - E107_bootstrap_stability_rank
+  - E108_style_adjusted_consensus
+  - E108_leave_one_style_survival_rank
+aggregation:
+  rule: equal_weight_support_aware_reciprocal_rank_fusion
+  rrf_k: 60
+  priority: [top10_support, top3_support, rrf_score, best_rank, feature_code]
+statistical_tiers:
+  R1_strong:
+    minimum_top10_lenses: 3
+    minimum_top3_lenses: 2
+    minimum_bootstrap_frequency: 0.60
+    minimum_leave_one_style_frequency: 0.60
+    maximum_style_adjusted_rank: 10
+  R2_moderate:
+    minimum_top10_lenses: 2
+    minimum_top3_lenses: 1
+    minimum_bootstrap_frequency: 0.30
+    minimum_leave_one_style_frequency: 0.30
+predictability:
+  P1_supported: mean_oof_r2 >= 0.20
+  P2_limited: 0.10 <= mean_oof_r2 < 0.20
+  P3_weak: mean_oof_r2 < 0.10
+candidate_scope: strict_218_single_compounds
+chemical_evidence: separate_posthoc_grading_required
+gpu_used: false

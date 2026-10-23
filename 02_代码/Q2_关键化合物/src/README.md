@@ -10,6 +10,7 @@
 - `run_e107_bootstrap.py`：500 次风格内 bootstrap、OOB 重要性与稳定模块；
 - `style_adjustment.py`、`run_e108_style_sensitivity.py`：无泄漏风格残差化与逐风格删除；
 - `run_e108_raw_calibration.py`：相同 10×3 口径的未校正对照。
+- `robust_consensus.py`、`run_e111_robust_consensus.py`：逐风格保留率与四路支持优先倒数秩融合。
 
-后续模块：总关联、bootstrap、风格校正与留一风格四路稳健秩融合，以及化学证据分级。
+后续模块：OAV、描述词和独立文献化学证据分级，以及 R/ggplot2 论文图表。
 

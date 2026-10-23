@@ -1,0 +1,48 @@
+{
+  "experiment": "E111",
+  "status": "statistical_consensus_complete_chemical_grading_pending",
+  "candidate_count": 218,
+  "target_count": 50,
+  "top3_rows": 150,
+  "lenses": [
+    "E106_total_association",
+    "E107_bootstrap_stability",
+    "E108_style_adjusted",
+    "E108_leave_one_style_survival"
+  ],
+  "top3_statistical_tier_counts": {
+    "R3_exploratory": 60,
+    "R2_moderate": 52,
+    "R1_strong": 38
+  },
+  "target_predictability_counts": {
+    "P1_supported": 22,
+    "P3_weak": 16,
+    "P2_limited": 12
+  },
+  "lens_agreement": {
+    "E106_total_association": {
+      "mean_jaccard": 0.546,
+      "median_jaccard": 0.5,
+      "exact_top3_targets": 10
+    },
+    "E107_bootstrap_stability": {
+      "mean_jaccard": 0.67,
+      "median_jaccard": 0.5,
+      "exact_top3_targets": 20
+    },
+    "E108_style_adjusted": {
+      "mean_jaccard": 0.386,
+      "median_jaccard": 0.5,
+      "exact_top3_targets": 4
+    },
+    "E108_leave_one_style_survival": {
+      "mean_jaccard": 0.586,
+      "median_jaccard": 0.5,
+      "exact_top3_targets": 14
+    }
+  },
+  "direct_anchor_top3_count": 4,
+  "E110_decision": "not_run: graph penalty did not improve OOF and route-B stability remained the priority",
+  "gpu_used": false
+}
