@@ -1,0 +1,151 @@
+target_code,feature_code,selection_frequency,median_rank,rank_q25,rank_q75,rank_iqr,positive_direction_count,negative_direction_count,uncertain_direction_count,selected_count,direction_consistency_when_selected,consensus_rank,bootstrap_rank,compound_name,chemical_name_short,unit,factor_type,target_name_en,target_group,direct_anchor
+A_esters_all,acetaldehyde,0.9,1.0,1.0,1.75,0.75,9,0,0,9,1.0,1,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Esters aroma - overall,Aroma,
+A_esters_all,n.hexanol,0.8,2.5,2.0,3.0,1.0,8,0,0,8,1.0,3,2,N-hexanol,N-hexanol,mg/L,single_compound,Esters aroma - overall,Aroma,
+A_esters_all,ethyl_acetate,0.4,4.0,3.0,7.5,4.5,4,0,0,4,1.0,2,3,Ethyl acetate,Ethyl acetate,mg/L,single_compound,Esters aroma - overall,Aroma,
+A_esters_ethac,ethyl_acetate,0.8,1.5,1.0,2.0,1.0,8,0,0,8,1.0,1,1,Ethyl acetate,Ethyl acetate,mg/L,single_compound,Esters aroma - nail polish,Aroma,
+A_esters_ethac,acetaldehyde,0.5,3.5,2.0,9.5,7.5,5,0,0,5,1.0,2,2,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Esters aroma - nail polish,Aroma,
+A_esters_ethac,X2E.6Z.farnesal,0.2,14.5,7.5,18.75,11.25,2,0,0,2,1.0,8,3,"E,Z-farnesal","E,Z-farnesal",,single_compound,Esters aroma - nail polish,Aroma,
+A_esters_flower,beta.phellandrene,0.6,1.5,1.0,5.75,4.75,6,0,0,6,1.0,1,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Esters aroma - floral,Aroma,
+A_esters_flower,X.E..alpha.ionone,0.3,7.5,3.25,9.0,5.75,3,0,0,3,1.0,4,2,E-α-ionone,E-Î±-ionone,,single_compound,Esters aroma - floral,Aroma,
+A_esters_flower,terpinolene,0.3,13.5,4.25,28.75,24.5,3,0,0,3,1.0,5,3,Terpinolene,Terpinolene,,single_compound,Esters aroma - floral,Aroma,
+A_esters_fruity,beta.phellandrene,0.8,1.0,1.0,2.0,1.0,8,0,0,8,1.0,1,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Esters aroma - fruity,Aroma,
+A_esters_fruity,lactic_acid.mg.L.,0.4,6.5,3.0,73.75,70.75,4,0,0,4,1.0,2,2,Lactic acid,Lactic acid,mg/L,single_compound,Esters aroma - fruity,Aroma,
+A_esters_fruity,X1.10.di.epi.cubenol,0.3,7.0,3.25,9.75,6.5,0,3,0,3,1.0,3,3,Epicubenol,Epicubenol,,single_compound,Esters aroma - fruity,Aroma,
+A_esters_isoaa,n.hexanol,0.8,1.5,1.0,2.75,1.75,8,0,0,8,1.0,3,1,N-hexanol,N-hexanol,mg/L,single_compound,Esters aroma - banana,Aroma,
+A_esters_isoaa,isopentyl_acetate,0.8,2.0,2.0,3.0,1.0,8,0,0,8,1.0,1,2,Isoamyl acetate,Isoamyl acetate,mg/L,single_compound,Esters aroma - banana,Aroma,
+A_esters_isoaa,diethyl.succinate,0.2,29.5,10.5,69.75,59.25,0,2,0,2,1.0,29,3,Diethyl succinate,Diethyl succinate,mg/L,single_compound,Esters aroma - banana,Aroma,
+A_hops_all,ethyl_octanoate,0.7,2.0,1.25,10.5,9.25,7,0,0,7,1.0,1,1,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Hops aroma - overall,Aroma,
+A_hops_all,cis.dihydro.beta.terpineol,0.6,3.0,1.25,13.0,11.75,6,0,0,6,1.0,3,2,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Hops aroma - overall,Aroma,
+A_hops_all,ethyl_isovalerate,0.5,4.0,2.0,10.25,8.25,5,0,0,5,1.0,4,3,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,mg/L,single_compound,Hops aroma - overall,Aroma,
+A_hops_citrus,citronellol,0.5,4.0,2.25,7.5,5.25,5,0,0,5,1.0,2,1,Citronellol,Citronellol,mg/L,single_compound,Hops aroma - citrus,Aroma,
+A_hops_citrus,trans.dihydro.alpha.terpinyl.acetate,0.4,11.0,2.0,29.75,27.75,4,0,0,4,1.0,6,2,Trans-dihydro-α-terpinyl acetate,Trans-dihydro-Î±-terpinyl acetate,,single_compound,Hops aroma - citrus,Aroma,
+A_hops_citrus,X6.methyl.5.hepten.2.one,0.3,5.0,2.5,10.75,8.25,3,0,0,3,1.0,4,3,Methyl heptenone,Methyl heptenone,,single_compound,Hops aroma - citrus,Aroma,
+A_hops_noble,ethyl_octanoate,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,1,1,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Hops aroma - grassy,Aroma,
+A_hops_noble,ethyl_decanoate,0.8,2.0,2.0,2.75,0.75,8,0,0,8,1.0,2,2,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Hops aroma - grassy,Aroma,
+A_hops_noble,isopentyl.hexanoate,0.4,4.0,3.0,5.75,2.75,4,0,0,4,1.0,6,3,Isopentyl hexanoate,Isopentyl hexanoate,,single_compound,Hops aroma - grassy,Aroma,
+A_hops_tropical,DMS,0.8,1.0,1.0,2.0,1.0,8,0,0,8,1.0,2,1,Dimethyl sulfide,Dimethyl sulfide,ug/L,single_compound,Hops aroma - tropical fruit,Aroma,
+A_hops_tropical,methyl.geranate,0.3,14.5,4.0,32.5,28.5,3,0,0,3,1.0,4,2,Methyl geranate,Methyl geranate,,single_compound,Hops aroma - tropical fruit,Aroma,
+A_hops_tropical,CO2.PSI.,0.2,5.5,5.0,13.5,8.5,2,0,0,2,1.0,3,3,Carbon dioxide,Carbon dioxide,PSI,single_compound,Hops aroma - tropical fruit,Aroma,
+A_hops_woody,X.E..ortho.methoxy.cinnamaldehyde,0.4,14.5,3.0,25.0,22.0,4,0,0,4,1.0,6,1,E-ortho-methoxy cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,,single_compound,Hops aroma - woody,Aroma,
+A_hops_woody,ethyl_2.methyl_butyrate,0.4,20.0,2.25,40.0,37.75,4,0,0,4,1.0,5,2,Ethyl 2-methylbutyrate,Ethyl 2-methylbutyrate,mg/L,single_compound,Hops aroma - woody,Aroma,
+A_hops_woody,trans.dihydro.alpha.terpinyl.acetate,0.3,8.5,2.5,33.25,30.75,3,0,0,3,1.0,3,3,Trans-dihydro-α-terpinyl acetate,Trans-dihydro-Î±-terpinyl acetate,,single_compound,Hops aroma - woody,Aroma,
+A_malt_all,beta.phellandrene,0.8,1.5,1.0,2.0,1.0,0,8,0,8,1.0,1,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Malt aroma - overall,Aroma,
+A_malt_all,methylpyrazine,0.4,5.5,2.0,14.0,12.0,4,0,0,4,1.0,8,2,Methylpyrazine,Methylpyrazine,mg/L,single_compound,Malt aroma - overall,Aroma,
+A_malt_all,MeSH,0.4,7.5,3.0,11.0,8.0,4,0,0,4,1.0,5,3,Methanethiol,Methanethiol,ug/L,single_compound,Malt aroma - overall,Aroma,
+A_malt_bread,CO2.PSI.,0.3,4.0,3.25,11.25,8.0,3,0,0,3,1.0,13,1,Carbon dioxide,Carbon dioxide,PSI,single_compound,Malt aroma - bread,Aroma,
+A_malt_bread,glycerol,0.3,8.5,3.5,13.0,9.5,3,0,0,3,1.0,1,2,Glycerol,Glycerol,g/L,single_compound,Malt aroma - bread,Aroma,
+A_malt_bread,furfural,0.2,7.5,5.5,8.0,2.5,2,0,0,2,1.0,9,3,Furfural,Furfural,mg/L,single_compound,Malt aroma - bread,Aroma,
+A_malt_burn,y.methyl.1.octanol,0.4,8.0,1.5,27.75,26.25,4,0,0,4,1.0,3,1,Y-methyl-1-octanol,Y-methyl-1-octanol,,single_compound,Malt aroma - smoked,Aroma,
+A_malt_burn,MeSH,0.3,4.0,2.5,12.5,10.0,3,0,0,3,1.0,1,2,Methanethiol,Methanethiol,ug/L,single_compound,Malt aroma - smoked,Aroma,
+A_malt_burn,methylpyrazine,0.3,5.0,3.25,7.75,4.5,3,0,0,3,1.0,2,3,Methylpyrazine,Methylpyrazine,mg/L,single_compound,Malt aroma - smoked,Aroma,
+A_malt_cara,acetaldehyde,0.5,3.5,2.25,14.75,12.5,5,0,0,5,1.0,1,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Malt aroma - caramel,Aroma,color.EBC.
+A_malt_cara,octyl_acetate,0.4,11.5,1.25,30.5,29.25,4,0,0,4,1.0,12,2,Octyl acetate,Octyl acetate,mg/L,single_compound,Malt aroma - caramel,Aroma,color.EBC.
+A_malt_cara,furfural,0.3,11.5,3.0,17.0,14.0,3,0,0,3,1.0,17,3,Furfural,Furfural,mg/L,single_compound,Malt aroma - caramel,Aroma,color.EBC.
+A_malt_grain,beta.phellandrene,0.5,3.5,3.0,5.5,2.5,0,5,0,5,1.0,3,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Malt aroma - grain,Aroma,
+A_malt_grain,furfural,0.4,5.5,3.0,11.5,8.5,4,0,0,4,1.0,4,2,Furfural,Furfural,mg/L,single_compound,Malt aroma - grain,Aroma,
+A_malt_grain,X5.methylfurfural,0.3,6.5,3.25,20.75,17.5,3,0,0,3,1.0,11,3,5-methylfurfural,5-methylfurfural,mg/L,single_compound,Malt aroma - grain,Aroma,
+F_esters_all,acetaldehyde,1.0,1.0,1.0,1.75,0.75,10,0,0,10,1.0,1,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Esters taste - overall,Flavour-core,
+F_esters_all,ethyl_acetate,0.6,3.0,2.0,4.0,2.0,6,0,0,6,1.0,2,2,Ethyl acetate,Ethyl acetate,mg/L,single_compound,Esters taste - overall,Flavour-core,
+F_esters_all,n.hexanol,0.5,3.5,3.0,4.75,1.75,5,0,0,5,1.0,3,3,N-hexanol,N-hexanol,mg/L,single_compound,Esters taste - overall,Flavour-core,
+F_esters_ethac,ethyl_acetate,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,1,1,Ethyl acetate,Ethyl acetate,mg/L,single_compound,Esters taste - nail polish,Flavour-core,
+F_esters_ethac,glycerol,0.7,3.0,3.0,3.75,0.75,7,0,0,7,1.0,2,2,Glycerol,Glycerol,g/L,single_compound,Esters taste - nail polish,Flavour-core,
+F_esters_ethac,ethanol..v.v.,0.6,3.0,2.0,5.0,3.0,6,0,0,6,1.0,4,3,Ethanol,Ethanol,v/v,single_compound,Esters taste - nail polish,Flavour-core,
+F_esters_flower,beta.phellandrene,0.7,2.0,1.0,3.75,2.75,7,0,0,7,1.0,1,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Esters taste - floral,Flavour-core,
+F_esters_flower,eucalyptol,0.3,9.0,2.75,37.5,34.75,3,0,0,3,1.0,2,2,Eucalyptol,Eucalyptol,,single_compound,Esters taste - floral,Flavour-core,
+F_esters_flower,X.E..dihydro.apofarnesal,0.3,21.0,3.25,41.75,38.5,0,3,0,3,1.0,10,3,E-dihydro-apofarnesal,E-dihydro-apofarnesal,,single_compound,Esters taste - floral,Flavour-core,
+F_esters_fruity,beta.phellandrene,0.8,2.0,1.0,3.0,2.0,8,0,0,8,1.0,1,1,Beta-phellandrene,Î²-phellandrene,,single_compound,Esters taste - fruity,Flavour-core,
+F_esters_fruity,MeSH,0.4,18.0,2.0,30.75,28.75,0,4,0,4,1.0,2,2,Methanethiol,Methanethiol,ug/L,single_compound,Esters taste - fruity,Flavour-core,
+F_esters_fruity,DES,0.2,6.0,4.25,9.5,5.25,0,2,0,2,1.0,8,3,Diethyl sulfide,Diethyl sulfide,ug/L,single_compound,Esters taste - fruity,Flavour-core,
+F_esters_isoaa,isopentyl_acetate,0.8,2.0,1.25,2.75,1.5,8,0,0,8,1.0,1,1,Isoamyl acetate,Isoamyl acetate,mg/L,single_compound,Esters taste - banana,Flavour-core,
+F_esters_isoaa,acetaldehyde,0.4,4.0,3.0,11.75,8.75,4,0,0,4,1.0,2,2,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Esters taste - banana,Flavour-core,
+F_esters_isoaa,lactic_acid.mg.L.,0.2,7.5,4.75,10.75,6.0,2,0,0,2,1.0,14,3,Lactic acid,Lactic acid,mg/L,single_compound,Esters taste - banana,Flavour-core,
+F_hops_all,cis.dihydro.beta.terpineol,0.8,1.0,1.0,2.5,1.5,8,0,0,8,1.0,1,1,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Hops taste - overall,Flavour-core,
+F_hops_all,ethyl_isovalerate,0.6,2.5,2.0,5.75,3.75,6,0,0,6,1.0,4,2,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,mg/L,single_compound,Hops taste - overall,Flavour-core,
+F_hops_all,ethyl_octanoate,0.6,3.0,2.0,6.25,4.25,6,0,0,6,1.0,2,3,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Hops taste - overall,Flavour-core,
+F_hops_citrus,geosmin,0.6,3.0,2.0,4.75,2.75,6,0,0,6,1.0,2,1,Geosmin,Geosmin,,single_compound,Hops taste - citrus,Flavour-core,
+F_hops_citrus,cis.dihydro.beta.terpineol,0.5,5.5,1.25,29.25,28.0,5,0,0,5,1.0,1,2,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Hops taste - citrus,Flavour-core,
+F_hops_citrus,geraniol,0.4,8.0,3.0,13.25,10.25,4,0,0,4,1.0,6,3,Geraniol,Geraniol,mg/L,single_compound,Hops taste - citrus,Flavour-core,
+F_hops_noble,ethyl_octanoate,1.0,1.0,1.0,2.5,1.5,10,0,0,10,1.0,1,1,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Hops taste - grassy,Flavour-core,
+F_hops_noble,cis.dihydro.beta.terpineol,0.6,2.5,2.0,6.25,4.25,6,0,0,6,1.0,2,2,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Hops taste - grassy,Flavour-core,
+F_hops_noble,ethyl_decanoate,0.6,3.0,2.0,5.5,3.5,6,0,0,6,1.0,3,3,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Hops taste - grassy,Flavour-core,
+F_hops_tropical,hexyl.acetate,0.7,3.0,2.0,5.25,3.25,7,0,0,7,1.0,4,1,Hexyl acetate,Hexyl acetate,mg/L,single_compound,Hops taste - tropical fruit,Flavour-core,
+F_hops_tropical,X6.methyl.5.hepten.2.one,0.5,3.0,1.25,7.5,6.25,5,0,0,5,1.0,2,2,Methyl heptenone,Methyl heptenone,,single_compound,Hops taste - tropical fruit,Flavour-core,
+F_hops_tropical,DMS,0.5,3.5,2.25,5.0,2.75,5,0,0,5,1.0,3,3,Dimethyl sulfide,Dimethyl sulfide,ug/L,single_compound,Hops taste - tropical fruit,Flavour-core,
+F_hops_woody,cis.dihydro.beta.terpineol,0.6,2.5,1.25,11.25,10.0,6,0,0,6,1.0,1,1,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Hops taste - woody,Flavour-core,
+F_hops_woody,ethyl_decanoate,0.5,3.5,1.5,10.0,8.5,5,0,0,5,1.0,4,2,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Hops taste - woody,Flavour-core,
+F_hops_woody,isobutanol,0.4,4.0,2.0,5.75,3.75,4,0,0,4,1.0,2,3,Isobutanol,Isobutanol,mg/L,single_compound,Hops taste - woody,Flavour-core,
+F_malt_all,acetaldehyde,0.9,1.0,1.0,1.0,0.0,9,0,0,9,1.0,1,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Malt taste - overall,Flavour-core,
+F_malt_all,ethanol..v.v.,0.5,3.5,2.25,6.0,3.75,5,0,0,5,1.0,3,2,Ethanol,Ethanol,v/v,single_compound,Malt taste - overall,Flavour-core,
+F_malt_all,MeSH,0.4,8.5,2.25,15.75,13.5,4,0,0,4,1.0,4,3,Methanethiol,Methanethiol,ug/L,single_compound,Malt taste - overall,Flavour-core,
+F_malt_bread,acetaldehyde,0.7,2.0,1.0,3.75,2.75,7,0,0,7,1.0,4,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Malt taste - bread,Flavour-core,
+F_malt_bread,glycerol,0.6,2.5,1.0,6.75,5.75,6,0,0,6,1.0,1,2,Glycerol,Glycerol,g/L,single_compound,Malt taste - bread,Flavour-core,
+F_malt_bread,CO2.PSI.,0.4,4.5,2.0,12.75,10.75,4,0,0,4,1.0,2,3,Carbon dioxide,Carbon dioxide,PSI,single_compound,Malt taste - bread,Flavour-core,
+F_malt_burn,MeSH,0.9,1.0,1.0,1.75,0.75,9,0,0,9,1.0,1,1,Methanethiol,Methanethiol,ug/L,single_compound,Malt taste - smoked,Flavour-core,
+F_malt_burn,ethyl_decanoate,0.5,3.5,2.0,5.75,3.75,5,0,0,5,1.0,2,2,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Malt taste - smoked,Flavour-core,
+F_malt_burn,glycerol,0.4,4.5,3.0,8.75,5.75,4,0,0,4,1.0,4,3,Glycerol,Glycerol,g/L,single_compound,Malt taste - smoked,Flavour-core,
+F_malt_cara,acetaldehyde,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,2,1,Acetaldehyde,Acetaldehyde,mg/L,single_compound,Malt taste - caramel,Flavour-core,
+F_malt_cara,ethanol..v.v.,0.7,2.5,2.0,4.5,2.5,7,0,0,7,1.0,1,2,Ethanol,Ethanol,v/v,single_compound,Malt taste - caramel,Flavour-core,
+F_malt_cara,octyl_acetate,0.3,9.0,3.25,14.75,11.5,3,0,0,3,1.0,9,3,Octyl acetate,Octyl acetate,mg/L,single_compound,Malt taste - caramel,Flavour-core,
+F_malt_grain,X.E..beta.ionone,0.7,3.0,1.25,4.5,3.25,0,7,0,7,1.0,3,1,E-β-ionone,E-Î²-ionone,,single_compound,Malt taste - grain,Flavour-core,
+F_malt_grain,terpinen.4.ol,0.4,4.0,2.25,13.5,11.25,0,4,0,4,1.0,2,2,Terpinen-4-ol,Terpinen-4-ol,,single_compound,Malt taste - grain,Flavour-core,
+F_malt_grain,selin.11.en.4.alpha.ol,0.3,9.0,3.25,12.75,9.5,0,3,0,3,1.0,5,3,Kongol,Kongol,,single_compound,Malt taste - grain,Flavour-core,
+X4vg,X4VG,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,1,1,4-vinylguaiacol,4-vinylguaiacol,mg/L,single_compound,4-vinyl guaiacol,Taste-other,X4VG
+X4vg,delta.terpinyl.acetate,0.4,4.0,2.0,8.0,6.0,4,0,0,4,1.0,3,2,Terpiryl acetate,Terpiryl acetate,,single_compound,4-vinyl guaiacol,Taste-other,X4VG
+X4vg,prenyl.isobutyrate,0.4,7.0,3.0,18.75,15.75,0,4,0,4,1.0,4,3,Prenyl isobutyrate,Prenyl isobutyrate,,single_compound,4-vinyl guaiacol,Taste-other,X4VG
+acetic,lactic_acid.mg.L.,1.0,1.0,1.0,1.75,0.75,10,0,0,10,1.0,1,1,Lactic acid,Lactic acid,mg/L,single_compound,Acetic acid,Taste-other,
+acetic,ethyl.phenylacetate,0.7,2.5,2.0,5.25,3.25,7,0,0,7,1.0,2,2,Ethyl phenylacetate,Ethyl phenylacetate,,single_compound,Acetic acid,Taste-other,
+acetic,X4.ethyl.guaiacol,0.6,3.0,2.25,4.75,2.5,6,0,0,6,1.0,6,3,4-ethyl-guaiacol,4-ethyl-guaiacol,A.U.,single_compound,Acetic acid,Taste-other,
+acidity,lactic_acid.mg.L.,0.9,1.5,1.0,2.75,1.75,9,0,0,9,1.0,2,1,Lactic acid,Lactic acid,mg/L,single_compound,Acidity,Taste-other,pH
+acidity,acetic_acid.g.L.,0.7,2.5,2.0,3.75,1.75,7,0,0,7,1.0,6,2,Acetic acid,Acetic acid,g/L,single_compound,Acidity,Taste-other,pH
+acidity,ethyl.phenylacetate,0.5,3.5,2.0,5.75,3.75,5,0,0,5,1.0,1,3,Ethyl phenylacetate,Ethyl phenylacetate,,single_compound,Acidity,Taste-other,pH
+aftertaste,ethanol..v.v.,0.7,2.5,2.0,3.75,1.75,7,0,0,7,1.0,1,1,Ethanol,Ethanol,v/v,single_compound,Aftertaste,Palate,
+aftertaste,ethyl_octanoate,0.7,2.5,1.0,3.75,2.75,7,0,0,7,1.0,3,2,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Aftertaste,Palate,
+aftertaste,ethyl_isovalerate,0.5,3.5,1.25,5.0,3.75,5,0,0,5,1.0,2,3,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,mg/L,single_compound,Aftertaste,Palate,
+alcohol,ethanol..v.v.,1.0,1.0,1.0,1.75,0.75,10,0,0,10,1.0,1,1,Ethanol,Ethanol,v/v,single_compound,Alcohol,Palate,ethanol..v.v.
+alcohol,ethyl_octanoate,0.9,2.0,1.25,2.0,0.75,9,0,0,9,1.0,2,2,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Alcohol,Palate,ethanol..v.v.
+alcohol,ethyl_hexanoate,0.5,3.5,3.0,5.0,2.0,5,0,0,5,1.0,3,3,Ethyl hexanoate,Ethyl hexanoate,mg/L,single_compound,Alcohol,Palate,ethanol..v.v.
+barnyard,gamma.eudesmol,0.9,1.0,1.0,2.0,1.0,9,0,0,9,1.0,1,1,Gamma-eudesmol,Gamma-eudesmol,,single_compound,Barnyard,Taste-other,
+barnyard,heptyl.acetate,0.4,10.0,2.0,15.5,13.5,0,4,0,4,1.0,12,2,Heptyl acetate,Heptyl acetate,,single_compound,Barnyard,Taste-other,
+barnyard,X2.butyloctanoate,0.3,6.5,3.25,22.0,18.75,0,2,1,3,0.6666666666666666,16,3,2-butyl octanoate,2-butyl octanoate,,single_compound,Barnyard,Taste-other,
+bitternes,ethyl_octanoate,1.0,1.0,1.0,1.75,0.75,10,0,0,10,1.0,1,1,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Bitterness,Taste-other,bitterness
+bitternes,cis.dihydro.beta.terpineol,0.7,3.0,2.25,3.75,1.5,7,0,0,7,1.0,3,2,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Bitterness,Taste-other,bitterness
+bitternes,ethyl_decanoate,0.6,2.5,2.0,4.0,2.0,6,0,0,6,1.0,2,3,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Bitterness,Taste-other,bitterness
+body,ethanol..v.v.,0.8,2.0,1.0,3.0,2.0,8,0,0,8,1.0,1,1,Ethanol,Ethanol,v/v,single_compound,Body,Palate,ethanol..v.v.
+body,ethyl_octanoate,0.7,2.0,1.25,3.75,2.5,7,0,0,7,1.0,3,2,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Body,Palate,ethanol..v.v.
+body,glycerol,0.6,3.0,2.0,4.0,2.0,6,0,0,6,1.0,2,3,Glycerol,Glycerol,g/L,single_compound,Body,Palate,ethanol..v.v.
+clove,limonene,0.9,1.5,1.0,2.0,1.0,9,0,0,9,1.0,1,1,Limonene,Limonene,,single_compound,Clove,Taste-other,
+clove,eucalyptol,0.8,2.0,1.25,3.0,1.75,8,0,0,8,1.0,2,2,Eucalyptol,Eucalyptol,,single_compound,Clove,Taste-other,
+clove,X2.ethyl.1.hexanol,0.5,9.0,3.0,25.25,22.25,0,5,0,5,1.0,5,3,2-ethyl-1-hexanol,2-ethyl-1-hexanol,,single_compound,Clove,Taste-other,
+co2,ethyl_octanoate,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,1,1,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Carbonation,Palate,CO2.PSI.
+co2,ethyl_hexanoate,0.6,3.0,2.0,4.0,2.0,6,0,0,6,1.0,5,2,Ethyl hexanoate,Ethyl hexanoate,mg/L,single_compound,Carbonation,Palate,CO2.PSI.
+co2,ethanol..v.v.,0.6,3.0,3.0,5.5,2.5,6,0,0,6,1.0,3,3,Ethanol,Ethanol,v/v,single_compound,Carbonation,Palate,CO2.PSI.
+coriander,ethyl..E..linalool,0.6,2.5,2.0,4.0,2.0,6,0,0,6,1.0,1,1,Ethyl linalool,Ethyl linalool,,single_compound,Coriander,Taste-other,
+coriander,X1.alpha.terpineol,0.6,2.5,2.0,13.0,11.0,6,0,0,6,1.0,4,2,Alpha-terpineol,Î±-terpineol,mg/L,single_compound,Coriander,Taste-other,
+coriander,limonene,0.4,5.0,3.0,11.0,8.0,4,0,0,4,1.0,2,3,Limonene,Limonene,,single_compound,Coriander,Taste-other,
+diacetyl,ethyl_decanoate,0.4,4.0,2.0,9.5,7.5,0,4,0,4,1.0,1,1,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Diacetyl,Taste-other,X2.3.butanedione
+diacetyl,beta.phellandrene,0.4,5.0,1.25,12.75,11.5,0,4,0,4,1.0,5,2,Beta-phellandrene,Î²-phellandrene,,single_compound,Diacetyl,Taste-other,X2.3.butanedione
+diacetyl,X2.butyloctanoate,0.3,10.0,3.25,17.0,13.75,0,3,0,3,1.0,3,3,2-butyl octanoate,2-butyl octanoate,,single_compound,Diacetyl,Taste-other,X2.3.butanedione
+dms,caryophylla.4.12..8.13..dien.5.alpha.ol,0.4,11.5,3.0,21.25,18.25,4,0,0,4,1.0,3,1,"Caryophylla-4,8-dien-5-ol","Caryophylla-4,8-dien-5-ol",,single_compound,Dimethyl sulfide,Taste-other,DMS
+dms,ethyl_isovalerate,0.3,9.0,3.25,13.75,10.5,0,3,0,3,1.0,1,2,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,mg/L,single_compound,Dimethyl sulfide,Taste-other,DMS
+dms,X.E..beta.farnesene,0.3,14.5,4.0,35.0,31.0,3,0,0,3,1.0,6,3,E-β-farnesene,E-Î²-farnesene,,single_compound,Dimethyl sulfide,Taste-other,DMS
+lactic,lactic_acid.mg.L.,1.0,1.0,1.0,1.0,0.0,10,0,0,10,1.0,1,1,Lactic acid,Lactic acid,mg/L,single_compound,Lactic acid,Taste-other,acids_sum
+lactic,butyl.acetate,0.3,4.0,3.25,7.5,4.25,3,0,0,3,1.0,7,2,Butyl acetate,Butyl acetate,,single_compound,Lactic acid,Taste-other,acids_sum
+lactic,ethyl.phenylacetate,0.3,5.5,2.5,7.0,4.5,3,0,0,3,1.0,2,3,Ethyl phenylacetate,Ethyl phenylacetate,,single_compound,Lactic acid,Taste-other,acids_sum
+metallic,ethyl_isovalerate,0.8,2.0,1.25,3.0,1.75,0,8,0,8,1.0,1,1,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,mg/L,single_compound,Metallic,Taste-other,
+metallic,X6.methyl.5.hepten.2.one,0.6,2.0,2.0,20.0,18.0,0,6,0,6,1.0,2,2,Methyl heptenone,Methyl heptenone,,single_compound,Metallic,Taste-other,
+metallic,cis.dihydro.beta.terpineol,0.3,6.0,2.25,21.75,19.5,0,3,0,3,1.0,9,3,Cis-dihydro-β-terpineol,Cis-dihydro-Î²-terpineol,,single_compound,Metallic,Taste-other,
+orange,limonene,0.8,2.0,1.0,2.75,1.75,8,0,0,8,1.0,1,1,Limonene,Limonene,,single_compound,Orange,Taste-other,
+orange,ethyl..E..linalool,0.5,3.5,2.25,11.5,9.25,5,0,0,5,1.0,2,2,Ethyl linalool,Ethyl linalool,,single_compound,Orange,Taste-other,
+orange,X1.alpha.terpineol,0.4,4.5,2.0,6.0,4.0,4,0,0,4,1.0,3,3,Alpha-terpineol,Î±-terpineol,mg/L,single_compound,Orange,Taste-other,
+overall,ethyl_acetate,0.6,2.5,2.0,8.25,6.25,6,0,0,6,1.0,4,1,Ethyl acetate,Ethyl acetate,mg/L,single_compound,Overall appreciation (Trained panel),Overall,
+overall,ethyl_octanoate,0.5,4.0,1.0,6.75,5.75,5,0,0,5,1.0,1,2,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Overall appreciation (Trained panel),Overall,
+overall,ethyl_hexanoate,0.4,5.0,2.25,6.0,3.75,4,0,0,4,1.0,2,3,Ethyl hexanoate,Ethyl hexanoate,mg/L,single_compound,Overall appreciation (Trained panel),Overall,
+stale_hops,gamma.eudesmol,0.6,2.0,1.0,4.0,3.0,6,0,0,6,1.0,1,1,Gamma-eudesmol,Gamma-eudesmol,,single_compound,Stale hops,Taste-other,
+stale_hops,heptyl.acetate,0.3,21.5,5.0,29.75,24.75,0,3,0,3,1.0,13,2,Heptyl acetate,Heptyl acetate,,single_compound,Stale hops,Taste-other,
+stale_hops,X2.butyloctanoate,0.2,6.0,4.25,19.0,14.75,0,2,0,2,1.0,18,3,2-butyl octanoate,2-butyl octanoate,,single_compound,Stale hops,Taste-other,
+sweetness,ethyl_decanoate,0.9,2.0,1.25,2.75,1.5,0,9,0,9,1.0,1,1,Ethyl decanoate,Ethyl decanoate,mg/L,single_compound,Sweetness,Taste-other,
+sweetness,ethyl_octanoate,0.4,4.5,1.5,7.5,6.0,0,4,0,4,1.0,2,2,Ethyl octanoate,Ethyl octanoate,mg/L,single_compound,Sweetness,Taste-other,
+sweetness,ethyl.pentadecanoate,0.4,8.5,2.25,24.0,21.75,0,4,0,4,1.0,15,3,Ethyl pentadecanoate,Ethyl pentadecanoate,,single_compound,Sweetness,Taste-other,
+t2n,alpha.phellandrene,0.4,8.5,2.0,23.0,21.0,0,4,0,4,1.0,4,1,α-phellandrene,Î±-phellandrene,A.U.,single_compound,Trans-2-nonenal,Taste-other,X.E..2.nonenal
+t2n,glycerol,0.3,9.0,2.5,27.75,25.25,0,3,0,3,1.0,3,2,Glycerol,Glycerol,g/L,single_compound,Trans-2-nonenal,Taste-other,X.E..2.nonenal
+t2n,vinyl.caprylate,0.3,9.5,3.25,26.25,23.0,3,0,0,3,1.0,6,3,Vinyl caprylate,Vinyl caprylate,,single_compound,Trans-2-nonenal,Taste-other,X.E..2.nonenal

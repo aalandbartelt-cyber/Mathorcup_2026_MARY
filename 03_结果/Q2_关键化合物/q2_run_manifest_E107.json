@@ -1,0 +1,36 @@
+{
+  "experiment": "E107",
+  "status": "complete",
+  "run_label": "",
+  "n_bootstraps": 500,
+  "sampling": "within-style bootstrap; tree importance evaluated on OOB rows",
+  "oob_size": {
+    "min": 73,
+    "median": 88.0,
+    "max": 104
+  },
+  "fixed_parameters": {
+    "elastic_lambda_l1": 0.03,
+    "elastic_lambda_l2": 1.0,
+    "tree_n_estimators": 300,
+    "tree_max_features": 1.0,
+    "tree_min_samples_leaf": 2
+  },
+  "strict_candidate_count": 218,
+  "stable_module_count": 170,
+  "stable_module_threshold": 0.7,
+  "top3_threshold_counts": {
+    "0.6": 43,
+    "0.7": 31,
+    "0.8": 23
+  },
+  "median_top3_selection_frequency": 0.428,
+  "mean_pairwise_jaccard": 0.24522820000000004,
+  "gpu_used": false,
+  "random_state": 20261024,
+  "elapsed_seconds": 558.094,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2"
+}

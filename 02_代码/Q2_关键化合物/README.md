@@ -2,7 +2,7 @@
 
 本目录用于每个感官维度 Top-3 化合物、bootstrap 入选频率、方法间 Jaccard、共线化合物组和化学合理性证据。任何相关网络、特征筛选与重要性模型必须在重采样训练子集中重算。
 
-当前状态：Q1 的 OOF 模型和公共预处理契约已冻结；路线 B 已获确认。E100—E106 及 E109 已完成。E105 ExtraTrees 的宏平均 $R^2$/MAE/Spearman 为 0.2359/0.3422/0.4144，在 10/10 次重复中均优于 E103。E106 已生成 50×3 统计共识，其中 S1/S2/S3=41/90/19；尚需 E107 bootstrap 与 E108 风格校正。
+当前状态：Q1 的 OOF 模型和公共预处理契约已冻结；路线 B 已获确认。E100—E107 及 E109 已完成。E107 的 500 次风格内 bootstrap 中，150 条候选的入选频率中位数为 0.428；尚需 E108 风格校正与化学证据分级。
 
 运行 E100：
 
@@ -21,6 +21,15 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=1 \
 ```
 
 该流程全程 CPU；预处理顺序为训练折 1%–99% Winsor 截尾、中位数填补、缺失指示和标准化。
+
+运行 E107 正式 bootstrap：
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=1 \
+  conda run --no-capture-output -n mathorcup \
+  python 02_代码/Q2_关键化合物/src/run_e107_bootstrap.py \
+  --n-bootstraps 500 --run-label ''
+```
 
 运行 E105 折外条件/模块置换：
 

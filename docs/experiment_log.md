@@ -11,6 +11,7 @@
 | E109 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E109_boundary_sensitivity.yaml` | `03_结果/Q2_关键化合物/q2_e109_*` | 扩展网格下 E103 的指标与 Top-3 完全不变；E104 未改善 MAE，图惩罚降为消融组 |
 | E105 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E105_extra_trees_permutation.yaml` | `03_结果/Q2_关键化合物/q2_*_E105.*` | ExtraTrees 宏 $R^2$/MAE=0.2359/0.3422，10/10 次重复优于 E103；预测主线晋级，字段 Top-3 待共识与稳定性审计 |
 | E106 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E106_rank_consensus.yaml` | `03_结果/Q2_关键化合物/q2_*_E106.*` | 生成 50×3 三方法统计共识；S1/S2/S3=41/90/19，PLS 敏感性 Jaccard=0.652，尚需 E107/E108 |
+| E107 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E107_bootstrap_stability.yaml` | `03_结果/Q2_关键化合物/q2_bootstrap_*_E107.*`、`q2_stable_module_*_E107.csv` | 500 次风格内 bootstrap 完成；150 条候选入选频率中位数 0.428，≥0.6/0.7/0.8 为 43/31/23 条，两两 Jaccard 均值 0.245；需 E108 与化学证据分级 |
 
 每次运行追加新行，不覆盖旧实验。指标必须链接到机器生成文件，论文数字以结果目录中的冻结版本为准。
 

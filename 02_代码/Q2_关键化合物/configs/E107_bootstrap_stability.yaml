@@ -1,0 +1,28 @@
+experiment: E107
+question: Q2
+status: registered
+n_bootstraps: 500
+sampling:
+  method: within_tasting_category_fine_with_replacement
+  sample_size: 250
+  importance_evaluation: out_of_bag
+methods:
+  E101: training_bootstrap_absolute_spearman
+  E103:
+    lambda_l1: 0.03
+    lambda_l2: 1.00
+  E105:
+    n_estimators: 300
+    max_features: 1.00
+    min_samples_leaf: 2
+    conditional_neighbor_bins: 4
+consensus:
+  rule: same_as_E106_support_aware_equal_weight_RRF
+  rrf_k: 60
+modules:
+  fold_graph: bootstrap_absolute_spearman
+  connected_component_threshold: 0.70
+  stable_coclustering_threshold: 0.70
+stability_thresholds: [0.60, 0.70, 0.80]
+random_state: 20261024
+gpu_used: false
