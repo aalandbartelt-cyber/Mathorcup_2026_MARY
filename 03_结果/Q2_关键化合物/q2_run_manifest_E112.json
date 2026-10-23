@@ -1,0 +1,24 @@
+{
+  "experiment": "E112",
+  "status": "complete",
+  "rows": 150,
+  "targets": 50,
+  "grade_counts": {
+    "C": 78,
+    "D": 48,
+    "B": 16,
+    "A": 8
+  },
+  "semantic_evidence_counts": {
+    "no_specific_support": 109,
+    "source_or_class_consistent": 15,
+    "specific_descriptor": 15,
+    "broad_relation": 6,
+    "direct_identity": 5
+  },
+  "oav_available_rows": 73,
+  "oav_median_above_threshold_rows": 23,
+  "direct_identity_rows": 5,
+  "causal_claims": false,
+  "gpu_used": false
+}

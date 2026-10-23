@@ -11,6 +11,7 @@
 - `style_adjustment.py`、`run_e108_style_sensitivity.py`：无泄漏风格残差化与逐风格删除；
 - `run_e108_raw_calibration.py`：相同 10×3 口径的未校正对照。
 - `robust_consensus.py`、`run_e111_robust_consensus.py`：逐风格保留率与四路支持优先倒数秩融合。
+- `chemical_evidence.py`、`run_e112_chemical_evidence.py`：保守的描述词规则、附件 8 原始浓度 OAV 与 A/B/C/D 分级。
 
-后续模块：OAV、描述词和独立文献化学证据分级，以及 R/ggplot2 论文图表。
+后续模块：R/ggplot2 论文图表与论文手交接材料。
 

@@ -1,0 +1,21 @@
+experiment: E112
+question: Q2
+status: registered_after_statistical_consensus
+input: q2_final_top3_statistical_E111.csv
+evidence_order:
+  - field_identity
+  - direct_anchor_or_descriptor
+  - calibrated_concentration_and_same_unit_threshold
+  - attachment_source_aging_off_flavor_annotation
+  - peer_reviewed_beer_chemistry_literature
+grading:
+  A: direct_or_specific_chemistry_plus_supported_statistics_and_prediction
+  B: consistent_chemistry_with_partial_statistical_or_prediction_support
+  C: indirect_or_conflicted_evidence
+  D: weak_prediction_and_no_specific_chemical_support
+oav:
+  source: attachment_8_calibrated_chemical_dataset
+  threshold: attachment_8_sensory_threshold_median
+  rule: calculate_only_when_calibrated_raw_values_and_same_unit_threshold_exist
+causal_language: prohibited_without_intervention
+gpu_used: false
