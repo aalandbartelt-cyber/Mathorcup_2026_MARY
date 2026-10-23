@@ -31,6 +31,7 @@ references/
   09_案例库与官方口径.md      2025 A/B、2022 讲解、2026 练习、40 篇统计、官方六问
   10_论文评审与优化.md        dsh 专用：六维 rubric、P0/P1/P2、评审输出模板
   11_自强平台操作指南.md      A100 容器/GPU 分配/代码同步/长任务/报错速查
+  12_AI工具合规.md            2026 AI 规定：声明/参考文献/标注/支撑材料 PDF
 assets/
   project_tree.txt            目录骨架
   paper_outline.md            论文骨架
