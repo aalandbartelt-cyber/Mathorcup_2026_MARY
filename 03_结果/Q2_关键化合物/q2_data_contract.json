@@ -1,0 +1,82 @@
+{
+  "experiment_id": "E100",
+  "n_samples": 250,
+  "n_features": 231,
+  "n_targets": 50,
+  "n_styles": 22,
+  "beer_key": "beer",
+  "beer_unique": 250,
+  "forbidden_fields": [
+    "beer",
+    "beer_id",
+    "tasting_category_fine"
+  ],
+  "x_missing_cells": 73,
+  "x_rows_with_missing": 63,
+  "x_columns_with_missing": 9,
+  "target_scale": "standardized continuous values from 4.csv",
+  "graph_definition": "spearman",
+  "official_graph_role": "full-data verification and final descriptive graph",
+  "validation_graph_role": "recompute from each outer-training fold",
+  "soft_graph_betas": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "hard_thresholds_for_sensitivity_only": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "official_graph_audit": {
+    "matrix_size": 231,
+    "symmetric": true,
+    "diagonal_is_one": true,
+    "spearman_max_abs_diff": 6.661338147750939e-16,
+    "pearson_max_abs_diff": 1.1234263749065518,
+    "pearson_mean_abs_diff": 0.08730394533051206
+  },
+  "candidate_scope": {
+    "all_factor_count": 231,
+    "strict_count": 218,
+    "excluded_count": 13,
+    "excluded_feature_codes": [
+      "color.EBC.",
+      "betaglucan.mg.L.",
+      "iron",
+      "pH",
+      "protein.g.L.",
+      "bitterness",
+      "GFS",
+      "unfermentables",
+      "kcalperc",
+      "esters_sum",
+      "aroma_hops_sum",
+      "acids_sum",
+      "sulfur_sum"
+    ],
+    "primary_answer": "strict single compounds",
+    "sensitivity_answer": "all measured factors"
+  },
+  "preprocessing": {
+    "imputation": "training-fold median",
+    "missing_indicator": "training-fold missing columns",
+    "scale_action": "keep supplied scales; do not repeat log transform",
+    "sample_deletion": "none"
+  },
+  "frozen_outer_cv": "03_结果/Q1_感官评分/q1_cv_splits.csv",
+  "input_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "name_map_sha256": "fd15bec4f0377813daf5842fa054013b39668ae06cf3b89f3bbb5960bb72c169",
+  "target_dictionary_sha256": "79352022756befabb8cc6c11e4cf51e0e0aa050e0044892cd7f95488866795fa",
+  "outer_cv_sha256": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1"
+}

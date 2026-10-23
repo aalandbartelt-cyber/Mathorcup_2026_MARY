@@ -1,0 +1,23 @@
+experiment_id: E100
+question: Q2
+status: registered
+purpose: freeze data, candidate eligibility, and signed Spearman graph contracts
+inputs:
+  predictors: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv
+  official_graph: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/2.csv
+  targets: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/4.csv
+  annotations: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/8.xlsx
+key: beer
+forbidden_model_fields: [beer, beer_id, tasting_category_fine]
+target_scale: standardized_continuous
+graph:
+  correlation: spearman
+  signed: true
+  soft_weight_betas: [1, 2, 4, 6]
+  hard_thresholds_sensitivity_only: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+  validation_rule: recompute_with_outer_training_rows_only
+candidate_scopes:
+  primary: strict_single_compounds
+  sensitivity: all_measured_factors
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+random_state: 20261024
