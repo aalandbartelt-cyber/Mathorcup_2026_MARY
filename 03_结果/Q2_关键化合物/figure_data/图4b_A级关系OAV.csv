@@ -1,0 +1,9 @@
+relation,oav_q25,oav_median,oav_q75,oav_above_1_fraction,oav_label,available
+A_esters_ethac — Ethyl acetate,0.8527466847826087,1.2025116304347825,1.643085597826087,0.688,1.20,可计算 OAV
+F_esters_ethac — Ethyl acetate,0.8527466847826087,1.2025116304347825,1.643085597826087,0.688,1.20,可计算 OAV
+X4vg — 4-vinylguaiacol,0,0,0.358602083375,0.072,0,可计算 OAV
+acidity — Lactic acid,0.265,0.34624999999999995,0.4809375,0.172,0.35,可计算 OAV
+alcohol — Ethanol,3.255959737485458,4.140285597677641,4.904446755955996,0.976,4.14,可计算 OAV
+body — Ethanol,3.255959737485458,4.140285597677641,4.904446755955996,0.976,4.14,可计算 OAV
+co2 — Carbon dioxide,NA,NA,NA,NA,NA,无同单位阈值
+lactic — Lactic acid,0.265,0.34624999999999995,0.4809375,0.172,0.35,可计算 OAV

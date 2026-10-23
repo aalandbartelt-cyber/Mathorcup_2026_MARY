@@ -1,0 +1,5 @@
+lens,mean_jaccard,exact_targets,lens_name
+E106_total_association,0.546,10,总关联
+E107_bootstrap_stability,0.67,20,Bootstrap
+E108_leave_one_style_survival,0.586,14,逐风格删除
+E108_style_adjusted,0.386,4,风格内

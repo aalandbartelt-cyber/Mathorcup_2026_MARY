@@ -1,0 +1,33 @@
+relation,lens,rank,rank_for_fill
+A_esters_ethac — Ethyl acetate,总关联,1,1
+A_esters_ethac — Ethyl acetate,Bootstrap,1,1
+A_esters_ethac — Ethyl acetate,风格内,4,4
+A_esters_ethac — Ethyl acetate,逐风格删除,1,1
+F_esters_ethac — Ethyl acetate,总关联,1,1
+F_esters_ethac — Ethyl acetate,Bootstrap,1,1
+F_esters_ethac — Ethyl acetate,风格内,2,2
+F_esters_ethac — Ethyl acetate,逐风格删除,1,1
+X4vg — 4-vinylguaiacol,总关联,1,1
+X4vg — 4-vinylguaiacol,Bootstrap,1,1
+X4vg — 4-vinylguaiacol,风格内,1,1
+X4vg — 4-vinylguaiacol,逐风格删除,1,1
+acidity — Lactic acid,总关联,2,2
+acidity — Lactic acid,Bootstrap,1,1
+acidity — Lactic acid,风格内,1,1
+acidity — Lactic acid,逐风格删除,1,1
+alcohol — Ethanol,总关联,1,1
+alcohol — Ethanol,Bootstrap,1,1
+alcohol — Ethanol,风格内,2,2
+alcohol — Ethanol,逐风格删除,1,1
+body — Ethanol,总关联,1,1
+body — Ethanol,Bootstrap,1,1
+body — Ethanol,风格内,5,5
+body — Ethanol,逐风格删除,1,1
+co2 — Carbon dioxide,总关联,2,2
+co2 — Carbon dioxide,Bootstrap,4,4
+co2 — Carbon dioxide,风格内,3,3
+co2 — Carbon dioxide,逐风格删除,3,3
+lactic — Lactic acid,总关联,1,1
+lactic — Lactic acid,Bootstrap,1,1
+lactic — Lactic acid,风格内,3,3
+lactic — Lactic acid,逐风格删除,1,1

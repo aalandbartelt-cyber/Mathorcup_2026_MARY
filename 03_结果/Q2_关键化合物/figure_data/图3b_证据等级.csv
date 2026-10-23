@@ -1,0 +1,12 @@
+predictability_tier,chemical_evidence_grade,n
+P1 支持,A,6
+P1 支持,B,4
+P1 支持,C,39
+P1 支持,D,17
+P2 有限,A,2
+P2 有限,B,8
+P2 有限,C,19
+P2 有限,D,7
+P3 较弱,B,4
+P3 较弱,C,20
+P3 较弱,D,24
