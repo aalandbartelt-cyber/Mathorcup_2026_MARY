@@ -1,0 +1,45 @@
+attachment6_position,attachment6_name,feature_code,mean_absolute_difference
+0,Ethyl acetate,ethyl_acetate,1.897700746544828e-16
+1,Ethyl decanoate,ethyl_decanoate,1.281700440225464e-16
+2,Ethyl hexanoate,ethyl_hexanoate,1.6285583992470264e-16
+3,Ethyl octanoate,ethyl_octanoate,1.8932121495507382e-16
+4,Ethyl propionate,ethyl_propionate,1.0179357357031904e-16
+5,Isobutyl acetate,isobutyl_acetate,2.0764640007442381e-16
+6,Isoamyl acetate,isopentyl_acetate,2.025983547593313e-16
+7,Octyl acetate,octyl_acetate,1.7807803842639913e-16
+8,Phenethyl acetate,phenethyl_acetate,1.3981871216373064e-16
+9,Ethyl 2-methylbutyrate,ethyl_2.methyl_butyrate,9.145462165349727e-17
+10,Ethyl 3-methylbutyrate,ethyl_isovalerate,1.197176038858494e-16
+11,Ethanol,ethanol..v.v.,2.1585164211579412e-16
+12,Isoamyl alcohol,isoamyl_alcohol,1.8829650837680345e-16
+13,Isobutanol,isobutanol,1.4342693699376242e-16
+14,Phenethyl alcohol,phenethyl_alcohol,1.4225599864747806e-16
+15,Glycerol,glycerol,1.7411419528379214e-16
+16,Iso-alpha acids,bitterness,2.0355245267111855e-16
+17,Alpha-humulene,alpha.humulene,1.1823875212257917e-16
+18,Caryophyllene,E.caryophyllene,1.3156142841808106e-16
+19,Alpha-terpineol,X1.alpha.terpineol,1.533972601719391e-16
+20,Citronellol,citronellol,1.278317729447309e-16
+21,Geraniol,geraniol,1.6302063865492044e-16
+22,Linalool,linalool,1.4945510107278182e-16
+23,Z-nerolidol,Z.nerolidol,8.560860353945543e-17
+24,Acetic acid,acetic_acid.g.L.,9.893995345233719e-17
+25,Lactic acid,lactic_acid.mg.L.,1.3482270855291745e-16
+26,Diacetyl,X2.3.butanedione,1.0806026212728525e-16
+27,4-vinylguaiacol,X4VG,1.3313623207361624e-16
+28,Acetaldehyde,acetaldehyde,1.6663374239472839e-16
+29,Carbon disulfide,CS2,7.383850475495279e-17
+30,Dimethyl sulfide,DMS,1.5976803213746392e-16
+31,Diethyl sulfide,DES,1.7483844233501244e-16
+32,Hydrogen sulfide,H2S,1.613487989049478e-16
+33,Methanethiol,MeSH,2.0386687130113933e-16
+34,Sulfur dioxide,SO2.mg.L.,9.511922499649828e-17
+35,Carbon dioxide,CO2.PSI.,1.8528581446908277e-16
+36,pH,pH,1.5883128146043646e-16
+37,Ammonia,ammonia.mg.L.,6.543376951384516e-17
+38,Betaglucan,betaglucan.mg.L.,1.4349632593280148e-16
+39,Color,color.EBC.,1.8394574058389067e-16
+40,Iron,iron,1.6469464680923806e-16
+41,Protein,protein.g.L.,1.891715950552708e-16
+42,Sugars,GFS,1.4301277176387294e-16
+43,Caloric value,kcalperc,1.9496557146503335e-16

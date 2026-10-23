@@ -1,0 +1,11 @@
+{
+  "method": "RepeatedStratifiedKFold",
+  "stratification": "tasting_category_fine",
+  "n_splits": 3,
+  "n_repeats": 10,
+  "random_state": 20261023,
+  "n_rows": 2500,
+  "validation_rows_per_repeat": 250,
+  "rare_style": "Faro",
+  "rare_style_count": 3
+}

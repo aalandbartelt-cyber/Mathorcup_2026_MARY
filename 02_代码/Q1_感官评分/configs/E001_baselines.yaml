@@ -1,0 +1,29 @@
+experiment_id: E001
+question: Q1
+status: registered
+purpose: leakage-safe CPU baselines
+target_scale: aggregated_panel_z
+features: chemistry_231
+outer_cv:
+  method: RepeatedStratifiedKFold
+  stratify: tasting_category_fine
+  n_splits: 3
+  n_repeats: 10
+  random_state: 20261023
+inner_cv:
+  method: KFold
+  n_splits: 3
+  shuffle: true
+  random_state: 20261023
+preprocessing:
+  imputer: median
+  add_missing_indicator: true
+  scaler_linear: StandardScaler
+models:
+  - global_mean
+  - shrunk_style_mean
+  - ridge
+  - pls2
+metrics: [r2, mae, rmse, spearman, calibration_intercept, calibration_slope]
+outputs: 03_结果/Q1_感官评分
+

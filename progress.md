@@ -18,6 +18,15 @@
   - `task_plan.md`
   - `findings.md`
   - `progress.md`
+
+### Q1：深度/图/核/RL 迭代路线复核
+- **Status:** complete
+- Actions taken:
+  - 检索并核对原始啤酒论文、NeurIPS 表格基准、TabPFN、TabM、FT-Transformer、DeepKriging、Deep Kernel Learning、图 Kriging 与安全离线 RL 的论文和官方代码。
+  - 将 TabPFN 列为第一优先深度增强，将 TabM 列为多任务深度对照。
+  - 设计折内化合物图 GNN 与化学流形核回归，但设置图稳定性/平滑性前置诊断。
+  - 明确 DeepKriging 和强化学习的适用边界，并把 RL 登记为 Q3 具备动态环境后的迭代方向。
+  - 为复杂模型冻结 OOF 改善、目标覆盖、跨重复、留一风格、最差组和复现六项晋级标准。
   - `docs/analysis/2026初赛/首轮赛道判断.md`
 
 ## Test Results
@@ -43,4 +52,37 @@
 | What's the goal? | 今晚完成 A 题 Q1 baseline、Q2 稳定排名原型和 Q3 生成可行性原型 |
 | What have I learned? | 见 `findings.md` |
 | What have I done? | 完成题面、附件、赛道、路线、时间盒和风险登记 |
+
+### Q1：详细问题分析与实验设计
+- **Status:** analysis complete; implementation pending
+- **Started:** 2026-10-23 18:28 CST
+- Actions taken:
+  - 追溯 Nature Communications 原论文、Zenodo 补充数据和原始模型代码。
+  - 核验 16 名评委、0—6 原量表、评委内标准化与附件 4 聚合 z 分数的关系。
+  - 证明缺少评委层面均值/标准差时无法唯一逆变换原始 0—6 均分。
+  - 量化 231 输入的缺失、共线和 PCA 维度；量化 50 目标的偏度、相关结构、风格效应和化学锚点。
+  - 提取原研究 10 类模型、50 目标的留出 R2，形成实验前性能参照和难目标清单。
+  - 冻结 10×3 风格分层外层 CV、留一风格压力测试、模型矩阵、消融和双尺度输出方案。
+- Files created/modified:
+  - `docs/analysis/2026初赛/A题第一问详细分析.md`
+  - `task_plan.md`
+  - `findings.md`
+  - `progress.md`
+
+### Q1：假设、统计口径与工程归档
+- **Status:** complete
+- Actions taken:
+  - 阅读 2021-1/3、2022-3/4/5/6 等往届优秀论文原文，提炼多评分预测、模型比较、交叉验证和结果合理性做法，并登记需要修正的泄漏与因果措辞。
+  - 逐元素复算附件 2、5、6，确认全部采用 Spearman；发现并修正附件 4 与附件 5/6 的 Carbonation/Aftertaste/Body 列序差异。
+  - 在 Q1 技术分析和论文交接稿中冻结 9 条模型假设，以及相关、预测重要性和因果效应的统一措辞。
+  - 按 MathorCup skill 建立 `00_赛题与规则` 至 `05_论文` 和 `_archive`；Q1/Q2/Q3 均有源码、结果、图表与论文交接目录。
+  - 实现并运行 Q1 数据契约与固定 CV 生成脚本；生成 E000 产物和 E001 baseline 预注册配置，未训练模型。
+- Verification:
+  - X=250×231、Y=250×50、22 风格、73 个输入缺失单元、目标无缺失。
+  - 附件 2/5/6 Spearman 最大绝对差均不超过 `6.7e-16`。
+  - 固定 CV 共 2500 行；每款啤酒每次重复恰有一个验证折；Faro 每折 1 个样本。
+- Files created/modified:
+  - `00_赛题与规则/`、`01_数据/`、`02_代码/`、`03_结果/`、`04_图表/`、`05_论文/`、`_archive/`
+  - `docs/experiment_log.md`
+  - `docs/analysis/2026初赛/A题第一问详细分析.md`
 

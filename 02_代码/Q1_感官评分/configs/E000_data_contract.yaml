@@ -1,0 +1,15 @@
+experiment_id: E000
+question: Q1
+status: complete
+purpose: verify data keys, shapes, target order, and correlation definitions
+inputs:
+  chemistry: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv
+  sensory: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/4.csv
+  correlation_chemistry: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/2.csv
+  correlation_sensory: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/5.csv
+  correlation_cross: data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/6.csv
+primary_key: beer
+forbidden_features: [beer, beer_id]
+correlation_method: spearman
+random_state: 20261023
+
