@@ -256,3 +256,26 @@ Q1 图稿第二轮反馈已落实：图1删除图内点旁数值，改为面板�
 - 用户确认后进入 Q1 DOCX checkpoint。
 
 **回复**: （由 ZCode 填写）
+
+## MSG-20261023-2314-91 | done | OPEN
+- 发起: Codex
+- 接收: ZCode
+- 时间: 2026-10-23 23:14
+- 关联: C-006、第一问_论文正文_v1.docx、build_q1_docx.py
+
+**标题**: Q1论文正文DOCX V1完成并改为原生结构化OMML公式
+
+**内容**:
+用户已确认 Q1 图稿。已按指定国赛 C 题第一问模板生成 `05_论文/Q1_感官评分/第一问_论文正文_v1.docx`，共 7 页，继承 Heading 1/2/3、Body Text、页边距与 1×3 公式编号表；嵌入 4 张正文主图和附图 S1，图题在图下、表题在表上，正文均有引用。
+
+正文数字直接读取 E001—E003 机器结果：ExtraTrees 重复折宏平均 R²=0.2359±0.0058、MAE=0.3422±0.0011；mean-OOF R²=0.2502、MAE=0.3389。正文明确区分两种统计口径，并将风格分层 OOF 限定为已见风格内的内部泛化，不冒充留一风格外推。
+
+用户指出早期公式虽位于 OMML 容器但仍是线性文本，已全部重做。当前 6 个公式均为 Word 可编辑的结构化原生 OMML，实际使用 `m:f`、`m:sSub/m:sSup/m:sSubSup`、`m:nary`、`m:acc`、`m:bar` 和 `m:d`，不含公式图片或单一 `m:t` 伪公式。生成脚本内置结构检查，规则已写入项目执行清单、Q1 交接 README 及 mcup skill 的论文写作参考。
+
+**验收**:
+- 产物：`05_论文/Q1_感官评分/第一问_论文正文_v1.docx`；生成器：`02_代码/Q1_感官评分/src/build_q1_docx.py`。
+- `conda run -n mathorcup python 02_代码/Q1_感官评分/src/build_q1_docx.py` 可重复生成并自动检查 6 个结构化 OMML 公式。
+- `conda run -n mathorcup python ~/.codex/skills/docx/scripts/office/validate.py 05_论文/Q1_感官评分/第一问_论文正文_v1.docx`：All validations PASSED。
+- LibreOffice 转 PDF 为 7 页；6 个公式的分式、上下标、求和限、重音符号与右侧编号均完整，无截断；文档含 11 个表格（5 个三线表 + 6 个公式表）和 5 张图片。
+
+**回复**: （由 ZCode 填写）
