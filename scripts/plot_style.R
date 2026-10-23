@@ -4,6 +4,8 @@
 #   - 白底、黑色细边框、无网格、图例内嵌且无边框、3:2 横版
 #   - 中文宋体 + 拉丁 Times 风格（SimSun 自带）
 #   - 训练曲线四色；PR 总曲线深蓝加粗；混淆矩阵 Blues；热力图 hot
+# 项目强制规则：图片文件内不放整图标题/图号，图题在论文中置于图下；
+# 分面标签无灰色底框并加粗，轴标题加粗，主信息需有明确视觉强调。
 #
 # 用法：
 #   source("scripts/plot_style.R")
@@ -50,12 +52,17 @@ theme_mcup <- function(mode = c("paper", "sans"), base_size = 10, legend = "br",
       panel.background = element_rect(fill = "white", colour = NA),
       plot.background = element_rect(fill = "white", colour = NA),
       axis.text = element_text(colour = "black", size = base_size - 1),
-      axis.title = element_text(colour = "black", size = base_size - 0.5),
+      axis.title = element_text(colour = "black", size = base_size - 0.5,
+                                face = "bold"),
       axis.ticks = element_line(colour = "black", linewidth = 0.35),
       axis.ticks.length = unit(1.6, "pt"),
-      plot.title = element_text(size = base_size + 0.5, hjust = 0.5,
-                                margin = margin(b = 5),
-                                family = if (is.null(title_family)) fam else title_family),
+      plot.title = element_blank(),
+      plot.tag = element_text(colour = "black", face = "bold",
+                              size = base_size),
+      strip.background = element_blank(),
+      strip.text = element_text(colour = "black", face = "bold",
+                                size = base_size - 0.5,
+                                margin = margin(2, 1, 3, 1)),
       plot.margin = margin(4, 5, 3, 3),
       legend.background = element_blank(),
       legend.box.background = element_blank(),

@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "figure_id": "Q1-F1",
+      "panels": ["a", "b"],
+      "source": ["03_结果/Q1_感官评分/figure_data/model_comparison.csv"],
+      "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
+      "outputs": ["04_图表/Q1_感官评分/图1_模型对比.png"],
+      "notes": "Ten repeated outer-CV summaries; ExtraTrees emphasized."
+    },
+    {
+      "figure_id": "Q1-F2",
+      "panels": ["a", "b"],
+      "source": [
+        "03_结果/Q1_感官评分/figure_data/target_distribution.csv.gz",
+        "03_结果/Q1_感官评分/figure_data/target_metrics_extra_trees.csv"
+      ],
+      "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
+      "outputs": ["04_图表/Q1_感官评分/图2_目标分布与逐目标R2.png"],
+      "notes": "Panels share one target order sorted by mean-OOF R2."
+    },
+    {
+      "figure_id": "Q1-F3",
+      "panels": ["high", "medium", "low"],
+      "source": ["03_结果/Q1_感官评分/figure_data/representative_oof.csv.gz"],
+      "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
+      "outputs": ["04_图表/Q1_感官评分/图3_OOF观测预测.png"],
+      "notes": "Pre-registered representatives: acidity, X4vg, stale_hops."
+    },
+    {
+      "figure_id": "Q1-F4",
+      "panels": ["a", "b"],
+      "source": [
+        "03_结果/Q1_感官评分/figure_data/style_metrics_extra_trees.csv",
+        "03_结果/Q1_感官评分/figure_data/scale_mapping_example.csv"
+      ],
+      "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
+      "outputs": ["04_图表/Q1_感官评分/图4_风格误差与量表映射.png"],
+      "notes": "Style-level OOF error and training-fold empirical-CDF mapping."
+    },
+    {
+      "figure_id": "Q1-S1",
+      "panels": ["high", "medium", "low"],
+      "source": ["03_结果/Q1_感官评分/figure_data/representative_oof.csv.gz"],
+      "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
+      "outputs": ["04_图表/Q1_感官评分/附图S1_残差诊断.png"],
+      "notes": "Supplementary diagnostic; not counted among the four main figures."
+    }
+  ]
+}
