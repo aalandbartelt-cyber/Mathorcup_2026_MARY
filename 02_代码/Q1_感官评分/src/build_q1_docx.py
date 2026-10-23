@@ -535,11 +535,12 @@ def build_document(template: Path, output: Path):
         "输入维数与样本数接近，不同化合物存在共线性，多个感官目标又共享香气、风味与口感结构，"
         "因此该问题属于小样本、高维、强共线的多输出回归问题。",
     )
-    add_equation(
+    add_body(
         doc,
-        formula_model_relation(),
-        1,
-        formula_proto,
+        "根据附件3确认 Aroma 与 Flavour 的评分定义和 0—6 等级含义，"
+        "并以附件4中同名的 50 个全样本标准化属性作为监督信号。"
+        "最终需为每款啤酒输出 50 维连续感官预测，再给出由训练折经验分布定义的 0—6 相对强度等级；"
+        "模型性能以折外 R²、MAE、RMSE 和 Spearman 秩相关系数衡量。",
     )
     add_body(
         doc,
@@ -554,10 +555,29 @@ def build_document(template: Path, output: Path):
     add_heading(doc, "数据口径与预处理", 3)
     add_body(
         doc,
-        "建模基于以下假设：同一化学字段在所有样本中采用一致的单位和测量流程；"
-        "在缺少酒厂与批次标识时，将每款啤酒视为一个独立观测；"
-        "缺失值允许携带信息，故中位数填补后保留缺失指示；"
-        "化学—感官关系在当前商业啤酒样本范围内近似稳定，结论不直接外推至新测量平台或完全未见的风格。",
+        "在现有数据可支持的范围内，建模依据以下四项假设。",
+    )
+    add_body(
+        doc,
+        "假设1：同一化学字段在各样本中采用一致的单位和测量流程。"
+        "若后续发现跨批次量纲漂移，需先利用质控样本做批次校准。",
+    )
+    add_body(
+        doc,
+        "假设2：在缺少酒厂和生产批次标识时，将每款啤酒视为独立观测。"
+        "若获得同厂或同批信息，应改用分组交叉验证重新评估泛化能力。",
+    )
+    add_body(
+        doc,
+        "假设3：给定其他已观测化学特征后，少量缺失不使整个样本失去可用性，"
+        "且缺失位置可能携带测量流程信息。因此折内中位数填补后保留缺失指示；"
+        "若缺失由未观测的系统测量故障主导，当前处理仍可能产生偏差。",
+    )
+    add_body(
+        doc,
+        "假设4：化学—感官关系在当前商业啤酒样本范围内近似稳定。"
+        "对新测量平台或完全未见风格，必须重新校准并引入外部验证。"
+        "样本、目标、缺失、尺度和连接键的核心数据契约见表1。",
     )
     add_three_line_table(
         doc,
@@ -600,6 +620,21 @@ def build_document(template: Path, output: Path):
     add_heading(doc, "模型建立与 0—6 量表映射", 3)
     add_body(
         doc,
+        "记第 i 款啤酒的化学特征向量为 x_i，标准化感官向量为 y_i，则多输出预测关系写为",
+    )
+    add_equation(
+        doc,
+        formula_model_relation(),
+        1,
+        formula_proto,
+    )
+    add_body(
+        doc,
+        "式中，输入向量含 231 个化学与理化特征，输出向量含 50 个标准化感官分量；"
+        "F 表示待估计的多输出映射，误差项表示未被化学特征解释的随机偏差。",
+    )
+    add_body(
+        doc,
         "为区分风格先验、线性共享结构和非线性化学关系，依次设置全局均值、风格收缩均值、PLS2、Ridge 和 ExtraTrees 五类模型。"
         "PLS2 与 Ridge 对折内秩高斯变换后的特征建模；ExtraTrees 保留附件尺度，通过多棵随机化回归树拟合非线性、阈值效应与特征交互。"
         "对第 j 个感官目标，树集成预测为",
@@ -607,9 +642,11 @@ def build_document(template: Path, output: Path):
     add_equation(doc, formula_extra_trees(), 2, formula_proto)
     add_body(
         doc,
-        "其中，B 为树的数量，T_bj(x) 为第 b 棵树对目标 j 的输出。"
+        "式中，回归树数量固定为 300，第 b 棵树分别给出目标 j 的预测。"
         "每个外层训练折内再使用 3 折交叉验证，以宏平均 MAE 选择 max_features 和 min_samples_leaf，"
-        "避免直接根据外层结果调参。表3给出各模型在实验中的作用。",
+        "候选值分别为 {0.33, 0.60, 1.00} 与 {1, 2, 4, 8}，共 12 种组合；树深不预先截断，"
+        "随机种子固定为 20261023。该设置以叶节点最小样本数控制过拟合，并避免直接根据外层结果调参。"
+        "表3给出各模型在实验中的作用。",
     )
     add_three_line_table(
         doc,
@@ -628,7 +665,7 @@ def build_document(template: Path, output: Path):
     add_body(
         doc,
         "由于附件未给出每位评委在每个属性上的原始均值和标准差，标准化聚合值无法唯一逆变换为原始 0—6 平均分。"
-        "本文对每个外层测试样本，仅利用对应训练折中第 j 个感官目标的经验分布函数 F̂_j,tr，"
+        "本文对每个外层测试样本，仅利用对应训练折中第 j 个感官目标的经验分布函数，"
         "将标准化预测值单调映射为 0—6 的相对强度等级：",
     )
     add_equation(doc, formula_grade_mapping(), 3, formula_proto)
@@ -654,6 +691,11 @@ def build_document(template: Path, output: Path):
         formula_proto,
     )
     add_equation(doc, formula_mae(), 5, formula_proto)
+    add_body(
+        doc,
+        "式中，下标 i 与 j 分别表示样本和感官目标，带帽项表示折外预测值，带横线项表示评价样本中的目标均值，"
+        "n 为相应评价样本数。R² 衡量相对均值基线的解释度，MAE 衡量标准化感官尺度上的平均绝对偏差。",
+    )
 
     model_rows = []
     for key in ["global_mean", "shrunk_style_mean", "pls2_quantile", "ridge_quantile", "extra_trees"]:
@@ -748,17 +790,30 @@ def build_document(template: Path, output: Path):
         FIG_DIR / "图4_风格误差与量表映射.png",
         "图4 不同啤酒风格的 OOF 误差与训练折经验分布的 0—6 映射",
     )
+    add_body(
+        doc,
+        "图4表明，风格间误差差异与样本量不均同时存在，最小类别的单点变化即可明显改变组内 MAE；"
+        "右图的经验分布映射保持各目标内部的强弱次序，适合报告相对等级，但不改变其非原始评分的统计含义。",
+    )
 
     add_heading(doc, "模型对比与消融", 3)
     add_body(
         doc,
         "五类模型形成逐层结构对照：全局均值衡量无信息输出，风格收缩均值衡量风格先验，"
         "PLS2 检验低秩共享结构，Ridge 衡量稳健线性映射，ExtraTrees 进一步引入非线性与交互。"
-        "ExtraTrees 同时超过风格基线和两类线性/低秩模型，说明化学特征中的非线性信息对预测有实质贡献。"
+        "ExtraTrees 同时超过风格基线和两类线性/低秩模型，支持在当前数据上优先采用具有非线性与交互表达能力的树集成。"
+        "由于模型族与输入变换同时变化，该对照不能把全部增益因果归于某一种机制。"
+        "这里的消融口径是逐步增加风格先验、低秩或线性映射与非线性交互的模型结构级对照；"
+        "缺失指示、风格 one-hot 和折内截尾等特征级组件未纳入本组结论。"
         "为减少不同样本划分带来的偶然性，每款啤酒先将 50 个目标的绝对误差取平均，"
         "再对模型差值进行 20,000 次样本对自助重抽样。",
     )
     add_equation(doc, formula_paired_delta(), 6, formula_proto)
+    add_body(
+        doc,
+        "式中，样本总数取 250，括号内两项分别表示 ExtraTrees 与对照模型对同一款啤酒 50 个感官目标的平均绝对误差；"
+        "配对差值为负时表示 ExtraTrees 的误差更低。",
+    )
     comparator_labels = {
         "shrunk_style_mean": "风格收缩均值",
         "pls2_quantile": "PLS2（秩高斯）",
@@ -808,7 +863,8 @@ def build_document(template: Path, output: Path):
         f"0.60/2 出现 {int(counts.get('max_features=0.60,min_samples_leaf=2',0))} 次，"
         f"0.60/1 出现 {int(counts.get('max_features=0.60,min_samples_leaf=1',0))} 次，"
         f"1.00/4 出现 {int(counts.get('max_features=1.00,min_samples_leaf=4',0))} 次。"
-        "多个相近复杂度的组合被选中，表明局部参数有一定敏感性；但宏平均 R² 与 MAE 的跨重复标准差仅为 "
+        "该入选频率用于描述有限样本下的参数选择稳定性，不等同于连续单参数扰动曲线。"
+        "多个相近复杂度的组合均被选中，说明不存在唯一占优的局部组合；但宏平均 R² 与 MAE 的跨重复标准差仅为 "
         f"{et['r2_sd']:.4f} 和 {et['mae_sd']:.4f}，说明最终性能对随机划分较稳定。",
     )
     add_body(
