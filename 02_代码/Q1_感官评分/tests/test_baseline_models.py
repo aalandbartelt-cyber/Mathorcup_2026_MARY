@@ -13,10 +13,14 @@ sys.path.insert(0, str(SRC))
 
 from baseline_models import (  # noqa: E402
     fit_predict_global_mean,
+    fit_predict_extra_trees,
     fit_predict_pls,
+    fit_predict_pls_quantile,
     fit_predict_ridge,
+    fit_predict_ridge_quantile,
     fit_predict_shrunk_style,
     regression_metrics,
+    select_parameter_by_mae,
 )
 
 
@@ -70,6 +74,86 @@ class BaselineModelTests(unittest.TestCase):
         )
         self.assertEqual(prediction.shape, (2, 2))
         self.assertTrue(np.isfinite(prediction).all())
+
+    def test_inner_selection_minimizes_validation_mae(self) -> None:
+        y = np.arange(9, dtype=float).reshape(-1, 1)
+
+        def predict_fold(train_index, validation_index, candidate):
+            del train_index
+            if candidate == "oracle":
+                return y[validation_index]
+            return np.zeros((len(validation_index), 1))
+
+        selected, scores = select_parameter_by_mae(
+            targets=y,
+            candidates=["zero", "oracle"],
+            predict_fold=predict_fold,
+            n_splits=3,
+            random_state=7,
+        )
+        self.assertEqual(selected, "oracle")
+        self.assertEqual(scores["oracle"], 0.0)
+        self.assertGreater(scores["zero"], 0.0)
+
+    def test_quantile_ridge_remains_finite_for_extreme_validation_value(self) -> None:
+        x_train = np.column_stack([np.arange(12, dtype=float), np.arange(12, dtype=float)])
+        y_train = np.column_stack([x_train[:, 0], 2 * x_train[:, 0]])
+        x_validation = np.array([[100000.0, np.nan]])
+        prediction = fit_predict_ridge_quantile(
+            x_train,
+            y_train,
+            x_validation,
+            alpha=10.0,
+            random_state=7,
+        )
+        self.assertEqual(prediction.shape, (1, 2))
+        self.assertTrue(np.isfinite(prediction).all())
+        self.assertLess(np.abs(prediction).max(), 100.0)
+
+    def test_quantile_pls_remains_finite_for_extreme_validation_value(self) -> None:
+        x_train = np.column_stack([np.arange(12, dtype=float), np.arange(12, dtype=float)])
+        y_train = np.column_stack([x_train[:, 0], 2 * x_train[:, 0]])
+        x_validation = np.array([[100000.0, np.nan]])
+        prediction = fit_predict_pls_quantile(
+            x_train,
+            y_train,
+            x_validation,
+            n_components=1,
+            random_state=7,
+        )
+        self.assertEqual(prediction.shape, (1, 2))
+        self.assertTrue(np.isfinite(prediction).all())
+        self.assertLess(np.abs(prediction).max(), 100.0)
+
+    def test_extra_trees_handles_missing_values_and_is_deterministic(self) -> None:
+        x_train = np.array(
+            [[0.0, 1.0], [1.0, np.nan], [2.0, 3.0], [3.0, 4.0], [4.0, 5.0]]
+        )
+        y_train = np.column_stack([x_train[:, 0], 2 * x_train[:, 0]])
+        x_validation = np.array([[1.5, np.nan], [5.0, 6.0]])
+        first = fit_predict_extra_trees(
+            x_train,
+            y_train,
+            x_validation,
+            n_estimators=20,
+            max_features=1.0,
+            min_samples_leaf=1,
+            max_depth=None,
+            random_state=7,
+        )
+        second = fit_predict_extra_trees(
+            x_train,
+            y_train,
+            x_validation,
+            n_estimators=20,
+            max_features=1.0,
+            min_samples_leaf=1,
+            max_depth=None,
+            random_state=7,
+        )
+        self.assertEqual(first.shape, (2, 2))
+        self.assertTrue(np.isfinite(first).all())
+        np.testing.assert_allclose(first, second)
 
 
 if __name__ == "__main__":

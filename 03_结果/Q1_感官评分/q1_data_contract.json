@@ -11,6 +11,13 @@
     "beer",
     "beer_id"
   ],
+  "compound_name_map": {
+    "rows": 231,
+    "unique_compound_names": 231,
+    "unique_feature_codes": 231,
+    "attachment8_field_codes_matched": 231,
+    "status": "PASS"
+  },
   "correlation_audit": {
     "attachment2_spearman_max_abs_diff": 6.661338147750939e-16,
     "attachment5_spearman_max_abs_diff": 5.551115123125783e-16,

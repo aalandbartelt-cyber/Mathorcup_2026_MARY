@@ -1,0 +1,19 @@
+{
+  "experiment_id": "E001",
+  "status": "complete",
+  "models": [
+    "global_mean",
+    "shrunk_style_mean",
+    "ridge",
+    "pls2"
+  ],
+  "outer_cv": "10x3 repeated style-stratified CV",
+  "inner_cv": "3-fold shuffled KFold",
+  "selection_metric": "macro multi-output MAE",
+  "random_state": 20261023,
+  "elapsed_seconds": 17.13,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2"
+}

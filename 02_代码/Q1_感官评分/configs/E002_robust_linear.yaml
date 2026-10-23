@@ -1,0 +1,27 @@
+experiment_id: E002
+question: Q1
+status: registered
+purpose: repair linear baseline sensitivity to extreme raw-scale chemical values
+trigger:
+  experiment: E001
+  finding: beer 156 has X2.methyltetrahydrofuran.3.one=12596.43287, over 163 times the second-largest value, causing extreme fold predictions
+features: chemistry_231
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+inner_cv:
+  method: KFold
+  n_splits: 3
+  shuffle: true
+  random_state: 20261023
+preprocessing:
+  imputer: training_fold_median
+  continuous_transform: training_fold_quantile_normal
+  n_quantiles: min(100, n_train)
+  missing_indicator: training_fold_only
+models:
+  ridge_quantile:
+    alpha: [0.1, 1.0, 10.0, 100.0, 1000.0]
+  pls2_quantile:
+    n_components: [2, 5, 10, 15, 20]
+selection_metric: macro_mae
+outputs: 03_结果/Q1_感官评分
+

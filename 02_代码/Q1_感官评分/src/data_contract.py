@@ -22,6 +22,7 @@ ATTACHMENTS = (
     / "附件"
 )
 RESULT_DIR = ROOT / "03_结果" / "Q1_感官评分"
+DATA_DIR = ROOT / "01_数据"
 
 META_COLUMNS = ["beer", "beer_id", "tasting_category_fine"]
 TARGET_GROUPS = (
@@ -105,6 +106,86 @@ def target_dictionary(y: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def compound_name_map(x: pd.DataFrame) -> pd.DataFrame:
+    """Map the English names in attachment 2 to the field codes in attachment 1.
+
+    Attachment 2 uses exactly the same row/column order as the 231 predictor
+    columns in attachment 1. Attachment 8 independently covers every field code
+    and is retained as a provenance cross-check; its ``chemical_name`` column
+    contains mojibake for 19 Greek-letter names, so the clean display name is
+    taken from attachment 2 rather than silently repaired.
+    """
+    attachment2 = pd.read_csv(ATTACHMENTS / "2.csv")
+    thresholds = pd.read_excel(
+        ATTACHMENTS / "8.xlsx", sheet_name="Sensory thresholds"
+    )
+    row_names = attachment2.iloc[:, 0].astype(str).str.strip()
+    column_names = pd.Index(attachment2.columns[1:]).astype(str).str.strip()
+    if attachment2.shape != (231, 232):
+        raise ValueError(f"unexpected 2.csv shape: {attachment2.shape}")
+    if not np.array_equal(row_names.to_numpy(), column_names.to_numpy()):
+        raise ValueError("2.csv row names and correlation-matrix column names disagree")
+    if list(x.columns) == [] or len(x.columns) != len(row_names):
+        raise ValueError("1.csv predictor count does not match 2.csv names")
+    if thresholds["field_name_R"].duplicated().any():
+        raise ValueError("8.xlsx field_name_R must be unique")
+
+    mapping = pd.DataFrame(
+        {
+            "position_1based": np.arange(1, len(x.columns) + 1),
+            "compound_name": row_names.to_numpy(),
+            "feature_code": x.columns.to_numpy(),
+        }
+    ).merge(
+        thresholds[
+            [
+                "field_name_R",
+                "field_name_python",
+                "chemical_name",
+                "chemical_name_short",
+                "unit",
+            ]
+        ],
+        left_on="feature_code",
+        right_on="field_name_R",
+        how="left",
+        validate="one_to_one",
+    )
+    if mapping["field_name_R"].isna().any():
+        missing = mapping.loc[mapping["field_name_R"].isna(), "feature_code"].tolist()
+        raise ValueError(f"8.xlsx lacks field codes: {missing}")
+    mapping["mapping_basis"] = (
+        "official positional identity: 1.csv predictor columns = "
+        "2.csv row/column names; cross-checked by 8.xlsx field_name_R"
+    )
+    return mapping
+
+
+def validate_compound_name_map(mapping: pd.DataFrame, x: pd.DataFrame) -> dict:
+    """Validate a compound map against all three official attachment contracts."""
+    required = {"position_1based", "compound_name", "feature_code", "field_name_R"}
+    missing_columns = required - set(mapping.columns)
+    if missing_columns:
+        raise ValueError(f"mapping missing columns: {sorted(missing_columns)}")
+    if len(mapping) != 231:
+        raise ValueError(f"mapping must contain 231 rows, got {len(mapping)}")
+    if not mapping["compound_name"].is_unique:
+        raise ValueError("compound_name must be unique")
+    if not mapping["feature_code"].is_unique:
+        raise ValueError("feature_code must be unique")
+    if mapping["feature_code"].tolist() != x.columns.tolist():
+        raise ValueError("mapping feature-code order disagrees with 1.csv")
+    if not mapping["feature_code"].equals(mapping["field_name_R"]):
+        raise ValueError("8.xlsx field_name_R cross-check failed")
+    return {
+        "rows": len(mapping),
+        "unique_compound_names": int(mapping["compound_name"].nunique()),
+        "unique_feature_codes": int(mapping["feature_code"].nunique()),
+        "attachment8_field_codes_matched": int(mapping["field_name_R"].notna().sum()),
+        "status": "PASS",
+    }
+
+
 def audit_correlations(x: pd.DataFrame, y: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
     """Verify that attachments 2/5/6 are Spearman correlations."""
     attachment2 = pd.read_csv(ATTACHMENTS / "2.csv")
@@ -165,12 +246,16 @@ def audit_correlations(x: pd.DataFrame, y: pd.DataFrame) -> tuple[dict, pd.DataF
 
 def main() -> None:
     RESULT_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     x, y, style = load_q1()
     dictionary = target_dictionary(y)
+    name_map = compound_name_map(x)
+    map_audit = validate_compound_name_map(name_map, x)
     corr_audit, row_map = audit_correlations(x, y)
 
     dictionary.to_csv(RESULT_DIR / "q1_target_dictionary.csv", index=False)
     row_map.to_csv(RESULT_DIR / "q1_attachment6_row_map.csv", index=False)
+    name_map.to_csv(DATA_DIR / "compound_name_map.csv", index=False)
 
     audit = {
         "n_samples": len(x),
@@ -182,6 +267,7 @@ def main() -> None:
         "y_missing_cells": int(y.isna().sum().sum()),
         "beer_key": "beer",
         "forbidden_model_fields": ["beer", "beer_id"],
+        "compound_name_map": map_audit,
         "correlation_audit": corr_audit,
     }
     (RESULT_DIR / "q1_data_contract.json").write_text(
