@@ -18,6 +18,8 @@
 - B 小时数据覆盖 2021—2026，MET/RADM/SOIL/FLUX 各 52,584 行；FLUX 约 24% 测量值缺失，其他表有 11%—13% 非零 QC 标志。
 - B 的 2026 小时表延伸到 12 月，预报建模必须按起报时点截断；每日气温只到 2025-08-02。
 - B 历史灾点仅 84 条，缺少已配对的逐事件触发时刻和气象序列；Q3 覆盖率和 Q4 仿真均存在明显数据缺口。
+- 题面推荐的 Kaggle Beer Information 数据集已核验：5,558×21、112 风格，11 个风味字段是评论词频而非化学浓度/专家评分；132 行描述符全零。可用于风格级外部验证和 Q3 感官先验，不能直接扩充官方化学训练样本。
+- Kaggle 对 Tripel 有 50 条；Lambic 多个子类共 163 条，其中可从 Lambic-Fruit 名称/描述识别 19 条 Kriek/Cherry/Cerise。官方样本无名称/酒厂，无法做实体级连接。
 
 ## Technical Decisions
 | Decision | Rationale |
@@ -35,6 +37,7 @@
 - `data/2026初赛/`
 - `~/.codex/skills/mary-modeling-contest-pipeline-mcup/`
 - `docs/analysis/2026初赛/首轮赛道判断.md`
+- `data/2026初赛/公开数据/Kaggle_top_beer_information/`（gitignore，仅本地）
 
 ## Visual/Browser Findings
 - 尚未进行页面截图；题面将以 PDF 文本提取为主，必要时截图核对。
