@@ -33,10 +33,11 @@ group_colors <- c(
 )
 tier_colors <- c("高" = "#2563A6", "中" = "#E39C34", "低" = "#8C8C8C")
 
-panel_tags <- plot_annotation(
-  tag_levels = "a",
-  tag_prefix = "(",
-  tag_suffix = ")"
+panel_header_theme <- theme(
+  plot.subtitle = element_text(
+    colour = "black", face = "bold", size = 9.5, hjust = 0,
+    margin = margin(b = 5)
+  )
 )
 
 # 图1：主模型对比。其他方法使用中性灰，ExtraTrees 作为主结论用深蓝突出。
@@ -60,33 +61,31 @@ focus_summary <- comparison %>%
 p1a <- ggplot(comparison, aes(display_name, macro_r2, fill = display_name)) +
   geom_hline(yintercept = 0, colour = "grey55", linewidth = 0.35) +
   geom_boxplot(width = 0.56, linewidth = 0.38, outlier.shape = NA, alpha = 0.88) +
-  geom_point(position = position_jitter(width = 0.10, height = 0),
+  geom_point(position = position_jitter(width = 0.10, height = 0,
+                                        seed = 20261023),
              shape = 21, size = 1.55, stroke = 0.28) +
-  annotate("text", x = 5, y = focus_summary$r2 + 0.015,
-           label = sprintf("R² = %.3f", focus_summary$r2),
-           family = FONT_PAPER, fontface = "bold", colour = "#1D4F91", size = 3.1) +
   scale_fill_manual(values = model_colors) +
   scale_y_continuous(expand = expansion(mult = c(0.08, 0.16))) +
-  labs(x = NULL, y = "宏平均 R²") +
+  labs(x = NULL, y = "宏平均 R²",
+       subtitle = sprintf("（a）解释度：ExtraTrees R² = %.3f", focus_summary$r2)) +
   theme_mcup(base_size = 9.5, legend = "none") +
+  panel_header_theme +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 
 p1b <- ggplot(comparison, aes(display_name, macro_mae, fill = display_name)) +
   geom_boxplot(width = 0.56, linewidth = 0.38, outlier.shape = NA, alpha = 0.88) +
-  geom_point(position = position_jitter(width = 0.10, height = 0),
+  geom_point(position = position_jitter(width = 0.10, height = 0,
+                                        seed = 20261023),
              shape = 21, size = 1.55, stroke = 0.28) +
-  annotate("text", x = 5, y = focus_summary$mae - 0.0028,
-           label = sprintf("MAE = %.3f", focus_summary$mae),
-           family = FONT_PAPER, fontface = "bold", colour = "#1D4F91", size = 3.1) +
   scale_fill_manual(values = model_colors) +
   scale_y_continuous(expand = expansion(mult = c(0.14, 0.08))) +
-  labs(x = NULL, y = "宏平均 MAE（z 分数）") +
+  labs(x = NULL, y = "宏平均 MAE（z 分数）",
+       subtitle = sprintf("（b）绝对误差：ExtraTrees MAE = %.3f", focus_summary$mae)) +
   theme_mcup(base_size = 9.5, legend = "none") +
+  panel_header_theme +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 
-p1 <- (p1a | p1b) + panel_tags &
-  theme(plot.tag = element_text(face = "bold", size = 10.5),
-        plot.tag.position = c(0.02, 0.98))
+p1 <- (p1a | p1b)
 save_paper(p1, file.path(figure_dir, "图1_模型对比.png"),
            width = 8.2, height = 4.35)
 
@@ -106,8 +105,10 @@ p2a <- ggplot(distribution, aes(z_score, target_code, fill = target_group)) +
   geom_boxplot(width = 0.66, linewidth = 0.25, outlier.size = 0.30,
                outlier.alpha = 0.40) +
   scale_fill_manual(values = group_colors, labels = group_labels) +
-  labs(x = "聚合感官强度（z 分数）", y = NULL) +
+  labs(x = "聚合感官强度（z 分数）", y = NULL,
+       subtitle = "（a）感官目标分布") +
   theme_mcup(base_size = 8.7, legend = "none") +
+  panel_header_theme +
   theme(axis.text.y = element_text(size = 5.8),
         legend.position = "bottom",
         legend.direction = "horizontal")
@@ -118,16 +119,15 @@ p2b <- ggplot(target_metrics, aes(r2, target_code, colour = target_group)) +
   geom_point(size = 2.05) +
   scale_colour_manual(values = group_colors, labels = group_labels) +
   scale_x_continuous(expand = expansion(mult = c(0.03, 0.08))) +
-  labs(x = "mean-OOF R²", y = NULL) +
+  labs(x = "mean-OOF R²", y = NULL,
+       subtitle = "（b）ExtraTrees 逐目标解释度") +
   theme_mcup(base_size = 8.7, legend = "none") +
+  panel_header_theme +
   theme(axis.text.y = element_blank(),
         axis.ticks.y = element_blank())
 
 p2 <- (p2a | p2b) +
-  plot_layout(widths = c(1.18, 0.82)) +
-  panel_tags &
-  theme(plot.tag = element_text(face = "bold", size = 10),
-        plot.tag.position = c(0.015, 0.99))
+  plot_layout(widths = c(1.18, 0.82))
 save_paper(p2, file.path(figure_dir, "图2_目标分布与逐目标R2.png"),
            width = 11.2, height = 6.3)
 
@@ -180,12 +180,25 @@ p4a <- ggplot(style_metrics,
   geom_point(aes(size = n_beers), alpha = 0.93) +
   geom_text(aes(label = paste0("n=", n_beers)), colour = "black",
             size = 2.35, hjust = -0.32) +
-  scale_colour_gradient(low = "#2C7FB8", high = "#C43C4E", guide = "none") +
+  scale_colour_gradient(
+    low = "#2C7FB8", high = "#C43C4E",
+    name = "颜色：MAE（蓝低，红高）",
+    guide = guide_colourbar(
+      direction = "horizontal", title.position = "top",
+      barwidth = unit(3.6, "cm"), barheight = unit(0.18, "cm")
+    )
+  ) +
   scale_size_continuous(range = c(2.0, 5.0), guide = "none") +
   scale_x_continuous(expand = expansion(mult = c(0.02, 0.21))) +
-  labs(x = "全部目标的 MAE（z 分数）", y = NULL) +
+  labs(x = "全部目标的 MAE（z 分数）", y = NULL,
+       subtitle = "（a）不同啤酒风格的 OOF 误差") +
   theme_mcup(base_size = 8.8, legend = "none") +
-  theme(axis.text.y = element_text(size = 7.2))
+  panel_header_theme +
+  theme(axis.text.y = element_text(size = 7.2),
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        legend.title = element_text(face = "bold", size = 7.3),
+        legend.text = element_text(size = 6.8))
 
 mapping <- read_csv(file.path(data_dir, "scale_mapping_example.csv"),
                     show_col_types = FALSE)
@@ -193,18 +206,17 @@ p4b <- ggplot(mapping, aes(z_score, grade_0_6, colour = target_code)) +
   geom_step(linewidth = 0.78, direction = "hv") +
   scale_colour_manual(values = c("#2C7FB8", "#D1495B", "#55A868", "#8172B3")) +
   scale_y_continuous(breaks = 0:6, limits = c(0, 6)) +
-  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级") +
+  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级",
+       subtitle = "（b）训练折经验分布的单调映射") +
   guides(colour = guide_legend(ncol = 2, byrow = TRUE)) +
   theme_mcup(base_size = 8.8, legend = "none") +
+  panel_header_theme +
   theme(legend.position = "bottom",
         legend.direction = "horizontal",
         legend.text = element_text(size = 7.2))
 
 p4 <- (p4a | p4b) +
-  plot_layout(widths = c(1.12, 0.88)) +
-  panel_tags &
-  theme(plot.tag = element_text(face = "bold", size = 10),
-        plot.tag.position = c(0.015, 0.99))
+  plot_layout(widths = c(1.12, 0.88))
 save_paper(p4, file.path(figure_dir, "图4_风格误差与量表映射.png"),
            width = 10.5, height = 5.9)
 
