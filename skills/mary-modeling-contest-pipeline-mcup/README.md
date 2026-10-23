@@ -30,6 +30,7 @@ references/
   08_协作与恢复.md            Codex/ZCode 信箱、静默模式、阻塞、恢复
   09_案例库与官方口径.md      2025 A/B、2022 讲解、2026 练习、40 篇统计、官方六问
   10_论文评审与优化.md        dsh 专用：六维 rubric、P0/P1/P2、评审输出模板
+  11_自强平台操作指南.md      A100 容器/GPU 分配/代码同步/长任务/报错速查
 assets/
   project_tree.txt            目录骨架
   paper_outline.md            论文骨架

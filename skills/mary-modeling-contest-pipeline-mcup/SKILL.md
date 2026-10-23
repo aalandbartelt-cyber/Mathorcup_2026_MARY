@@ -228,6 +228,7 @@ python scripts/audit_mcup_submission.py --root . --paper 05_论文/论文.pdf \
 | `references/08_协作与恢复.md` | 分工、换 AI、中断恢复 |
 | `references/09_案例库与官方口径.md` | 开局通读，找同类题 |
 | `references/10_论文评审与优化.md` | dsh 评审时（六维 rubric、P0/P1/P2、输出模板） |
+| `references/11_自强平台操作指南.md` | 上 A100 平台前（容器/GPU/同步/长任务/报错） |
 | `assets/project_tree.txt` | 建目录时对照 |
 | `assets/paper_outline.md` | 论文骨架 |
 | `assets/r_theme_mcup.R` | 出图主题 |
