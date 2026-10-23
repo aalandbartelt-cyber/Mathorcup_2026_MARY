@@ -1,0 +1,45 @@
+experiments: [E101, E102, E103, E104]
+question: Q2
+status: registered
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+outer_cv:
+  method: RepeatedStratifiedKFold
+  stratification: tasting_category_fine
+  n_splits: 3
+  final_repeats: 10
+inner_cv:
+  method: KFold
+  n_splits: 3
+  shuffle: true
+  seed_base: 20261024
+selection_metric: macro_mae_across_50_targets
+candidate_scope: strict_single_compounds
+E101:
+  ranking: absolute_training_fold_spearman
+  prediction: ridge_on_training_fold_top3
+  ridge_alpha: 1.0
+E102:
+  model: PLSRegression
+  n_components: [1, 2, 4, 8, 12, 16]
+  ranking: target_specific_signed_VIP
+E103:
+  model: elastic_net_by_augmented_lasso
+  lambda_l1: [0.01, 0.03, 0.06, 0.10, 0.20, 0.30]
+  lambda_l2: [0.00, 0.01, 0.10, 1.00]
+E104:
+  model: signed_graph_elastic_net
+  beta: [1, 2, 4, 6]
+  lambda_graph: [0.00, 0.01, 0.10, 1.00, 10.00]
+  l1_l2_rule: inherit_training_fold_E103_selection
+  graph_rule: recompute_spearman_inside_every_outer_and_inner_training_split
+preprocessing:
+  winsorize: training_fold_quantiles
+  winsor_quantiles: [0.01, 0.99]
+  imputer: training_fold_median
+  missing_indicator: training_fold_missing_columns
+  scaler: training_fold_standard_scaler
+  order: [winsorize, impute, missing_indicator, scale]
+solver:
+  lasso_max_iter: 50000
+  convergence_retry_multiplier: 4
+random_state: 20261024

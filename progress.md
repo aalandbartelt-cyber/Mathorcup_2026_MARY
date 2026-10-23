@@ -53,6 +53,20 @@
 | What have I learned? | 见 `findings.md` |
 | What have I done? | 完成题面、附件、赛道、路线、时间盒和风险登记 |
 
+## Session: 2026-10-24
+
+### Q2：E101—E104 折内排名与 OOF
+- **Status:** complete
+- Actions taken:
+  - 复用 Q1 冻结的 10×3 风格分层外层划分，内层 3 折选择 PLS、ElasticNet 和有符号图惩罚参数。
+  - 定位 `X2.methyltetrahydrofuran.3.one=12596.43` 导致的标准化外推；加入仅由训练折估计的 1%–99% Winsor 边界，全部 250 个样本保留。
+  - 增加 Lasso 收敛自动重试，重跑 30 个外层折后无未解决告警。
+  - E101/102/103/104 宏 MAE 为 0.3843/0.3556/0.3529/0.3530；图惩罚未带来预测增益。
+  - 27/30 个 E103 外层折选中 L2 上界 1.0，已触发 E109 扩展参数敏感性。
+- Verification:
+  - 极端样本 CO2 预测由 234.39 恢复为 -0.24；重跑后所有方法的单目标最小 $R^2$ 均大于 -0.18。
+  - 四种排名方法均输出 50×3 条 Top-3，稀疏方法无零入选频率占位。
+
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
 - **Started:** 2026-10-23 18:28 CST
