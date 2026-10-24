@@ -20,6 +20,21 @@ METRIC_COLUMNS = [
 ]
 
 
+def _safe_spearman(first: np.ndarray, second: np.ndarray) -> float:
+    first_array = np.asarray(first, dtype=float)
+    second_array = np.asarray(second, dtype=float)
+    if first_array.size < 2 or second_array.size < 2:
+        return float("nan")
+    if np.ptp(first_array) == 0.0 or np.ptp(second_array) == 0.0:
+        return float("nan")
+    return float(spearmanr(first_array, second_array).statistic)
+
+
+def _nanmean_without_warning(values: list[float]) -> float:
+    array = np.asarray(values, dtype=float)
+    return float("nan") if np.isnan(array).all() else float(np.nanmean(array))
+
+
 def quantile_levels(
     values: np.ndarray,
     reference: np.ndarray,
@@ -44,7 +59,7 @@ def ordered_proxy_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, f
     true_levels = quantile_levels(y_true, y_true)
     predicted_levels = quantile_levels(y_pred, y_pred)
     difference = np.abs(true_levels - predicted_levels)
-    level_spearman = spearmanr(true_levels, predicted_levels).statistic
+    level_spearman = _safe_spearman(true_levels, predicted_levels)
     return {
         "qwk_proxy": float(
             cohen_kappa_score(true_levels, predicted_levels, weights="quadratic")
@@ -52,7 +67,7 @@ def ordered_proxy_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, f
         "acc_proxy": float(np.mean(difference == 0)),
         "acc_pm1_proxy": float(np.mean(difference <= 1)),
         "level_mae_proxy": float(np.mean(difference)),
-        "level_spearman_proxy": float(level_spearman),
+        "level_spearman_proxy": level_spearman,
     }
 
 
@@ -66,7 +81,7 @@ def target_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
         "r2": float(r2_score(true_array, pred_array)),
         "mae": float(mean_absolute_error(true_array, pred_array)),
         "rmse": float(np.sqrt(mean_squared_error(true_array, pred_array))),
-        "spearman": float(spearmanr(true_array, pred_array).statistic),
+        "spearman": _safe_spearman(true_array, pred_array),
     }
     metrics.update(ordered_proxy_metrics(true_array, pred_array))
     return metrics
@@ -85,7 +100,7 @@ def matrix_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
         for position in range(true_array.shape[1])
     ]
     return {
-        name: float(np.nanmean([row[name] for row in rows]))
+        name: _nanmean_without_warning([row[name] for row in rows])
         for name in METRIC_COLUMNS
     }
 

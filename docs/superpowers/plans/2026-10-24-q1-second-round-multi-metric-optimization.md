@@ -261,7 +261,7 @@ git commit -m 'feat(q1): add leakage-safe cumulative ordinal HGB'
 - Create: 02_代码/Q1_感官评分/src/ensemble_models.py
 - Create: 02_代码/Q1_感官评分/tests/test_ensemble_models.py
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ~~~python
 from __future__ import annotations
@@ -300,14 +300,14 @@ class EnsembleModelTests(unittest.TestCase):
         np.testing.assert_allclose(shrunk, np.tile(global_weight, (2, 1)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
   '02_代码/Q1_感官评分/tests/test_ensemble_models.py' -v
 ~~~
 
-- [ ] **Step 3: Implement exact public API**
+- [x] **Step 3: Implement exact public API**
 
 ~~~python
 @dataclass(frozen=True)
@@ -387,7 +387,7 @@ def fit_predict_hgb_multioutput(x_train: np.ndarray, y_train: np.ndarray,
 
 Feasible blends are sorted by descending (Spearman, QWK, ACC±1, R², -MAE). If none pass the continuous floors, return the smallest normalized R²/MAE violation with feasible=False. Preserve input order for exact ties.
 
-- [ ] **Step 4: Verify GREEN and commit**
+- [x] **Step 4: Verify GREEN and commit**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \

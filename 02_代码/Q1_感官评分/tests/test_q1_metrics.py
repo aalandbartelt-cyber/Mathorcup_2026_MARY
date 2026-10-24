@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import sys
 import unittest
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -36,6 +37,18 @@ class Q1MetricTests(unittest.TestCase):
     def test_shape_mismatch_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "identical shapes"):
             matrix_metrics(np.zeros((5, 2)), np.zeros((5, 3)))
+
+    def test_constant_prediction_returns_nan_spearman_without_warning(self) -> None:
+        y_true = np.column_stack([np.arange(14), np.arange(14)[::-1]]).astype(float)
+        y_pred = np.ones_like(y_true)
+
+        with warnings.catch_warnings(record=True) as caught:
+            warnings.simplefilter("always")
+            metrics = matrix_metrics(y_true, y_pred)
+
+        self.assertEqual(caught, [])
+        self.assertTrue(np.isnan(metrics["spearman"]))
+        self.assertTrue(np.isnan(metrics["level_spearman_proxy"]))
 
 
 if __name__ == "__main__":
