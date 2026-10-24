@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 2：Q1 图 2/4 呈现层中文化，等待用户验图。
+Phase 2B：Q1 图表 V3 证据层级精修设计已完成，等待规格确认后实施。
 
 ## Phases
 
@@ -27,6 +27,16 @@ Phase 2：Q1 图 2/4 呈现层中文化，等待用户验图。
 - [x] 向 `to_zcode.md` 发送图清单
 - [ ] 等待用户确认
 - **Status:** waiting for user review
+
+### Phase 2B：Q1 图稿 V3 精修
+
+- [x] 对照 BZD、agent 与 615 张优秀论文风格统计，完成视觉审计
+- [x] 冻结 V3 图1—图4与附图 S1 的图形编码设计
+- [x] 写入并自检 V3 设计规格
+- [ ] 用户确认书面规格
+- [ ] 生成 `final_v3_draft/`，完成缩放、灰度和重绘一致性检查
+- [ ] 向 `to_zcode.md` 发送 V3 图清单，等待最终验图
+- **Status:** waiting for design approval
 
 ### Phase 3：Q1 正文 v2 与打包
 
