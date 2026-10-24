@@ -528,7 +528,7 @@ git commit -m 'feat(q1): add frozen nested OOF runner contract'
 - Modify: 02_代码/Q1_感官评分/configs/README.md
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing config contract test**
+- [x] **Step 1: Add a failing config contract test**
 
 ~~~python
 def test_e004_config(self):
@@ -540,7 +540,7 @@ def test_e004_config(self):
     self.assertEqual(len(config["profiles"]), 3)
 ~~~
 
-- [ ] **Step 2: Verify RED, then create the frozen config**
+- [x] **Step 2: Verify RED, then create the frozen config**
 
 ~~~yaml
 experiment_id: E004
@@ -555,11 +555,11 @@ profiles:
 selection_metric: macro_mae_then_ordered
 ~~~
 
-- [ ] **Step 3: Implement --stage screening and --stage full**
+- [x] **Step 3: Implement --stage screening and --stage full**
 
 For each outer fold, select one shared profile using inner OOF, fit on the entire outer-training fold, and predict the untouched outer-validation fold. Screening writes only files with _screening suffix.
 
-- [ ] **Step 4: Run tests and the nine-fold screening**
+- [x] **Step 4: Run tests and the nine-fold screening**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \
@@ -570,7 +570,7 @@ conda run -n mathorcup python \
 
 Expected: finite OOF predictions, selected-profile CSV, metrics and manifest for repeats 0–2.
 
-- [ ] **Step 5: Record and commit**
+- [x] **Step 5: Record and commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/configs/E004_ordinal_hgb.yaml' \

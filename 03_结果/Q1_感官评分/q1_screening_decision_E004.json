@@ -1,0 +1,80 @@
+{
+  "status": "screening_only",
+  "full_promotion_requires": "10 repeats and all five hard gates plus 7/10 wins",
+  "decisions": {
+    "E004": {
+      "model": "ordinal_hgb",
+      "repeat_ids": [
+        0,
+        1,
+        2
+      ],
+      "baseline_means": {
+        "r2": 0.23264608602171324,
+        "mae": 0.34291120491621335,
+        "spearman": 0.4135446245520861,
+        "qwk_proxy": 0.40213751414799725,
+        "acc_pm1_proxy": 0.5480533333333334
+      },
+      "candidate_means": {
+        "r2": 0.15045892963911717,
+        "mae": 0.3365418076605266,
+        "spearman": 0.40314968470090723,
+        "qwk_proxy": 0.39086147764091156,
+        "acc_pm1_proxy": 0.5404533333333333
+      },
+      "promote_to_full": false,
+      "improved": {
+        "r2": false,
+        "mae": true,
+        "spearman": false,
+        "qwk_proxy": false,
+        "acc_pm1_proxy": false
+      },
+      "improved_count": 1,
+      "continuous_tolerance": {
+        "r2": false,
+        "mae": true
+      }
+    },
+    "E004_GPU": {
+      "model": "ordinal_xgb_cuda",
+      "repeat_ids": [
+        0,
+        1,
+        2
+      ],
+      "baseline_means": {
+        "r2": 0.23264608602171324,
+        "mae": 0.34291120491621335,
+        "spearman": 0.4135446245520861,
+        "qwk_proxy": 0.40213751414799725,
+        "acc_pm1_proxy": 0.5480533333333334
+      },
+      "candidate_means": {
+        "r2": 0.0906551076244805,
+        "mae": 0.34989339294849714,
+        "spearman": 0.38953848341760056,
+        "qwk_proxy": 0.3800628636554071,
+        "acc_pm1_proxy": 0.53432
+      },
+      "promote_to_full": false,
+      "improved": {
+        "r2": false,
+        "mae": false,
+        "spearman": false,
+        "qwk_proxy": false,
+        "acc_pm1_proxy": false
+      },
+      "improved_count": 0,
+      "continuous_tolerance": {
+        "r2": false,
+        "mae": false
+      }
+    }
+  },
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_screening_comparison_E004.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_screening_by_repeat_E004.csv"
+  ]
+}

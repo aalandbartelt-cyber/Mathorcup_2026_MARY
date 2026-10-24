@@ -6,6 +6,8 @@
 | E001 | Q1 | COMPLETE | `02_代码/Q1_感官评分/configs/E001_baselines.yaml` | `03_结果/Q1_感官评分/q1_*_E001.*` | 实现与新口径一致：折内中位数+缺失指示、无删样/二次取对数；输入未变，无需重跑 |
 | E002 | Q1 | COMPLETE | `02_代码/Q1_感官评分/configs/E002_robust_linear.yaml` | `03_结果/Q1_感官评分/q1_*_E002.*` | 实现与新口径一致；秩高斯为折内模型变换而非数据清洗，输入未变，无需重跑 |
 | E003 | Q1 | COMPLETE | `02_代码/Q1_感官评分/configs/E003_extra_trees.yaml` | `03_结果/Q1_感官评分/q1_*_E003.*`、`figure_data/` | 实现与新口径一致：树模型保留附件尺度、折内中位数+缺失指示、无删样；指标继续有效 |
+| E004 | Q1 | SCREENED_NOT_PROMOTED | `02_代码/Q1_感官评分/configs/E004_ordinal_hgb.yaml` | `03_结果/Q1_感官评分/q1_*_E004_screening.*`、`q1_screening_*_E004.*` | 与 E003 同一 3 次筛查重复下，仅 MAE 改善（0.3365 vs 0.3429）；R²/Spearman/代理 QWK/代理 ACC±1均下降，按冻结预门槛不扩展至 10 次 |
+| E004_GPU | Q1 | SCREENED_NOT_PROMOTED | `02_代码/Q1_感官评分/configs/E004_gpu.yaml` | `03_结果/Q1_感官评分/q1_*_E004_GPU_screening.*`、`q1_screening_*_E004.*` | CUDA 累积有序 XGBoost 五项均未改善，不扩展至 10 次；仅作为有序路线的负结果保留 |
 | E100 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E100_contract.yaml` | `03_结果/Q2_关键化合物/q2_candidate_dictionary.csv`、`q2_graph_*` | 候选、名称和有符号 Spearman 图合同通过；218 个严格化合物候选 |
 | E101–E104 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E101_E104_selection.yaml` | `03_结果/Q2_关键化合物/q2_*_E101_E104.*` | 10×3 OOF 完成；E103 宏 MAE 0.3529，E104 0.3530；图惩罚未得到预测增益，扩展参数敏感性进入 E109 |
 | E109 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E109_boundary_sensitivity.yaml` | `03_结果/Q2_关键化合物/q2_e109_*` | 扩展网格下 E103 的指标与 Top-3 完全不变；E104 未改善 MAE，图惩罚降为消融组 |
