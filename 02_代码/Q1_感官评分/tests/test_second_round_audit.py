@@ -4,21 +4,121 @@ import sys
 import unittest
 from pathlib import Path
 
+import numpy as np
+
 
 SRC = Path(__file__).resolve().parents[1] / "src"
 sys.path.insert(0, str(SRC))
 
 from audit_q1_second_round import (  # noqa: E402
+    bottom_quartile_target_summary,
     compare_full_frames,
     compare_screening_frames,
+    paired_beer_bootstrap,
     promotion_decision,
     screening_decision,
+    select_final_candidate,
+    style_mae_table,
+    worst_style_summary,
 )
 
 import pandas as pd
 
 
 class SecondRoundAuditTests(unittest.TestCase):
+    def test_paired_beer_bootstrap_detects_uniform_improvement(self) -> None:
+        y_true = np.arange(48, dtype=float).reshape(12, 4)
+        baseline = y_true[::-1].copy()
+        candidate = y_true.copy()
+
+        result = paired_beer_bootstrap(
+            y_true,
+            baseline,
+            candidate,
+            n_bootstraps=500,
+            random_state=17,
+        )
+
+        self.assertEqual(set(result["metric"]), {"mae", "absolute_rank_error"})
+        self.assertTrue((result["delta_candidate_minus_baseline"] < 0).all())
+        self.assertTrue((result["ci_high"] <= 0).all())
+        self.assertTrue((result["improvement_probability"] >= 0.99).all())
+
+    def test_bottom_quartile_uses_baseline_target_r2_only(self) -> None:
+        baseline = pd.DataFrame(
+            {
+                "target_code": ["a", "b", "c", "d"] * 2,
+                "repeat": [0] * 4 + [1] * 4,
+                "r2": [0.1, 0.2, 0.3, 0.4] * 2,
+                "mae": [0.4, 0.3, 0.2, 0.1] * 2,
+            }
+        )
+        candidate = baseline.copy()
+        candidate.loc[candidate["target_code"].eq("a"), "r2"] = 0.25
+        candidate.loc[candidate["target_code"].eq("a"), "mae"] = 0.25
+
+        result = bottom_quartile_target_summary(baseline, candidate)
+
+        self.assertEqual(result["bottom_targets"], ["a"])
+        self.assertAlmostEqual(result["baseline_r2"], 0.1)
+        self.assertAlmostEqual(result["candidate_r2"], 0.25)
+        self.assertAlmostEqual(result["candidate_mae"], 0.25)
+
+    def test_style_mae_table_preserves_repeat_and_style_pairing(self) -> None:
+        y_true = np.zeros((4, 2), dtype=float)
+        styles = np.array(["A", "A", "B", "B"])
+        baseline = np.stack(
+            [np.ones((4, 2)), np.full((4, 2), 2.0)], axis=0
+        )
+        candidate = baseline * 0.5
+
+        result = style_mae_table(y_true, styles, baseline, candidate)
+
+        self.assertEqual(len(result), 4)
+        self.assertEqual(set(result["style"]), {"A", "B"})
+        self.assertTrue((result["candidate_mae"] < result["baseline_mae"]).all())
+        self.assertTrue((result["delta_mae"] < 0).all())
+
+    def test_worst_style_is_selected_from_candidate_mean_mae(self) -> None:
+        table = pd.DataFrame(
+            {
+                "repeat": [0, 0, 1, 1],
+                "style": ["A", "B", "A", "B"],
+                "n_beers": [2, 2, 2, 2],
+                "baseline_mae": [0.3, 0.4, 0.3, 0.4],
+                "candidate_mae": [0.2, 0.5, 0.2, 0.6],
+                "delta_mae": [-0.1, 0.1, -0.1, 0.2],
+            }
+        )
+
+        result = worst_style_summary(table)
+
+        self.assertEqual(result["worst_style"], "B")
+        self.assertAlmostEqual(result["candidate_mae"], 0.55)
+        self.assertAlmostEqual(result["baseline_mae"], 0.4)
+
+    def test_final_selection_excludes_candidates_that_miss_a_gate(self) -> None:
+        decisions = {
+            "E006": {
+                "promoted": False,
+                "candidate_means": {
+                    "r2": 0.26, "mae": 0.33, "spearman": 0.44,
+                    "qwk_proxy": 0.43, "acc_pm1_proxy": 0.56,
+                },
+            },
+            "E007": {
+                "promoted": True,
+                "candidate_means": {
+                    "r2": 0.25, "mae": 0.335, "spearman": 0.435,
+                    "qwk_proxy": 0.42, "acc_pm1_proxy": 0.58,
+                },
+            },
+        }
+
+        self.assertEqual(select_final_candidate(decisions), "E007")
+        decisions["E007"]["promoted"] = False
+        self.assertIsNone(select_final_candidate(decisions))
+
     def test_full_frame_comparison_requires_ten_aligned_repeats(self) -> None:
         repeats = list(range(10))
         baseline = pd.DataFrame(
