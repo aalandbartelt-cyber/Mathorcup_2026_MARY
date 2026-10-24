@@ -5,6 +5,7 @@ weights/*.pt
 __pycache__/
 *.pyc
 .env
+.worktrees/
 docs/reference/
 docs/analysis/txt/
 docs/analysis/txt_official/
