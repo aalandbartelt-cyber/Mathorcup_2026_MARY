@@ -1,66 +1,72 @@
-# Task Plan: A 题第一问感官评分
+# Task Plan: 参考方案对照与 Q1/Q2 优化交付
 
 ## Goal
-建立 A 题第一问从 231 维化学数据到 50 维感官结果的无泄漏预测闭环，给出可复现的 0—6 相对等级、逐目标性能、不确定性与论文证据链。
+
+在不复制 BZD/agent 文字和代码的前提下，把参考方案转化为可验证的候选实验；以固定 OOF 口径决定是否替换 Q1 v1，并按检查点完成 Q1 图稿、Word v2、交付包及 Q2 优化。
 
 ## Current Phase
-Q1 data contract and CV frozen; leakage-safe CPU baseline next
+
+Phase 2：Q1 图 2/4 呈现层中文化，等待用户验图。
 
 ## Phases
 
-### Phase 1: 第一问题意与尺度识别
-- [x] 核验附件 1/3/4/8 的样本、字段、量表和目标定义
-- [x] 追溯原始论文、补充数据与建模代码
-- [x] 证明附件 4 不能唯一逆变换为原始 0—6 评分
+### Phase 1：参考材料审计与指标对齐
+
+- [x] 阅读 BZD AA/AB/AC 论文、代码、图和方案对比表
+- [x] 阅读 agent Q1/Q2/Q3 代码、日志、图和 Word
+- [x] 阅读新 skill 的 01/02/03/05/06/13/14/15
+- [x] 为 E003 补算 Spearman、代理 QWK、代理 ACC±1
+- [x] 形成 `BZD与agent对照.md`
 - **Status:** complete
 
-### Phase 2: 数据诊断与实验预注册
-- [x] 量化输入缺失、共线、低维结构和化学锚点
-- [x] 量化目标偏度、相关结构、风格效应和历史可预测性
-- [x] 固化主验证、压力测试、指标、模型矩阵与消融
-- **Status:** complete
+### Phase 2：Q1 图稿 v2 检查点
 
-### Phase 3: 数据字典与无泄漏管线
-- [x] 生成 50 目标字典、字段分组和固定 CV split
-- [ ] 实现折内填补、缩放、缺失指示和双尺度输出
-- [ ] 加入数据键、列数、取值和泄漏断言
+- [ ] 将图 2、图 4 的轴、图例与注释改为中文呈现层
+- [ ] 保留 `final_v1`，新稿另存 v2，不把总图题画入图片
+- [ ] 300 dpi 导出并做尺寸、字体、遮挡审计
+- [ ] 向 `to_zcode.md` 发送图清单，等待用户确认
 - **Status:** in progress
 
-### Phase 4: CPU baseline 与增强模型
-- [ ] E0 全局均值、E1 收缩风格均值、E2 Ridge、E3 PLS2
-- [ ] ExtraTrees/Gradient Boosting 小网格与低秩模型
-- [ ] 生成重复 OOF、逐目标指标和模型选择结果
+### Phase 3：Q1 正文 v2 与打包
+
+- [ ] 用户确认图后，复制 agent Q1.docx 作为版式模板
+- [ ] 用本队内容重建“问题一分析—模型—求解/检验”
+- [ ] 公式使用 Word 原生 OMML；图题在 Word 中，不嵌入图片
+- [ ] 运行 handoff 脚本并核对交付包
+- **Status:** pending user figure confirmation
+
+### Phase 4：Q1 候选优化
+
+- [ ] 累积有序 HGB
+- [ ] 风格中心化 Ridge
+- [ ] 折内目标图正则多任务 Ridge
+- [ ] 按 10×3 固定 OOF 成对比较，至少两项稳定改善才替换 v1
 - **Status:** pending
 
-### Phase 5: 校准、图表与论文结果
-- [ ] 经验分位数与稳健仿射 0—6 映射敏感性
-- [ ] 共形预测区间和留一风格压力测试
-- [ ] 用 R/ggplot2 `theme_mcup()` 生成 Q1 图表
-- [ ] 写入论文方法、结果、合理性和局限
+### Phase 5：Q2 优化与交付
+
+- [ ] 把 BZD 共表达/稳定选择与 agent 双路线思想映射到现有 E105—E112
+- [ ] 保持折内重算、50×3 完整输出和化学证据分级
+- [ ] 生成 Q2 Word 与交付包
 - **Status:** pending
 
-## Key Questions
-1. 化学特征在严格折外验证下能可靠预测哪些感官目标？
-2. 多任务共享结构和逐目标树模型如何组合而不产生选择偏差？
-3. 在缺少评委层面逆变换参数时，如何诚实、可复现地给出 0—6 分级？
-4. 模型在稀有风格和未见风格上是否仍可靠？
+## Hard Rules
 
-## Decisions Made
-| Decision | Rationale |
+| 规则 | 执行口径 |
 |---|---|
-| 用 `beer` 连接、禁用 `beer_id` | 附件 4 的 `beer_id` 精度损失，仅 96 个唯一值 |
-| 主任务预测附件 4 的 z 分数 | 这是唯一完整监督标签；原始 0—6 无法唯一恢复 |
-| 同时输出 z 预测与 0—6 相对等级 | 既保留可评价尺度，也满足题面分级表达 |
-| 主验证用 10×3 重复风格分层 CV | Faro 只有 3 个样本，五折无法分层 |
-| 化学-only 为主，风格作基线/消融 | 防止风格查表替代化学—感官学习 |
-| 低秩模型 + 逐目标树模型 | 目标共享结构强，但历史上不同目标的最优模型明显不同 |
-| 相关分析统一用 Spearman | 附件 2/5/6 已逐元素复算确认；Pearson 仅用于线性与校准诊断 |
-| 新增编号目录并按问题对齐 | 每问均有代码、结果、图表和论文交接入口；旧路径仅为兼容保留 |
+| 不直接复制 | 参考材料只用于候选设计、风险识别与结果核对 |
+| 防泄漏 | 插补、缩放、分箱、构图、筛选和选参全部在训练折内 |
+| 代理等级诚实命名 | BZD 式 QWK/ACC±1只称“独立分位数分箱代理指标” |
+| 图稿 | R/ggplot2 `theme_mcup()`；无内嵌总图题；面板号加粗；呈现层中文 |
+| Word | 使用指定 agent 分问模板版式；数学公式必须为原生 OMML |
+| 模型替换 | R²/Spearman/代理 QWK/代理 ACC±1至少两项在多数重复中稳定改善 |
+| 提交节奏 | 对照、图稿、Word/打包、Q2 分别 commit/push |
 
 ## Errors Encountered
+
 | Error | Attempt | Resolution |
 |---|---:|---|
-| `pdftotext`/`pdfinfo` 未安装 | 1 | 使用环境内 PyMuPDF 提取题面文本 |
-| 默认 Python 无 pandas | 1 | 使用 `conda run -n mathorcup python` 执行分析 |
-| `conda run` 通过 stdin 未输出 | 1 | 改用临时脚本或 `python -c` |
+| 默认 Python 缺 numpy/pandas | 1 | 统一使用 `conda run -n mathorcup` |
+| `conda run` 通过 stdin 不回显 | 1 | 改用脚本文件或 `python -c` |
+| 参考 QWK 被误读为真实 0—6 | 1 | 追到 BZD `quantile_levels` 源码，明确为真实/预测各自全样本分箱 |
 

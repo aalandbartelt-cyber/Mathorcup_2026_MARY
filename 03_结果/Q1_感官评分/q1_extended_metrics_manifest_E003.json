@@ -1,0 +1,28 @@
+{
+  "experiment_id": "E003",
+  "source": "03_结果/Q1_感官评分/q1_oof_predictions_E003.npz",
+  "prediction_shape": [
+    10,
+    250,
+    50
+  ],
+  "continuous_metrics": [
+    "R2",
+    "MAE",
+    "RMSE",
+    "Spearman"
+  ],
+  "ordered_proxy_metrics": [
+    "QWK",
+    "ACC",
+    "ACC_pm1",
+    "LevelMAE",
+    "level_Spearman"
+  ],
+  "ordered_proxy_definition": "For each target, observed values and predictions are independently mapped to integer levels 0..6 using their own full-sample empirical quantiles; target scores are then macro-averaged.",
+  "usage_limit": "Post-hoc BZD-compatible comparison only. This mapping is not used for final 0--6 inference because it uses the full OOF distribution.",
+  "outputs": [
+    "/home/mary/mathorcup/03_结果/Q1_感官评分/q1_extended_metrics_E003.csv",
+    "/home/mary/mathorcup/03_结果/Q1_感官评分/q1_extended_metrics_by_target_E003.csv"
+  ]
+}
