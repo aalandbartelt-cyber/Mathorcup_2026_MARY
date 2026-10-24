@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
+import json
+import os
 from pathlib import Path
+import tempfile
 
 import numpy as np
 import pandas as pd
@@ -12,6 +15,71 @@ from sklearn.model_selection import KFold
 
 from data_contract import RESULT_DIR
 from q1_metrics import evaluate_prediction_matrix, summarise_target_metrics
+
+
+def save_run_checkpoint(
+    path: Path,
+    *,
+    run_signature: str,
+    predictions: np.ndarray,
+    fold_assignment: np.ndarray,
+    parameter_rows: Sequence[Mapping],
+) -> None:
+    """Atomically persist a partial outer-OOF run for exact resumption."""
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="wb",
+            suffix=".npz",
+            prefix=f".{target.stem}.",
+            dir=target.parent,
+            delete=False,
+        ) as temporary:
+            temporary_name = temporary.name
+            np.savez_compressed(
+                temporary,
+                run_signature=np.asarray(str(run_signature)),
+                predictions=np.asarray(predictions, dtype=float),
+                fold_assignment=np.asarray(fold_assignment),
+                parameter_rows_json=np.asarray(
+                    json.dumps(list(parameter_rows), ensure_ascii=False, sort_keys=True)
+                ),
+            )
+        os.replace(temporary_name, target)
+    finally:
+        if temporary_name is not None and os.path.exists(temporary_name):
+            os.unlink(temporary_name)
+
+
+def load_run_checkpoint(
+    path: Path,
+    *,
+    run_signature: str,
+    prediction_shape: Sequence[int],
+    assignment_shape: Sequence[int],
+) -> dict[str, object]:
+    """Load and validate a partial run checkpoint against frozen inputs."""
+    target = Path(path)
+    with np.load(target, allow_pickle=False) as archive:
+        saved_signature = str(archive["run_signature"].item())
+        if saved_signature != str(run_signature):
+            raise RuntimeError("checkpoint signature does not match frozen run")
+        predictions = np.asarray(archive["predictions"], dtype=float).copy()
+        fold_assignment = np.asarray(archive["fold_assignment"]).copy()
+        parameter_rows = json.loads(str(archive["parameter_rows_json"].item()))
+    if predictions.shape != tuple(prediction_shape):
+        raise RuntimeError("checkpoint prediction shape does not match frozen run")
+    if fold_assignment.shape != tuple(assignment_shape):
+        raise RuntimeError("checkpoint assignment shape does not match frozen run")
+    if not isinstance(parameter_rows, list):
+        raise RuntimeError("checkpoint parameter rows are invalid")
+    return {
+        "predictions": predictions,
+        "fold_assignment": fold_assignment,
+        "parameter_rows": parameter_rows,
+    }
 
 
 def load_config(path: Path) -> dict:
