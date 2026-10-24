@@ -647,7 +647,7 @@ git commit -m 'feat(q1): complete E005 continuous ensemble screening'
 - Create: 02_代码/Q1_感官评分/src/run_e006_dual_route.py
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing hard-threshold test**
+- [x] **Step 1: Add a failing hard-threshold test**
 
 ~~~python
 def test_e006_thresholds(self):
@@ -661,15 +661,15 @@ def test_e006_thresholds(self):
         "acc_pm1_proxy_min": 0.5734})
 ~~~
 
-- [ ] **Step 2: Verify RED and create config**
+- [x] **Step 2: Verify RED and create config**
 
 Freeze ordinal shares 0.00 through 0.50 in increments of 0.05, the five thresholds above, and the same screening/full repeat IDs.
 
-- [ ] **Step 3: Implement inner-only route blending**
+- [x] **Step 3: Implement inner-only route blending**
 
 E006 must regenerate selected E004/E005 inner predictions inside every outer-training fold. It must not learn weights from top-level screening OOF files. Reject weights outside the inner continuous tolerance, then rank feasible weights by Spearman, QWK, ACC±1, R², and -MAE.
 
-- [ ] **Step 4: Run screening and gate full execution**
+- [x] **Step 4: Run screening and gate full execution**
 
 ~~~bash
 conda run -n mathorcup python \

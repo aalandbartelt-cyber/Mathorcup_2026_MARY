@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 4：Q1 第二轮多指标优化已完成 E004 与 E005 正式审计，进入 E006 双路线筛查。
+Phase 4：Q1 第二轮多指标优化已完成 E004/E005 审计与 E006 筛查，进入 E006 正式 OOF。
 
 ## Phases
 
@@ -60,7 +60,8 @@ Phase 4：Q1 第二轮多指标优化已完成 E004 与 E005 正式审计，进�
 - [x] E004/E004_GPU 完成同重复筛查并按冻结预门槛判定不晋级
 - [x] E005 完成 3 次筛查并在五项指标上均优于同重复 E003，晋级正式 OOF
 - [x] E005 完成 10 次正式 OOF；连续四项过线，ACC±1未过硬门槛，不单独晋级
-- **Status:** E006 screening next; nested blending must improve ACC±1 without losing E005 continuous gains
+- [x] E006 完成 3 次筛查并五项均优于同重复 E003，晋级正式 OOF
+- **Status:** E006 full running; E007 remains conditional on the full gate
 
 ### Phase 5：Q2 优化与交付
 

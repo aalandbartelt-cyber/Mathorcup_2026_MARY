@@ -325,11 +325,43 @@ def audit_e005_full() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e006_screening() -> tuple[pd.DataFrame, dict]:
+    """Compare E006 dual-route screening with E003 on repeats 0--2."""
+    summary_row, paired, decision = compare_screening_frames(
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv"),
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E006_screening.csv"),
+        experiment_id="E006",
+        model="dual_route",
+        candidate_prefix="pred_dual_route:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_screening_comparison_E006.csv"
+    repeat_path = RESULT_DIR / "q1_screening_by_repeat_E006.csv"
+    decision_path = RESULT_DIR / "q1_screening_decision_E006.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "screening_only",
+        "full_promotion_requires": "10 repeats and all five hard gates plus 7/10 wins",
+        "decisions": {"E006": decision},
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--mode",
-        choices=["e004-screening", "e005-screening", "e005-full"],
+        choices=[
+            "e004-screening",
+            "e005-screening",
+            "e005-full",
+            "e006-screening",
+        ],
         default="e004-screening",
     )
     args = parser.parse_args()
@@ -337,8 +369,10 @@ def main() -> None:
         summary, payload = audit_e004_screening()
     elif args.mode == "e005-screening":
         summary, payload = audit_e005_screening()
-    else:
+    elif args.mode == "e005-full":
         summary, payload = audit_e005_full()
+    else:
+        summary, payload = audit_e006_screening()
     print(summary.to_string(index=False))
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 

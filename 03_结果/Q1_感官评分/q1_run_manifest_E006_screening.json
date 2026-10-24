@@ -1,0 +1,81 @@
+{
+  "experiment_id": "E006",
+  "stage": "screening",
+  "status": "complete",
+  "repeats": [
+    0,
+    1,
+    2
+  ],
+  "outer_folds": 9,
+  "inner_splits": 3,
+  "ordinal_shares": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "hard_thresholds": {
+    "r2_min": 0.2359,
+    "mae_max": 0.3422,
+    "spearman_min": 0.426,
+    "qwk_proxy_min": 0.4026,
+    "acc_pm1_proxy_min": 0.5734
+  },
+  "screening_decision": {
+    "repeat_ids": [
+      0,
+      1,
+      2
+    ],
+    "candidate_mean": {
+      "r2": 0.2443038328268096,
+      "mae": 0.3366860627248962,
+      "spearman": 0.42694133824321406,
+      "qwk_proxy": 0.41531886650587535,
+      "acc_pm1_proxy": 0.5544533333333334
+    },
+    "baseline_mean": {
+      "r2": 0.23264608602171324,
+      "mae": 0.34291120491621335,
+      "spearman": 0.4135446245520861,
+      "qwk_proxy": 0.40213751414799725,
+      "acc_pm1_proxy": 0.5480533333333334
+    },
+    "improved": {
+      "r2": true,
+      "mae": true,
+      "spearman": true,
+      "qwk_proxy": true,
+      "acc_pm1_proxy": true
+    },
+    "improved_count": 5,
+    "promote_to_full": true
+  },
+  "random_state": 20261023,
+  "config_sha256": {
+    "e006": "58fa132e16f69b88e3cd1e120e6c7d2940a3184203b4d72e3833ed0ac6fb9159",
+    "ordinal": "5b3196c1b3c4c0324cce9aade095bc2b3d076701ac89059954e3811a2d217d73",
+    "continuous": "dc7e97c7100a5f0d6c358d27020cc04fcb203ffcdb99f7e761cf80cd6142b993"
+  },
+  "run_signature": "52ab01f041bf76d7d9a2855e4f2f384a880bd09b78faa12585f29a11cb88cdb1",
+  "elapsed_seconds": 2131.898,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_oof_predictions_E006_screening.npz",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_E006_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_by_target_E006_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_selected_parameters_E006_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_checkpoint_E006_screening.npz"
+  ]
+}
