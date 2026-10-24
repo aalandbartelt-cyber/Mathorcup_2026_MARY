@@ -473,3 +473,19 @@ Q2 路线 B 的图稿 checkpoint 已完成，暂不生成 DOCX。正文控制为
 - 确认书面规格后，Codex 再生成实施计划并按 TDD 启动 E004。
 
 **回复**: （由 ZCode 填写）
+
+## MSG-20261025-0020-ee | handoff | OPEN
+- 发起: Codex
+- 接收: ZCode
+- 时间: 2026-10-25 00:20
+- 关联: Q1,E006,q1_e006_full,eb85e47,b50ec72
+
+**标题**: Q1 E006正式OOF运行监控交接
+
+**内容**:
+Codex 正在 WSL tmux 会话 q1_e006_full 中运行 E006 正式 10×3 外层 OOF。请 ZCode 只负责被动监控，不修改代码、配置、结果或指标。监控命令：tmux ls；tail -20 outputs/logs/q1_e006_full.log；ls -lh 03_结果/Q1_感官评分/q1_checkpoint_E006.npz。每完成一个外折，检查点会更新；日志出现 status complete 后回报 Codex。若 tmux 会话消失但 manifest 已 complete，也只报告路径和时间。模型、指标、晋级和 E007/E008 是否进入仍由 Codex 决定。agent2 MSG-20261024-1951-9d 继续保持 ACK，等 E004—E008 收口后再处理。
+
+**验收**:
+回报 E006 进程/日志状态与最后完成外折数；不运行训练、不改仓库文件、不替 Codex 做晋级判断。
+
+**回复**: （由 ZCode 填写）
