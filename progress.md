@@ -117,6 +117,7 @@
   - 确认双路线嵌套 OOF 架构：连续集成、有序累计 HGB、折内凸融合及必要时的收缩式逐目标门控。
   - 冻结 E004—E008 的进入顺序、五项硬门槛、7/10 重复一致性条件、异常回退和停止规则。
   - 写入 `docs/superpowers/specs/2026-10-24-q1-second-round-multi-metric-optimization-design.md` 并完成占位符、口径、冲突和可执行性自检。
+  - 用户确认书面规格后，生成 `docs/superpowers/plans/2026-10-24-q1-second-round-multi-metric-optimization.md`，拆为指标抽取、累计有序模型、约束融合、共享 OOF、E004—E007 和最终审计九项任务。
 
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
