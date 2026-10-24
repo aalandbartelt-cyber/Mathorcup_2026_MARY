@@ -36,7 +36,7 @@
 - Modify: 02_代码/Q1_感官评分/src/compute_q1_extended_metrics.py
 - Create: 02_代码/Q1_感官评分/tests/test_q1_metrics.py
 
-- [ ] **Step 1: Write the failing metric tests**
+- [x] **Step 1: Write the failing metric tests**
 
 ~~~python
 from __future__ import annotations
@@ -71,7 +71,7 @@ class Q1MetricTests(unittest.TestCase):
             matrix_metrics(np.zeros((5, 2)), np.zeros((5, 3)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -80,7 +80,7 @@ conda run -n mathorcup python -m unittest \
 
 Expected: import failure for q1_metrics.
 
-- [ ] **Step 3: Implement the public metric API**
+- [x] **Step 3: Implement the public metric API**
 
 Move the current scalar implementations from compute_q1_extended_metrics.py and add the following matrix layer; the moved scalar functions retain their current bodies exactly:
 
@@ -124,7 +124,7 @@ def summarise_target_metrics(by_target: pd.DataFrame) -> pd.DataFrame:
 
 Preserve the BZD seven-bin definition exactly and import all public functions from q1_metrics.py in the E003 CLI.
 
-- [ ] **Step 4: Verify GREEN and frozen E003 equivalence**
+- [x] **Step 4: Verify GREEN and frozen E003 equivalence**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -139,7 +139,7 @@ git diff --exit-code -- \
 
 Expected: tests pass and E003 CSV files have no diff.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/src/q1_metrics.py' \
