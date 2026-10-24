@@ -110,6 +110,14 @@
   - 连续两次 R 重绘后六个交付文件 SHA256 均一致。
   - 70% 缩放与灰度接触表目检通过，图例无覆盖、标注无越界、图内无整图题目。
 
+### Q1 第二轮多指标优化设计
+- **Status:** written specification pending user review
+- Actions taken:
+  - 用户确认 R²、MAE、Spearman、代理 QWK、代理 ACC±1 五项全部冲击参考最优，且连续指标不得退化。
+  - 确认双路线嵌套 OOF 架构：连续集成、有序累计 HGB、折内凸融合及必要时的收缩式逐目标门控。
+  - 冻结 E004—E008 的进入顺序、五项硬门槛、7/10 重复一致性条件、异常回退和停止规则。
+  - 写入 `docs/superpowers/specs/2026-10-24-q1-second-round-multi-metric-optimization-design.md` 并完成占位符、口径、冲突和可执行性自检。
+
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
 - **Started:** 2026-10-23 18:28 CST
