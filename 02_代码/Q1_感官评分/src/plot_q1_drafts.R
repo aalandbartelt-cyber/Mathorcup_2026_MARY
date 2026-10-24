@@ -134,7 +134,13 @@ comparison <- comparison %>%
   mutate(display_name = factor(display_name, levels = model_levels))
 focus_summary <- comparison %>%
   filter(display_name == "ExtraTrees") %>%
-  summarise(r2 = mean(macro_r2), mae = mean(macro_mae))
+  summarise(
+    r2 = mean(macro_r2),
+    mae = mean(macro_mae),
+    r2_label_y = max(macro_r2) + 0.008,
+    mae_label_y = min(macro_mae) - 0.0025
+  ) %>%
+  mutate(display_name = factor("ExtraTrees", levels = model_levels))
 
 p1a <- ggplot(comparison, aes(display_name, macro_r2,
                               fill = display_name, colour = display_name)) +
@@ -145,11 +151,16 @@ p1a <- ggplot(comparison, aes(display_name, macro_r2,
              shape = 21, size = 1.55, stroke = 0.28) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 2.35,
                stroke = 0.45, fill = "white", colour = "black") +
+  geom_text(
+    data = focus_summary,
+    aes(x = display_name, y = r2_label_y, label = sprintf("%.3f", r2)),
+    inherit.aes = FALSE, colour = "#123A65", size = 3.0,
+    fontface = "bold", vjust = 0
+  ) +
   scale_fill_manual(values = model_colors) +
   scale_colour_manual(values = model_outlines) +
   scale_y_continuous(expand = expansion(mult = c(0.08, 0.16))) +
-  labs(x = NULL, y = "宏平均 R²",
-       subtitle = sprintf("（a）解释度：ExtraTrees R² = %.3f", focus_summary$r2)) +
+  labs(x = NULL, y = "宏平均 R²", subtitle = "（a）解释度") +
   theme_mcup(base_size = 9.5, legend = "none") +
   panel_header_theme +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
@@ -162,11 +173,16 @@ p1b <- ggplot(comparison, aes(display_name, macro_mae,
              shape = 21, size = 1.55, stroke = 0.28) +
   stat_summary(fun = mean, geom = "point", shape = 23, size = 2.35,
                stroke = 0.45, fill = "white", colour = "black") +
+  geom_text(
+    data = focus_summary,
+    aes(x = display_name, y = mae_label_y, label = sprintf("%.3f", mae)),
+    inherit.aes = FALSE, colour = "#123A65", size = 3.0,
+    fontface = "bold", vjust = 1
+  ) +
   scale_fill_manual(values = model_colors) +
   scale_colour_manual(values = model_outlines) +
   scale_y_continuous(expand = expansion(mult = c(0.14, 0.08))) +
-  labs(x = NULL, y = "宏平均 MAE（z 分数）",
-       subtitle = sprintf("（b）绝对误差：ExtraTrees MAE = %.3f", focus_summary$mae)) +
+  labs(x = NULL, y = "宏平均 MAE（z 分数）", subtitle = "（b）绝对误差") +
   theme_mcup(base_size = 9.5, legend = "none") +
   panel_header_theme +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
@@ -367,42 +383,28 @@ mapping_linetypes <- c(
   "酒精感" = "dotdash",
   "酸度" = "twodash"
 )
-label_targets <- tibble::tribble(
-  ~target_display, ~label_grade, ~label_hjust,
-  "总体麦芽香气", 5.70, -0.05,
-  "花香型酯类风味", 5.35, 1.05,
-  "酒精感", 5.00, -0.05,
-  "酸度", 4.65, 1.05
-)
-mapping_labels <- mapping %>%
-  inner_join(label_targets, by = "target_display") %>%
-  group_by(target_display) %>%
-  slice_min(abs(grade_0_6 - label_grade), n = 1, with_ties = FALSE) %>%
-  ungroup()
-
 p4b <- ggplot(mapping,
               aes(z_score, grade_0_6,
                   colour = target_display, linetype = target_display)) +
   geom_step(linewidth = 0.82, direction = "hv") +
-  geom_point(
-    data = mapping_labels,
-    aes(x = z_score, y = grade_0_6, colour = target_display),
-    inherit.aes = FALSE, size = 1.35, show.legend = FALSE
-  ) +
-  geom_text(
-    data = mapping_labels,
-    aes(x = z_score, y = grade_0_6, colour = target_display,
-        label = target_display, hjust = label_hjust),
-    inherit.aes = FALSE, size = 2.55, fontface = "bold", show.legend = FALSE
-  ) +
-  scale_colour_manual(values = mapping_colors, guide = "none") +
-  scale_linetype_manual(values = mapping_linetypes, guide = "none") +
+  scale_colour_manual(values = mapping_colors, name = NULL) +
+  scale_linetype_manual(values = mapping_linetypes, name = NULL) +
   scale_y_continuous(breaks = 0:6, limits = c(0, 6)) +
   labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级",
        subtitle = "（b）训练折经验分布的单调映射") +
-  theme_mcup(base_size = 8.8, legend = "none") +
+  guides(
+    colour = guide_legend(nrow = 2, byrow = TRUE),
+    linetype = guide_legend(nrow = 2, byrow = TRUE)
+  ) +
+  theme_mcup(base_size = 8.8, legend = "right") +
   panel_header_theme +
-  theme(legend.position = "none")
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.text = element_text(size = 6.8),
+    legend.key.width = unit(1.15, "cm"),
+    legend.spacing.x = unit(0.12, "cm")
+  )
 
 p4 <- (p4a | p4b) +
   plot_layout(widths = c(1.12, 0.88))

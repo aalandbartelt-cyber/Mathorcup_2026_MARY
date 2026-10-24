@@ -74,6 +74,25 @@ class Q1V3ArtifactTests(unittest.TestCase):
         self.assertIn('label = sprintf("总体 MAE=%.3f"', source)
         self.assertNotIn("angle = 90", source)
 
+    def test_v3_figure1_uses_plain_numeric_extratrees_labels(self) -> None:
+        source = PLOT_SCRIPT.read_text(encoding="utf-8")
+        self.assertIn('subtitle = "（a）解释度"', source)
+        self.assertIn('subtitle = "（b）绝对误差"', source)
+        self.assertIn('label = sprintf("%.3f", r2)', source)
+        self.assertIn('label = sprintf("%.3f", mae)', source)
+        self.assertNotIn("解释度：ExtraTrees", source)
+        self.assertNotIn("绝对误差：ExtraTrees", source)
+
+    def test_v3_figure4_mapping_uses_bottom_legend_not_direct_labels(self) -> None:
+        source = PLOT_SCRIPT.read_text(encoding="utf-8")
+        figure4b = source.split("p4b <-", maxsplit=1)[1].split(
+            "p4 <-", maxsplit=1
+        )[0]
+        self.assertNotIn("geom_text(", figure4b)
+        self.assertNotIn("mapping_labels", figure4b)
+        self.assertIn("guide_legend(nrow = 2", figure4b)
+        self.assertIn('legend.position = "bottom"', figure4b)
+
     def test_v3_directory_contains_expected_images(self) -> None:
         self.assertTrue(V3_DIR.is_dir(), f"missing V3 directory: {V3_DIR}")
         actual = {path.name for path in V3_DIR.glob("*.png")}
