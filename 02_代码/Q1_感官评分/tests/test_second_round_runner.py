@@ -56,6 +56,25 @@ class SecondRoundRunnerTests(unittest.TestCase):
         self.assertEqual(config["device"], "cuda")
         self.assertEqual(config["screening_repeats"], [0, 1, 2])
 
+    def test_e005_config_freezes_bases_and_weight_grid(self) -> None:
+        root = Path(__file__).resolve().parents[3]
+        config = yaml.safe_load(
+            (
+                root
+                / "02_代码"
+                / "Q1_感官评分"
+                / "configs"
+                / "E005_continuous_ensemble.yaml"
+            ).read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(
+            config["base_models"],
+            ["extra_trees", "hgb", "ridge_quantile", "pls2_quantile"],
+        )
+        self.assertEqual(config["weight_step"], 0.1)
+        self.assertEqual(config["screening_repeats"], [0, 1, 2])
+
     def test_outer_indices_are_disjoint_and_complete(self) -> None:
         splits = pd.DataFrame(
             {"repeat": [0, 0], "fold": [0, 0], "row_position": [1, 3]}
