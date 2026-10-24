@@ -13,7 +13,7 @@ source("scripts/plot_style.R")
 data_dir <- "03_结果/Q1_感官评分/figure_data"
 figure_dir <- Sys.getenv(
   "Q1_FIGURE_DIR",
-  unset = "04_图表/Q1_感官评分"
+  unset = "04_图表/Q1_感官评分/final_v3_draft"
 )
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -111,17 +111,24 @@ panel_header_theme <- theme(
   )
 )
 
-# 图1：主模型对比。其他方法使用中性灰，ExtraTrees 作为主结论用深蓝突出。
+# 图1：主模型对比。五个模型用低饱和色区分，ExtraTrees 以深蓝作为主视觉。
 comparison <- read_csv(file.path(data_dir, "model_comparison.csv"),
                        show_col_types = FALSE)
 model_levels <- c("全局均值", "风格收缩均值", "PLS2（秩高斯）",
                   "Ridge（秩高斯）", "ExtraTrees")
 model_colors <- c(
-  "全局均值" = "#C9C9C9",
-  "风格收缩均值" = "#AFAFAF",
-  "PLS2（秩高斯）" = "#969696",
-  "Ridge（秩高斯）" = "#737373",
-  "ExtraTrees" = "#2563A6"
+  "全局均值" = "#88A9D3",
+  "风格收缩均值" = "#67A995",
+  "PLS2（秩高斯）" = "#D4A35B",
+  "Ridge（秩高斯）" = "#9A82B8",
+  "ExtraTrees" = "#1F5A94"
+)
+model_outlines <- c(
+  "全局均值" = "#4F719B",
+  "风格收缩均值" = "#3F7568",
+  "PLS2（秩高斯）" = "#8C6735",
+  "Ridge（秩高斯）" = "#66527F",
+  "ExtraTrees" = "#123A65"
 )
 comparison <- comparison %>%
   mutate(display_name = factor(display_name, levels = model_levels))
@@ -129,13 +136,17 @@ focus_summary <- comparison %>%
   filter(display_name == "ExtraTrees") %>%
   summarise(r2 = mean(macro_r2), mae = mean(macro_mae))
 
-p1a <- ggplot(comparison, aes(display_name, macro_r2, fill = display_name)) +
+p1a <- ggplot(comparison, aes(display_name, macro_r2,
+                              fill = display_name, colour = display_name)) +
   geom_hline(yintercept = 0, colour = "grey55", linewidth = 0.35) +
   geom_boxplot(width = 0.56, linewidth = 0.38, outlier.shape = NA, alpha = 0.88) +
   geom_point(position = position_jitter(width = 0.10, height = 0,
                                         seed = 20261023),
              shape = 21, size = 1.55, stroke = 0.28) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 2.35,
+               stroke = 0.45, fill = "white", colour = "black") +
   scale_fill_manual(values = model_colors) +
+  scale_colour_manual(values = model_outlines) +
   scale_y_continuous(expand = expansion(mult = c(0.08, 0.16))) +
   labs(x = NULL, y = "宏平均 R²",
        subtitle = sprintf("（a）解释度：ExtraTrees R² = %.3f", focus_summary$r2)) +
@@ -143,12 +154,16 @@ p1a <- ggplot(comparison, aes(display_name, macro_r2, fill = display_name)) +
   panel_header_theme +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 
-p1b <- ggplot(comparison, aes(display_name, macro_mae, fill = display_name)) +
+p1b <- ggplot(comparison, aes(display_name, macro_mae,
+                              fill = display_name, colour = display_name)) +
   geom_boxplot(width = 0.56, linewidth = 0.38, outlier.shape = NA, alpha = 0.88) +
   geom_point(position = position_jitter(width = 0.10, height = 0,
                                         seed = 20261023),
              shape = 21, size = 1.55, stroke = 0.28) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 2.35,
+               stroke = 0.45, fill = "white", colour = "black") +
   scale_fill_manual(values = model_colors) +
+  scale_colour_manual(values = model_outlines) +
   scale_y_continuous(expand = expansion(mult = c(0.14, 0.08))) +
   labs(x = NULL, y = "宏平均 MAE（z 分数）",
        subtitle = sprintf("（b）绝对误差：ExtraTrees MAE = %.3f", focus_summary$mae)) +
@@ -160,46 +175,90 @@ p1 <- (p1a | p1b)
 save_paper(p1, file.path(figure_dir, "图1_模型对比.png"),
            width = 8.2, height = 4.35)
 
-# 图2：将两张高纵比图组成横版双联图，并强制使用同一目标顺序。
+# 图2：逐目标 OOF 性能图谱。三栏分别承载香气、风味和其余目标，
+# 每行用同一条短连线比较 R² 与 Spearman，避免 50 行双栏图的视觉拥挤。
 target_metrics <- read_csv(file.path(data_dir, "target_metrics_extra_trees.csv"),
-                           show_col_types = FALSE) %>%
-  arrange(r2)
-target_order <- target_metrics$target_code
+                           show_col_types = FALSE)
 target_metrics <- target_metrics %>%
-  mutate(target_code = factor(target_code, levels = target_order))
+  mutate(
+    panel_group = case_when(
+      target_group == "Aroma" ~ "香气",
+      target_group == "Flavour-core" ~ "风味",
+      TRUE ~ "味觉·口感·总体"
+    ),
+    detail_order = case_when(
+      target_group == "Taste-other" ~ 1L,
+      target_group == "Palate" ~ 2L,
+      target_group == "Overall" ~ 3L,
+      TRUE ~ 1L
+    )
+  )
 
-distribution <- read_csv(file.path(data_dir, "target_distribution.csv.gz"),
-                         show_col_types = FALSE) %>%
-  mutate(target_code = factor(target_code, levels = target_order))
+target_panel_plot <- function(data, panel_title, y_text_size = 6.5,
+                              separators = numeric()) {
+  panel_data <- data %>%
+    arrange(detail_order, r2) %>%
+    mutate(
+      target_label = unname(target_labels_zh[target_code]),
+      target_label = factor(target_label, levels = target_label)
+    )
+  metric_long <- bind_rows(
+    panel_data %>% transmute(target_label, value = r2, metric = "R²"),
+    panel_data %>% transmute(target_label, value = spearman,
+                             metric = "Spearman")
+  )
 
-p2a <- ggplot(distribution, aes(z_score, target_code, fill = target_group)) +
-  geom_boxplot(width = 0.66, linewidth = 0.25, outlier.size = 0.30,
-               outlier.alpha = 0.40) +
-  scale_fill_manual(values = group_colors, labels = group_labels) +
-  scale_y_discrete(labels = target_labels_zh) +
-  labs(x = "聚合感官强度（z 分数）", y = NULL,
-       subtitle = "（a）感官目标分布") +
-  theme_mcup(base_size = 8.7, legend = "none") +
-  panel_header_theme +
-  theme(axis.text.y = element_text(size = 5.8),
-        legend.position = "bottom",
-        legend.direction = "horizontal")
+  plot <- ggplot(panel_data, aes(y = target_label)) +
+    geom_vline(xintercept = c(0.2, 0.4, 0.6, 0.8),
+               colour = "#E5E9EF", linewidth = 0.34) +
+    geom_segment(aes(x = r2, xend = spearman, yend = target_label),
+                 colour = "#C9D0DA", linewidth = 0.62, lineend = "round") +
+    geom_point(data = metric_long,
+               aes(x = value, shape = metric, fill = metric, colour = metric),
+               size = 2.05, stroke = 0.72) +
+    scale_shape_manual(values = c("R²" = 21, "Spearman" = 23)) +
+    scale_fill_manual(values = c("R²" = "#1F5A94", "Spearman" = "white")) +
+    scale_colour_manual(values = c("R²" = "#123A65",
+                                   "Spearman" = "#D06B32")) +
+    scale_x_continuous(limits = c(0, 0.9), breaks = seq(0, 0.8, 0.2),
+                       expand = expansion(mult = c(0.015, 0.02))) +
+    labs(x = "OOF 性能", y = NULL, subtitle = panel_title) +
+    theme_mcup(base_size = 8.6, legend = "right") +
+    panel_header_theme +
+    theme(
+      axis.text.y = element_text(size = y_text_size),
+      legend.position = "bottom",
+      legend.direction = "horizontal",
+      legend.text = element_text(size = 7.2),
+      plot.margin = margin(4, 5, 3, 4)
+    )
 
-p2b <- ggplot(target_metrics, aes(r2, target_code, colour = target_group)) +
-  geom_vline(xintercept = 0, linewidth = 0.35, colour = "grey55") +
-  geom_segment(aes(x = 0, xend = r2, yend = target_code), linewidth = 0.48) +
-  geom_point(size = 2.05) +
-  scale_colour_manual(values = group_colors, labels = group_labels) +
-  scale_x_continuous(expand = expansion(mult = c(0.03, 0.08))) +
-  labs(x = "平均 OOF R²", y = NULL,
-       subtitle = "（b）ExtraTrees 逐目标解释度") +
-  theme_mcup(base_size = 8.7, legend = "none") +
-  panel_header_theme +
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  if (length(separators) > 0) {
+    plot <- plot + geom_hline(
+      yintercept = separators, colour = "#9AA3AE",
+      linewidth = 0.42, linetype = "dotted"
+    )
+  }
+  plot
+}
 
-p2 <- (p2a | p2b) +
-  plot_layout(widths = c(1.18, 0.82))
+p2a <- target_panel_plot(
+  filter(target_metrics, panel_group == "香气"),
+  "（a）香气目标"
+)
+p2b <- target_panel_plot(
+  filter(target_metrics, panel_group == "风味"),
+  "（b）风味目标"
+)
+p2c <- target_panel_plot(
+  filter(target_metrics, panel_group == "味觉·口感·总体"),
+  "（c）味觉、口感与总体", y_text_size = 6.0,
+  separators = c(15.5, 19.5)
+)
+
+p2 <- (p2a | p2b | p2c) +
+  plot_layout(widths = c(1, 1, 1), guides = "collect") &
+  theme(legend.position = "bottom")
 save_paper(p2, file.path(figure_dir, "图2_目标分布与逐目标R2.png"),
            width = 11.2, height = 6.3)
 
@@ -210,16 +269,16 @@ representative3 <- representative %>%
   filter(target_code %in% c("acidity", "X4vg", "stale_hops")) %>%
   mutate(
     facet_label_clean = case_when(
-      target_code == "acidity" ~ "高可预测：acidity   R²=0.73，MAE=0.29",
-      target_code == "X4vg" ~ "中可预测：X4vg   R²=0.19，MAE=0.39",
-      TRUE ~ "低可预测：stale_hops   R²=0.02，MAE=0.31"
+      target_code == "acidity" ~ "高可预测：酸度   R²=0.73，MAE=0.29",
+      target_code == "X4vg" ~ "中可预测：4VG   R²=0.19，MAE=0.39",
+      TRUE ~ "低可预测：陈旧酒花味   R²=0.02，MAE=0.31"
     ),
     facet_label_clean = factor(
       facet_label_clean,
       levels = c(
-        "高可预测：acidity   R²=0.73，MAE=0.29",
-        "中可预测：X4vg   R²=0.19，MAE=0.39",
-        "低可预测：stale_hops   R²=0.02，MAE=0.31"
+        "高可预测：酸度   R²=0.73，MAE=0.29",
+        "中可预测：4VG   R²=0.19，MAE=0.39",
+        "低可预测：陈旧酒花味   R²=0.02，MAE=0.31"
       )
     )
   )
@@ -227,9 +286,12 @@ representative3 <- representative %>%
 p3 <- ggplot(representative3, aes(y_true, y_pred_mean)) +
   geom_abline(slope = 1, intercept = 0, linetype = 2, colour = "#555555",
               linewidth = 0.48) +
-  geom_point(aes(colour = tier), size = 1.45, alpha = 0.64) +
+  geom_smooth(aes(colour = tier, fill = tier), method = "lm", formula = y ~ x,
+              se = TRUE, linewidth = 0.68, alpha = 0.12) +
+  geom_point(aes(colour = tier), size = 1.25, alpha = 0.52) +
   facet_wrap(~facet_label_clean, nrow = 1) +
   scale_colour_manual(values = tier_colors) +
+  scale_fill_manual(values = tier_colors) +
   labs(x = "观测值（z 分数）", y = "OOF 预测值（z 分数）") +
   theme_mcup(base_size = 9.5, legend = "none") +
   theme(strip.background = element_blank(),
@@ -244,14 +306,23 @@ style_metrics <- read_csv(file.path(data_dir, "style_metrics_extra_trees.csv"),
   arrange(mae_all_targets) %>%
   mutate(tasting_category_fine = factor(tasting_category_fine,
                                         levels = tasting_category_fine))
+mean_oof_mae <- mean(target_metrics$mae)
 p4a <- ggplot(style_metrics,
               aes(mae_all_targets, tasting_category_fine,
                   colour = mae_all_targets)) +
+  geom_vline(xintercept = mean_oof_mae, linetype = 2,
+             colour = "#222222", linewidth = 0.48) +
   geom_segment(aes(x = min(mae_all_targets), xend = mae_all_targets,
                    yend = tasting_category_fine), colour = "grey78", linewidth = 0.45) +
   geom_point(aes(size = n_beers), alpha = 0.93) +
   geom_text(aes(label = paste0("n=", n_beers)), colour = "black",
-            size = 2.35, hjust = -0.32) +
+            size = 2.35, hjust = 0, nudge_x = 0.008) +
+  annotate(
+    "text", x = mean_oof_mae + 0.003, y = 21.35,
+    label = sprintf("总体 MAE=%.3f", mean_oof_mae),
+    hjust = 0, vjust = -0.20,
+    colour = "#222222", size = 2.45, fontface = "bold"
+  ) +
   scale_colour_gradient(
     low = "#2C7FB8", high = "#C43C4E",
     name = "颜色：MAE（蓝低，红高）",
@@ -284,18 +355,54 @@ mapping <- read_csv(file.path(data_dir, "scale_mapping_example.csv"),
       "alcohol" = "酒精感"
     )
   )
-p4b <- ggplot(mapping, aes(z_score, grade_0_6, colour = target_display)) +
-  geom_step(linewidth = 0.78, direction = "hv") +
-  scale_colour_manual(values = c("#2C7FB8", "#D1495B", "#55A868", "#8172B3")) +
+mapping_colors <- c(
+  "总体麦芽香气" = "#2C7FB8",
+  "花香型酯类风味" = "#D1495B",
+  "酒精感" = "#55A868",
+  "酸度" = "#8172B3"
+)
+mapping_linetypes <- c(
+  "总体麦芽香气" = "solid",
+  "花香型酯类风味" = "longdash",
+  "酒精感" = "dotdash",
+  "酸度" = "twodash"
+)
+label_targets <- tibble::tribble(
+  ~target_display, ~label_grade, ~label_hjust,
+  "总体麦芽香气", 5.70, -0.05,
+  "花香型酯类风味", 5.35, 1.05,
+  "酒精感", 5.00, -0.05,
+  "酸度", 4.65, 1.05
+)
+mapping_labels <- mapping %>%
+  inner_join(label_targets, by = "target_display") %>%
+  group_by(target_display) %>%
+  slice_min(abs(grade_0_6 - label_grade), n = 1, with_ties = FALSE) %>%
+  ungroup()
+
+p4b <- ggplot(mapping,
+              aes(z_score, grade_0_6,
+                  colour = target_display, linetype = target_display)) +
+  geom_step(linewidth = 0.82, direction = "hv") +
+  geom_point(
+    data = mapping_labels,
+    aes(x = z_score, y = grade_0_6, colour = target_display),
+    inherit.aes = FALSE, size = 1.35, show.legend = FALSE
+  ) +
+  geom_text(
+    data = mapping_labels,
+    aes(x = z_score, y = grade_0_6, colour = target_display,
+        label = target_display, hjust = label_hjust),
+    inherit.aes = FALSE, size = 2.55, fontface = "bold", show.legend = FALSE
+  ) +
+  scale_colour_manual(values = mapping_colors, guide = "none") +
+  scale_linetype_manual(values = mapping_linetypes, guide = "none") +
   scale_y_continuous(breaks = 0:6, limits = c(0, 6)) +
-  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级", colour = "感官维度",
+  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级",
        subtitle = "（b）训练折经验分布的单调映射") +
-  guides(colour = guide_legend(ncol = 2, byrow = TRUE)) +
   theme_mcup(base_size = 8.8, legend = "none") +
   panel_header_theme +
-  theme(legend.position = "bottom",
-        legend.direction = "horizontal",
-        legend.text = element_text(size = 7.2))
+  theme(legend.position = "none")
 
 p4 <- (p4a | p4b) +
   plot_layout(widths = c(1.12, 0.88))
@@ -325,8 +432,8 @@ manifest <- tibble::tribble(
   "图1 五类基线在重复分层外层交叉验证中的性能比较",
   "ExtraTrees 同时提高宏平均 R² 并降低 MAE，散点表示 10 次重复划分。",
   "2", "main", file.path(figure_dir, "图2_目标分布与逐目标R2.png"),
-  "图2 50 个感官目标的分布与 ExtraTrees 逐目标解释度",
-  "两面板共用按 R² 排序的目标顺序，显示分布形态与可预测性的异质性。",
+  "图2 50 个感官目标的 ExtraTrees OOF R²与 Spearman 性能图谱",
+  "三栏按感官家族展示全部目标；同一目标的 R²与 Spearman 共同刻画可预测性异质性。",
   "3", "main", file.path(figure_dir, "图3_OOF观测预测.png"),
   "图3 高、中、低可预测感官目标的 OOF 观测—预测关系",
   "acidity、X4vg 和 stale_hops 展示了预测性差异及低信号目标的回归到均值。",

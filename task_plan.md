@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 2B：Q1 图表 V3 证据层级精修设计已完成，等待规格确认后实施。
+Phase 2B：Q1 图表 V3 已按用户首轮审阅重构，等待最终验图。
 
 ## Phases
 
@@ -25,18 +25,19 @@ Phase 2B：Q1 图表 V3 证据层级精修设计已完成，等待规格确认�
 - [x] 保留 `final_v1`，新稿另存 v2，不把总图题画入图片
 - [x] 300 dpi 导出并做尺寸、字体、遮挡审计
 - [x] 向 `to_zcode.md` 发送图清单
-- [ ] 等待用户确认
-- **Status:** waiting for user review
+- [x] 用户已指出图1灰度过重、图2版式不佳，v2 不再作为当前候选
+- **Status:** superseded by V3 review draft
 
 ### Phase 2B：Q1 图稿 V3 精修
 
 - [x] 对照 BZD、agent 与 615 张优秀论文风格统计，完成视觉审计
 - [x] 冻结 V3 图1—图4与附图 S1 的图形编码设计
 - [x] 写入并自检 V3 设计规格
-- [ ] 用户确认书面规格
-- [ ] 生成 `final_v3_draft/`，完成缩放、灰度和重绘一致性检查
-- [ ] 向 `to_zcode.md` 发送 V3 图清单，等待最终验图
-- **Status:** waiting for design approval
+- [x] 用户确认书面规格并授权直接重画
+- [x] 根据首轮反馈把图1改为低饱和多色，把图2重构为三栏 R²—Spearman 性能图谱
+- [x] 生成 `final_v3_draft/`，完成缩放、灰度和重绘一致性检查
+- [x] 向 `to_zcode.md` 发送 V3 图清单，等待最终验图
+- **Status:** waiting for final figure review
 
 ### Phase 3：Q1 正文 v2 与打包
 

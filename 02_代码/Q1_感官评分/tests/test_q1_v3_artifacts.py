@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import unittest
+from colorsys import rgb_to_hsv
 from pathlib import Path
 
 import pandas as pd
@@ -12,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[3]
 FIGURE_ROOT = ROOT / "04_图表" / "Q1_感官评分"
 V3_DIR = FIGURE_ROOT / "final_v3_draft"
 DATA_DIR = ROOT / "03_结果" / "Q1_感官评分" / "figure_data"
+PLOT_SCRIPT = ROOT / "02_代码" / "Q1_感官评分" / "src" / "plot_q1_drafts.R"
 
 EXPECTED_IMAGES = {
     "图1_模型对比.png": (2460, 1305),
@@ -41,6 +44,36 @@ def read_checksum_manifest(path: Path) -> dict[str, str]:
 
 
 class Q1V3ArtifactTests(unittest.TestCase):
+    def test_v3_model_palette_uses_five_distinct_non_gray_colors(self) -> None:
+        source = PLOT_SCRIPT.read_text(encoding="utf-8")
+        palette_block = re.search(
+            r"model_colors\s*<-\s*c\((.*?)\n\)", source, flags=re.DOTALL
+        )
+        self.assertIsNotNone(palette_block)
+        colors = re.findall(r"#[0-9A-Fa-f]{6}", palette_block.group(1))
+        self.assertEqual(len(colors), 5)
+        self.assertEqual(len(set(colors)), 5)
+        for color in colors:
+            red, green, blue = (
+                int(color[index:index + 2], 16) / 255
+                for index in (1, 3, 5)
+            )
+            saturation = rgb_to_hsv(red, green, blue)[1]
+            self.assertGreater(saturation, 0.20, f"near-gray model color: {color}")
+
+    def test_v3_figure2_is_three_panel_r2_spearman_atlas(self) -> None:
+        source = PLOT_SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("target_panel_plot <- function", source)
+        self.assertIn('metric = "Spearman"', source)
+        self.assertIn("plot_layout(widths = c(1, 1, 1)", source)
+        self.assertNotIn("（15 项）", source)
+        self.assertNotIn("（20 项）", source)
+
+    def test_v3_figure4_global_mae_label_is_horizontal(self) -> None:
+        source = PLOT_SCRIPT.read_text(encoding="utf-8")
+        self.assertIn('label = sprintf("总体 MAE=%.3f"', source)
+        self.assertNotIn("angle = 90", source)
+
     def test_v3_directory_contains_expected_images(self) -> None:
         self.assertTrue(V3_DIR.is_dir(), f"missing V3 directory: {V3_DIR}")
         actual = {path.name for path in V3_DIR.glob("*.png")}
@@ -62,6 +95,9 @@ class Q1V3ArtifactTests(unittest.TestCase):
         self.assertEqual((manifest["role"] == "main").sum(), 4)
         self.assertEqual((manifest["role"] == "supplementary").sum(), 1)
         self.assertTrue(manifest["path"].str.contains("final_v3_draft", regex=False).all())
+        figure2 = manifest.loc[manifest["figure_no"].astype(str) == "2"].iloc[0]
+        self.assertIn("Spearman", figure2["caption"])
+        self.assertNotIn("目标分布", figure2["caption"])
 
     def test_v3_checksum_manifest_matches_artifacts(self) -> None:
         manifest_path = V3_DIR / "SHA256SUMS.txt"

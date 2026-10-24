@@ -4,7 +4,7 @@
 
 **Goal:** Generate a traceable, visually refined Q1 V3 figure set without changing E001—E003 models, metrics, selected representative targets, or frozen V1/V2 artifacts.
 
-**Architecture:** Keep the frozen CSV-to-R plotting pipeline. Extend the existing R script with evidence-focused encodings, render to an isolated `final_v3_draft/` directory, and validate dimensions, manifests, deterministic hashes, frozen-version integrity, and placed-size/grayscale previews with a dedicated Python audit.
+**Architecture:** Keep the frozen CSV-to-R plotting pipeline. Extend the existing R script with evidence-focused encodings, including a non-gray model palette and a three-panel R²/Spearman target atlas, render to an isolated `final_v3_draft/` directory, and validate dimensions, manifests, deterministic hashes, frozen-version integrity, and placed-size/grayscale previews with a dedicated Python audit.
 
 **Tech Stack:** R 4.x, ggplot2, dplyr, tidyr, readr, patchwork, ragg/theme_mcup; Python 3.10, Pillow, pandas, hashlib; Git.
 
@@ -25,7 +25,7 @@
 **Files:**
 - Create: `02_代码/Q1_感官评分/tests/test_q1_v3_artifacts.py`
 
-- [ ] **Step 1: Write the audit test**
+- [x] **Step 1: Write the audit test**
 
 The test defines the expected five PNG names and dimensions, verifies approximately 300 dpi, requires a five-row figure list and valid SHA256 manifest, asserts source counts of 50 targets/22 styles/the fixed representative targets, and verifies both frozen checksum manifests.
 
@@ -39,7 +39,7 @@ EXPECTED = {
 }
 ```
 
-- [ ] **Step 2: Run the audit and verify it fails before rendering**
+- [x] **Step 2: Run the audit and verify it fails before rendering**
 
 Run:
 
@@ -54,7 +54,7 @@ Expected: FAIL because `04_图表/Q1_感官评分/final_v3_draft/` does not exis
 **Files:**
 - Modify: `02_代码/Q1_感官评分/src/plot_q1_drafts.R`
 
-- [ ] **Step 1: Add the Figure 1 mean markers**
+- [x] **Step 1: Add the Figure 1 mean markers**
 
 Add after jitter points in both model-comparison panels:
 
@@ -63,31 +63,30 @@ stat_summary(fun = mean, geom = "point", shape = 23, size = 2.35,
              stroke = 0.45, fill = "white", colour = "black")
 ```
 
-- [ ] **Step 2: Replace Figure 2 boxplots with quantile intervals**
+- [x] **Step 2: Replace Figure 2 with a three-panel target-performance atlas**
 
-Aggregate `distribution` by target and target group:
+Map the original five target groups into three layout groups:
 
 ```r
-distribution_summary <- distribution %>%
-  group_by(target_code, target_group) %>%
-  summarise(
-    q05 = quantile(z_score, 0.05), q25 = quantile(z_score, 0.25),
-    median = median(z_score), q75 = quantile(z_score, 0.75),
-    q95 = quantile(z_score, 0.95), .groups = "drop"
-  )
+target_metrics <- target_metrics %>%
+  mutate(panel_group = case_when(
+    target_group == "Aroma" ~ "香气",
+    target_group == "Flavour-core" ~ "风味",
+    TRUE ~ "味觉·口感·总体"
+  ))
 ```
 
-Draw a thin 5%—95% segment, thick IQR segment, and white-filled median point, all using target-group color. Keep the common factor order and existing five-category legend.
+Create one horizontal dumbbell panel per layout group. Each target row connects R² (deep-blue filled circle) and Spearman (orange open diamond) with a light neutral segment. Sort targets by R² within each panel, use the same 0—0.9 x-axis, and combine the 15/15/20-row panels with equal widths. Keep all 50 targets.
 
-- [ ] **Step 3: Add OLS trends and Chinese panel labels to Figure 3**
+- [x] **Step 3: Add OLS trends and Chinese panel labels to Figure 3**
 
 Change the three labels to `高可预测：酸度`, `中可预测：4VG`, and `低可预测：陈旧酒花味`. Add `geom_smooth(method="lm", formula=y~x, se=TRUE)` below the points, using the existing tier colors and a low-alpha confidence ribbon. Keep the dashed 1:1 line and fixed shared scales.
 
-- [ ] **Step 4: Add Figure 4 benchmark and direct curve labels**
+- [x] **Step 4: Add Figure 4 benchmark and direct curve labels**
 
 Compute `mean_oof_mae <- mean(target_metrics$mae)` from the 50 target-level mean-OOF metrics, then add a vertical line at that value and plain-text annotation `总体 MAE=0.339`. Do not reuse Figure 1's 10-repeat mean MAE=0.3422. Map four line types to the scale curves. Build a four-row direct-label frame by selecting curve points nearest grades 5.70, 5.35, 5.00, and 4.65, draw colored text at those points, and suppress separate color/linetype legends.
 
-- [ ] **Step 5: Keep Supplement S1 geometry unchanged**
+- [x] **Step 5: Keep Supplement S1 geometry unchanged**
 
 Reuse the Chinese facet labels from Figure 3; do not change residual points, zero line, or LOESS smoother.
 
@@ -97,7 +96,7 @@ Reuse the Chinese facet labels from Figure 3; do not change residual points, zer
 - Create: `04_图表/Q1_感官评分/final_v3_draft/*.png`
 - Create: `04_图表/Q1_感官评分/final_v3_draft/Q1_图清单.csv`
 
-- [ ] **Step 1: Render with the isolated output directory**
+- [x] **Step 1: Render with the isolated output directory**
 
 ```bash
 Q1_FIGURE_DIR=04_图表/Q1_感官评分/final_v3_draft conda run -n r Rscript 02_代码/Q1_感官评分/src/plot_q1_drafts.R
@@ -105,15 +104,15 @@ Q1_FIGURE_DIR=04_图表/Q1_感官评分/final_v3_draft conda run -n r Rscript 02
 
 Expected: `Generated 4 main figures and 1 supplementary figure`.
 
-- [ ] **Step 2: Inspect all figures at original resolution**
+- [x] **Step 2: Inspect all figures at original resolution**
 
 Reject and revise if text crosses a border, direct labels overlap, group colors are ambiguous, or Figure 2 target names are unreadable.
 
-- [ ] **Step 3: Generate 70% and grayscale contact sheets for QA**
+- [x] **Step 3: Generate 70% and grayscale contact sheets for QA**
 
 Use ImageMagick only for temporary previews under `/tmp`; do not commit these previews. Confirm V3 remains readable and curves remain distinguishable without color.
 
-- [ ] **Step 4: Generate the SHA256 manifest**
+- [x] **Step 4: Generate the SHA256 manifest**
 
 Write all five PNG hashes and `Q1_图清单.csv` to `final_v3_draft/SHA256SUMS.txt`, then verify with `sha256sum -c`.
 
@@ -122,7 +121,7 @@ Write all five PNG hashes and `Q1_图清单.csv` to `final_v3_draft/SHA256SUMS.t
 **Files:**
 - Test: `02_代码/Q1_感官评分/tests/test_q1_v3_artifacts.py`
 
-- [ ] **Step 1: Run the artifact audit**
+- [x] **Step 1: Run the artifact audit**
 
 ```bash
 conda run -n mathorcup python -m unittest 02_代码/Q1_感官评分/tests/test_q1_v3_artifacts.py -v
@@ -130,11 +129,11 @@ conda run -n mathorcup python -m unittest 02_代码/Q1_感官评分/tests/test_q
 
 Expected: PASS for artifact, source-count, dimension, DPI, and frozen-hash checks.
 
-- [ ] **Step 2: Verify deterministic redraw**
+- [x] **Step 2: Verify deterministic redraw**
 
 Record V3 hashes, rerun the R command, and check that every hash is unchanged.
 
-- [ ] **Step 3: Run all Q1 regression tests and whitespace checks**
+- [x] **Step 3: Run all Q1 regression tests and whitespace checks**
 
 ```bash
 conda run -n mathorcup python -m unittest discover -s 02_代码/Q1_感官评分/tests -p 'test_*.py' -v
@@ -155,15 +154,15 @@ Expected: all Q1 tests pass and `git diff --check` prints nothing.
 - Modify: `docs/collab/to_zcode.md`
 - Modify: `docs/collab/board.md`
 
-- [ ] **Step 1: Update provenance documents**
+- [x] **Step 1: Update provenance documents**
 
 Record the quantile-interval encoding, OLS calibration trend, overall-MAE reference, direct labels, V3 output directory, and V1/V2 freeze.
 
-- [ ] **Step 2: Send the V3 figure list**
+- [x] **Step 2: Send the V3 figure list**
 
 Append one `handoff` message listing all five V3 paths, the visual change in each figure, unchanged model numbers, and the condition that Word generation remains paused pending user approval.
 
-- [ ] **Step 3: Commit and push the V3 checkpoint**
+- [x] **Step 3: Commit and push the V3 checkpoint**
 
 ```bash
 git add 02_代码/Q1_感官评分 .research/figures 04_图表/Q1_感官评分 docs/collab task_plan.md findings.md progress.md

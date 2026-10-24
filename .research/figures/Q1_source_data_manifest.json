@@ -5,27 +5,24 @@
       "panels": ["a", "b"],
       "source": ["03_结果/Q1_感官评分/figure_data/model_comparison.csv"],
       "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
-      "outputs": ["04_图表/Q1_感官评分/图1_模型对比.png"],
-      "notes": "Ten repeated outer-CV summaries; ExtraTrees emphasized."
+      "outputs": ["04_图表/Q1_感官评分/final_v3_draft/图1_模型对比.png"],
+      "notes": "Ten repeated outer-CV summaries; five muted model colors with ExtraTrees emphasized in deep blue."
     },
     {
       "figure_id": "Q1-F2",
-      "panels": ["a", "b"],
-      "source": [
-        "03_结果/Q1_感官评分/figure_data/target_distribution.csv.gz",
-        "03_结果/Q1_感官评分/figure_data/target_metrics_extra_trees.csv"
-      ],
+      "panels": ["a", "b", "c"],
+      "source": ["03_结果/Q1_感官评分/figure_data/target_metrics_extra_trees.csv"],
       "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
-      "outputs": ["04_图表/Q1_感官评分/图2_目标分布与逐目标R2.png"],
-      "notes": "Panels share one target order sorted by mean-OOF R2."
+      "outputs": ["04_图表/Q1_感官评分/final_v3_draft/图2_目标分布与逐目标R2.png"],
+      "notes": "Three grouped panels retain all 50 targets and pair mean-OOF R2 with Spearman on a common 0-0.9 axis."
     },
     {
       "figure_id": "Q1-F3",
       "panels": ["high", "medium", "low"],
       "source": ["03_结果/Q1_感官评分/figure_data/representative_oof.csv.gz"],
       "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
-      "outputs": ["04_图表/Q1_感官评分/图3_OOF观测预测.png"],
-      "notes": "Pre-registered representatives: acidity, X4vg, stale_hops."
+      "outputs": ["04_图表/Q1_感官评分/final_v3_draft/图3_OOF观测预测.png"],
+      "notes": "Pre-registered representatives: acidity, X4vg, stale_hops; OLS trends and 95% bands added."
     },
     {
       "figure_id": "Q1-F4",
@@ -35,15 +32,15 @@
         "03_结果/Q1_感官评分/figure_data/scale_mapping_example.csv"
       ],
       "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
-      "outputs": ["04_图表/Q1_感官评分/图4_风格误差与量表映射.png"],
-      "notes": "Style-level OOF error and training-fold empirical-CDF mapping."
+      "outputs": ["04_图表/Q1_感官评分/final_v3_draft/图4_风格误差与量表映射.png"],
+      "notes": "Style-level OOF error with the global mean-OOF MAE reference and directly labeled training-fold empirical-CDF mappings."
     },
     {
       "figure_id": "Q1-S1",
       "panels": ["high", "medium", "low"],
       "source": ["03_结果/Q1_感官评分/figure_data/representative_oof.csv.gz"],
       "script": "02_代码/Q1_感官评分/src/plot_q1_drafts.R",
-      "outputs": ["04_图表/Q1_感官评分/附图S1_残差诊断.png"],
+      "outputs": ["04_图表/Q1_感官评分/final_v3_draft/附图S1_残差诊断.png"],
       "notes": "Supplementary diagnostic; not counted among the four main figures."
     }
   ]
