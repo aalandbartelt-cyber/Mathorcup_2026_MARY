@@ -403,7 +403,7 @@ git commit -m 'feat(q1): add constrained continuous ordinal blending'
 - Create: 02_代码/Q1_感官评分/src/second_round_runner.py
 - Create: 02_代码/Q1_感官评分/tests/test_second_round_runner.py
 
-- [ ] **Step 1: Write failing split and completeness tests**
+- [x] **Step 1: Write failing split and completeness tests**
 
 ~~~python
 from __future__ import annotations
@@ -435,14 +435,14 @@ class SecondRoundRunnerTests(unittest.TestCase):
             parse_repeats("10", list(range(10)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
   '02_代码/Q1_感官评分/tests/test_second_round_runner.py' -v
 ~~~
 
-- [ ] **Step 3: Implement split and artifact functions**
+- [x] **Step 3: Implement split and artifact functions**
 
 ~~~python
 def parse_repeats(text: str, available: Sequence[int]) -> list[int]:
@@ -510,7 +510,7 @@ def write_metric_artifacts(experiment_id: str, archive_path: Path,
 
 Screening suffixes must be preserved, so partial output cannot overwrite full output.
 
-- [ ] **Step 4: Verify GREEN and commit**
+- [x] **Step 4: Verify GREEN and commit**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \
