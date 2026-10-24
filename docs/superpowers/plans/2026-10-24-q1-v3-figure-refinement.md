@@ -85,7 +85,7 @@ Change the three labels to `高可预测：酸度`, `中可预测：4VG`, and `�
 
 - [ ] **Step 4: Add Figure 4 benchmark and direct curve labels**
 
-Add a vertical line at `focus_summary$mae` and plain-text annotation `总体 MAE=0.339`. Map four line types to the scale curves. Build a four-row direct-label frame by selecting curve points nearest grades 5.70, 5.35, 5.00, and 4.65, draw colored text at those points, and suppress separate color/linetype legends.
+Compute `mean_oof_mae <- mean(target_metrics$mae)` from the 50 target-level mean-OOF metrics, then add a vertical line at that value and plain-text annotation `总体 MAE=0.339`. Do not reuse Figure 1's 10-repeat mean MAE=0.3422. Map four line types to the scale curves. Build a four-row direct-label frame by selecting curve points nearest grades 5.70, 5.35, 5.00, and 4.65, draw colored text at those points, and suppress separate color/linetype legends.
 
 - [ ] **Step 5: Keep Supplement S1 geometry unchanged**
 
