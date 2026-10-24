@@ -102,6 +102,26 @@ class SecondRoundRunnerTests(unittest.TestCase):
             0.30, 0.35, 0.40, 0.45, 0.50,
         ])
 
+    def test_e007_config_freezes_shrinkage_gate(self) -> None:
+        root = Path(__file__).resolve().parents[3]
+        config = yaml.safe_load(
+            (
+                root
+                / "02_代码"
+                / "Q1_感官评分"
+                / "configs"
+                / "E007_shrunk_gating.yaml"
+            ).read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(
+            config["shrinkage_strengths"], [0.0, 0.25, 0.5, 0.75, 1.0]
+        )
+        self.assertEqual(
+            config["entry_condition"],
+            "E006_misses_at_least_one_hard_threshold",
+        )
+
     def test_outer_indices_are_disjoint_and_complete(self) -> None:
         splits = pd.DataFrame(
             {"repeat": [0, 0], "fold": [0, 0], "row_position": [1, 3]}

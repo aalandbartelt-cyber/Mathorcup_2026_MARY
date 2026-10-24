@@ -12,6 +12,7 @@ sys.path.insert(0, str(SRC))
 
 from ensemble_models import (  # noqa: E402
     apply_convex_blend,
+    apply_targetwise_blend,
     fit_predict_hgb_multioutput,
     select_feasible_convex_blend,
     shrink_target_weights,
@@ -61,6 +62,20 @@ class EnsembleModelTests(unittest.TestCase):
         shrunk = shrink_target_weights(target, global_weight, shrinkage=1.0)
 
         np.testing.assert_allclose(shrunk, np.tile(global_weight, (2, 1)))
+
+    def test_targetwise_blend_uses_one_convex_vector_per_target(self) -> None:
+        stack = np.array(
+            [
+                [[1.0, 3.0], [10.0, 20.0]],
+                [[2.0, 4.0], [30.0, 50.0]],
+            ]
+        )
+        weights = np.array([[0.25, 0.75], [0.60, 0.40]])
+
+        blended = apply_targetwise_blend(stack, weights)
+
+        expected = np.array([[2.5, 14.0], [3.5, 38.0]])
+        np.testing.assert_allclose(blended, expected)
 
     def test_hgb_multioutput_is_finite_and_deterministic(self) -> None:
         x = np.arange(60, dtype=float).reshape(20, 3)

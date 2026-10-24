@@ -49,6 +49,23 @@ def apply_convex_blend(
     return np.tensordot(stack, weight, axes=([-1], [0]))
 
 
+def apply_targetwise_blend(
+    prediction_stack: np.ndarray, target_weights: np.ndarray
+) -> np.ndarray:
+    """Blend models with one convex weight vector for each target."""
+    stack = np.asarray(prediction_stack, dtype=float)
+    weights = np.asarray(target_weights, dtype=float)
+    if stack.ndim != 3 or weights.ndim != 2:
+        raise ValueError("prediction stack must be 3-D and target weights 2-D")
+    if stack.shape[1:] != weights.shape:
+        raise ValueError("prediction stack and target weights disagree")
+    if not np.isfinite(stack).all() or not np.isfinite(weights).all():
+        raise ValueError("prediction stack and weights must be finite")
+    if (weights < 0).any() or not np.allclose(weights.sum(axis=1), 1.0):
+        raise ValueError("each target weight vector must be convex")
+    return np.einsum("ntm,tm->nt", stack, weights)
+
+
 def select_feasible_convex_blend(
     y_true: np.ndarray,
     prediction_stack: np.ndarray,

@@ -1,0 +1,18 @@
+experiment_id: E007
+question: Q1
+status: registered
+purpose: targetwise ordinal shares shrunk toward the E006 global route weight
+features: chemistry_231
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+screening_repeats: [0, 1, 2]
+full_repeats: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+inner_splits: 3
+random_state: 20261023
+entry_condition: E006_misses_at_least_one_hard_threshold
+shrinkage_strengths: [0.0, 0.25, 0.5, 0.75, 1.0]
+continuous_tolerance:
+  r2_drop: 0.002
+  mae_increase: 0.001
+source_config: E006_dual_route.yaml
+selection_metric: shared_shrinkage_with_continuous_feasibility
+outputs: 03_结果/Q1_感官评分
