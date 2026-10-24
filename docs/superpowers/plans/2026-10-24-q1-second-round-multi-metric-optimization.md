@@ -588,7 +588,7 @@ git commit -m 'feat(q1): complete E004 ordinal HGB screening'
 - Create: 02_代码/Q1_感官评分/src/run_e005_continuous_ensemble.py
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing config test**
+- [x] **Step 1: Add a failing config test**
 
 ~~~python
 def test_e005_config(self):
@@ -601,7 +601,7 @@ def test_e005_config(self):
     self.assertEqual(config["weight_step"], 0.1)
 ~~~
 
-- [ ] **Step 2: Verify RED, then freeze the config**
+- [x] **Step 2: Verify RED, then freeze the config**
 
 ~~~yaml
 experiment_id: E005
@@ -617,11 +617,11 @@ hgb_profiles:
   - {name: balanced, max_leaf_nodes: 15, min_samples_leaf: 20, learning_rate: 0.05, l2_regularization: 1.0, max_iter: 100}
 ~~~
 
-- [ ] **Step 3: Implement nested base predictions and global convex weights**
+- [x] **Step 3: Implement nested base predictions and global convex weights**
 
 Inside each outer fold, create inner OOF predictions for all four bases, choose base parameters by inner macro MAE, select weights from the 0.1 simplex, refit on all outer-training samples, and predict outer validation. Save each base and pred_continuous_blend.
 
-- [ ] **Step 4: Run screening**
+- [x] **Step 4: Run screening**
 
 ~~~bash
 conda run -n mathorcup python \
@@ -630,7 +630,7 @@ conda run -n mathorcup python \
 
 Expected: nine complete folds and weights that are nonnegative and sum to one.
 
-- [ ] **Step 5: Record and commit**
+- [x] **Step 5: Record and commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/configs/E005_continuous_ensemble.yaml' \

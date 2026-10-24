@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 4：Q1 第二轮多指标优化已完成 E004 CPU/CUDA 筛查，进入 E005 连续集成筛查。
+Phase 4：Q1 第二轮多指标优化已完成 E004/E005 筛查；E005 通过预门槛，进入 10 次正式 OOF。
 
 ## Phases
 
@@ -58,7 +58,8 @@ Phase 4：Q1 第二轮多指标优化已完成 E004 CPU/CUDA 筛查，进入 E00
 - [x] 按实施计划内联实现 E004—E007
 - [ ] 按筛查 3 重复 → 正式 10 重复完成晋级判断
 - [x] E004/E004_GPU 完成同重复筛查并按冻结预门槛判定不晋级
-- **Status:** E005 screening next; E004 ordinal route retained only for E006 nested blending
+- [x] E005 完成 3 次筛查并在五项指标上均优于同重复 E003，晋级正式 OOF
+- **Status:** E005 full running next; E004 ordinal route retained only for E006 nested blending
 
 ### Phase 5：Q2 优化与交付
 

@@ -102,10 +102,56 @@ def _repeat_rows(frame: pd.DataFrame, prefix: str) -> pd.DataFrame:
     return selected[["repeat", *METRICS]].sort_values("repeat").reset_index(drop=True)
 
 
+def compare_screening_frames(
+    baseline_frame: pd.DataFrame,
+    candidate_frame: pd.DataFrame,
+    *,
+    experiment_id: str,
+    model: str,
+    candidate_prefix: str,
+) -> tuple[dict, pd.DataFrame, dict]:
+    """Align one screening candidate with the same E003 repeat IDs."""
+    baseline_rows = _repeat_rows(baseline_frame, "repeat_")
+    candidate_rows = _repeat_rows(candidate_frame, candidate_prefix)
+    repeat_ids = candidate_rows["repeat"].tolist()
+    baseline = baseline_rows.loc[baseline_rows["repeat"].isin(repeat_ids)].copy()
+    if baseline["repeat"].tolist() != repeat_ids:
+        raise RuntimeError(f"E003 repeat IDs do not align with {experiment_id}")
+    baseline_means = {name: float(baseline[name].mean()) for name in METRICS}
+    candidate_means = {
+        name: float(candidate_rows[name].mean()) for name in METRICS
+    }
+    gate = screening_decision(candidate_means, baseline_means)
+    decision = {
+        "model": model,
+        "repeat_ids": repeat_ids,
+        "baseline_means": baseline_means,
+        "candidate_means": candidate_means,
+        **gate,
+    }
+    summary = {
+        "experiment_id": experiment_id,
+        "model": model,
+        "n_repeats": len(repeat_ids),
+        "promote_to_full": gate["promote_to_full"],
+        "improved_count": gate["improved_count"],
+    }
+    for name in METRICS:
+        summary[f"baseline_{name}"] = baseline_means[name]
+        summary[f"candidate_{name}"] = candidate_means[name]
+        summary[f"delta_{name}"] = candidate_means[name] - baseline_means[name]
+        summary[f"improved_{name}"] = gate["improved"][name]
+    paired = candidate_rows.merge(
+        baseline, on="repeat", suffixes=("_candidate", "_baseline")
+    )
+    paired.insert(0, "model", model)
+    paired.insert(0, "experiment_id", experiment_id)
+    return summary, paired, decision
+
+
 def audit_e004_screening() -> tuple[pd.DataFrame, dict]:
     """Compare CPU/GPU E004 screening with E003 on repeats 0--2 only."""
     baseline_all = pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv")
-    baseline_rows = _repeat_rows(baseline_all, "repeat_")
     candidates = [
         (
             "E004",
@@ -124,41 +170,15 @@ def audit_e004_screening() -> tuple[pd.DataFrame, dict]:
     repeat_frames = []
     decisions = {}
     for experiment_id, model, path, prefix in candidates:
-        candidate_rows = _repeat_rows(pd.read_csv(path), prefix)
-        repeat_ids = candidate_rows["repeat"].tolist()
-        baseline = baseline_rows.loc[baseline_rows["repeat"].isin(repeat_ids)].copy()
-        if baseline["repeat"].tolist() != repeat_ids:
-            raise RuntimeError(f"E003 repeat IDs do not align with {experiment_id}")
-        baseline_means = {name: float(baseline[name].mean()) for name in METRICS}
-        candidate_means = {
-            name: float(candidate_rows[name].mean()) for name in METRICS
-        }
-        decision = screening_decision(candidate_means, baseline_means)
-        decisions[experiment_id] = {
-            "model": model,
-            "repeat_ids": repeat_ids,
-            "baseline_means": baseline_means,
-            "candidate_means": candidate_means,
-            **decision,
-        }
-        summary_row = {
-            "experiment_id": experiment_id,
-            "model": model,
-            "n_repeats": len(repeat_ids),
-            "promote_to_full": decision["promote_to_full"],
-            "improved_count": decision["improved_count"],
-        }
-        for name in METRICS:
-            summary_row[f"baseline_{name}"] = baseline_means[name]
-            summary_row[f"candidate_{name}"] = candidate_means[name]
-            summary_row[f"delta_{name}"] = candidate_means[name] - baseline_means[name]
-            summary_row[f"improved_{name}"] = decision["improved"][name]
-        summary_rows.append(summary_row)
-        paired = candidate_rows.merge(
-            baseline, on="repeat", suffixes=("_candidate", "_baseline")
+        summary_row, paired, decision = compare_screening_frames(
+            baseline_all,
+            pd.read_csv(path),
+            experiment_id=experiment_id,
+            model=model,
+            candidate_prefix=prefix,
         )
-        paired.insert(0, "model", model)
-        paired.insert(0, "experiment_id", experiment_id)
+        decisions[experiment_id] = decision
+        summary_rows.append(summary_row)
         repeat_frames.append(paired)
 
     summary = pd.DataFrame(summary_rows)
@@ -180,16 +200,48 @@ def audit_e004_screening() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e005_screening() -> tuple[pd.DataFrame, dict]:
+    """Compare E005 continuous-blend screening with E003 on repeats 0--2."""
+    baseline_all = pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv")
+    summary_row, paired, decision = compare_screening_frames(
+        baseline_all,
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E005_screening.csv"),
+        experiment_id="E005",
+        model="continuous_blend",
+        candidate_prefix="pred_continuous_blend:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_screening_comparison_E005.csv"
+    repeat_path = RESULT_DIR / "q1_screening_by_repeat_E005.csv"
+    decision_path = RESULT_DIR / "q1_screening_decision_E005.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "screening_only",
+        "full_promotion_requires": "10 repeats and all five hard gates plus 7/10 wins",
+        "decisions": {"E005": decision},
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--mode", choices=["e004-screening"], default="e004-screening"
+        "--mode",
+        choices=["e004-screening", "e005-screening"],
+        default="e004-screening",
     )
     args = parser.parse_args()
     if args.mode == "e004-screening":
         summary, payload = audit_e004_screening()
-        print(summary.to_string(index=False))
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        summary, payload = audit_e005_screening()
+    print(summary.to_string(index=False))
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
