@@ -86,6 +86,16 @@
   - E003 10 次重复：R² 0.2359±0.0058，Spearman 0.4144±0.0064，代理 QWK 0.4026±0.0077，代理 ACC±1 0.5476±0.0040。
   - E003 mean-OOF：R² 0.2502，MAE 0.3389，Spearman 0.4340，代理 QWK 0.4219，代理 ACC±1 0.5596。
 
+### Q1 图 2/图 4 中文呈现版 v2
+- **Status:** waiting for user review
+- Actions taken:
+  - 冻结 `final_v1/`，使用可配置输出目录将完整候选稿写入 `final_v2_draft/`。
+  - 图 2 的目标刻度、横轴改为中文呈现；图 4 的风格刻度和映射图例改为中文呈现；专有算法、指标与正式风格名按规则保留。
+  - 在 `to_zcode.md` 追加 `MSG-20261024-1542-14` 图清单，明确用户确认前不重建 Word v2。
+- Verification:
+  - 图 1、图 3、附图 S1 与 v1 的 SHA256 相同；仅图 2、图 4 变化。
+  - 5 张 PNG 均约 300 dpi，尺寸 2460×1305 至 3360×1890；目检无越界或遮挡。
+
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
 - **Started:** 2026-10-23 18:28 CST

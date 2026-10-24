@@ -11,7 +11,10 @@ suppressPackageStartupMessages({
 source("scripts/plot_style.R")
 
 data_dir <- "03_结果/Q1_感官评分/figure_data"
-figure_dir <- "04_图表/Q1_感官评分"
+figure_dir <- Sys.getenv(
+  "Q1_FIGURE_DIR",
+  unset = "04_图表/Q1_感官评分"
+)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 # 论文图文件内不写整图标题。图题只保存在 Q1_图清单.csv，
@@ -32,6 +35,74 @@ group_colors <- c(
   "Overall" = "#8172B3"
 )
 tier_colors <- c("高" = "#2563A6", "中" = "#E39C34", "低" = "#8C8C8C")
+
+# 原始字段代码继续留在数据层；论文图的刻度与图例使用中文展示名。
+target_labels_zh <- c(
+  "A_malt_all" = "麦芽香气-总体",
+  "A_malt_grain" = "麦芽香气-谷物",
+  "A_malt_bread" = "麦芽香气-面包",
+  "A_malt_cara" = "麦芽香气-焦糖",
+  "A_malt_burn" = "麦芽香气-烟熏",
+  "A_hops_all" = "酒花香气-总体",
+  "A_hops_citrus" = "酒花香气-柑橘",
+  "A_hops_tropical" = "酒花香气-热带水果",
+  "A_hops_noble" = "酒花香气-青草",
+  "A_hops_woody" = "酒花香气-木质",
+  "A_esters_all" = "酯类香气-总体",
+  "A_esters_ethac" = "酯类香气-指甲油",
+  "A_esters_isoaa" = "酯类香气-香蕉",
+  "A_esters_flower" = "酯类香气-花香",
+  "A_esters_fruity" = "酯类香气-果香",
+  "F_malt_all" = "麦芽风味-总体",
+  "F_malt_grain" = "麦芽风味-谷物",
+  "F_malt_bread" = "麦芽风味-面包",
+  "F_malt_cara" = "麦芽风味-焦糖",
+  "F_malt_burn" = "麦芽风味-烟熏",
+  "F_hops_all" = "酒花风味-总体",
+  "F_hops_citrus" = "酒花风味-柑橘",
+  "F_hops_tropical" = "酒花风味-热带水果",
+  "F_hops_noble" = "酒花风味-青草",
+  "F_hops_woody" = "酒花风味-木质",
+  "F_esters_all" = "酯类风味-总体",
+  "F_esters_ethac" = "酯类风味-指甲油",
+  "F_esters_isoaa" = "酯类风味-香蕉",
+  "F_esters_flower" = "酯类风味-花香",
+  "F_esters_fruity" = "酯类风味-果香",
+  "acidity" = "酸度",
+  "bitternes" = "苦味",
+  "sweetness" = "甜味",
+  "X4vg" = "4VG",
+  "diacetyl" = "双乙酰",
+  "dms" = "二甲基硫（DMS）",
+  "metallic" = "金属味",
+  "stale_hops" = "陈旧酒花味",
+  "t2n" = "反式-2-壬烯醛",
+  "orange" = "橙香",
+  "coriander" = "芫荽",
+  "clove" = "丁香",
+  "lactic" = "乳酸味",
+  "acetic" = "乙酸味",
+  "barnyard" = "畜棚味",
+  "alcohol" = "酒精感",
+  "aftertaste" = "回味",
+  "body" = "酒体",
+  "co2" = "碳酸感",
+  "overall" = "总体喜好"
+)
+
+style_labels_zh <- c(
+  "Amber" = "琥珀艾尔", "Blond" = "金色艾尔",
+  "Brett/cofermented" = "Brett/混合发酵", "Brown" = "棕色艾尔",
+  "Brut" = "Brut（干型）", "Christmas" = "圣诞啤酒",
+  "Dubbel" = "双料啤酒", "Faro" = "法柔",
+  "Flanders old brown" = "佛兰德老棕艾尔", "Fruitbeer" = "水果啤酒",
+  "Hoppy" = "酒花型", "Kriek" = "克里克（樱桃）",
+  "Lambic" = "兰比克", "Low/No alcohol" = "低/无醇",
+  "Pils/Lager" = "皮尔森/拉格", "Saison" = "赛松",
+  "Scotch" = "苏格兰艾尔", "Stout/Porter" = "世涛/波特",
+  "Strong ale" = "强艾尔", "Tripel" = "三料啤酒",
+  "West Flanders ale" = "西佛兰德艾尔", "Wheat" = "小麦啤酒"
+)
 
 panel_header_theme <- theme(
   plot.subtitle = element_text(
@@ -105,6 +176,7 @@ p2a <- ggplot(distribution, aes(z_score, target_code, fill = target_group)) +
   geom_boxplot(width = 0.66, linewidth = 0.25, outlier.size = 0.30,
                outlier.alpha = 0.40) +
   scale_fill_manual(values = group_colors, labels = group_labels) +
+  scale_y_discrete(labels = target_labels_zh) +
   labs(x = "聚合感官强度（z 分数）", y = NULL,
        subtitle = "（a）感官目标分布") +
   theme_mcup(base_size = 8.7, legend = "none") +
@@ -119,7 +191,7 @@ p2b <- ggplot(target_metrics, aes(r2, target_code, colour = target_group)) +
   geom_point(size = 2.05) +
   scale_colour_manual(values = group_colors, labels = group_labels) +
   scale_x_continuous(expand = expansion(mult = c(0.03, 0.08))) +
-  labs(x = "mean-OOF R²", y = NULL,
+  labs(x = "平均 OOF R²", y = NULL,
        subtitle = "（b）ExtraTrees 逐目标解释度") +
   theme_mcup(base_size = 8.7, legend = "none") +
   panel_header_theme +
@@ -189,6 +261,7 @@ p4a <- ggplot(style_metrics,
     )
   ) +
   scale_size_continuous(range = c(2.0, 5.0), guide = "none") +
+  scale_y_discrete(labels = style_labels_zh) +
   scale_x_continuous(expand = expansion(mult = c(0.02, 0.21))) +
   labs(x = "全部目标的 MAE（z 分数）", y = NULL,
        subtitle = "（a）不同啤酒风格的 OOF 误差") +
@@ -201,12 +274,21 @@ p4a <- ggplot(style_metrics,
         legend.text = element_text(size = 6.8))
 
 mapping <- read_csv(file.path(data_dir, "scale_mapping_example.csv"),
-                    show_col_types = FALSE)
-p4b <- ggplot(mapping, aes(z_score, grade_0_6, colour = target_code)) +
+                    show_col_types = FALSE) %>%
+  mutate(
+    target_display = recode(
+      target_code,
+      "A_malt_all" = "总体麦芽香气",
+      "F_esters_flower" = "花香型酯类风味",
+      "acidity" = "酸度",
+      "alcohol" = "酒精感"
+    )
+  )
+p4b <- ggplot(mapping, aes(z_score, grade_0_6, colour = target_display)) +
   geom_step(linewidth = 0.78, direction = "hv") +
   scale_colour_manual(values = c("#2C7FB8", "#D1495B", "#55A868", "#8172B3")) +
   scale_y_continuous(breaks = 0:6, limits = c(0, 6)) +
-  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级",
+  labs(x = "模型预测的聚合 z 分数", y = "0—6 相对强度等级", colour = "感官维度",
        subtitle = "（b）训练折经验分布的单调映射") +
   guides(colour = guide_legend(ncol = 2, byrow = TRUE)) +
   theme_mcup(base_size = 8.8, legend = "none") +
