@@ -154,7 +154,7 @@ git commit -m 'refactor(q1): extract reusable multi-metric evaluation'
 - Create: 02_代码/Q1_感官评分/src/ordered_models.py
 - Create: 02_代码/Q1_感官评分/tests/test_ordered_models.py
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ~~~python
 from __future__ import annotations
@@ -203,7 +203,7 @@ class OrderedModelTests(unittest.TestCase):
         np.testing.assert_allclose(first.continuous, second.continuous)
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -212,7 +212,7 @@ conda run -n mathorcup python -m unittest \
 
 Expected: import failure for ordered_models.
 
-- [ ] **Step 3: Implement minimal ordered model**
+- [x] **Step 3: Implement minimal ordered model**
 
 Use this result type and primitives:
 
@@ -238,7 +238,7 @@ def decode_expected_level(survival_probability):
 
 fit_predict_cumulative_hgb must fit a fold-local median imputer with missing indicators, then six HistGradientBoostingClassifier instances per target. A single-class threshold returns its training mean probability. Decode expected levels with per-target np.interp over training anchors only.
 
-- [ ] **Step 4: Verify GREEN and the full Q1 suite**
+- [x] **Step 4: Verify GREEN and the full Q1 suite**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -247,7 +247,7 @@ conda run -n mathorcup python -m unittest discover \
   -s '02_代码/Q1_感官评分/tests' -p 'test_*.py' -v
 ~~~
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/src/ordered_models.py' \

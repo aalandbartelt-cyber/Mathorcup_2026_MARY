@@ -119,6 +119,7 @@
   - 写入 `docs/superpowers/specs/2026-10-24-q1-second-round-multi-metric-optimization-design.md` 并完成占位符、口径、冲突和可执行性自检。
   - 用户确认书面规格后，生成 `docs/superpowers/plans/2026-10-24-q1-second-round-multi-metric-optimization.md`，拆为指标抽取、累计有序模型、约束融合、共享 OOF、E004—E007 和最终审计九项任务。
   - 隔离 worktree 基线测试 27/27 通过；任务1按 TDD 抽取通用 `q1_metrics.py`，专项 6/6、全量 30/30 通过，E003 冻结指标 CSV 无变化。
+  - 任务2按 TDD 实现训练折七档锚点、六阈值累计 HGB、单类回退、概率单调投影与连续解码；专项 4/4、全量 34/34 通过。
 
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
