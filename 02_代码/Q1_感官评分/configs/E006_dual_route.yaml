@@ -1,0 +1,30 @@
+experiment_id: E006
+question: Q1
+status: registered
+purpose: nested blend of continuous E005 and cumulative-ordinal E004 routes
+features: chemistry_231
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+screening_repeats: [0, 1, 2]
+full_repeats: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+inner_splits: 3
+random_state: 20261023
+ordinal_shares: [0.0, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]
+continuous_tolerance:
+  r2_drop: 0.002
+  mae_increase: 0.001
+hard_thresholds:
+  r2_min: 0.2359
+  mae_max: 0.3422
+  spearman_min: 0.4260
+  qwk_proxy_min: 0.4026
+  acc_pm1_proxy_min: 0.5734
+screening_promotion:
+  metrics_improved_min: 4
+  require_one_of: [spearman, acc_pm1_proxy]
+  r2_drop_max: 0.002
+  mae_increase_max: 0.001
+source_configs:
+  ordinal: E004_ordinal_hgb.yaml
+  continuous: E005_continuous_ensemble.yaml
+selection_metric: continuous_feasibility_then_ordered_metrics
+outputs: 03_结果/Q1_感官评分

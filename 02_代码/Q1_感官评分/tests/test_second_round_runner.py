@@ -75,6 +75,33 @@ class SecondRoundRunnerTests(unittest.TestCase):
         self.assertEqual(config["weight_step"], 0.1)
         self.assertEqual(config["screening_repeats"], [0, 1, 2])
 
+    def test_e006_config_freezes_hard_thresholds(self) -> None:
+        root = Path(__file__).resolve().parents[3]
+        config = yaml.safe_load(
+            (
+                root
+                / "02_代码"
+                / "Q1_感官评分"
+                / "configs"
+                / "E006_dual_route.yaml"
+            ).read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(
+            config["hard_thresholds"],
+            {
+                "r2_min": 0.2359,
+                "mae_max": 0.3422,
+                "spearman_min": 0.4260,
+                "qwk_proxy_min": 0.4026,
+                "acc_pm1_proxy_min": 0.5734,
+            },
+        )
+        self.assertEqual(config["ordinal_shares"], [
+            0.0, 0.05, 0.10, 0.15, 0.20, 0.25,
+            0.30, 0.35, 0.40, 0.45, 0.50,
+        ])
+
     def test_outer_indices_are_disjoint_and_complete(self) -> None:
         splits = pd.DataFrame(
             {"repeat": [0, 0], "fold": [0, 0], "row_position": [1, 3]}
