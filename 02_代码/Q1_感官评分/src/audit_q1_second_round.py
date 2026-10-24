@@ -352,6 +352,33 @@ def audit_e006_screening() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e006_full() -> tuple[pd.DataFrame, dict]:
+    """Audit E006 full 10-repeat dual-route OOF against every frozen gate."""
+    summary_row, paired, decision = compare_full_frames(
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv"),
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E006.csv"),
+        experiment_id="E006",
+        model="dual_route",
+        candidate_prefix="pred_dual_route:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_full_comparison_E006.csv"
+    repeat_path = RESULT_DIR / "q1_full_by_repeat_E006.csv"
+    decision_path = RESULT_DIR / "q1_full_decision_E006.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "full_gate",
+        "hard_thresholds": HARD_THRESHOLDS,
+        "decision": decision,
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -361,6 +388,7 @@ def main() -> None:
             "e005-screening",
             "e005-full",
             "e006-screening",
+            "e006-full",
         ],
         default="e004-screening",
     )
@@ -371,8 +399,10 @@ def main() -> None:
         summary, payload = audit_e005_screening()
     elif args.mode == "e005-full":
         summary, payload = audit_e005_full()
-    else:
+    elif args.mode == "e006-screening":
         summary, payload = audit_e006_screening()
+    else:
+        summary, payload = audit_e006_full()
     print(summary.to_string(index=False))
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
