@@ -1,0 +1,66 @@
+{
+  "status": "full_gate",
+  "hard_thresholds": {
+    "r2": 0.2359,
+    "mae": 0.3422,
+    "spearman": 0.426,
+    "qwk_proxy": 0.4026,
+    "acc_pm1_proxy": 0.5734
+  },
+  "decision": {
+    "model": "continuous_blend",
+    "repeat_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "baseline_means": {
+      "r2": 0.2358695380976478,
+      "mae": 0.3422216059972746,
+      "spearman": 0.4143762959072421,
+      "qwk_proxy": 0.40259175957182747,
+      "acc_pm1_proxy": 0.5476399999999999
+    },
+    "candidate_means": {
+      "r2": 0.24817180849207965,
+      "mae": 0.3397320129357454,
+      "spearman": 0.42727759004796956,
+      "qwk_proxy": 0.4150260670371414,
+      "acc_pm1_proxy": 0.5522880000000001
+    },
+    "repeat_win_counts": {
+      "r2": 10,
+      "mae": 10,
+      "spearman": 10,
+      "qwk_proxy": 10,
+      "acc_pm1_proxy": 9
+    },
+    "promoted": false,
+    "mean_threshold_flags": {
+      "r2": true,
+      "mae": true,
+      "spearman": true,
+      "qwk_proxy": true,
+      "acc_pm1_proxy": false
+    },
+    "repeat_win_flags": {
+      "r2": true,
+      "mae": true,
+      "spearman": true,
+      "qwk_proxy": true,
+      "acc_pm1_proxy": true
+    },
+    "minimum_repeat_wins": 7
+  },
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_full_comparison_E005.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_full_by_repeat_E005.csv"
+  ]
+}

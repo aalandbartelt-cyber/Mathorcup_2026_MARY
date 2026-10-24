@@ -149,6 +149,76 @@ def compare_screening_frames(
     return summary, paired, decision
 
 
+def compare_full_frames(
+    baseline_frame: pd.DataFrame,
+    candidate_frame: pd.DataFrame,
+    *,
+    experiment_id: str,
+    model: str,
+    candidate_prefix: str,
+) -> tuple[dict, pd.DataFrame, dict]:
+    """Apply the frozen five-threshold and 7/10 gate to a full candidate."""
+    baseline_rows = _repeat_rows(baseline_frame, "repeat_")
+    candidate_rows = _repeat_rows(candidate_frame, candidate_prefix)
+    repeat_ids = candidate_rows["repeat"].tolist()
+    if repeat_ids != list(range(10)):
+        raise RuntimeError(
+            f"{experiment_id} full audit requires repeats 0--9, got {repeat_ids}"
+        )
+    baseline = baseline_rows.loc[baseline_rows["repeat"].isin(repeat_ids)].copy()
+    if baseline["repeat"].tolist() != repeat_ids:
+        raise RuntimeError(f"E003 repeat IDs do not align with {experiment_id}")
+    paired = candidate_rows.merge(
+        baseline, on="repeat", suffixes=("_candidate", "_baseline")
+    )
+    paired.insert(0, "model", model)
+    paired.insert(0, "experiment_id", experiment_id)
+    candidate_means = {
+        name: float(candidate_rows[name].mean()) for name in METRICS
+    }
+    baseline_means = {name: float(baseline[name].mean()) for name in METRICS}
+    repeat_win_counts = {
+        "r2": int((paired["r2_candidate"] >= paired["r2_baseline"]).sum()),
+        "mae": int((paired["mae_candidate"] <= paired["mae_baseline"]).sum()),
+        "spearman": int(
+            (paired["spearman_candidate"] >= paired["spearman_baseline"]).sum()
+        ),
+        "qwk_proxy": int(
+            (paired["qwk_proxy_candidate"] >= paired["qwk_proxy_baseline"]).sum()
+        ),
+        "acc_pm1_proxy": int(
+            (
+                paired["acc_pm1_proxy_candidate"]
+                >= paired["acc_pm1_proxy_baseline"]
+            ).sum()
+        ),
+    }
+    gate = promotion_decision(candidate_means, repeat_win_counts)
+    decision = {
+        "model": model,
+        "repeat_ids": repeat_ids,
+        "baseline_means": baseline_means,
+        "candidate_means": candidate_means,
+        "repeat_win_counts": repeat_win_counts,
+        **gate,
+    }
+    summary = {
+        "experiment_id": experiment_id,
+        "model": model,
+        "n_repeats": len(repeat_ids),
+        "promoted": gate["promoted"],
+    }
+    for name in METRICS:
+        summary[f"threshold_{name}"] = HARD_THRESHOLDS[name]
+        summary[f"baseline_{name}"] = baseline_means[name]
+        summary[f"candidate_{name}"] = candidate_means[name]
+        summary[f"delta_{name}"] = candidate_means[name] - baseline_means[name]
+        summary[f"mean_gate_{name}"] = gate["mean_threshold_flags"][name]
+        summary[f"repeat_wins_{name}"] = repeat_win_counts[name]
+        summary[f"repeat_gate_{name}"] = gate["repeat_win_flags"][name]
+    return summary, paired, decision
+
+
 def audit_e004_screening() -> tuple[pd.DataFrame, dict]:
     """Compare CPU/GPU E004 screening with E003 on repeats 0--2 only."""
     baseline_all = pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv")
@@ -228,18 +298,47 @@ def audit_e005_screening() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e005_full() -> tuple[pd.DataFrame, dict]:
+    """Audit E005 full 10-repeat OOF against every frozen gate."""
+    summary_row, paired, decision = compare_full_frames(
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv"),
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E005.csv"),
+        experiment_id="E005",
+        model="continuous_blend",
+        candidate_prefix="pred_continuous_blend:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_full_comparison_E005.csv"
+    repeat_path = RESULT_DIR / "q1_full_by_repeat_E005.csv"
+    decision_path = RESULT_DIR / "q1_full_decision_E005.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "full_gate",
+        "hard_thresholds": HARD_THRESHOLDS,
+        "decision": decision,
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--mode",
-        choices=["e004-screening", "e005-screening"],
+        choices=["e004-screening", "e005-screening", "e005-full"],
         default="e004-screening",
     )
     args = parser.parse_args()
     if args.mode == "e004-screening":
         summary, payload = audit_e004_screening()
-    else:
+    elif args.mode == "e005-screening":
         summary, payload = audit_e005_screening()
+    else:
+        summary, payload = audit_e005_full()
     print(summary.to_string(index=False))
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 

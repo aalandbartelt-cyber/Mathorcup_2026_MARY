@@ -9,6 +9,7 @@ SRC = Path(__file__).resolve().parents[1] / "src"
 sys.path.insert(0, str(SRC))
 
 from audit_q1_second_round import (  # noqa: E402
+    compare_full_frames,
     compare_screening_frames,
     promotion_decision,
     screening_decision,
@@ -18,6 +19,42 @@ import pandas as pd
 
 
 class SecondRoundAuditTests(unittest.TestCase):
+    def test_full_frame_comparison_requires_ten_aligned_repeats(self) -> None:
+        repeats = list(range(10))
+        baseline = pd.DataFrame(
+            {
+                "evaluation": [f"repeat_{value}" for value in repeats],
+                "r2": [0.23] * 10,
+                "mae": [0.343] * 10,
+                "spearman": [0.42] * 10,
+                "qwk_proxy": [0.40] * 10,
+                "acc_pm1_proxy": [0.56] * 10,
+            }
+        )
+        candidate = pd.DataFrame(
+            {
+                "evaluation": [f"pred_blend:repeat_{value}" for value in repeats],
+                "r2": [0.24] * 10,
+                "mae": [0.34] * 10,
+                "spearman": [0.43] * 10,
+                "qwk_proxy": [0.41] * 10,
+                "acc_pm1_proxy": [0.58] * 10,
+            }
+        )
+
+        summary, paired, decision = compare_full_frames(
+            baseline,
+            candidate,
+            experiment_id="E005",
+            model="continuous_blend",
+            candidate_prefix="pred_blend:repeat_",
+        )
+
+        self.assertEqual(summary["n_repeats"], 10)
+        self.assertTrue(summary["promoted"])
+        self.assertEqual(paired["repeat"].tolist(), repeats)
+        self.assertEqual(decision["repeat_win_counts"]["r2"], 10)
+
     def test_screening_frame_comparison_aligns_repeats(self) -> None:
         baseline = pd.DataFrame(
             {
