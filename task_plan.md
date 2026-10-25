@@ -17,3 +17,11 @@
 - [x] E007 完成 3 次筛查并五项均优于同重复 E003，晋级正式 OOF
 - [ ] E007 完成 10 次正式 OOF与最终 bootstrap/尾部/风格审计
 - **Status:** E007 full running; screening results are not treated as the final decision
+
+## Phase 12：Q1正式收口与交付
+
+- [x] E009完整30折审计；保留原冻结结果并记录用户综合最终选择D-013。
+- [x] 最终NNLS论文v5、4主图+1附图、原生OMML与模板直接格式复核。
+- [x] 交付目录禁用词0命中、同步PDF与12页审计合订本。
+- [x] 仅交附录核心代码，由论文手编排；旧稿归档。
+- [x] Q2代码76项测试通过，可进入E113；未开新实验，后续NNLS归因适配与E117—E119仍待实施。

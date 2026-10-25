@@ -12,6 +12,10 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[3]
 FIGURE_ROOT = ROOT / "04_图表" / "Q1_感官评分"
+if not (FIGURE_ROOT / "final_v3_draft").is_dir():
+    # Historical figures are retained outside the active publication tree.
+    FIGURE_ROOT = (ROOT / "_archive/论文交付历史/20261025_最终模型更新前"
+                   / "04_图表/Q1_感官评分")
 V3_DIR = FIGURE_ROOT / "final_v3_draft"
 DATA_DIR = ROOT / "03_结果" / "Q1_感官评分" / "figure_data"
 PLOT_SCRIPT = ROOT / "02_代码" / "Q1_感官评分" / "src" / "plot_q1_drafts.R"

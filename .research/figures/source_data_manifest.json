@@ -1,0 +1,49 @@
+{
+  "figures": [
+    {
+      "figure": "图1_模型对比",
+      "data_directory": "03_结果/Q1_感官评分/publication_final",
+      "script": "02_代码/Q1_感官评分/src/plot_q1_final.R",
+      "png": "04_图表/Q1_感官评分/final_v4/图1_模型对比.png",
+      "png_sha256": "d0df47d52a08013276f4266864e91f26f94914e3105adbd8db74a74418f831f9",
+      "svg_sha256": "f4e463136fc9c0b5b79ded216f61c0ad4a0577cae3ec0f6fc9ec560c26cddc31",
+      "dpi": 300
+    },
+    {
+      "figure": "图2_逐目标预测性能",
+      "data_directory": "03_结果/Q1_感官评分/publication_final",
+      "script": "02_代码/Q1_感官评分/src/plot_q1_final.R",
+      "png": "04_图表/Q1_感官评分/final_v4/图2_逐目标预测性能.png",
+      "png_sha256": "950374b29f04d3e899f6805bbf50256c1f407151ea444c6c7d787cd403743b98",
+      "svg_sha256": "6926cd200267acd3cb1130f93df9ff80d4af642eb974fa0379c6571397a83a60",
+      "dpi": 300
+    },
+    {
+      "figure": "图3_OOF观测预测",
+      "data_directory": "03_结果/Q1_感官评分/publication_final",
+      "script": "02_代码/Q1_感官评分/src/plot_q1_final.R",
+      "png": "04_图表/Q1_感官评分/final_v4/图3_OOF观测预测.png",
+      "png_sha256": "43f37e57bab54e4c80693a4bb37f649f6fb70e804e58095008307895ca880be3",
+      "svg_sha256": "430af9083fd39025a268a1fc2d5bf5aa9022d395e8e9547e26d747ad66ff7b93",
+      "dpi": 300
+    },
+    {
+      "figure": "图4_风格与难目标稳健性",
+      "data_directory": "03_结果/Q1_感官评分/publication_final",
+      "script": "02_代码/Q1_感官评分/src/plot_q1_final.R",
+      "png": "04_图表/Q1_感官评分/final_v4/图4_风格与难目标稳健性.png",
+      "png_sha256": "0e80ad14703c4e899d37f2097e6c62c03f569a30a425a540dd67edbc70838fe9",
+      "svg_sha256": "f97ae084ff6b836094269c5e31784ddf9b259d0a80b83843acff30eda26b67e1",
+      "dpi": 300
+    },
+    {
+      "figure": "附图S1_残差诊断与量表映射",
+      "data_directory": "03_结果/Q1_感官评分/publication_final",
+      "script": "02_代码/Q1_感官评分/src/plot_q1_final.R",
+      "png": "04_图表/Q1_感官评分/final_v4/附图S1_残差诊断与量表映射.png",
+      "png_sha256": "9b03d69e0637bac86200bdd6027af4951cb40df6ba0700e73f33cb3d6b2529f2",
+      "svg_sha256": "5d07489b109fc5826d22603617013faab544bf6687692b65529c693762e63659",
+      "dpi": 300
+    }
+  ]
+}

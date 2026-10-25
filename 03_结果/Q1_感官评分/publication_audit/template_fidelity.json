@@ -1,0 +1,20 @@
+{
+  "Heading 1": {
+    "paragraph_properties_equal": true,
+    "run_properties_equal": true
+  },
+  "Heading 2": {
+    "paragraph_properties_equal": true,
+    "run_properties_equal": true
+  },
+  "Heading 3": {
+    "paragraph_properties_equal": true,
+    "run_properties_equal": true
+  },
+  "Body Text": {
+    "paragraph_properties_equal": true,
+    "run_properties_equal": true
+  },
+  "styles_byte_identical": true,
+  "section_properties_equal": true
+}

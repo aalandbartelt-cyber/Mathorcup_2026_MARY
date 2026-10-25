@@ -1,0 +1,22 @@
+[01/9] repeat=0 fold=0 complete
+[02/9] repeat=0 fold=1 complete
+[03/9] repeat=0 fold=2 complete
+[04/9] repeat=1 fold=0 complete
+[05/9] repeat=1 fold=1 complete
+[06/9] repeat=1 fold=2 complete
+[07/9] repeat=2 fold=0 complete
+[08/9] repeat=2 fold=1 complete
+[09/9] repeat=2 fold=2 complete
+[01/9] repeat=0 fold=0 resumed
+[02/9] repeat=0 fold=1 resumed
+[03/9] repeat=0 fold=2 resumed
+[04/9] repeat=1 fold=0 resumed
+[05/9] repeat=1 fold=1 resumed
+[06/9] repeat=1 fold=2 resumed
+[07/9] repeat=2 fold=0 resumed
+[08/9] repeat=2 fold=1 resumed
+[09/9] repeat=2 fold=2 resumed
+----------------------------------------------------------------------
+Ran 83 tests in 1.622s
+
+OK

@@ -1,0 +1,6 @@
+﻿defect,feature_code,sensory_target,unit,evidence_type,threshold_mean,threshold_median
+DMS,DMS,dms,ug/L,direct_chemical,17.25,19.0
+Diacetyl,X2.3.butanedione,diacetyl,mg/L,direct_chemical,0.29925,0.09
+4VG,X4VG,X4vg,mg/L,direct_chemical,0.206333333,0.2
+trans-2-nonenal,X.E..2.nonenal,t2n,mg/L,direct_chemical,,
+Stale hops,,stale_hops,standardized_sensory,sensory_proxy_only,,

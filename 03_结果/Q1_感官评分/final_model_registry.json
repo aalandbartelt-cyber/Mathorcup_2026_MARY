@@ -1,0 +1,15 @@
+{
+  "question": "Q1",
+  "final_model": "感官组收缩NNLS",
+  "oof_path": "03_结果/Q1_感官评分/publication_final/final_model_oof.npz",
+  "oof_sha256": "ec80b4087347ccb0b2b312016ab3d8f67a4e5faaa1da352e4a548728e57ccc60",
+  "n_repeats": 10,
+  "outer_folds": 3,
+  "n_targets": 50,
+  "prediction_key": "prediction",
+  "mean_prediction_key": "mean_prediction",
+  "fitted_full_model_available": false,
+  "downstream_policy": "有OOF输入时仅读取本接口；新化学谱须在训练数据内重新拟合基学习器与堆叠，不把OOF数组当已训练预测器",
+  "Q2_current_attribution": "独立ExtraTrees归因验证器，不输入Q1预测；后续对最终堆叠做归因须重新验证重要性，禁止替换旧结果数值",
+  "Q3_status": "研究方案不变；未来画像接口使用最终NNLS并检查支持域及逐维误差"
+}

@@ -1,0 +1,55 @@
+{
+  "base_models": [
+    "extra_trees",
+    "hgb",
+    "ridge_quantile",
+    "pls2_quantile"
+  ],
+  "extra_trees": {
+    "n_estimators": 300,
+    "max_features": [
+      0.33,
+      0.6,
+      1.0
+    ],
+    "min_samples_leaf": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "max_depth": null
+  },
+  "hgb_profiles": [
+    {
+      "name": "compact",
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20,
+      "learning_rate": 0.05,
+      "l2_regularization": 1.0,
+      "max_iter": 100
+    },
+    {
+      "name": "balanced",
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20,
+      "learning_rate": 0.05,
+      "l2_regularization": 1.0,
+      "max_iter": 100
+    }
+  ],
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "pls_components": [
+    2,
+    5,
+    10,
+    15,
+    20
+  ]
+}

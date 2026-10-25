@@ -1,0 +1,2501 @@
+repeat,fold,split_id,row_position,beer,tasting_category_fine
+0,0,R00F0,3,83,Low/No alcohol
+0,0,R00F0,4,40,Low/No alcohol
+0,0,R00F0,5,247,Fruitbeer
+0,0,R00F0,11,141,Low/No alcohol
+0,0,R00F0,14,50,Fruitbeer
+0,0,R00F0,15,227,Fruitbeer
+0,0,R00F0,19,81,Pils/Lager
+0,0,R00F0,20,202,Stout/Porter
+0,0,R00F0,24,230,Pils/Lager
+0,0,R00F0,25,44,Wheat
+0,0,R00F0,32,211,Lambic
+0,0,R00F0,33,190,Flanders old brown
+0,0,R00F0,34,197,Wheat
+0,0,R00F0,44,46,Blond
+0,0,R00F0,49,54,Kriek
+0,0,R00F0,52,58,Saison
+0,0,R00F0,57,74,Faro
+0,0,R00F0,59,20,Saison
+0,0,R00F0,62,194,Dubbel
+0,0,R00F0,64,43,Amber
+0,0,R00F0,67,62,Blond
+0,0,R00F0,69,26,West Flanders ale
+0,0,R00F0,73,156,Kriek
+0,0,R00F0,76,113,Blond
+0,0,R00F0,83,241,Kriek
+0,0,R00F0,86,178,West Flanders ale
+0,0,R00F0,92,42,Lambic
+0,0,R00F0,98,87,Stout/Porter
+0,0,R00F0,99,220,Kriek
+0,0,R00F0,101,14,Brett/cofermented
+0,0,R00F0,103,37,Strong ale
+0,0,R00F0,104,119,Pils/Lager
+0,0,R00F0,109,92,Amber
+0,0,R00F0,112,76,Blond
+0,0,R00F0,114,205,Brut
+0,0,R00F0,116,53,Brown
+0,0,R00F0,118,136,Blond
+0,0,R00F0,119,69,Tripel
+0,0,R00F0,120,180,Christmas
+0,0,R00F0,122,243,Wheat
+0,0,R00F0,125,39,Hoppy
+0,0,R00F0,127,12,Lambic
+0,0,R00F0,132,132,Saison
+0,0,R00F0,133,16,Dubbel
+0,0,R00F0,135,164,Blond
+0,0,R00F0,137,149,Blond
+0,0,R00F0,139,120,Hoppy
+0,0,R00F0,142,98,Brown
+0,0,R00F0,145,27,Hoppy
+0,0,R00F0,146,13,Christmas
+0,0,R00F0,149,118,West Flanders ale
+0,0,R00F0,155,6,Amber
+0,0,R00F0,156,212,Stout/Porter
+0,0,R00F0,158,234,Blond
+0,0,R00F0,159,147,Tripel
+0,0,R00F0,164,237,Brown
+0,0,R00F0,171,28,Pils/Lager
+0,0,R00F0,176,30,Blond
+0,0,R00F0,179,162,Lambic
+0,0,R00F0,183,31,Hoppy
+0,0,R00F0,186,204,Tripel
+0,0,R00F0,188,131,Scotch
+0,0,R00F0,190,34,Tripel
+0,0,R00F0,192,187,Dubbel
+0,0,R00F0,195,121,Blond
+0,0,R00F0,196,242,Saison
+0,0,R00F0,197,208,Wheat
+0,0,R00F0,198,38,Christmas
+0,0,R00F0,199,170,Strong ale
+0,0,R00F0,204,89,Brown
+0,0,R00F0,209,143,Hoppy
+0,0,R00F0,210,133,Strong ale
+0,0,R00F0,214,148,Strong ale
+0,0,R00F0,219,91,Strong ale
+0,0,R00F0,220,217,Tripel
+0,0,R00F0,222,68,Tripel
+0,0,R00F0,228,67,Stout/Porter
+0,0,R00F0,230,189,Tripel
+0,0,R00F0,233,63,Amber
+0,0,R00F0,236,203,Brett/cofermented
+0,0,R00F0,237,85,Tripel
+0,0,R00F0,240,192,Brut
+0,0,R00F0,243,171,Tripel
+0,0,R00F0,248,99,Strong ale
+0,1,R00F1,0,10,Low/No alcohol
+0,1,R00F1,2,2,Low/No alcohol
+0,1,R00F1,6,48,Dubbel
+0,1,R00F1,9,207,Fruitbeer
+0,1,R00F1,10,155,Low/No alcohol
+0,1,R00F1,12,179,Flanders old brown
+0,1,R00F1,13,33,Fruitbeer
+0,1,R00F1,16,88,Kriek
+0,1,R00F1,18,22,Wheat
+0,1,R00F1,23,96,Pils/Lager
+0,1,R00F1,36,185,Pils/Lager
+0,1,R00F1,39,200,West Flanders ale
+0,1,R00F1,42,183,Saison
+0,1,R00F1,43,111,Dubbel
+0,1,R00F1,45,213,Hoppy
+0,1,R00F1,48,224,Wheat
+0,1,R00F1,50,5,Blond
+0,1,R00F1,51,209,Pils/Lager
+0,1,R00F1,53,11,Amber
+0,1,R00F1,58,188,Stout/Porter
+0,1,R00F1,60,122,Brett/cofermented
+0,1,R00F1,61,169,Hoppy
+0,1,R00F1,63,160,Wheat
+0,1,R00F1,66,7,Saison
+0,1,R00F1,70,232,Kriek
+0,1,R00F1,71,151,Faro
+0,1,R00F1,79,167,Flanders old brown
+0,1,R00F1,80,59,Blond
+0,1,R00F1,81,135,Tripel
+0,1,R00F1,85,244,West Flanders ale
+0,1,R00F1,89,112,Brown
+0,1,R00F1,93,72,Hoppy
+0,1,R00F1,96,246,Blond
+0,1,R00F1,100,201,Stout/Porter
+0,1,R00F1,111,238,Blond
+0,1,R00F1,113,107,Dubbel
+0,1,R00F1,115,206,Brown
+0,1,R00F1,123,134,Strong ale
+0,1,R00F1,124,193,Blond
+0,1,R00F1,126,240,Tripel
+0,1,R00F1,130,226,Strong ale
+0,1,R00F1,131,29,Saison
+0,1,R00F1,134,47,Tripel
+0,1,R00F1,136,115,Lambic
+0,1,R00F1,138,80,Hoppy
+0,1,R00F1,140,222,Brett/cofermented
+0,1,R00F1,141,18,Lambic
+0,1,R00F1,148,79,Hoppy
+0,1,R00F1,150,152,Wheat
+0,1,R00F1,152,19,Amber
+0,1,R00F1,157,78,Brown
+0,1,R00F1,161,249,Blond
+0,1,R00F1,163,101,Blond
+0,1,R00F1,165,127,Blond
+0,1,R00F1,166,245,Tripel
+0,1,R00F1,167,191,Tripel
+0,1,R00F1,169,51,Strong ale
+0,1,R00F1,170,144,Lambic
+0,1,R00F1,172,41,Lambic
+0,1,R00F1,173,153,Kriek
+0,1,R00F1,175,168,Scotch
+0,1,R00F1,178,126,Amber
+0,1,R00F1,184,52,Stout/Porter
+0,1,R00F1,187,94,Blond
+0,1,R00F1,191,108,Brown
+0,1,R00F1,193,45,Tripel
+0,1,R00F1,205,114,Hoppy
+0,1,R00F1,206,181,Christmas
+0,1,R00F1,211,182,Stout/Porter
+0,1,R00F1,217,73,Blond
+0,1,R00F1,218,198,Dubbel
+0,1,R00F1,221,163,Tripel
+0,1,R00F1,224,1,Brut
+0,1,R00F1,226,102,Christmas
+0,1,R00F1,227,140,Tripel
+0,1,R00F1,229,210,Amber
+0,1,R00F1,231,233,Scotch
+0,1,R00F1,234,95,Christmas
+0,1,R00F1,238,3,Blond
+0,1,R00F1,241,239,Tripel
+0,1,R00F1,245,175,Strong ale
+0,1,R00F1,246,196,Strong ale
+0,1,R00F1,247,4,Strong ale
+0,2,R00F2,1,86,Low/No alcohol
+0,2,R00F2,7,165,Fruitbeer
+0,2,R00F2,8,124,Pils/Lager
+0,2,R00F2,17,77,Blond
+0,2,R00F2,21,64,Blond
+0,2,R00F2,22,218,Pils/Lager
+0,2,R00F2,26,161,Flanders old brown
+0,2,R00F2,27,195,Wheat
+0,2,R00F2,28,142,Wheat
+0,2,R00F2,29,137,Amber
+0,2,R00F2,30,236,Brett/cofermented
+0,2,R00F2,31,223,Low/No alcohol
+0,2,R00F2,35,228,Tripel
+0,2,R00F2,37,166,Saison
+0,2,R00F2,38,216,Scotch
+0,2,R00F2,40,116,Lambic
+0,2,R00F2,41,139,Pils/Lager
+0,2,R00F2,46,250,Faro
+0,2,R00F2,47,158,Amber
+0,2,R00F2,54,56,Saison
+0,2,R00F2,55,84,West Flanders ale
+0,2,R00F2,56,172,Wheat
+0,2,R00F2,65,100,Dubbel
+0,2,R00F2,68,55,Hoppy
+0,2,R00F2,72,61,Stout/Porter
+0,2,R00F2,74,138,Kriek
+0,2,R00F2,75,70,Blond
+0,2,R00F2,77,176,West Flanders ale
+0,2,R00F2,78,105,Strong ale
+0,2,R00F2,82,82,Kriek
+0,2,R00F2,84,128,Amber
+0,2,R00F2,87,110,Blond
+0,2,R00F2,88,231,Stout/Porter
+0,2,R00F2,90,219,Hoppy
+0,2,R00F2,91,129,Brown
+0,2,R00F2,94,186,Strong ale
+0,2,R00F2,95,109,Brown
+0,2,R00F2,97,97,Hoppy
+0,2,R00F2,102,173,Stout/Porter
+0,2,R00F2,105,177,Fruitbeer
+0,2,R00F2,106,106,Christmas
+0,2,R00F2,107,159,Flanders old brown
+0,2,R00F2,108,90,Pils/Lager
+0,2,R00F2,110,93,Tripel
+0,2,R00F2,117,24,Kriek
+0,2,R00F2,121,49,Blond
+0,2,R00F2,128,150,Brett/cofermented
+0,2,R00F2,129,23,Tripel
+0,2,R00F2,143,221,Dubbel
+0,2,R00F2,144,32,Amber
+0,2,R00F2,147,174,Dubbel
+0,2,R00F2,151,184,Fruitbeer
+0,2,R00F2,153,145,Saison
+0,2,R00F2,154,125,Blond
+0,2,R00F2,160,66,Tripel
+0,2,R00F2,162,104,Strong ale
+0,2,R00F2,168,60,Christmas
+0,2,R00F2,174,146,Scotch
+0,2,R00F2,177,36,Brown
+0,2,R00F2,180,123,Stout/Porter
+0,2,R00F2,181,130,Brut
+0,2,R00F2,182,8,Hoppy
+0,2,R00F2,185,9,Hoppy
+0,2,R00F2,189,75,Lambic
+0,2,R00F2,194,154,Tripel
+0,2,R00F2,200,214,Christmas
+0,2,R00F2,201,35,Blond
+0,2,R00F2,202,215,Blond
+0,2,R00F2,203,235,Strong ale
+0,2,R00F2,207,225,Strong ale
+0,2,R00F2,208,57,Tripel
+0,2,R00F2,212,17,Tripel
+0,2,R00F2,213,229,Wheat
+0,2,R00F2,215,248,Blond
+0,2,R00F2,216,65,Hoppy
+0,2,R00F2,223,15,Tripel
+0,2,R00F2,225,71,Blond
+0,2,R00F2,232,199,Tripel
+0,2,R00F2,235,25,Brown
+0,2,R00F2,239,21,Lambic
+0,2,R00F2,242,117,Strong ale
+0,2,R00F2,244,103,Stout/Porter
+0,2,R00F2,249,157,Tripel
+1,0,R01F0,0,10,Low/No alcohol
+1,0,R01F0,2,2,Low/No alcohol
+1,0,R01F0,3,83,Low/No alcohol
+1,0,R01F0,5,247,Fruitbeer
+1,0,R01F0,13,33,Fruitbeer
+1,0,R01F0,16,88,Kriek
+1,0,R01F0,19,81,Pils/Lager
+1,0,R01F0,20,202,Stout/Porter
+1,0,R01F0,21,64,Blond
+1,0,R01F0,24,230,Pils/Lager
+1,0,R01F0,29,137,Amber
+1,0,R01F0,30,236,Brett/cofermented
+1,0,R01F0,34,197,Wheat
+1,0,R01F0,35,228,Tripel
+1,0,R01F0,36,185,Pils/Lager
+1,0,R01F0,43,111,Dubbel
+1,0,R01F0,44,46,Blond
+1,0,R01F0,47,158,Amber
+1,0,R01F0,52,58,Saison
+1,0,R01F0,57,74,Faro
+1,0,R01F0,59,20,Saison
+1,0,R01F0,60,122,Brett/cofermented
+1,0,R01F0,66,7,Saison
+1,0,R01F0,67,62,Blond
+1,0,R01F0,68,55,Hoppy
+1,0,R01F0,69,26,West Flanders ale
+1,0,R01F0,70,232,Kriek
+1,0,R01F0,73,156,Kriek
+1,0,R01F0,78,105,Strong ale
+1,0,R01F0,83,241,Kriek
+1,0,R01F0,84,128,Amber
+1,0,R01F0,85,244,West Flanders ale
+1,0,R01F0,86,178,West Flanders ale
+1,0,R01F0,88,231,Stout/Porter
+1,0,R01F0,91,129,Brown
+1,0,R01F0,94,186,Strong ale
+1,0,R01F0,102,173,Stout/Porter
+1,0,R01F0,105,177,Fruitbeer
+1,0,R01F0,106,106,Christmas
+1,0,R01F0,107,159,Flanders old brown
+1,0,R01F0,108,90,Pils/Lager
+1,0,R01F0,110,93,Tripel
+1,0,R01F0,112,76,Blond
+1,0,R01F0,113,107,Dubbel
+1,0,R01F0,116,53,Brown
+1,0,R01F0,118,136,Blond
+1,0,R01F0,121,49,Blond
+1,0,R01F0,122,243,Wheat
+1,0,R01F0,126,240,Tripel
+1,0,R01F0,130,226,Strong ale
+1,0,R01F0,145,27,Hoppy
+1,0,R01F0,147,174,Dubbel
+1,0,R01F0,150,152,Wheat
+1,0,R01F0,159,147,Tripel
+1,0,R01F0,160,66,Tripel
+1,0,R01F0,162,104,Strong ale
+1,0,R01F0,166,245,Tripel
+1,0,R01F0,167,191,Tripel
+1,0,R01F0,169,51,Strong ale
+1,0,R01F0,170,144,Lambic
+1,0,R01F0,172,41,Lambic
+1,0,R01F0,182,8,Hoppy
+1,0,R01F0,183,31,Hoppy
+1,0,R01F0,186,204,Tripel
+1,0,R01F0,187,94,Blond
+1,0,R01F0,189,75,Lambic
+1,0,R01F0,191,108,Brown
+1,0,R01F0,195,121,Blond
+1,0,R01F0,196,242,Saison
+1,0,R01F0,197,208,Wheat
+1,0,R01F0,200,214,Christmas
+1,0,R01F0,202,215,Blond
+1,0,R01F0,209,143,Hoppy
+1,0,R01F0,211,182,Stout/Porter
+1,0,R01F0,214,148,Strong ale
+1,0,R01F0,220,217,Tripel
+1,0,R01F0,224,1,Brut
+1,0,R01F0,226,102,Christmas
+1,0,R01F0,231,233,Scotch
+1,0,R01F0,233,63,Amber
+1,0,R01F0,235,25,Brown
+1,0,R01F0,238,3,Blond
+1,0,R01F0,239,21,Lambic
+1,0,R01F0,240,192,Brut
+1,1,R01F1,1,86,Low/No alcohol
+1,1,R01F1,4,40,Low/No alcohol
+1,1,R01F1,6,48,Dubbel
+1,1,R01F1,8,124,Pils/Lager
+1,1,R01F1,9,207,Fruitbeer
+1,1,R01F1,10,155,Low/No alcohol
+1,1,R01F1,12,179,Flanders old brown
+1,1,R01F1,14,50,Fruitbeer
+1,1,R01F1,17,77,Blond
+1,1,R01F1,18,22,Wheat
+1,1,R01F1,23,96,Pils/Lager
+1,1,R01F1,25,44,Wheat
+1,1,R01F1,28,142,Wheat
+1,1,R01F1,32,211,Lambic
+1,1,R01F1,33,190,Flanders old brown
+1,1,R01F1,37,166,Saison
+1,1,R01F1,40,116,Lambic
+1,1,R01F1,45,213,Hoppy
+1,1,R01F1,46,250,Faro
+1,1,R01F1,48,224,Wheat
+1,1,R01F1,49,54,Kriek
+1,1,R01F1,50,5,Blond
+1,1,R01F1,51,209,Pils/Lager
+1,1,R01F1,53,11,Amber
+1,1,R01F1,54,56,Saison
+1,1,R01F1,55,84,West Flanders ale
+1,1,R01F1,61,169,Hoppy
+1,1,R01F1,62,194,Dubbel
+1,1,R01F1,64,43,Amber
+1,1,R01F1,65,100,Dubbel
+1,1,R01F1,74,138,Kriek
+1,1,R01F1,75,70,Blond
+1,1,R01F1,87,110,Blond
+1,1,R01F1,92,42,Lambic
+1,1,R01F1,96,246,Blond
+1,1,R01F1,97,97,Hoppy
+1,1,R01F1,98,87,Stout/Porter
+1,1,R01F1,100,201,Stout/Porter
+1,1,R01F1,101,14,Brett/cofermented
+1,1,R01F1,103,37,Strong ale
+1,1,R01F1,109,92,Amber
+1,1,R01F1,111,238,Blond
+1,1,R01F1,120,180,Christmas
+1,1,R01F1,124,193,Blond
+1,1,R01F1,125,39,Hoppy
+1,1,R01F1,129,23,Tripel
+1,1,R01F1,131,29,Saison
+1,1,R01F1,135,164,Blond
+1,1,R01F1,137,149,Blond
+1,1,R01F1,141,18,Lambic
+1,1,R01F1,142,98,Brown
+1,1,R01F1,149,118,West Flanders ale
+1,1,R01F1,157,78,Brown
+1,1,R01F1,158,234,Blond
+1,1,R01F1,161,249,Blond
+1,1,R01F1,173,153,Kriek
+1,1,R01F1,174,146,Scotch
+1,1,R01F1,177,36,Brown
+1,1,R01F1,178,126,Amber
+1,1,R01F1,181,130,Brut
+1,1,R01F1,185,9,Hoppy
+1,1,R01F1,188,131,Scotch
+1,1,R01F1,192,187,Dubbel
+1,1,R01F1,193,45,Tripel
+1,1,R01F1,204,89,Brown
+1,1,R01F1,206,181,Christmas
+1,1,R01F1,207,225,Strong ale
+1,1,R01F1,210,133,Strong ale
+1,1,R01F1,216,65,Hoppy
+1,1,R01F1,221,163,Tripel
+1,1,R01F1,222,68,Tripel
+1,1,R01F1,223,15,Tripel
+1,1,R01F1,228,67,Stout/Porter
+1,1,R01F1,230,189,Tripel
+1,1,R01F1,234,95,Christmas
+1,1,R01F1,236,203,Brett/cofermented
+1,1,R01F1,237,85,Tripel
+1,1,R01F1,243,171,Tripel
+1,1,R01F1,244,103,Stout/Porter
+1,1,R01F1,245,175,Strong ale
+1,1,R01F1,246,196,Strong ale
+1,1,R01F1,247,4,Strong ale
+1,1,R01F1,249,157,Tripel
+1,2,R01F2,7,165,Fruitbeer
+1,2,R01F2,11,141,Low/No alcohol
+1,2,R01F2,15,227,Fruitbeer
+1,2,R01F2,22,218,Pils/Lager
+1,2,R01F2,26,161,Flanders old brown
+1,2,R01F2,27,195,Wheat
+1,2,R01F2,31,223,Low/No alcohol
+1,2,R01F2,38,216,Scotch
+1,2,R01F2,39,200,West Flanders ale
+1,2,R01F2,41,139,Pils/Lager
+1,2,R01F2,42,183,Saison
+1,2,R01F2,56,172,Wheat
+1,2,R01F2,58,188,Stout/Porter
+1,2,R01F2,63,160,Wheat
+1,2,R01F2,71,151,Faro
+1,2,R01F2,72,61,Stout/Porter
+1,2,R01F2,76,113,Blond
+1,2,R01F2,77,176,West Flanders ale
+1,2,R01F2,79,167,Flanders old brown
+1,2,R01F2,80,59,Blond
+1,2,R01F2,81,135,Tripel
+1,2,R01F2,82,82,Kriek
+1,2,R01F2,89,112,Brown
+1,2,R01F2,90,219,Hoppy
+1,2,R01F2,93,72,Hoppy
+1,2,R01F2,95,109,Brown
+1,2,R01F2,99,220,Kriek
+1,2,R01F2,104,119,Pils/Lager
+1,2,R01F2,114,205,Brut
+1,2,R01F2,115,206,Brown
+1,2,R01F2,117,24,Kriek
+1,2,R01F2,119,69,Tripel
+1,2,R01F2,123,134,Strong ale
+1,2,R01F2,127,12,Lambic
+1,2,R01F2,128,150,Brett/cofermented
+1,2,R01F2,132,132,Saison
+1,2,R01F2,133,16,Dubbel
+1,2,R01F2,134,47,Tripel
+1,2,R01F2,136,115,Lambic
+1,2,R01F2,138,80,Hoppy
+1,2,R01F2,139,120,Hoppy
+1,2,R01F2,140,222,Brett/cofermented
+1,2,R01F2,143,221,Dubbel
+1,2,R01F2,144,32,Amber
+1,2,R01F2,146,13,Christmas
+1,2,R01F2,148,79,Hoppy
+1,2,R01F2,151,184,Fruitbeer
+1,2,R01F2,152,19,Amber
+1,2,R01F2,153,145,Saison
+1,2,R01F2,154,125,Blond
+1,2,R01F2,155,6,Amber
+1,2,R01F2,156,212,Stout/Porter
+1,2,R01F2,163,101,Blond
+1,2,R01F2,164,237,Brown
+1,2,R01F2,165,127,Blond
+1,2,R01F2,168,60,Christmas
+1,2,R01F2,171,28,Pils/Lager
+1,2,R01F2,175,168,Scotch
+1,2,R01F2,176,30,Blond
+1,2,R01F2,179,162,Lambic
+1,2,R01F2,180,123,Stout/Porter
+1,2,R01F2,184,52,Stout/Porter
+1,2,R01F2,190,34,Tripel
+1,2,R01F2,194,154,Tripel
+1,2,R01F2,198,38,Christmas
+1,2,R01F2,199,170,Strong ale
+1,2,R01F2,201,35,Blond
+1,2,R01F2,203,235,Strong ale
+1,2,R01F2,205,114,Hoppy
+1,2,R01F2,208,57,Tripel
+1,2,R01F2,212,17,Tripel
+1,2,R01F2,213,229,Wheat
+1,2,R01F2,215,248,Blond
+1,2,R01F2,217,73,Blond
+1,2,R01F2,218,198,Dubbel
+1,2,R01F2,219,91,Strong ale
+1,2,R01F2,225,71,Blond
+1,2,R01F2,227,140,Tripel
+1,2,R01F2,229,210,Amber
+1,2,R01F2,232,199,Tripel
+1,2,R01F2,241,239,Tripel
+1,2,R01F2,242,117,Strong ale
+1,2,R01F2,248,99,Strong ale
+2,0,R02F0,1,86,Low/No alcohol
+2,0,R02F0,7,165,Fruitbeer
+2,0,R02F0,8,124,Pils/Lager
+2,0,R02F0,10,155,Low/No alcohol
+2,0,R02F0,11,141,Low/No alcohol
+2,0,R02F0,12,179,Flanders old brown
+2,0,R02F0,15,227,Fruitbeer
+2,0,R02F0,19,81,Pils/Lager
+2,0,R02F0,20,202,Stout/Porter
+2,0,R02F0,24,230,Pils/Lager
+2,0,R02F0,27,195,Wheat
+2,0,R02F0,29,137,Amber
+2,0,R02F0,37,166,Saison
+2,0,R02F0,39,200,West Flanders ale
+2,0,R02F0,40,116,Lambic
+2,0,R02F0,48,224,Wheat
+2,0,R02F0,53,11,Amber
+2,0,R02F0,54,56,Saison
+2,0,R02F0,56,172,Wheat
+2,0,R02F0,59,20,Saison
+2,0,R02F0,60,122,Brett/cofermented
+2,0,R02F0,61,169,Hoppy
+2,0,R02F0,64,43,Amber
+2,0,R02F0,71,151,Faro
+2,0,R02F0,74,138,Kriek
+2,0,R02F0,78,105,Strong ale
+2,0,R02F0,81,135,Tripel
+2,0,R02F0,82,82,Kriek
+2,0,R02F0,83,241,Kriek
+2,0,R02F0,84,128,Amber
+2,0,R02F0,85,244,West Flanders ale
+2,0,R02F0,95,109,Brown
+2,0,R02F0,96,246,Blond
+2,0,R02F0,100,201,Stout/Porter
+2,0,R02F0,105,177,Fruitbeer
+2,0,R02F0,108,90,Pils/Lager
+2,0,R02F0,111,238,Blond
+2,0,R02F0,114,205,Brut
+2,0,R02F0,118,136,Blond
+2,0,R02F0,121,49,Blond
+2,0,R02F0,127,12,Lambic
+2,0,R02F0,128,150,Brett/cofermented
+2,0,R02F0,129,23,Tripel
+2,0,R02F0,135,164,Blond
+2,0,R02F0,136,115,Lambic
+2,0,R02F0,138,80,Hoppy
+2,0,R02F0,143,221,Dubbel
+2,0,R02F0,149,118,West Flanders ale
+2,0,R02F0,154,125,Blond
+2,0,R02F0,157,78,Brown
+2,0,R02F0,159,147,Tripel
+2,0,R02F0,161,249,Blond
+2,0,R02F0,173,153,Kriek
+2,0,R02F0,175,168,Scotch
+2,0,R02F0,180,123,Stout/Porter
+2,0,R02F0,183,31,Hoppy
+2,0,R02F0,184,52,Stout/Porter
+2,0,R02F0,186,204,Tripel
+2,0,R02F0,190,34,Tripel
+2,0,R02F0,192,187,Dubbel
+2,0,R02F0,195,121,Blond
+2,0,R02F0,196,242,Saison
+2,0,R02F0,198,38,Christmas
+2,0,R02F0,199,170,Strong ale
+2,0,R02F0,203,235,Strong ale
+2,0,R02F0,204,89,Brown
+2,0,R02F0,205,114,Hoppy
+2,0,R02F0,213,229,Wheat
+2,0,R02F0,215,248,Blond
+2,0,R02F0,216,65,Hoppy
+2,0,R02F0,217,73,Blond
+2,0,R02F0,218,198,Dubbel
+2,0,R02F0,219,91,Strong ale
+2,0,R02F0,222,68,Tripel
+2,0,R02F0,226,102,Christmas
+2,0,R02F0,230,189,Tripel
+2,0,R02F0,234,95,Christmas
+2,0,R02F0,235,25,Brown
+2,0,R02F0,239,21,Lambic
+2,0,R02F0,240,192,Brut
+2,0,R02F0,243,171,Tripel
+2,0,R02F0,245,175,Strong ale
+2,0,R02F0,246,196,Strong ale
+2,0,R02F0,249,157,Tripel
+2,1,R02F1,2,2,Low/No alcohol
+2,1,R02F1,4,40,Low/No alcohol
+2,1,R02F1,6,48,Dubbel
+2,1,R02F1,9,207,Fruitbeer
+2,1,R02F1,14,50,Fruitbeer
+2,1,R02F1,17,77,Blond
+2,1,R02F1,18,22,Wheat
+2,1,R02F1,21,64,Blond
+2,1,R02F1,22,218,Pils/Lager
+2,1,R02F1,25,44,Wheat
+2,1,R02F1,30,236,Brett/cofermented
+2,1,R02F1,31,223,Low/No alcohol
+2,1,R02F1,32,211,Lambic
+2,1,R02F1,33,190,Flanders old brown
+2,1,R02F1,35,228,Tripel
+2,1,R02F1,41,139,Pils/Lager
+2,1,R02F1,42,183,Saison
+2,1,R02F1,43,111,Dubbel
+2,1,R02F1,44,46,Blond
+2,1,R02F1,45,213,Hoppy
+2,1,R02F1,46,250,Faro
+2,1,R02F1,49,54,Kriek
+2,1,R02F1,50,5,Blond
+2,1,R02F1,52,58,Saison
+2,1,R02F1,55,84,West Flanders ale
+2,1,R02F1,62,194,Dubbel
+2,1,R02F1,63,160,Wheat
+2,1,R02F1,72,61,Stout/Porter
+2,1,R02F1,73,156,Kriek
+2,1,R02F1,77,176,West Flanders ale
+2,1,R02F1,87,110,Blond
+2,1,R02F1,89,112,Brown
+2,1,R02F1,97,97,Hoppy
+2,1,R02F1,99,220,Kriek
+2,1,R02F1,102,173,Stout/Porter
+2,1,R02F1,103,37,Strong ale
+2,1,R02F1,104,119,Pils/Lager
+2,1,R02F1,107,159,Flanders old brown
+2,1,R02F1,110,93,Tripel
+2,1,R02F1,113,107,Dubbel
+2,1,R02F1,120,180,Christmas
+2,1,R02F1,122,243,Wheat
+2,1,R02F1,123,134,Strong ale
+2,1,R02F1,124,193,Blond
+2,1,R02F1,134,47,Tripel
+2,1,R02F1,137,149,Blond
+2,1,R02F1,139,120,Hoppy
+2,1,R02F1,141,18,Lambic
+2,1,R02F1,142,98,Brown
+2,1,R02F1,144,32,Amber
+2,1,R02F1,146,13,Christmas
+2,1,R02F1,148,79,Hoppy
+2,1,R02F1,153,145,Saison
+2,1,R02F1,158,234,Blond
+2,1,R02F1,163,101,Blond
+2,1,R02F1,164,237,Brown
+2,1,R02F1,165,127,Blond
+2,1,R02F1,166,245,Tripel
+2,1,R02F1,167,191,Tripel
+2,1,R02F1,169,51,Strong ale
+2,1,R02F1,170,144,Lambic
+2,1,R02F1,174,146,Scotch
+2,1,R02F1,176,30,Blond
+2,1,R02F1,178,126,Amber
+2,1,R02F1,182,8,Hoppy
+2,1,R02F1,185,9,Hoppy
+2,1,R02F1,188,131,Scotch
+2,1,R02F1,189,75,Lambic
+2,1,R02F1,191,108,Brown
+2,1,R02F1,194,154,Tripel
+2,1,R02F1,206,181,Christmas
+2,1,R02F1,208,57,Tripel
+2,1,R02F1,210,133,Strong ale
+2,1,R02F1,211,182,Stout/Porter
+2,1,R02F1,212,17,Tripel
+2,1,R02F1,224,1,Brut
+2,1,R02F1,227,140,Tripel
+2,1,R02F1,228,67,Stout/Porter
+2,1,R02F1,229,210,Amber
+2,1,R02F1,233,63,Amber
+2,1,R02F1,236,203,Brett/cofermented
+2,1,R02F1,242,117,Strong ale
+2,1,R02F1,247,4,Strong ale
+2,2,R02F2,0,10,Low/No alcohol
+2,2,R02F2,3,83,Low/No alcohol
+2,2,R02F2,5,247,Fruitbeer
+2,2,R02F2,13,33,Fruitbeer
+2,2,R02F2,16,88,Kriek
+2,2,R02F2,23,96,Pils/Lager
+2,2,R02F2,26,161,Flanders old brown
+2,2,R02F2,28,142,Wheat
+2,2,R02F2,34,197,Wheat
+2,2,R02F2,36,185,Pils/Lager
+2,2,R02F2,38,216,Scotch
+2,2,R02F2,47,158,Amber
+2,2,R02F2,51,209,Pils/Lager
+2,2,R02F2,57,74,Faro
+2,2,R02F2,58,188,Stout/Porter
+2,2,R02F2,65,100,Dubbel
+2,2,R02F2,66,7,Saison
+2,2,R02F2,67,62,Blond
+2,2,R02F2,68,55,Hoppy
+2,2,R02F2,69,26,West Flanders ale
+2,2,R02F2,70,232,Kriek
+2,2,R02F2,75,70,Blond
+2,2,R02F2,76,113,Blond
+2,2,R02F2,79,167,Flanders old brown
+2,2,R02F2,80,59,Blond
+2,2,R02F2,86,178,West Flanders ale
+2,2,R02F2,88,231,Stout/Porter
+2,2,R02F2,90,219,Hoppy
+2,2,R02F2,91,129,Brown
+2,2,R02F2,92,42,Lambic
+2,2,R02F2,93,72,Hoppy
+2,2,R02F2,94,186,Strong ale
+2,2,R02F2,98,87,Stout/Porter
+2,2,R02F2,101,14,Brett/cofermented
+2,2,R02F2,106,106,Christmas
+2,2,R02F2,109,92,Amber
+2,2,R02F2,112,76,Blond
+2,2,R02F2,115,206,Brown
+2,2,R02F2,116,53,Brown
+2,2,R02F2,117,24,Kriek
+2,2,R02F2,119,69,Tripel
+2,2,R02F2,125,39,Hoppy
+2,2,R02F2,126,240,Tripel
+2,2,R02F2,130,226,Strong ale
+2,2,R02F2,131,29,Saison
+2,2,R02F2,132,132,Saison
+2,2,R02F2,133,16,Dubbel
+2,2,R02F2,140,222,Brett/cofermented
+2,2,R02F2,145,27,Hoppy
+2,2,R02F2,147,174,Dubbel
+2,2,R02F2,150,152,Wheat
+2,2,R02F2,151,184,Fruitbeer
+2,2,R02F2,152,19,Amber
+2,2,R02F2,155,6,Amber
+2,2,R02F2,156,212,Stout/Porter
+2,2,R02F2,160,66,Tripel
+2,2,R02F2,162,104,Strong ale
+2,2,R02F2,168,60,Christmas
+2,2,R02F2,171,28,Pils/Lager
+2,2,R02F2,172,41,Lambic
+2,2,R02F2,177,36,Brown
+2,2,R02F2,179,162,Lambic
+2,2,R02F2,181,130,Brut
+2,2,R02F2,187,94,Blond
+2,2,R02F2,193,45,Tripel
+2,2,R02F2,197,208,Wheat
+2,2,R02F2,200,214,Christmas
+2,2,R02F2,201,35,Blond
+2,2,R02F2,202,215,Blond
+2,2,R02F2,207,225,Strong ale
+2,2,R02F2,209,143,Hoppy
+2,2,R02F2,214,148,Strong ale
+2,2,R02F2,220,217,Tripel
+2,2,R02F2,221,163,Tripel
+2,2,R02F2,223,15,Tripel
+2,2,R02F2,225,71,Blond
+2,2,R02F2,231,233,Scotch
+2,2,R02F2,232,199,Tripel
+2,2,R02F2,237,85,Tripel
+2,2,R02F2,238,3,Blond
+2,2,R02F2,241,239,Tripel
+2,2,R02F2,244,103,Stout/Porter
+2,2,R02F2,248,99,Strong ale
+3,0,R03F0,0,10,Low/No alcohol
+3,0,R03F0,2,2,Low/No alcohol
+3,0,R03F0,5,247,Fruitbeer
+3,0,R03F0,7,165,Fruitbeer
+3,0,R03F0,10,155,Low/No alcohol
+3,0,R03F0,15,227,Fruitbeer
+3,0,R03F0,21,64,Blond
+3,0,R03F0,24,230,Pils/Lager
+3,0,R03F0,37,166,Saison
+3,0,R03F0,43,111,Dubbel
+3,0,R03F0,48,224,Wheat
+3,0,R03F0,53,11,Amber
+3,0,R03F0,55,84,West Flanders ale
+3,0,R03F0,56,172,Wheat
+3,0,R03F0,62,194,Dubbel
+3,0,R03F0,63,160,Wheat
+3,0,R03F0,68,55,Hoppy
+3,0,R03F0,70,232,Kriek
+3,0,R03F0,71,151,Faro
+3,0,R03F0,75,70,Blond
+3,0,R03F0,77,176,West Flanders ale
+3,0,R03F0,80,59,Blond
+3,0,R03F0,81,135,Tripel
+3,0,R03F0,82,82,Kriek
+3,0,R03F0,85,244,West Flanders ale
+3,0,R03F0,95,109,Brown
+3,0,R03F0,96,246,Blond
+3,0,R03F0,97,97,Hoppy
+3,0,R03F0,98,87,Stout/Porter
+3,0,R03F0,104,119,Pils/Lager
+3,0,R03F0,107,159,Flanders old brown
+3,0,R03F0,108,90,Pils/Lager
+3,0,R03F0,109,92,Amber
+3,0,R03F0,110,93,Tripel
+3,0,R03F0,113,107,Dubbel
+3,0,R03F0,116,53,Brown
+3,0,R03F0,117,24,Kriek
+3,0,R03F0,124,193,Blond
+3,0,R03F0,127,12,Lambic
+3,0,R03F0,128,150,Brett/cofermented
+3,0,R03F0,129,23,Tripel
+3,0,R03F0,132,132,Saison
+3,0,R03F0,135,164,Blond
+3,0,R03F0,136,115,Lambic
+3,0,R03F0,137,149,Blond
+3,0,R03F0,139,120,Hoppy
+3,0,R03F0,142,98,Brown
+3,0,R03F0,146,13,Christmas
+3,0,R03F0,150,152,Wheat
+3,0,R03F0,153,145,Saison
+3,0,R03F0,155,6,Amber
+3,0,R03F0,156,212,Stout/Porter
+3,0,R03F0,164,237,Brown
+3,0,R03F0,167,191,Tripel
+3,0,R03F0,168,60,Christmas
+3,0,R03F0,170,144,Lambic
+3,0,R03F0,171,28,Pils/Lager
+3,0,R03F0,173,153,Kriek
+3,0,R03F0,178,126,Amber
+3,0,R03F0,179,162,Lambic
+3,0,R03F0,181,130,Brut
+3,0,R03F0,185,9,Hoppy
+3,0,R03F0,187,94,Blond
+3,0,R03F0,188,131,Scotch
+3,0,R03F0,195,121,Blond
+3,0,R03F0,196,242,Saison
+3,0,R03F0,199,170,Strong ale
+3,0,R03F0,203,235,Strong ale
+3,0,R03F0,208,57,Tripel
+3,0,R03F0,209,143,Hoppy
+3,0,R03F0,211,182,Stout/Porter
+3,0,R03F0,214,148,Strong ale
+3,0,R03F0,220,217,Tripel
+3,0,R03F0,224,1,Brut
+3,0,R03F0,225,71,Blond
+3,0,R03F0,226,102,Christmas
+3,0,R03F0,227,140,Tripel
+3,0,R03F0,228,67,Stout/Porter
+3,0,R03F0,230,189,Tripel
+3,0,R03F0,236,203,Brett/cofermented
+3,0,R03F0,242,117,Strong ale
+3,0,R03F0,247,4,Strong ale
+3,0,R03F0,248,99,Strong ale
+3,0,R03F0,249,157,Tripel
+3,1,R03F1,3,83,Low/No alcohol
+3,1,R03F1,4,40,Low/No alcohol
+3,1,R03F1,9,207,Fruitbeer
+3,1,R03F1,11,141,Low/No alcohol
+3,1,R03F1,12,179,Flanders old brown
+3,1,R03F1,14,50,Fruitbeer
+3,1,R03F1,19,81,Pils/Lager
+3,1,R03F1,20,202,Stout/Porter
+3,1,R03F1,22,218,Pils/Lager
+3,1,R03F1,23,96,Pils/Lager
+3,1,R03F1,25,44,Wheat
+3,1,R03F1,27,195,Wheat
+3,1,R03F1,28,142,Wheat
+3,1,R03F1,32,211,Lambic
+3,1,R03F1,35,228,Tripel
+3,1,R03F1,39,200,West Flanders ale
+3,1,R03F1,40,116,Lambic
+3,1,R03F1,42,183,Saison
+3,1,R03F1,44,46,Blond
+3,1,R03F1,46,250,Faro
+3,1,R03F1,50,5,Blond
+3,1,R03F1,59,20,Saison
+3,1,R03F1,60,122,Brett/cofermented
+3,1,R03F1,61,169,Hoppy
+3,1,R03F1,64,43,Amber
+3,1,R03F1,65,100,Dubbel
+3,1,R03F1,67,62,Blond
+3,1,R03F1,72,61,Stout/Porter
+3,1,R03F1,73,156,Kriek
+3,1,R03F1,74,138,Kriek
+3,1,R03F1,78,105,Strong ale
+3,1,R03F1,79,167,Flanders old brown
+3,1,R03F1,83,241,Kriek
+3,1,R03F1,84,128,Amber
+3,1,R03F1,91,129,Brown
+3,1,R03F1,92,42,Lambic
+3,1,R03F1,94,186,Strong ale
+3,1,R03F1,100,201,Stout/Porter
+3,1,R03F1,103,37,Strong ale
+3,1,R03F1,112,76,Blond
+3,1,R03F1,115,206,Brown
+3,1,R03F1,118,136,Blond
+3,1,R03F1,119,69,Tripel
+3,1,R03F1,120,180,Christmas
+3,1,R03F1,121,49,Blond
+3,1,R03F1,122,243,Wheat
+3,1,R03F1,125,39,Hoppy
+3,1,R03F1,131,29,Saison
+3,1,R03F1,133,16,Dubbel
+3,1,R03F1,140,222,Brett/cofermented
+3,1,R03F1,144,32,Amber
+3,1,R03F1,145,27,Hoppy
+3,1,R03F1,147,174,Dubbel
+3,1,R03F1,148,79,Hoppy
+3,1,R03F1,149,118,West Flanders ale
+3,1,R03F1,152,19,Amber
+3,1,R03F1,165,127,Blond
+3,1,R03F1,166,245,Tripel
+3,1,R03F1,169,51,Strong ale
+3,1,R03F1,175,168,Scotch
+3,1,R03F1,177,36,Brown
+3,1,R03F1,183,31,Hoppy
+3,1,R03F1,184,52,Stout/Porter
+3,1,R03F1,189,75,Lambic
+3,1,R03F1,190,34,Tripel
+3,1,R03F1,193,45,Tripel
+3,1,R03F1,198,38,Christmas
+3,1,R03F1,201,35,Blond
+3,1,R03F1,204,89,Brown
+3,1,R03F1,205,114,Hoppy
+3,1,R03F1,206,181,Christmas
+3,1,R03F1,207,225,Strong ale
+3,1,R03F1,210,133,Strong ale
+3,1,R03F1,212,17,Tripel
+3,1,R03F1,215,248,Blond
+3,1,R03F1,217,73,Blond
+3,1,R03F1,218,198,Dubbel
+3,1,R03F1,231,233,Scotch
+3,1,R03F1,232,199,Tripel
+3,1,R03F1,237,85,Tripel
+3,1,R03F1,238,3,Blond
+3,1,R03F1,240,192,Brut
+3,1,R03F1,241,239,Tripel
+3,2,R03F2,1,86,Low/No alcohol
+3,2,R03F2,6,48,Dubbel
+3,2,R03F2,8,124,Pils/Lager
+3,2,R03F2,13,33,Fruitbeer
+3,2,R03F2,16,88,Kriek
+3,2,R03F2,17,77,Blond
+3,2,R03F2,18,22,Wheat
+3,2,R03F2,26,161,Flanders old brown
+3,2,R03F2,29,137,Amber
+3,2,R03F2,30,236,Brett/cofermented
+3,2,R03F2,31,223,Low/No alcohol
+3,2,R03F2,33,190,Flanders old brown
+3,2,R03F2,34,197,Wheat
+3,2,R03F2,36,185,Pils/Lager
+3,2,R03F2,38,216,Scotch
+3,2,R03F2,41,139,Pils/Lager
+3,2,R03F2,45,213,Hoppy
+3,2,R03F2,47,158,Amber
+3,2,R03F2,49,54,Kriek
+3,2,R03F2,51,209,Pils/Lager
+3,2,R03F2,52,58,Saison
+3,2,R03F2,54,56,Saison
+3,2,R03F2,57,74,Faro
+3,2,R03F2,58,188,Stout/Porter
+3,2,R03F2,66,7,Saison
+3,2,R03F2,69,26,West Flanders ale
+3,2,R03F2,76,113,Blond
+3,2,R03F2,86,178,West Flanders ale
+3,2,R03F2,87,110,Blond
+3,2,R03F2,88,231,Stout/Porter
+3,2,R03F2,89,112,Brown
+3,2,R03F2,90,219,Hoppy
+3,2,R03F2,93,72,Hoppy
+3,2,R03F2,99,220,Kriek
+3,2,R03F2,101,14,Brett/cofermented
+3,2,R03F2,102,173,Stout/Porter
+3,2,R03F2,105,177,Fruitbeer
+3,2,R03F2,106,106,Christmas
+3,2,R03F2,111,238,Blond
+3,2,R03F2,114,205,Brut
+3,2,R03F2,123,134,Strong ale
+3,2,R03F2,126,240,Tripel
+3,2,R03F2,130,226,Strong ale
+3,2,R03F2,134,47,Tripel
+3,2,R03F2,138,80,Hoppy
+3,2,R03F2,141,18,Lambic
+3,2,R03F2,143,221,Dubbel
+3,2,R03F2,151,184,Fruitbeer
+3,2,R03F2,154,125,Blond
+3,2,R03F2,157,78,Brown
+3,2,R03F2,158,234,Blond
+3,2,R03F2,159,147,Tripel
+3,2,R03F2,160,66,Tripel
+3,2,R03F2,161,249,Blond
+3,2,R03F2,162,104,Strong ale
+3,2,R03F2,163,101,Blond
+3,2,R03F2,172,41,Lambic
+3,2,R03F2,174,146,Scotch
+3,2,R03F2,176,30,Blond
+3,2,R03F2,180,123,Stout/Porter
+3,2,R03F2,182,8,Hoppy
+3,2,R03F2,186,204,Tripel
+3,2,R03F2,191,108,Brown
+3,2,R03F2,192,187,Dubbel
+3,2,R03F2,194,154,Tripel
+3,2,R03F2,197,208,Wheat
+3,2,R03F2,200,214,Christmas
+3,2,R03F2,202,215,Blond
+3,2,R03F2,213,229,Wheat
+3,2,R03F2,216,65,Hoppy
+3,2,R03F2,219,91,Strong ale
+3,2,R03F2,221,163,Tripel
+3,2,R03F2,222,68,Tripel
+3,2,R03F2,223,15,Tripel
+3,2,R03F2,229,210,Amber
+3,2,R03F2,233,63,Amber
+3,2,R03F2,234,95,Christmas
+3,2,R03F2,235,25,Brown
+3,2,R03F2,239,21,Lambic
+3,2,R03F2,243,171,Tripel
+3,2,R03F2,244,103,Stout/Porter
+3,2,R03F2,245,175,Strong ale
+3,2,R03F2,246,196,Strong ale
+4,0,R04F0,0,10,Low/No alcohol
+4,0,R04F0,2,2,Low/No alcohol
+4,0,R04F0,9,207,Fruitbeer
+4,0,R04F0,11,141,Low/No alcohol
+4,0,R04F0,12,179,Flanders old brown
+4,0,R04F0,14,50,Fruitbeer
+4,0,R04F0,16,88,Kriek
+4,0,R04F0,22,218,Pils/Lager
+4,0,R04F0,29,137,Amber
+4,0,R04F0,34,197,Wheat
+4,0,R04F0,37,166,Saison
+4,0,R04F0,41,139,Pils/Lager
+4,0,R04F0,43,111,Dubbel
+4,0,R04F0,47,158,Amber
+4,0,R04F0,48,224,Wheat
+4,0,R04F0,49,54,Kriek
+4,0,R04F0,55,84,West Flanders ale
+4,0,R04F0,58,188,Stout/Porter
+4,0,R04F0,59,20,Saison
+4,0,R04F0,60,122,Brett/cofermented
+4,0,R04F0,63,160,Wheat
+4,0,R04F0,68,55,Hoppy
+4,0,R04F0,69,26,West Flanders ale
+4,0,R04F0,71,151,Faro
+4,0,R04F0,73,156,Kriek
+4,0,R04F0,78,105,Strong ale
+4,0,R04F0,80,59,Blond
+4,0,R04F0,87,110,Blond
+4,0,R04F0,90,219,Hoppy
+4,0,R04F0,95,109,Brown
+4,0,R04F0,102,173,Stout/Porter
+4,0,R04F0,108,90,Pils/Lager
+4,0,R04F0,109,92,Amber
+4,0,R04F0,112,76,Blond
+4,0,R04F0,118,136,Blond
+4,0,R04F0,120,180,Christmas
+4,0,R04F0,121,49,Blond
+4,0,R04F0,123,134,Strong ale
+4,0,R04F0,125,39,Hoppy
+4,0,R04F0,127,12,Lambic
+4,0,R04F0,132,132,Saison
+4,0,R04F0,133,16,Dubbel
+4,0,R04F0,136,115,Lambic
+4,0,R04F0,142,98,Brown
+4,0,R04F0,145,27,Hoppy
+4,0,R04F0,146,13,Christmas
+4,0,R04F0,149,118,West Flanders ale
+4,0,R04F0,150,152,Wheat
+4,0,R04F0,151,184,Fruitbeer
+4,0,R04F0,153,145,Saison
+4,0,R04F0,158,234,Blond
+4,0,R04F0,160,66,Tripel
+4,0,R04F0,166,245,Tripel
+4,0,R04F0,169,51,Strong ale
+4,0,R04F0,170,144,Lambic
+4,0,R04F0,171,28,Pils/Lager
+4,0,R04F0,172,41,Lambic
+4,0,R04F0,173,153,Kriek
+4,0,R04F0,174,146,Scotch
+4,0,R04F0,176,30,Blond
+4,0,R04F0,177,36,Brown
+4,0,R04F0,181,130,Brut
+4,0,R04F0,183,31,Hoppy
+4,0,R04F0,184,52,Stout/Porter
+4,0,R04F0,191,108,Brown
+4,0,R04F0,193,45,Tripel
+4,0,R04F0,198,38,Christmas
+4,0,R04F0,202,215,Blond
+4,0,R04F0,203,235,Strong ale
+4,0,R04F0,208,57,Tripel
+4,0,R04F0,210,133,Strong ale
+4,0,R04F0,215,248,Blond
+4,0,R04F0,218,198,Dubbel
+4,0,R04F0,223,15,Tripel
+4,0,R04F0,227,140,Tripel
+4,0,R04F0,228,67,Stout/Porter
+4,0,R04F0,233,63,Amber
+4,0,R04F0,236,203,Brett/cofermented
+4,0,R04F0,237,85,Tripel
+4,0,R04F0,238,3,Blond
+4,0,R04F0,240,192,Brut
+4,0,R04F0,241,239,Tripel
+4,0,R04F0,242,117,Strong ale
+4,0,R04F0,243,171,Tripel
+4,1,R04F1,1,86,Low/No alcohol
+4,1,R04F1,4,40,Low/No alcohol
+4,1,R04F1,6,48,Dubbel
+4,1,R04F1,10,155,Low/No alcohol
+4,1,R04F1,13,33,Fruitbeer
+4,1,R04F1,15,227,Fruitbeer
+4,1,R04F1,17,77,Blond
+4,1,R04F1,19,81,Pils/Lager
+4,1,R04F1,20,202,Stout/Porter
+4,1,R04F1,21,64,Blond
+4,1,R04F1,23,96,Pils/Lager
+4,1,R04F1,26,161,Flanders old brown
+4,1,R04F1,27,195,Wheat
+4,1,R04F1,30,236,Brett/cofermented
+4,1,R04F1,32,211,Lambic
+4,1,R04F1,33,190,Flanders old brown
+4,1,R04F1,36,185,Pils/Lager
+4,1,R04F1,39,200,West Flanders ale
+4,1,R04F1,40,116,Lambic
+4,1,R04F1,42,183,Saison
+4,1,R04F1,45,213,Hoppy
+4,1,R04F1,46,250,Faro
+4,1,R04F1,53,11,Amber
+4,1,R04F1,54,56,Saison
+4,1,R04F1,56,172,Wheat
+4,1,R04F1,61,169,Hoppy
+4,1,R04F1,66,7,Saison
+4,1,R04F1,67,62,Blond
+4,1,R04F1,70,232,Kriek
+4,1,R04F1,72,61,Stout/Porter
+4,1,R04F1,74,138,Kriek
+4,1,R04F1,75,70,Blond
+4,1,R04F1,76,113,Blond
+4,1,R04F1,84,128,Amber
+4,1,R04F1,86,178,West Flanders ale
+4,1,R04F1,88,231,Stout/Porter
+4,1,R04F1,91,129,Brown
+4,1,R04F1,94,186,Strong ale
+4,1,R04F1,99,220,Kriek
+4,1,R04F1,103,37,Strong ale
+4,1,R04F1,106,106,Christmas
+4,1,R04F1,113,107,Dubbel
+4,1,R04F1,119,69,Tripel
+4,1,R04F1,122,243,Wheat
+4,1,R04F1,126,240,Tripel
+4,1,R04F1,128,150,Brett/cofermented
+4,1,R04F1,129,23,Tripel
+4,1,R04F1,130,226,Strong ale
+4,1,R04F1,143,221,Dubbel
+4,1,R04F1,147,174,Dubbel
+4,1,R04F1,148,79,Hoppy
+4,1,R04F1,154,125,Blond
+4,1,R04F1,155,6,Amber
+4,1,R04F1,157,78,Brown
+4,1,R04F1,161,249,Blond
+4,1,R04F1,164,237,Brown
+4,1,R04F1,179,162,Lambic
+4,1,R04F1,180,123,Stout/Porter
+4,1,R04F1,182,8,Hoppy
+4,1,R04F1,185,9,Hoppy
+4,1,R04F1,187,94,Blond
+4,1,R04F1,188,131,Scotch
+4,1,R04F1,189,75,Lambic
+4,1,R04F1,194,154,Tripel
+4,1,R04F1,195,121,Blond
+4,1,R04F1,197,208,Wheat
+4,1,R04F1,204,89,Brown
+4,1,R04F1,205,114,Hoppy
+4,1,R04F1,206,181,Christmas
+4,1,R04F1,212,17,Tripel
+4,1,R04F1,217,73,Blond
+4,1,R04F1,220,217,Tripel
+4,1,R04F1,224,1,Brut
+4,1,R04F1,225,71,Blond
+4,1,R04F1,226,102,Christmas
+4,1,R04F1,229,210,Amber
+4,1,R04F1,230,189,Tripel
+4,1,R04F1,231,233,Scotch
+4,1,R04F1,232,199,Tripel
+4,1,R04F1,246,196,Strong ale
+4,1,R04F1,247,4,Strong ale
+4,1,R04F1,248,99,Strong ale
+4,1,R04F1,249,157,Tripel
+4,2,R04F2,3,83,Low/No alcohol
+4,2,R04F2,5,247,Fruitbeer
+4,2,R04F2,7,165,Fruitbeer
+4,2,R04F2,8,124,Pils/Lager
+4,2,R04F2,18,22,Wheat
+4,2,R04F2,24,230,Pils/Lager
+4,2,R04F2,25,44,Wheat
+4,2,R04F2,28,142,Wheat
+4,2,R04F2,31,223,Low/No alcohol
+4,2,R04F2,35,228,Tripel
+4,2,R04F2,38,216,Scotch
+4,2,R04F2,44,46,Blond
+4,2,R04F2,50,5,Blond
+4,2,R04F2,51,209,Pils/Lager
+4,2,R04F2,52,58,Saison
+4,2,R04F2,57,74,Faro
+4,2,R04F2,62,194,Dubbel
+4,2,R04F2,64,43,Amber
+4,2,R04F2,65,100,Dubbel
+4,2,R04F2,77,176,West Flanders ale
+4,2,R04F2,79,167,Flanders old brown
+4,2,R04F2,81,135,Tripel
+4,2,R04F2,82,82,Kriek
+4,2,R04F2,83,241,Kriek
+4,2,R04F2,85,244,West Flanders ale
+4,2,R04F2,89,112,Brown
+4,2,R04F2,92,42,Lambic
+4,2,R04F2,93,72,Hoppy
+4,2,R04F2,96,246,Blond
+4,2,R04F2,97,97,Hoppy
+4,2,R04F2,98,87,Stout/Porter
+4,2,R04F2,100,201,Stout/Porter
+4,2,R04F2,101,14,Brett/cofermented
+4,2,R04F2,104,119,Pils/Lager
+4,2,R04F2,105,177,Fruitbeer
+4,2,R04F2,107,159,Flanders old brown
+4,2,R04F2,110,93,Tripel
+4,2,R04F2,111,238,Blond
+4,2,R04F2,114,205,Brut
+4,2,R04F2,115,206,Brown
+4,2,R04F2,116,53,Brown
+4,2,R04F2,117,24,Kriek
+4,2,R04F2,124,193,Blond
+4,2,R04F2,131,29,Saison
+4,2,R04F2,134,47,Tripel
+4,2,R04F2,135,164,Blond
+4,2,R04F2,137,149,Blond
+4,2,R04F2,138,80,Hoppy
+4,2,R04F2,139,120,Hoppy
+4,2,R04F2,140,222,Brett/cofermented
+4,2,R04F2,141,18,Lambic
+4,2,R04F2,144,32,Amber
+4,2,R04F2,152,19,Amber
+4,2,R04F2,156,212,Stout/Porter
+4,2,R04F2,159,147,Tripel
+4,2,R04F2,162,104,Strong ale
+4,2,R04F2,163,101,Blond
+4,2,R04F2,165,127,Blond
+4,2,R04F2,167,191,Tripel
+4,2,R04F2,168,60,Christmas
+4,2,R04F2,175,168,Scotch
+4,2,R04F2,178,126,Amber
+4,2,R04F2,186,204,Tripel
+4,2,R04F2,190,34,Tripel
+4,2,R04F2,192,187,Dubbel
+4,2,R04F2,196,242,Saison
+4,2,R04F2,199,170,Strong ale
+4,2,R04F2,200,214,Christmas
+4,2,R04F2,201,35,Blond
+4,2,R04F2,207,225,Strong ale
+4,2,R04F2,209,143,Hoppy
+4,2,R04F2,211,182,Stout/Porter
+4,2,R04F2,213,229,Wheat
+4,2,R04F2,214,148,Strong ale
+4,2,R04F2,216,65,Hoppy
+4,2,R04F2,219,91,Strong ale
+4,2,R04F2,221,163,Tripel
+4,2,R04F2,222,68,Tripel
+4,2,R04F2,234,95,Christmas
+4,2,R04F2,235,25,Brown
+4,2,R04F2,239,21,Lambic
+4,2,R04F2,244,103,Stout/Porter
+4,2,R04F2,245,175,Strong ale
+5,0,R05F0,2,2,Low/No alcohol
+5,0,R05F0,6,48,Dubbel
+5,0,R05F0,7,165,Fruitbeer
+5,0,R05F0,9,207,Fruitbeer
+5,0,R05F0,10,155,Low/No alcohol
+5,0,R05F0,11,141,Low/No alcohol
+5,0,R05F0,12,179,Flanders old brown
+5,0,R05F0,16,88,Kriek
+5,0,R05F0,19,81,Pils/Lager
+5,0,R05F0,22,218,Pils/Lager
+5,0,R05F0,23,96,Pils/Lager
+5,0,R05F0,25,44,Wheat
+5,0,R05F0,32,211,Lambic
+5,0,R05F0,39,200,West Flanders ale
+5,0,R05F0,40,116,Lambic
+5,0,R05F0,43,111,Dubbel
+5,0,R05F0,44,46,Blond
+5,0,R05F0,46,250,Faro
+5,0,R05F0,50,5,Blond
+5,0,R05F0,51,209,Pils/Lager
+5,0,R05F0,52,58,Saison
+5,0,R05F0,59,20,Saison
+5,0,R05F0,63,160,Wheat
+5,0,R05F0,64,43,Amber
+5,0,R05F0,65,100,Dubbel
+5,0,R05F0,66,7,Saison
+5,0,R05F0,74,138,Kriek
+5,0,R05F0,76,113,Blond
+5,0,R05F0,77,176,West Flanders ale
+5,0,R05F0,81,135,Tripel
+5,0,R05F0,82,82,Kriek
+5,0,R05F0,85,244,West Flanders ale
+5,0,R05F0,88,231,Stout/Porter
+5,0,R05F0,91,129,Brown
+5,0,R05F0,93,72,Hoppy
+5,0,R05F0,99,220,Kriek
+5,0,R05F0,101,14,Brett/cofermented
+5,0,R05F0,102,173,Stout/Porter
+5,0,R05F0,103,37,Strong ale
+5,0,R05F0,110,93,Tripel
+5,0,R05F0,112,76,Blond
+5,0,R05F0,123,134,Strong ale
+5,0,R05F0,129,23,Tripel
+5,0,R05F0,130,226,Strong ale
+5,0,R05F0,132,132,Saison
+5,0,R05F0,135,164,Blond
+5,0,R05F0,138,80,Hoppy
+5,0,R05F0,141,18,Lambic
+5,0,R05F0,144,32,Amber
+5,0,R05F0,150,152,Wheat
+5,0,R05F0,151,184,Fruitbeer
+5,0,R05F0,156,212,Stout/Porter
+5,0,R05F0,157,78,Brown
+5,0,R05F0,158,234,Blond
+5,0,R05F0,167,191,Tripel
+5,0,R05F0,168,60,Christmas
+5,0,R05F0,170,144,Lambic
+5,0,R05F0,176,30,Blond
+5,0,R05F0,180,123,Stout/Porter
+5,0,R05F0,181,130,Brut
+5,0,R05F0,182,8,Hoppy
+5,0,R05F0,183,31,Hoppy
+5,0,R05F0,188,131,Scotch
+5,0,R05F0,191,108,Brown
+5,0,R05F0,194,154,Tripel
+5,0,R05F0,195,121,Blond
+5,0,R05F0,197,208,Wheat
+5,0,R05F0,198,38,Christmas
+5,0,R05F0,202,215,Blond
+5,0,R05F0,203,235,Strong ale
+5,0,R05F0,204,89,Brown
+5,0,R05F0,208,57,Tripel
+5,0,R05F0,210,133,Strong ale
+5,0,R05F0,216,65,Hoppy
+5,0,R05F0,217,73,Blond
+5,0,R05F0,223,15,Tripel
+5,0,R05F0,226,102,Christmas
+5,0,R05F0,229,210,Amber
+5,0,R05F0,230,189,Tripel
+5,0,R05F0,232,199,Tripel
+5,0,R05F0,233,63,Amber
+5,0,R05F0,236,203,Brett/cofermented
+5,0,R05F0,240,192,Brut
+5,0,R05F0,242,117,Strong ale
+5,1,R05F1,0,10,Low/No alcohol
+5,1,R05F1,3,83,Low/No alcohol
+5,1,R05F1,5,247,Fruitbeer
+5,1,R05F1,14,50,Fruitbeer
+5,1,R05F1,17,77,Blond
+5,1,R05F1,18,22,Wheat
+5,1,R05F1,20,202,Stout/Porter
+5,1,R05F1,21,64,Blond
+5,1,R05F1,24,230,Pils/Lager
+5,1,R05F1,27,195,Wheat
+5,1,R05F1,29,137,Amber
+5,1,R05F1,31,223,Low/No alcohol
+5,1,R05F1,33,190,Flanders old brown
+5,1,R05F1,34,197,Wheat
+5,1,R05F1,36,185,Pils/Lager
+5,1,R05F1,37,166,Saison
+5,1,R05F1,38,216,Scotch
+5,1,R05F1,42,183,Saison
+5,1,R05F1,54,56,Saison
+5,1,R05F1,55,84,West Flanders ale
+5,1,R05F1,57,74,Faro
+5,1,R05F1,58,188,Stout/Porter
+5,1,R05F1,62,194,Dubbel
+5,1,R05F1,67,62,Blond
+5,1,R05F1,70,232,Kriek
+5,1,R05F1,73,156,Kriek
+5,1,R05F1,78,105,Strong ale
+5,1,R05F1,79,167,Flanders old brown
+5,1,R05F1,84,128,Amber
+5,1,R05F1,86,178,West Flanders ale
+5,1,R05F1,90,219,Hoppy
+5,1,R05F1,92,42,Lambic
+5,1,R05F1,94,186,Strong ale
+5,1,R05F1,95,109,Brown
+5,1,R05F1,98,87,Stout/Porter
+5,1,R05F1,104,119,Pils/Lager
+5,1,R05F1,106,106,Christmas
+5,1,R05F1,109,92,Amber
+5,1,R05F1,111,238,Blond
+5,1,R05F1,113,107,Dubbel
+5,1,R05F1,116,53,Brown
+5,1,R05F1,122,243,Wheat
+5,1,R05F1,124,193,Blond
+5,1,R05F1,125,39,Hoppy
+5,1,R05F1,128,150,Brett/cofermented
+5,1,R05F1,137,149,Blond
+5,1,R05F1,139,120,Hoppy
+5,1,R05F1,140,222,Brett/cofermented
+5,1,R05F1,143,221,Dubbel
+5,1,R05F1,145,27,Hoppy
+5,1,R05F1,148,79,Hoppy
+5,1,R05F1,152,19,Amber
+5,1,R05F1,154,125,Blond
+5,1,R05F1,160,66,Tripel
+5,1,R05F1,163,101,Blond
+5,1,R05F1,166,245,Tripel
+5,1,R05F1,169,51,Strong ale
+5,1,R05F1,172,41,Lambic
+5,1,R05F1,173,153,Kriek
+5,1,R05F1,175,168,Scotch
+5,1,R05F1,177,36,Brown
+5,1,R05F1,179,162,Lambic
+5,1,R05F1,186,204,Tripel
+5,1,R05F1,187,94,Blond
+5,1,R05F1,190,34,Tripel
+5,1,R05F1,193,45,Tripel
+5,1,R05F1,199,170,Strong ale
+5,1,R05F1,201,35,Blond
+5,1,R05F1,205,114,Hoppy
+5,1,R05F1,206,181,Christmas
+5,1,R05F1,207,225,Strong ale
+5,1,R05F1,215,248,Blond
+5,1,R05F1,218,198,Dubbel
+5,1,R05F1,220,217,Tripel
+5,1,R05F1,222,68,Tripel
+5,1,R05F1,224,1,Brut
+5,1,R05F1,234,95,Christmas
+5,1,R05F1,235,25,Brown
+5,1,R05F1,239,21,Lambic
+5,1,R05F1,241,239,Tripel
+5,1,R05F1,244,103,Stout/Porter
+5,1,R05F1,247,4,Strong ale
+5,1,R05F1,249,157,Tripel
+5,2,R05F2,1,86,Low/No alcohol
+5,2,R05F2,4,40,Low/No alcohol
+5,2,R05F2,8,124,Pils/Lager
+5,2,R05F2,13,33,Fruitbeer
+5,2,R05F2,15,227,Fruitbeer
+5,2,R05F2,26,161,Flanders old brown
+5,2,R05F2,28,142,Wheat
+5,2,R05F2,30,236,Brett/cofermented
+5,2,R05F2,35,228,Tripel
+5,2,R05F2,41,139,Pils/Lager
+5,2,R05F2,45,213,Hoppy
+5,2,R05F2,47,158,Amber
+5,2,R05F2,48,224,Wheat
+5,2,R05F2,49,54,Kriek
+5,2,R05F2,53,11,Amber
+5,2,R05F2,56,172,Wheat
+5,2,R05F2,60,122,Brett/cofermented
+5,2,R05F2,61,169,Hoppy
+5,2,R05F2,68,55,Hoppy
+5,2,R05F2,69,26,West Flanders ale
+5,2,R05F2,71,151,Faro
+5,2,R05F2,72,61,Stout/Porter
+5,2,R05F2,75,70,Blond
+5,2,R05F2,80,59,Blond
+5,2,R05F2,83,241,Kriek
+5,2,R05F2,87,110,Blond
+5,2,R05F2,89,112,Brown
+5,2,R05F2,96,246,Blond
+5,2,R05F2,97,97,Hoppy
+5,2,R05F2,100,201,Stout/Porter
+5,2,R05F2,105,177,Fruitbeer
+5,2,R05F2,107,159,Flanders old brown
+5,2,R05F2,108,90,Pils/Lager
+5,2,R05F2,114,205,Brut
+5,2,R05F2,115,206,Brown
+5,2,R05F2,117,24,Kriek
+5,2,R05F2,118,136,Blond
+5,2,R05F2,119,69,Tripel
+5,2,R05F2,120,180,Christmas
+5,2,R05F2,121,49,Blond
+5,2,R05F2,126,240,Tripel
+5,2,R05F2,127,12,Lambic
+5,2,R05F2,131,29,Saison
+5,2,R05F2,133,16,Dubbel
+5,2,R05F2,134,47,Tripel
+5,2,R05F2,136,115,Lambic
+5,2,R05F2,142,98,Brown
+5,2,R05F2,146,13,Christmas
+5,2,R05F2,147,174,Dubbel
+5,2,R05F2,149,118,West Flanders ale
+5,2,R05F2,153,145,Saison
+5,2,R05F2,155,6,Amber
+5,2,R05F2,159,147,Tripel
+5,2,R05F2,161,249,Blond
+5,2,R05F2,162,104,Strong ale
+5,2,R05F2,164,237,Brown
+5,2,R05F2,165,127,Blond
+5,2,R05F2,171,28,Pils/Lager
+5,2,R05F2,174,146,Scotch
+5,2,R05F2,178,126,Amber
+5,2,R05F2,184,52,Stout/Porter
+5,2,R05F2,185,9,Hoppy
+5,2,R05F2,189,75,Lambic
+5,2,R05F2,192,187,Dubbel
+5,2,R05F2,196,242,Saison
+5,2,R05F2,200,214,Christmas
+5,2,R05F2,209,143,Hoppy
+5,2,R05F2,211,182,Stout/Porter
+5,2,R05F2,212,17,Tripel
+5,2,R05F2,213,229,Wheat
+5,2,R05F2,214,148,Strong ale
+5,2,R05F2,219,91,Strong ale
+5,2,R05F2,221,163,Tripel
+5,2,R05F2,225,71,Blond
+5,2,R05F2,227,140,Tripel
+5,2,R05F2,228,67,Stout/Porter
+5,2,R05F2,231,233,Scotch
+5,2,R05F2,237,85,Tripel
+5,2,R05F2,238,3,Blond
+5,2,R05F2,243,171,Tripel
+5,2,R05F2,245,175,Strong ale
+5,2,R05F2,246,196,Strong ale
+5,2,R05F2,248,99,Strong ale
+6,0,R06F0,2,2,Low/No alcohol
+6,0,R06F0,4,40,Low/No alcohol
+6,0,R06F0,11,141,Low/No alcohol
+6,0,R06F0,13,33,Fruitbeer
+6,0,R06F0,14,50,Fruitbeer
+6,0,R06F0,19,81,Pils/Lager
+6,0,R06F0,20,202,Stout/Porter
+6,0,R06F0,22,218,Pils/Lager
+6,0,R06F0,24,230,Pils/Lager
+6,0,R06F0,27,195,Wheat
+6,0,R06F0,29,137,Amber
+6,0,R06F0,40,116,Lambic
+6,0,R06F0,42,183,Saison
+6,0,R06F0,45,213,Hoppy
+6,0,R06F0,48,224,Wheat
+6,0,R06F0,50,5,Blond
+6,0,R06F0,51,209,Pils/Lager
+6,0,R06F0,52,58,Saison
+6,0,R06F0,57,74,Faro
+6,0,R06F0,63,160,Wheat
+6,0,R06F0,66,7,Saison
+6,0,R06F0,67,62,Blond
+6,0,R06F0,68,55,Hoppy
+6,0,R06F0,69,26,West Flanders ale
+6,0,R06F0,70,232,Kriek
+6,0,R06F0,73,156,Kriek
+6,0,R06F0,76,113,Blond
+6,0,R06F0,79,167,Flanders old brown
+6,0,R06F0,86,178,West Flanders ale
+6,0,R06F0,89,112,Brown
+6,0,R06F0,96,246,Blond
+6,0,R06F0,97,97,Hoppy
+6,0,R06F0,99,220,Kriek
+6,0,R06F0,101,14,Brett/cofermented
+6,0,R06F0,105,177,Fruitbeer
+6,0,R06F0,109,92,Amber
+6,0,R06F0,110,93,Tripel
+6,0,R06F0,112,76,Blond
+6,0,R06F0,114,205,Brut
+6,0,R06F0,116,53,Brown
+6,0,R06F0,117,24,Kriek
+6,0,R06F0,123,134,Strong ale
+6,0,R06F0,131,29,Saison
+6,0,R06F0,133,16,Dubbel
+6,0,R06F0,135,164,Blond
+6,0,R06F0,137,149,Blond
+6,0,R06F0,139,120,Hoppy
+6,0,R06F0,140,222,Brett/cofermented
+6,0,R06F0,141,18,Lambic
+6,0,R06F0,144,32,Amber
+6,0,R06F0,146,13,Christmas
+6,0,R06F0,147,174,Dubbel
+6,0,R06F0,149,118,West Flanders ale
+6,0,R06F0,150,152,Wheat
+6,0,R06F0,154,125,Blond
+6,0,R06F0,155,6,Amber
+6,0,R06F0,156,212,Stout/Porter
+6,0,R06F0,162,104,Strong ale
+6,0,R06F0,164,237,Brown
+6,0,R06F0,166,245,Tripel
+6,0,R06F0,168,60,Christmas
+6,0,R06F0,169,51,Strong ale
+6,0,R06F0,172,41,Lambic
+6,0,R06F0,177,36,Brown
+6,0,R06F0,179,162,Lambic
+6,0,R06F0,181,130,Brut
+6,0,R06F0,184,52,Stout/Porter
+6,0,R06F0,186,204,Tripel
+6,0,R06F0,192,187,Dubbel
+6,0,R06F0,194,154,Tripel
+6,0,R06F0,195,121,Blond
+6,0,R06F0,203,235,Strong ale
+6,0,R06F0,206,181,Christmas
+6,0,R06F0,210,133,Strong ale
+6,0,R06F0,211,182,Stout/Porter
+6,0,R06F0,214,148,Strong ale
+6,0,R06F0,216,65,Hoppy
+6,0,R06F0,223,15,Tripel
+6,0,R06F0,230,189,Tripel
+6,0,R06F0,231,233,Scotch
+6,0,R06F0,232,199,Tripel
+6,0,R06F0,238,3,Blond
+6,0,R06F0,243,171,Tripel
+6,0,R06F0,249,157,Tripel
+6,1,R06F1,3,83,Low/No alcohol
+6,1,R06F1,5,247,Fruitbeer
+6,1,R06F1,6,48,Dubbel
+6,1,R06F1,8,124,Pils/Lager
+6,1,R06F1,10,155,Low/No alcohol
+6,1,R06F1,15,227,Fruitbeer
+6,1,R06F1,16,88,Kriek
+6,1,R06F1,17,77,Blond
+6,1,R06F1,18,22,Wheat
+6,1,R06F1,26,161,Flanders old brown
+6,1,R06F1,31,223,Low/No alcohol
+6,1,R06F1,32,211,Lambic
+6,1,R06F1,34,197,Wheat
+6,1,R06F1,36,185,Pils/Lager
+6,1,R06F1,37,166,Saison
+6,1,R06F1,44,46,Blond
+6,1,R06F1,53,11,Amber
+6,1,R06F1,55,84,West Flanders ale
+6,1,R06F1,56,172,Wheat
+6,1,R06F1,58,188,Stout/Porter
+6,1,R06F1,60,122,Brett/cofermented
+6,1,R06F1,61,169,Hoppy
+6,1,R06F1,65,100,Dubbel
+6,1,R06F1,71,151,Faro
+6,1,R06F1,78,105,Strong ale
+6,1,R06F1,81,135,Tripel
+6,1,R06F1,82,82,Kriek
+6,1,R06F1,83,241,Kriek
+6,1,R06F1,84,128,Amber
+6,1,R06F1,85,244,West Flanders ale
+6,1,R06F1,88,231,Stout/Porter
+6,1,R06F1,91,129,Brown
+6,1,R06F1,93,72,Hoppy
+6,1,R06F1,94,186,Strong ale
+6,1,R06F1,95,109,Brown
+6,1,R06F1,103,37,Strong ale
+6,1,R06F1,104,119,Pils/Lager
+6,1,R06F1,107,159,Flanders old brown
+6,1,R06F1,111,238,Blond
+6,1,R06F1,119,69,Tripel
+6,1,R06F1,120,180,Christmas
+6,1,R06F1,125,39,Hoppy
+6,1,R06F1,128,150,Brett/cofermented
+6,1,R06F1,130,226,Strong ale
+6,1,R06F1,142,98,Brown
+6,1,R06F1,143,221,Dubbel
+6,1,R06F1,152,19,Amber
+6,1,R06F1,153,145,Saison
+6,1,R06F1,159,147,Tripel
+6,1,R06F1,161,249,Blond
+6,1,R06F1,165,127,Blond
+6,1,R06F1,170,144,Lambic
+6,1,R06F1,175,168,Scotch
+6,1,R06F1,176,30,Blond
+6,1,R06F1,178,126,Amber
+6,1,R06F1,180,123,Stout/Porter
+6,1,R06F1,182,8,Hoppy
+6,1,R06F1,183,31,Hoppy
+6,1,R06F1,185,9,Hoppy
+6,1,R06F1,188,131,Scotch
+6,1,R06F1,189,75,Lambic
+6,1,R06F1,190,34,Tripel
+6,1,R06F1,193,45,Tripel
+6,1,R06F1,196,242,Saison
+6,1,R06F1,197,208,Wheat
+6,1,R06F1,200,214,Christmas
+6,1,R06F1,201,35,Blond
+6,1,R06F1,202,215,Blond
+6,1,R06F1,204,89,Brown
+6,1,R06F1,208,57,Tripel
+6,1,R06F1,212,17,Tripel
+6,1,R06F1,215,248,Blond
+6,1,R06F1,217,73,Blond
+6,1,R06F1,218,198,Dubbel
+6,1,R06F1,219,91,Strong ale
+6,1,R06F1,221,163,Tripel
+6,1,R06F1,224,1,Brut
+6,1,R06F1,225,71,Blond
+6,1,R06F1,226,102,Christmas
+6,1,R06F1,227,140,Tripel
+6,1,R06F1,228,67,Stout/Porter
+6,1,R06F1,239,21,Lambic
+6,1,R06F1,248,99,Strong ale
+6,2,R06F2,0,10,Low/No alcohol
+6,2,R06F2,1,86,Low/No alcohol
+6,2,R06F2,7,165,Fruitbeer
+6,2,R06F2,9,207,Fruitbeer
+6,2,R06F2,12,179,Flanders old brown
+6,2,R06F2,21,64,Blond
+6,2,R06F2,23,96,Pils/Lager
+6,2,R06F2,25,44,Wheat
+6,2,R06F2,28,142,Wheat
+6,2,R06F2,30,236,Brett/cofermented
+6,2,R06F2,33,190,Flanders old brown
+6,2,R06F2,35,228,Tripel
+6,2,R06F2,38,216,Scotch
+6,2,R06F2,39,200,West Flanders ale
+6,2,R06F2,41,139,Pils/Lager
+6,2,R06F2,43,111,Dubbel
+6,2,R06F2,46,250,Faro
+6,2,R06F2,47,158,Amber
+6,2,R06F2,49,54,Kriek
+6,2,R06F2,54,56,Saison
+6,2,R06F2,59,20,Saison
+6,2,R06F2,62,194,Dubbel
+6,2,R06F2,64,43,Amber
+6,2,R06F2,72,61,Stout/Porter
+6,2,R06F2,74,138,Kriek
+6,2,R06F2,75,70,Blond
+6,2,R06F2,77,176,West Flanders ale
+6,2,R06F2,80,59,Blond
+6,2,R06F2,87,110,Blond
+6,2,R06F2,90,219,Hoppy
+6,2,R06F2,92,42,Lambic
+6,2,R06F2,98,87,Stout/Porter
+6,2,R06F2,100,201,Stout/Porter
+6,2,R06F2,102,173,Stout/Porter
+6,2,R06F2,106,106,Christmas
+6,2,R06F2,108,90,Pils/Lager
+6,2,R06F2,113,107,Dubbel
+6,2,R06F2,115,206,Brown
+6,2,R06F2,118,136,Blond
+6,2,R06F2,121,49,Blond
+6,2,R06F2,122,243,Wheat
+6,2,R06F2,124,193,Blond
+6,2,R06F2,126,240,Tripel
+6,2,R06F2,127,12,Lambic
+6,2,R06F2,129,23,Tripel
+6,2,R06F2,132,132,Saison
+6,2,R06F2,134,47,Tripel
+6,2,R06F2,136,115,Lambic
+6,2,R06F2,138,80,Hoppy
+6,2,R06F2,145,27,Hoppy
+6,2,R06F2,148,79,Hoppy
+6,2,R06F2,151,184,Fruitbeer
+6,2,R06F2,157,78,Brown
+6,2,R06F2,158,234,Blond
+6,2,R06F2,160,66,Tripel
+6,2,R06F2,163,101,Blond
+6,2,R06F2,167,191,Tripel
+6,2,R06F2,171,28,Pils/Lager
+6,2,R06F2,173,153,Kriek
+6,2,R06F2,174,146,Scotch
+6,2,R06F2,187,94,Blond
+6,2,R06F2,191,108,Brown
+6,2,R06F2,198,38,Christmas
+6,2,R06F2,199,170,Strong ale
+6,2,R06F2,205,114,Hoppy
+6,2,R06F2,207,225,Strong ale
+6,2,R06F2,209,143,Hoppy
+6,2,R06F2,213,229,Wheat
+6,2,R06F2,220,217,Tripel
+6,2,R06F2,222,68,Tripel
+6,2,R06F2,229,210,Amber
+6,2,R06F2,233,63,Amber
+6,2,R06F2,234,95,Christmas
+6,2,R06F2,235,25,Brown
+6,2,R06F2,236,203,Brett/cofermented
+6,2,R06F2,237,85,Tripel
+6,2,R06F2,240,192,Brut
+6,2,R06F2,241,239,Tripel
+6,2,R06F2,242,117,Strong ale
+6,2,R06F2,244,103,Stout/Porter
+6,2,R06F2,245,175,Strong ale
+6,2,R06F2,246,196,Strong ale
+6,2,R06F2,247,4,Strong ale
+7,0,R07F0,1,86,Low/No alcohol
+7,0,R07F0,4,40,Low/No alcohol
+7,0,R07F0,8,124,Pils/Lager
+7,0,R07F0,13,33,Fruitbeer
+7,0,R07F0,14,50,Fruitbeer
+7,0,R07F0,15,227,Fruitbeer
+7,0,R07F0,16,88,Kriek
+7,0,R07F0,17,77,Blond
+7,0,R07F0,18,22,Wheat
+7,0,R07F0,19,81,Pils/Lager
+7,0,R07F0,24,230,Pils/Lager
+7,0,R07F0,28,142,Wheat
+7,0,R07F0,29,137,Amber
+7,0,R07F0,30,236,Brett/cofermented
+7,0,R07F0,31,223,Low/No alcohol
+7,0,R07F0,34,197,Wheat
+7,0,R07F0,39,200,West Flanders ale
+7,0,R07F0,42,183,Saison
+7,0,R07F0,43,111,Dubbel
+7,0,R07F0,49,54,Kriek
+7,0,R07F0,52,58,Saison
+7,0,R07F0,55,84,West Flanders ale
+7,0,R07F0,57,74,Faro
+7,0,R07F0,58,188,Stout/Porter
+7,0,R07F0,61,169,Hoppy
+7,0,R07F0,63,160,Wheat
+7,0,R07F0,67,62,Blond
+7,0,R07F0,72,61,Stout/Porter
+7,0,R07F0,74,138,Kriek
+7,0,R07F0,79,167,Flanders old brown
+7,0,R07F0,83,241,Kriek
+7,0,R07F0,85,244,West Flanders ale
+7,0,R07F0,89,112,Brown
+7,0,R07F0,92,42,Lambic
+7,0,R07F0,94,186,Strong ale
+7,0,R07F0,100,201,Stout/Porter
+7,0,R07F0,104,119,Pils/Lager
+7,0,R07F0,109,92,Amber
+7,0,R07F0,111,238,Blond
+7,0,R07F0,112,76,Blond
+7,0,R07F0,113,107,Dubbel
+7,0,R07F0,114,205,Brut
+7,0,R07F0,119,69,Tripel
+7,0,R07F0,121,49,Blond
+7,0,R07F0,128,150,Brett/cofermented
+7,0,R07F0,130,226,Strong ale
+7,0,R07F0,132,132,Saison
+7,0,R07F0,137,149,Blond
+7,0,R07F0,138,80,Hoppy
+7,0,R07F0,141,18,Lambic
+7,0,R07F0,146,13,Christmas
+7,0,R07F0,148,79,Hoppy
+7,0,R07F0,152,19,Amber
+7,0,R07F0,159,147,Tripel
+7,0,R07F0,162,104,Strong ale
+7,0,R07F0,164,237,Brown
+7,0,R07F0,165,127,Blond
+7,0,R07F0,172,41,Lambic
+7,0,R07F0,176,30,Blond
+7,0,R07F0,181,130,Brut
+7,0,R07F0,182,8,Hoppy
+7,0,R07F0,188,131,Scotch
+7,0,R07F0,191,108,Brown
+7,0,R07F0,192,187,Dubbel
+7,0,R07F0,193,45,Tripel
+7,0,R07F0,196,242,Saison
+7,0,R07F0,198,38,Christmas
+7,0,R07F0,201,35,Blond
+7,0,R07F0,204,89,Brown
+7,0,R07F0,209,143,Hoppy
+7,0,R07F0,210,133,Strong ale
+7,0,R07F0,212,17,Tripel
+7,0,R07F0,215,248,Blond
+7,0,R07F0,219,91,Strong ale
+7,0,R07F0,220,217,Tripel
+7,0,R07F0,223,15,Tripel
+7,0,R07F0,228,67,Stout/Porter
+7,0,R07F0,229,210,Amber
+7,0,R07F0,234,95,Christmas
+7,0,R07F0,237,85,Tripel
+7,0,R07F0,239,21,Lambic
+7,0,R07F0,241,239,Tripel
+7,0,R07F0,243,171,Tripel
+7,0,R07F0,246,196,Strong ale
+7,1,R07F1,2,2,Low/No alcohol
+7,1,R07F1,3,83,Low/No alcohol
+7,1,R07F1,7,165,Fruitbeer
+7,1,R07F1,10,155,Low/No alcohol
+7,1,R07F1,12,179,Flanders old brown
+7,1,R07F1,23,96,Pils/Lager
+7,1,R07F1,33,190,Flanders old brown
+7,1,R07F1,36,185,Pils/Lager
+7,1,R07F1,46,250,Faro
+7,1,R07F1,47,158,Amber
+7,1,R07F1,48,224,Wheat
+7,1,R07F1,50,5,Blond
+7,1,R07F1,56,172,Wheat
+7,1,R07F1,59,20,Saison
+7,1,R07F1,62,194,Dubbel
+7,1,R07F1,65,100,Dubbel
+7,1,R07F1,66,7,Saison
+7,1,R07F1,69,26,West Flanders ale
+7,1,R07F1,73,156,Kriek
+7,1,R07F1,75,70,Blond
+7,1,R07F1,76,113,Blond
+7,1,R07F1,78,105,Strong ale
+7,1,R07F1,80,59,Blond
+7,1,R07F1,88,231,Stout/Porter
+7,1,R07F1,90,219,Hoppy
+7,1,R07F1,91,129,Brown
+7,1,R07F1,96,246,Blond
+7,1,R07F1,97,97,Hoppy
+7,1,R07F1,99,220,Kriek
+7,1,R07F1,101,14,Brett/cofermented
+7,1,R07F1,105,177,Fruitbeer
+7,1,R07F1,108,90,Pils/Lager
+7,1,R07F1,117,24,Kriek
+7,1,R07F1,118,136,Blond
+7,1,R07F1,120,180,Christmas
+7,1,R07F1,124,193,Blond
+7,1,R07F1,125,39,Hoppy
+7,1,R07F1,127,12,Lambic
+7,1,R07F1,136,115,Lambic
+7,1,R07F1,140,222,Brett/cofermented
+7,1,R07F1,144,32,Amber
+7,1,R07F1,147,174,Dubbel
+7,1,R07F1,149,118,West Flanders ale
+7,1,R07F1,150,152,Wheat
+7,1,R07F1,153,145,Saison
+7,1,R07F1,155,6,Amber
+7,1,R07F1,156,212,Stout/Porter
+7,1,R07F1,157,78,Brown
+7,1,R07F1,161,249,Blond
+7,1,R07F1,166,245,Tripel
+7,1,R07F1,167,191,Tripel
+7,1,R07F1,169,51,Strong ale
+7,1,R07F1,170,144,Lambic
+7,1,R07F1,174,146,Scotch
+7,1,R07F1,175,168,Scotch
+7,1,R07F1,177,36,Brown
+7,1,R07F1,178,126,Amber
+7,1,R07F1,180,123,Stout/Porter
+7,1,R07F1,183,31,Hoppy
+7,1,R07F1,186,204,Tripel
+7,1,R07F1,189,75,Lambic
+7,1,R07F1,190,34,Tripel
+7,1,R07F1,194,154,Tripel
+7,1,R07F1,195,121,Blond
+7,1,R07F1,205,114,Hoppy
+7,1,R07F1,206,181,Christmas
+7,1,R07F1,207,225,Strong ale
+7,1,R07F1,211,182,Stout/Porter
+7,1,R07F1,213,229,Wheat
+7,1,R07F1,214,148,Strong ale
+7,1,R07F1,216,65,Hoppy
+7,1,R07F1,217,73,Blond
+7,1,R07F1,218,198,Dubbel
+7,1,R07F1,221,163,Tripel
+7,1,R07F1,225,71,Blond
+7,1,R07F1,226,102,Christmas
+7,1,R07F1,230,189,Tripel
+7,1,R07F1,232,199,Tripel
+7,1,R07F1,235,25,Brown
+7,1,R07F1,240,192,Brut
+7,1,R07F1,242,117,Strong ale
+7,1,R07F1,248,99,Strong ale
+7,1,R07F1,249,157,Tripel
+7,2,R07F2,0,10,Low/No alcohol
+7,2,R07F2,5,247,Fruitbeer
+7,2,R07F2,6,48,Dubbel
+7,2,R07F2,9,207,Fruitbeer
+7,2,R07F2,11,141,Low/No alcohol
+7,2,R07F2,20,202,Stout/Porter
+7,2,R07F2,21,64,Blond
+7,2,R07F2,22,218,Pils/Lager
+7,2,R07F2,25,44,Wheat
+7,2,R07F2,26,161,Flanders old brown
+7,2,R07F2,27,195,Wheat
+7,2,R07F2,32,211,Lambic
+7,2,R07F2,35,228,Tripel
+7,2,R07F2,37,166,Saison
+7,2,R07F2,38,216,Scotch
+7,2,R07F2,40,116,Lambic
+7,2,R07F2,41,139,Pils/Lager
+7,2,R07F2,44,46,Blond
+7,2,R07F2,45,213,Hoppy
+7,2,R07F2,51,209,Pils/Lager
+7,2,R07F2,53,11,Amber
+7,2,R07F2,54,56,Saison
+7,2,R07F2,60,122,Brett/cofermented
+7,2,R07F2,64,43,Amber
+7,2,R07F2,68,55,Hoppy
+7,2,R07F2,70,232,Kriek
+7,2,R07F2,71,151,Faro
+7,2,R07F2,77,176,West Flanders ale
+7,2,R07F2,81,135,Tripel
+7,2,R07F2,82,82,Kriek
+7,2,R07F2,84,128,Amber
+7,2,R07F2,86,178,West Flanders ale
+7,2,R07F2,87,110,Blond
+7,2,R07F2,93,72,Hoppy
+7,2,R07F2,95,109,Brown
+7,2,R07F2,98,87,Stout/Porter
+7,2,R07F2,102,173,Stout/Porter
+7,2,R07F2,103,37,Strong ale
+7,2,R07F2,106,106,Christmas
+7,2,R07F2,107,159,Flanders old brown
+7,2,R07F2,110,93,Tripel
+7,2,R07F2,115,206,Brown
+7,2,R07F2,116,53,Brown
+7,2,R07F2,122,243,Wheat
+7,2,R07F2,123,134,Strong ale
+7,2,R07F2,126,240,Tripel
+7,2,R07F2,129,23,Tripel
+7,2,R07F2,131,29,Saison
+7,2,R07F2,133,16,Dubbel
+7,2,R07F2,134,47,Tripel
+7,2,R07F2,135,164,Blond
+7,2,R07F2,139,120,Hoppy
+7,2,R07F2,142,98,Brown
+7,2,R07F2,143,221,Dubbel
+7,2,R07F2,145,27,Hoppy
+7,2,R07F2,151,184,Fruitbeer
+7,2,R07F2,154,125,Blond
+7,2,R07F2,158,234,Blond
+7,2,R07F2,160,66,Tripel
+7,2,R07F2,163,101,Blond
+7,2,R07F2,168,60,Christmas
+7,2,R07F2,171,28,Pils/Lager
+7,2,R07F2,173,153,Kriek
+7,2,R07F2,179,162,Lambic
+7,2,R07F2,184,52,Stout/Porter
+7,2,R07F2,185,9,Hoppy
+7,2,R07F2,187,94,Blond
+7,2,R07F2,197,208,Wheat
+7,2,R07F2,199,170,Strong ale
+7,2,R07F2,200,214,Christmas
+7,2,R07F2,202,215,Blond
+7,2,R07F2,203,235,Strong ale
+7,2,R07F2,208,57,Tripel
+7,2,R07F2,222,68,Tripel
+7,2,R07F2,224,1,Brut
+7,2,R07F2,227,140,Tripel
+7,2,R07F2,231,233,Scotch
+7,2,R07F2,233,63,Amber
+7,2,R07F2,236,203,Brett/cofermented
+7,2,R07F2,238,3,Blond
+7,2,R07F2,244,103,Stout/Porter
+7,2,R07F2,245,175,Strong ale
+7,2,R07F2,247,4,Strong ale
+8,0,R08F0,0,10,Low/No alcohol
+8,0,R08F0,7,165,Fruitbeer
+8,0,R08F0,10,155,Low/No alcohol
+8,0,R08F0,14,50,Fruitbeer
+8,0,R08F0,17,77,Blond
+8,0,R08F0,23,96,Pils/Lager
+8,0,R08F0,25,44,Wheat
+8,0,R08F0,26,161,Flanders old brown
+8,0,R08F0,28,142,Wheat
+8,0,R08F0,31,223,Low/No alcohol
+8,0,R08F0,32,211,Lambic
+8,0,R08F0,34,197,Wheat
+8,0,R08F0,37,166,Saison
+8,0,R08F0,43,111,Dubbel
+8,0,R08F0,44,46,Blond
+8,0,R08F0,45,213,Hoppy
+8,0,R08F0,46,250,Faro
+8,0,R08F0,47,158,Amber
+8,0,R08F0,52,58,Saison
+8,0,R08F0,58,188,Stout/Porter
+8,0,R08F0,61,169,Hoppy
+8,0,R08F0,65,100,Dubbel
+8,0,R08F0,67,62,Blond
+8,0,R08F0,69,26,West Flanders ale
+8,0,R08F0,76,113,Blond
+8,0,R08F0,81,135,Tripel
+8,0,R08F0,82,82,Kriek
+8,0,R08F0,83,241,Kriek
+8,0,R08F0,84,128,Amber
+8,0,R08F0,85,244,West Flanders ale
+8,0,R08F0,86,178,West Flanders ale
+8,0,R08F0,89,112,Brown
+8,0,R08F0,92,42,Lambic
+8,0,R08F0,95,109,Brown
+8,0,R08F0,99,220,Kriek
+8,0,R08F0,100,201,Stout/Porter
+8,0,R08F0,101,14,Brett/cofermented
+8,0,R08F0,104,119,Pils/Lager
+8,0,R08F0,108,90,Pils/Lager
+8,0,R08F0,109,92,Amber
+8,0,R08F0,110,93,Tripel
+8,0,R08F0,113,107,Dubbel
+8,0,R08F0,116,53,Brown
+8,0,R08F0,118,136,Blond
+8,0,R08F0,120,180,Christmas
+8,0,R08F0,121,49,Blond
+8,0,R08F0,123,134,Strong ale
+8,0,R08F0,129,23,Tripel
+8,0,R08F0,132,132,Saison
+8,0,R08F0,135,164,Blond
+8,0,R08F0,136,115,Lambic
+8,0,R08F0,139,120,Hoppy
+8,0,R08F0,140,222,Brett/cofermented
+8,0,R08F0,151,184,Fruitbeer
+8,0,R08F0,152,19,Amber
+8,0,R08F0,161,249,Blond
+8,0,R08F0,163,101,Blond
+8,0,R08F0,169,51,Strong ale
+8,0,R08F0,171,28,Pils/Lager
+8,0,R08F0,172,41,Lambic
+8,0,R08F0,173,153,Kriek
+8,0,R08F0,180,123,Stout/Porter
+8,0,R08F0,181,130,Brut
+8,0,R08F0,183,31,Hoppy
+8,0,R08F0,191,108,Brown
+8,0,R08F0,196,242,Saison
+8,0,R08F0,200,214,Christmas
+8,0,R08F0,203,235,Strong ale
+8,0,R08F0,210,133,Strong ale
+8,0,R08F0,212,17,Tripel
+8,0,R08F0,213,229,Wheat
+8,0,R08F0,216,65,Hoppy
+8,0,R08F0,220,217,Tripel
+8,0,R08F0,221,163,Tripel
+8,0,R08F0,223,15,Tripel
+8,0,R08F0,228,67,Stout/Porter
+8,0,R08F0,231,233,Scotch
+8,0,R08F0,232,199,Tripel
+8,0,R08F0,234,95,Christmas
+8,0,R08F0,238,3,Blond
+8,0,R08F0,240,192,Brut
+8,0,R08F0,241,239,Tripel
+8,0,R08F0,242,117,Strong ale
+8,0,R08F0,248,99,Strong ale
+8,1,R08F1,2,2,Low/No alcohol
+8,1,R08F1,3,83,Low/No alcohol
+8,1,R08F1,4,40,Low/No alcohol
+8,1,R08F1,5,247,Fruitbeer
+8,1,R08F1,8,124,Pils/Lager
+8,1,R08F1,9,207,Fruitbeer
+8,1,R08F1,20,202,Stout/Porter
+8,1,R08F1,22,218,Pils/Lager
+8,1,R08F1,24,230,Pils/Lager
+8,1,R08F1,27,195,Wheat
+8,1,R08F1,30,236,Brett/cofermented
+8,1,R08F1,33,190,Flanders old brown
+8,1,R08F1,40,116,Lambic
+8,1,R08F1,49,54,Kriek
+8,1,R08F1,54,56,Saison
+8,1,R08F1,56,172,Wheat
+8,1,R08F1,57,74,Faro
+8,1,R08F1,59,20,Saison
+8,1,R08F1,62,194,Dubbel
+8,1,R08F1,63,160,Wheat
+8,1,R08F1,64,43,Amber
+8,1,R08F1,68,55,Hoppy
+8,1,R08F1,72,61,Stout/Porter
+8,1,R08F1,73,156,Kriek
+8,1,R08F1,74,138,Kriek
+8,1,R08F1,75,70,Blond
+8,1,R08F1,77,176,West Flanders ale
+8,1,R08F1,79,167,Flanders old brown
+8,1,R08F1,96,246,Blond
+8,1,R08F1,102,173,Stout/Porter
+8,1,R08F1,111,238,Blond
+8,1,R08F1,115,206,Brown
+8,1,R08F1,119,69,Tripel
+8,1,R08F1,127,12,Lambic
+8,1,R08F1,128,150,Brett/cofermented
+8,1,R08F1,133,16,Dubbel
+8,1,R08F1,137,149,Blond
+8,1,R08F1,141,18,Lambic
+8,1,R08F1,142,98,Brown
+8,1,R08F1,144,32,Amber
+8,1,R08F1,145,27,Hoppy
+8,1,R08F1,147,174,Dubbel
+8,1,R08F1,148,79,Hoppy
+8,1,R08F1,149,118,West Flanders ale
+8,1,R08F1,153,145,Saison
+8,1,R08F1,154,125,Blond
+8,1,R08F1,158,234,Blond
+8,1,R08F1,160,66,Tripel
+8,1,R08F1,166,245,Tripel
+8,1,R08F1,168,60,Christmas
+8,1,R08F1,170,144,Lambic
+8,1,R08F1,174,146,Scotch
+8,1,R08F1,176,30,Blond
+8,1,R08F1,178,126,Amber
+8,1,R08F1,182,8,Hoppy
+8,1,R08F1,185,9,Hoppy
+8,1,R08F1,186,204,Tripel
+8,1,R08F1,188,131,Scotch
+8,1,R08F1,192,187,Dubbel
+8,1,R08F1,194,154,Tripel
+8,1,R08F1,195,121,Blond
+8,1,R08F1,197,208,Wheat
+8,1,R08F1,199,170,Strong ale
+8,1,R08F1,201,35,Blond
+8,1,R08F1,202,215,Blond
+8,1,R08F1,204,89,Brown
+8,1,R08F1,205,114,Hoppy
+8,1,R08F1,206,181,Christmas
+8,1,R08F1,207,225,Strong ale
+8,1,R08F1,211,182,Stout/Porter
+8,1,R08F1,219,91,Strong ale
+8,1,R08F1,222,68,Tripel
+8,1,R08F1,224,1,Brut
+8,1,R08F1,225,71,Blond
+8,1,R08F1,226,102,Christmas
+8,1,R08F1,227,140,Tripel
+8,1,R08F1,230,189,Tripel
+8,1,R08F1,233,63,Amber
+8,1,R08F1,235,25,Brown
+8,1,R08F1,243,171,Tripel
+8,1,R08F1,245,175,Strong ale
+8,1,R08F1,246,196,Strong ale
+8,1,R08F1,247,4,Strong ale
+8,2,R08F2,1,86,Low/No alcohol
+8,2,R08F2,6,48,Dubbel
+8,2,R08F2,11,141,Low/No alcohol
+8,2,R08F2,12,179,Flanders old brown
+8,2,R08F2,13,33,Fruitbeer
+8,2,R08F2,15,227,Fruitbeer
+8,2,R08F2,16,88,Kriek
+8,2,R08F2,18,22,Wheat
+8,2,R08F2,19,81,Pils/Lager
+8,2,R08F2,21,64,Blond
+8,2,R08F2,29,137,Amber
+8,2,R08F2,35,228,Tripel
+8,2,R08F2,36,185,Pils/Lager
+8,2,R08F2,38,216,Scotch
+8,2,R08F2,39,200,West Flanders ale
+8,2,R08F2,41,139,Pils/Lager
+8,2,R08F2,42,183,Saison
+8,2,R08F2,48,224,Wheat
+8,2,R08F2,50,5,Blond
+8,2,R08F2,51,209,Pils/Lager
+8,2,R08F2,53,11,Amber
+8,2,R08F2,55,84,West Flanders ale
+8,2,R08F2,60,122,Brett/cofermented
+8,2,R08F2,66,7,Saison
+8,2,R08F2,70,232,Kriek
+8,2,R08F2,71,151,Faro
+8,2,R08F2,78,105,Strong ale
+8,2,R08F2,80,59,Blond
+8,2,R08F2,87,110,Blond
+8,2,R08F2,88,231,Stout/Porter
+8,2,R08F2,90,219,Hoppy
+8,2,R08F2,91,129,Brown
+8,2,R08F2,93,72,Hoppy
+8,2,R08F2,94,186,Strong ale
+8,2,R08F2,97,97,Hoppy
+8,2,R08F2,98,87,Stout/Porter
+8,2,R08F2,103,37,Strong ale
+8,2,R08F2,105,177,Fruitbeer
+8,2,R08F2,106,106,Christmas
+8,2,R08F2,107,159,Flanders old brown
+8,2,R08F2,112,76,Blond
+8,2,R08F2,114,205,Brut
+8,2,R08F2,117,24,Kriek
+8,2,R08F2,122,243,Wheat
+8,2,R08F2,124,193,Blond
+8,2,R08F2,125,39,Hoppy
+8,2,R08F2,126,240,Tripel
+8,2,R08F2,130,226,Strong ale
+8,2,R08F2,131,29,Saison
+8,2,R08F2,134,47,Tripel
+8,2,R08F2,138,80,Hoppy
+8,2,R08F2,143,221,Dubbel
+8,2,R08F2,146,13,Christmas
+8,2,R08F2,150,152,Wheat
+8,2,R08F2,155,6,Amber
+8,2,R08F2,156,212,Stout/Porter
+8,2,R08F2,157,78,Brown
+8,2,R08F2,159,147,Tripel
+8,2,R08F2,162,104,Strong ale
+8,2,R08F2,164,237,Brown
+8,2,R08F2,165,127,Blond
+8,2,R08F2,167,191,Tripel
+8,2,R08F2,175,168,Scotch
+8,2,R08F2,177,36,Brown
+8,2,R08F2,179,162,Lambic
+8,2,R08F2,184,52,Stout/Porter
+8,2,R08F2,187,94,Blond
+8,2,R08F2,189,75,Lambic
+8,2,R08F2,190,34,Tripel
+8,2,R08F2,193,45,Tripel
+8,2,R08F2,198,38,Christmas
+8,2,R08F2,208,57,Tripel
+8,2,R08F2,209,143,Hoppy
+8,2,R08F2,214,148,Strong ale
+8,2,R08F2,215,248,Blond
+8,2,R08F2,217,73,Blond
+8,2,R08F2,218,198,Dubbel
+8,2,R08F2,229,210,Amber
+8,2,R08F2,236,203,Brett/cofermented
+8,2,R08F2,237,85,Tripel
+8,2,R08F2,239,21,Lambic
+8,2,R08F2,244,103,Stout/Porter
+8,2,R08F2,249,157,Tripel
+9,0,R09F0,3,83,Low/No alcohol
+9,0,R09F0,4,40,Low/No alcohol
+9,0,R09F0,7,165,Fruitbeer
+9,0,R09F0,8,124,Pils/Lager
+9,0,R09F0,10,155,Low/No alcohol
+9,0,R09F0,15,227,Fruitbeer
+9,0,R09F0,16,88,Kriek
+9,0,R09F0,19,81,Pils/Lager
+9,0,R09F0,21,64,Blond
+9,0,R09F0,26,161,Flanders old brown
+9,0,R09F0,27,195,Wheat
+9,0,R09F0,29,137,Amber
+9,0,R09F0,30,236,Brett/cofermented
+9,0,R09F0,35,228,Tripel
+9,0,R09F0,39,200,West Flanders ale
+9,0,R09F0,43,111,Dubbel
+9,0,R09F0,44,46,Blond
+9,0,R09F0,55,84,West Flanders ale
+9,0,R09F0,56,172,Wheat
+9,0,R09F0,57,74,Faro
+9,0,R09F0,59,20,Saison
+9,0,R09F0,63,160,Wheat
+9,0,R09F0,64,43,Amber
+9,0,R09F0,66,7,Saison
+9,0,R09F0,67,62,Blond
+9,0,R09F0,70,232,Kriek
+9,0,R09F0,82,82,Kriek
+9,0,R09F0,83,241,Kriek
+9,0,R09F0,91,129,Brown
+9,0,R09F0,92,42,Lambic
+9,0,R09F0,97,97,Hoppy
+9,0,R09F0,102,173,Stout/Porter
+9,0,R09F0,103,37,Strong ale
+9,0,R09F0,104,119,Pils/Lager
+9,0,R09F0,105,177,Fruitbeer
+9,0,R09F0,106,106,Christmas
+9,0,R09F0,109,92,Amber
+9,0,R09F0,114,205,Brut
+9,0,R09F0,118,136,Blond
+9,0,R09F0,124,193,Blond
+9,0,R09F0,125,39,Hoppy
+9,0,R09F0,127,12,Lambic
+9,0,R09F0,130,226,Strong ale
+9,0,R09F0,133,16,Dubbel
+9,0,R09F0,136,115,Lambic
+9,0,R09F0,137,149,Blond
+9,0,R09F0,140,222,Brett/cofermented
+9,0,R09F0,142,98,Brown
+9,0,R09F0,149,118,West Flanders ale
+9,0,R09F0,153,145,Saison
+9,0,R09F0,154,125,Blond
+9,0,R09F0,162,104,Strong ale
+9,0,R09F0,164,237,Brown
+9,0,R09F0,166,245,Tripel
+9,0,R09F0,171,28,Pils/Lager
+9,0,R09F0,175,168,Scotch
+9,0,R09F0,180,123,Stout/Porter
+9,0,R09F0,182,8,Hoppy
+9,0,R09F0,185,9,Hoppy
+9,0,R09F0,187,94,Blond
+9,0,R09F0,189,75,Lambic
+9,0,R09F0,194,154,Tripel
+9,0,R09F0,196,242,Saison
+9,0,R09F0,197,208,Wheat
+9,0,R09F0,198,38,Christmas
+9,0,R09F0,201,35,Blond
+9,0,R09F0,203,235,Strong ale
+9,0,R09F0,204,89,Brown
+9,0,R09F0,206,181,Christmas
+9,0,R09F0,212,17,Tripel
+9,0,R09F0,216,65,Hoppy
+9,0,R09F0,218,198,Dubbel
+9,0,R09F0,221,163,Tripel
+9,0,R09F0,222,68,Tripel
+9,0,R09F0,223,15,Tripel
+9,0,R09F0,227,140,Tripel
+9,0,R09F0,228,67,Stout/Porter
+9,0,R09F0,229,210,Amber
+9,0,R09F0,230,189,Tripel
+9,0,R09F0,238,3,Blond
+9,0,R09F0,240,192,Brut
+9,0,R09F0,244,103,Stout/Porter
+9,0,R09F0,245,175,Strong ale
+9,0,R09F0,246,196,Strong ale
+9,1,R09F1,2,2,Low/No alcohol
+9,1,R09F1,6,48,Dubbel
+9,1,R09F1,9,207,Fruitbeer
+9,1,R09F1,11,141,Low/No alcohol
+9,1,R09F1,14,50,Fruitbeer
+9,1,R09F1,25,44,Wheat
+9,1,R09F1,31,223,Low/No alcohol
+9,1,R09F1,32,211,Lambic
+9,1,R09F1,33,190,Flanders old brown
+9,1,R09F1,34,197,Wheat
+9,1,R09F1,37,166,Saison
+9,1,R09F1,38,216,Scotch
+9,1,R09F1,40,116,Lambic
+9,1,R09F1,41,139,Pils/Lager
+9,1,R09F1,42,183,Saison
+9,1,R09F1,46,250,Faro
+9,1,R09F1,47,158,Amber
+9,1,R09F1,48,224,Wheat
+9,1,R09F1,49,54,Kriek
+9,1,R09F1,50,5,Blond
+9,1,R09F1,51,209,Pils/Lager
+9,1,R09F1,61,169,Hoppy
+9,1,R09F1,62,194,Dubbel
+9,1,R09F1,65,100,Dubbel
+9,1,R09F1,68,55,Hoppy
+9,1,R09F1,69,26,West Flanders ale
+9,1,R09F1,72,61,Stout/Porter
+9,1,R09F1,78,105,Strong ale
+9,1,R09F1,79,167,Flanders old brown
+9,1,R09F1,85,244,West Flanders ale
+9,1,R09F1,87,110,Blond
+9,1,R09F1,89,112,Brown
+9,1,R09F1,94,186,Strong ale
+9,1,R09F1,95,109,Brown
+9,1,R09F1,96,246,Blond
+9,1,R09F1,101,14,Brett/cofermented
+9,1,R09F1,108,90,Pils/Lager
+9,1,R09F1,110,93,Tripel
+9,1,R09F1,111,238,Blond
+9,1,R09F1,112,76,Blond
+9,1,R09F1,117,24,Kriek
+9,1,R09F1,129,23,Tripel
+9,1,R09F1,132,132,Saison
+9,1,R09F1,134,47,Tripel
+9,1,R09F1,135,164,Blond
+9,1,R09F1,138,80,Hoppy
+9,1,R09F1,144,32,Amber
+9,1,R09F1,145,27,Hoppy
+9,1,R09F1,146,13,Christmas
+9,1,R09F1,147,174,Dubbel
+9,1,R09F1,155,6,Amber
+9,1,R09F1,156,212,Stout/Porter
+9,1,R09F1,160,66,Tripel
+9,1,R09F1,161,249,Blond
+9,1,R09F1,165,127,Blond
+9,1,R09F1,167,191,Tripel
+9,1,R09F1,168,60,Christmas
+9,1,R09F1,169,51,Strong ale
+9,1,R09F1,173,153,Kriek
+9,1,R09F1,174,146,Scotch
+9,1,R09F1,177,36,Brown
+9,1,R09F1,179,162,Lambic
+9,1,R09F1,184,52,Stout/Porter
+9,1,R09F1,190,34,Tripel
+9,1,R09F1,191,108,Brown
+9,1,R09F1,193,45,Tripel
+9,1,R09F1,195,121,Blond
+9,1,R09F1,200,214,Christmas
+9,1,R09F1,202,215,Blond
+9,1,R09F1,205,114,Hoppy
+9,1,R09F1,207,225,Strong ale
+9,1,R09F1,209,143,Hoppy
+9,1,R09F1,211,182,Stout/Porter
+9,1,R09F1,213,229,Wheat
+9,1,R09F1,219,91,Strong ale
+9,1,R09F1,224,1,Brut
+9,1,R09F1,225,71,Blond
+9,1,R09F1,232,199,Tripel
+9,1,R09F1,233,63,Amber
+9,1,R09F1,236,203,Brett/cofermented
+9,1,R09F1,239,21,Lambic
+9,1,R09F1,243,171,Tripel
+9,1,R09F1,247,4,Strong ale
+9,2,R09F2,0,10,Low/No alcohol
+9,2,R09F2,1,86,Low/No alcohol
+9,2,R09F2,5,247,Fruitbeer
+9,2,R09F2,12,179,Flanders old brown
+9,2,R09F2,13,33,Fruitbeer
+9,2,R09F2,17,77,Blond
+9,2,R09F2,18,22,Wheat
+9,2,R09F2,20,202,Stout/Porter
+9,2,R09F2,22,218,Pils/Lager
+9,2,R09F2,23,96,Pils/Lager
+9,2,R09F2,24,230,Pils/Lager
+9,2,R09F2,28,142,Wheat
+9,2,R09F2,36,185,Pils/Lager
+9,2,R09F2,45,213,Hoppy
+9,2,R09F2,52,58,Saison
+9,2,R09F2,53,11,Amber
+9,2,R09F2,54,56,Saison
+9,2,R09F2,58,188,Stout/Porter
+9,2,R09F2,60,122,Brett/cofermented
+9,2,R09F2,71,151,Faro
+9,2,R09F2,73,156,Kriek
+9,2,R09F2,74,138,Kriek
+9,2,R09F2,75,70,Blond
+9,2,R09F2,76,113,Blond
+9,2,R09F2,77,176,West Flanders ale
+9,2,R09F2,80,59,Blond
+9,2,R09F2,81,135,Tripel
+9,2,R09F2,84,128,Amber
+9,2,R09F2,86,178,West Flanders ale
+9,2,R09F2,88,231,Stout/Porter
+9,2,R09F2,90,219,Hoppy
+9,2,R09F2,93,72,Hoppy
+9,2,R09F2,98,87,Stout/Porter
+9,2,R09F2,99,220,Kriek
+9,2,R09F2,100,201,Stout/Porter
+9,2,R09F2,107,159,Flanders old brown
+9,2,R09F2,113,107,Dubbel
+9,2,R09F2,115,206,Brown
+9,2,R09F2,116,53,Brown
+9,2,R09F2,119,69,Tripel
+9,2,R09F2,120,180,Christmas
+9,2,R09F2,121,49,Blond
+9,2,R09F2,122,243,Wheat
+9,2,R09F2,123,134,Strong ale
+9,2,R09F2,126,240,Tripel
+9,2,R09F2,128,150,Brett/cofermented
+9,2,R09F2,131,29,Saison
+9,2,R09F2,139,120,Hoppy
+9,2,R09F2,141,18,Lambic
+9,2,R09F2,143,221,Dubbel
+9,2,R09F2,148,79,Hoppy
+9,2,R09F2,150,152,Wheat
+9,2,R09F2,151,184,Fruitbeer
+9,2,R09F2,152,19,Amber
+9,2,R09F2,157,78,Brown
+9,2,R09F2,158,234,Blond
+9,2,R09F2,159,147,Tripel
+9,2,R09F2,163,101,Blond
+9,2,R09F2,170,144,Lambic
+9,2,R09F2,172,41,Lambic
+9,2,R09F2,176,30,Blond
+9,2,R09F2,178,126,Amber
+9,2,R09F2,181,130,Brut
+9,2,R09F2,183,31,Hoppy
+9,2,R09F2,186,204,Tripel
+9,2,R09F2,188,131,Scotch
+9,2,R09F2,192,187,Dubbel
+9,2,R09F2,199,170,Strong ale
+9,2,R09F2,208,57,Tripel
+9,2,R09F2,210,133,Strong ale
+9,2,R09F2,214,148,Strong ale
+9,2,R09F2,215,248,Blond
+9,2,R09F2,217,73,Blond
+9,2,R09F2,220,217,Tripel
+9,2,R09F2,226,102,Christmas
+9,2,R09F2,231,233,Scotch
+9,2,R09F2,234,95,Christmas
+9,2,R09F2,235,25,Brown
+9,2,R09F2,237,85,Tripel
+9,2,R09F2,241,239,Tripel
+9,2,R09F2,242,117,Strong ale
+9,2,R09F2,248,99,Strong ale
+9,2,R09F2,249,157,Tripel

@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "word_documents": 3,
+  "native_equations": 8,
+  "main_figures": 4,
+  "supplementary_figures": 1,
+  "tables": 6,
+  "body_pdf_pages": 10,
+  "review_pdf_pages": 12,
+  "program_appendix_document": false,
+  "zip_files": 56,
+  "zip_bytes": 7533429,
+  "zip_sha256": "7a23f2355ccc28ca6dd651af376471de1ab33387b04a41d5804b08b13c40181b",
+  "prediction_identity": "exact",
+  "source_artifacts_hashes": "unchanged",
+  "caption_order_and_citations": "verified",
+  "embedded_png_identity": "exact"
+}

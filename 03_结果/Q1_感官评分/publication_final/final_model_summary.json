@@ -1,0 +1,44 @@
+{
+  "model": "感官组收缩NNLS",
+  "base_learners": [
+    "ExtraTrees",
+    "HGB",
+    "Ridge（秩高斯）",
+    "PLS2（秩高斯）"
+  ],
+  "shrinkage": 0.5,
+  "weights_sum_to_one": false,
+  "free_target_intercept": true,
+  "outer_repeats": 10,
+  "outer_folds": 3,
+  "inner_folds": 3,
+  "repeat_mean": {
+    "display_name": "感官组收缩NNLS",
+    "r2_mean": 0.2564099486964824,
+    "r2_sd": 0.006989043773260107,
+    "mae_mean": 0.3361453737119522,
+    "mae_sd": 0.0015964453872785635,
+    "rmse_mean": 0.4714000366194989,
+    "rmse_sd": 0.002480846896223213,
+    "spearman_mean": 0.43019115966436683,
+    "spearman_sd": 0.0058356420087975905,
+    "qwk_proxy_mean": 0.41826256787803545,
+    "qwk_proxy_sd": 0.006056619247490071,
+    "acc_pm1_proxy_mean": 0.5542320000000001,
+    "acc_pm1_proxy_sd": 0.00232580117617802
+  },
+  "mean_oof": {
+    "r2": 0.2742459357948348,
+    "mae": 0.3314980757007421,
+    "rmse": 0.4654661737547368,
+    "spearman": 0.448687545667444,
+    "qwk_proxy": 0.4368384865867052,
+    "acc_proxy": 0.2497599999999999,
+    "acc_pm1_proxy": 0.56424,
+    "level_mae_proxy": 1.5855199999999998,
+    "level_spearman_proxy": 0.4372936855510334
+  },
+  "relative_grades": "每个验证折仅以对应训练折目标经验分布映射，非原始评委均分",
+  "ordered_metrics": "观测与预测分别七分位分档的事后排序代理，不是真实0—6准确率",
+  "source_prediction_sha256": "d7d1a4f775bd5b3947393a2278f5fe66af2c516c14a7504ff946a4d812d444de"
+}

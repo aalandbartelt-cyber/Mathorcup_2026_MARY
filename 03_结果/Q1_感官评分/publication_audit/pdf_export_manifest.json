@@ -1,0 +1,33 @@
+{
+  "documents": [
+    {
+      "word": "05_论文/Q1_感官评分/第一问_论文正文_v5.docx",
+      "word_sha256": "59c8ede17b2ca0e22d0470016d9c17fb632abd76b7ba095eadd4ce388033dad3",
+      "pdf": "05_论文/Q1_感官评分/第一问_论文正文_v5.pdf",
+      "pdf_sha256": "74f5f95a1cc9634ee1d44db71cc1728c130226b9e4061d7499143874064eee85",
+      "pages": 10,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    },
+    {
+      "word": "05_论文/Q1_感官评分/模型假设_Q1_v3.docx",
+      "word_sha256": "ee53dea3795397ff4e531bfebdb655deaaa2ad82dcb2abdbaf4b5eec66ad9386",
+      "pdf": "05_论文/Q1_感官评分/模型假设_Q1_v3.pdf",
+      "pdf_sha256": "0516b38fdc2ddee59651c2b25edbc2177db747d8a9fc0db4fabd669eea1bb6c3",
+      "pages": 1,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    },
+    {
+      "word": "05_论文/Q1_感官评分/问题分析_Q1_v3.docx",
+      "word_sha256": "9e7ecb877bd8088e2ffef5514fc22f2ec47693d59a8260eb9804009f75c6d4d4",
+      "pdf": "05_论文/Q1_感官评分/问题分析_Q1_v3.pdf",
+      "pdf_sha256": "4ece6a70ba79c0c730c222480c804bdb9b386ef2293a4472a468c6ccbc7d8746",
+      "pages": 1,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    }
+  ],
+  "review_pdf": "05_论文/Q1_感官评分/Q1_论文审计合订本_v5.pdf",
+  "review_sha256": "0069ff3e18096fcd2424bc73c57113cc9d0d4afe40c9afc57fc7d1be1166851f"
+}
