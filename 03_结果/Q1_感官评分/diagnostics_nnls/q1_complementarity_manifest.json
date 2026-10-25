@@ -1,0 +1,32 @@
+{
+  "diagnostic_only": true,
+  "trained_model": false,
+  "fitted_stacking_weights": false,
+  "models": [
+    "E003_extra_trees",
+    "extra_trees",
+    "hgb",
+    "ridge_quantile",
+    "pls2_quantile"
+  ],
+  "n_repeats": 10,
+  "n_targets": 50,
+  "n_beers": 250,
+  "source_sha256": {
+    "E003": "94f57ce620a23869183d2ee5e50c38b505931a159b9e6f6bf93d0e80c38b3487",
+    "E005": "08899f1b0d48e9b6a52c4c2535b31c0d327ba6a60f5af7e702c84114a4dc8df5"
+  },
+  "target_dictionary_sha256": "79352022756befabb8cc6c11e4cf51e0e0aa050e0044892cd7f95488866795fa",
+  "script_sha256": "22f9dd66584c9a7ef74ab2497372b867f616553041a9a540f82a8e051137a23c",
+  "scope": "complete existing E003/E005 OOF development diagnostics",
+  "oracle_warning": "union of correct predictions is an infeasible diagnostic upper bound, not a model score",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_complementarity_pairs.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_complementarity_summary.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_base_model_metrics_by_repeat.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_base_model_metrics_by_target.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_grouped_base_metrics.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_tail_target_baseline_definition.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_tail_base_metrics.csv"
+  ]
+}
