@@ -1,0 +1,4 @@
+experiment_id,bottom_targets,n_bottom_targets,baseline_r2,candidate_r2,delta_r2,baseline_mae,candidate_mae,delta_mae
+E005,stale_hops|F_esters_flower|A_esters_fruity|barnyard|clove|A_esters_flower|A_malt_grain|dms|A_hops_woody|F_malt_grain|A_esters_isoaa|diacetyl|orange,13,0.04113733457936612,0.06406911779921065,0.02293178321984453,0.32770928877153743,0.3234933072493003,-0.004215981522237122
+E006,stale_hops|F_esters_flower|A_esters_fruity|barnyard|clove|A_esters_flower|A_malt_grain|dms|A_hops_woody|F_malt_grain|A_esters_isoaa|diacetyl|orange,13,0.04113733457936612,0.06528853128488638,0.024151196705520253,0.32770928877153743,0.31828089362951556,-0.009428395142021873
+E007,stale_hops|F_esters_flower|A_esters_fruity|barnyard|clove|A_esters_flower|A_malt_grain|dms|A_hops_woody|F_malt_grain|A_esters_isoaa|diacetyl|orange,13,0.04113733457936612,0.0633903946062667,0.022253060026900584,0.32770928877153743,0.31734392899763386,-0.01036535977390357

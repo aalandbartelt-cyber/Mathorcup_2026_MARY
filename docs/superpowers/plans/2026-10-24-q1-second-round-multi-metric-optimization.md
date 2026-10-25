@@ -36,7 +36,7 @@
 - Modify: 02_代码/Q1_感官评分/src/compute_q1_extended_metrics.py
 - Create: 02_代码/Q1_感官评分/tests/test_q1_metrics.py
 
-- [ ] **Step 1: Write the failing metric tests**
+- [x] **Step 1: Write the failing metric tests**
 
 ~~~python
 from __future__ import annotations
@@ -71,7 +71,7 @@ class Q1MetricTests(unittest.TestCase):
             matrix_metrics(np.zeros((5, 2)), np.zeros((5, 3)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -80,7 +80,7 @@ conda run -n mathorcup python -m unittest \
 
 Expected: import failure for q1_metrics.
 
-- [ ] **Step 3: Implement the public metric API**
+- [x] **Step 3: Implement the public metric API**
 
 Move the current scalar implementations from compute_q1_extended_metrics.py and add the following matrix layer; the moved scalar functions retain their current bodies exactly:
 
@@ -124,7 +124,7 @@ def summarise_target_metrics(by_target: pd.DataFrame) -> pd.DataFrame:
 
 Preserve the BZD seven-bin definition exactly and import all public functions from q1_metrics.py in the E003 CLI.
 
-- [ ] **Step 4: Verify GREEN and frozen E003 equivalence**
+- [x] **Step 4: Verify GREEN and frozen E003 equivalence**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -139,7 +139,7 @@ git diff --exit-code -- \
 
 Expected: tests pass and E003 CSV files have no diff.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/src/q1_metrics.py' \
@@ -154,7 +154,7 @@ git commit -m 'refactor(q1): extract reusable multi-metric evaluation'
 - Create: 02_代码/Q1_感官评分/src/ordered_models.py
 - Create: 02_代码/Q1_感官评分/tests/test_ordered_models.py
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ~~~python
 from __future__ import annotations
@@ -203,7 +203,7 @@ class OrderedModelTests(unittest.TestCase):
         np.testing.assert_allclose(first.continuous, second.continuous)
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -212,7 +212,7 @@ conda run -n mathorcup python -m unittest \
 
 Expected: import failure for ordered_models.
 
-- [ ] **Step 3: Implement minimal ordered model**
+- [x] **Step 3: Implement minimal ordered model**
 
 Use this result type and primitives:
 
@@ -238,7 +238,7 @@ def decode_expected_level(survival_probability):
 
 fit_predict_cumulative_hgb must fit a fold-local median imputer with missing indicators, then six HistGradientBoostingClassifier instances per target. A single-class threshold returns its training mean probability. Decode expected levels with per-target np.interp over training anchors only.
 
-- [ ] **Step 4: Verify GREEN and the full Q1 suite**
+- [x] **Step 4: Verify GREEN and the full Q1 suite**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
@@ -247,7 +247,7 @@ conda run -n mathorcup python -m unittest discover \
   -s '02_代码/Q1_感官评分/tests' -p 'test_*.py' -v
 ~~~
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/src/ordered_models.py' \
@@ -261,7 +261,7 @@ git commit -m 'feat(q1): add leakage-safe cumulative ordinal HGB'
 - Create: 02_代码/Q1_感官评分/src/ensemble_models.py
 - Create: 02_代码/Q1_感官评分/tests/test_ensemble_models.py
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ~~~python
 from __future__ import annotations
@@ -300,14 +300,14 @@ class EnsembleModelTests(unittest.TestCase):
         np.testing.assert_allclose(shrunk, np.tile(global_weight, (2, 1)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
   '02_代码/Q1_感官评分/tests/test_ensemble_models.py' -v
 ~~~
 
-- [ ] **Step 3: Implement exact public API**
+- [x] **Step 3: Implement exact public API**
 
 ~~~python
 @dataclass(frozen=True)
@@ -387,7 +387,7 @@ def fit_predict_hgb_multioutput(x_train: np.ndarray, y_train: np.ndarray,
 
 Feasible blends are sorted by descending (Spearman, QWK, ACC±1, R², -MAE). If none pass the continuous floors, return the smallest normalized R²/MAE violation with feasible=False. Preserve input order for exact ties.
 
-- [ ] **Step 4: Verify GREEN and commit**
+- [x] **Step 4: Verify GREEN and commit**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \
@@ -403,7 +403,7 @@ git commit -m 'feat(q1): add constrained continuous ordinal blending'
 - Create: 02_代码/Q1_感官评分/src/second_round_runner.py
 - Create: 02_代码/Q1_感官评分/tests/test_second_round_runner.py
 
-- [ ] **Step 1: Write failing split and completeness tests**
+- [x] **Step 1: Write failing split and completeness tests**
 
 ~~~python
 from __future__ import annotations
@@ -435,14 +435,14 @@ class SecondRoundRunnerTests(unittest.TestCase):
             parse_repeats("10", list(range(10)))
 ~~~
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 ~~~bash
 conda run -n mathorcup python -m unittest \
   '02_代码/Q1_感官评分/tests/test_second_round_runner.py' -v
 ~~~
 
-- [ ] **Step 3: Implement split and artifact functions**
+- [x] **Step 3: Implement split and artifact functions**
 
 ~~~python
 def parse_repeats(text: str, available: Sequence[int]) -> list[int]:
@@ -510,7 +510,7 @@ def write_metric_artifacts(experiment_id: str, archive_path: Path,
 
 Screening suffixes must be preserved, so partial output cannot overwrite full output.
 
-- [ ] **Step 4: Verify GREEN and commit**
+- [x] **Step 4: Verify GREEN and commit**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \
@@ -528,7 +528,7 @@ git commit -m 'feat(q1): add frozen nested OOF runner contract'
 - Modify: 02_代码/Q1_感官评分/configs/README.md
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing config contract test**
+- [x] **Step 1: Add a failing config contract test**
 
 ~~~python
 def test_e004_config(self):
@@ -540,7 +540,7 @@ def test_e004_config(self):
     self.assertEqual(len(config["profiles"]), 3)
 ~~~
 
-- [ ] **Step 2: Verify RED, then create the frozen config**
+- [x] **Step 2: Verify RED, then create the frozen config**
 
 ~~~yaml
 experiment_id: E004
@@ -555,11 +555,11 @@ profiles:
 selection_metric: macro_mae_then_ordered
 ~~~
 
-- [ ] **Step 3: Implement --stage screening and --stage full**
+- [x] **Step 3: Implement --stage screening and --stage full**
 
 For each outer fold, select one shared profile using inner OOF, fit on the entire outer-training fold, and predict the untouched outer-validation fold. Screening writes only files with _screening suffix.
 
-- [ ] **Step 4: Run tests and the nine-fold screening**
+- [x] **Step 4: Run tests and the nine-fold screening**
 
 ~~~bash
 conda run -n mathorcup python -m unittest discover \
@@ -570,7 +570,7 @@ conda run -n mathorcup python \
 
 Expected: finite OOF predictions, selected-profile CSV, metrics and manifest for repeats 0–2.
 
-- [ ] **Step 5: Record and commit**
+- [x] **Step 5: Record and commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/configs/E004_ordinal_hgb.yaml' \
@@ -588,7 +588,7 @@ git commit -m 'feat(q1): complete E004 ordinal HGB screening'
 - Create: 02_代码/Q1_感官评分/src/run_e005_continuous_ensemble.py
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing config test**
+- [x] **Step 1: Add a failing config test**
 
 ~~~python
 def test_e005_config(self):
@@ -601,7 +601,7 @@ def test_e005_config(self):
     self.assertEqual(config["weight_step"], 0.1)
 ~~~
 
-- [ ] **Step 2: Verify RED, then freeze the config**
+- [x] **Step 2: Verify RED, then freeze the config**
 
 ~~~yaml
 experiment_id: E005
@@ -617,11 +617,11 @@ hgb_profiles:
   - {name: balanced, max_leaf_nodes: 15, min_samples_leaf: 20, learning_rate: 0.05, l2_regularization: 1.0, max_iter: 100}
 ~~~
 
-- [ ] **Step 3: Implement nested base predictions and global convex weights**
+- [x] **Step 3: Implement nested base predictions and global convex weights**
 
 Inside each outer fold, create inner OOF predictions for all four bases, choose base parameters by inner macro MAE, select weights from the 0.1 simplex, refit on all outer-training samples, and predict outer validation. Save each base and pred_continuous_blend.
 
-- [ ] **Step 4: Run screening**
+- [x] **Step 4: Run screening**
 
 ~~~bash
 conda run -n mathorcup python \
@@ -630,7 +630,7 @@ conda run -n mathorcup python \
 
 Expected: nine complete folds and weights that are nonnegative and sum to one.
 
-- [ ] **Step 5: Record and commit**
+- [x] **Step 5: Record and commit**
 
 ~~~bash
 git add '02_代码/Q1_感官评分/configs/E005_continuous_ensemble.yaml' \
@@ -647,7 +647,7 @@ git commit -m 'feat(q1): complete E005 continuous ensemble screening'
 - Create: 02_代码/Q1_感官评分/src/run_e006_dual_route.py
 - Modify: docs/experiment_log.md
 
-- [ ] **Step 1: Add a failing hard-threshold test**
+- [x] **Step 1: Add a failing hard-threshold test**
 
 ~~~python
 def test_e006_thresholds(self):
@@ -661,15 +661,15 @@ def test_e006_thresholds(self):
         "acc_pm1_proxy_min": 0.5734})
 ~~~
 
-- [ ] **Step 2: Verify RED and create config**
+- [x] **Step 2: Verify RED and create config**
 
 Freeze ordinal shares 0.00 through 0.50 in increments of 0.05, the five thresholds above, and the same screening/full repeat IDs.
 
-- [ ] **Step 3: Implement inner-only route blending**
+- [x] **Step 3: Implement inner-only route blending**
 
 E006 must regenerate selected E004/E005 inner predictions inside every outer-training fold. It must not learn weights from top-level screening OOF files. Reject weights outside the inner continuous tolerance, then rank feasible weights by Spearman, QWK, ACC±1, R², and -MAE.
 
-- [ ] **Step 4: Run screening and gate full execution**
+- [x] **Step 4: Run screening and gate full execution**
 
 ~~~bash
 conda run -n mathorcup python \

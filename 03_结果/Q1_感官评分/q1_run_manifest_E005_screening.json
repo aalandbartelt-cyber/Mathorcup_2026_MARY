@@ -1,0 +1,35 @@
+{
+  "experiment_id": "E005",
+  "stage": "screening",
+  "status": "complete",
+  "repeats": [
+    0,
+    1,
+    2
+  ],
+  "outer_folds": 9,
+  "inner_splits": 3,
+  "base_models": [
+    "extra_trees",
+    "hgb",
+    "ridge_quantile",
+    "pls2_quantile"
+  ],
+  "weight_step": 0.1,
+  "selection_metric": "macro_mae_then_constrained_ordered_blend",
+  "random_state": 20261023,
+  "config_sha256": "dc7e97c7100a5f0d6c358d27020cc04fcb203ffcdb99f7e761cf80cd6142b993",
+  "run_signature": "889030f20aef13dbefb742ed558b3dd834c8ce632f12f08e2529fc440aa37b24",
+  "elapsed_seconds": 547.13,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_oof_predictions_E005_screening.npz",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_E005_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_by_target_E005_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_selected_parameters_E005_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_checkpoint_E005_screening.npz"
+  ]
+}

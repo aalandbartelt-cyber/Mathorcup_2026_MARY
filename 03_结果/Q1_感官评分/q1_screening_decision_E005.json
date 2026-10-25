@@ -1,0 +1,45 @@
+{
+  "status": "screening_only",
+  "full_promotion_requires": "10 repeats and all five hard gates plus 7/10 wins",
+  "decisions": {
+    "E005": {
+      "model": "continuous_blend",
+      "repeat_ids": [
+        0,
+        1,
+        2
+      ],
+      "baseline_means": {
+        "r2": 0.23264608602171324,
+        "mae": 0.34291120491621335,
+        "spearman": 0.4135446245520861,
+        "qwk_proxy": 0.40213751414799725,
+        "acc_pm1_proxy": 0.5480533333333334
+      },
+      "candidate_means": {
+        "r2": 0.24390021901125405,
+        "mae": 0.3403504062332985,
+        "spearman": 0.42367680757978016,
+        "qwk_proxy": 0.4121605043851271,
+        "acc_pm1_proxy": 0.5538666666666666
+      },
+      "promote_to_full": true,
+      "improved": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": true
+      },
+      "improved_count": 5,
+      "continuous_tolerance": {
+        "r2": true,
+        "mae": true
+      }
+    }
+  },
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_screening_comparison_E005.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_screening_by_repeat_E005.csv"
+  ]
+}

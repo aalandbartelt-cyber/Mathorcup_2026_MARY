@@ -1,0 +1,42 @@
+experiment_id: E004_GPU
+question: Q1
+status: registered
+purpose: independent CUDA cumulative ordinal XGBoost candidate
+device: cuda
+features: chemistry_231
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+screening_repeats: [0, 1, 2]
+full_repeats: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+inner_splits: 3
+random_state: 20261023
+preprocessing:
+  imputer: training_fold_median
+  missing_indicator: true
+  ordinal_boundaries: training_fold_empirical_sevenths
+profiles:
+  - name: compact
+    max_depth: 3
+    min_child_weight: 10.0
+    learning_rate: 0.05
+    n_estimators: 80
+    subsample: 1.0
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+  - name: balanced
+    max_depth: 4
+    min_child_weight: 10.0
+    learning_rate: 0.05
+    n_estimators: 80
+    subsample: 1.0
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+  - name: regularized
+    max_depth: 3
+    min_child_weight: 20.0
+    learning_rate: 0.05
+    n_estimators: 80
+    subsample: 1.0
+    colsample_bytree: 0.8
+    reg_lambda: 10.0
+selection_metric: macro_mae_then_ordered
+outputs: 03_结果/Q1_感官评分
