@@ -482,7 +482,7 @@ git commit -m 'exp(q2): complete E115 hierarchical conditional attribution'
 - Create: `02_代码/Q2_关键化合物/configs/E116_grouped_multitask.yaml`
 - Create: `02_代码/Q2_关键化合物/src/run_e116_grouped_multitask.py`
 
-- [ ] **Step 1: Add the target-group contract test**
+- [x] **Step 1: Add the target-group contract test**
 
 ```python
 def test_target_groups_do_not_overlap_and_cover_registered_targets(self):
@@ -492,9 +492,14 @@ def test_target_groups_do_not_overlap_and_cover_registered_targets(self):
     self.assertTrue(set(flattened).issubset(set(load_target_codes())))
 ```
 
-- [ ] **Step 2: Freeze only defensible groups**
+- [x] **Step 2: Freeze only defensible groups**
 
 The YAML contains explicit Aroma–Flavour pairs and the three broad families; no target may occur in more than one fitted group. Fit `MultiTaskElasticNet` within each group, and independent ElasticNet for ungrouped targets. Tune alpha and l1 ratio inside each outer-training fold.
+
+Implementation checkpoint (2026-10-25): model primitives, safe opt-in runner,
+input/source-signed fold checkpoints and unit tests are complete. Inner preprocessing
+is refit on each inner-training split; zero coefficients do not receive selection
+frequency. Actual-data Step 3 remains pending user authorization and prior E113—E115.
 
 - [ ] **Step 3: Run E116 and apply its gate**
 

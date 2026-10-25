@@ -3,10 +3,53 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import yaml
 from sklearn.covariance import LedoitWolf
+
+
+ROOT = Path(__file__).resolve().parents[3]
+TARGET_DICTIONARY_PATH = ROOT / "03_结果" / "Q2_关键化合物" / "q2_target_dictionary.csv"
+
+
+def load_target_codes(path: Path = TARGET_DICTIONARY_PATH) -> list[str]:
+    """Load the frozen 50 Q2 sensory target codes in official column order."""
+    table = pd.read_csv(path)
+    if "target_code" not in table or table["target_code"].duplicated().any():
+        raise ValueError("target dictionary must contain unique target_code values")
+    codes = table["target_code"].astype(str).tolist()
+    if len(codes) != 50:
+        raise ValueError(f"expected 50 target codes, got {len(codes)}")
+    return codes
+
+
+def load_target_groups(config_path: Path) -> list[dict]:
+    """Load non-overlapping registered multi-task groups from E116 YAML."""
+    config = yaml.safe_load(Path(config_path).read_text(encoding="utf-8"))
+    groups = config.get("target_groups", [])
+    if not isinstance(groups, list) or not groups:
+        raise ValueError("E116 target_groups must be a non-empty list")
+    known = set(load_target_codes())
+    names = set()
+    flattened = []
+    normalized = []
+    for group in groups:
+        name = str(group.get("name", "")).strip()
+        targets = [str(value) for value in group.get("targets", [])]
+        if not name or name in names or len(targets) < 2 or len(set(targets)) != len(targets):
+            raise ValueError("each E116 target group needs a unique name and targets")
+        unknown = set(targets) - known
+        if unknown:
+            raise ValueError(f"E116 target group {name} has unknown targets {sorted(unknown)}")
+        names.add(name)
+        flattened.extend(targets)
+        normalized.append({"name": name, "targets": targets})
+    if len(flattened) != len(set(flattened)):
+        raise ValueError("E116 fitted target groups must not overlap")
+    return normalized
 
 
 def _finite_xy(x, y) -> tuple[np.ndarray, np.ndarray]:

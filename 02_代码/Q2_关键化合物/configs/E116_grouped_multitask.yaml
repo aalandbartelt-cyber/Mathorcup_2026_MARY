@@ -1,0 +1,42 @@
+experiment: E116
+question: Q2
+status: code_ready_not_run
+execution_requires_authorization: true
+outer_folds: frozen_10x3
+candidate_scope: strict_compounds_218
+model_grouped: multi_task_elastic_net
+model_ungrouped: elastic_net
+inner_splits: 3
+alpha_grid: [0.003, 0.01, 0.03, 0.10]
+l1_ratio_grid: [0.2, 0.5, 0.8]
+registered_aroma_flavour_pairs:
+  - [A_malt_all, F_malt_all]
+  - [A_malt_grain, F_malt_grain]
+  - [A_malt_bread, F_malt_bread]
+  - [A_malt_cara, F_malt_cara]
+  - [A_malt_burn, F_malt_burn]
+  - [A_hops_all, F_hops_all]
+  - [A_hops_citrus, F_hops_citrus]
+  - [A_hops_tropical, F_hops_tropical]
+  - [A_hops_noble, F_hops_noble]
+  - [A_hops_woody, F_hops_woody]
+  - [A_esters_all, F_esters_all]
+  - [A_esters_ethac, F_esters_ethac]
+  - [A_esters_isoaa, F_esters_isoaa]
+  - [A_esters_flower, F_esters_flower]
+  - [A_esters_fruity, F_esters_fruity]
+target_groups:
+  - name: malt_aroma_flavour
+    targets: [A_malt_all, A_malt_grain, A_malt_bread, A_malt_cara, A_malt_burn,
+              F_malt_all, F_malt_grain, F_malt_bread, F_malt_cara, F_malt_burn]
+  - name: hops_aroma_flavour
+    targets: [A_hops_all, A_hops_citrus, A_hops_tropical, A_hops_noble, A_hops_woody,
+              F_hops_all, F_hops_citrus, F_hops_tropical, F_hops_noble, F_hops_woody]
+  - name: esters_aroma_flavour
+    targets: [A_esters_all, A_esters_ethac, A_esters_isoaa, A_esters_flower, A_esters_fruity,
+              F_esters_all, F_esters_ethac, F_esters_isoaa, F_esters_flower, F_esters_fruity]
+promotion_tolerance:
+  macro_r2_drop_max: 0.003
+  macro_mae_increase_max: 0.002
+random_state: 20261025
+gpu_used: false

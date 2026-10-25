@@ -14,11 +14,23 @@ sys.path.insert(0, str(SRC))
 from target_partial_effects import (  # noqa: E402
     aggregate_partial_effect_rankings,
     ledoit_wolf_target_partial,
+    load_target_codes,
+    load_target_groups,
     rank_signed_effects,
 )
 
 
+E116_CONFIG_PATH = SRC.parent / "configs" / "E116_grouped_multitask.yaml"
+
+
 class TargetPartialEffectTests(unittest.TestCase):
+    def test_target_groups_do_not_overlap_and_cover_registered_targets(self) -> None:
+        groups = load_target_groups(E116_CONFIG_PATH)
+        flattened = [target for group in groups for target in group["targets"]]
+
+        self.assertEqual(len(flattened), len(set(flattened)))
+        self.assertTrue(set(flattened).issubset(set(load_target_codes())))
+
     def test_direct_signal_has_largest_partial_effect(self) -> None:
         rng = np.random.default_rng(11)
         x = rng.normal(size=(160, 5))
