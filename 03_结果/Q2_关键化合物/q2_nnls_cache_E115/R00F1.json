@@ -1,0 +1,12 @@
+{
+  "signature": "325769f19206ef5d76eea5989367e4fddeae2361350ce1fe768e92a676b8056b",
+  "model_sha256": "94336947e78bb0d4ac1c56e7bcc073a257b07d974a0ed814a5324332ba4ff7ac",
+  "repeat": 0,
+  "fold": 1,
+  "validation_max_abs_error": 6.106226635438361e-16,
+  "validation_atol": 1e-10,
+  "hyperparameter_search": false,
+  "nnls_refit": false,
+  "q1_outputs_written": false,
+  "scope": "Q2_reconstruction_of_frozen_outer_training_predictor"
+}

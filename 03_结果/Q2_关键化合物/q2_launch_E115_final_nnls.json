@@ -1,0 +1,1 @@
+{"experiment_id":"E115_final_nnls","status":"running","tmux":"q2_e115_final_full","preconditions":"E113 complete, E114 complete, NNLS pilot repeat0 exact reconstruction","q1_state":"frozen_no_writes","module_gate":"E113 fold-local all modules, no validation-target gate","sufficiency":"frozen NNLS fixed outer-training median mask using E114 outer-training Top3","gpu_used":false}
