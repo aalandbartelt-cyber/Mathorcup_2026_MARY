@@ -29,6 +29,11 @@ from q2_pipeline import load_frozen_outer_folds
 
 
 EXPERIMENT_ID = "E115"
+E115_EXECUTION_READY = False
+E115_BLOCK_REASON = (
+    "E115 final NNLS raw-input wiring is not ready: legacy ExtraTrees execution "
+    "is blocked until training-only module gating and NNLS sufficiency/deletion are implemented"
+)
 CONFIG_PATH = (
     Path(__file__).resolve().parents[1]
     / "configs"
@@ -413,6 +418,8 @@ def _anchor_recovery(rankings: pd.DataFrame) -> pd.DataFrame:
 
 
 def run_e115(*, repeat_ids: list[int], output_dir: Path = RESULT_DIR) -> dict:
+    if not E115_EXECUTION_READY:
+        raise RuntimeError(E115_BLOCK_REASON)
     started = time.perf_counter()
     repeat_ids = sorted(set(int(value) for value in repeat_ids))
     if not repeat_ids or repeat_ids[0] < 0 or repeat_ids[-1] > 9:
@@ -588,8 +595,19 @@ def run_e115(*, repeat_ids: list[int], output_dir: Path = RESULT_DIR) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repeats", nargs="+", type=int, default=list(range(10)))
+    parser.add_argument("--execute", action="store_true", help="blocked until final NNLS wiring is complete")
+    parser.add_argument("--check-readiness", action="store_true", help="report adapter readiness without reading training data")
     args = parser.parse_args()
-    print(json.dumps(run_e115(repeat_ids=args.repeats), ensure_ascii=False, indent=2))
+    if args.execute:
+        parser.error(E115_BLOCK_REASON)
+    print(json.dumps({
+        "adapter_ready": True,
+        "E115_execution_ready": False,
+        "q1_interface_verified": False,
+        "legacy_extra_trees_execution": "blocked",
+        "reason": E115_BLOCK_REASON,
+        "check_readiness": True,
+    }, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
