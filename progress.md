@@ -1,5 +1,22 @@
 # Progress Log
 
+## Session: 2026-10-25 Q3 E202正式统计基线（E115由ZCode监控）
+
+- **Status:** 30/30 complete；formal audit complete；commit/push pending
+- Actions:
+  - 没有查看、修改或重启Q2/E115运行树；E202入口改为只核验冻结E201 manifest和Q1 v5 OOF身份。
+  - 先用失败测试补标准化收缩高斯、支持域截断、并列值友好秩变换、正定收缩Copula、配置与scope合同；Q3共53项测试通过。
+  - CPU完成30折×3风格×2方法×5种子，共900条正式评价、4900条生成记录；30个checkpoint签名一致且哈希0错误。
+  - 首次审计发现评价器scope覆盖外折scope，定位为字典展开顺序；失败测试复现后拆为evaluation_scope/diagnostic_scope并完整重建30折，错误运行不作为正式结果。
+  - 识别Kriek R07F1受beer156极端字段主导；保留原始主结果，追加仅用外层训练折1%—99%边界的敏感性，不删除样本或反向调参。
+  - 收缩Copula进入迁移首选统计基线；高斯因37.66%单元格越界、100%行需截断而保留为消融。尚无感官画像、迁移或缺陷安全率。
+
+## Verification
+
+- `q3_run_manifest_E202.json` status=complete、30折、gpu_used=false；正式评价900行完整。
+- 53项Q3测试通过；高斯/Copula最小协方差特征值0.2450/0.4549；30个checkpoint与顶层产物哈希0错误。
+- 论文交接目录已移除内部实验编号与内部参考代号；后续仍须在DOCX/PDF生成时全目录复扫。
+
 ## Session: 2026-10-25 Q3基础代码准备（E009由ZCode监控）
 
 - **Status:** implementation/verification complete；integration checkpoint

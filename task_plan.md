@@ -6,9 +6,7 @@
 
 ## Current Phase
 
-Phase 10：E004—E007已完成冻结审计，保留E003；E009筛查9/9通过，完整10×3已于17:33启动。
-
-用户随后把E009监控交给ZCode；当前推进Phase 11的Q3基础代码，不轮询或修改Q1运行工作树。
+Phase 12：Q1 v5 已冻结，E201 已完成 30/30；E115 由 ZCode 监控。本工作树独立推进 E202 收缩高斯/Copula 的 10×3 CPU 正式基线，不读取或修改 E115 运行树。
 
 ## Phases
 
@@ -127,6 +125,16 @@ Phase 10：E004—E007已完成冻结审计，保留E003；E009筛查9/9通过�
 - [x] 复核31项Q3测试、27项主分支Q1基线与原始附件哈希；交接材料已整理
 - [ ] 提交推送基础代码并同步主工作区
 - **Status:** verification complete；integration pending；no model training
+
+### Phase 12：Q3 E202收缩分布强基线
+
+- [x] E202 一折 pilot 暴露原尺度高斯的尺度与支持域风险
+- [x] 以失败测试冻结标准化收缩高斯、支持域截断与收缩 Copula 契约
+- [x] 实现可恢复的 10×3 外层 runner，入口不依赖运行中的 E115
+- [x] 完成 30 折 CPU 正式实验与重复级汇总
+- [x] 审计哈希、支持域、分布指标和结论边界
+- [ ] 提交推送并登记下一阶段共享低秩模型
+- **Status:** formal run/audit complete；no GPU/CVAE；Q1/Q2 runtime trees untouched
 
 ## Hard Rules
 

@@ -32,4 +32,6 @@
 | 实验 ID | 问题 | 状态 | 产物 | 结论 |
 |---|---|---|---|---|
 | E200 | Q3 | CONTRACT_COMPLETE_NO_MODEL_FIT | `02_代码/Q3_风格生成/configs/E200_contract.yaml`及`03_结果/Q3_风格生成/q3_*_E200.*`（8文件） | 250×231/50、22风格、37/33/161字段与73缺失一致；保留80正值对应不一致和3负参考值，源44直接缺陷记录33可比/9零地板/2缺失。31项Q3测试通过，原始附件哈希不变。没有生成/迁移训练或性能成绩。 |
+| E201 | Q3 | COMPLETE_BASELINE | `q3_run_manifest_E201.json`、`q3_distribution_metrics_E201.csv`、30折checkpoint | 经验重采样、近邻插值与风格均值完成30/30；只作化学分布基线，不生成画像或迁移结论。 |
+| E202 | Q3 | COMPLETE_STATISTICAL_BASELINE | `q3_run_manifest_E202.json`、`q3_distribution_metrics_E202.csv`、`q3_e202_audit_manifest.json`、30折checkpoint | 标准化截断高斯与收缩Copula完成30/30。Copula在稳健口径下三风格W1/energy/相关误差均优于高斯；高斯单元格截断前越界率均值37.66%且100%生成行发生截断，故Copula进入迁移首选统计基线，高斯保留消融。未使用GPU，未认证缺陷安全。 |
 

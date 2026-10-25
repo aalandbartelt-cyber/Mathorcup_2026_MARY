@@ -1,14 +1,20 @@
 experiment: E202
 question: Q3
 status: registered_before_run
-methods: [style_gaussian, style_copula]
-covariance: Ledoit-Wolf
+methods: [style_gaussian_clipped, style_copula_shrunk]
+seeds: [20261025, 20261026, 20261027, 20261028, 20261029]
+n_repeats: 10
+n_folds: 3
+covariance: Ledoit-Wolf_in_outer_training_standardized_space
 mean_shrinkage: 0.25
 target_styles: [Tripel, Kriek, Lambic]
 outer_cv: frozen_10x3
-preprocessing: outer_training_median
+preprocessing: outer_training_median_and_standard_deviation
+generation_count: matched_outer_validation_style_count
+real_real_reference: disjoint_training_style_subsets_matched_to_validation_count_else_NA
+support_policy: Gaussian_clipped_to_outer_training_style_minmax_and_Copula_empirical_marginals
 q1_interface: final_model_registry_group_NNLS_v5_read_only
 q1_retrained: false
 gpu_used: false
-entry_gate: E201_complete_and_E113_first_checkpoint_verified
-formal_run: not_started
+entry_gate: frozen_E201_complete_manifest_with_verified_E113_fold_scope
+formal_run: registered
