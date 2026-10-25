@@ -24,3 +24,16 @@ conda run -n mathorcup python 02_代码/Q1_感官评分/src/prepare_q1_figure_da
 conda run -n mathorcup python -m unittest discover -s 02_代码/Q1_感官评分/tests -v
 ```
 
+第二轮候选及审计入口：
+
+- `run_e004_ordinal_hgb.py`：累计有序 HGB（含筛查与检查点）；
+- `run_e004_gpu.py`：CUDA 累计有序 XGBoost 消融；
+- `run_e005_continuous_ensemble.py`：ExtraTrees/HGB/Ridge/PLS2 折内连续融合；
+- `run_e006_dual_route.py`：连续路线与累计有序路线折内融合；
+- `run_e007_shrunk_gating.py`：逐目标权重向全局权重收缩的门控；
+- `audit_q1_second_round.py`：筛查、正式五门槛及最终 bootstrap/尾部/风格审计。
+
+所有长任务按一个外层折原子更新 `q1_checkpoint_*.npz`，恢复时会校验配置、数据
+和 CV 签名。只有 manifest 的 `status=complete` 才能进入正式审计，部分检查点不
+得解释为实验结果。
+

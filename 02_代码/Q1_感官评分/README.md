@@ -21,3 +21,18 @@ conda run -n mathorcup python 02_代码/Q1_感官评分/src/make_cv_splits.py
 
 两条命令不训练模型，分别核验数据契约和生成冻结的外层划分。
 
+第二轮多指标候选遵循“3 次筛查重复→通过后 10 次正式重复”的顺序，禁止用
+筛查结果代替正式结论：
+
+```bash
+conda run -n mathorcup python 02_代码/Q1_感官评分/src/run_e004_ordinal_hgb.py --stage screening
+conda run -n mathorcup python 02_代码/Q1_感官评分/src/run_e005_continuous_ensemble.py --stage full
+conda run -n mathorcup python 02_代码/Q1_感官评分/src/run_e006_dual_route.py --stage full
+conda run -n mathorcup python 02_代码/Q1_感官评分/src/run_e007_shrunk_gating.py --stage full
+conda run -n mathorcup python 02_代码/Q1_感官评分/src/audit_q1_second_round.py --mode final
+```
+
+正式晋级必须同时满足五项绝对门槛和五项 `7/10` 重复非劣条件。最终审计另做
+20,000 次配对啤酒 bootstrap、E003 预先定义的尾部目标审计和逐风格误差审计；
+结果写入 `03_结果/Q1_感官评分/q1_second_round_*`，不会覆盖 E001—E003。
+

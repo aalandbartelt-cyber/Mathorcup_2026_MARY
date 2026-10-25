@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 4：Q1 第二轮多指标优化已完成 E004/E005 审计与 E006 筛查，进入 E006 正式 OOF。
+Phase 4：Q1 第二轮多指标优化已完成 E004—E006 审计；E007 筛查晋级，正在运行正式 OOF。
 
 ## Phases
 
@@ -61,7 +61,10 @@ Phase 4：Q1 第二轮多指标优化已完成 E004/E005 审计与 E006 筛查�
 - [x] E005 完成 3 次筛查并在五项指标上均优于同重复 E003，晋级正式 OOF
 - [x] E005 完成 10 次正式 OOF；连续四项过线，ACC±1未过硬门槛，不单独晋级
 - [x] E006 完成 3 次筛查并五项均优于同重复 E003，晋级正式 OOF
-- **Status:** E006 full running; E007 remains conditional on the full gate
+- [x] E006 完成 10 次正式 OOF；五项均 10/10 优于 E003，但 ACC±1 未越过绝对门槛
+- [x] E007 完成 3 次筛查并五项均优于同重复 E003，晋级正式 OOF
+- [ ] E007 完成 10 次正式 OOF与最终 bootstrap/尾部/风格审计
+- **Status:** E007 full running; screening results are not treated as the final decision
 
 ### Phase 5：Q2 优化与交付
 
