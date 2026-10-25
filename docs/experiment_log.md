@@ -10,6 +10,7 @@
 | E004_GPU | Q1 | SCREENED_NOT_PROMOTED | `02_代码/Q1_感官评分/configs/E004_gpu.yaml` | `03_结果/Q1_感官评分/q1_*_E004_GPU_screening.*`、`q1_screening_*_E004.*` | CUDA 累积有序 XGBoost 五项均未改善，不扩展至 10 次；仅作为有序路线的负结果保留 |
 | E005 | Q1 | FULL_GATE_4_OF_5 | `02_代码/Q1_感官评分/configs/E005_continuous_ensemble.yaml` | `03_结果/Q1_感官评分/q1_*_E005.*`、`q1_full_*_E005.*` | 正式 10 次 OOF 为 R²/MAE/Spearman/代理 QWK/代理 ACC±1=0.2482/0.3397/0.4273/0.4150/0.5523；前四项过线且 10/10 胜出，ACC±1虽 9/10 胜出但未达 0.5734，故不单独晋级，作为 E006 连续路线 |
 | E006 | Q1 | FULL_NOT_PROMOTED | `02_代码/Q1_感官评分/configs/E006_dual_route.yaml` | `03_结果/Q1_感官评分/q1_*_E006.*`、`q1_full_*_E006.*` | 正式 10 次 OOF 为 R²/MAE/Spearman/代理 QWK/代理 ACC±1=0.2480/0.3356/0.4314/0.4194/0.5552，五项均 10/10 次优于 E003；前四项通过绝对门槛，但 ACC±1 未达到 0.5734，故不晋级并按冻结顺序触发 E007 |
+| E007 | Q1 | SCREENED_PROMOTED | `02_代码/Q1_感官评分/configs/E007_shrunk_gating.yaml` | `03_结果/Q1_感官评分/q1_*_E007_screening.*`、`q1_screening_*_E007.*` | 3 次筛查 OOF 为 R²/MAE/Spearman/代理 QWK/代理 ACC±1=0.2434/0.3366/0.4255/0.4139/0.5528；五项均优于同折 E003，满足预注册筛查门槛，晋级 10 次完整外层 OOF；此状态不作最终结论 |
 | E100 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E100_contract.yaml` | `03_结果/Q2_关键化合物/q2_candidate_dictionary.csv`、`q2_graph_*` | 候选、名称和有符号 Spearman 图合同通过；218 个严格化合物候选 |
 | E101–E104 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E101_E104_selection.yaml` | `03_结果/Q2_关键化合物/q2_*_E101_E104.*` | 10×3 OOF 完成；E103 宏 MAE 0.3529，E104 0.3530；图惩罚未得到预测增益，扩展参数敏感性进入 E109 |
 | E109 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E109_boundary_sensitivity.yaml` | `03_结果/Q2_关键化合物/q2_e109_*` | 扩展网格下 E103 的指标与 Top-3 完全不变；E104 未改善 MAE，图惩罚降为消融组 |

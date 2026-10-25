@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 
@@ -23,9 +25,50 @@ from audit_q1_second_round import (  # noqa: E402
 )
 
 import pandas as pd
+import audit_q1_second_round as audit_module
 
 
 class SecondRoundAuditTests(unittest.TestCase):
+    def test_e007_screening_audit_writes_standard_outputs(self) -> None:
+        baseline = pd.DataFrame(
+            {
+                "evaluation": ["repeat_0", "repeat_1", "repeat_2"],
+                "r2": [0.20, 0.21, 0.22],
+                "mae": [0.35, 0.35, 0.35],
+                "spearman": [0.40, 0.40, 0.40],
+                "qwk_proxy": [0.39, 0.39, 0.39],
+                "acc_pm1_proxy": [0.54, 0.54, 0.54],
+            }
+        )
+        candidate = pd.DataFrame(
+            {
+                "evaluation": [
+                    "pred_shrunk_gate:repeat_0",
+                    "pred_shrunk_gate:repeat_1",
+                    "pred_shrunk_gate:repeat_2",
+                ],
+                "r2": [0.21, 0.22, 0.23],
+                "mae": [0.34, 0.34, 0.34],
+                "spearman": [0.41, 0.41, 0.41],
+                "qwk_proxy": [0.40, 0.40, 0.40],
+                "acc_pm1_proxy": [0.55, 0.55, 0.55],
+            }
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            result_dir = Path(tmpdir)
+            baseline.to_csv(result_dir / "q1_extended_metrics_E003.csv", index=False)
+            candidate.to_csv(
+                result_dir / "q1_extended_metrics_E007_screening.csv", index=False
+            )
+            with patch.object(audit_module, "RESULT_DIR", result_dir):
+                summary, payload = audit_module.audit_e007_screening()
+
+            self.assertTrue(bool(summary.loc[0, "promote_to_full"]))
+            self.assertTrue(payload["decisions"]["E007"]["promote_to_full"])
+            self.assertTrue((result_dir / "q1_screening_comparison_E007.csv").exists())
+            self.assertTrue((result_dir / "q1_screening_by_repeat_E007.csv").exists())
+            self.assertTrue((result_dir / "q1_screening_decision_E007.json").exists())
+
     def test_paired_beer_bootstrap_detects_uniform_improvement(self) -> None:
         y_true = np.arange(48, dtype=float).reshape(12, 4)
         baseline = y_true[::-1].copy()

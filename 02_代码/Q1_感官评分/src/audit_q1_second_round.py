@@ -580,6 +580,33 @@ def audit_e006_full() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e007_screening() -> tuple[pd.DataFrame, dict]:
+    """Compare E007 shrunk-gating screening with E003 on repeats 0--2."""
+    summary_row, paired, decision = compare_screening_frames(
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv"),
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E007_screening.csv"),
+        experiment_id="E007",
+        model="shrunk_gate",
+        candidate_prefix="pred_shrunk_gate:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_screening_comparison_E007.csv"
+    repeat_path = RESULT_DIR / "q1_screening_by_repeat_E007.csv"
+    decision_path = RESULT_DIR / "q1_screening_decision_E007.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "screening_only",
+        "full_promotion_requires": "10 repeats and all five hard gates plus 7/10 wins",
+        "decisions": {"E007": decision},
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -590,6 +617,7 @@ def main() -> None:
             "e005-full",
             "e006-screening",
             "e006-full",
+            "e007-screening",
         ],
         default="e004-screening",
     )
@@ -602,8 +630,10 @@ def main() -> None:
         summary, payload = audit_e005_full()
     elif args.mode == "e006-screening":
         summary, payload = audit_e006_screening()
-    else:
+    elif args.mode == "e006-full":
         summary, payload = audit_e006_full()
+    else:
+        summary, payload = audit_e007_screening()
     print(summary.to_string(index=False))
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
