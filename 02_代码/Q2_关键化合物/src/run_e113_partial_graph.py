@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 import yaml
+from graph_checkpoint import save_fold_checkpoint, load_fold_checkpoint
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import KFold
 
@@ -250,6 +251,16 @@ def run_e113(*, output_dir: Path = RESULT_DIR) -> dict:
     alpha_grid = [float(value) for value in config["alpha_grid"]]
     edge_threshold = float(config["partial_edge_threshold"])
     seed = int(config["random_state"])
+    identity = {
+        "config_sha256": hashlib.sha256(CONFIG_PATH.read_bytes()).hexdigest(),
+        "cv_sha256": hashlib.sha256((Q1_RESULT_DIR/'q1_cv_splits.csv').read_bytes()).hexdigest(),
+        "input_sha256": hashlib.sha256(values.tobytes()).hexdigest(),
+        "feature_order": feature_codes,
+        "source_sha256": {p.name:hashlib.sha256(p.read_bytes()).hexdigest()
+                          for p in [Path(__file__),Path(__file__).with_name('partial_graph.py'),
+                                    Path(__file__).with_name('graph_checkpoint.py')]},
+    }
+    checkpoint_dir=output_dir/'q2_graph_checkpoints_E113'
 
     summary_rows = []
     alpha_score_frames = []
@@ -258,6 +269,17 @@ def run_e113(*, output_dir: Path = RESULT_DIR) -> dict:
     label_vectors = []
     selected_alphas = []
     for number, outer in enumerate(folds, start=1):
+        restored=load_fold_checkpoint(checkpoint_dir,outer.split_id,identity)
+        if restored is not None:
+            summary_rows.append(restored['summary'].iloc[0].to_dict())
+            alpha_score_frames.append(restored['alpha_scores'])
+            fold_edge_frames.append(restored['edges'])
+            membership_frames.append(restored['membership'])
+            labels=restored['membership'].set_index('feature_code').loc[feature_codes,'module_id'].astype(str)
+            label_vectors.append(pd.factorize(labels,sort=True)[0])
+            selected_alphas.append(float(summary_rows[-1]['selected_alpha']))
+            print(f'[{number:02d}/{len(folds)}] {outer.split_id} resumed',flush=True)
+            continue
         fold_started = time.perf_counter()
         outer_seed = seed + outer.repeat * 100 + outer.fold
         alpha_scores = _score_alpha_grid(
@@ -336,6 +358,16 @@ def run_e113(*, output_dir: Path = RESULT_DIR) -> dict:
             f"alpha={selected_alpha:.2f} edges={len(edges)}",
             flush=True,
         )
+        save_fold_checkpoint(checkpoint_dir,outer.split_id,identity,{
+            'summary':pd.DataFrame([summary_rows[-1]]),'alpha_scores':alpha_score_frames[-1],
+            'edges':fold_edge_frames[-1],'membership':membership_frames[-1]})
+        progress={'experiment_id':EXPERIMENT_ID,'status':'running','completed_folds':number,
+                  'n_outer_folds':len(folds),'n_features':len(feature_codes),
+                  'last_split_id':outer.split_id,'elapsed_seconds':float(time.perf_counter()-started),
+                  'scope':'outer_train_fold','identity':identity}
+        temp=output_dir/'q2_progress_E113.json.tmp'
+        temp.write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n')
+        temp.replace(output_dir/'q2_progress_E113.json')
 
     fold_summary = pd.DataFrame(summary_rows)
     alpha_score_table = pd.concat(alpha_score_frames, ignore_index=True)
@@ -437,6 +469,7 @@ def run_e113(*, output_dir: Path = RESULT_DIR) -> dict:
         "gpu_used": False,
         "elapsed_seconds": float(time.perf_counter() - started),
         "config_sha256": hashlib.sha256(config_bytes).hexdigest(),
+        "checkpoint_identity":identity,
         "cv_sha256": hashlib.sha256(
             (Q1_RESULT_DIR / "q1_cv_splits.csv").read_bytes()
         ).hexdigest(),
@@ -449,6 +482,10 @@ def run_e113(*, output_dir: Path = RESULT_DIR) -> dict:
     paths["manifest"].write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    progress_path=output_dir/'q2_progress_E113.json'
+    if progress_path.exists():
+        progress=json.loads(progress_path.read_text());progress.update(status='complete',completed_folds=len(folds))
+        progress_path.write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n')
     return manifest
 
 
