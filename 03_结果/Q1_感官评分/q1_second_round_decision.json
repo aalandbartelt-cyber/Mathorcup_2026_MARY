@@ -1,0 +1,193 @@
+{
+  "status": "complete",
+  "hard_thresholds": {
+    "r2": 0.2359,
+    "mae": 0.3422,
+    "spearman": 0.426,
+    "qwk_proxy": 0.4026,
+    "acc_pm1_proxy": 0.5734
+  },
+  "minimum_repeat_wins": 7,
+  "completed_candidates": [
+    "E005",
+    "E006",
+    "E007"
+  ],
+  "candidate_decisions": {
+    "E005": {
+      "model": "continuous_blend",
+      "repeat_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "baseline_means": {
+        "r2": 0.2358695380976478,
+        "mae": 0.3422216059972746,
+        "spearman": 0.4143762959072421,
+        "qwk_proxy": 0.40259175957182747,
+        "acc_pm1_proxy": 0.5476399999999999
+      },
+      "candidate_means": {
+        "r2": 0.24817180849207965,
+        "mae": 0.3397320129357454,
+        "spearman": 0.42727759004796956,
+        "qwk_proxy": 0.4150260670371414,
+        "acc_pm1_proxy": 0.5522880000000001
+      },
+      "repeat_win_counts": {
+        "r2": 10,
+        "mae": 10,
+        "spearman": 10,
+        "qwk_proxy": 10,
+        "acc_pm1_proxy": 9
+      },
+      "promoted": false,
+      "mean_threshold_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": false
+      },
+      "repeat_win_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": true
+      },
+      "minimum_repeat_wins": 7
+    },
+    "E006": {
+      "model": "dual_route",
+      "repeat_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "baseline_means": {
+        "r2": 0.2358695380976478,
+        "mae": 0.3422216059972746,
+        "spearman": 0.4143762959072421,
+        "qwk_proxy": 0.40259175957182747,
+        "acc_pm1_proxy": 0.5476399999999999
+      },
+      "candidate_means": {
+        "r2": 0.24798554238577228,
+        "mae": 0.33562462440363455,
+        "spearman": 0.43137854725774016,
+        "qwk_proxy": 0.41942490996594595,
+        "acc_pm1_proxy": 0.5551840000000001
+      },
+      "repeat_win_counts": {
+        "r2": 10,
+        "mae": 10,
+        "spearman": 10,
+        "qwk_proxy": 10,
+        "acc_pm1_proxy": 10
+      },
+      "promoted": false,
+      "mean_threshold_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": false
+      },
+      "repeat_win_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": true
+      },
+      "minimum_repeat_wins": 7
+    },
+    "E007": {
+      "model": "shrunk_gate",
+      "repeat_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "baseline_means": {
+        "r2": 0.2358695380976478,
+        "mae": 0.3422216059972746,
+        "spearman": 0.4143762959072421,
+        "qwk_proxy": 0.40259175957182747,
+        "acc_pm1_proxy": 0.5476399999999999
+      },
+      "candidate_means": {
+        "r2": 0.2472494517815146,
+        "mae": 0.33601220583948843,
+        "spearman": 0.42946609016240656,
+        "qwk_proxy": 0.4172009390348528,
+        "acc_pm1_proxy": 0.552536
+      },
+      "repeat_win_counts": {
+        "r2": 10,
+        "mae": 10,
+        "spearman": 10,
+        "qwk_proxy": 10,
+        "acc_pm1_proxy": 10
+      },
+      "promoted": false,
+      "mean_threshold_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": false
+      },
+      "repeat_win_flags": {
+        "r2": true,
+        "mae": true,
+        "spearman": true,
+        "qwk_proxy": true,
+        "acc_pm1_proxy": true
+      },
+      "minimum_repeat_wins": 7
+    }
+  },
+  "selected_experiment": null,
+  "retained_model": "E003",
+  "e008_status": "requires_error_diagnostic_review",
+  "bootstrap": {
+    "unit": "beer",
+    "paired": true,
+    "prediction_aggregation": "mean_across_10_oof_repeats",
+    "n_bootstraps": 20000,
+    "random_state": 20261025
+  },
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_comparison.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_by_repeat.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_bootstrap.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_tail_targets.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_target_deltas.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_style_mae.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_second_round_worst_style.csv"
+  ]
+}

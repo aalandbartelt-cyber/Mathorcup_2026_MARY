@@ -1,0 +1,48 @@
+{
+  "experiment_id": "E007",
+  "stage": "full",
+  "status": "complete",
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "outer_folds": 30,
+  "inner_splits": 3,
+  "shrinkage_strengths": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "entry_condition": "E006_misses_at_least_one_hard_threshold",
+  "screening_decision": null,
+  "random_state": 20261023,
+  "config_sha256": {
+    "E007_shrunk_gating.yaml": "14cc0c7097fac80af11e6946f8bc121d8e3278309bdf01737c8eac22d7864d3c",
+    "E006_dual_route.yaml": "58fa132e16f69b88e3cd1e120e6c7d2940a3184203b4d72e3833ed0ac6fb9159",
+    "E004_ordinal_hgb.yaml": "5b3196c1b3c4c0324cce9aade095bc2b3d076701ac89059954e3811a2d217d73",
+    "E005_continuous_ensemble.yaml": "dc7e97c7100a5f0d6c358d27020cc04fcb203ffcdb99f7e761cf80cd6142b993"
+  },
+  "run_signature": "56d255556ed9fa171d0dbc91618b5c97bc3407ed3e1cca06f2ea17f95d30656e",
+  "elapsed_seconds": 6814.681,
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_oof_predictions_E007.npz",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_E007.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_extended_metrics_by_target_E007.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_selected_parameters_E007.csv",
+    "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分/q1_checkpoint_E007.npz"
+  ]
+}

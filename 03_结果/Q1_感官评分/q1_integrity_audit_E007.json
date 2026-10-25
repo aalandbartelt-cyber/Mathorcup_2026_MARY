@@ -1,0 +1,56 @@
+{
+  "experiment_id": "E007",
+  "status": "passed",
+  "model_promoted": false,
+  "run_code_head": "836d944",
+  "outer_folds": 30,
+  "repeat_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "aligned_fields": [
+    "beer",
+    "style",
+    "target_code",
+    "repeat",
+    "y_true",
+    "fold_assignment"
+  ],
+  "metrics_recomputed": 55,
+  "config_hashes_verified": true,
+  "finite_prediction_shape": [
+    10,
+    250,
+    50
+  ],
+  "hard_target_codes": [
+    "dms",
+    "diacetyl",
+    "t2n",
+    "stale_hops",
+    "barnyard",
+    "overall",
+    "A_esters_flower",
+    "F_esters_flower",
+    "A_hops_tropical",
+    "F_hops_tropical"
+  ],
+  "hard_target_source": "A题第一问详细分析.md §11.1: six explicit weak targets plus flower/tropical Aroma and Flavour codes; not chosen from E007 results",
+  "bootstrap_unit": "beer",
+  "bootstrap_prediction_scope": "mean across 10 OOF repeats; not repeat-average metric confidence intervals",
+  "artifact_sha256": {
+    "03_结果/Q1_感官评分/q1_run_manifest_E007.json": "fbd4f1c077c01e48ed4d01d6d54a5c607bcfaf453dffa0113bce99dfe929f309",
+    "03_结果/Q1_感官评分/q1_oof_predictions_E007.npz": "c2604aaa2fb8e52ad71e3438a643d2f9ddfdc79963d3ab66045642586e03784c",
+    "03_结果/Q1_感官评分/q1_extended_metrics_E007.csv": "9ff13c6ed29aa6cd413d6be8dc1c2962195781dc69701521127504589080d63f",
+    "03_结果/Q1_感官评分/q1_selected_parameters_E007.csv": "d0e2cfc4d9499bcf53478085ec24b3ab77cc52f3c9b34c2f2378e945c3b0b231",
+    "03_结果/Q1_感官评分/q1_second_round_decision.json": "663930c0618e6327ce408609afdeb00430a24043e4c448212e4c4ff5137dd46e"
+  }
+}
