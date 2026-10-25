@@ -15,6 +15,9 @@
 | E108 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E108_style_sensitivity.yaml` | `03_结果/Q2_关键化合物/q2_*_E108.*` | 匹配 10×3 原始/风格校正 Top-3 Jaccard=0.264，仅 2/50 完全一致；22 次留一风格删除 Jaccard=0.523，E106 候选平均保留率 0.641，确认风格混杂不可忽略 |
 | E111 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E111_robust_consensus.yaml` | `03_结果/Q2_关键化合物/q2_*_E111.*` | 四路秩融合得到 150 条统计 Top-3，R1/R2/R3=38/52/60；目标预测 P1/P2/P3=22/12/16，进入独立化学证据分级 |
 | E112 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E112_chemical_evidence.yaml` | `03_结果/Q2_关键化合物/q2_*_E112.*` | 冻结排名后追加 OAV、描述词与文献核验；A/B/C/D=8/16/78/48，73 条可算 OAV，23 条中位 OAV≥1；不作因果表述 |
+| E113 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E113_partial_graph.yaml` | `03_结果/Q2_关键化合物/q2_*_E113.*` | 10×3 外层训练折内 Graphical Lasso + Louvain 完成；218 个严格单体字段的图、模块、共聚类与折间稳定性均已审计 |
+| E114 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E114_partial_effect.yaml` | `03_结果/Q2_关键化合物/q2_*_E114.*` | 327,000 条折内目标—化合物条件效应完成；仅作为非因果的偏相关证据族 |
+| E115 | Q2 | COMPLETE | `02_代码/Q2_关键化合物/configs/E115_final_nnls.yaml` | `q2_final_nnls_module_importance_E115.csv.gz`、`q2_final_nnls_conditional_importance_E115.csv.gz`、`q2_final_nnls_sufficiency_E115.csv`、`q2_audit_E115_final_nnls.json` | 最终感官组收缩 NNLS 的 30 折模块/条件归因通过审计；Q1 未重训、NNLS 未重拟合。兼容文件名中的 sufficiency 实为折安全 Top-3 删除检验，不声明充分性 |
 | E116 | Q2 | CODE_READY_NOT_RUN | `02_代码/Q2_关键化合物/configs/E116_grouped_multitask.yaml` | `src/grouped_multitask.py`、`src/run_e116_grouped_multitask.py`、`tests/test_grouped_multitask.py` | 仅代码与测试：三组各 10 个 Aroma/Flavour 目标，其余 20 目标独立 ElasticNet；13 个专项测试与 Q2 全套 76 测试通过。未生成正式 OOF/排名/指标；等待按 E113—E119 顺序执行的授权 |
 
 每次运行追加新行，不覆盖旧实验。指标必须链接到机器生成文件，论文数字以结果目录中的冻结版本为准。

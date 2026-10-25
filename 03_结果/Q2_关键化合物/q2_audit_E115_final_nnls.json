@@ -1,0 +1,66 @@
+{
+  "experiment_id": "E115_final_nnls",
+  "audit_status": "pass",
+  "failed_checks": [],
+  "checks": {
+    "manifest_complete": true,
+    "ten_repeats_thirty_folds": true,
+    "q1_not_retrained": true,
+    "nnls_not_refit": true,
+    "no_hyperparameter_search": true,
+    "sufficiency_not_claimed": true,
+    "module_rows_and_keys": true,
+    "module_partition_exact_218": true,
+    "conditional_rows_and_keys": true,
+    "conditional_scope_valid": true,
+    "deletion_rows_and_keys": true,
+    "deletion_top3_valid": true,
+    "deletion_is_matching_fold_fixed_model": true,
+    "ten_permutations": true,
+    "all_numeric_outputs_finite": true,
+    "cache_metadata_complete": true,
+    "cache_flags_valid": true,
+    "single_adapter_signature": true,
+    "reconstruction_tolerance": true,
+    "manifest_hashes_match": true,
+    "pilot_repeat0_module_exact": true,
+    "pilot_repeat0_conditional_exact": true
+  },
+  "counts": {
+    "module_rows": 13900,
+    "conditional_rows": 327000,
+    "deletion_rows": 1500,
+    "folds": 30,
+    "repeats": 10,
+    "targets": 50,
+    "strict_features": 218,
+    "cache_metadata": 30
+  },
+  "pilot_vs_final": {
+    "pilot_folds": 3,
+    "final_folds": 30,
+    "repeat0_module_exact": true,
+    "repeat0_conditional_exact": true,
+    "deletion_rows_compared": 150,
+    "deletion_top3_changed_after_fold_safe_repair": 150,
+    "note": "The pilot deletion table used globally aggregated Top-3 fields; the final table supersedes it with matching-fold Top-3 fields."
+  },
+  "reconstruction": {
+    "max_cache_validation_abs_error": 1.9984014443252818e-15,
+    "manifest_max_reconstruction_error": 1.9984014443252818e-15
+  },
+  "descriptive": {
+    "module_positive_delta_fraction": 0.6951798561151079,
+    "module_median_delta_mae": 0.0016327927707114,
+    "conditional_positive_delta_fraction": 0.5286452599388379,
+    "conditional_median_delta_mae": 1.9639008434824134e-05,
+    "deletion_positive_delta_fraction": 0.4826666666666667,
+    "deletion_median_delta_mae": -0.000108663141777,
+    "deletion_mean_delta_mae": 0.0005806473680317905
+  },
+  "output_sha256": {
+    "q2_final_nnls_module_importance_E115.csv.gz": "1484b828d42c518067cfe0593a0e3d978587dc171fc7c541081a95e03627a7dd",
+    "q2_final_nnls_conditional_importance_E115.csv.gz": "77d75e16b00f5677ccea85e517a703ecce33e420d9e1b4c37e69358366f8160c",
+    "q2_final_nnls_sufficiency_E115.csv": "e3a7fec2a6daf5500b3b9db1e8df277ba0e0f84f1ae1e19acc1b82f3b37988d5"
+  }
+}

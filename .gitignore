@@ -16,3 +16,5 @@ docs/analysis/txt_official/
 06_交付/04_支撑材料/*
 !06_交付/04_支撑材料/.gitkeep
 06_交付/05_AI工具使用说明/*.pdf
+# E115 fold-model cache is a local reconstruction artifact (~1.6 GB).
+03_结果/Q2_关键化合物/q2_nnls_cache_E115/

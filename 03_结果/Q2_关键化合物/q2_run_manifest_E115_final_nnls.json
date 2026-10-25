@@ -1,16 +1,24 @@
 {
   "experiment_id": "E115_final_nnls",
-  "status": "pilot_complete",
+  "status": "complete",
   "repeat_ids": [
-    0
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
   ],
-  "n_outer_folds": 3,
+  "n_outer_folds": 30,
   "n_features_full": 231,
   "n_features_strict": 218,
   "n_targets": 50,
   "model": "frozen_final_group_NNLS",
   "module_gate": "E113_fold_local_all_modules_no_validation_gate",
-  "sufficiency": "fixed_final_NNLS_feature_mask_using_E114_outer_training_Top3",
   "q1_retrained": false,
   "nnls_refit": false,
   "hyperparameter_search": false,
@@ -20,5 +28,14 @@
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_final_nnls_module_importance_E115.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_final_nnls_conditional_importance_E115.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_final_nnls_sufficiency_E115.csv"
-  ]
+  ],
+  "deletion_audit": "fixed_final_NNLS_matching_fold_E114_Top3_mask",
+  "sufficiency_claimed": false,
+  "max_reconstruction_error": 1.9984014443252818e-15,
+  "cache_metadata_count": 30,
+  "output_sha256": {
+    "q2_final_nnls_module_importance_E115.csv.gz": "1484b828d42c518067cfe0593a0e3d978587dc171fc7c541081a95e03627a7dd",
+    "q2_final_nnls_conditional_importance_E115.csv.gz": "77d75e16b00f5677ccea85e517a703ecce33e420d9e1b4c37e69358366f8160c",
+    "q2_final_nnls_sufficiency_E115.csv": "e3a7fec2a6daf5500b3b9db1e8df277ba0e0f84f1ae1e19acc1b82f3b37988d5"
+  }
 }
