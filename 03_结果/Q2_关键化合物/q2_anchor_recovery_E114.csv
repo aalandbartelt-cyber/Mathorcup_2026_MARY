@@ -1,0 +1,12 @@
+target_code,target_name_en,direct_anchor,partial_effect_rank,median_fold_rank,top3_frequency,top10_frequency,median_effect,direction,sign_consistency
+A_malt_cara,Malt aroma - caramel,color.EBC.,,,,,,,
+X4vg,4-vinyl guaiacol,X4VG,1.0,1.0,1.0,1.0,0.20018681130068897,positive,1.0
+acidity,Acidity,pH,,,,,,,
+alcohol,Alcohol,ethanol..v.v.,1.0,2.0,0.8333333333333334,1.0,0.06824401694001757,positive,1.0
+bitternes,Bitterness,bitterness,,,,,,,
+body,Body,ethanol..v.v.,1.0,6.0,0.26666666666666666,0.8666666666666667,0.06408272285829422,positive,1.0
+co2,Carbonation,CO2.PSI.,14.0,26.0,0.06666666666666667,0.23333333333333334,0.0434297464424245,positive,0.9666666666666667
+diacetyl,Diacetyl,X2.3.butanedione,112.0,104.0,0.0,0.0,-0.01954516686476654,negative,0.8666666666666667
+dms,Dimethyl sulfide,DMS,72.0,54.0,0.0,0.0,0.03810205835027293,positive,1.0
+lactic,Lactic acid,acids_sum,,,,,,,
+t2n,Trans-2-nonenal,X.E..2.nonenal,170.0,147.0,0.0,0.0,0.013248224203169508,positive,0.8333333333333334

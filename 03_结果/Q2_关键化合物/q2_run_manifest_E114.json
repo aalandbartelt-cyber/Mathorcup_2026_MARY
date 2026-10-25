@@ -1,0 +1,24 @@
+{
+  "experiment_id": "E114",
+  "status": "complete",
+  "n_outer_folds": 30,
+  "n_features": 218,
+  "n_targets": 50,
+  "fold_rows": 327000,
+  "ranking_rows": 10900,
+  "random_state": 20261025,
+  "gpu_used": false,
+  "elapsed_seconds": 18.86409679299686,
+  "config_sha256": "fc932c9a553e147d8250ca47495d4da83b8568c77dec2fb39adff9b788e04ef5",
+  "cv_sha256": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1",
+  "python": "3.10.19",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_fold_partial_effects_E114.csv.gz",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_partial_effect_rankings_E114.csv",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_anchor_recovery_E114.csv"
+  ],
+  "checkpoint_directory": "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_checkpoint_E114"
+}
