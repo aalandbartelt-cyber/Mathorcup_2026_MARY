@@ -30,12 +30,13 @@
     "q1_registry_root": "/home/mary/mathorcup"
   },
   "config_sha256": "437194fff4cb193ee0bd6454bcd5570fe6253a896832568960895cb0de18966a",
-  "elapsed_seconds": 1.9216742380085634,
+  "elapsed_seconds": 1.7839819990040269,
   "python": "3.10.19",
   "gpu_used": false,
   "outputs": [
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_selection_E117_pilot.csv",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_nnls_alignment_E117_pilot.csv.gz",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_half_selections_E117_pilot.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_split_indices_E117_pilot.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_pair_jaccard_E117_pilot.csv",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_null_target_permutation_E117_pilot.csv.gz",
@@ -44,10 +45,11 @@
   ],
   "output_sha256": {
     "q2_cpss_selection_E117_pilot.csv": "40c4f47eeacc4927e7bb90cfd934e93cf000f726f49b12168416e7b9c82f4cbc",
-    "q2_cpss_nnls_alignment_E117_pilot.csv.gz": "ca420bb8f1a7e7b3e190461aa215785210f1c662049cd8f75326b76619a829ad",
-    "q2_cpss_split_indices_E117_pilot.csv.gz": "466cb8744869aa526fef530d33670f7dace49401c4e807850879e68b91c5e966",
+    "q2_cpss_nnls_alignment_E117_pilot.csv.gz": "ebe362a993bccf543c39c49b5fcecbece0441fe76bd2412204fdad8c4b09ab19",
+    "q2_cpss_half_selections_E117_pilot.csv.gz": "d7b894d211eab8c776d4e9c2751a942d9359bb6b441d950149a715841a57af28",
+    "q2_cpss_split_indices_E117_pilot.csv.gz": "d53d04a0759484758a559ecbfdb86c58941e6da1f62b3a6a775ff516f658935c",
     "q2_cpss_pair_jaccard_E117_pilot.csv": "f6fe436b05c8a84b24739122f2e424535497af075e8e1407233fb749cf8b0846",
-    "q2_null_target_permutation_E117_pilot.csv.gz": "265184f01d85156c71b2219638bd160869984bba2f14ebf23a6bcc5eaf376605",
+    "q2_null_target_permutation_E117_pilot.csv.gz": "84b88a77182641bf9599d0999c2fa82e5947c2bec75cc6592a0bf0283ab2d6e1",
     "q2_shadow_feature_audit_E117_pilot.csv": "b8826b73609500e6ed626f7fd5a33539f0b760a20697ee10f323189455cebbbf",
     "q2_error_control_E117_pilot.csv": "af9175a773ca1267e735823a7c2285d01db6697655123577930384d78ccbe077"
   }

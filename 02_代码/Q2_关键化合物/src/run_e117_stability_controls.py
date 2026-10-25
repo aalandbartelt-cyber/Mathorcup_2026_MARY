@@ -251,6 +251,37 @@ def select_style_adjusted_topk(
     return selected, score
 
 
+def half_selection_rows(
+    *,
+    pair_id: int,
+    half_name: str,
+    selected: list[set[int]],
+    scores: np.ndarray,
+    target_codes: list[str],
+    feature_codes: list[str],
+) -> list[dict]:
+    """Serialize selected identities with deterministic within-half ranks."""
+
+    rows = []
+    for target_id, target in enumerate(target_codes):
+        ordered = sorted(
+            selected[target_id],
+            key=lambda feature_id: (-scores[feature_id, target_id], feature_codes[feature_id]),
+        )
+        for rank, feature_id in enumerate(ordered, 1):
+            rows.append(
+                {
+                    "pair": int(pair_id),
+                    "half": str(half_name),
+                    "target_code": str(target),
+                    "half_rank": rank,
+                    "feature_code": str(feature_codes[feature_id]),
+                    "absolute_spearman": float(scores[feature_id, target_id]),
+                }
+            )
+    return rows
+
+
 def _permute_within_style(values: np.ndarray, styles: np.ndarray, rng: np.random.Generator) -> np.ndarray:
     result = np.asarray(values).copy()
     for style in pd.unique(styles):
@@ -298,9 +329,30 @@ def run_e117(
     ]
     selections: list[list[set[int]]] = [[] for _ in target_codes]
     jaccard_rows: list[dict] = []
+    half_rows: list[dict] = []
     for pair_id, (left, right) in enumerate(pairs):
-        left_sets, _ = select_style_adjusted_topk(x[left], y[left], styles[left], top_k)
-        right_sets, _ = select_style_adjusted_topk(x[right], y[right], styles[right], top_k)
+        left_sets, left_scores = select_style_adjusted_topk(x[left], y[left], styles[left], top_k)
+        right_sets, right_scores = select_style_adjusted_topk(x[right], y[right], styles[right], top_k)
+        half_rows.extend(
+            half_selection_rows(
+                pair_id=pair_id,
+                half_name="left",
+                selected=left_sets,
+                scores=left_scores,
+                target_codes=target_codes,
+                feature_codes=strict_codes,
+            )
+        )
+        half_rows.extend(
+            half_selection_rows(
+                pair_id=pair_id,
+                half_name="right",
+                selected=right_sets,
+                scores=right_scores,
+                target_codes=target_codes,
+                feature_codes=strict_codes,
+            )
+        )
         for target_id, target in enumerate(target_codes):
             selections[target_id].extend([left_sets[target_id], right_sets[target_id]])
             jaccard_rows.append(
@@ -405,6 +457,7 @@ def run_e117(
     paths = {
         "selection": output_dir / f"q2_cpss_selection_E117{suffix}.csv",
         "alignment": output_dir / f"q2_cpss_nnls_alignment_E117{suffix}.csv.gz",
+        "half_selections": output_dir / f"q2_cpss_half_selections_E117{suffix}.csv.gz",
         "splits": output_dir / f"q2_cpss_split_indices_E117{suffix}.csv.gz",
         "jaccard": output_dir / f"q2_cpss_pair_jaccard_E117{suffix}.csv",
         "null": output_dir / f"q2_null_target_permutation_E117{suffix}.csv.gz",
@@ -414,6 +467,7 @@ def run_e117(
     }
     cpss_frame.to_csv(paths["selection"], index=False)
     alignment.to_csv(paths["alignment"], index=False, compression="gzip")
+    pd.DataFrame(half_rows).to_csv(paths["half_selections"], index=False, compression="gzip")
     pd.DataFrame(split_rows).to_csv(paths["splits"], index=False, compression="gzip")
     pd.DataFrame(jaccard_rows).to_csv(paths["jaccard"], index=False)
     pd.DataFrame(null_rows).to_csv(paths["null"], index=False, compression="gzip")

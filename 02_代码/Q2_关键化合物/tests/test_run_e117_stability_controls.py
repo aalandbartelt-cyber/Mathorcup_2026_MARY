@@ -131,6 +131,20 @@ class E117RunnerTests(unittest.TestCase):
         self.assertAlmostEqual(float(t1.loc["a", "nnls_median_delta_mae"]), 0.3)
         self.assertEqual(int(t1.loc["b", "nnls_predictive_rank"]), 2)
 
+    def test_half_selection_rows_preserve_identity_and_rank(self) -> None:
+        rows = runner.half_selection_rows(
+            pair_id=4,
+            half_name="left",
+            selected=[{2, 0}, {1}],
+            scores=np.asarray([[0.9, 0.1], [0.2, 0.8], [0.5, 0.0]]),
+            target_codes=["t1", "t2"],
+            feature_codes=["a", "b", "c"],
+        )
+        frame = pd.DataFrame(rows)
+        self.assertEqual(frame.loc[frame["target_code"].eq("t1"), "feature_code"].tolist(), ["a", "c"])
+        self.assertEqual(frame.loc[frame["target_code"].eq("t1"), "half_rank"].tolist(), [1, 2])
+        self.assertEqual(frame.loc[frame["target_code"].eq("t2"), "feature_code"].tolist(), ["b"])
+
     def test_reviewed_config_still_fails_closed_on_missing_inputs(self) -> None:
         config = runner.load_config()
         self.assertTrue(config["formal_run"])

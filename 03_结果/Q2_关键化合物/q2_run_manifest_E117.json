@@ -30,12 +30,13 @@
     "q1_registry_root": "/home/mary/mathorcup"
   },
   "config_sha256": "437194fff4cb193ee0bd6454bcd5570fe6253a896832568960895cb0de18966a",
-  "elapsed_seconds": 2.2976204739970854,
+  "elapsed_seconds": 2.390868258997216,
   "python": "3.10.19",
   "gpu_used": false,
   "outputs": [
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_selection_E117.csv",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_nnls_alignment_E117.csv.gz",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_half_selections_E117.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_split_indices_E117.csv.gz",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_cpss_pair_jaccard_E117.csv",
     "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_null_target_permutation_E117.csv.gz",
@@ -44,10 +45,11 @@
   ],
   "output_sha256": {
     "q2_cpss_selection_E117.csv": "3d487e7073ecec417421d14aa41b7339d1f5edca33b2a9a5972e117b218fc20e",
-    "q2_cpss_nnls_alignment_E117.csv.gz": "31df02c3514aa036c7d96e4b1fed8214db9ff9849ee5684b1e96992a1c6b2849",
-    "q2_cpss_split_indices_E117.csv.gz": "357cb2829ce7d64eeb9d8b6f0dcd4d8b63a8500f31e2fbe0214cb89fabfcaf25",
+    "q2_cpss_nnls_alignment_E117.csv.gz": "fa4574b21195774484b8787b3d31619de17aeb17c1edbcec1f7774312d497897",
+    "q2_cpss_half_selections_E117.csv.gz": "befc319b46a44fe84cfeaab078c914ac620227c3ca2c66ce8e1ee6c822e61a10",
+    "q2_cpss_split_indices_E117.csv.gz": "051ef4159c48624c00f942011743c020485fc69b04939db81bda82fd537f4103",
     "q2_cpss_pair_jaccard_E117.csv": "3687309314c06fee7c41d78b9858ea05e0799f1c440d855702756b423134e3c6",
-    "q2_null_target_permutation_E117.csv.gz": "1a4b53e8634f807d8ce3b19681ecba09692f237ee5f65ac5257866dd2354af63",
+    "q2_null_target_permutation_E117.csv.gz": "f60869688dd84c317db90622146d362c85f3fa9153a6de35670a2d0222255d00",
     "q2_shadow_feature_audit_E117.csv": "506a59019e3cafcbe647cacbd815a18c17f88dd54feaf7be44680a5534ec40f9",
     "q2_error_control_E117.csv": "f9c4ae30c107b96843bd338edb118bbd4659665f806e7f875b06fb44feb7e296"
   }

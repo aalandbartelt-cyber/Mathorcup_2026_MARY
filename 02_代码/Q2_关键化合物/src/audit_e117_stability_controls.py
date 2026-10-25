@@ -50,6 +50,7 @@ def main() -> None:
     shadow = pd.read_csv(RESULT / "q2_shadow_feature_audit_E117.csv")
     error = pd.read_csv(RESULT / "q2_error_control_E117.csv")
     alignment = pd.read_csv(RESULT / "q2_cpss_nnls_alignment_E117.csv.gz")
+    half_selections = pd.read_csv(RESULT / "q2_cpss_half_selections_E117.csv.gz")
     splits = pd.read_csv(RESULT / "q2_cpss_split_indices_E117.csv.gz")
 
     split_ok = True
@@ -81,6 +82,11 @@ def main() -> None:
         "complementary_splits_valid": bool(split_ok) and len(splits) == 25_000,
         "pair_jaccard_complete": len(pair_jaccard) == 5_000
         and pair_jaccard.groupby("target_code")["pair"].nunique().eq(100).all(),
+        "half_selection_identities_complete": len(half_selections) == 30_000
+        and not half_selections.duplicated(
+            ["pair", "half", "target_code", "half_rank"]
+        ).any()
+        and half_selections.groupby(["pair", "half", "target_code"]).size().eq(3).all(),
         "null_complete": len(null) == 10_900
         and null["target_code"].nunique() == 50
         and null["feature_code"].nunique() == 218,
