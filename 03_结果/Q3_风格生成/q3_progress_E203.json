@@ -1,0 +1,8 @@
+{
+  "experiment_id": "E203",
+  "status": "complete",
+  "completed_folds": 30,
+  "n_outer_folds": 30,
+  "last_split_id": "R09F2",
+  "elapsed_seconds": 21.035872381995432
+}

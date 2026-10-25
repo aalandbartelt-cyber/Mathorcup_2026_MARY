@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "replace_copula_baseline": false,
+  "e204_primary_distribution_model": "style_copula_shrunk",
+  "e203_role": "structural_ablation",
+  "paired_unit": "style_by_repeat",
+  "robust_comparison": {
+    "shared_lowrank": {
+      "mean_w1_oriented_delta": 0.088587,
+      "energy_v_oriented_delta": 0.070266,
+      "coverage_oriented_delta": 0.050988,
+      "spearman_pair_rmse_delta": -0.004213
+    },
+    "style_residual_shrunk": {
+      "mean_w1_oriented_delta": 0.088179,
+      "energy_v_oriented_delta": 0.065751,
+      "coverage_oriented_delta": 0.059099,
+      "spearman_pair_rmse_delta": -0.002560
+    },
+    "style_residual_floor": {
+      "mean_w1_oriented_delta": 0.088384,
+      "energy_v_oriented_delta": 0.065768,
+      "coverage_oriented_delta": 0.058802,
+      "spearman_pair_rmse_delta": -0.002562
+    }
+  },
+  "floor_state_diagnostic": {
+    "continuous_mean_absolute_error": 0.369728,
+    "explicit_state_mean_absolute_error": 0.213988,
+    "interpretation": "observed floor-state diagnostic only; not a detection-limit or true-zero certificate"
+  },
+  "e204_gate": "open_with_copula_primary_and_lowrank_ablation",
+  "chemical_safety_certified": false,
+  "migration_performed": false
+}

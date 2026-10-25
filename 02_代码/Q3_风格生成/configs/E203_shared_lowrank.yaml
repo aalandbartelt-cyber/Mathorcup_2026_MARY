@@ -1,0 +1,29 @@
+experiment: E203
+question: Q3
+status: registered_before_run
+methods: [shared_lowrank, style_residual_shrunk, style_residual_floor]
+target_styles: [Tripel, Kriek, Lambic]
+seeds: [20261025, 20261026, 20261027, 20261028, 20261029]
+n_repeats: 10
+n_folds: 3
+outer_cv: frozen_10x3
+preprocessing: outer_training_median_and_standard_deviation
+rank_candidates: [8, 16, 24]
+covariance_kappa_candidates: [10.0, 30.0, 60.0]
+mean_kappa: 15.0
+inner_splits: 2
+inner_seed: 20261025
+selection_metric: mean_of_style_mean_w1_plus_energy_v
+floor_fields:
+  X4VG:
+    value: -2.013157381
+    tolerance: 1.0e-9
+    prior_strength: 10.0
+defect_fields: [DMS, X2.3.butanedione, X4VG, X.E..2.nonenal]
+generation_count: matched_outer_validation_style_count
+support_policy: clipped_to_outer_training_style_minmax
+q1_interface: final_model_registry_group_NNLS_v5_read_only
+q1_retrained: false
+gpu_used: false
+entry_gate: frozen_E202_complete_manifest
+formal_run: registered
