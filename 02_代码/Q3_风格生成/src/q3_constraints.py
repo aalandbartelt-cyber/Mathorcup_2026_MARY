@@ -8,17 +8,17 @@ import pandas as pd
 
 def audit_concentrations(source, candidate, source_known, scenario: str, *,
                          threshold=None, atol: float = 1e-9, rtol: float = 1e-7) -> pd.DataFrame:
-    if scenario not in {"C1", "C2", "C3"} or atol < 0 or rtol < 0:
+    if (scenario not in {"C1", "C2", "C3"} or not np.isfinite([atol, rtol]).all()
+            or atol < 0 or rtol < 0):
         raise ValueError("unknown scenario or invalid numerical tolerance")
-    source, candidate = np.asarray(source, float), np.asarray(candidate, float)
-    known = np.asarray(source_known)
+    source, candidate = np.atleast_1d(np.asarray(source, float)), np.atleast_1d(np.asarray(candidate, float))
+    known = np.atleast_1d(np.asarray(source_known))
     if known.dtype.kind != "b":
         raise ValueError("source_known must contain boolean flags")
+    if source.ndim != 1 or source.size == 0 or source.shape != candidate.shape or source.shape != known.shape:
+        raise ValueError("nonempty aligned source/candidate/known vectors required")
     tau = np.asarray(np.nan if threshold is None else threshold, float)
-    source, candidate, known, tau = [np.atleast_1d(v) for v in
-                                   np.broadcast_arrays(source, candidate, known, tau)]
-    if source.ndim != 1:
-        raise ValueError("constraints require one-dimensional aligned arrays")
+    tau = np.broadcast_to(tau, source.shape)
     if np.isinf(source).any() or (source[np.isfinite(source)] < 0).any():
         raise ValueError("source must be nonnegative concentration or missing")
     if scenario != "C1" and (np.isinf(tau).any() or (tau[np.isfinite(tau)] <= 0).any()):
@@ -58,6 +58,9 @@ def project_upper_bounds(candidate, upper) -> np.ndarray:
 
 def summarize_migration(audit: pd.DataFrame, *, target_gain: bool,
                         proxy_nonworsening: bool | None) -> dict:
+    if (not isinstance(target_gain, (bool, np.bool_)) or
+            (proxy_nonworsening is not None and not isinstance(proxy_nonworsening, (bool, np.bool_)))):
+        raise ValueError("migration/proxy decisions must be explicit boolean flags or unknown")
     if audit.empty or not {"status", "passed"}.issubset(audit):
         raise ValueError("nonempty direct-constraint audit required")
     passed = audit.passed.astype("boolean")

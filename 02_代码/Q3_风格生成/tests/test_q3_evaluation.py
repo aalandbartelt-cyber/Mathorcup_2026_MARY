@@ -51,6 +51,10 @@ class EvaluationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             distribution_diagnostics(self.real, self.real * np.nan, self.training, [1., 1.])
 
+    def test_finite_inputs_with_unrepresentable_scaled_distances_rejected(self):
+        with self.assertRaises(ValueError):
+            distribution_diagnostics(self.real, self.real + 1e308, self.training, [1e-308, 1e-308])
+
 
 if __name__ == "__main__":
     unittest.main()

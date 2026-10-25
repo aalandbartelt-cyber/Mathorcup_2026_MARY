@@ -1,0 +1,89 @@
+{
+  "experiment_id": "E200",
+  "status": "complete",
+  "model_fitted": false,
+  "gpu_used": false,
+  "data_values_changed": false,
+  "input_hashes_unchanged": true,
+  "scope": "full_data_descriptive_contract_not_training_statistics",
+  "counts": {
+    "n_beers": 250,
+    "n_features": 231,
+    "n_targets": 50,
+    "n_styles": 22,
+    "scale_counts": {
+      "unverified": 161,
+      "log10": 37,
+      "raw": 33
+    },
+    "missing_chemistry_cells": 73,
+    "calibration_conflicts": 83,
+    "n_source_beers": 11,
+    "positive_reference_conflicts": 80,
+    "negative_reference_cells": 3,
+    "n_source_defect_rows": 44,
+    "source_measurement_states": {
+      "observed": 33,
+      "reference_zero_ambiguous": 9,
+      "missing_stored": 2
+    }
+  },
+  "settings": {
+    "experiment_id": "E200",
+    "question": "Q3",
+    "model_fitted": false,
+    "expected_beers": 250,
+    "expected_features": 231,
+    "expected_targets": 50,
+    "expected_styles": 22,
+    "expected_scale_counts": {
+      "log10": 37,
+      "raw": 33,
+      "unverified": 161
+    },
+    "expected_missing_cells": 73,
+    "expected_source_beers": 11,
+    "source_style": "Pils/Lager",
+    "n_repeats": 10,
+    "n_folds": 3,
+    "minimum_scale_pairs": 3,
+    "minimum_scale_match": 0.95,
+    "outputs": "03_结果/Q3_风格生成"
+  },
+  "input_sha256": {
+    "attachment_1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "attachment_4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "attachment_8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a",
+    "frozen_cv": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1",
+    "compound_dictionary": "fd15bec4f0377813daf5842fa054013b39668ae06cf3b89f3bbb5960bb72c169"
+  },
+  "input_files": {
+    "attachment_1.csv": "data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv",
+    "attachment_4.csv": "data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/4.csv",
+    "attachment_8.xlsx": "data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/8.xlsx",
+    "frozen_cv": "03_结果/Q1_感官评分/q1_cv_splits.csv",
+    "compound_dictionary": "01_数据/compound_name_map.csv"
+  },
+  "source_sha256": {
+    "run_e200_contract.py": "2daa831318879f60960befd0e8d17acc01722d62263efc01592553371e184688",
+    "E200_contract.yaml": "90bd5d7dd361d5759a916605bf52b06517f5f48b255535bd28a75b38eba1e2a8",
+    "q3_contract.py": "9e540d4931a0383249444a2378ccbdb58a305ca8d1f14f2aa73b89199940c36a",
+    "q3_constraints.py": "dd904b8635d2faee0f1250753065a5ef80be403c7be6c04f5c374ab7613aa95f",
+    "q3_evaluation.py": "d8f5d6a992a1756fc9831afd4b522589b43de3c14213b940e97ceca0ba851708"
+  },
+  "output_sha256": {
+    "q3_field_contract_E200.csv": "8987b6eea0b6724221f8c684a6f84cf8ad21faaf5614a318dd35f7e6311aa845",
+    "q3_calibration_conflicts_E200.csv": "fc8a3ce59606b6743e395d5b797b0fb43f2d6a63ae53bf20c2e604f2f8f9d663",
+    "q3_measurement_states_E200.csv": "c4b266962e871cd1aaeb887d5413039f60cb013a4cab3f3729a1d1a2602e113b",
+    "q3_defect_registry_E200.csv": "788b00657d95c852612bd0d28d98f8f118a28db14bc5b811e046f64acd91881c",
+    "q3_source_defects_E200.csv": "2373e399cbb9bc00ba00c62bbc502fedb52813833805d14c698e67df51fd37e9",
+    "q3_style_counts_E200.csv": "7f24c109647e3b9217bbf4073475c1c4d790762d8313fedb9005fc85b10abb30",
+    "q3_preprocessing_steps_E200.csv": "5202d54685193da097465f3c6a83b33590cff8cb23b35662269e46f731beb2b6"
+  },
+  "limitations": [
+    "reference zero is not a certified true zero",
+    "source missing/conflicting values cannot certify nonworsening",
+    "stale_hops is a sensory proxy; no chemical threshold",
+    "fold-local statistics and model validation remain required"
+  ]
+}

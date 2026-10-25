@@ -1,0 +1,19 @@
+experiment_id: E200
+question: Q3
+model_fitted: false
+expected_beers: 250
+expected_features: 231
+expected_targets: 50
+expected_styles: 22
+expected_scale_counts:
+  log10: 37
+  raw: 33
+  unverified: 161
+expected_missing_cells: 73
+expected_source_beers: 11
+source_style: Pils/Lager
+n_repeats: 10
+n_folds: 3
+minimum_scale_pairs: 3
+minimum_scale_match: 0.95
+outputs: 03_结果/Q3_风格生成

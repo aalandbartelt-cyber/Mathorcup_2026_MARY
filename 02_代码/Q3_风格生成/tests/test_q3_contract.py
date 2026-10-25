@@ -37,6 +37,16 @@ class ContractTests(unittest.TestCase):
         np.testing.assert_array_equal(aligned.DMS, c.DMS)
         self.assertTrue(aligned.beer_id.eq(-1).all())
 
+    def test_source_audit_handles_nondefault_shuffled_dataframe_index(self):
+        x, c, m = self.fixture()
+        x = x.sample(frac=1, random_state=5)
+        fields, _ = feature_contract(x, c, m)
+        source = source_defect_table(x, c, fields)
+        self.assertTrue(source.source_known.all())
+        expected = c.set_index("beer").DMS
+        actual = source.query('feature_code=="DMS"').set_index("beer").source_concentration
+        np.testing.assert_allclose(actual.sort_index(), expected.sort_index())
+
     def test_duplicate_missing_key_or_disagreeing_style_rejected(self):
         x, c, _ = self.fixture()
         for bad in [pd.concat([c, c.iloc[:1]]), c.iloc[1:], c.assign(tasting_category_fine="other")]:
@@ -90,6 +100,17 @@ class ContractTests(unittest.TestCase):
         c["DMS"] = 10**(np.arange(21) + 4.)
         fields, _ = feature_contract(x, c, m)
         self.assertEqual(fields.set_index("feature_code").loc["DMS", "scale_in_1_csv"], "unverified")
+
+    def test_negative_calibration_is_recorded_not_clipped_or_certified(self):
+        x, c, m = self.fixture()
+        c.loc[0, "DMS"] = -2.
+        fields, cells = feature_contract(x, c, m)
+        self.assertEqual(fields.set_index("feature_code").loc["DMS", "scale_in_1_csv"], "log10")
+        self.assertEqual(cells.query('beer==0 and feature_code=="DMS"').iloc[0].status,
+                         "reference_negative")
+        self.assertEqual(c.loc[0, "DMS"], -2.)
+        source = source_defect_table(x, c, fields)
+        self.assertFalse(source.query('beer==0 and feature_code=="DMS"').iloc[0].source_known)
 
     def test_registry_preserves_missing_threshold_and_sensory_only_defect(self):
         _, _, m = self.fixture()

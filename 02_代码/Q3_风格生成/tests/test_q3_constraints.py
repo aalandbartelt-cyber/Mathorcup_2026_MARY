@@ -71,6 +71,20 @@ class ConstraintTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             audit_concentrations([1.], [1.], [True], "C2", threshold=0.)
 
+    def test_empty_or_misaligned_vectors_cannot_silently_broadcast(self):
+        for source, candidate, known in [([], [], []), ([1., 2.], [1.], [True, True])]:
+            with self.subTest(source=source), self.assertRaises(ValueError):
+                audit_concentrations(source, candidate, known, "C1")
+
+    def test_nonfinite_tolerance_rejected(self):
+        with self.assertRaises(ValueError):
+            audit_concentrations([1.], [1.], [True], "C1", atol=np.nan)
+
+    def test_nonboolean_summary_flag_cannot_turn_string_false_into_success(self):
+        table = audit_concentrations([1.], [.5], [True], "C1")
+        with self.assertRaises(ValueError):
+            summarize_migration(table, target_gain=True, proxy_nonworsening="False")
+
 
 if __name__ == "__main__":
     unittest.main()

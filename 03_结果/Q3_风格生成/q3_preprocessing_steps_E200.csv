@@ -1,0 +1,7 @@
+﻿step,rows_before,cols_before,rows_after,cols_after,reason,scope
+P0_read,250,234,250,234,读取并核对实际样本和字段,descriptive_schema_audit_no_model_fit
+P1_beer_align,250,53,250,53,beer唯一连接，beer_id不参与,descriptive_schema_audit_no_model_fit
+P2_feature_split,250,234,250,231,分离元数据，不增删样本,descriptive_schema_audit_no_model_fit
+P3_scale_audit,250,231,250,231,识别存储尺度和冲突，不改原值,descriptive_schema_audit_no_model_fit
+P4_missing_zero_audit,250,231,250,231,缺失/零/地板保留状态，全数据不插补,descriptive_schema_audit_no_model_fit
+P5_frozen_cv,2500,6,2500,6,复用既有分折，不重新划分,descriptive_schema_audit_no_model_fit

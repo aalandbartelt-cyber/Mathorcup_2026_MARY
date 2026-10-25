@@ -22,9 +22,14 @@ def distribution_diagnostics(real, generated, training, scale, *, knn_k: int = 1
     if (not isinstance(knn_k, (int, np.integer)) or not 1 <= knn_k < len(real)
             or not np.isfinite(duplicate_tolerance) or duplicate_tolerance < 0):
         raise ValueError("invalid neighbor count or duplicate tolerance")
-    r, g, train = real / scale, generated / scale, training / scale
+    with np.errstate(over="ignore", invalid="ignore"):
+        r, g, train = real / scale, generated / scale, training / scale
+    if not all(np.isfinite(a).all() for a in [r, g, train]):
+        raise ValueError("training-scale normalization is not numerically representable")
     rms_factor = np.sqrt(p)
     rg, rr, gg = [a / rms_factor for a in [cdist(r, g), cdist(r, r), cdist(g, g)]]
+    if not all(np.isfinite(a).all() for a in [rg, rr, gg]):
+        raise ValueError("pairwise distances are not numerically representable")
     w1 = [float(wasserstein_distance(r[:, j], g[:, j])) for j in range(p)]
     nonconstant = (np.ptp(r, axis=0) > 0) & (np.ptp(g, axis=0) > 0)
     n_cols = int(nonconstant.sum())

@@ -61,6 +61,8 @@ def _cell_records(chemistry: pd.DataFrame, calibrated: pd.DataFrame,
                 status = "missing_stored"
             elif not np.isfinite(raw):
                 status = "missing_reference"
+            elif raw < 0:
+                status = "reference_negative"
             elif raw == 0:
                 status = "reference_zero_ambiguous"
             elif row.scale_in_1_csv == "unverified":
@@ -100,8 +102,8 @@ def feature_contract(chemistry: pd.DataFrame, calibrated: pd.DataFrame,
             raise ValueError(f"{feature}: infinite stored measurement")
         available = feature in calibrated
         raw = calibrated[feature].to_numpy(float) if available else np.full(len(stored), np.nan)
-        if np.isinf(raw).any() or (raw[np.isfinite(raw)] < 0).any():
-            raise ValueError(f"{feature}: invalid calibrated concentration")
+        if np.isinf(raw).any():
+            raise ValueError(f"{feature}: infinite calibrated measurement")
         positive = np.isfinite(stored) & np.isfinite(raw) & (raw > 0)
         raw_rate = log_rate = np.nan
         scale, scale_status = "unverified", "unverified"
@@ -149,6 +151,7 @@ def defect_registry(metadata: pd.DataFrame) -> pd.DataFrame:
 
 def source_defect_table(chemistry: pd.DataFrame, calibrated: pd.DataFrame,
                         fields: pd.DataFrame, source_style: str = "Pils/Lager") -> pd.DataFrame:
+    chemistry = chemistry.reset_index(drop=True)
     calibrated = align_by_beer(chemistry, calibrated, "calibrated")
     source = chemistry.loc[chemistry.tasting_category_fine.eq(source_style)]
     if source.empty:
