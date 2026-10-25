@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import yaml
 from sklearn.impute import SimpleImputer
-from q3_contract import validate_cv
+from run_e200_contract import validate_cv
 from q3_evaluation import distribution_diagnostics
 from empirical_generation import StyleEmpiricalGenerator
 
