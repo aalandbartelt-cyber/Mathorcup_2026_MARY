@@ -1,0 +1,33 @@
+{
+  "documents": [
+    {
+      "word": "05_论文/Q2_关键化合物/第二问_论文正文_v1.docx",
+      "word_sha256": "6d57b64db67996aece679d11896ed73b1d052bf53efabcfbbd82b36ab1d2748a",
+      "pdf": "05_论文/Q2_关键化合物/第二问_论文正文_v1.pdf",
+      "pdf_sha256": "049ca847f0cc0488f9087f27e893dd1908ffd2a0818f74151545cda3fde968d4",
+      "pages": 8,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    },
+    {
+      "word": "05_论文/Q2_关键化合物/模型假设_Q2_v1.docx",
+      "word_sha256": "aa16dd86cb643222fc5993830179749242bd75d3920ddb4d68844b5c2f7a1ee6",
+      "pdf": "05_论文/Q2_关键化合物/模型假设_Q2_v1.pdf",
+      "pdf_sha256": "dcfd791659bacbccb8fcf6aed191aa5ea7ee1d3f62a9854a0f023a167440f2f5",
+      "pages": 1,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    },
+    {
+      "word": "05_论文/Q2_关键化合物/问题分析_Q2_v1.docx",
+      "word_sha256": "41d1859dfe9491227ce664ba0adee1b0bf9885c6b698b5770422060669a290a1",
+      "pdf": "05_论文/Q2_关键化合物/问题分析_Q2_v1.pdf",
+      "pdf_sha256": "8fd88506f7ad80b285b9b592d35aad729e954f601c6fc99cdb4ef4e5f57b3c22",
+      "pages": 1,
+      "page_width_points": 612.0,
+      "page_height_points": 792.0
+    }
+  ],
+  "review_pdf": "05_论文/Q2_关键化合物/Q2_论文审计合订本_v1.pdf",
+  "review_sha256": "382af54738e4a4b2b9235c797ce9481dffad088a6c1d1ac1c70d361409d19cbc"
+}

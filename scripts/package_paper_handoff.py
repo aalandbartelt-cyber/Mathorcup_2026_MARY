@@ -73,6 +73,10 @@ def main() -> None:
         figdir=figdir/'final_v4'
         qlist=figdir/'Q1_图清单.csv'
         figs = [figdir / name for name in Q1_REQUIRED_FIGURES]
+    elif key in {"Q2", "Q3"}:
+        docx = find_latest(qdir, f"{qnum}_论文正文_v*.docx")
+        assumptions = find_latest(qdir, f"模型假设_{key}_v*.docx")
+        analysis = find_latest(qdir, f"问题分析_{key}_v*.docx")
 
     missing = []
     if not docx or not docx.is_file(): missing.append(f"论文正文 docx（{qdir}/{qnum}_论文正文_v1.docx）")
@@ -87,6 +91,12 @@ def main() -> None:
         if not list(qdir.glob('Q1_论文审计合订本_v*.pdf')):missing.append('审计合订本PDF')
         for name in ['程序','数据与结果','附录核心代码']:
             if not (qdir/name).is_dir():missing.append(name)
+    elif key == "Q2":
+        if docx and not docx.with_suffix('.pdf').is_file():missing.append('正文同步PDF')
+        if not list(qdir.glob('Q2_论文审计合订本_v*.pdf')):missing.append('审计合订本PDF')
+        for name in ['数据与结果','附录核心代码']:
+            if not (qdir/name).is_dir():missing.append(name)
+        if not (qdir/'当前版本说明.md').is_file():missing.append('当前版本说明.md')
     if missing:
         raise SystemExit("交付包缺项：\n- " + "\n- ".join(missing))
 
@@ -103,6 +113,11 @@ def main() -> None:
                 shutil.copytree(qdir/name,stage/name)
             for name in ['摘要结论与模型评价.md']:
                 if (qdir/name).exists():shutil.copy2(qdir/name,stage/name)
+            for pdf in qdir.glob('*.pdf'):shutil.copy2(pdf,stage/pdf.name)
+        elif key == "Q2":
+            for name in ['数据与结果','附录核心代码']:
+                shutil.copytree(qdir/name,stage/name)
+            shutil.copy2(qdir/'当前版本说明.md',stage/'当前版本说明.md')
             for pdf in qdir.glob('*.pdf'):shutil.copy2(pdf,stage/pdf.name)
         for f in figs:
             shutil.copy2(f, stage / "图片" / f.name)
@@ -123,14 +138,32 @@ def main() -> None:
             f"- 图片：{len(figs)} 张 + {qlist.name}（图片/）",
             "",
             "## 交付状态",
-            "- 最终方法为感官组收缩NNLS；基线与融合方法均按学术名称呈现",
-            "- 正文、图表与附带的折外指标和预测表一致",
-            "- 0–6 相对强度等级仅按训练折经验分布映射",
-            "- 七档分位代理一致性不等于原始评分准确率",
-            "- 图片提供300dpi PNG与可编辑SVG；图题在正文中另排",
+        ]
+        if key == "Q1":
+            manifest += [
+                "- 最终方法为感官组收缩NNLS；基线与融合方法均按学术名称呈现",
+                "- 正文、图表与附带的折外指标和预测表一致",
+                "- 0–6 相对强度等级仅按训练折经验分布映射",
+                "- 七档分位代理一致性不等于原始评分准确率",
+            ]
+        elif key == "Q2":
+            manifest += [
+                "- 本包为最终感官模型归因完成前的当前阶段版，不标记为总论文最终版",
+                "- 正文、图表与机器可读表统一采用已完成的四路稳健秩融合和化学核验口径",
+                "- 完整150条Top-3及稳健排名放在“数据与结果”，正文只列代表性关系",
+                "- 最终感官模型归因审计完成后另存新版本，不覆盖本包",
+            ]
+        manifest += [
+            "- 图片为300dpi PNG；图题在正文中另排",
             "- 模板保留原有标题、正文直接格式与页面设置；总论文组装时统一版心",
         ]
         (stage / "交付说明.md").write_text("\n".join(manifest), encoding="utf-8")
+        hashes=[]
+        import hashlib
+        for item in sorted(stage.rglob('*')):
+            if item.is_file() and item.name!='SHA256SUMS.txt':
+                hashes.append(f"{hashlib.sha256(item.read_bytes()).hexdigest()}  {item.relative_to(stage)}")
+        (stage/'SHA256SUMS.txt').write_text('\n'.join(hashes)+'\n',encoding='utf-8')
         from audit_paper_language import audit
         language=audit([stage])
         if language['hits'] or language['unhandled']:
