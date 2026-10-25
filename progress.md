@@ -119,6 +119,17 @@
   - 写入 `docs/superpowers/specs/2026-10-24-q1-second-round-multi-metric-optimization-design.md` 并完成占位符、口径、冲突和可执行性自检。
   - 用户确认书面规格后，生成 `docs/superpowers/plans/2026-10-24-q1-second-round-multi-metric-optimization.md`，拆为指标抽取、累计有序模型、约束融合、共享 OOF、E004—E007 和最终审计九项任务。
 
+### 学长版参考综合与 Q1/Q2 方案更新（2026-10-25）
+- **Status:** complete
+- Actions taken:
+  - 清点学长版 198 个文件，读取论文 DOCX/PDF 与修改说明，核对 Q1/Q2/Q3 源码、107 个 CSV 和关键 JSON/NPY；修改说明的“假设/评价可自行编”未被当作依据。
+  - 在总对照中新增独立“学长版”Q1/Q2/Q3 行、统一口径、可借鉴/不借鉴、本队差距和 E007/E008/Q2 影响，未覆盖 BZD/agent/agent2/agent3 原结论。
+  - 新建 `docs/analysis/2026初赛/学长版纳入后的Q1Q2优化方案.md`，将严格外折内 NNLS、Q2 阈值/BH-FDR 和 E119 事后化学审计列入下一轮；全样本分位校准、固定全量图和全数据四方法排名不采用。
+  - E007 全程未杀死、重启或改动，提交前自然推进到 5/30；E008 与 Q2 未启动。
+- Verification:
+  - 14 项交付要求断言全部通过；`git diff --check` 通过。
+  - 学长版连续指标、网络规模与 Copula 指标均追溯到 CSV/JSON/代码；确认 Q2 正式白名单为 217 项且无可复算 OAV 列。
+
 ### Q1：详细问题分析与实验设计
 - **Status:** analysis complete; implementation pending
 - **Started:** 2026-10-23 18:28 CST
