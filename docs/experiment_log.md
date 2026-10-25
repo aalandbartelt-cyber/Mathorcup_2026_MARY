@@ -23,3 +23,9 @@
 
 每次运行追加新行，不覆盖旧实验。指标必须链接到机器生成文件，论文数字以结果目录中的冻结版本为准。
 
+## 2026-10-25 E009 严格 NNLS 筛查启动
+
+| 实验 ID | 问题 | 状态 | 配置 | 产物 | 结论 |
+|---|---|---|---|---|---|
+| E009 screening | Q1 | RUNNING | `02_代码/Q1_感官评分/configs/E009_nnls_stacking.yaml`，源代码提交`aaa7bc8` | `q1_launch_context_E009_screening.json`；日志`outputs/logs/q1_e009_screening.log` | E007完整审计不晋级、既有OOF互补性和83项测试均已核验后，于17:23启动3×3外层/内层3折筛查；主候选固定感官组NNLS，shared/target仅消融；0.5收缩和五门槛不变。当前无正式成绩，不将启动视为晋级。 |
+

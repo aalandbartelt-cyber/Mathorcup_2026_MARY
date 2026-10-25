@@ -1,0 +1,26 @@
+{
+  "experiment_id": "E009",
+  "stage": "screening",
+  "status": "running",
+  "started_at": "2026-10-25T17:23:54+08:00",
+  "tmux_session": "q1_e009_screening",
+  "python_pid": 212292,
+  "run_code_head": "aaa7bc8",
+  "prior_artifact_commit": "626d3ab",
+  "prior_results": "/home/mary/mathorcup/.worktrees/q1-multimetric-opt/03_结果/Q1_感官评分",
+  "prior_audit_sha256": "663930c0618e6327ce408609afdeb00430a24043e4c448212e4c4ff5137dd46e",
+  "prior_run_manifest_sha256": "fbd4f1c077c01e48ed4d01d6d54a5c607bcfaf453dffa0113bce99dfe929f309",
+  "primary_scope": "group",
+  "scopes": [
+    "shared",
+    "group",
+    "target"
+  ],
+  "screening_outer_folds": 9,
+  "outer_protocol": "frozen repeats 0,1,2 x 3 folds; nested inner 3",
+  "five_thresholds_unchanged": true,
+  "gpu_used": false,
+  "q1_tests_passed": 83,
+  "log": "outputs/logs/q1_e009_screening.log",
+  "no_formal_result_yet": true
+}
