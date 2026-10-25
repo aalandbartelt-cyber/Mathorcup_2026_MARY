@@ -15,13 +15,20 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[3]
-ATTACHMENTS = (
-    ROOT
-    / "data"
+# Raw competition attachments are intentionally git-ignored.  A worktree
+# therefore reads the immutable canonical copy instead of duplicating data.
+_ATTACHMENT_RELATIVE = (
+    Path("data")
     / "2026初赛"
     / "2026年MathorCup大数据挑战赛-赛道A初赛"
     / "附件"
 )
+ATTACHMENTS = ROOT / _ATTACHMENT_RELATIVE
+if not (ATTACHMENTS / "1.csv").is_file():
+    _CANONICAL_ROOT = Path("/home/mary/mathorcup")
+    canonical_attachments = _CANONICAL_ROOT / _ATTACHMENT_RELATIVE
+    if (canonical_attachments / "1.csv").is_file():
+        ATTACHMENTS = canonical_attachments
 DATA_DIR = ROOT / "01_数据"
 RESULT_DIR = ROOT / "03_结果" / "Q2_关键化合物"
 Q1_RESULT_DIR = ROOT / "03_结果" / "Q1_感官评分"
