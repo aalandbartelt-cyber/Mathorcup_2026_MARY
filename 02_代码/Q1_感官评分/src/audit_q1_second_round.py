@@ -21,6 +21,23 @@ HARD_THRESHOLDS = {
     "acc_pm1_proxy": 0.5734,
 }
 METRICS = ["r2", "mae", "spearman", "qwk_proxy", "acc_pm1_proxy"]
+FULL_CANDIDATES = {
+    "E005": {
+        "model": "continuous_blend",
+        "metric_prefix": "pred_continuous_blend:repeat_",
+        "prediction_key": "pred_continuous_blend",
+    },
+    "E006": {
+        "model": "dual_route",
+        "metric_prefix": "pred_dual_route:repeat_",
+        "prediction_key": "pred_dual_route",
+    },
+    "E007": {
+        "model": "shrunk_gate",
+        "metric_prefix": "pred_shrunk_gate:repeat_",
+        "prediction_key": "pred_shrunk_gate",
+    },
+}
 
 
 def _prediction_pair(
@@ -607,6 +624,214 @@ def audit_e007_screening() -> tuple[pd.DataFrame, dict]:
     return summary, payload
 
 
+def audit_e007_full() -> tuple[pd.DataFrame, dict]:
+    """Audit E007 full 10-repeat shrunk gating against every frozen gate."""
+    summary_row, paired, decision = compare_full_frames(
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv"),
+        pd.read_csv(RESULT_DIR / "q1_extended_metrics_E007.csv"),
+        experiment_id="E007",
+        model="shrunk_gate",
+        candidate_prefix="pred_shrunk_gate:repeat_",
+    )
+    summary = pd.DataFrame([summary_row])
+    summary_path = RESULT_DIR / "q1_full_comparison_E007.csv"
+    repeat_path = RESULT_DIR / "q1_full_by_repeat_E007.csv"
+    decision_path = RESULT_DIR / "q1_full_decision_E007.json"
+    summary.to_csv(summary_path, index=False)
+    paired.to_csv(repeat_path, index=False)
+    payload = {
+        "status": "full_gate",
+        "hard_thresholds": HARD_THRESHOLDS,
+        "decision": decision,
+        "outputs": [str(summary_path), str(repeat_path)],
+    }
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return summary, payload
+
+
+def _load_oof_archive(path, prediction_key: str) -> dict[str, np.ndarray]:
+    """Load one OOF archive and require the fields needed by the final audit."""
+    required = {
+        "y_true",
+        "beer",
+        "style",
+        "target_code",
+        "repeat",
+        prediction_key,
+    }
+    with np.load(path, allow_pickle=False) as archive:
+        missing = required - set(archive.files)
+        if missing:
+            raise RuntimeError(f"{path} misses OOF fields {sorted(missing)}")
+        return {name: archive[name].copy() for name in required}
+
+
+def _validate_oof_alignment(
+    baseline: Mapping[str, np.ndarray], candidate: Mapping[str, np.ndarray]
+) -> None:
+    """Reject final audits that do not compare the same beers, targets and repeats."""
+    if not np.allclose(baseline["y_true"], candidate["y_true"], equal_nan=False):
+        raise RuntimeError("candidate y_true is not aligned with E003")
+    for field in ("beer", "style", "target_code", "repeat"):
+        if not np.array_equal(baseline[field], candidate[field]):
+            raise RuntimeError(f"candidate {field} is not aligned with E003")
+
+
+def _target_repeat_rows(frame: pd.DataFrame, prefix: str) -> pd.DataFrame:
+    selected = frame.loc[frame["evaluation"].str.startswith(prefix)].copy()
+    if selected.empty:
+        raise RuntimeError(f"no target-repeat metrics found for prefix {prefix}")
+    return selected
+
+
+def audit_second_round_final(
+    *, n_bootstraps: int = 20000, random_state: int = 20261025
+) -> dict:
+    """Audit every completed full candidate and write the frozen final checkpoint."""
+    baseline_metrics = pd.read_csv(RESULT_DIR / "q1_extended_metrics_E003.csv")
+    baseline_target_metrics = pd.read_csv(
+        RESULT_DIR / "q1_extended_metrics_by_target_E003.csv"
+    )
+    baseline_target_repeats = _target_repeat_rows(
+        baseline_target_metrics, "repeat_"
+    )
+    baseline_oof = _load_oof_archive(
+        RESULT_DIR / "q1_oof_predictions_E003.npz", "pred_extra_trees"
+    )
+
+    comparison_rows = []
+    repeat_frames = []
+    bootstrap_frames = []
+    tail_rows = []
+    style_frames = []
+    worst_style_rows = []
+    decisions = {}
+    completed_candidates = []
+
+    for experiment_id, spec in FULL_CANDIDATES.items():
+        metrics_path = RESULT_DIR / f"q1_extended_metrics_{experiment_id}.csv"
+        target_path = (
+            RESULT_DIR / f"q1_extended_metrics_by_target_{experiment_id}.csv"
+        )
+        oof_path = RESULT_DIR / f"q1_oof_predictions_{experiment_id}.npz"
+        existing = [metrics_path.exists(), target_path.exists(), oof_path.exists()]
+        if not any(existing):
+            continue
+        if not all(existing):
+            raise RuntimeError(
+                f"{experiment_id} has an incomplete full-result bundle: {existing}"
+            )
+
+        summary, paired, decision = compare_full_frames(
+            baseline_metrics,
+            pd.read_csv(metrics_path),
+            experiment_id=experiment_id,
+            model=str(spec["model"]),
+            candidate_prefix=str(spec["metric_prefix"]),
+        )
+        comparison_rows.append(summary)
+        repeat_frames.append(paired)
+        decisions[experiment_id] = decision
+        completed_candidates.append(experiment_id)
+
+        candidate_oof = _load_oof_archive(oof_path, str(spec["prediction_key"]))
+        _validate_oof_alignment(baseline_oof, candidate_oof)
+        baseline_prediction = baseline_oof["pred_extra_trees"]
+        candidate_prediction = candidate_oof[str(spec["prediction_key"])]
+        if baseline_prediction.shape != candidate_prediction.shape:
+            raise RuntimeError(
+                f"{experiment_id} prediction tensor is not aligned with E003"
+            )
+
+        bootstrap = paired_beer_bootstrap(
+            baseline_oof["y_true"],
+            baseline_prediction.mean(axis=0),
+            candidate_prediction.mean(axis=0),
+            n_bootstraps=n_bootstraps,
+            random_state=random_state,
+        )
+        bootstrap.insert(0, "experiment_id", experiment_id)
+        bootstrap_frames.append(bootstrap)
+
+        candidate_target_metrics = pd.read_csv(target_path)
+        candidate_target_repeats = _target_repeat_rows(
+            candidate_target_metrics, str(spec["metric_prefix"])
+        )
+        tail = bottom_quartile_target_summary(
+            baseline_target_repeats, candidate_target_repeats
+        )
+        tail["bottom_targets"] = "|".join(tail["bottom_targets"])
+        tail_rows.append({"experiment_id": experiment_id, **tail})
+
+        style = style_mae_table(
+            baseline_oof["y_true"],
+            baseline_oof["style"],
+            baseline_prediction,
+            candidate_prediction,
+        )
+        style.insert(0, "experiment_id", experiment_id)
+        style_frames.append(style)
+        worst_style_rows.append(
+            {
+                "experiment_id": experiment_id,
+                **worst_style_summary(style),
+            }
+        )
+
+    if not completed_candidates:
+        raise RuntimeError("no completed full Q1 second-round candidate was found")
+
+    selected_experiment = select_final_candidate(decisions)
+    retained_model = selected_experiment or "E003"
+    comparison = pd.DataFrame(comparison_rows)
+    by_repeat = pd.concat(repeat_frames, ignore_index=True)
+    bootstrap = pd.concat(bootstrap_frames, ignore_index=True)
+    tail = pd.DataFrame(tail_rows)
+    style = pd.concat(style_frames, ignore_index=True)
+    worst_style = pd.DataFrame(worst_style_rows)
+
+    output_frames = {
+        "q1_second_round_comparison.csv": comparison,
+        "q1_second_round_by_repeat.csv": by_repeat,
+        "q1_second_round_bootstrap.csv": bootstrap,
+        "q1_second_round_tail_targets.csv": tail,
+        "q1_second_round_style_mae.csv": style,
+        "q1_second_round_worst_style.csv": worst_style,
+    }
+    for filename, frame in output_frames.items():
+        frame.to_csv(RESULT_DIR / filename, index=False)
+
+    payload = {
+        "status": "complete",
+        "hard_thresholds": HARD_THRESHOLDS,
+        "minimum_repeat_wins": 7,
+        "completed_candidates": completed_candidates,
+        "candidate_decisions": decisions,
+        "selected_experiment": selected_experiment,
+        "retained_model": retained_model,
+        "e008_status": (
+            "not_required_candidate_promoted"
+            if selected_experiment is not None
+            else "requires_error_diagnostic_review"
+        ),
+        "bootstrap": {
+            "unit": "beer",
+            "paired": True,
+            "prediction_aggregation": "mean_across_10_oof_repeats",
+            "n_bootstraps": int(n_bootstraps),
+            "random_state": int(random_state),
+        },
+        "outputs": [str(RESULT_DIR / name) for name in output_frames],
+    }
+    decision_path = RESULT_DIR / "q1_second_round_decision.json"
+    decision_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -618,6 +843,8 @@ def main() -> None:
             "e006-screening",
             "e006-full",
             "e007-screening",
+            "e007-full",
+            "final",
         ],
         default="e004-screening",
     )
@@ -632,8 +859,13 @@ def main() -> None:
         summary, payload = audit_e006_screening()
     elif args.mode == "e006-full":
         summary, payload = audit_e006_full()
-    else:
+    elif args.mode == "e007-screening":
         summary, payload = audit_e007_screening()
+    elif args.mode == "e007-full":
+        summary, payload = audit_e007_full()
+    else:
+        payload = audit_second_round_final()
+        summary = pd.read_csv(RESULT_DIR / "q1_second_round_comparison.csv")
     print(summary.to_string(index=False))
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 

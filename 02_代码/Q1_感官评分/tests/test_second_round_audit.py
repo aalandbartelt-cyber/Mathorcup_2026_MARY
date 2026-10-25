@@ -69,6 +69,139 @@ class SecondRoundAuditTests(unittest.TestCase):
             self.assertTrue((result_dir / "q1_screening_by_repeat_E007.csv").exists())
             self.assertTrue((result_dir / "q1_screening_decision_E007.json").exists())
 
+    def test_e007_full_audit_writes_standard_outputs(self) -> None:
+        repeats = list(range(10))
+        baseline = pd.DataFrame(
+            {
+                "evaluation": [f"repeat_{value}" for value in repeats],
+                "r2": [0.23] * 10,
+                "mae": [0.343] * 10,
+                "spearman": [0.42] * 10,
+                "qwk_proxy": [0.40] * 10,
+                "acc_pm1_proxy": [0.56] * 10,
+            }
+        )
+        candidate = pd.DataFrame(
+            {
+                "evaluation": [
+                    f"pred_shrunk_gate:repeat_{value}" for value in repeats
+                ],
+                "r2": [0.24] * 10,
+                "mae": [0.34] * 10,
+                "spearman": [0.43] * 10,
+                "qwk_proxy": [0.41] * 10,
+                "acc_pm1_proxy": [0.58] * 10,
+            }
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            result_dir = Path(tmpdir)
+            baseline.to_csv(result_dir / "q1_extended_metrics_E003.csv", index=False)
+            candidate.to_csv(result_dir / "q1_extended_metrics_E007.csv", index=False)
+            with patch.object(audit_module, "RESULT_DIR", result_dir):
+                summary, payload = audit_module.audit_e007_full()
+
+            self.assertTrue(bool(summary.loc[0, "promoted"]))
+            self.assertTrue(payload["decision"]["promoted"])
+            self.assertTrue((result_dir / "q1_full_comparison_E007.csv").exists())
+            self.assertTrue((result_dir / "q1_full_by_repeat_E007.csv").exists())
+            self.assertTrue((result_dir / "q1_full_decision_E007.json").exists())
+
+    def test_final_audit_writes_comparison_bootstrap_tail_and_style_outputs(self) -> None:
+        repeats = list(range(10))
+        metrics_baseline = pd.DataFrame(
+            {
+                "evaluation": [f"repeat_{value}" for value in repeats],
+                "r2": [0.23] * 10,
+                "mae": [0.343] * 10,
+                "spearman": [0.42] * 10,
+                "qwk_proxy": [0.40] * 10,
+                "acc_pm1_proxy": [0.56] * 10,
+            }
+        )
+        metrics_candidate = pd.DataFrame(
+            {
+                "evaluation": [
+                    f"pred_shrunk_gate:repeat_{value}" for value in repeats
+                ],
+                "r2": [0.24] * 10,
+                "mae": [0.34] * 10,
+                "spearman": [0.43] * 10,
+                "qwk_proxy": [0.41] * 10,
+                "acc_pm1_proxy": [0.58] * 10,
+            }
+        )
+        target_rows_baseline = []
+        target_rows_candidate = []
+        for repeat in repeats:
+            for index, target in enumerate(["a", "b", "c", "d"]):
+                target_rows_baseline.append(
+                    {
+                        "evaluation": f"repeat_{repeat}",
+                        "target_code": target,
+                        "r2": 0.1 + 0.1 * index,
+                        "mae": 0.4 - 0.05 * index,
+                    }
+                )
+                target_rows_candidate.append(
+                    {
+                        "evaluation": f"pred_shrunk_gate:repeat_{repeat}",
+                        "target_code": target,
+                        "r2": 0.2 + 0.1 * index,
+                        "mae": 0.3 - 0.04 * index,
+                    }
+                )
+        y_true = np.arange(16, dtype=float).reshape(4, 4)
+        baseline_prediction = np.stack([y_true + 1.0] * 10)
+        candidate_prediction = np.stack([y_true + 0.5] * 10)
+        common_npz = {
+            "y_true": y_true,
+            "beer": np.arange(4),
+            "style": np.array(["A", "A", "B", "B"]),
+            "target_code": np.array(["a", "b", "c", "d"]),
+            "repeat": np.arange(10),
+        }
+        with tempfile.TemporaryDirectory() as tmpdir:
+            result_dir = Path(tmpdir)
+            metrics_baseline.to_csv(
+                result_dir / "q1_extended_metrics_E003.csv", index=False
+            )
+            metrics_candidate.to_csv(
+                result_dir / "q1_extended_metrics_E007.csv", index=False
+            )
+            pd.DataFrame(target_rows_baseline).to_csv(
+                result_dir / "q1_extended_metrics_by_target_E003.csv", index=False
+            )
+            pd.DataFrame(target_rows_candidate).to_csv(
+                result_dir / "q1_extended_metrics_by_target_E007.csv", index=False
+            )
+            np.savez_compressed(
+                result_dir / "q1_oof_predictions_E003.npz",
+                **common_npz,
+                pred_extra_trees=baseline_prediction,
+            )
+            np.savez_compressed(
+                result_dir / "q1_oof_predictions_E007.npz",
+                **common_npz,
+                pred_shrunk_gate=candidate_prediction,
+            )
+            with patch.object(audit_module, "RESULT_DIR", result_dir):
+                payload = audit_module.audit_second_round_final(
+                    n_bootstraps=100, random_state=17
+                )
+
+            self.assertEqual(payload["selected_experiment"], "E007")
+            self.assertEqual(payload["retained_model"], "E007")
+            for filename in [
+                "q1_second_round_comparison.csv",
+                "q1_second_round_by_repeat.csv",
+                "q1_second_round_bootstrap.csv",
+                "q1_second_round_tail_targets.csv",
+                "q1_second_round_style_mae.csv",
+                "q1_second_round_worst_style.csv",
+                "q1_second_round_decision.json",
+            ]:
+                self.assertTrue((result_dir / filename).exists(), filename)
+
     def test_paired_beer_bootstrap_detects_uniform_improvement(self) -> None:
         y_true = np.arange(48, dtype=float).reshape(12, 4)
         baseline = y_true[::-1].copy()
