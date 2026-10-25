@@ -1,0 +1,14 @@
+experiment: E202
+question: Q3
+status: registered_before_run
+methods: [style_gaussian, style_copula]
+covariance: Ledoit-Wolf
+mean_shrinkage: 0.25
+target_styles: [Tripel, Kriek, Lambic]
+outer_cv: frozen_10x3
+preprocessing: outer_training_median
+q1_interface: final_model_registry_group_NNLS_v5_read_only
+q1_retrained: false
+gpu_used: false
+entry_gate: E201_complete_and_E113_first_checkpoint_verified
+formal_run: not_started

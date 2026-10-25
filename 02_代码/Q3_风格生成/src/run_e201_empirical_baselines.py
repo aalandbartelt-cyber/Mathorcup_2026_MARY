@@ -10,6 +10,7 @@ from sklearn.impute import SimpleImputer
 from run_e200_contract import validate_cv
 from q3_evaluation import distribution_diagnostics
 from empirical_generation import StyleEmpiricalGenerator
+from q1_interface import FrozenQ1V5OOF
 
 ROOT=Path(__file__).resolve().parents[3]
 CANONICAL=Path('/home/mary/mathorcup')
@@ -40,12 +41,10 @@ def run():
     features=[x for x in chemistry.columns if x not in ['beer','beer_id','tasting_category_fine']]
     if len(features)!=231 or len(chemistry)!=250:raise ValueError('Q3 input contract changed')
     x=chemistry[features].to_numpy(float);styles=chemistry.tasting_category_fine.to_numpy(str)
-    registry_path=CANONICAL/'03_结果/Q1_感官评分/final_model_registry.json'
-    registry=json.loads(registry_path.read_text());oof=CANONICAL/registry['oof_path']
-    if sha(oof)!=registry['oof_sha256']:raise ValueError('Q1 final OOF hash mismatch')
+    q1=FrozenQ1V5OOF(CANONICAL);registry=q1.registry
     signature={'input_sha256':sha(attachment),'cv_sha256':sha(split_path),'config_sha256':sha(CONFIG),
                'source_sha256':{p.name:sha(p) for p in [Path(__file__),Path(__file__).with_name('empirical_generation.py'),Path(__file__).with_name('q3_evaluation.py')]},
-               'q1_final_oof_sha256':registry['oof_sha256'],'entry_gate':gate}
+               'q1_final_model':registry['final_model'],'q1_final_oof_sha256':q1.signature,'entry_gate':gate}
     slots=RESULT/'q3_checkpoints_E201';slots.mkdir(exist_ok=True)
     tables=[];generated_files=[]
     for number,((repeat,fold),group) in enumerate(splits.groupby(['repeat','fold'],sort=True),1):
