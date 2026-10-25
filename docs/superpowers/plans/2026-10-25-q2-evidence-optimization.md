@@ -325,7 +325,7 @@ git commit -m 'exp(q2): add E114 fold-local shrinkage partial effects'
 - Create: `02_代码/Q2_关键化合物/configs/E115_hierarchical_importance.yaml`
 - Create: `02_代码/Q2_关键化合物/src/run_e115_hierarchical_importance.py`
 
-- [ ] **Step 1: Write failing permutation tests**
+- [x] **Step 1: Write failing permutation tests**
 
 ```python
 from hierarchical_importance import joint_permutation, residual_permutation

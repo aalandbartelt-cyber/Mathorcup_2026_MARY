@@ -1,0 +1,12 @@
+experiment: E115
+prediction_backbones: [E105_ExtraTrees]
+module_source: E113_if_promoted_else_E107_fold_local_rule
+module_repeats_per_fold: 10
+field_repeats_per_fold: 10
+module_gate:
+  median_delta_mae_min: 0.0
+  positive_fraction_min: 0.60
+conditional_model: compact_hgb
+candidate_scope: strict_compounds_218
+random_state: 20261025
+gpu_used: false
