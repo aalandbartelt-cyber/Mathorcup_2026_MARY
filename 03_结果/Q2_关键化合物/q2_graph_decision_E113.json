@@ -1,0 +1,13 @@
+{
+  "promote_partial_graph": false,
+  "criteria": {
+    "heldout_loglik_finite": true,
+    "edge_or_module_stability_improves": false,
+    "no_full_graph_in_validation": true
+  },
+  "stability_metrics": {
+    "candidate_mean_coclustering_ge_0_10": 0.25042859117931704,
+    "reference_mean_coclustering_ge_0_10": 0.4876414814814814
+  },
+  "descriptive_alpha": 0.2
+}

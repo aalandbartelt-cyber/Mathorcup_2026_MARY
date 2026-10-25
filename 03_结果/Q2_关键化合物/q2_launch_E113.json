@@ -1,0 +1,9 @@
+{
+  "experiment_id": "E113",
+  "started_at": "2026-10-25T18:53:20.701036+08:00",
+  "tmux": "q2_e113_full",
+  "command": "env OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/mary/miniconda3/envs/mathorcup/bin/python -u '02_代码/Q2_关键化合物/src/run_e113_partial_graph.py' > outputs/logs/q2_e113_full.log 2>&1",
+  "code_head": "db101ac241d214920c2a71df1df429464e88dfe1",
+  "q1_state": "frozen_no_writes",
+  "first_checkpoint": "first hash-verified completed outer-fold directory and q2_progress_E113.json"
+}
