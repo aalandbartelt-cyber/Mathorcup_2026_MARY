@@ -114,6 +114,12 @@ def _anchor_recovery(rankings: pd.DataFrame) -> pd.DataFrame:
 
 def run_e114(*, output_dir: Path = RESULT_DIR) -> dict:
     started = time.perf_counter()
+    progress_path = RESULT_DIR / "q2_progress_E113.json"
+    decision_path = RESULT_DIR / "q2_graph_decision_E113.json"
+    if not progress_path.exists() or json.loads(progress_path.read_text()).get("status") != "complete":
+        raise RuntimeError("E114 requires a complete E113 outer-fold run")
+    if not decision_path.exists():
+        raise RuntimeError("E114 requires the E113 decision artifact")
     config = _load_config()
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
