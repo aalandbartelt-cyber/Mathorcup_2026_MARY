@@ -1,0 +1,12 @@
+experiment: E113
+question: Q2
+candidate_scope: strict_compounds_218
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+inner_splits: 3
+alpha_grid: [0.02, 0.05, 0.10, 0.20, 0.35]
+selection_rule: one_se_loglik_then_max_edge_stability_then_larger_alpha
+partial_edge_threshold: 0.000001
+module_algorithm: louvain
+module_seed: 20261025
+random_state: 20261025
+gpu_used: false
