@@ -1,0 +1,13 @@
+{
+  "status": "baseline_complete_no_model_selection",
+  "sensory_status": "pending_frozen_final_nnls_adapter",
+  "chemical_safety_certified": false,
+  "migration_performed": false,
+  "q1_retrained": false,
+  "generated_spectra_mechanistically_certified": false,
+  "notes": [
+    "复制型经验模型与均值负对照均保留，不按单项距离选择赢家",
+    "非独立重复：同一啤酒跨重复共享，五种子不作为新增实测样本",
+    "真实—真实对照不足同规模不相交样本时记NA"
+  ]
+}

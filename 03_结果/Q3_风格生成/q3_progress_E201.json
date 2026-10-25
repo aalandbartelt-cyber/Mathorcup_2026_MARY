@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E201",
+  "status": "complete",
+  "completed_folds": 30,
+  "n_outer_folds": 30,
+  "last_split_id": "R09F2",
+  "elapsed_seconds": 7.0730518760028644,
+  "entry_gate": {
+    "checkpoint": "R00F0",
+    "sha256": "e8ce01e311b8b91ffda6de60a3902f9f50b57c4b1788c0558754a17edc6a529a",
+    "scope": "outer_train_fold"
+  }
+}

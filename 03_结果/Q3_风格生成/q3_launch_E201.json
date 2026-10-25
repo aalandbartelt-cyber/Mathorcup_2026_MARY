@@ -1,0 +1,9 @@
+{
+  "experiment_id": "E201",
+  "started_at": "2026-10-25T19:02:44.951461+08:00",
+  "tmux": "q3_e201_full",
+  "command": "env OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/mary/miniconda3/envs/mathorcup/bin/python -u '02_代码/Q3_风格生成/src/run_e201_empirical_baselines.py' > outputs/logs/q3_e201_full.log 2>&1",
+  "code_head": "1983627a79375b67650dcc0c1915958f3d9d552d",
+  "entry_gate": "E113 R00F0 verified",
+  "q1_state": "frozen_no_writes"
+}
