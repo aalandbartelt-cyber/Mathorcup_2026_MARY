@@ -35,6 +35,22 @@ def find_one(folder: Path, pattern: str):
     return hits[0] if hits else None
 
 
+def find_latest(folder: Path, pattern: str):
+    """Return the highest numeric vN artifact without overwriting older handoffs."""
+
+    hits = list(folder.glob(pattern))
+    if not hits:
+        return None
+
+    def version(path: Path) -> int:
+        import re
+
+        match = re.search(r"_v(\d+)", path.name)
+        return int(match.group(1)) if match else -1
+
+    return max(hits, key=lambda path: (version(path), path.name))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=".")
@@ -81,7 +97,8 @@ def main() -> None:
             if not (qdir/name).is_dir():missing.append(name)
     elif key == "Q2":
         if docx and not docx.with_suffix('.pdf').is_file():missing.append('正文同步PDF')
-        if not list(qdir.glob('Q2_论文审计合订本_v*.pdf')):missing.append('审计合订本PDF')
+        audit_pdf = find_latest(qdir, 'Q2_论文审计合订本_v*.pdf')
+        if not audit_pdf:missing.append('审计合订本PDF')
         for name in ['数据与结果','附录核心代码']:
             if not (qdir/name).is_dir():missing.append(name)
         if not (qdir/'当前版本说明.md').is_file():missing.append('当前版本说明.md')
@@ -89,7 +106,9 @@ def main() -> None:
         raise SystemExit("交付包缺项：\n- " + "\n- ".join(missing))
 
     stamp = datetime.now().strftime("%Y%m%d")
-    zip_path = outdir / f"{args.question}_交付包.zip"
+    version_match = __import__("re").search(r"_v(\d+)", docx.name)
+    suffix = f"_v{version_match.group(1)}" if version_match else ""
+    zip_path = outdir / f"{args.question}_交付包{suffix}.zip"
     with tempfile.TemporaryDirectory() as td:
         stage = Path(td) / args.question
         (stage / "图片").mkdir(parents=True, exist_ok=True)
@@ -106,7 +125,8 @@ def main() -> None:
             for name in ['数据与结果','附录核心代码']:
                 shutil.copytree(qdir/name,stage/name)
             shutil.copy2(qdir/'当前版本说明.md',stage/'当前版本说明.md')
-            for pdf in qdir.glob('*.pdf'):shutil.copy2(pdf,stage/pdf.name)
+            for source in (docx.with_suffix('.pdf'), assumptions.with_suffix('.pdf'), analysis.with_suffix('.pdf'), audit_pdf):
+                shutil.copy2(source, stage / source.name)
         for f in figs:
             shutil.copy2(f, stage / "图片" / f.name)
         shutil.copy2(qlist, stage / "图片" / qlist.name)
@@ -130,10 +150,11 @@ def main() -> None:
             ]
         elif key == "Q2":
             manifest += [
-                "- 本包为最终感官模型归因完成前的当前阶段版，不标记为总论文最终版",
-                "- 正文、图表与机器可读表统一采用已完成的四路稳健秩融合和化学核验口径",
+                "- 本包已接入最终感官模型的30折模块归因与模块内条件归因",
+                "- 正文、图表与机器可读表统一采用四路稳健秩融合和化学核验口径",
                 "- 完整150条Top-3及稳健排名放在“数据与结果”，正文只列代表性关系",
-                "- 最终感官模型归因审计完成后另存新版本，不覆盖本包",
+                "- 补充的三证据融合在三类稳健性检验中均未改善，故不替换现行Top-3",
+                "- 置换归因只解释冻结预测器的依赖，不解释化学因果关系",
             ]
         manifest += [
             "- 图片为300dpi PNG；图题在正文中另排",
