@@ -1,0 +1,7 @@
+experiment: E119
+status: input_contract_only
+required_complete: [E118]
+requires_e118_promoted: true
+expected_target_rank_rows: 150
+reranking_permitted: false
+chemical_grading_enabled: false

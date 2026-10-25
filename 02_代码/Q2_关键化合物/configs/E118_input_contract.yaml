@@ -1,0 +1,7 @@
+experiment: E118
+status: input_contract_only
+required_complete: [E113, E114, E115_final_NNLS, E117]
+candidate_scope: strict_compounds_218
+expected_targets: 50
+formal_ranking_enabled: false
+chemical_evidence_in_ranking: false
