@@ -2,7 +2,7 @@
 
 ## Session: 2026-10-25 Q3 E202正式统计基线（E115由ZCode监控）
 
-- **Status:** 30/30 complete；formal audit complete；commit/push pending
+- **Status:** 30/30 complete；formal audit complete；committed/pushed at `487e7fc`
 - Actions:
   - 没有查看、修改或重启Q2/E115运行树；E202入口改为只核验冻结E201 manifest和Q1 v5 OOF身份。
   - 先用失败测试补标准化收缩高斯、支持域截断、并列值友好秩变换、正定收缩Copula、配置与scope合同；Q3共53项测试通过。

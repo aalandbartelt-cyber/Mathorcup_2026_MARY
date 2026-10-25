@@ -133,8 +133,8 @@ Phase 12：Q1 v5 已冻结，E201 已完成 30/30；E115 由 ZCode 监控。本�
 - [x] 实现可恢复的 10×3 外层 runner，入口不依赖运行中的 E115
 - [x] 完成 30 折 CPU 正式实验与重复级汇总
 - [x] 审计哈希、支持域、分布指标和结论边界
-- [ ] 提交推送并登记下一阶段共享低秩模型
-- **Status:** formal run/audit complete；no GPU/CVAE；Q1/Q2 runtime trees untouched
+- [x] 提交推送并登记下一阶段共享低秩模型
+- **Status:** complete at `487e7fc`；no GPU/CVAE；Q1/Q2 runtime trees untouched
 
 ## Hard Rules
 
