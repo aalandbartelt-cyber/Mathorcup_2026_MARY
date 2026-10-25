@@ -1,0 +1,36 @@
+{
+  "status": "frozen_result_export",
+  "numeric_results_changed": false,
+  "tables": [
+    {
+      "name": "图1_阈值与网络结构",
+      "rows": 7,
+      "columns": 8,
+      "sha256": "cfd1d0d57a93a8bd48f39441043869db630e7a3cc3eecb034523ffe0e100a205"
+    },
+    {
+      "name": "图2a_模型性能",
+      "rows": 6,
+      "columns": 6,
+      "sha256": "cfca880e09d120d0e4eb0e691f1145d9f32b01758d496dfb266630ca773d441c"
+    },
+    {
+      "name": "图2b_四路一致性",
+      "rows": 4,
+      "columns": 3,
+      "sha256": "a2c9cb7576672610f3ef42e8ee128071dfb62eb1f376fe77dc9d288d94c19ab1"
+    },
+    {
+      "name": "图3_候选稳定性",
+      "rows": 150,
+      "columns": 7,
+      "sha256": "f0cba5dc5198ee20a978abe1140f21aa0131d5cbee87d468802682c967cee1c8"
+    },
+    {
+      "name": "图4_A级关系名次与OAV",
+      "rows": 8,
+      "columns": 9,
+      "sha256": "d00c36d71cadca7129e4c5beb08f7bb41630c8bba2d1016351f1a6e5bb6b8437"
+    }
+  ]
+}

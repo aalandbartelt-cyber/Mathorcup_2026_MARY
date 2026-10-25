@@ -1,0 +1,42 @@
+{
+  "inputs": [
+    {
+      "path": "03_结果/Q2_关键化合物/q2_graph_threshold_audit.csv",
+      "sha256": "4279dbadea06cab4434e7480806d33c3cd19f72899245fabf96f20fa4e2c441f"
+    },
+    {
+      "path": "05_论文/Q2_关键化合物/数据与结果/模型性能对比_当前版.csv",
+      "sha256": "f8feba9fb466c5096a6da7e4d26e836bcf6dc3b0b40b2318ae901e27b192d254"
+    },
+    {
+      "path": "03_结果/Q2_关键化合物/q2_final_lens_agreement_E111.csv",
+      "sha256": "73769053c3f7cff000cd87e7b13e67b5c210f64dae6c3358b1bb21d8e32ed943"
+    },
+    {
+      "path": "05_论文/Q2_关键化合物/数据与结果/关键化合物Top3_当前版.csv",
+      "sha256": "4e3b69522268e6f83f0c168a2166901f247b335b6720f28e0ae3612b6713acf2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "04_图表/Q2_关键化合物/v3/source_data/图1_阈值与网络结构.csv",
+      "sha256": "cfd1d0d57a93a8bd48f39441043869db630e7a3cc3eecb034523ffe0e100a205"
+    },
+    {
+      "path": "04_图表/Q2_关键化合物/v3/source_data/图2a_模型性能.csv",
+      "sha256": "cfca880e09d120d0e4eb0e691f1145d9f32b01758d496dfb266630ca773d441c"
+    },
+    {
+      "path": "04_图表/Q2_关键化合物/v3/source_data/图2b_四路一致性.csv",
+      "sha256": "a2c9cb7576672610f3ef42e8ee128071dfb62eb1f376fe77dc9d288d94c19ab1"
+    },
+    {
+      "path": "04_图表/Q2_关键化合物/v3/source_data/图3_候选稳定性.csv",
+      "sha256": "f0cba5dc5198ee20a978abe1140f21aa0131d5cbee87d468802682c967cee1c8"
+    },
+    {
+      "path": "04_图表/Q2_关键化合物/v3/source_data/图4_A级关系名次与OAV.csv",
+      "sha256": "d00c36d71cadca7129e4c5beb08f7bb41630c8bba2d1016351f1a6e5bb6b8437"
+    }
+  ]
+}

@@ -81,6 +81,10 @@ def main() -> None:
         docx = find_latest(qdir, f"{qnum}_论文正文_v*.docx")
         assumptions = find_latest(qdir, f"模型假设_{key}_v*.docx")
         analysis = find_latest(qdir, f"问题分析_{key}_v*.docx")
+        if key == "Q2" and (figdir / "v3").is_dir():
+            figdir = figdir / "v3"
+            figs = sorted(figdir.glob("*_v3.png"))
+            qlist = figdir / "Q2_图清单_v3.csv"
 
     missing = []
     if not docx or not docx.is_file(): missing.append(f"论文正文 docx（{qdir}/{qnum}_论文正文_v1.docx）")

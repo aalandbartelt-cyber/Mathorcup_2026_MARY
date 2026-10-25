@@ -6,7 +6,7 @@
 
 ## Current Phase
 
-Phase 6：Q2 结果已冻结，正在执行论文 v3 的原生公式、R 图表、公开方法对照与交付审计升级。
+Phase 6：Q2 结果冻结后的论文 v3 质量升级已完成，保留 v2 并完成 DOCX/PDF/ZIP 审计。
 
 ## Phases
 
@@ -61,22 +61,22 @@ Phase 6：Q2 结果已冻结，正在执行论文 v3 的原生公式、R 图表�
 
 ### Phase 5：Q2 优化与交付
 
-- [ ] 把 BZD 共表达/稳定选择与 agent 双路线思想映射到现有 E105—E112
-- [ ] 保持折内重算、50×3 完整输出和化学证据分级
-- [ ] 生成 Q2 Word 与交付包
-- **Status:** pending
+- [x] 把公开方法家族映射到现有稳健统计与独立归因证据
+- [x] 保持折内重算、50×3 完整输出和化学证据分级
+- [x] 生成 Q2 Word 与交付包；E112 仍为正式答案，E115 为独立解释证据
+- **Status:** complete; numeric result frozen
 
 ### Phase 6：Q2 论文 v3 质量升级
 
 - [x] 冻结 v2 哈希与 v3 结果边界
 - [x] 完成 v3 设计规格和实施计划
-- [ ] 新增 OMML、图像、禁用词和 v2 不变性检查
-- [ ] 重建 7 个原生 OMML 公式
-- [ ] 用 R/ggplot2 重绘 4 张 3:2 主图
-- [ ] 扩写公开方法对照、消融、摘要式开篇与讨论
-- [ ] 生成 v3 DOCX/PDF/审计合订本/ZIP
-- [ ] 运行 119 项既有测试、新增检查及全量扫描
-- **Status:** in_progress
+- [x] 新增 OMML、图像、禁用词和 v2 不变性检查
+- [x] 重建 7 个原生 OMML 公式
+- [x] 用 R/ggplot2 重绘 4 张 3:2 主图
+- [x] 扩写公开方法对照、消融、摘要式开篇与讨论
+- [x] 生成 v3 DOCX/PDF/审计合订本/ZIP
+- [x] 运行 119 项既有测试、新增检查及全量扫描
+- **Status:** complete; 125 tests passed, 7 subtests passed
 
 ## Hard Rules
 
@@ -99,4 +99,8 @@ Phase 6：Q2 结果已冻结，正在执行论文 v3 的原生公式、R 图表�
 | 参考 QWK 被误读为真实 0—6 | 1 | 追到 BZD `quantile_levels` 源码，明确为真实/预测各自全样本分箱 |
 | 长实施计划首次补丁的 Markdown 命令块缺少补丁前缀 | 1 | 首次写入未产生文件；改用逐行生成补丁并完成占位与格式扫描 |
 | 规格状态行保留 Markdown 行尾双空格导致 `git diff --check` 失败 | 1 | 删除行尾空格后重新执行提交前检查 |
+| pytest 自动加载 ROS `launch_testing`，缺少 `lark` | 1 | 设置 `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`，隔离无关系统插件 |
+| 禁用词正则把 SHA256 中偶然出现的 `e100` 当作实验编号 | 1 | 改为字母数字边界识别，仍能检出文件名/正文中的独立编号 |
+| ggplot2 4.0 报 `label.size` 与 `geom_errorbarh()` 弃用警告 | 1 | 改用 `linewidth` 与带 `orientation="y"` 的 `geom_errorbar()` |
+| 严格 OMML 生成器拒绝公式3中的纯空格 run | 1 | 删除仅用于视觉间距的空白 run，交由 Office Math 结构排版 |
 
