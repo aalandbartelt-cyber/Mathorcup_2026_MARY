@@ -1,0 +1,23 @@
+experiment: E117
+status: code_ready_not_run
+pilot_pairs: 10
+formal_pairs: 100
+sampling: style_stratified_complementary_halves
+selection_size_per_target: 3
+stability_thresholds: [0.60, 0.70, 0.80, 0.90]
+target_permutation_repeats: 50
+shadow_feature_repeats: 20
+target_permutation_scope: within_style
+selection_method: half_local_median_style_centered_absolute_spearman
+ranking_recomputed_each_half: true
+full_data_graph_reused: false
+candidate_scope: strict_compounds_218
+random_state: 20261025
+gpu_used: false
+formal_run: false
+gates:
+  max_confirmed_fdp: 0.10
+  require_e113_complete: true
+  require_e115_complete: true
+  require_q1_final_nnls_hash_match: true
+  require_half_local_recomputation: true
