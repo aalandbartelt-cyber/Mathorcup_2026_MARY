@@ -1,0 +1,54 @@
+{
+  "experiment_id": "E009",
+  "status": "complete",
+  "stage": "screening",
+  "repeats": [
+    0,
+    1,
+    2
+  ],
+  "outer_folds": 9,
+  "primary_scope": "group",
+  "selection_scope": "group only; shared and target are pre-registered ablations",
+  "run_signature": "e86cbfab19598476852a3da81a589321fbcaba91ef30b43c734f9895f0437bd9",
+  "input_source_hashes": {
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/configs/E009_nnls_stacking.yaml": "76368cd6eb603390f6a3e2b113d47b774d8dbac6b8ff51b9f3cb4b971bf4f476",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/configs/E005_continuous_ensemble.yaml": "dc7e97c7100a5f0d6c358d27020cc04fcb203ffcdb99f7e761cf80cd6142b993",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/src/run_e009_nnls_stacking.py": "308fa5d7ac0016dc49ab66ab93847c9b38b68bc43cbff630496ce851cca418a5",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/src/nnls_stacking.py": "505255b748458880969b78cdc8582c842a95c8278428172f7bf5f7b12b2c2814",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/src/run_e005_continuous_ensemble.py": "ca824c0a036e017a256b9250abf7efcaf7fba44d3fecbdcd9758e7c7df81984c",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/src/baseline_models.py": "b545290d9a648a434337e74b749ca174b492d825b094a653d0ad07f23e01bdd9",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_代码/Q1_感官评分/src/ensemble_models.py": "c557e5f7b0a86c9a87e965aa273319d64aff58fdf34d7ac13719d4898c807a3a",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_cv_splits.csv": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_target_dictionary.csv": "79352022756befabb8cc6c11e4cf51e0e0aa050e0044892cd7f95488866795fa",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/diagnostics_nnls/q1_complementarity_manifest.json": "59aa77e6c93e6827b0b0235365b052437d242825160d4632552cf87033c68416"
+  },
+  "gpu_used": false,
+  "elapsed_seconds": 370.7431326490041,
+  "python": "3.10.19",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_oof_predictions_E009_screening.npz",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_extended_metrics_E009_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_extended_metrics_by_target_E009_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_selected_parameters_E009_screening.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_结果/Q1_感官评分/q1_checkpoint_E009_screening.npz"
+  ],
+  "formal_robustness_audit_required": true,
+  "postprocessing": {
+    "changed_field": "target_code",
+    "old_dtype": "object",
+    "new_dtype": "<U15",
+    "reason": "pickle-free formal audit compatibility",
+    "model_refitted": false,
+    "all_prediction_and_identity_arrays_equal": true,
+    "metrics_recomputed": 60,
+    "original_archive": "outputs/archive/q1_oof_predictions_E009_screening.before_unicode.npz",
+    "original_manifest": "outputs/archive/q1_run_manifest_E009_screening.before_unicode.json",
+    "old_archive_sha256": "1ed153da91357bda8f530396716de75cc8a2642c5bfba223040068301f6149bb",
+    "new_archive_sha256": "7e66aaf2d6aaa72cda985a792a73a75bf102db118aa1c9759308aedec68a5633",
+    "training_source_commit": "aaa7bc8",
+    "source_hashes_verified_at_training_revision": true
+  }
+}

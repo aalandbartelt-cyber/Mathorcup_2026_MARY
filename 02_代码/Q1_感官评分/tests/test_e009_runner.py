@@ -108,8 +108,13 @@ class E009RunnerTests(unittest.TestCase):
                 self.assertTrue((root / "q1_screening_decision_E009.json").exists())
                 with patch.object(runner, "_fit_base", side_effect=AssertionError("must resume")):
                     runner.run("screening", prior_results=root)
+                with np.load(root / "q1_oof_predictions_E009_screening.npz", allow_pickle=True) as archive:
+                    self.assertIn(archive["target_code"].dtype.kind, ("U", "S"),
+                                  "target names must support the pickle-free formal audit")
                 with np.load(root / "q1_oof_predictions_E009_screening.npz") as archive:
                     self.assertEqual(archive["pred_nnls_group"].shape, (3, 18, 2))
+                    for key in archive.files:
+                        self.assertFalse(archive[key].dtype.hasobject)
 
 
 if __name__ == "__main__":

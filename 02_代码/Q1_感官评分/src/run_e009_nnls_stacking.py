@@ -172,7 +172,7 @@ def run(stage: str, *, prior_results: Path) -> dict:
     prediction_map = {f"pred_nnls_{scope}": predictions[:, :, :, i] for i, scope in enumerate(config["scopes"])}
     archive_path = RESULT_DIR / f"q1_oof_predictions_E009{suffix}.npz"
     save_prediction_archive(archive_path, y_true=y, beer=chemistry["beer"].to_numpy(int),
-                            style=style.to_numpy(str), target_code=np.asarray(y_frame.columns),
+                            style=style.to_numpy(str), target_code=np.asarray(y_frame.columns, dtype=str),
                             repeats=np.asarray(repeats), fold_assignment=assignment, predictions=prediction_map)
     summary_path, target_path = write_metric_artifacts("E009", archive_path, list(prediction_map), suffix.removeprefix("_"))
     parameter_path = RESULT_DIR / f"q1_selected_parameters_E009{suffix}.csv"

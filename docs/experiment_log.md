@@ -29,3 +29,11 @@
 |---|---|---|---|---|---|
 | E009 screening | Q1 | RUNNING | `02_代码/Q1_感官评分/configs/E009_nnls_stacking.yaml`，源代码提交`aaa7bc8` | `q1_launch_context_E009_screening.json`；日志`outputs/logs/q1_e009_screening.log` | E007完整审计不晋级、既有OOF互补性和83项测试均已核验后，于17:23启动3×3外层/内层3折筛查；主候选固定感官组NNLS，shared/target仅消融；0.5收缩和五门槛不变。当前无正式成绩，不将启动视为晋级。 |
 
+## E009筛查完成（2026-10-25 17:30）
+
+| 实验 ID | 状态 | 口径 | 结果/决定 |
+|---|---|---|---|
+| E009 screening | COMPLETE_PROMOTED_TO_FULL | 3次重复9外折，主候选group；仅筛查 | R²/MAE/Spearman/代理QWK/代理ACC±1=0.250534/0.337323/0.425301/0.413053/0.554000，五项均优于同3重复E003，原筛查门槛通过。shared/target保持消融，不改主候选；进入full不等于正式晋级。 |
+
+产物为`q1_*_E009_screening.*`及`q1_screening_*_E009.*`；总运行370.743秒。复核发现仅target_code被存为object，导致pickle-free读档失败：先补断言并观察失败，再将入口写档显式改成Unicode，83测试通过。已保存原archive/manifest到`outputs/archive/`，只归一化名称，所有数组语义和三个作用域预测逐元素相等，60个核心指标复算一致，未重训筛查。`q1_integrity_audit_E009_screening.json`及manifest postprocessing保留新旧哈希；原训练源aaa7bc8，full使用修复后的提交。
+
