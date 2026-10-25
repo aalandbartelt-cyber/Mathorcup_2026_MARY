@@ -153,6 +153,37 @@ def bottom_quartile_target_summary(
     }
 
 
+def target_delta_table(
+    baseline_by_target: pd.DataFrame,
+    candidate_by_target: pd.DataFrame,
+) -> pd.DataFrame:
+    """Return aligned mean per-target deltas; positive always means candidate minus baseline."""
+    required = {"target_code", *METRICS}
+    for name, frame in (
+        ("baseline", baseline_by_target),
+        ("candidate", candidate_by_target),
+    ):
+        missing = required - set(frame.columns)
+        if missing:
+            raise ValueError(f"{name} target metrics miss {sorted(missing)}")
+    baseline = baseline_by_target.groupby("target_code", as_index=False)[METRICS].mean()
+    candidate = candidate_by_target.groupby("target_code", as_index=False)[METRICS].mean()
+    aligned = baseline.merge(
+        candidate,
+        on="target_code",
+        how="inner",
+        validate="one_to_one",
+        suffixes=("_baseline", "_candidate"),
+    ).sort_values("target_code", kind="mergesort")
+    if len(aligned) != len(baseline) or len(aligned) != len(candidate):
+        raise RuntimeError("candidate target metrics do not align with E003")
+    for metric in METRICS:
+        aligned[f"delta_{metric}"] = (
+            aligned[f"{metric}_candidate"] - aligned[f"{metric}_baseline"]
+        )
+    return aligned.reset_index(drop=True)
+
+
 def style_mae_table(
     y_true: np.ndarray,
     style: np.ndarray,
@@ -705,6 +736,7 @@ def audit_second_round_final(
     repeat_frames = []
     bootstrap_frames = []
     tail_rows = []
+    target_delta_frames = []
     style_frames = []
     worst_style_rows = []
     decisions = {}
@@ -764,6 +796,11 @@ def audit_second_round_final(
         )
         tail["bottom_targets"] = "|".join(tail["bottom_targets"])
         tail_rows.append({"experiment_id": experiment_id, **tail})
+        target_deltas = target_delta_table(
+            baseline_target_repeats, candidate_target_repeats
+        )
+        target_deltas.insert(0, "experiment_id", experiment_id)
+        target_delta_frames.append(target_deltas)
 
         style = style_mae_table(
             baseline_oof["y_true"],
@@ -789,6 +826,7 @@ def audit_second_round_final(
     by_repeat = pd.concat(repeat_frames, ignore_index=True)
     bootstrap = pd.concat(bootstrap_frames, ignore_index=True)
     tail = pd.DataFrame(tail_rows)
+    target_deltas = pd.concat(target_delta_frames, ignore_index=True)
     style = pd.concat(style_frames, ignore_index=True)
     worst_style = pd.DataFrame(worst_style_rows)
 
@@ -797,6 +835,7 @@ def audit_second_round_final(
         "q1_second_round_by_repeat.csv": by_repeat,
         "q1_second_round_bootstrap.csv": bootstrap,
         "q1_second_round_tail_targets.csv": tail,
+        "q1_second_round_target_deltas.csv": target_deltas,
         "q1_second_round_style_mae.csv": style,
         "q1_second_round_worst_style.csv": worst_style,
     }

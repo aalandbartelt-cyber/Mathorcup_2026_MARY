@@ -21,6 +21,7 @@ from audit_q1_second_round import (  # noqa: E402
     screening_decision,
     select_final_candidate,
     style_mae_table,
+    target_delta_table,
     worst_style_summary,
 )
 
@@ -29,6 +30,27 @@ import audit_q1_second_round as audit_module
 
 
 class SecondRoundAuditTests(unittest.TestCase):
+    def test_target_delta_table_aligns_targets_and_metric_directions(self) -> None:
+        baseline = pd.DataFrame(
+            {
+                "target_code": ["a", "b", "a", "b"],
+                "r2": [0.1, 0.2, 0.1, 0.2],
+                "mae": [0.4, 0.3, 0.4, 0.3],
+                "spearman": [0.2, 0.3, 0.2, 0.3],
+                "qwk_proxy": [0.2, 0.3, 0.2, 0.3],
+                "acc_pm1_proxy": [0.5, 0.6, 0.5, 0.6],
+            }
+        )
+        candidate = baseline.copy()
+        candidate["r2"] += 0.1
+        candidate["mae"] -= 0.1
+
+        result = target_delta_table(baseline, candidate)
+
+        self.assertEqual(result["target_code"].tolist(), ["a", "b"])
+        self.assertTrue(np.allclose(result["delta_r2"], 0.1))
+        self.assertTrue(np.allclose(result["delta_mae"], -0.1))
+
     def test_e007_screening_audit_writes_standard_outputs(self) -> None:
         baseline = pd.DataFrame(
             {
@@ -140,6 +162,9 @@ class SecondRoundAuditTests(unittest.TestCase):
                         "target_code": target,
                         "r2": 0.1 + 0.1 * index,
                         "mae": 0.4 - 0.05 * index,
+                        "spearman": 0.2 + 0.1 * index,
+                        "qwk_proxy": 0.2 + 0.1 * index,
+                        "acc_pm1_proxy": 0.5 + 0.05 * index,
                     }
                 )
                 target_rows_candidate.append(
@@ -148,6 +173,9 @@ class SecondRoundAuditTests(unittest.TestCase):
                         "target_code": target,
                         "r2": 0.2 + 0.1 * index,
                         "mae": 0.3 - 0.04 * index,
+                        "spearman": 0.3 + 0.1 * index,
+                        "qwk_proxy": 0.3 + 0.1 * index,
+                        "acc_pm1_proxy": 0.6 + 0.05 * index,
                     }
                 )
         y_true = np.arange(16, dtype=float).reshape(4, 4)
@@ -196,6 +224,7 @@ class SecondRoundAuditTests(unittest.TestCase):
                 "q1_second_round_by_repeat.csv",
                 "q1_second_round_bootstrap.csv",
                 "q1_second_round_tail_targets.csv",
+                "q1_second_round_target_deltas.csv",
                 "q1_second_round_style_mae.csv",
                 "q1_second_round_worst_style.csv",
                 "q1_second_round_decision.json",
