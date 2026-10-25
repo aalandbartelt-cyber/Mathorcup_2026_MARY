@@ -1,0 +1,8 @@
+experiment: E114
+question: Q2
+outer_folds: frozen_10x3
+estimator: ledoit_wolf_precision_of_rank_gaussian_X_plus_standardized_y
+candidate_scope: strict_compounds_218
+aggregation: [median_rank, top3_frequency, top10_frequency, sign_consistency]
+random_state: 20261025
+gpu_used: false

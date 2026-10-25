@@ -252,7 +252,7 @@ git commit -m 'exp(q2): evaluate E113 fold-local partial graph'
 - Create: `02_代码/Q2_关键化合物/configs/E114_partial_effects.yaml`
 - Create: `02_代码/Q2_关键化合物/src/run_e114_partial_effects.py`
 
-- [ ] **Step 1: Write failing partial-effect tests**
+- [x] **Step 1: Write failing partial-effect tests**
 
 ```python
 from target_partial_effects import ledoit_wolf_target_partial, rank_signed_effects
@@ -271,7 +271,7 @@ def test_signed_rank_is_deterministic(self):
     pd.testing.assert_frame_equal(first, second)
 ```
 
-- [ ] **Step 2: Implement the exact estimator**
+- [x] **Step 2: Implement the exact estimator**
 
 ```python
 from sklearn.covariance import LedoitWolf
