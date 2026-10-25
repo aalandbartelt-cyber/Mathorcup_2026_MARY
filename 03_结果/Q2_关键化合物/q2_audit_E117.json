@@ -1,0 +1,63 @@
+{
+  "experiment_id": "E117",
+  "audit_status": "pass",
+  "failed_checks": [],
+  "checks": {
+    "manifest_complete": true,
+    "pilot_complete": true,
+    "formal_100_pairs_200_trials": true,
+    "dimensions_50_by_218": true,
+    "selection_counts_consistent": true,
+    "complementary_splits_valid": true,
+    "pair_jaccard_complete": true,
+    "null_complete": true,
+    "shadow_complete": true,
+    "error_grid_complete": true,
+    "confirmed_fdp_within_limit": true,
+    "final_nnls_alignment_complete": true,
+    "e115_hash_traceable": true,
+    "upstream_gates_passed": true,
+    "output_hashes_match": true
+  },
+  "counts": {
+    "pairs": 100,
+    "selection_rows": 10900,
+    "pair_jaccard_rows": 5000,
+    "confirmed_targets": 19,
+    "confirmed_relations": 24
+  },
+  "formal_summary": {
+    "mean_pairwise_jaccard": 0.08546000000000001,
+    "median_pairwise_jaccard": 0.0,
+    "real_selected_by_threshold": {
+      "0.6": 24,
+      "0.7": 17,
+      "0.8": 11,
+      "0.9": 6
+    },
+    "null_selected_by_threshold": {
+      "0.6": 0,
+      "0.7": 0,
+      "0.8": 0,
+      "0.9": 0
+    },
+    "shadow_real_selected": 4476,
+    "shadow_selected": 1524
+  },
+  "pilot_to_formal": {
+    "spearman_all_probabilities": 0.5748284780233893,
+    "mean_absolute_probability_change": 0.00911651376146789,
+    "mean_top3_jaccard": 0.6859999999999999,
+    "median_top3_jaccard": 0.5,
+    "mean_top10_jaccard": 0.5403446553446553
+  },
+  "output_sha256": {
+    "q2_cpss_selection_E117.csv": "3d487e7073ecec417421d14aa41b7339d1f5edca33b2a9a5972e117b218fc20e",
+    "q2_cpss_nnls_alignment_E117.csv.gz": "31df02c3514aa036c7d96e4b1fed8214db9ff9849ee5684b1e96992a1c6b2849",
+    "q2_cpss_split_indices_E117.csv.gz": "357cb2829ce7d64eeb9d8b6f0dcd4d8b63a8500f31e2fbe0214cb89fabfcaf25",
+    "q2_cpss_pair_jaccard_E117.csv": "3687309314c06fee7c41d78b9858ea05e0799f1c440d855702756b423134e3c6",
+    "q2_null_target_permutation_E117.csv.gz": "1a4b53e8634f807d8ce3b19681ecba09692f237ee5f65ac5257866dd2354af63",
+    "q2_shadow_feature_audit_E117.csv": "506a59019e3cafcbe647cacbd815a18c17f88dd54feaf7be44680a5534ec40f9",
+    "q2_error_control_E117.csv": "f9c4ae30c107b96843bd338edb118bbd4659665f806e7f875b06fb44feb7e296"
+  }
+}

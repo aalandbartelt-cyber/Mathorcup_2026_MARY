@@ -1,5 +1,5 @@
 experiment: E117
-status: code_ready_not_run
+status: ready
 pilot_pairs: 10
 formal_pairs: 100
 sampling: style_stratified_complementary_halves
@@ -14,7 +14,7 @@ full_data_graph_reused: false
 candidate_scope: strict_compounds_218
 random_state: 20261025
 gpu_used: false
-formal_run: false
+formal_run: true
 gates:
   max_confirmed_fdp: 0.10
   require_e113_complete: true

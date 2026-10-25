@@ -31,6 +31,7 @@ from q2_contract import Q1_RESULT_DIR, RESULT_DIR, load_q2
 
 EXPERIMENT_ID = "E117"
 ROOT = Path(__file__).resolve().parents[3]
+CANONICAL_ROOT = Path("/home/mary/mathorcup")
 CONFIG_PATH = ROOT / "02_代码" / "Q2_关键化合物" / "configs" / "E117_stability_controls.yaml"
 
 
@@ -62,10 +63,15 @@ def load_config(path: Path = CONFIG_PATH) -> dict:
     return config
 
 
-def audit_inputs(result_dir: Path = RESULT_DIR, root: Path = ROOT) -> dict:
+def audit_inputs(
+    result_dir: Path = RESULT_DIR,
+    root: Path = ROOT,
+    q1_root: Path | None = None,
+) -> dict:
     """Read-only gate that rejects pilot/incomplete upstream artifacts."""
 
     result_dir, root = Path(result_dir), Path(root)
+    q1_root = Path(q1_root) if q1_root is not None else root
     problems: list[str] = []
 
     candidates_path = result_dir / "q2_candidate_dictionary.csv"
@@ -95,18 +101,26 @@ def audit_inputs(result_dir: Path = RESULT_DIR, root: Path = ROOT) -> dict:
     for flag in ("q1_retrained", "nnls_refit", "hyperparameter_search"):
         if e115 and e115.get(flag) is not False:
             problems.append(f"E115 {flag} must be false")
+    e115_hashes = e115.get("output_sha256", {})
+    e115_hashes_match = bool(e115.get("outputs")) and bool(e115_hashes)
     for output in e115.get("outputs", []):
         candidate = Path(output)
         if not candidate.is_absolute():
             candidate = root / candidate
         if not candidate.is_file():
             problems.append(f"missing E115 output: {candidate}")
+            e115_hashes_match = False
+            continue
+        expected_hash = e115_hashes.get(candidate.name)
+        if expected_hash is None or _sha256(candidate) != expected_hash:
+            problems.append(f"E115 output hash mismatch: {candidate.name}")
+            e115_hashes_match = False
 
-    registry_path = root / "03_结果" / "Q1_感官评分" / "final_model_registry.json"
+    registry_path = q1_root / "03_结果" / "Q1_感官评分" / "final_model_registry.json"
     registry = _load_json(registry_path) if registry_path.is_file() else {}
     if registry.get("final_model") != "感官组收缩NNLS":
         problems.append("Q1 registry does not point to the frozen final NNLS model")
-    oof_path = root / str(registry.get("oof_path", ""))
+    oof_path = q1_root / str(registry.get("oof_path", ""))
     if not oof_path.is_file():
         problems.append("Q1 final OOF is missing")
         actual_oof_hash = None
@@ -125,9 +139,60 @@ def audit_inputs(result_dir: Path = RESULT_DIR, root: Path = ROOT) -> dict:
         "e113_status": e113.get("status"),
         "e115_manifest": str(e115_path),
         "e115_status": e115.get("status"),
+        "e115_output_hashes_match": e115_hashes_match,
         "q1_final_model": registry.get("final_model"),
         "q1_final_oof_sha256": actual_oof_hash,
+        "q1_registry_root": str(q1_root),
     }
+
+
+def align_cpss_with_final_nnls(
+    cpss: pd.DataFrame,
+    conditional_importance: pd.DataFrame,
+) -> pd.DataFrame:
+    """Attach fold-aggregated frozen-NNLS predictive attribution to CPSS rows.
+
+    CPSS remains an independent half-sample stability screen.  The NNLS values
+    are attached after selection so that they cannot alter half-local ranks,
+    while E118 can consume the two evidence sources without an ambiguous join.
+    """
+
+    required_cpss = {"target_code", "feature_code", "selection_probability"}
+    required_nnls = {"target_code", "feature_code", "median_delta_mae"}
+    if not required_cpss.issubset(cpss.columns):
+        raise ValueError("CPSS table is missing target/feature/probability columns")
+    if not required_nnls.issubset(conditional_importance.columns):
+        raise ValueError("E115 conditional table is missing target/feature/delta columns")
+    summary = (
+        conditional_importance.groupby(["target_code", "feature_code"], as_index=False)
+        .agg(
+            nnls_median_delta_mae=("median_delta_mae", "median"),
+            nnls_positive_fold_fraction=("median_delta_mae", lambda values: float((values > 0).mean())),
+            nnls_fold_count=("median_delta_mae", "size"),
+        )
+    )
+    summary["nnls_predictive_rank"] = (
+        summary.sort_values(
+            ["target_code", "nnls_median_delta_mae", "nnls_positive_fold_fraction", "feature_code"],
+            ascending=[True, False, False, True],
+            kind="mergesort",
+        )
+        .groupby("target_code", sort=False)
+        .cumcount()
+        .add(1)
+        .astype(int)
+    )
+    aligned = cpss.merge(
+        summary,
+        on=["target_code", "feature_code"],
+        how="left",
+        validate="one_to_one",
+    )
+    if aligned[
+        ["nnls_median_delta_mae", "nnls_positive_fold_fraction", "nnls_fold_count", "nnls_predictive_rank"]
+    ].isna().any().any():
+        raise ValueError("E115 conditional attribution does not cover every CPSS target-feature pair")
+    return aligned
 
 
 def _median_impute(values: np.ndarray) -> np.ndarray:
@@ -198,15 +263,18 @@ def run_e117(
     output_dir: Path = RESULT_DIR,
     config_path: Path = CONFIG_PATH,
     root: Path = ROOT,
+    stage: str = "full",
 ) -> dict:
     """Execute formal E117 after all fail-closed gates are satisfied."""
 
     started = time.perf_counter()
+    if stage not in {"pilot", "full"}:
+        raise ValueError("stage must be 'pilot' or 'full'")
     output_dir = Path(output_dir)
     config = load_config(config_path)
     if config.get("formal_run") is not True:
         raise RuntimeError("formal E117 is disabled; reviewed config must set formal_run: true")
-    readiness = audit_inputs(output_dir, root)
+    readiness = audit_inputs(output_dir, root, q1_root=CANONICAL_ROOT)
     if readiness["status"] != "ready":
         raise RuntimeError("E117 input gate failed: " + "; ".join(readiness["problems"]))
 
@@ -217,11 +285,17 @@ def run_e117(
     y = y_frame.to_numpy(float)
     styles = style_series.to_numpy(object)
     target_codes = y_frame.columns.astype(str).tolist()
-    n_pairs = int(config["formal_pairs"])
+    n_pairs = int(config["pilot_pairs"] if stage == "pilot" else config["formal_pairs"])
     top_k = int(config["selection_size_per_target"])
     seed = int(config["random_state"])
 
     pairs = stratified_complementary_pairs(styles, n_pairs, seed)
+    split_rows = [
+        {"pair": pair_id, "half": half, "row_index": int(row_index)}
+        for pair_id, (left, right) in enumerate(pairs)
+        for half, indices in (("left", left), ("right", right))
+        for row_index in indices
+    ]
     selections: list[list[set[int]]] = [[] for _ in target_codes]
     jaccard_rows: list[dict] = []
     for pair_id, (left, right) in enumerate(pairs):
@@ -253,13 +327,24 @@ def run_e117(
             for feature_id, feature in enumerate(strict_codes)
         )
 
+    cpss_frame = pd.DataFrame(cpss_rows)
+    conditional_path = output_dir / "q2_final_nnls_conditional_importance_E115.csv.gz"
+    conditional = pd.read_csv(conditional_path)
+    alignment = align_cpss_with_final_nnls(cpss_frame, conditional)
+    if not alignment["nnls_fold_count"].eq(30).all():
+        raise ValueError("E115 conditional attribution must cover 30 folds per target-feature pair")
+
     null_selections: list[list[set[int]]] = [[] for _ in target_codes]
     rng = np.random.default_rng(seed + 117000)
-    for _ in range(int(config["target_permutation_repeats"])):
+    for null_repeat in range(int(config["target_permutation_repeats"])):
         null_y = _permute_within_style(y, styles, rng)
-        selected, _ = select_style_adjusted_topk(x, null_y, styles, top_k)
-        for target_id, chosen in enumerate(selected):
-            null_selections[target_id].append(chosen)
+        left, right = pairs[null_repeat % len(pairs)]
+        for half in (left, right):
+            selected, _ = select_style_adjusted_topk(
+                x[half], null_y[half], styles[half], top_k
+            )
+            for target_id, chosen in enumerate(selected):
+                null_selections[target_id].append(chosen)
     null_rows, error_rows = [], []
     for target_id, target in enumerate(target_codes):
         null_frequency = selection_probability(null_selections[target_id], len(strict_codes))
@@ -290,40 +375,54 @@ def run_e117(
                 }
             )
 
-    # Shadow audit does not alter real rankings.  It records how often a
-    # within-style-permuted copy enters a joint Top-k screen.
+    # Shadow audit does not alter real rankings.  It mirrors the complementary
+    # half sample size and records how often a within-style-permuted copy enters
+    # a joint Top-k screen.
     shadow_rows = []
     for shadow_repeat in range(int(config["shadow_feature_repeats"])):
-        shadow = _permute_within_style(x, styles, rng)
-        joint = np.concatenate([x, shadow], axis=1)
-        chosen, _ = select_style_adjusted_topk(joint, y, styles, top_k)
-        for target_id, target in enumerate(target_codes):
-            shadow_rows.append(
-                {
-                    "repeat": shadow_repeat,
-                    "target_code": target,
-                    "real_selected": sum(index < len(strict_codes) for index in chosen[target_id]),
-                    "shadow_selected": sum(index >= len(strict_codes) for index in chosen[target_id]),
-                }
+        left, right = pairs[shadow_repeat % len(pairs)]
+        for half_name, half in (("left", left), ("right", right)):
+            half_x = x[half]
+            half_styles = styles[half]
+            shadow = _permute_within_style(half_x, half_styles, rng)
+            joint = np.concatenate([half_x, shadow], axis=1)
+            chosen, _ = select_style_adjusted_topk(
+                joint, y[half], half_styles, top_k
             )
+            for target_id, target in enumerate(target_codes):
+                shadow_rows.append(
+                    {
+                        "repeat": shadow_repeat,
+                        "half": half_name,
+                        "target_code": target,
+                        "real_selected": sum(index < len(strict_codes) for index in chosen[target_id]),
+                        "shadow_selected": sum(index >= len(strict_codes) for index in chosen[target_id]),
+                    }
+                )
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    suffix = "_pilot" if stage == "pilot" else ""
     paths = {
-        "selection": output_dir / "q2_cpss_selection_E117.csv",
-        "jaccard": output_dir / "q2_cpss_pair_jaccard_E117.csv",
-        "null": output_dir / "q2_null_target_permutation_E117.csv.gz",
-        "shadow": output_dir / "q2_shadow_feature_audit_E117.csv",
-        "error": output_dir / "q2_error_control_E117.csv",
-        "manifest": output_dir / "q2_run_manifest_E117.json",
+        "selection": output_dir / f"q2_cpss_selection_E117{suffix}.csv",
+        "alignment": output_dir / f"q2_cpss_nnls_alignment_E117{suffix}.csv.gz",
+        "splits": output_dir / f"q2_cpss_split_indices_E117{suffix}.csv.gz",
+        "jaccard": output_dir / f"q2_cpss_pair_jaccard_E117{suffix}.csv",
+        "null": output_dir / f"q2_null_target_permutation_E117{suffix}.csv.gz",
+        "shadow": output_dir / f"q2_shadow_feature_audit_E117{suffix}.csv",
+        "error": output_dir / f"q2_error_control_E117{suffix}.csv",
+        "manifest": output_dir / f"q2_run_manifest_E117{suffix}.json",
     }
-    pd.DataFrame(cpss_rows).to_csv(paths["selection"], index=False)
+    cpss_frame.to_csv(paths["selection"], index=False)
+    alignment.to_csv(paths["alignment"], index=False, compression="gzip")
+    pd.DataFrame(split_rows).to_csv(paths["splits"], index=False, compression="gzip")
     pd.DataFrame(jaccard_rows).to_csv(paths["jaccard"], index=False)
     pd.DataFrame(null_rows).to_csv(paths["null"], index=False, compression="gzip")
     pd.DataFrame(shadow_rows).to_csv(paths["shadow"], index=False)
     pd.DataFrame(error_rows).to_csv(paths["error"], index=False)
     manifest = {
         "experiment_id": EXPERIMENT_ID,
-        "status": "complete",
+        "status": "pilot_complete" if stage == "pilot" else "complete",
+        "stage": stage,
         "formal_run": True,
         "n_pairs": n_pairs,
         "selection_trials_per_target": 2 * n_pairs,
@@ -331,13 +430,20 @@ def run_e117(
         "n_targets": len(target_codes),
         "sampling": config["sampling"],
         "target_permutation_scope": config["target_permutation_scope"],
+        "null_selection_trials_per_target": 2 * int(config["target_permutation_repeats"]),
+        "shadow_trials_per_target": 2 * int(config["shadow_feature_repeats"]),
         "selection_method": "half_local_median_style_centered_absolute_spearman",
+        "e115_integration": "post_selection_fold_aggregated_final_nnls_conditional_attribution",
+        "e115_conditional_sha256": _sha256(conditional_path),
         "upstream": readiness,
         "config_sha256": _sha256(Path(config_path)),
         "elapsed_seconds": time.perf_counter() - started,
         "python": platform.python_version(),
         "gpu_used": False,
         "outputs": [str(path) for key, path in paths.items() if key != "manifest"],
+    }
+    manifest["output_sha256"] = {
+        path.name: _sha256(path) for key, path in paths.items() if key != "manifest"
     }
     paths["manifest"].write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest
@@ -346,13 +452,14 @@ def run_e117(
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true", help="run only after formal_run is reviewed and enabled")
+    parser.add_argument("--stage", choices=("pilot", "full"), default="full")
     parser.add_argument("--output-dir", type=Path, default=RESULT_DIR)
     parser.add_argument("--config", type=Path, default=CONFIG_PATH)
     args = parser.parse_args()
     if args.execute:
-        payload = run_e117(args.output_dir, args.config)
+        payload = run_e117(args.output_dir, args.config, stage=args.stage)
     else:
-        payload = audit_inputs(args.output_dir, ROOT)
+        payload = audit_inputs(args.output_dir, ROOT, q1_root=CANONICAL_ROOT)
         payload["config_formal_run"] = bool(load_config(args.config).get("formal_run"))
         payload["status"] = "code_ready_not_run" if payload["status"] == "ready" else "blocked_not_run"
     print(json.dumps(payload, ensure_ascii=False, indent=2))

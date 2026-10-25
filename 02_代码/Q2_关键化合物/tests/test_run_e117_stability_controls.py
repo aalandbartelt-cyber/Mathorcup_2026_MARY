@@ -38,10 +38,12 @@ class E117RunnerTests(unittest.TestCase):
             {"status": "complete", "n_outer_folds": 30, "n_features": 218},
         )
         outputs = []
+        output_hashes = {}
         for name in ("modules.csv", "fields.csv", "sufficiency.csv"):
             path = result / name
             path.write_text("ok\n", encoding="utf-8")
             outputs.append(str(path))
+            output_hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
         write_json(
             result / "q2_run_manifest_E115_final_nnls.json",
             {
@@ -54,6 +56,7 @@ class E117RunnerTests(unittest.TestCase):
                 "nnls_refit": False,
                 "hyperparameter_search": False,
                 "outputs": outputs,
+                "output_sha256": output_hashes,
             },
         )
         q1 = root / "03_结果" / "Q1_感官评分"
@@ -76,6 +79,7 @@ class E117RunnerTests(unittest.TestCase):
             audit = runner.audit_inputs(result, root)
             self.assertEqual(audit["status"], "ready")
             self.assertEqual(audit["problems"], [])
+            self.assertTrue(audit["e115_output_hashes_match"])
 
             manifest = result / "q2_run_manifest_E115_final_nnls.json"
             payload = json.loads(manifest.read_text())
@@ -85,11 +89,53 @@ class E117RunnerTests(unittest.TestCase):
             self.assertEqual(audit["status"], "blocked")
             self.assertTrue(any("pilot/incomplete" in value for value in audit["problems"]))
 
-    def test_committed_config_is_fail_closed(self) -> None:
-        config = runner.load_config()
-        self.assertFalse(config["formal_run"])
+    def test_input_audit_rejects_tampered_e115_output(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            with self.assertRaisesRegex(RuntimeError, "formal E117 is disabled"):
+            root, result = self._ready_fixture(Path(directory))
+            (result / "fields.csv").write_text("tampered\n", encoding="utf-8")
+            audit = runner.audit_inputs(result, root)
+            self.assertEqual(audit["status"], "blocked")
+            self.assertFalse(audit["e115_output_hashes_match"])
+            self.assertTrue(any("hash mismatch" in value for value in audit["problems"]))
+
+    def test_input_audit_can_read_frozen_q1_from_separate_canonical_root(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root, result = self._ready_fixture(Path(directory))
+            worktree_root = root / ".worktrees" / "q2"
+            audit = runner.audit_inputs(result, worktree_root, q1_root=root)
+            self.assertEqual(audit["status"], "ready")
+            self.assertEqual(audit["q1_registry_root"], str(root))
+
+    def test_nnls_alignment_aggregates_all_fold_conditional_importance(self) -> None:
+        conditional = pd.DataFrame(
+            {
+                "repeat": [0, 1, 0, 1, 0, 1, 0, 1],
+                "fold": [0, 0, 0, 0, 0, 0, 0, 0],
+                "target_code": ["t1", "t1", "t1", "t1", "t2", "t2", "t2", "t2"],
+                "feature_code": ["a", "a", "b", "b", "a", "a", "b", "b"],
+                "median_delta_mae": [0.4, 0.2, 0.1, 0.0, -0.1, 0.1, 0.3, 0.5],
+            }
+        )
+        cpss = pd.DataFrame(
+            {
+                "target_code": ["t1", "t1", "t2", "t2"],
+                "feature_code": ["a", "b", "a", "b"],
+                "selection_probability": [0.8, 0.2, 0.3, 0.7],
+                "selection_count": [8, 2, 3, 7],
+                "selection_trials": [10, 10, 10, 10],
+            }
+        )
+        aligned = runner.align_cpss_with_final_nnls(cpss, conditional)
+        t1 = aligned.loc[aligned["target_code"].eq("t1")].set_index("feature_code")
+        self.assertEqual(int(t1.loc["a", "nnls_predictive_rank"]), 1)
+        self.assertAlmostEqual(float(t1.loc["a", "nnls_median_delta_mae"]), 0.3)
+        self.assertEqual(int(t1.loc["b", "nnls_predictive_rank"]), 2)
+
+    def test_reviewed_config_still_fails_closed_on_missing_inputs(self) -> None:
+        config = runner.load_config()
+        self.assertTrue(config["formal_run"])
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(RuntimeError, "input gate failed"):
                 runner.run_e117(Path(directory), runner.CONFIG_PATH, Path(directory))
 
     def test_style_adjusted_selector_returns_topk_for_each_target(self) -> None:
