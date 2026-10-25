@@ -1,0 +1,27 @@
+experiment_id: E009
+question: Q1
+status: code_ready_not_run
+source_config: E005_continuous_ensemble.yaml
+purpose: strict_outer_fold_nnls_with_free_intercepts
+outer_cv_file: 03_结果/Q1_感官评分/q1_cv_splits.csv
+screening_repeats: [0, 1, 2]
+full_repeats: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+inner_splits: 3
+random_state: 20261023
+base_models: [extra_trees, hgb, ridge_quantile, pls2_quantile]
+scopes: [shared, group, target]
+primary_scope: group
+target_group_file: 03_结果/Q1_感官评分/q1_target_dictionary.csv
+target_group_column: target_group
+local_shrinkage: 0.5
+weights_sum_to_one: false
+free_target_intercepts: true
+entry_condition: E007_complete_and_audited_no_promoted_model_and_complementarity_supported
+hard_thresholds:
+  r2_min: 0.2359
+  mae_max: 0.3422
+  spearman_min: 0.4260
+  qwk_proxy_min: 0.4026
+  acc_pm1_proxy_min: 0.5734
+minimum_repeat_wins: 7
+gpu_used: false

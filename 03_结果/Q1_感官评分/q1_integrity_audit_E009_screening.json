@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "outer_folds": 9,
+  "repeats": [
+    0,
+    1,
+    2
+  ],
+  "metadata_normalization": {
+    "changed_field": "target_code",
+    "old_dtype": "object",
+    "new_dtype": "<U15",
+    "reason": "pickle-free formal audit compatibility",
+    "model_refitted": false,
+    "all_prediction_and_identity_arrays_equal": true,
+    "metrics_recomputed": 60,
+    "original_archive": "outputs/archive/q1_oof_predictions_E009_screening.before_unicode.npz",
+    "original_manifest": "outputs/archive/q1_run_manifest_E009_screening.before_unicode.json",
+    "old_archive_sha256": "1ed153da91357bda8f530396716de75cc8a2642c5bfba223040068301f6149bb",
+    "new_archive_sha256": "7e66aaf2d6aaa72cda985a792a73a75bf102db118aa1c9759308aedec68a5633",
+    "training_source_commit": "aaa7bc8",
+    "source_hashes_verified_at_training_revision": true
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "status": "complete",
+  "training_performed": false,
+  "frozen_protocol": {
+    "model": "nnls_group",
+    "repeat_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "baseline_means": {
+      "r2": 0.2358695380976478,
+      "mae": 0.3422216059972746,
+      "spearman": 0.4143762959072421,
+      "qwk_proxy": 0.40259175957182747,
+      "acc_pm1_proxy": 0.5476399999999999
+    },
+    "candidate_means": {
+      "r2": 0.2564099486964824,
+      "mae": 0.3361453737119522,
+      "spearman": 0.43019115966436683,
+      "qwk_proxy": 0.41826256787803545,
+      "acc_pm1_proxy": 0.5542320000000001
+    },
+    "repeat_win_counts": {
+      "r2": 10,
+      "mae": 10,
+      "spearman": 10,
+      "qwk_proxy": 10,
+      "acc_pm1_proxy": 10
+    },
+    "promoted": false,
+    "mean_threshold_flags": {
+      "r2": true,
+      "mae": true,
+      "spearman": true,
+      "qwk_proxy": true,
+      "acc_pm1_proxy": false
+    },
+    "repeat_win_flags": {
+      "r2": true,
+      "mae": true,
+      "spearman": true,
+      "qwk_proxy": true,
+      "acc_pm1_proxy": true
+    },
+    "minimum_repeat_wins": 7
+  },
+  "robustness": {
+    "tail_13": {
+      "bottom_targets": [
+        "stale_hops",
+        "F_esters_flower",
+        "A_esters_fruity",
+        "barnyard",
+        "clove",
+        "A_esters_flower",
+        "A_malt_grain",
+        "dms",
+        "A_hops_woody",
+        "F_malt_grain",
+        "A_esters_isoaa",
+        "diacetyl",
+        "orange"
+      ],
+      "n_bottom_targets": 13,
+      "baseline_r2": 0.04113733457936612,
+      "candidate_r2": 0.0638695843578737,
+      "delta_r2": 0.022732249778507574,
+      "baseline_mae": 0.32770928877153743,
+      "candidate_mae": 0.32269529165634364,
+      "delta_mae": -0.005013997115193791
+    },
+    "hard_10_mean_deltas": {
+      "r2": 0.0081452018677509,
+      "mae": -0.0032203688131901887,
+      "spearman": 0.017456157445048436,
+      "qwk_proxy": 0.014626189891533631,
+      "acc_pm1_proxy": 0.004440000000000005
+    },
+    "hard_10_r2_declines": [
+      "t2n",
+      "overall",
+      "A_esters_flower",
+      "A_hops_tropical",
+      "F_hops_tropical"
+    ],
+    "worst_style": {
+      "worst_style": "Brut",
+      "baseline_mae": 0.5511784523704845,
+      "candidate_mae": 0.5348030755365356,
+      "delta_mae": -0.01637537683394885
+    },
+    "styles_with_lower_mae": 20,
+    "style_increases": [
+      {
+        "style": "Flanders old brown",
+        "n_beers": 5,
+        "baseline_mae": 0.31951977182267927,
+        "candidate_mae": 0.32142097470227526,
+        "delta_mae": 0.0019012028795959979
+      },
+      {
+        "style": "Tripel",
+        "n_beers": 28,
+        "baseline_mae": 0.34481493240366146,
+        "candidate_mae": 0.34589667487009473,
+        "delta_mae": 0.0010817424664332775
+      }
+    ],
+    "mean_oof": {
+      "r2": 0.2742459357948348,
+      "mae": 0.3314980757007421,
+      "rmse": 0.4654661737547368,
+      "spearman": 0.448687545667444,
+      "qwk_proxy": 0.4368384865867052,
+      "acc_proxy": 0.2497599999999999,
+      "acc_pm1_proxy": 0.56424,
+      "level_mae_proxy": 1.5855199999999998,
+      "level_spearman_proxy": 0.4372936855510334
+    },
+    "paired_bootstrap": [
+      {
+        "metric": "mae",
+        "baseline": 0.33887915842346694,
+        "candidate": 0.3314980757007421,
+        "delta_candidate_minus_baseline": -0.007381082722724876,
+        "ci_low": -0.009467432918541348,
+        "ci_high": -0.0053310989421911795,
+        "improvement_probability": 1.0,
+        "n_bootstraps": 20000,
+        "random_state": 20261025
+      },
+      {
+        "metric": "absolute_rank_error",
+        "baseline": 0.23702297188755023,
+        "candidate": 0.23329060240963856,
+        "delta_candidate_minus_baseline": -0.0037323694779116496,
+        "ci_low": -0.006055341365461854,
+        "ci_high": -0.0015022650602409746,
+        "improvement_probability": 0.9992,
+        "n_bootstraps": 20000,
+        "random_state": 20261025
+      }
+    ]
+  },
+  "integrity": {
+    "metric_values_recomputed": 297,
+    "fold_cache_recomputations": 30,
+    "source_hashes_verified": 12,
+    "prediction_shape": [
+      10,
+      250,
+      50
+    ],
+    "checkpoint_parameter_rows": 30,
+    "source_artifact_sha256": {
+      "03_结果/Q1_感官评分/q1_oof_predictions_E009.npz": "d7d1a4f775bd5b3947393a2278f5fe66af2c516c14a7504ff946a4d812d444de",
+      "03_结果/Q1_感官评分/q1_extended_metrics_E009.csv": "c32c8895f88d2cac091f028102cb3b5937e9d0bc966e39d3f2d077c8c9ddf6fa",
+      "03_结果/Q1_感官评分/q1_extended_metrics_by_target_E009.csv": "48820935d2071dc182a4c5b20ef34712eb34fbb6e265ee5461d9732fb8762f29",
+      "03_结果/Q1_感官评分/q1_selected_parameters_E009.csv": "e283b862923af7e1255adcfc3bebb31188138da6ebb30e3642516f25bc13b208",
+      "03_结果/Q1_感官评分/q1_checkpoint_E009.npz": "134b47079eb18781bcb36168e2001ce7e82bfa31d99c82a2d94e0361ed122e58",
+      "03_结果/Q1_感官评分/q1_run_manifest_E009.json": "b0695c3d9154f8053f7b107b8536764ab0ebf746eb16c6297257de1387e8bd22"
+    }
+  },
+  "selection_under_user_instruction": {
+    "selected": "E009",
+    "basis": "五项指标与稳健性综合选择；不改写原冻结规则",
+    "tail_and_worst_style_material_regression": false,
+    "limitations": "部分难目标与两种风格小幅变差；连续—有序融合的MAE/排序代理指标更优；原ACC±1绝对要求未达到"
+  },
+  "bootstrap_scope": "固定mean-OOF预测的啤酒级配对重采样，非重训、非训练样本不确定性区间"
+}

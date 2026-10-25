@@ -1,0 +1,46 @@
+{
+  "experiment_id": "E009",
+  "status": "complete",
+  "stage": "full",
+  "repeats": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "outer_folds": 30,
+  "primary_scope": "group",
+  "selection_scope": "group only; shared and target are pre-registered ablations",
+  "run_signature": "6bfc6838147a46387624d59f6677d98fcfdd5a8bdcabfe772630f573b8cee220",
+  "input_source_hashes": {
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/configs/E009_nnls_stacking.yaml": "76368cd6eb603390f6a3e2b113d47b774d8dbac6b8ff51b9f3cb4b971bf4f476",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/configs/E005_continuous_ensemble.yaml": "dc7e97c7100a5f0d6c358d27020cc04fcb203ffcdb99f7e761cf80cd6142b993",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/src/run_e009_nnls_stacking.py": "5ca1210204bde18a815034ad5fd533aef1a3a71420ab0759e8fbd24bded73981",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/src/nnls_stacking.py": "505255b748458880969b78cdc8582c842a95c8278428172f7bf5f7b12b2c2814",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/src/run_e005_continuous_ensemble.py": "ca824c0a036e017a256b9250abf7efcaf7fba44d3fecbdcd9758e7c7df81984c",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/src/baseline_models.py": "b545290d9a648a434337e74b749ca174b492d825b094a653d0ad07f23e01bdd9",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/02_\u4ee3\u7801/Q1_\u611f\u5b98\u8bc4\u5206/src/ensemble_models.py": "c557e5f7b0a86c9a87e965aa273319d64aff58fdf34d7ac13719d4898c807a3a",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/data/2026\u521d\u8d5b/2026\u5e74MathorCup\u5927\u6570\u636e\u6311\u6218\u8d5b-\u8d5b\u9053A\u521d\u8d5b/\u9644\u4ef6/1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/data/2026\u521d\u8d5b/2026\u5e74MathorCup\u5927\u6570\u636e\u6311\u6218\u8d5b-\u8d5b\u9053A\u521d\u8d5b/\u9644\u4ef6/4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_cv_splits.csv": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_target_dictionary.csv": "79352022756befabb8cc6c11e4cf51e0e0aa050e0044892cd7f95488866795fa",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/diagnostics_nnls/q1_complementarity_manifest.json": "59aa77e6c93e6827b0b0235365b052437d242825160d4632552cf87033c68416"
+  },
+  "gpu_used": false,
+  "elapsed_seconds": 1224.9815527179962,
+  "python": "3.10.19",
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_oof_predictions_E009.npz",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_extended_metrics_E009.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_extended_metrics_by_target_E009.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_selected_parameters_E009.csv",
+    "/home/mary/mathorcup/.worktrees/q1-nnls-opt/03_\u7ed3\u679c/Q1_\u611f\u5b98\u8bc4\u5206/q1_checkpoint_E009.npz"
+  ],
+  "formal_robustness_audit_required": true
+}
