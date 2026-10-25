@@ -44,7 +44,7 @@ Execution must begin in a dedicated worktree created from current `main`; do not
 - Create: `02_代码/Q2_关键化合物/configs/E113_partial_graph.yaml`
 - Modify: `02_代码/Q2_关键化合物/configs/README.md`
 
-- [ ] **Step 1: Write failing graph tests**
+- [x] **Step 1: Write failing graph tests**
 
 ```python
 from __future__ import annotations
@@ -83,7 +83,7 @@ class PartialGraphTests(unittest.TestCase):
             coclustering_matrix([first]), coclustering_matrix([relabelled]))
 ```
 
-- [ ] **Step 2: Verify RED**
+- [x] **Step 2: Verify RED**
 
 Run:
 
@@ -94,7 +94,7 @@ conda run -n mathorcup python -m unittest \
 
 Expected: import failure for `partial_graph`.
 
-- [ ] **Step 3: Implement the graph API**
+- [x] **Step 3: Implement the graph API**
 
 Use a training-only quantile transformer and explicit precision conversion:
 
@@ -156,11 +156,11 @@ random_state: 20261025
 gpu_used: false
 ```
 
-- [ ] **Step 4: Verify GREEN**
+- [x] **Step 4: Verify GREEN**
 
 Run the new test and all existing Q2 tests. Expected: all pass.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add '02_代码/Q2_关键化合物/src/partial_graph.py' \
@@ -181,7 +181,7 @@ git commit -m 'feat(q2): add fold-local sparse partial graph primitives'
 - Create: `03_结果/Q2_关键化合物/q2_coclustering_E113.csv.gz`
 - Create: `03_结果/Q2_关键化合物/q2_run_manifest_E113.json`
 
-- [ ] **Step 1: Add the selection-rule test**
+- [x] **Step 1: Add the selection-rule test**
 
 ```python
 def test_one_se_rule_prefers_stable_sparser_graph(self):
@@ -195,7 +195,7 @@ def test_one_se_rule_prefers_stable_sparser_graph(self):
     self.assertEqual(chosen, 0.10)
 ```
 
-- [ ] **Step 2: Verify RED, then implement the runner**
+- [x] **Step 2: Verify RED, then implement the runner**
 
 For each of the 30 frozen outer folds:
 

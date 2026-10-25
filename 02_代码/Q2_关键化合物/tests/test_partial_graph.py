@@ -20,9 +20,36 @@ from partial_graph import (  # noqa: E402
     precision_to_partial_correlation,
     stable_edge_table,
 )
+from run_e113_partial_graph import select_graph_alpha  # noqa: E402
 
 
 class PartialGraphTests(unittest.TestCase):
+    def test_one_se_rule_prefers_stable_sparser_graph(self) -> None:
+        rows = pd.DataFrame(
+            {
+                "alpha": [0.05, 0.10, 0.20],
+                "mean_loglik": [-10.0, -10.1, -10.5],
+                "se_loglik": [0.2, 0.2, 0.2],
+                "mean_edge_jaccard": [0.40, 0.60, 0.70],
+            }
+        )
+
+        chosen = select_graph_alpha(rows)
+
+        self.assertEqual(chosen, 0.10)
+
+    def test_one_se_rule_ignores_failed_alpha(self) -> None:
+        rows = pd.DataFrame(
+            {
+                "alpha": [0.02, 0.10],
+                "mean_loglik": [np.nan, -10.0],
+                "se_loglik": [np.nan, 0.2],
+                "mean_edge_jaccard": [np.nan, 0.6],
+            }
+        )
+
+        self.assertEqual(select_graph_alpha(rows), 0.10)
+
     def test_gaussianizer_does_not_refit_on_validation(self) -> None:
         train = np.arange(30, dtype=float).reshape(10, 3)
         validation = np.full((2, 3), 999.0)
