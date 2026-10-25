@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 
 
 SRC = Path(__file__).resolve().parents[1] / "src"
@@ -16,9 +17,25 @@ from hierarchical_importance import (  # noqa: E402
     joint_permutation,
     residual_permutation,
 )
+from run_e115_hierarchical_importance import select_fold_top3  # noqa: E402
 
 
 class HierarchicalImportanceTests(unittest.TestCase):
+    def test_sufficiency_top3_uses_only_matching_outer_training_fold(self) -> None:
+        effects = pd.DataFrame(
+            {
+                "repeat": [0, 0, 0, 1, 1, 1],
+                "fold": [0, 0, 0, 0, 0, 0],
+                "target_code": ["t"] * 6,
+                "feature_code": ["a", "b", "c", "x", "y", "z"],
+                "fold_rank": [1, 2, 3, 1, 2, 3],
+            }
+        )
+
+        selected = select_fold_top3(effects, repeat=0, fold=0)
+
+        self.assertEqual(selected, {"t": ["a", "b", "c"]})
+
     def test_joint_permutation_keeps_module_columns_together(self) -> None:
         x = np.arange(60, dtype=float).reshape(12, 5)
 

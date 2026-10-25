@@ -344,7 +344,7 @@ def test_residual_permutation_preserves_conditional_mean(self):
     np.testing.assert_allclose(np.sort(changed - mean), np.sort(residual))
 ```
 
-- [ ] **Step 2: Implement module and residual importance**
+- [x] **Step 2: Implement module and residual importance**
 
 Expose these functions:
 
