@@ -1,5 +1,19 @@
 # Progress Log
 
+## Session: 2026-10-25 E007完整审计与E009接续
+
+- **Status:** E007 audit complete；E009 screening complete/promoted to full；full running
+- Actions taken:
+  - 用户要求继续/查看进度，发现E007已于14:33自然完成，未重启训练；完整30折、OOF身份、配置哈希和55个指标复算通过。
+  - 执行原审计脚本e007-full/final，补充预登记难目标和mean-OOF独立表；20,000次配对beer bootstrap、尾部和22风格审计完成。E007因ACC±1不达硬门槛不晋级，保留E003；结果推送626d3ab。
+  - 重跑Q1全套83测试并通过真实前序审计守卫，按D-011于17:23启动E009筛查，17:27日志4/9；启动记录推送08b5c0b。
+  - 主工作区新增Q1_二轮优化报告.md，同步任务板/决策/实验日志；没有更换图稿、论文数字或启动Q2/Q3。
+- Verification:
+  - E007训练产物和审计已提交推送；原E001—E003和运行代码/配置未改。
+  - E009当前进程212292，tmux q1_e009_screening；运行态checkpoint/cache保留，不在运行中提交半成品为正式结果。
+  - 后续17:30筛查9/9完成且五项改善，符合原筛查规则。元数据object读档问题先复现测试再修复，仅目标名称改Unicode，预测逐元素不变，60指标/83测试通过；归档62ed1db已推送。
+  - 17:33已启动E009完整10×3：tmux q1_e009_full，PID214649；此前screening PID已结束，不能再拿旧PID当当前训练进程。
+
 ## Session: 2026-10-25 Q3 独立探索
 
 - **Status:** research complete；delivery checkpoint

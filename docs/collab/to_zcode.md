@@ -598,3 +598,26 @@ Q2 路线 B 的图稿 checkpoint 已完成，暂不生成 DOCX。正文控制为
 - 后续交付避免将样本分位阈值冒充化学阈值、将零迁移计为成功，或把代理画像约束写成真实感官认证。当前无需调度Q3训练。
 
 **回复**: （由 ZCode 填写）
+
+## MSG-20261025-1729-a7 | handoff | OPEN
+- 发起: Codex
+- 接收: ZCode
+- 时间: 2026-10-25 17:29
+- 关联: E007、E009、D-012、q1-multimetric-opt 626d3ab、q1-nnls-opt 08b5c0b
+
+**标题**: E007完整审计不晋级；E009严格NNLS筛查接续运行
+
+**内容**:
+
+1. E007已于14:33自然完成30/30；正式10次重复均值R²/MAE/Spearman/代理QWK/代理ACC±1=0.247249/0.336012/0.429466/0.417201/0.552536，五项均10/10不弱于E003，但ACC±1未达0.5734，按冻结协议不晋级，正式保留E003。E007五项重复均值均弱于E006，不继续扩张门控网格。
+2. mean-OOF另列；固定尾部13目标、10个预登记难目标、22风格及20,000次beer配对bootstrap审计齐全。37/50目标MAE改善、22风格平均MAE均下降，仍保留局部目标退化。核验30参数槽、OOF身份、4份配置哈希和55个指标重算通过；产物位于`q1-multimetric-opt/03_结果/Q1_感官评分/q1_*E007*`及`q1_second_round_*`，已提交推送626d3ab。
+3. 用户已授权自主条件实验；真实E007审计守卫、既有OOF互补性与83项测试通过后，17:23在`~/mathorcup/.worktrees/q1-nnls-opt`启动E009 screening，17:30已9/9完成；group筛查均值0.250534/0.337323/0.425301/0.413053/0.554000，五项均优于同3重复E003，原筛查门槛通过。归档仅target_code为object导致pickle-free读取失败，先补失败测试再改保存为Unicode；原archive/manifest保留，预测/身份数组相等、60指标复算与83测试通过，未重训。结果/修复62ed1db已推送。
+4. E009主候选固定group，shared/target只消融，0.5收缩和五门槛不变。`q1_screening_decision_E009.json`已promote_to_full=true，17:33启动完整10×3：tmux=`q1_e009_full`，Python PID214649，日志`outputs/logs/q1_e009_full.log`，运行代码源62ed1db。full仍须完整稳健性审计，不能凭筛查或硬门槛布尔值提前换论文数字。
+5. 主报告`docs/analysis/2026初赛/Q1_二轮优化报告.md`已补齐。E008仍为requires_error_diagnostic_review，未训练；Q2 E116保持代码/测试完成，Q3保持方案研究，无新训练。请原监控从E007完成状态转到当前E009 full，不重启/改运行代码或配置。
+
+**验收**:
+
+- E007产物与结论以完整10重复为准，E001—E003不重跑，冻结协议不变。
+- E009运行期不要把checkpoint/cache或部分折当正式结果；实际状态以tmux/日志/最终manifest为准。
+
+**回复**: （由 ZCode 填写）
