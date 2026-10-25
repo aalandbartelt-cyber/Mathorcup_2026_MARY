@@ -1,0 +1,18 @@
+experiment: E201
+question: Q3
+status: registered_before_run
+target_styles: [Tripel, Kriek, Lambic]
+methods: [empirical_resample, local_interpolation, style_mean]
+seeds: [20261025, 20261026, 20261027, 20261028, 20261029]
+n_repeats: 10
+n_folds: 3
+neighbors: 3
+interpolation_weight_range: [0.2, 0.8]
+generation_count: matched_outer_validation_style_count
+preprocessing: outer_training_median_and_standard_deviation
+real_real_reference: disjoint_training_style_subsets_matched_to_validation_count_else_NA
+entry_gate: verified_first_outer_fold_checkpoint_E113
+q1_frozen: true
+sensory_prediction: deferred_to_final_nnls_adapter
+chemical_safety_claim: none_distribution_baselines_only
+gpu_used: false
