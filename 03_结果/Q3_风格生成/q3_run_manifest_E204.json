@@ -1,0 +1,55 @@
+{
+  "experiment_id": "E204",
+  "status": "complete",
+  "scope": "full_data_postselection_design_not_outer_validation",
+  "signature": {
+    "input_sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "config_sha256": "258ba58ef1b6b2cdadcb11ec44f5de711d49dfef362e4cd4bcf55fdd76dafc0a",
+    "source_sha256": {
+      "run_e204_constrained_migration.py": "54827e701edf5f7a82997f7b237e658a87160bc44bc31f983d254b6b7cb86d27",
+      "constrained_migration.py": "451dbdd23d5af6e2bc165dfcffed8405c75125004642a5c406e789468577467e",
+      "q3_constraints.py": "dd904b8635d2faee0f1250753065a5ef80be403c7be6c04f5c374ab7613aa95f",
+      "gaussian_baselines.py": "ea14000e478b9fe762cbdcd740a7758df9811a92442e2c836108a29923a6c56c"
+    },
+    "q1_final_model": "感官组收缩NNLS",
+    "q1_final_oof_sha256": "ec80b4087347ccb0b2b312016ab3d8f67a4e5faaa1da352e4a548728e57ccc60",
+    "entry_gate": {
+      "distribution_model": "style_copula_shrunk",
+      "e203_manifest_sha256": "fdd07793397e35afd4020eca6c210869c79f7e4466e0f1ba4e5ff16e80ff1932",
+      "e203_audit_sha256": "45420d251fc295f588342ec9b3600edf37233f6b05952704076130d1d02275c9",
+      "e203_decision_sha256": "b10b4e372acb02b5e7cb1223f6eba25bb3fe30c5ded91ef3eb6148f697c0e067"
+    }
+  },
+  "python": "3.10.19",
+  "elapsed_seconds": 6.106055544994888,
+  "gpu_used": false,
+  "decision": {
+    "status": "direct_constraint_migration_complete_proxy_pending",
+    "distribution_model": "style_copula_shrunk",
+    "n_sources": 11,
+    "n_targets": 3,
+    "scenarios": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "stale_hops_proxy_evaluated": false,
+    "sensory_profiles_generated": false,
+    "physical_safety_certified": false,
+    "q1_retrained": false,
+    "gpu_used": false,
+    "notes": [
+      "C1/C2/C3分别审计，未知源浓度和未知阈值不计为通过",
+      "零迁移和仅修复缺陷均不能凭直接约束通过就算迁移成功",
+      "E205接入独立感官画像与Stale hops代理前不产生最终可用候选"
+    ]
+  },
+  "output_sha256": {
+    "q3_target_pool_E204.csv.gz": "fae03487a684627c58171b3d6fd73c244c349c08d97406c47afae32175f4938a",
+    "q3_migration_summary_E204.csv": "cfe627774067bbb991a2de2126e91696d317b8a40698345672b17aabc7e95267",
+    "q3_migration_spectra_E204.csv.gz": "d1ad144d6abe64577cd8b5c684358ccad46ae2cdfb7f4c4f9f7677f5661debae",
+    "q3_migration_direct_audit_E204.csv": "697606babeffe35a7879d2760db129137fc543bc15507e55b6124feaa3e624b0",
+    "q3_migration_aggregate_E204.csv": "e5f297077f909a352ac38648ab54f887c6d0dcb6eee74ec8375c7908bea0ccb7",
+    "q3_migration_decision_E204.json": "9fd9dfb5d2a8a1b2a550562242e3fb25977cdda2255bd12ee54f21c4a2a5e799"
+  }
+}

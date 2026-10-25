@@ -1,0 +1,21 @@
+{
+  "status": "direct_constraint_migration_complete_proxy_pending",
+  "distribution_model": "style_copula_shrunk",
+  "n_sources": 11,
+  "n_targets": 3,
+  "scenarios": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "stale_hops_proxy_evaluated": false,
+  "sensory_profiles_generated": false,
+  "physical_safety_certified": false,
+  "q1_retrained": false,
+  "gpu_used": false,
+  "notes": [
+    "C1/C2/C3分别审计，未知源浓度和未知阈值不计为通过",
+    "零迁移和仅修复缺陷均不能凭直接约束通过就算迁移成功",
+    "E205接入独立感官画像与Stale hops代理前不产生最终可用候选"
+  ]
+}

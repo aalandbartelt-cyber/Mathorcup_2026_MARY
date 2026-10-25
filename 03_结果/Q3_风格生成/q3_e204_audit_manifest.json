@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "input_manifest_sha256": "646be454be05406c82f9e46deee4bd6630c148f9af61645312ebe7e64990fa0c",
+  "source_sha256": "4156cf1e059908927085a25499b3da28e1ca20c1f64fc1fe9430024adcb62f33",
+  "output_sha256": {
+    "q3_e204_audit_summary.json": "7d61df5606fed14fe9959fb66f5e62728431c3d607da46edb830878f38a92537"
+  },
+  "invariants": {
+    "all_projected_known_constraints_nonviolating": true,
+    "zero_migration_not_target_gain": true,
+    "unknown_not_counted_as_pass": true,
+    "no_final_candidate_before_proxy_audit": true
+  }
+}

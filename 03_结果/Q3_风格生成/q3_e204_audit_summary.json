@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "scope": "full_data_postselection_design_not_outer_validation",
+  "n_summary_rows": 891,
+  "n_available_candidates": 844,
+  "n_structural_rejections": 47,
+  "n_spectra": 844,
+  "n_direct_checks": 3376,
+  "n_target_pool": 6000,
+  "n_pareto": 293,
+  "status_counts": {
+    "needs_direct_verification": 512,
+    "no_target_gain": 205,
+    "rejected_direct_constraint": 112,
+    "rejected_no_structural_candidate": 47,
+    "needs_proxy_verification": 15
+  },
+  "c1_path_target_gain_rate": 0.9696969696969697,
+  "c1_path_mean_relative_target_gain": 0.27850677564060616,
+  "proxy_pending_candidates": 15,
+  "physical_safety_certified": false,
+  "sensory_profiles_generated": false
+}

@@ -1,0 +1,26 @@
+experiment: E204
+question: Q3
+status: registered_before_run
+source_style: Pils/Lager
+target_styles: [Tripel, Kriek, Lambic]
+distribution_model: style_copula_shrunk
+generated_pool_per_style: 2000
+seed: 20261025
+scenarios: [C1, C2, C3]
+threshold_statistic: median
+path_lambdas: [0.25, 0.5, 0.75, 1.0]
+minimum_relative_target_gain: 0.01
+strategies:
+  - source_unchanged
+  - defect_only_repair
+  - unconstrained_rank_transport
+  - coordinate_projection
+  - structural_nearest
+  - constrained_path
+support_policy: target_style_minmax_for_rank_anchor_and_copula_pool
+scope: full_data_postselection_design_not_outer_validation
+stale_hops_proxy: deferred_to_E205
+q1_interface: final_model_registry_group_NNLS_v5_read_only
+q1_retrained: false
+gpu_used: false
+entry_gate: audited_E203_with_copula_primary
