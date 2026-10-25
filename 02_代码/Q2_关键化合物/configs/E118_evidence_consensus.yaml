@@ -1,0 +1,21 @@
+experiment: E118
+families:
+  predictive: E115_final_nnls_conditional_importance
+  partial_effect: E114_fold_local_partial_effect
+  graph_module: E107_bootstrap_modules_fallback_because_E113_not_promoted
+fusion:
+  method: support_aware_rrf
+  rrf_k: 60
+  weights: equal
+prediction_tolerance:
+  policy: frozen_predictor_unchanged_by_ranking
+required_stability_gains: 2
+stability_metrics:
+  - median_cpss_selection_probability
+  - mean_reference_half_jaccard
+  - median_leave_style_survival
+confirmed_fdp_max: 0.10
+anchors_must_preserve_existing_four: true
+chemical_evidence_in_ranking: false
+candidate_scope: strict_compounds_218
+gpu_used: false

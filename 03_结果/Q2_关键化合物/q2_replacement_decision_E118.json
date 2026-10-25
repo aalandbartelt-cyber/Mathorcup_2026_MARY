@@ -1,0 +1,31 @@
+{
+  "promoted": false,
+  "required_stability_gains": 2,
+  "observed_stability_gains": 0,
+  "stability_gains": {
+    "median_cpss_selection_probability": false,
+    "mean_reference_half_jaccard": false,
+    "median_leave_style_survival": false
+  },
+  "checks": {
+    "complete_50x3": true,
+    "prediction_ok": true,
+    "stability_gain_count_ok": false,
+    "anchors_preserved": false,
+    "fdp_ok": true,
+    "leakage_ok": true
+  },
+  "experiment_id": "E118",
+  "comparison_baseline": "previous_robust_statistical_top3",
+  "candidate": "three_family_support_aware_rrf",
+  "prediction_policy": "ranking_only; frozen final NNLS predictions unchanged",
+  "prior_anchor_count": 4,
+  "missing_prior_anchors": [
+    {
+      "target_code": "co2",
+      "feature_code": "CO2.PSI."
+    }
+  ],
+  "confirmed_relations_in_candidate_top3": 13,
+  "chemical_evidence_used_for_ranking": false
+}

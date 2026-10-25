@@ -1,0 +1,60 @@
+{
+  "experiment_id": "E118",
+  "status": "complete",
+  "promoted": false,
+  "n_candidates": 10900,
+  "n_top3_rows": 150,
+  "n_targets": 50,
+  "n_features_strict": 218,
+  "families": {
+    "predictive": "E115_final_nnls_conditional_importance",
+    "partial_effect": "E114_fold_local_partial_effect",
+    "graph_module": "E107_bootstrap_modules_fallback_because_E113_not_promoted"
+  },
+  "fusion": {
+    "method": "support_aware_rrf",
+    "rrf_k": 60,
+    "weights": "equal"
+  },
+  "graph_decision": {
+    "promote_partial_graph": false,
+    "criteria": {
+      "heldout_loglik_finite": true,
+      "edge_or_module_stability_improves": false,
+      "no_full_graph_in_validation": true
+    },
+    "stability_metrics": {
+      "candidate_mean_coclustering_ge_0_10": 0.25042859117931704,
+      "reference_mean_coclustering_ge_0_10": 0.4876414814814814
+    },
+    "descriptive_alpha": 0.2
+  },
+  "chemical_evidence_used_for_ranking": false,
+  "input_gate": {
+    "stage": "E118_input_gate",
+    "status": "ready",
+    "formal_ranking_generated": false,
+    "problems": [],
+    "upstream_status": {
+      "E113": "complete",
+      "E114": "complete",
+      "E115_final_NNLS": "complete",
+      "E117": "complete"
+    }
+  },
+  "elapsed_seconds": 1.2811830149876187,
+  "python": "3.10.19",
+  "gpu_used": false,
+  "outputs": [
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_evidence_family_rankings_E118.csv.gz",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_final_top3_statistical_E118.csv",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_replacement_comparison_E118.csv",
+    "/home/mary/mathorcup/.worktrees/q2-evidence-opt/03_结果/Q2_关键化合物/q2_replacement_decision_E118.json"
+  ],
+  "output_sha256": {
+    "q2_evidence_family_rankings_E118.csv.gz": "bc8dd1d177d58e7cf92c94c900e8f0395d5aff8abff038b3df864e0b2e7bdd34",
+    "q2_final_top3_statistical_E118.csv": "04303aa2f8651ee8704f9b6c8adb50a25c25e87166f8209c0316721b0dee36ea",
+    "q2_replacement_comparison_E118.csv": "f966dc719a1ba36b604c3b0d4fecb6f4514faf6120fa254b26bab3bed0559eb7",
+    "q2_replacement_decision_E118.json": "8d23bdc535319a1d26cd5bc5dd12986708614e0611dd92c8ddec52b86f6a1c6e"
+  }
+}

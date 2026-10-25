@@ -1,0 +1,5 @@
+metric,previous_value,candidate_value,delta,improved
+median_cpss_selection_probability,0.14250000000000002,0.075,-0.06750000000000002,False
+mean_reference_half_jaccard,0.16691,0.11510999999999999,-0.05180000000000001,False
+median_leave_style_survival,0.6590909090909091,0.4090909090909091,-0.24999999999999994,False
+mean_bootstrap_selection_frequency,0.4464666666666667,0.35973333333333335,-0.08673333333333333,False
