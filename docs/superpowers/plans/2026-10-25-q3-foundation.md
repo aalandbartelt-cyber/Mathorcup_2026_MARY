@@ -46,10 +46,12 @@ Files: `src/run_e200_contract.py`, `tests/test_e200_runner.py`, Q3 README, `05_è
 - [x] RED: writer creates only declared contract files in a temporary directory; duplicate/missing CV slots fail; manifest declares `model_fitted=false` and contains source/data hashes; no full-data imputation output.
 - [x] Implement `run_contract(root, output_dir)` reading attachments1/4/8, Q1 frozen CV and compound-name dictionary; call pure helpers, validate actual dimensions, write descriptive CSV and manifest via `--write`.
 - [x] Run E200 once on actual attachments. Verify input hashes unchanged and exports reflect37 log10/33 raw/161 unverified fields plus conflicts/unknowns; do not claim all70 fields have every cell certified.
-- [ ] Run all Q3 tests and Q1 27 baseline tests; `git diff --check`; commit/push branch and record path/limitations in main task board.
+- [x] Run all Q3 tests and Q1 27 baseline tests; `git diff --check`; commit/push branch and record path/limitations in main task board.
 
 ## Self-review
 
 The plan covers only E200 and reusable pure primitives. No generator fit, prediction result, C2ST, graph fitting, GPU use, new dependency or scientific performance claim is authorized by this preparation checkpoint. Complete each module's red/green evidence before using it on the actual contract.
 
 Verification checkpoint: 31 Q3 tests passed, including regressions for actual negative reference values, shuffled DataFrame indices, unsafe vector broadcasting, string booleans, nonfinite tolerances and normalization overflow. E200 exported exactly8 files with unchanged raw input hashes; its83 exceptions are80 positive-pair discrepancies plus3 negative reference values. No Q3 model was trained.
+
+Integration checkpoint: q3-foundation deliverable1a3581f was fast-forwarded into main. On merged main, all31 Q3 and27 existing Q1 tests passed; source/input/output hashes matched E200. Worktree retained for later Q3 development; no Q1 running worktree inspected or changed.
