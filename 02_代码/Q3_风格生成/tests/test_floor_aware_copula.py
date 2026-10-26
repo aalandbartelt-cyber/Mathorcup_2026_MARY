@@ -14,7 +14,7 @@ class FloorAwareCopulaTests(unittest.TestCase):
     def setUp(self):
         rng = np.random.default_rng(44)
         self.x = rng.normal(size=(40, 4))
-        self.x[:24, 0] = -2.013157381
+        self.x[:12, 0] = -2.013157381
         # This repeated minimum is intentionally not registered as a floor.
         self.x[:20, 1] = self.x[:, 1].min()
         self.styles = np.array(["Tripel"] * 20 + ["Lambic"] * 20)

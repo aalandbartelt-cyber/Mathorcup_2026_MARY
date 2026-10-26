@@ -104,7 +104,13 @@ class FloorAwareStyleCopula:
                 global_state = np.isclose(values[:, column], floor_value, atol=tolerance, rtol=0)
                 global_rate = float(global_state.mean())
                 strength = spec["prior_strength"]
-                p_floor = (float(state.sum()) + strength * global_rate) / (len(state) + strength)
+                # A style with an observed all-floor (or all-nonfloor) block
+                # is kept at that boundary. Shrinking such a block toward the
+                # pooled rate would manufacture a state absent from the style.
+                if state.all() or (~state).all():
+                    p_floor = float(state.mean())
+                else:
+                    p_floor = (float(state.sum()) + strength * global_rate) / (len(state) + strength)
                 p_floor = float(np.clip(p_floor, 0.0, 1.0))
                 nonfloor = block[~state, column].astype(float)
                 if len(nonfloor) == 0:
