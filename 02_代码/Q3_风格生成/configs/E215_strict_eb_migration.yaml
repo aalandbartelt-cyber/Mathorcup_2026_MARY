@@ -1,0 +1,23 @@
+experiment: E215
+question: Q3
+status: registered_before_run
+scope: full_data_postselection_design_not_outer_validation
+source_style: Pils/Lager
+target_styles: [Tripel, Kriek, Lambic]
+scenario: C1
+mean_kappa: 15.0
+covariance_kappa: 30.0
+covariance_estimator: LedoitWolf_shrunk_to_global
+path_lambdas: [0.05, 0.10, 0.20, 0.35, 0.50, 0.75, 1.0]
+minimum_relative_target_gain: 0.01
+support_policy: report_and_reject_outside_fold_training_support_at_later_lock
+source_count: 11
+target_pair_count: 33
+direct_defect_evidence: E200_registered_known_only
+q1_interface: final_model_registry_group_NNLS_v5_read_only
+q1_retrained: false
+nnls_refit: false
+gpu_used: false
+kaggle_used_for_training: false
+sensory_proxy_used_in_geometry_stage: false
+chemical_safety_certified: false
