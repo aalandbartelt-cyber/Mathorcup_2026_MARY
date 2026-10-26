@@ -1,0 +1,11 @@
+baseline,metric,maximum_absolute_difference,csv_roundtrip_rank_sensitive
+E201,mean_w1,1.7763568394002505e-15,False
+E201,energy_v,1.4210854715202004e-14,False
+E201,coverage,0.0,False
+E201,near_duplicate_fraction,0.0,False
+E201,spearman_pair_rmse,0.013488595348943089,True
+E202,mean_w1,1.7763568394002505e-15,False
+E202,energy_v,1.7763568394002505e-14,False
+E202,coverage,0.0,False
+E202,near_duplicate_fraction,0.0,False
+E202,spearman_pair_rmse,0.0,False

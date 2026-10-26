@@ -1,0 +1,31 @@
+{
+  "replace_copula": false,
+  "checks": {
+    "no_near_training_copies": true,
+    "no_collapsed_samples": true,
+    "raw_w1_noninferior": true,
+    "raw_energy_noninferior": true,
+    "robust_w1_noninferior": true,
+    "robust_energy_improves": false,
+    "robust_energy_at_least_seven_repeats": false,
+    "robust_coverage_improves": false,
+    "spread_not_worse": true,
+    "no_style_w1_regression": true,
+    "no_style_energy_regression": true
+  },
+  "raw_mean_w1_delta": 0.007815833798754036,
+  "raw_mean_energy_delta": 0.011144004678237895,
+  "robust_mean_w1_delta": 0.007067579685156319,
+  "robust_mean_energy_delta": 0.01143336655522265,
+  "robust_mean_coverage_delta": -0.022679012345679,
+  "robust_mean_log_spread_error_delta": -0.014283583868333736,
+  "n_repeats_robust_energy_better": 2,
+  "primary_distribution": "style_copula_shrunk",
+  "physical_safety_certified": false,
+  "q1_retrained": false,
+  "gpu_used": false,
+  "notes": [
+    "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+    "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+  ]
+}

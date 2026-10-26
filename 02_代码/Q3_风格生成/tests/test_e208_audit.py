@@ -6,7 +6,7 @@ import pandas as pd
 import yaml
 
 SRC=Path(__file__).resolve().parents[1]/'src';sys.path.insert(0,str(SRC))
-from audit_e208 import replacement_decision
+from audit_e208 import replacement_decision,tolerant_rank_error
 
 
 class JointReplacementTests(unittest.TestCase):
@@ -52,6 +52,13 @@ class JointReplacementTests(unittest.TestCase):
     def test_registered_limits_cannot_be_changed_after_result(self):
         changed=dict(self.config,replacement_rules=dict(self.config['replacement_rules'],robust_energy_better_repeats=6))
         with self.assertRaises(ValueError):replacement_decision(self.table,self.raw,changed)
+
+    def test_rank_sensitivity_ignores_machine_roundoff_on_constant_fields(self):
+        import numpy as np
+        real=np.array([[0.,0.,2.],[1.,2.,2.],[2.,1.,2.],[3.,3.,2.]])
+        stable=real.copy();rounded=real.copy();rounded[:,2]+=[0.,4e-16,-4e-16,0.]
+        a,pa=tolerant_rank_error(real,stable,np.ones(3));b,pb=tolerant_rank_error(real,rounded,np.ones(3))
+        self.assertEqual(pa,1);self.assertEqual(pb,1);self.assertEqual(a,b)
 
 
 if __name__=='__main__':unittest.main()

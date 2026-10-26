@@ -32,5 +32,12 @@ class SensorySearchTests(unittest.TestCase):
         self.assertTrue(mask.all())
         self.assertEqual(selected,{'minimum_change':0,'maximum_target_gain':1,'maximum_proxy_margin':2})
 
+    def test_lambic_stronger_margin_and_movement_limit_do_not_relax_old_rules(self):
+        gain=np.array([.1,.2,.2]);change=np.array([.5,.8,1.1])
+        mean=np.array([-.06,-.08,-.10]);q90=np.array([-.012,-.04,-.05]);support=np.ones(3)
+        selected,mask=select_candidates(gain,change,mean,q90,np.where(change<=1.,support,0.),guard_margin=.03)
+        np.testing.assert_array_equal(mask,[False,True,False])
+        self.assertEqual(set(selected.values()),{1})
+
 
 if __name__=='__main__':unittest.main()
