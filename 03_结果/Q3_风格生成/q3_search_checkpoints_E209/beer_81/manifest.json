@@ -1,0 +1,10 @@
+{
+  "signature": "e47cac3d595025becbad0b06452f03e9b51607bb9f43dbf8de469636ce319404",
+  "beer": 81,
+  "single_target_error": 3.469446951953614e-16,
+  "files": {
+    "selected.csv": "7994e24c53badb5b809ba031ad790c639dd058db7003418f3c686696966bb360",
+    "spectra.csv.gz": "d49d63c72a0c687c6752dbaa35129d53386176cf7346c1050afa0e9408be7ac7",
+    "diagnostics.csv.gz": "bef3a53f083f93d6a4a2ed1d2b63a4bda0017dee816fa4c63c21c028663d128e"
+  }
+}

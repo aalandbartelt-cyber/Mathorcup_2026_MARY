@@ -1,0 +1,4 @@
+selection_id,beer,target_style,scenario,selection_rule,candidate_available,n_primary_feasible,physical_safety_certified,auditor_accessed,anchor_id,proposal_id,lambda,relative_target_gain,source_change_rms,primary_mean_delta,primary_repeat_q90_delta,support_repeat_fraction,status,n_failed,n_unknown
+185_Lambic_minimum_change,185,Lambic,C1,minimum_change,True,24,False,False,173,2354,0.5,0.4275813841376245,0.553249450501538,-0.076894101616573,-0.030642472030655347,1.0,locked_primary_candidate,0,1
+185_Lambic_maximum_target_gain,185,Lambic,C1,maximum_target_gain,True,24,False,False,401,2385,0.8,0.6145976155178191,0.9121692400731367,-0.1174921488619461,-0.040122261274364406,1.0,locked_primary_candidate,0,1
+185_Lambic_maximum_proxy_margin,185,Lambic,C1,maximum_proxy_margin,True,24,False,False,426,3251,0.5,0.42984015369671386,0.5716941732465611,-0.09938770074284212,-0.0458548836335161,1.0,locked_primary_candidate,0,1
