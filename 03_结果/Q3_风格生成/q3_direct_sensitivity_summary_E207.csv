@@ -1,0 +1,7 @@
+threshold_statistic,scenario,n_candidates,n_direct_checks,n_passed,n_unknown,n_failed
+mean,C1,29,116,87,29,0
+mean,C2,29,116,58,58,0
+mean,C3,29,116,49,58,9
+median,C1,29,116,87,29,0
+median,C2,29,116,58,58,0
+median,C3,29,116,43,58,15

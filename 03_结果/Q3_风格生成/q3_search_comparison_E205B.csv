@@ -1,0 +1,10 @@
+style,selection_rule,n_source_target_pairs,old_n_eligible_pairs,new_n_eligible_pairs,new_n_candidates,new_n_needs_direct_verification,new_available_mean_target_gain,new_available_mean_source_change
+Tripel,minimum_change,11,0,1,11,10,0.18320644006751916,0.3009677160361123
+Tripel,maximum_target_gain,11,0,1,11,10,0.4727136737425012,0.8241917683562143
+Tripel,maximum_proxy_margin,11,0,0,11,10,0.30969869560616925,0.990011838349848
+Kriek,minimum_change,11,0,1,9,8,0.09569273669960429,0.13728985978024288
+Kriek,maximum_target_gain,11,0,0,9,8,0.5224592217786642,0.9286797273284821
+Kriek,maximum_proxy_margin,11,0,1,9,8,0.3969811281516022,1.2119491688776625
+Lambic,minimum_change,11,0,0,9,8,0.26554442072029566,0.42387272918192564
+Lambic,maximum_target_gain,11,0,0,9,8,0.5089171272470747,0.8460516888952587
+Lambic,maximum_proxy_margin,11,0,0,9,8,0.4450459056723584,0.8735257607936682

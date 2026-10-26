@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E205B",
+  "status": "complete_once_only_audit",
+  "scope": "full_data_postselection_design_with_once_only_model_family_audit",
+  "candidate_lock_sha256": "035fd14e520559d1a70c029d35efca6038c5d243a7f407a17026166eb80c6bed",
+  "candidate_lock_commit": "5fefb1085e2491d898eb6b3e246674ad8c8f2f01",
+  "audit_source_sha256": "da372b2811a10b3f8e066caac5da1a041acf7b2720b462caab5dae1b66c6309a",
+  "n_source_target_pairs": 33,
+  "n_selection_rules": 3,
+  "n_rule_rows": 99,
+  "n_locked_available": 87,
+  "n_primary_rule_eligible_pairs": 2,
+  "n_auxiliary_eligible_rule_rows": 2,
+  "status_counts_primary_rule": {
+    "needs_direct_verification": 26,
+    "rejected_no_primary_feasible_candidate": 4,
+    "eligible_statistical_candidate": 2,
+    "proxy_variation_uncertain": 1
+  },
+  "status_counts_all_rules": {
+    "needs_direct_verification": 78,
+    "rejected_no_primary_feasible_candidate": 12,
+    "proxy_variation_uncertain": 5,
+    "eligible_statistical_candidate": 4
+  },
+  "no_auditor_based_reselection": true,
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "gpu_used": false,
+  "physical_safety_certified": false,
+  "output_sha256": {
+    "q3_once_audit_E205B.csv": "9948047d69d8f5e878cc6b56cd30044dc7c4d06d711d27cd3ec2e15680fbbcd5",
+    "q3_direct_sensitivity_E205B.csv": "6930ac111d807c78f91a606de3aad860a29d12afc9a45f93f9cd9e20575b6d7c",
+    "q3_selected_profiles_E205B.csv.gz": "2953eedd00c4d9c7b8725113af902acafba482ac8d0a0c9f825c85d8c99b221a",
+    "q3_predictor_reconstruction_E205B.csv": "ccf05f81e57fc4071f7465921d11387341fb0107e5fb6cc8e2472576ff9a60cc",
+    "q3_search_comparison_E205B.csv": "2ccbc4fc341430541746a4132eb2952fafa30383016b39f1bda8bc4698d579c1"
+  }
+}

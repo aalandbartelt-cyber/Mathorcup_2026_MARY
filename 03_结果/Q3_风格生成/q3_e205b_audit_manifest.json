@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "n_fixed_rule_choices_verified": 99,
+  "n_locked_spectra_reconstructed": 87,
+  "maximum_spectrum_reconstruction_error": 1.7763568394002505e-15,
+  "n_primary_pairs": 33,
+  "n_primary_eligible": 2,
+  "n_primary_eligible_source_beers": 1,
+  "frozen_input_hash_count": 91,
+  "frozen_input_hashes_unchanged": true,
+  "candidate_lock_sha256": "035fd14e520559d1a70c029d35efca6038c5d243a7f407a17026166eb80c6bed",
+  "input_manifest_sha256": "2be2cfb51129066d049213a2bfcc81fd1b8228e22d5356ace394b9a2c8e36a78",
+  "source_sha256": "f6a6f4d0ad8d563f720238ac5cae5bb7917bef9813b06b2e8e931ad2c71c97d8",
+  "all_three_selection_rules_unchanged": true,
+  "no_unknown_marked_eligible": true,
+  "physical_safety_certified": false
+}
