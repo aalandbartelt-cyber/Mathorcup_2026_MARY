@@ -1,0 +1,34 @@
+{
+  "experiment_id": "E217",
+  "status": "complete_once_only_audit",
+  "scope": "full_data_postselection_exploration_not_outer_validation",
+  "candidate_lock_sha256": "0f25fb8ce76965d593905b73eb63f090c939fcb6265b02be52a9a5467fc6c55f",
+  "candidate_lock_commit": "56e6ee7ab40283c03e58f27c89fe1b6a913fb301",
+  "audit_source_sha256": "64713be0ddb568b60fe176e866e164f93c6fea42b3dba8225285a30aa358f759",
+  "n_source_target_pairs": 33,
+  "n_search_points": 63756,
+  "n_locked_spectra": 27,
+  "n_primary_eligible_pairs": 1,
+  "n_primary_eligible_source_beers": 1,
+  "status_counts": {
+    "needs_direct_verification": 24,
+    "rejected_no_primary_feasible_candidate": 6,
+    "eligible_statistical_candidate": 1,
+    "proxy_variation_uncertain": 1,
+    "proxy_disagreement": 1
+  },
+  "new_lambic_exploratory_candidate": false,
+  "no_auditor_based_reselection": true,
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "gpu_used": false,
+  "physical_safety_certified": false,
+  "main_generator_replaced": false,
+  "output_sha256": {
+    "q3_once_audit_E217.csv": "353203f36ed5831bf7b2c54e24ac2d9d0d821a4b8463b38417a43773e3afb5c0",
+    "q3_direct_sensitivity_E217.csv": "a2d864a3b5e050b699955e748a80df6950da07944fd50a5004abb21de57f452c",
+    "q3_proxy_changes_by_repeat_E217.csv": "cc24c31bc8580ce4022b5c90e715c623173420d95d378a20f3b4b2b292aca999",
+    "q3_predictor_reconstruction_E217.csv": "a0795da90e1e87769dcbdb5079f5cfc7d1c985165cc12539a8a5ba1478d7b2c9",
+    "q3_search_comparison_E217.csv": "14e02d48f4efddc2b2e32cd242432cf27f481be29b1e5ac9d7011985d8a212bb"
+  }
+}

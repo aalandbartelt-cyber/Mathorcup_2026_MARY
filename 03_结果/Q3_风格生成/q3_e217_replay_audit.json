@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E217",
+  "status": "complete",
+  "n_source_target_pairs": 33,
+  "n_paths": 63756,
+  "n_locked_spectra_replayed": 27,
+  "max_locked_spectrum_replay_error": 3.552713678800501e-15,
+  "n_primary_eligible_pairs": 1,
+  "n_unknown_marked_eligible": 0,
+  "new_lambic_exploratory_candidate": false,
+  "no_auditor_based_reselection": true,
+  "physical_safety_certified": false,
+  "candidate_lock_sha256": "0f25fb8ce76965d593905b73eb63f090c939fcb6265b02be52a9a5467fc6c55f",
+  "once_audit_manifest_sha256": "f45795cb4bfe77013d88ffff4e70bb87a06fbe5a383cae72be6864d47637d703"
+}

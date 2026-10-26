@@ -1,0 +1,4 @@
+target_style,n_pairs,old_main_eligible,new_main_eligible,new_main_available,new_main_unknown
+Tripel,11,1,1,10,9
+Kriek,11,1,0,9,8
+Lambic,11,0,0,8,7
