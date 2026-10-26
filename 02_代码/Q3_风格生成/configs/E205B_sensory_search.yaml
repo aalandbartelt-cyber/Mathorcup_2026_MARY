@@ -1,0 +1,17 @@
+experiment: E205B
+source_style: Pils/Lager
+target_styles: [Tripel, Kriek, Lambic]
+scenario: C1
+nearest_pool_anchors: 256
+include_rank_anchor: true
+path_lambdas: [0.05, 0.10, 0.20, 0.35, 0.50, 0.75, 1.0]
+minimum_relative_target_gain: 0.01
+primary_proxy_guard_margin: 0.01
+primary_delta_quantile: 0.9
+minimum_support_repeat_fraction: 0.9
+selection_rules: [minimum_change, maximum_target_gain, maximum_proxy_margin]
+audit_used_during_search: false
+q1_retrained: false
+nnls_refit: false
+gpu_used: false
+scope: full_data_postselection_design_with_once_only_model_family_audit
