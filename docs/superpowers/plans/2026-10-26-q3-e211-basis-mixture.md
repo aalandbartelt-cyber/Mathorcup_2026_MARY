@@ -38,11 +38,11 @@ PCA、原型、带宽、稳定性、插补全在当前内/外训练范围内重�
 
 ## 3. 任务与文件
 
-- [ ] 新增`02_代码/Q3_风格生成/tests/test_basis_mixture.py`，先运行显示缺少模块/API，再实现`src/basis_mixture.py`。核验几何只见训练、尺度与常量、原型/种子可复现、同风格非自身邻居、远点回退、完整231字段、整行混合、B等价性、谱内插来源。
-- [ ] 新增`tests/test_e211_runner.py`并验证失败，再实现`src/run_e211_basis_mixture.py`。config严格校验、内层选择、5种子匹配数、30折恢复、训练beer、哈希、邻域/稳定性表、逐字段W1。已完整运行时只验哈希并返回，不覆盖正式结果。
-- [ ] 新增`tests/test_e211_audit.py`，再实现`src/audit_e211.py`。覆盖四组+只读旧混合/30折/完整选择表、旧谱指标复现、均值和重复/风格分解、同规则替换判断、基函数增量、预登记回退、manifest/候选注册。
-- [ ] 运行首折并审计后提交，完整30折后正式审计。使用`env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /home/mary/miniconda3/envs/mathorcup/bin/python -m pytest '02_代码/Q3_风格生成/tests' -q`，所有测试通过后提交源码。
-- [ ] 报告不利指标、稳定性回退与来源，不声称真实安全；更新对照总表和路线，在交接/决策时写to_zcode。每段commit/push，不提交大型缓存。
+- [x] 新增`02_代码/Q3_风格生成/tests/test_basis_mixture.py`，先运行显示缺少模块/API，再实现`src/basis_mixture.py`。核验几何只见训练、尺度与常量、原型/种子可复现、同风格非自身邻居、远点回退、完整231字段、整行混合、B等价性、谱内插来源。
+- [x] 新增`tests/test_e211_runner.py`并验证失败，再实现`src/run_e211_basis_mixture.py`。config严格校验、内层选择、5种子匹配数、30折恢复、训练beer、哈希、邻域/稳定性表、逐字段W1。已完整运行时只验哈希并返回，不覆盖正式结果。
+- [x] 新增`tests/test_e211_audit.py`，再实现`src/audit_e211.py`。覆盖四组+只读旧混合/30折/完整选择表、旧谱指标复现、均值和重复/风格分解、同规则替换判断、基函数增量、预登记回退、manifest/候选注册。
+- [x] 运行首折并审计后提交，完整30折后正式审计。使用`env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /home/mary/miniconda3/envs/mathorcup/bin/python -m pytest '02_代码/Q3_风格生成/tests' -q`，所有测试通过后提交源码。
+- [x] 报告不利指标、稳定性回退与来源，不声称真实安全；更新对照总表和路线，在交接/决策时写to_zcode。每段commit/push，不提交大型缓存。
 
 ## 4. 实现接口与核验示例
 

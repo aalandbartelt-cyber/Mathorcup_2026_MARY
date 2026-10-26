@@ -1,6 +1,6 @@
 # Q3 化学空间基函数与Copula局部混合：候选设计
 
-本稿是方法适配与消融设计，**尚未实现或运行，不是新的正式实验登记**。保留当前Copula、E208—E210决策、Q1/Q2冻结产物；后续若实施，应另行冻结配置和正式替换对象，不在本稿预言收益。
+本稿保留最初的方法适配与消融设计。**2026-10-26已按E211完成30折实现与审计**：执行登记及运行前随机流修订见`docs/superpowers/plans/2026-10-26-q3-e211-basis-mixture.md`，结果见`Q3_E211正式审计报告.md`。基函数未提供综合增量，原Copula保持；旧E208—E210决定及Q1/Q2冻结产物不改。下文“建议/尚缺”保留为设计时的证据状态，不代表当前未执行。
 
 ## 1. 任务与类比的边界
 
@@ -66,4 +66,4 @@ DeepKriging原始来源是Chen等(2024)的空间响应预测框架；本题只�
 - Verma et al. (2019). Manifold Mixup: Better Representations by Interpolating Hidden States. https://proceedings.mlr.press/v97/verma19a.html 。其监督表示学习任务与本题不同；提示插值会影响表示方差，不能据此宣称合成联合分布正确。
 - Oring, Yakhini, Hel-Or (2021). Autoencoder Image Interpolation by Shaping the Latent Space. https://proceedings.mlr.press/v139/oring21a.html 。说明潜在插值的有效性需要几何条件，其图像实验不构成本题化学可行性的证据。
 
-结论：这个组合具有可检验的机制，优先级高于直接套原DeepKriging；目前只是候选假设，效果未知。本稿不修改当前主模型或Lambic的主/辅助规则结论。
+设计阶段结论：这个组合具有可检验的机制，优先级高于直接套原DeepKriging。后续E211已检验但未支持本轮基函数实现的额外收益；没有训练深度网络，不能推广成所有深度克里金适配均无效。当前主模型及Lambic主/辅助规则结论保持。
