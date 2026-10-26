@@ -1,0 +1,49 @@
+{
+  "experiment_id": "E210",
+  "status": "complete",
+  "n_outer_folds": 30,
+  "n_metric_rows": 4500,
+  "n_inner_selection_rows": 1260,
+  "n_frozen_inputs_verified": 72,
+  "decision": {
+    "replace_copula": false,
+    "checks": {
+      "no_near_training_copies": true,
+      "no_collapsed_samples": true,
+      "raw_w1_noninferior": true,
+      "raw_energy_noninferior": true,
+      "robust_w1_noninferior": true,
+      "robust_energy_improves": false,
+      "robust_energy_at_least_seven_repeats": false,
+      "robust_coverage_improves": false,
+      "spread_not_worse": true,
+      "no_style_w1_regression": true,
+      "no_style_energy_regression": true
+    },
+    "raw_mean_w1_delta": 0.0009854933192926592,
+    "raw_mean_energy_delta": 0.004874898843547518,
+    "robust_mean_w1_delta": 0.0014917894125076713,
+    "robust_mean_energy_delta": 0.006396857196769554,
+    "robust_mean_coverage_delta": -0.010728395061728386,
+    "robust_mean_log_spread_error_delta": 0.011297406541424219,
+    "n_repeats_robust_energy_better": 2,
+    "primary_distribution": "style_copula_shrunk",
+    "physical_safety_certified": false,
+    "q1_retrained": false,
+    "gpu_used": false,
+    "notes": [
+      "本轮正式候选为训练内选择的秩空间相关收缩；单一ρ消融不作事后选择",
+      "重复使用已有外折属于探索性比较，不能称独立确认"
+    ]
+  },
+  "source_sha256": "ee14fc1e003e9acf589d9a47f3a38b1844eec0b11423a82c5f106d53dd0fa95a",
+  "input_manifest_sha256": "5124fd5bdcd7d131f2b27a01416b92c23898b8a8957dc47030a5ee12c29232fd",
+  "output_sha256": {
+    "q3_replacement_decision_E210.json": "31596ff1ab051c73d60f0c744a1f65154f86acd3bafa226885ace4d45a781d69",
+    "q3_latent_vs_copula_paired_E210.csv": "0f6e47d5cb334047830b2e6e35c993ee3a2ed5e6e4452f9431e6b283a722c303",
+    "q3_latent_vs_copula_by_style_E210.csv": "7a8bf66a3ac1bd0923ae566f944dfc9bfce757ed28ec093cf873960f486a5a78"
+  },
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "gpu_used": false
+}
