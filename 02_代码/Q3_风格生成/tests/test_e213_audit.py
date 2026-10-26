@@ -46,6 +46,17 @@ class NeuralAuditTests(unittest.TestCase):
     def test_unchanged_rules_are_enforced(self):
         config=copy.deepcopy(self.config);config['replacement_rules']['robust_energy_min_decrease']=.001
         with self.assertRaises(ValueError):self.assess(self.r,self.r,self.clips,config)
+
+    def test_formal_coverage_checks_exact_fold_style_seed_keys(self):
+        from audit_e213 import validate_coverage
+        from itertools import product
+        from run_e213_neural_interpolation import ALL_METHODS
+        keys=['repeat','fold','style','method','seed_index','metric_scale']
+        full=pd.DataFrame(product(range(10),range(3),self.config['target_styles'],ALL_METHODS,range(5),['raw','robust']),columns=keys)
+        validate_coverage(full,self.config)
+        with self.assertRaises(ValueError):validate_coverage(full.iloc[:-1],self.config)
+        bad=full.copy();bad.loc[bad['fold'].eq(2),'fold']=3
+        with self.assertRaises(ValueError):validate_coverage(bad,self.config)
         config=copy.deepcopy(self.config);config['neural_increment']['references']=['raw_mixture']
         with self.assertRaises(ValueError):self.assess(self.r,self.r,self.clips,config)
 

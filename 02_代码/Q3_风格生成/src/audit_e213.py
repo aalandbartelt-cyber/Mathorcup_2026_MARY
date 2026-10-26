@@ -10,10 +10,19 @@ from run_e213_neural_interpolation import CONFIG,RESULT,CANONICAL,ALL_METHODS,ME
 from neural_interpolation import ResidualInterpolator
 from audit_e208 import EXPECTED_RULES
 from audit_e211 import base_decision
+from q1_interface import FrozenQ1V5OOF
 
 INCREMENT={'references':['pca_noise','raw_mixture'],'energy_min_decrease':.002,'energy_better_repeats':7,
     'w1_max_increase':.005,'coverage_max_decrease':.02,'spread_max_increase':.02,'each_style_w1_energy_max_increase':.02}
 CLIPPING={'average_cell_max':.15,'each_style_cell_max':.25}
+
+
+def validate_coverage(metrics,config):
+    keys=['repeat','fold','style','method','seed_index','metric_scale']
+    expected=pd.MultiIndex.from_product([range(10),range(3),config['target_styles'],ALL_METHODS,range(5),['raw','robust']],names=keys)
+    actual=pd.MultiIndex.from_frame(metrics[keys])
+    if len(actual)!=5400 or actual.has_duplicates or len(expected.difference(actual)) or len(actual.difference(expected)):
+        raise ValueError('Exact 10x3x3-stylex6-methodx5-seedx2-scale evaluation coverage required')
 
 
 def assess(repeats,metrics,clipping,config):
@@ -132,18 +141,30 @@ def run():
         if sha(path)!=h:raise ValueError('Frozen E213 input changed: '+path)
     for name,h in manifest['output_sha256'].items():
         if sha(RESULT/name)!=h:raise ValueError('E213 output changed')
+    if FrozenQ1V5OOF(CANONICAL).signature!=manifest['signature']['q1_final_oof_sha256']:
+        raise ValueError('Frozen final-NNLS registry/OOF interface changed')
     chem=pd.read_csv(CANONICAL/'data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv')
     features=[c for c in chem if c not in ['beer','beer_id','tasting_category_fine']];reconstruction=[]
+    splits=pd.read_csv(RESULT.parent/'Q1_感官评分/q1_cv_splits.csv')
+    expected_names={f'R{r:02d}F{f}' for r in range(10) for f in range(3)}
+    if set(manifest['checkpoint_manifest_sha256'])!=expected_names:raise ValueError('Exact 30 checkpoint set required')
     for name,h in manifest['checkpoint_manifest_sha256'].items():
         slot=RESULT/'q3_checkpoints_E213'/name;meta=json.loads((slot/'manifest.json').read_text())
         if sha(slot/'manifest.json')!=h or meta['signature']!=manifest['signature']:raise ValueError('E213 checkpoint identity changed')
+        r=int(name[1:3]);f=int(name[4:]);valid=np.sort(splits.loc[splits.repeat.eq(r)&splits.fold.eq(f),'row_position'].to_numpy(int))
+        train=np.setdiff1d(np.arange(len(chem)),valid)
+        if meta['train_beer']!=chem.beer.iloc[train].astype(int).tolist() or meta['validation_beer']!=chem.beer.iloc[valid].astype(int).tolist():
+            raise ValueError('Recorded identities differ from frozen outer split')
         reconstruction.append({'fold_name':name,**audit_checkpoint(slot,meta,chem,features,config)})
     metrics=pd.read_csv(RESULT/'q3_distribution_metrics_E213.csv');repeats=pd.read_csv(RESULT/'q3_metrics_by_repeat_E213.csv')
     inner=pd.read_csv(RESULT/'q3_inner_selection_E213.csv');clips=pd.read_csv(RESULT/'q3_clipping_E213.csv')
     keys=['repeat','fold','style','method','seed_index','metric_scale']
+    validate_coverage(metrics,config)
     if (len(metrics)!=5400 or metrics.duplicated(keys).any() or set(metrics.method)!=set(ALL_METHODS)
         or not metrics.groupby(['method','metric_scale']).size().eq(450).all() or len(inner)!=1620 or len(clips)!=1800):
         raise ValueError('Incomplete E213 formal coverage')
+    if not inner.groupby(['repeat','fold','style','inner_fold'])[['selected_'+m for m in METHODS]].sum().eq(1).all().all():
+        raise ValueError('Inner selection flags incomplete')
     recomputed=metrics.groupby(['method','style','repeat','metric_scale'],as_index=False)[METRICS].mean()
     sort=['method','style','repeat','metric_scale']
     np.testing.assert_allclose(recomputed.sort_values(sort)[METRICS],repeats.sort_values(sort)[METRICS],atol=1e-12,rtol=0.,equal_nan=True)
