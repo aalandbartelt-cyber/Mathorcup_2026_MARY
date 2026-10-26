@@ -120,7 +120,7 @@ def audit_checkpoint(slot,meta,chem,features,config):
                 metric_errors.append(abs(float(row.energy_v.iloc[0])-m['energy_v']))
     if samples.groupby(['method','style','seed_index']).ngroups!=60:raise ValueError('Incomplete method/style/seed coverage')
     return {'max_spectrum_error':max_error,'max_energy_replay_error':float(max(metric_errors)),
-        'weights_only_replay':True,'fold_preprocessing_and_independent_streams_valid':True}
+        'saved_state_replay_without_training':True,'fold_preprocessing_and_independent_streams_valid':True}
 
 
 def run():

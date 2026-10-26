@@ -1,0 +1,9 @@
+{
+  "status": "engineering_checkpoint_valid",
+  "completed_folds": 1,
+  "checkpoint_manifest_sha256": "cbff698ea35471fd05f23daa912620b0c2e1c7442867c4f0189f742d05c0cf2c",
+  "max_spectrum_error": 1.7763568394002505e-15,
+  "max_energy_replay_error": 3.552713678800501e-14,
+  "fold_preprocessing_and_independent_streams_valid": true,
+  "saved_state_replay_without_training": true
+}
