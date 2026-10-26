@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "experiment_id": "E208",
+  "n_outer_folds": 30,
+  "n_metric_rows": 8100,
+  "n_inner_selection_rows": 1260,
+  "n_frozen_inputs_verified": 131,
+  "frozen_baseline_distance_and_copy_metrics_reproduced": true,
+  "rank_metric_csv_roundtrip_sensitive": true,
+  "decision": {
+    "replace_copula": false,
+    "checks": {
+      "no_near_training_copies": true,
+      "no_collapsed_samples": true,
+      "raw_w1_noninferior": true,
+      "raw_energy_noninferior": true,
+      "robust_w1_noninferior": true,
+      "robust_energy_improves": false,
+      "robust_energy_at_least_seven_repeats": false,
+      "robust_coverage_improves": false,
+      "spread_not_worse": true,
+      "no_style_w1_regression": true,
+      "no_style_energy_regression": true
+    },
+    "raw_mean_w1_delta": 0.007815833798754036,
+    "raw_mean_energy_delta": 0.011144004678237895,
+    "robust_mean_w1_delta": 0.007067579685156319,
+    "robust_mean_energy_delta": 0.01143336655522265,
+    "robust_mean_coverage_delta": -0.022679012345679,
+    "robust_mean_log_spread_error_delta": -0.014283583868333736,
+    "n_repeats_robust_energy_better": 2,
+    "primary_distribution": "style_copula_shrunk",
+    "physical_safety_certified": false,
+    "q1_retrained": false,
+    "gpu_used": false,
+    "notes": [
+      "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+      "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+    ]
+  },
+  "source_sha256": "feab3f41a35d688d1fa47d94d61a2e7438f1fe7e3792030ebbcc73c11c4e64de",
+  "input_manifest_sha256": "bd0710d589c44581e7e597ad3c370282a7ac6fd172ddbe998b0adfae51095d0a",
+  "output_sha256": {
+    "q3_replacement_decision_E208.json": "166056be030ac3178fe577a92c1ff931c9d90d4718674bb7be2ae2e9958b30cf",
+    "q3_joint_vs_copula_paired_E208.csv": "c63cc647bea72737d64388f4a522a8777386275b56f27abd649cbd02ac8a0588",
+    "q3_joint_vs_copula_by_style_E208.csv": "d3ee15c82926c15868bebb8a53de48a488afc948655faf00b320920e9d87b27c",
+    "q3_frozen_baseline_reproduction_E208.csv": "2c11c245c13abe822b26fe3cd12916be8e98792b28cc4684c99a6664a3847519",
+    "q3_all_method_comparison_E208.csv": "c275a2e21c774b633de6fcf7cde2e4a27ced87ef3bf47e83d06b2ef02c2bc018",
+    "q3_rank_precision_sensitivity_E208.csv": "2e12c3c12690cf8d4df12f069d051b55fcf14372f293f6d20b0d9315f15ddc3b"
+  },
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "gpu_used": false,
+  "notes": [
+    "历史秩相关诊断ptp>0对常量列的CSV往返舍入敏感；新增12位标准化规约诊断，不覆盖旧数字",
+    "生成器选择与预登记替换规则不使用此秩相关指标；W1/energy/覆盖/复制复现不变"
+  ]
+}
