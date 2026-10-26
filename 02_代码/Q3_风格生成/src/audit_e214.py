@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-import argparse
-import hashlib
+import gzip
 import json
 import pickle
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -56,8 +54,8 @@ def _replay_checkpoint(slot, meta, chemistry, splits, features):
     for filename, digest in meta["files"].items():
         if sha(slot / filename) != digest:
             raise ValueError(f"{name}: checkpoint file hash changed")
-    with (slot / "model_state.pkl").open("rb") as handle:
-        state = pickle.load(handle)
+    state_bytes = (slot / "model_state.pkl").read_bytes()
+    state = pickle.loads(gzip.decompress(state_bytes) if state_bytes[:2] == b"\x1f\x8b" else state_bytes)
     imputer = SimpleImputer(strategy="median", keep_empty_features=True)
     train_x = imputer.fit_transform(chemistry.iloc[train][features])
     valid_x = imputer.transform(chemistry.iloc[valid][features])
@@ -82,7 +80,7 @@ def _replay_checkpoint(slot, meta, chemistry, splits, features):
             raise ValueError(f"{name}/{style}/{seed_index}: generated state replay differs")
         real = valid_x[styles[valid] == style]
         local = train_x[styles[train] == style]
-        metric_rows = metrics[(metrics.method == "floor_copula") & (metrics.style == style) & (metrics.seed_index == seed_index)]
+        metric_rows = metrics[(metrics.method == "floor_copula") & (metrics["style"] == style) & (metrics.seed_index == seed_index)]
         for scope, values in metrics_for_scales(real, replay, train_x, local).items():
             row = metric_rows[metric_rows.metric_scale == scope]
             if len(row) != 1:
@@ -90,12 +88,9 @@ def _replay_checkpoint(slot, meta, chemistry, splits, features):
             for metric in METRICS:
                 if not np.isclose(float(row.iloc[0][metric]), float(values[metric]), atol=1e-8, rtol=0.0, equal_nan=True):
                     raise ValueError(f"{name}: replay metric differs for {metric}")
-        floor_row = floor[(floor.style == style) & (floor.seed_index == seed_index)]
+        floor_row = floor[(floor["style"] == style) & (floor.seed_index == seed_index)]
         if len(floor_row) != 1:
             raise ValueError(f"{name}: missing floor summary")
-        observed = float(np.isclose(replay[:, 0], -2.013157381, atol=1e-9, rtol=0).mean())
-        # X4VG is field 0 only in the synthetic check; actual index is looked
-        # up from the saved feature order below.
         floor_index = features.index("X4VG")
         observed = float(np.isclose(replay[:, floor_index], -2.013157381, atol=1e-9, rtol=0).mean())
         floor_error = max(floor_error, abs(observed - float(floor_row.generated_floor_fraction.iloc[0])))
@@ -106,12 +101,18 @@ def run():
     manifest_path = RESULT / "q3_run_manifest_E214.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     validate_manifest_structure(manifest)
+    for path, digest in manifest["signature"]["input_sha256"].items():
+        if sha(path) != digest:
+            raise ValueError(f"E214 frozen input changed: {path}")
     q1 = FrozenQ1V5OOF(CANONICAL)
     if manifest["signature"]["q1_final_oof_sha256"] != q1.signature:
         raise ValueError("Q1 final OOF interface changed")
     for name, digest in manifest.get("output_sha256", {}).items():
         if sha(RESULT / name) != digest:
             raise ValueError(f"E214 output changed: {name}")
+    e211 = json.loads((RESULT / "q3_run_manifest_E211.json").read_text(encoding="utf-8"))
+    if sha(RESULT / "q3_distribution_metrics_E211.csv") != e211["output_sha256"]["q3_distribution_metrics_E211.csv"]:
+        raise ValueError("E211 frozen baseline metrics changed")
     chemistry = pd.read_csv(CANONICAL / "data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv")
     splits = pd.read_csv(CANONICAL / "03_结果/Q1_感官评分/q1_cv_splits.csv")
     features = [c for c in chemistry.columns if c not in ["beer", "beer_id", "tasting_category_fine"]]
@@ -141,6 +142,7 @@ def run():
         "max_spectrum_replay_error": float(max(x["max_spectrum_error"] for x in reconstruction)),
         "max_floor_summary_error": float(max(x["max_floor_summary_error"] for x in reconstruction)),
         "q1_retrained": False, "nnls_refit": False, "gpu_used": False,
+        "n_frozen_inputs_verified": len(manifest["signature"]["input_sha256"]),
     }
     out = RESULT / "q3_e214_audit_manifest.json"
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

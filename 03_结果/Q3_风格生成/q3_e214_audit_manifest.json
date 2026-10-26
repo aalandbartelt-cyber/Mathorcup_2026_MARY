@@ -1,0 +1,206 @@
+{
+  "experiment_id": "E214",
+  "status": "complete",
+  "n_outer_folds": 30,
+  "n_metric_rows": 1800,
+  "frozen_baseline_reproduced": true,
+  "baseline_max_absolute_metric_error": {
+    "mean_w1": 0.0,
+    "energy_v": 0.0,
+    "coverage": 0.0,
+    "near_duplicate_fraction": 0.0,
+    "spearman_pair_rmse": 0.0,
+    "pairwise_spread_ratio": 0.0,
+    "log_spread_error": 0.0,
+    "density_k1": 0.0,
+    "collapsed": 0.0
+  },
+  "checkpoint_replay": [
+    {
+      "fold_name": "R00F0",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R00F1",
+      "max_spectrum_error": 7.105427357601002e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R00F2",
+      "max_spectrum_error": 1.4210854715202004e-14,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R01F0",
+      "max_spectrum_error": 1.4210854715202004e-14,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R01F1",
+      "max_spectrum_error": 7.105427357601002e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R01F2",
+      "max_spectrum_error": 1.8189894035458565e-12,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R02F0",
+      "max_spectrum_error": 9.094947017729282e-13,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R02F1",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R02F2",
+      "max_spectrum_error": 3.552713678800501e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R03F0",
+      "max_spectrum_error": 1.8189894035458565e-12,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R03F1",
+      "max_spectrum_error": 8.881784197001252e-16,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R03F2",
+      "max_spectrum_error": 1.8189894035458565e-12,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R04F0",
+      "max_spectrum_error": 7.105427357601002e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R04F1",
+      "max_spectrum_error": 1.4210854715202004e-14,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R04F2",
+      "max_spectrum_error": 3.552713678800501e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R05F0",
+      "max_spectrum_error": 3.552713678800501e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R05F1",
+      "max_spectrum_error": 8.881784197001252e-16,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R05F2",
+      "max_spectrum_error": 9.094947017729282e-13,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R06F0",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R06F1",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R06F2",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R07F0",
+      "max_spectrum_error": 7.105427357601002e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R07F1",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R07F2",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R08F0",
+      "max_spectrum_error": 3.552713678800501e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R08F1",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R08F2",
+      "max_spectrum_error": 1.7763568394002505e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R09F0",
+      "max_spectrum_error": 4.547473508864641e-13,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R09F1",
+      "max_spectrum_error": 3.552713678800501e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    },
+    {
+      "fold_name": "R09F2",
+      "max_spectrum_error": 7.105427357601002e-15,
+      "max_floor_summary_error": 0.0,
+      "saved_state_replay_without_training": true
+    }
+  ],
+  "max_spectrum_replay_error": 1.8189894035458565e-12,
+  "max_floor_summary_error": 0.0,
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "gpu_used": false,
+  "n_frozen_inputs_verified": 7
+}

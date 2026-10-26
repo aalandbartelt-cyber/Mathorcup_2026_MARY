@@ -1,0 +1,4 @@
+# E214 pre-registered engineering archive and lossless state compaction originals.
+# Formal compact checkpoints and summary tables are tracked separately.
+q3_checkpoints_E214_prototype/
+q3_state_precompact_E214/

@@ -1,0 +1,35 @@
+{
+  "replace_copula": false,
+  "checks": {
+    "no_near_training_copies": true,
+    "no_collapsed_samples": true,
+    "raw_w1_noninferior": true,
+    "raw_energy_noninferior": true,
+    "robust_w1_noninferior": true,
+    "robust_energy_improves": false,
+    "robust_energy_at_least_seven_repeats": false,
+    "robust_coverage_improves": false,
+    "spread_not_worse": true,
+    "no_style_w1_regression": true,
+    "no_style_energy_regression": true
+  },
+  "raw_mean_w1_delta": -0.0010970933040796679,
+  "raw_mean_energy_delta": -0.0015537323920333467,
+  "robust_mean_w1_delta": -0.0009639014559143751,
+  "robust_mean_energy_delta": -0.001337738430177186,
+  "robust_mean_coverage_delta": 0.0019012345679012407,
+  "robust_mean_log_spread_error_delta": -0.0008560894113415633,
+  "n_repeats_robust_energy_better": 5,
+  "primary_distribution": "style_copula_shrunk",
+  "physical_safety_certified": false,
+  "q1_retrained": false,
+  "gpu_used": false,
+  "notes": [
+    "X4VG 仅按官方登记地板值拆分状态；其他重复最小值未自动解释为检出限",
+    "候选仅替换分布生成器，迁移约束、感官画像和缺陷安全仍需单独审计"
+  ],
+  "candidate_method": "floor_copula",
+  "selection_status": "retain_frozen_distribution",
+  "nnls_refit": false,
+  "kaggle_used_for_training": false
+}

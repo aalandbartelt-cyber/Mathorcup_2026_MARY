@@ -1,5 +1,7 @@
 # Q3 风格生成源码
 
+2026-10-26 E214收口：显式登记 `X4VG` 地板状态的经验 Copula 在固定30外折中完成1800条配对评价；稳健Energy差−0.001338、5/10重复改善，覆盖率差+0.001901，未满足预登记替换条件。原风格收缩Copula、900份画像与迁移结果保持。详情见 `docs/analysis/2026初赛/Q3_E214地板感知Copula正式审计报告.md`。
+
 2026-10-26 E213收口：`src/run_e213_neural_interpolation.py`与`src/audit_e213.py`完成CUDA30折和5400评价；神经未获增量，PCA残差因20.33%局部剪裁未采用，原Copula保持。138测试+53 subtests通过；训练/采样状态可无训练回放，完整性见`q3_e213_audit_manifest.json`。`src/prepare_abv_prior_split.py`仅准备167条酒厂隔离角色，未拟合ABV先验。
 
 2026-10-26补充：E212完成固定映射的Kaggle外部方向/ABV审计，入口`src/run_e212_kaggle_external.py`；不重训任何模型、不改分布主线。静态Kaggle数据没有动作转移，RL不启动；可用性判定见`docs/analysis/2026初赛/Q3_Kaggle可用性与强化学习路线判定.md`。
