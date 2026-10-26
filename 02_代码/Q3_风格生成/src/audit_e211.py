@@ -8,11 +8,27 @@ from sklearn.impute import SimpleImputer
 
 from run_e211_basis_mixture import CONFIG,ROOT,RESULT,CANONICAL,ALL_METHODS,GEOMETRIES,METRICS,sha,validate_config
 from audit_e208 import EXPECTED_RULES,replacement_decision
+from basis_mixture import mixture_seeds
+from gaussian_baselines import StyleGaussianGenerator
 
 INCREMENT_RULES={'comparison_methods':['raw_mixture','pca_mixture'],'robust_energy_min_decrease':.002,
     'energy_better_repeats':7,'robust_w1_max_increase':.005,'robust_coverage_max_decrease':.02,
     'robust_log_spread_error_max_increase':.02,'each_style_w1_energy_max_increase':.02,
     'each_style_minimum_active_basis_fraction':.5}
+
+
+def check_random_trace(group,config,repeat,fold,style,seed_index):
+    seed=int(config['seeds'][seed_index])+repeat*1000+fold*100+config['target_styles'].index(style)*10
+    seeds=mixture_seeds(seed)
+    if len(set(seeds))!=3:raise ValueError('Mixture stream seed collision')
+    for column,expected in zip(['selector_seed','copula_seed','local_seed'],seeds):
+        if group[column].nunique()!=1 or int(group[column].iloc[0])!=expected:
+            raise ValueError('Independent mixture stream provenance changed')
+    expected=np.random.default_rng(seeds[0]).random(len(group))<float(group.alpha.iloc[0])
+    ordered=group.sort_values('sample_position')
+    if not np.array_equal(ordered.local_selected.to_numpy(bool),expected):
+        raise ValueError('Recorded component selection does not match independent selector')
+    return seeds
 
 
 def base_decision(method,repeats,metrics):
@@ -94,12 +110,25 @@ def audit_checkpoint(slot,meta,chem,features,config):
     if len(inner)!=54 or not inner.groupby(['inner_fold','style','method']).selected.sum().eq(1).all():
         raise ValueError('Incomplete inner selection denominator')
     neighbor_set=set(zip(neighbors['style'],neighbors.geometry,neighbors.anchor_beer,neighbors.neighbor_beer))
-    max_error=0.
+    max_error=0.;copulas={};copula_samples={}
     for (method,style,seed),group in samples.groupby(['method','style','seed_index']):
+        group=group.sort_values('sample_position')
         n=int(valid.tasting_category_fine.eq(style).sum())
         if len(group)!=n or set(group.sample_position)!=set(range(n)):raise ValueError('Generated count does not match held-out style')
         if group.alpha.nunique()!=1 or float(group.alpha.iloc[0])!=meta['selected_alpha'][style][method]:
             raise ValueError('Generated mixture proportion differs from inner choice')
+        streams=check_random_trace(group,config,int(group.repeat.iloc[0]),int(group.fold.iloc[0]),style,int(seed))
+        if style not in copulas:
+            block=tx[train.tasting_category_fine.to_numpy(str)==style]
+            copulas[style]=StyleGaussianGenerator().fit(block,np.repeat(style,len(block)))
+        key=(style,int(seed))
+        if key not in copula_samples:
+            copula_samples[key]=copulas[style].generate(style,n,method='style_copula_shrunk',seed=streams[1])['values']
+        for_copula=~group.local_selected.to_numpy(bool)
+        if for_copula.any():
+            error=float(np.max(np.abs(group.loc[for_copula,features].to_numpy(float)-copula_samples[key][for_copula])))
+            max_error=max(max_error,error)
+            if error>1e-10:raise ValueError('Generated Copula component no longer reproduces independent stream')
         for _,row in group.iterrows():
             a=int(row.local_proposal_anchor_a_beer);b=int(row.local_proposal_anchor_b_beer)
             if (style,GEOMETRIES[method],a,b) not in neighbor_set:raise ValueError('Local proposal not in declared chemical neighborhood')
@@ -125,12 +154,21 @@ def run():
     for name,h in manifest['output_sha256'].items():
         if sha(RESULT/name)!=h:raise ValueError('E211 output changed')
     chem=pd.read_csv(CANONICAL/'data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv')
-    features=[c for c in chem if c not in ['beer','beer_id','tasting_category_fine']];reconstruction=[]
+    features=[c for c in chem if c not in ['beer','beer_id','tasting_category_fine']];reconstruction=[];neighbor_agreement=[]
     for name,h in manifest['checkpoint_manifest_sha256'].items():
         slot=RESULT/'q3_checkpoints_E211'/name;meta=json.loads((slot/'manifest.json').read_text())
         if sha(slot/'manifest.json')!=h or meta['signature']!=manifest['signature']:raise ValueError('E211 checkpoint identity changed')
         error=audit_checkpoint(slot,meta,chem,features,config)
-        reconstruction.append({'fold_name':name,'max_local_spectrum_error':error,'fold_identity_and_neighbor_scope_valid':True})
+        reconstruction.append({'fold_name':name,'max_spectrum_error':error,'fold_identity_and_neighbor_scope_valid':True,
+            'independent_random_stream_trace_valid':True})
+        neighbors=pd.read_csv(slot/'neighbors.csv')
+        for style,group in neighbors.groupby('style'):
+            sets={g:t.groupby('anchor_beer').neighbor_beer.apply(set).to_dict() for g,t in group.groupby('geometry')}
+            for reference in ['raw','pca']:
+                scores=[len(v&sets[reference][a])/len(v|sets[reference][a]) for a,v in sets['basis'].items()]
+                neighbor_agreement.append({'fold_name':name,'style':style,'comparison':'basis_versus_'+reference,
+                    'mean_neighbor_jaccard':float(np.mean(scores)),'fraction_changed_neighbor_sets':float(np.mean(np.asarray(scores)<1)),
+                    'n_anchors':len(scores),'scope':'outer_training_neighbors_only'})
     metrics=pd.read_csv(RESULT/'q3_distribution_metrics_E211.csv');repeats=pd.read_csv(RESULT/'q3_metrics_by_repeat_E211.csv')
     inner=pd.read_csv(RESULT/'q3_inner_selection_E211.csv');diag=pd.read_csv(RESULT/'q3_neighborhood_diagnostics_E211.csv')
     keys=['repeat','fold','style','method','seed_index','metric_scale']
@@ -153,7 +191,8 @@ def run():
     outputs=[]
     path=RESULT/'q3_replacement_decision_E211.json';path.write_text(json.dumps(decision,ensure_ascii=False,indent=2)+'\n');outputs.append(path)
     for name,frame in [('q3_paired_comparisons_E211.csv',paired),('q3_comparisons_by_style_E211.csv',by_style),
-        ('q3_frozen_baseline_reproduction_E211.csv',pd.DataFrame(checks)),('q3_local_provenance_audit_E211.csv',pd.DataFrame(reconstruction))]:
+        ('q3_frozen_baseline_reproduction_E211.csv',pd.DataFrame(checks)),('q3_local_provenance_audit_E211.csv',pd.DataFrame(reconstruction)),
+        ('q3_neighbor_agreement_E211.csv',pd.DataFrame(neighbor_agreement))]:
         p=RESULT/name;frame.to_csv(p,index=False);outputs.append(p)
     summary=repeats.groupby(['method','metric_scale'])[METRICS].mean().reset_index()
     p=RESULT/'q3_all_method_summary_E211.csv';summary.to_csv(p,index=False);outputs.append(p)

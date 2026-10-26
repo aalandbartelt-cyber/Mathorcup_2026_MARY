@@ -52,5 +52,20 @@ class BasisAuditTests(unittest.TestCase):
         config=dict(self.config,replacement_rules=dict(self.config['replacement_rules'],robust_coverage_min_increase=0.))
         with self.assertRaises(ValueError):self.assess(self.table,self.raw,self.diag,config)
 
+    def test_random_trace_rejects_shared_seed_or_a_changed_component_selection(self):
+        from basis_mixture import mixture_seeds
+        import audit_e211
+        self.assertTrue(hasattr(audit_e211,'check_random_trace'),'random trace verification not implemented')
+        import numpy as np
+        base_seed=self.config['seeds'][0];seed=base_seed
+        chooser,copula,local=mixture_seeds(seed);n=20;mask=np.random.default_rng(chooser).random(n)<.5
+        frame=pd.DataFrame({'sample_position':range(n),'selector_seed':chooser,'copula_seed':copula,'local_seed':local,
+            'local_selected':mask,'alpha':.5})
+        audit_e211.check_random_trace(frame,self.config,0,0,'Tripel',0)
+        bad=frame.copy();bad['local_seed']=chooser
+        with self.assertRaises(ValueError):audit_e211.check_random_trace(bad,self.config,0,0,'Tripel',0)
+        bad=frame.copy();bad.loc[0,'local_selected']=not mask[0]
+        with self.assertRaises(ValueError):audit_e211.check_random_trace(bad,self.config,0,0,'Tripel',0)
+
 
 if __name__=='__main__':unittest.main()

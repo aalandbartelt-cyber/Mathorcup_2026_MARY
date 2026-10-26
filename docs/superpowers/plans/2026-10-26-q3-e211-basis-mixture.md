@@ -58,4 +58,4 @@ mixed = model.generate('Tripel', 40, 'raw', alpha=0.5, seed=11)
 assert np.all(np.all(mixed == raw['values'], axis=1) | np.all(mixed == copula, axis=1))
 ```
 
-审计结果必须能由冻结CSV重算；原B重现容差10^-9用于W1/energy/coverage/复制，秩相关保留已登记的CSV浮点敏感性，不能以该例外放松主指标。
+审计结果必须能由冻结CSV重算；只读旧Copula/旧混合的CSV重现容差10^-9用于W1/energy/coverage/复制，秩相关保留已登记的CSV浮点敏感性，不能以该例外放松主指标。新B/C/D随机选择器与两分量的种子及完整谱须逐一追溯，不能只检查平均指标。
