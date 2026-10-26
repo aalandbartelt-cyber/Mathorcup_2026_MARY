@@ -8,6 +8,8 @@ inner_seeds: [20261026, 20261027, 20261028]
 inner_split_seed: 20261026
 inner_spread_log_weight: 0.25
 methods: [raw_mixture, pca_mixture, basis_mixture]
+random_stream_policy: independent_three_way
+legacy_mixture_read_only: true
 mixture_probabilities: [0.25, 0.5, 0.75]
 geometry:
   n_strict_fields: 218
