@@ -1,0 +1,19 @@
+experiment: E212
+target_styles: [Tripel, Kriek, Lambic]
+dimensions:
+  Bitter: bitternes
+  Sweet: sweetness
+  Sour: acidity
+  Hoppy: F_hops_all
+  Malty: F_malt_all
+n_cluster_bootstrap: 1000
+bootstrap_seed: 20261026
+bootstrap_unit: brewery_union_across_target_styles
+profile_weight: equal_beer_after_11_dimension_normalization
+training_or_selection_use: false
+source_mapping_is_posthoc: true
+q1_retrained: false
+q2_results_written: false
+q3_generator_replaced: false
+rl_training: false
+gpu_used: false
