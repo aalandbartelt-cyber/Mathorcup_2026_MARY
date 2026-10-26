@@ -1,0 +1,9 @@
+target_style,audited_status,status_cn,n
+Kriek,eligible_statistical_candidate,待实测统计候选,1
+Kriek,needs_direct_verification,直接化学证据不足,8
+Kriek,rejected_no_primary_feasible_candidate,未找到搜索可行谱,2
+Lambic,needs_direct_verification,直接化学证据不足,8
+Lambic,proxy_variation_uncertain,感官代理不稳定,1
+Lambic,rejected_no_primary_feasible_candidate,未找到搜索可行谱,2
+Tripel,eligible_statistical_candidate,待实测统计候选,1
+Tripel,needs_direct_verification,直接化学证据不足,10

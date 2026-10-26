@@ -1,0 +1,161 @@
+method,repeat,metric,value,method_cn,metric_cn
+basis_mixture,0,mean_w1,0.47069330904708484,基函数邻域混合,边缘 W1
+basis_mixture,1,mean_w1,0.48846423308113307,基函数邻域混合,边缘 W1
+basis_mixture,2,mean_w1,0.48513945279461806,基函数邻域混合,边缘 W1
+basis_mixture,3,mean_w1,0.48852798290990734,基函数邻域混合,边缘 W1
+basis_mixture,4,mean_w1,0.4720395819110212,基函数邻域混合,边缘 W1
+basis_mixture,5,mean_w1,0.4686719784950124,基函数邻域混合,边缘 W1
+basis_mixture,6,mean_w1,0.47727594312752813,基函数邻域混合,边缘 W1
+basis_mixture,7,mean_w1,0.470048300687063,基函数邻域混合,边缘 W1
+basis_mixture,8,mean_w1,0.48760190046082946,基函数邻域混合,边缘 W1
+basis_mixture,9,mean_w1,0.4778554879000116,基函数邻域混合,边缘 W1
+pca_mixture,0,mean_w1,0.46892486784196485,PCA 邻域混合,边缘 W1
+pca_mixture,1,mean_w1,0.47995718800636505,PCA 邻域混合,边缘 W1
+pca_mixture,2,mean_w1,0.48382148020766325,PCA 邻域混合,边缘 W1
+pca_mixture,3,mean_w1,0.48926062896027206,PCA 邻域混合,边缘 W1
+pca_mixture,4,mean_w1,0.4703897778586393,PCA 邻域混合,边缘 W1
+pca_mixture,5,mean_w1,0.46869569603088396,PCA 邻域混合,边缘 W1
+pca_mixture,6,mean_w1,0.4761203368035019,PCA 邻域混合,边缘 W1
+pca_mixture,7,mean_w1,0.47013576336593466,PCA 邻域混合,边缘 W1
+pca_mixture,8,mean_w1,0.4853724272592059,PCA 邻域混合,边缘 W1
+pca_mixture,9,mean_w1,0.4756045919764609,PCA 邻域混合,边缘 W1
+raw_mixture,0,mean_w1,0.4708202297541242,整行局部混合,边缘 W1
+raw_mixture,1,mean_w1,0.47926014132388395,整行局部混合,边缘 W1
+raw_mixture,2,mean_w1,0.4844392713515049,整行局部混合,边缘 W1
+raw_mixture,3,mean_w1,0.48081821124220486,整行局部混合,边缘 W1
+raw_mixture,4,mean_w1,0.4654402625432655,整行局部混合,边缘 W1
+raw_mixture,5,mean_w1,0.4655179315576184,整行局部混合,边缘 W1
+raw_mixture,6,mean_w1,0.474279960207602,整行局部混合,边缘 W1
+raw_mixture,7,mean_w1,0.4688153551743772,整行局部混合,边缘 W1
+raw_mixture,8,mean_w1,0.47928570081910876,整行局部混合,边缘 W1
+raw_mixture,9,mean_w1,0.47094300669971373,整行局部混合,边缘 W1
+style_copula_shrunk,0,mean_w1,0.4711540904077533,风格收缩 Copula,边缘 W1
+style_copula_shrunk,1,mean_w1,0.4873431059647235,风格收缩 Copula,边缘 W1
+style_copula_shrunk,2,mean_w1,0.4825749875775512,风格收缩 Copula,边缘 W1
+style_copula_shrunk,3,mean_w1,0.4783737158906492,风格收缩 Copula,边缘 W1
+style_copula_shrunk,4,mean_w1,0.46887754821666966,风格收缩 Copula,边缘 W1
+style_copula_shrunk,5,mean_w1,0.4738919460637147,风格收缩 Copula,边缘 W1
+style_copula_shrunk,6,mean_w1,0.4806909877903414,风格收缩 Copula,边缘 W1
+style_copula_shrunk,7,mean_w1,0.4676797753157715,风格收缩 Copula,边缘 W1
+style_copula_shrunk,8,mean_w1,0.4791498206079527,风格收缩 Copula,边缘 W1
+style_copula_shrunk,9,mean_w1,0.47194072556390165,风格收缩 Copula,边缘 W1
+basis_mixture,0,energy_v,0.5663451890201997,基函数邻域混合,联合 energy
+basis_mixture,1,energy_v,0.600591398325038,基函数邻域混合,联合 energy
+basis_mixture,2,energy_v,0.5925959779625446,基函数邻域混合,联合 energy
+basis_mixture,3,energy_v,0.6031395901159723,基函数邻域混合,联合 energy
+basis_mixture,4,energy_v,0.5659804728573071,基函数邻域混合,联合 energy
+basis_mixture,5,energy_v,0.554516921018071,基函数邻域混合,联合 energy
+basis_mixture,6,energy_v,0.5944850788546584,基函数邻域混合,联合 energy
+basis_mixture,7,energy_v,0.565068192900602,基函数邻域混合,联合 energy
+basis_mixture,8,energy_v,0.6060891026265679,基函数邻域混合,联合 energy
+basis_mixture,9,energy_v,0.5855339383345145,基函数邻域混合,联合 energy
+pca_mixture,0,energy_v,0.5650016279509883,PCA 邻域混合,联合 energy
+pca_mixture,1,energy_v,0.581682595254099,PCA 邻域混合,联合 energy
+pca_mixture,2,energy_v,0.586839322647151,PCA 邻域混合,联合 energy
+pca_mixture,3,energy_v,0.6046548092443494,PCA 邻域混合,联合 energy
+pca_mixture,4,energy_v,0.5691268804505115,PCA 邻域混合,联合 energy
+pca_mixture,5,energy_v,0.5557125538288505,PCA 邻域混合,联合 energy
+pca_mixture,6,energy_v,0.5930346312939888,PCA 邻域混合,联合 energy
+pca_mixture,7,energy_v,0.5643811832731737,PCA 邻域混合,联合 energy
+pca_mixture,8,energy_v,0.6041497806388726,PCA 邻域混合,联合 energy
+pca_mixture,9,energy_v,0.580560741118368,PCA 邻域混合,联合 energy
+raw_mixture,0,energy_v,0.5675995402667703,整行局部混合,联合 energy
+raw_mixture,1,energy_v,0.5828654848487606,整行局部混合,联合 energy
+raw_mixture,2,energy_v,0.5968639203314582,整行局部混合,联合 energy
+raw_mixture,3,energy_v,0.5924646933432828,整行局部混合,联合 energy
+raw_mixture,4,energy_v,0.5588151562643758,整行局部混合,联合 energy
+raw_mixture,5,energy_v,0.5526234784294362,整行局部混合,联合 energy
+raw_mixture,6,energy_v,0.5888483311921849,整行局部混合,联合 energy
+raw_mixture,7,energy_v,0.566071073614008,整行局部混合,联合 energy
+raw_mixture,8,energy_v,0.5896673514169407,整行局部混合,联合 energy
+raw_mixture,9,energy_v,0.575726887168836,整行局部混合,联合 energy
+style_copula_shrunk,0,energy_v,0.569367927149516,风格收缩 Copula,联合 energy
+style_copula_shrunk,1,energy_v,0.5990873008290397,风格收缩 Copula,联合 energy
+style_copula_shrunk,2,energy_v,0.591958451178309,风格收缩 Copula,联合 energy
+style_copula_shrunk,3,energy_v,0.5906313957493975,风格收缩 Copula,联合 energy
+style_copula_shrunk,4,energy_v,0.5645137908028623,风格收缩 Copula,联合 energy
+style_copula_shrunk,5,energy_v,0.5672952083241571,风格收缩 Copula,联合 energy
+style_copula_shrunk,6,energy_v,0.5939706214370462,风格收缩 Copula,联合 energy
+style_copula_shrunk,7,energy_v,0.5625475655209083,风格收缩 Copula,联合 energy
+style_copula_shrunk,8,energy_v,0.5964284407184741,风格收缩 Copula,联合 energy
+style_copula_shrunk,9,energy_v,0.5772351674287753,风格收缩 Copula,联合 energy
+basis_mixture,0,coverage,0.7253086419753086,基函数邻域混合,覆盖率
+basis_mixture,1,coverage,0.6764197530864199,基函数邻域混合,覆盖率
+basis_mixture,2,coverage,0.6823456790123457,基函数邻域混合,覆盖率
+basis_mixture,3,coverage,0.5344444444444444,基函数邻域混合,覆盖率
+basis_mixture,4,coverage,0.6396296296296297,基函数邻域混合,覆盖率
+basis_mixture,5,coverage,0.7758024691358024,基函数邻域混合,覆盖率
+basis_mixture,6,coverage,0.6654320987654321,基函数邻域混合,覆盖率
+basis_mixture,7,coverage,0.6981481481481481,基函数邻域混合,覆盖率
+basis_mixture,8,coverage,0.5660493827160494,基函数邻域混合,覆盖率
+basis_mixture,9,coverage,0.6162962962962962,基函数邻域混合,覆盖率
+pca_mixture,0,coverage,0.6975308641975309,PCA 邻域混合,覆盖率
+pca_mixture,1,coverage,0.6840740740740742,PCA 邻域混合,覆盖率
+pca_mixture,2,coverage,0.7103703703703704,PCA 邻域混合,覆盖率
+pca_mixture,3,coverage,0.5460493827160494,PCA 邻域混合,覆盖率
+pca_mixture,4,coverage,0.6865432098765432,PCA 邻域混合,覆盖率
+pca_mixture,5,coverage,0.7723456790123456,PCA 邻域混合,覆盖率
+pca_mixture,6,coverage,0.6608641975308641,PCA 邻域混合,覆盖率
+pca_mixture,7,coverage,0.6865432098765432,PCA 邻域混合,覆盖率
+pca_mixture,8,coverage,0.5660493827160494,PCA 邻域混合,覆盖率
+pca_mixture,9,coverage,0.6496296296296297,PCA 邻域混合,覆盖率
+raw_mixture,0,coverage,0.712716049382716,整行局部混合,覆盖率
+raw_mixture,1,coverage,0.6562962962962963,整行局部混合,覆盖率
+raw_mixture,2,coverage,0.6830864197530864,整行局部混合,覆盖率
+raw_mixture,3,coverage,0.5676543209876543,整行局部混合,覆盖率
+raw_mixture,4,coverage,0.6524691358024692,整行局部混合,覆盖率
+raw_mixture,5,coverage,0.7669135802469137,整行局部混合,覆盖率
+raw_mixture,6,coverage,0.6743209876543209,整行局部混合,覆盖率
+raw_mixture,7,coverage,0.6898765432098766,整行局部混合,覆盖率
+raw_mixture,8,coverage,0.5595061728395062,整行局部混合,覆盖率
+raw_mixture,9,coverage,0.6362962962962962,整行局部混合,覆盖率
+style_copula_shrunk,0,coverage,0.5379012345679012,风格收缩 Copula,覆盖率
+style_copula_shrunk,1,coverage,0.49160493827160484,风格收缩 Copula,覆盖率
+style_copula_shrunk,2,coverage,0.6064197530864197,风格收缩 Copula,覆盖率
+style_copula_shrunk,3,coverage,0.4855555555555555,风格收缩 Copula,覆盖率
+style_copula_shrunk,4,coverage,0.5891358024691358,风格收缩 Copula,覆盖率
+style_copula_shrunk,5,coverage,0.6330864197530864,风格收缩 Copula,覆盖率
+style_copula_shrunk,6,coverage,0.5638271604938271,风格收缩 Copula,覆盖率
+style_copula_shrunk,7,coverage,0.6408641975308641,风格收缩 Copula,覆盖率
+style_copula_shrunk,8,coverage,0.4801234567901234,风格收缩 Copula,覆盖率
+style_copula_shrunk,9,coverage,0.551358024691358,风格收缩 Copula,覆盖率
+basis_mixture,0,log_spread_error,0.2712963883653435,基函数邻域混合,对数离散误差
+basis_mixture,1,log_spread_error,0.3022084443584873,基函数邻域混合,对数离散误差
+basis_mixture,2,log_spread_error,0.30098900552412666,基函数邻域混合,对数离散误差
+basis_mixture,3,log_spread_error,0.3134341589818192,基函数邻域混合,对数离散误差
+basis_mixture,4,log_spread_error,0.2905750042897877,基函数邻域混合,对数离散误差
+basis_mixture,5,log_spread_error,0.310398007071541,基函数邻域混合,对数离散误差
+basis_mixture,6,log_spread_error,0.31206100266616077,基函数邻域混合,对数离散误差
+basis_mixture,7,log_spread_error,0.2948877974679608,基函数邻域混合,对数离散误差
+basis_mixture,8,log_spread_error,0.3279995616325994,基函数邻域混合,对数离散误差
+basis_mixture,9,log_spread_error,0.2901411433806354,基函数邻域混合,对数离散误差
+pca_mixture,0,log_spread_error,0.2546904883416801,PCA 邻域混合,对数离散误差
+pca_mixture,1,log_spread_error,0.28168347606101224,PCA 邻域混合,对数离散误差
+pca_mixture,2,log_spread_error,0.3156816436398946,PCA 邻域混合,对数离散误差
+pca_mixture,3,log_spread_error,0.3088315601399611,PCA 邻域混合,对数离散误差
+pca_mixture,4,log_spread_error,0.3178232512588525,PCA 邻域混合,对数离散误差
+pca_mixture,5,log_spread_error,0.31716145799186823,PCA 邻域混合,对数离散误差
+pca_mixture,6,log_spread_error,0.3051153977386403,PCA 邻域混合,对数离散误差
+pca_mixture,7,log_spread_error,0.30461319160351724,PCA 邻域混合,对数离散误差
+pca_mixture,8,log_spread_error,0.3351467132260219,PCA 邻域混合,对数离散误差
+pca_mixture,9,log_spread_error,0.28537974239894776,PCA 邻域混合,对数离散误差
+raw_mixture,0,log_spread_error,0.2680267050861528,整行局部混合,对数离散误差
+raw_mixture,1,log_spread_error,0.2558201290220678,整行局部混合,对数离散误差
+raw_mixture,2,log_spread_error,0.299901614001083,整行局部混合,对数离散误差
+raw_mixture,3,log_spread_error,0.3036074339981919,整行局部混合,对数离散误差
+raw_mixture,4,log_spread_error,0.30912019136664665,整行局部混合,对数离散误差
+raw_mixture,5,log_spread_error,0.30062733695118155,整行局部混合,对数离散误差
+raw_mixture,6,log_spread_error,0.3117403787499284,整行局部混合,对数离散误差
+raw_mixture,7,log_spread_error,0.3136631307882278,整行局部混合,对数离散误差
+raw_mixture,8,log_spread_error,0.29000569461351855,整行局部混合,对数离散误差
+raw_mixture,9,log_spread_error,0.2720385319027577,整行局部混合,对数离散误差
+style_copula_shrunk,0,log_spread_error,0.22220225314773842,风格收缩 Copula,对数离散误差
+style_copula_shrunk,1,log_spread_error,0.2175023817308761,风格收缩 Copula,对数离散误差
+style_copula_shrunk,2,log_spread_error,0.24258889046134824,风格收缩 Copula,对数离散误差
+style_copula_shrunk,3,log_spread_error,0.27221824629394514,风格收缩 Copula,对数离散误差
+style_copula_shrunk,4,log_spread_error,0.2533268120525405,风格收缩 Copula,对数离散误差
+style_copula_shrunk,5,log_spread_error,0.25987924610791596,风格收缩 Copula,对数离散误差
+style_copula_shrunk,6,log_spread_error,0.26233237172238677,风格收缩 Copula,对数离散误差
+style_copula_shrunk,7,log_spread_error,0.256220295797196,风格收缩 Copula,对数离散误差
+style_copula_shrunk,8,log_spread_error,0.26523689666355116,风格收缩 Copula,对数离散误差
+style_copula_shrunk,9,log_spread_error,0.22391598169746785,风格收缩 Copula,对数离散误差

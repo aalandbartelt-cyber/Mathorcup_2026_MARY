@@ -1,0 +1,44 @@
+{
+  "scope": "figure_presentation_only; frozen_results; no_training",
+  "figures": {
+    "图1": "10 repeated outer splits; 3 styles equal weight; robust scale; descriptive repeat variation",
+    "图2": "full-data postselection; 300 synthetic profiles per style; descriptive 0-6 mapping",
+    "图3": "11 sources x 3 target styles; frozen minimum-change primary rule; statistical status only"
+  },
+  "inputs": {
+    "generation_repeat_metrics": {
+      "path": "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_metrics_by_repeat_E211.csv",
+      "sha256": "4372bfab5bf5d1be5e993b98c59e2c8e8bead7f24521d4321e812f8dfb857c56"
+    },
+    "generated_profiles": {
+      "path": "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_generated_profiles_E205.csv.gz",
+      "sha256": "576508582f0bbf4ab7330e16d6e2456d37e65e50de4e4a548a18cd2550918ac4"
+    },
+    "migration_primary": {
+      "path": "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_primary_candidates_E207.csv",
+      "sha256": "8246dfdbb143cfb648f77270ae5d849af31d04cb6d5d9684351081803ae717b5"
+    },
+    "q1_target_reliability": {
+      "path": "/home/mary/mathorcup/03_结果/Q1_感官评分/publication_final/target_metrics_final.csv",
+      "sha256": "2ef598b70c9d1c7ce8de2e9ec3a13e90a1427e4f1d40aef04621368adb526801"
+    }
+  },
+  "outputs": {
+    "图1_十次重复稳健指标.csv": {
+      "path": "04_图表/Q3_风格生成/draft_v2/source_data/图1_十次重复稳健指标.csv",
+      "sha256": "e93840c2ae1922a4e818af91860a957fde73c859fa0c6059ea95aa851feb35bf"
+    },
+    "图2_三风格六维感官画像.csv": {
+      "path": "04_图表/Q3_风格生成/draft_v2/source_data/图2_三风格六维感官画像.csv",
+      "sha256": "4fb005efcc86c3ab73908fd22d8c1f5098873c82665add14f3bdedeaedabbc1a"
+    },
+    "图3_各风格状态计数.csv": {
+      "path": "04_图表/Q3_风格生成/draft_v2/source_data/图3_各风格状态计数.csv",
+      "sha256": "e496492d122ff9d28d9035cc5f413191de72387da86382940ac2e3e72dc8f928"
+    },
+    "图3_固定主规则迁移状态.csv": {
+      "path": "04_图表/Q3_风格生成/draft_v2/source_data/图3_固定主规则迁移状态.csv",
+      "sha256": "2f8835d7c669e72ccf23ff4b4885bcb614859b23bc506c39a6f614088ec86811"
+    }
+  }
+}

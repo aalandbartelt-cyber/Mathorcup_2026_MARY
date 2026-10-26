@@ -1,0 +1,47 @@
+{
+  "scope": "visual_qa_only; source_figures_from_R_ggplot2",
+  "figures": [
+    {
+      "png": "图1_生成质量与多样性.png",
+      "svg": "图1_生成质量与多样性.svg",
+      "pixels": [
+        2520,
+        1560
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "png_sha256": "cfdd8715df136528541651c63cd13358e6b524e01cd24c9c2f86f626fae9f22f",
+      "svg_sha256": "d7a1b35db6cd0445759640fdfff81e08253fdb0c58a47a71cec9bbb6da859150"
+    },
+    {
+      "png": "图2_三风格感官画像.png",
+      "svg": "图2_三风格感官画像.svg",
+      "pixels": [
+        2520,
+        1380
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "png_sha256": "4431d99fccd3afae0403906826002fd77045bc389e04ec3d6fd11fea993502cf",
+      "svg_sha256": "acccd5be2ad83a80e7725e7d2a0fda159707b5ec02e12e5346bd7accc90c5711"
+    },
+    {
+      "png": "图3_迁移收益与审计状态.png",
+      "svg": "图3_迁移收益与审计状态.svg",
+      "pixels": [
+        2520,
+        1440
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "png_sha256": "1d9922cbb13d56e549c4f735e0f189a51368e7b2fc2deb07f9315b29443a621c",
+      "svg_sha256": "7db3257b8e99525435d12104ad17894c1b0c7538c6e42cef2cbf1ca3966ff1a4"
+    }
+  ]
+}
