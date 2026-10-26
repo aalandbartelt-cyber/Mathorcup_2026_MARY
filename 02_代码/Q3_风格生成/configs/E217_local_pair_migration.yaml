@@ -1,0 +1,26 @@
+experiment: E217
+question: Q3
+status: registered_before_run
+scope: full_data_postselection_exploration_not_outer_validation
+source_style: Pils/Lager
+target_styles: [Tripel, Kriek, Lambic]
+scenario: C1
+target_pool: frozen_E204_style_copula_shrunk
+nearest_anchors: 24
+pair_weight: 0.5
+path_lambdas: [0.05, 0.10, 0.20, 0.35, 0.50, 0.75, 1.0]
+source_count: 11
+target_pair_count: 33
+candidate_count: 63756
+minimum_relative_target_gain: 0.01
+sensory_guard_margin: 0.01
+sensory_repeat_quantile: 0.9
+minimum_support_repeat_fraction: 0.9
+primary_selection_rule: minimum_change
+auditor_used_during_search: false
+q1_interface: final_model_registry_group_NNLS_v5_read_only
+q1_retrained: false
+nnls_refit: false
+gpu_used: false
+kaggle_used_for_training: false
+chemical_safety_certified: false
