@@ -1,0 +1,64 @@
+{
+  "raw_shape": [
+    5558,
+    21
+  ],
+  "n_styles": 112,
+  "n_breweries": 1498,
+  "n_all_zero_descriptor_rows": 132,
+  "raw_columns": [
+    "Name",
+    "key",
+    "Style",
+    "Style Key",
+    "Brewery",
+    "Description",
+    "ABV",
+    "Ave Rating",
+    "Min IBU",
+    "Max IBU",
+    "Astringency",
+    "Body",
+    "Alcohol",
+    "Bitter",
+    "Sweet",
+    "Sour",
+    "Salty",
+    "Fruits",
+    "Hoppy",
+    "Spices",
+    "Malty"
+  ],
+  "ibu_nunique_max_within_style": {
+    "Min IBU": 1,
+    "Max IBU": 1
+  },
+  "logged_action_transition_records_available": false,
+  "chemical_concentrations_available": false,
+  "verified_sample_level_official_join_available": false,
+  "rl_data_supported": false,
+  "adopted_use": "fixed_mapping_external_directional_audit",
+  "conditional_future_uses": [
+    "heldout_brewery_ABV_marginal_prior",
+    "coarse_flavor_latent_prior_with_domain_alignment"
+  ],
+  "not_implemented_future_uses": true,
+  "n_directional_rows": 15,
+  "nnls_direction_status_counts": {
+    "direction_agrees": 13,
+    "external_uncertain": 2
+  },
+  "elasticnet_direction_status_counts": {
+    "direction_agrees": 11,
+    "external_uncertain": 2,
+    "direction_disagrees": 2
+  },
+  "notes": [
+    "词频比例与标准化感官评分不作绝对尺度误差比较",
+    "15个方向不是15项独立证据，区间未做家族多重性控制",
+    "原先bootstrap脚本只重采样官方啤酒且Kaggle固定，其区间不是两数据源不确定性；本轮单独量化Kaggle酒厂抽样",
+    "原报告Procrustes字段是1-disparity，不把它称普通相关系数",
+    "外部数据此前已被检查，本轮属于事后描述，不用于选择生成模型",
+    "如果以后用于训练/奖励，必须另划酒厂留出并重新定义其验证角色，不能同时称未使用的外部验证"
+  ]
+}

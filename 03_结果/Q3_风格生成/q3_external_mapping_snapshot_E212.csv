@@ -1,0 +1,6 @@
+official_style,kaggle_style,subset,confidence,primary_pool,rationale,mapping_status
+Tripel,Tripel,,high,1,direct style match,draft_freeze_before_validation
+Lambic,Lambic - Traditional,,high,1,traditional lambic,draft_freeze_before_validation
+Lambic,Lambic - Gueuze,,high,1,gueuze is blended lambic,draft_freeze_before_validation
+Kriek,Lambic - Fruit (Kriek/Cherry/Cerise),kriek,high,1,name/description-matched Kriek subset,draft_freeze_before_validation
+Kriek,Lambic - Fruit,,medium,0,all fruit lambics; broader sensitivity pool,draft_freeze_before_validation

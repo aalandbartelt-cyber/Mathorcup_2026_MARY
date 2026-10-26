@@ -1,0 +1,6 @@
+kaggle_dimension,official_target_primary,official_target_secondary,confidence,usage_status,note,mapping_status
+Bitter,bitternes,,high,use,direct target; official spelling,draft_freeze_before_validation
+Sweet,sweetness,,high,use,direct target,draft_freeze_before_validation
+Sour,acidity,lactic | acetic,high,use,acidity primary; lactic/acetic sensitivity,draft_freeze_before_validation
+Hoppy,F_hops_all,A_hops_all,high,use,flavour overall primary; aroma sensitivity,draft_freeze_before_validation
+Malty,F_malt_all,A_malt_all,high,use,flavour overall primary; aroma sensitivity,draft_freeze_before_validation
