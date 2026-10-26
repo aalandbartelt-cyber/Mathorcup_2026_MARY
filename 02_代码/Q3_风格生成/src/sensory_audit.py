@@ -12,6 +12,20 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def verify_archived_prediction(prediction, expected):
+    """Match the archive's storage precision, rather than relax an error gate."""
+    prediction=np.asarray(prediction,float);expected=np.asarray(expected)
+    if prediction.shape!=expected.shape or not np.isfinite(prediction).all() or not np.isfinite(expected).all():
+        raise ValueError('Finite aligned archived predictions required')
+    error=float(np.max(np.abs(prediction-expected)))
+    if expected.dtype==np.dtype('float32'):
+        if not np.array_equal(prediction.astype(np.float32),expected):
+            raise ValueError('Reconstructed prediction differs at archived float32 precision')
+    elif error>1e-9:
+        raise ValueError('Reconstructed float64 prediction differs from archive')
+    return error
+
+
 def verify_cache_files(cache_dir, repeat, fold, signature):
     root=Path(cache_dir)
     model=root/f'R{repeat:02d}F{fold}.joblib'

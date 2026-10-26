@@ -9,10 +9,16 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from sensory_audit import (verify_cache_files, migration_model_input,
-                          proxy_screen, candidate_status, support_audit)
+                          proxy_screen, candidate_status, support_audit,verify_archived_prediction)
 
 
 class SensoryAuditTests(unittest.TestCase):
+    def test_float32_archive_requires_exact_identity_at_its_storage_precision(self):
+        actual=np.array([[.3,.7]],dtype=np.float64);saved=actual.astype(np.float32)
+        self.assertGreater(verify_archived_prediction(actual,saved),1e-9)
+        with self.assertRaises(ValueError):verify_archived_prediction(actual+.0001,saved)
+        with self.assertRaises(ValueError):verify_archived_prediction(actual+.0001,actual.copy())
+
     def test_missing_cache_is_not_retrained(self):
         with tempfile.TemporaryDirectory() as d:
             with self.assertRaises(FileNotFoundError):

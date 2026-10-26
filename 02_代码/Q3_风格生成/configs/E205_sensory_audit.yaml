@@ -1,0 +1,23 @@
+experiment: E205
+question: Q3
+scope: full_data_postselection_profiles_with_separate_outer_fold_diagnostics
+target_styles: [Tripel, Kriek, Lambic]
+profile_samples_per_style: 300
+profile_seed: 20261026
+q1_interface: frozen_group_NNLS_v5_verified_E115_cache_read_only
+q1_retrained: false
+nnls_refit: false
+hyperparameter_search: false
+audit_model: frozen_fold_ElasticNet_parameters_reconstruction
+source_missing_mask: preserve_for_migration_predictors
+proxy_target: stale_hops
+proxy_positive_r2_repeats: 7
+proxy_mean_r2_min: 0.0
+proxy_delta_repeat_quantile: 0.9
+proxy_numerical_tolerance: 0.00000001
+support_train_loo_quantile: 0.95
+support_max_outside_range_fraction: 0.05
+support_min_repeat_fraction: 0.9
+q2_top3_in_optimizer: false
+physical_safety_certified: false
+gpu_used: false
