@@ -1,0 +1,73 @@
+{
+  "status": "split_prepared_only",
+  "seed": 20261026,
+  "prior_probability": 0.75,
+  "group_assignment": "sha256(seed|NFKC_casefold_whitespace_normalized_brewery)",
+  "n_rows": 167,
+  "n_excluded": 0,
+  "brewery_cross_split_count": 0,
+  "counts": [
+    {
+      "official_style": "Kriek",
+      "split": "holdout",
+      "n_rows": 6,
+      "n_breweries": 3
+    },
+    {
+      "official_style": "Kriek",
+      "split": "prior",
+      "n_rows": 13,
+      "n_breweries": 9
+    },
+    {
+      "official_style": "Lambic",
+      "split": "holdout",
+      "n_rows": 38,
+      "n_breweries": 12
+    },
+    {
+      "official_style": "Lambic",
+      "split": "prior",
+      "n_rows": 60,
+      "n_breweries": 27
+    },
+    {
+      "official_style": "Tripel",
+      "split": "holdout",
+      "n_rows": 11,
+      "n_breweries": 9
+    },
+    {
+      "official_style": "Tripel",
+      "split": "prior",
+      "n_rows": 39,
+      "n_breweries": 33
+    }
+  ],
+  "input_sha256": {
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/prepare_abv_prior_split.py": "69d918272f6e5b1f07647a15016e1c99bd89c312bf83c7103177e1eb2ceeec4a",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/kaggle_external.py": "bbc929ef63eaf260d281a7bde6682d6905d445f9580a807bda0d918d2a30e6c3",
+    "/home/mary/mathorcup/data/2026初赛/公开数据/Kaggle_top_beer_information/beer_data_set.csv": "bdfd28f8c75a0da1d86073198aa5341cfe19cabece56827a970915936e0b461a",
+    "/home/mary/mathorcup/data/2026初赛/公开数据/Kaggle_top_beer_information/processed/kaggle_official_style_mapping_draft.csv": "f239f8c3670ec3c9b510345691c029fc333d3ce0178edf70675b444930ac45e3",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_run_manifest_E212.json": "13cc57eba926c3f044b1a9ee0be9359c63441d9000ab133c5ba2e77c5817df6c"
+  },
+  "output_sha256": {
+    "q3_abv_prior_split.csv": "b623bc451a9e60b4bf77668507d36d19d75b8aea5ed4f17be814d4f7cef158ac",
+    "q3_abv_prior_split_exclusions.csv": "aed299a481a7bf13f6a4c77e26cc5d3d927619456fb9bb0a2d466feba6df72bd",
+    "q3_abv_prior_split_counts.csv": "27d2389d61a3af1b1435904b16a6dcd64139c5ecf382fe4de654dcf1eabc2529"
+  },
+  "external_whole_data_previously_described": true,
+  "independent_unseen_confirmation": false,
+  "abv_values_in_split_artifact": false,
+  "holdout_used_for_fitting_or_selection": false,
+  "prior_model_trained": false,
+  "q1_retrained": false,
+  "q2_modified": false,
+  "q3_generator_replaced": false,
+  "notes": [
+    "静态外部数据无动作转移；本划分不提供强化学习环境",
+    "先前已查看全体外部描述，不可称完全未见测试；这里只隔离未来拟合与评估角色",
+    "ABV单维先验不需要评论风味计数；保留ABV有效而评论风味总数为零的记录",
+    "不因各风格比例不齐或结果好坏改变固定酒厂划分；尚未拟合或查看holdout模型表现"
+  ]
+}

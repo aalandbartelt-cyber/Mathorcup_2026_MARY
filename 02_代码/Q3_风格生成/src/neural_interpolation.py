@@ -28,7 +28,7 @@ class SmallAutoencoder(nn.Module):
 
 class ResidualInterpolator:
     def _setup(self,x,styles,config,target_styles):
-        values=np.asarray(x,float);labels=np.asarray(styles,str)
+        values=np.array(x,dtype=float,order='C',copy=True);labels=np.asarray(styles,str)
         if values.ndim!=2 or labels.shape!=(len(values),) or len(values)<2 or not np.isfinite(values).all():
             raise ValueError('Finite current-training chemical rows required')
         self.values_=values.copy();self.styles_=labels.copy();self.config_=dict(config);self.targets_=list(target_styles)
@@ -145,6 +145,8 @@ class ResidualInterpolator:
         state={f'weight__{k}':v.detach().cpu().numpy().copy() for k,v in self.network_.state_dict().items()}
         state.update(lower=self.lower_,upper=self.upper_,center=self.center_,scale=self.scale_,
             pca_mean=self.pca_mean_,pca_components=self.pca_components_)
+        state.update({f'factor__{family}__{style}':factor.copy()
+            for family,groups in self.factors_.items() for style,factor in groups.items()})
         return state
 
     @classmethod
@@ -156,4 +158,11 @@ class ResidualInterpolator:
             result.network_=SmallAutoencoder(result.values_.shape[1],config['hidden_dim'],config['latent_dim']).double().eval()
         weights={k.removeprefix('weight__'):torch.as_tensor(np.asarray(v).copy()) for k,v in arrays.items() if k.startswith('weight__')}
         result.network_.load_state_dict(weights,strict=True);result.history_=[];result.gpu_used_=False
-        result.n_parameters_=sum(p.numel() for p in result.network_.parameters());result._residual_factors();return result
+        result.n_parameters_=sum(p.numel() for p in result.network_.parameters());result._residual_factors()
+        for family,groups in result.factors_.items():
+            for style,factor in groups.items():
+                stored=np.asarray(arrays[f'factor__{family}__{style}'],float)
+                if stored.shape!=factor.shape or not np.isfinite(stored).all():raise ValueError('Invalid saved residual sampling factor')
+                np.testing.assert_allclose(stored@stored.T,factor@factor.T,atol=1e-8,rtol=1e-9)
+                result.factors_[family][style]=stored.copy()
+        return result

@@ -1,0 +1,7 @@
+official_style,split,n_rows,n_breweries
+Kriek,holdout,6,3
+Kriek,prior,13,9
+Lambic,holdout,38,12
+Lambic,prior,60,27
+Tripel,holdout,11,9
+Tripel,prior,39,33

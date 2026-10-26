@@ -1,0 +1,7 @@
+{
+  "status": "engineering_replay_failed_not_formal_result",
+  "source_commit": "f6b722a",
+  "reason": "Covariance is equal within 5.3e-15 relative norm under C/F input layout, but eigen sampling factors differ by up to 19.8; seeded residual noise did not replay. No final manifest generated.",
+  "fix": "Canonical C input and explicitly serialized sampling factors with covariance verification; retain weights and all original engineering outputs; rerun same registered first fold.",
+  "selection_rules_changed": false
+}

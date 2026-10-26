@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 import yaml
@@ -65,6 +66,21 @@ class NeuralInterpolationTests(unittest.TestCase):
             self.assertTrue((values>=self.x[:15].min(0)-1e-12).all());self.assertTrue((values<=self.x[:15].max(0)+1e-12).all())
             self.assertTrue(np.all((sample['preclip_cell_fraction']>=0)&(sample['preclip_cell_fraction']<=1)))
             self.assertFalse(np.any(sample['anchor_a']==sample['anchor_b']))
+
+    def test_sampling_factors_survive_covariance_eigenspace_reorientation(self):
+        model=self.fit();state=model.state_arrays()
+        self.assertIn('factor__neural__a',state)
+        original=self.mod._psd_factor
+        def rotated(covariance):
+            covariance,factor=original(covariance)
+            return covariance,-factor  # Exactly the same covariance, different seeded samples.
+        with patch.object(self.mod,'_psd_factor',side_effect=rotated):
+            restored=self.mod.ResidualInterpolator.from_arrays(np.asfortranarray(self.x),self.labels,self.config,
+                target_styles=['a','b'],arrays=state)
+        for family,beta in [('pca',0.),('neural',.5)]:
+            first=model.generate('a',80,family,alpha=.5,beta=beta,gamma=.5,seed=31)
+            again=restored.generate('a',80,family,alpha=.5,beta=beta,gamma=.5,seed=31)
+            np.testing.assert_array_equal(first['values'],again['values'])
 
 
 if __name__=='__main__':unittest.main()
