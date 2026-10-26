@@ -1,0 +1,36 @@
+{
+  "status": "complete",
+  "n_outer_folds": 30,
+  "n_generated_samples": 900,
+  "n_generated_profile_values": 45000,
+  "n_style_target_profile_summary": 150,
+  "n_migration_summary": 891,
+  "n_migration_profile_values": 42200,
+  "n_outer_profile_comparisons": 450,
+  "candidate_status_counts": {
+    "needs_direct_verification": 512,
+    "no_target_gain": 205,
+    "rejected_direct_constraint": 112,
+    "rejected_no_structural_candidate": 47,
+    "predicted_worsening": 10,
+    "proxy_variation_uncertain": 3,
+    "proxy_disagreement": 2
+  },
+  "n_eligible_statistical_candidates": 0,
+  "n_eligible_c1_source_target_pairs": 0,
+  "max_unchanged_source_prediction_delta": 2.220446049250313e-16,
+  "frozen_input_hash_count": 80,
+  "frozen_inputs_unchanged": true,
+  "all_e202_generation_folds_verified": true,
+  "primary_max_abs_reconstruction_error": 1.9984014443252818e-15,
+  "auditor_float32_archive_exact_all_folds": true,
+  "physical_safety_certified": false,
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "scope": "full_data_postselection_profiles_with_separate_outer_fold_diagnostics",
+  "source_sha256": "d8d0c4b81eea3b29bcb46041685ea210c330777290a7d09b800c822b8c3ccef3",
+  "input_manifest_sha256": "d2b39dcab98c1c559af66f53216bda1e3e991f4a619082f6f247db6a9149ed02",
+  "output_sha256": {
+    "q3_e205_checkpoint_audit.csv": "4c3da4f7968af42980bdcc76c3de79cc3fa86e39eaa8061421d33e08b8d8530a"
+  }
+}

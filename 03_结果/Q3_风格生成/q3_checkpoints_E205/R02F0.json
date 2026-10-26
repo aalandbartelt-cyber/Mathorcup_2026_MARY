@@ -1,0 +1,21 @@
+{
+  "signature": "0b593b82d0363365462944867504e54d139489bb395fc241652a122fe0bc1a99",
+  "repeat": 2,
+  "fold": 0,
+  "output_sha256": "ab235b508f05ee87573aeb470589a7208851af622a6700657a50873ecb81ad40",
+  "q1_cache": {
+    "model_sha256": "ff81db16a324471ec3054084da810dfb0b126b56f01ae123b7ff627dced46466",
+    "reconstruction_max_abs_error": 1.1102230246251565e-15
+  },
+  "auditor_reconstruction_max_abs_error": 1.1588148174368484e-07,
+  "auditor_archive_precision": "float32_exact_after_cast",
+  "support_distance_cutoff": 39.14601517295146,
+  "n_validation": 84,
+  "n_migration": 301,
+  "n_descriptive_generated": 900,
+  "n_outer_training_generated": 85,
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "hyperparameter_search": false,
+  "elapsed_seconds": 1.1279673549870495
+}
