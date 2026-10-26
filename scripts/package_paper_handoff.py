@@ -81,10 +81,17 @@ def main() -> None:
         docx = find_latest(qdir, f"{qnum}_论文正文_v*.docx")
         assumptions = find_latest(qdir, f"模型假设_{key}_v*.docx")
         analysis = find_latest(qdir, f"问题分析_{key}_v*.docx")
-        if key == "Q2" and (figdir / "v3").is_dir():
-            figdir = figdir / "v3"
-            figs = sorted(figdir.glob("*_v3.png"))
-            qlist = figdir / "Q2_图清单_v3.csv"
+        if key == "Q2":
+            import re
+
+            match = re.search(r"_v(\d+)", docx.name) if docx else None
+            version = f"v{match.group(1)}" if match else "v0"
+            if match:
+                figdir = figdir / version
+                assumptions = qdir / f"模型假设_Q2_{version}.docx"
+                analysis = qdir / f"问题分析_Q2_{version}.docx"
+                figs = sorted(figdir.glob(f"*_{version}.png"))
+                qlist = figdir / f"Q2_图清单_{version}.csv"
 
     missing = []
     if not docx or not docx.is_file(): missing.append(f"论文正文 docx（{qdir}/{qnum}_论文正文_v1.docx）")
@@ -101,8 +108,8 @@ def main() -> None:
             if not (qdir/name).is_dir():missing.append(name)
     elif key == "Q2":
         if docx and not docx.with_suffix('.pdf').is_file():missing.append('正文同步PDF')
-        audit_pdf = find_latest(qdir, 'Q2_论文审计合订本_v*.pdf')
-        if not audit_pdf:missing.append('审计合订本PDF')
+        audit_pdf = qdir / f'Q2_论文审计合订本_{version}.pdf'
+        if not audit_pdf.is_file():missing.append('同版本审计合订本PDF')
         for name in ['数据与结果','附录核心代码']:
             if not (qdir/name).is_dir():missing.append(name)
         if not (qdir/'当前版本说明.md').is_file():missing.append('当前版本说明.md')

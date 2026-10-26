@@ -1,0 +1,17 @@
+{
+  "source": "05_论文/Q2_关键化合物/第二问_论文正文_v3.docx",
+  "output": "05_论文/Q2_关键化合物/第二问_论文正文_v4.docx",
+  "unchanged_math": 7,
+  "unchanged_tables_including_equations": 11,
+  "changed_existing_text": [
+    "figure3_reference",
+    "figure3_caption"
+  ],
+  "added_figure_notes": 4,
+  "images": {
+    "图1_共表达图阈值敏感性_v4.png": "5fd024a683c25bb86c1ea6a1656318f654713af05b9a916023c47c1531a1ef9c",
+    "图2_模型性能与四路一致性_v4.png": "d6e7b39cdc47783b4556d6881ec3be0e793a3e19dbc0b5c18dff9fb95bd211c9",
+    "图3_候选稳定性与证据等级_v4.png": "272e83e7c76c87e2dc7a68732cee920c36ce8ad11060d58cecfbc8b7242ca297",
+    "图4_A级关系四路排名与OAV_v4.png": "73230359e87c447737b23bf641adb3230f2c953b1fcc906e2f236658c8eacbfe"
+  }
+}

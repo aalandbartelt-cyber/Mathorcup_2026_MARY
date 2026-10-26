@@ -1,0 +1,49 @@
+{
+  "status": "frozen_result_export_v4",
+  "numeric_results_changed": false,
+  "source_scope": "v3_sanitized_tables_plus_frozen_repeat_summaries",
+  "tables": [
+    {
+      "name": "图1_阈值与网络结构.csv",
+      "rows": 7,
+      "columns": 8,
+      "sha256": "cfd1d0d57a93a8bd48f39441043869db630e7a3cc3eecb034523ffe0e100a205"
+    },
+    {
+      "name": "图2a_模型性能.csv",
+      "rows": 6,
+      "columns": 8,
+      "sha256": "9f9163077c9dad27bf03fb3484d1901817773fa000d753951d2c8be5cbfa0e8b"
+    },
+    {
+      "name": "图2b_四路一致性.csv",
+      "rows": 4,
+      "columns": 3,
+      "sha256": "a2c9cb7576672610f3ef42e8ee128071dfb62eb1f376fe77dc9d288d94c19ab1"
+    },
+    {
+      "name": "图3_候选稳定性.csv",
+      "rows": 150,
+      "columns": 7,
+      "sha256": "f0cba5dc5198ee20a978abe1140f21aa0131d5cbee87d468802682c967cee1c8"
+    },
+    {
+      "name": "图3_稳定性分箱汇总.csv",
+      "rows": 40,
+      "columns": 5,
+      "sha256": "5b955e51aced0cf73a83b7e66be868ae5f0b7705fdfabac6b5e7340ccbba77a5"
+    },
+    {
+      "name": "图4_A级关系名次与OAV.csv",
+      "rows": 8,
+      "columns": 9,
+      "sha256": "d00c36d71cadca7129e4c5beb08f7bb41630c8bba2d1016351f1a6e5bb6b8437"
+    },
+    {
+      "name": "图4_逐行排版核验.csv",
+      "rows": 8,
+      "columns": 9,
+      "sha256": "d9f8cced598eb75f83ff73c057d4defd99f7af7195564a7a774a08ddb98231e9"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "frozen_files": 52,
+  "changed_frozen_files": [],
+  "text_boxes": 231,
+  "text_overlap_count": 0,
+  "text_outside_count": 0,
+  "families": [
+    "SimSun"
+  ],
+  "font_sizes_pt": [
+    10.5,
+    11.0
+  ],
+  "scope_note": "Text bounding boxes do not establish general curve-label overlap; final rasters and grayscale are also visually inspected.",
+  "figures": [
+    {
+      "name": "图1_共表达图阈值敏感性_v4.png",
+      "pixels": [
+        2220,
+        1215
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "5fd024a683c25bb86c1ea6a1656318f654713af05b9a916023c47c1531a1ef9c"
+    },
+    {
+      "name": "图2_模型性能与四路一致性_v4.png",
+      "pixels": [
+        2220,
+        1380
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "d6e7b39cdc47783b4556d6881ec3be0e793a3e19dbc0b5c18dff9fb95bd211c9"
+    },
+    {
+      "name": "图3_候选稳定性与证据等级_v4.png",
+      "pixels": [
+        2220,
+        1215
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "272e83e7c76c87e2dc7a68732cee920c36ce8ad11060d58cecfbc8b7242ca297"
+    },
+    {
+      "name": "图4_A级关系四路排名与OAV_v4.png",
+      "pixels": [
+        2460,
+        1380
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "73230359e87c447737b23bf641adb3230f2c953b1fcc906e2f236658c8eacbfe"
+    }
+  ]
+}
