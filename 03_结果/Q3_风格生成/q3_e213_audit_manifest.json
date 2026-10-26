@@ -1,0 +1,254 @@
+{
+  "experiment_id": "E213",
+  "status": "complete",
+  "n_outer_folds": 30,
+  "n_metric_rows": 5400,
+  "n_inner_selection_rows": 1620,
+  "n_frozen_inputs_verified": 136,
+  "decision": {
+    "selected_distribution": "style_copula_shrunk",
+    "base_decisions": {
+      "pca_noise": {
+        "replace_copula": true,
+        "checks": {
+          "no_near_training_copies": true,
+          "no_collapsed_samples": true,
+          "raw_w1_noninferior": true,
+          "raw_energy_noninferior": true,
+          "robust_w1_noninferior": true,
+          "robust_energy_improves": true,
+          "robust_energy_at_least_seven_repeats": true,
+          "robust_coverage_improves": true,
+          "spread_not_worse": true,
+          "no_style_w1_regression": true,
+          "no_style_energy_regression": true
+        },
+        "raw_mean_w1_delta": 0.0005195635460570354,
+        "raw_mean_energy_delta": -0.004842686774254503,
+        "robust_mean_w1_delta": 0.0006231297782750019,
+        "robust_mean_energy_delta": -0.005032519905806606,
+        "robust_mean_coverage_delta": 0.06769135802469138,
+        "robust_mean_log_spread_error_delta": 0.02456868988579545,
+        "n_repeats_robust_energy_better": 8,
+        "primary_distribution": "pca_noise",
+        "physical_safety_certified": false,
+        "q1_retrained": false,
+        "gpu_used": true,
+        "notes": [
+          "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+          "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+        ]
+      },
+      "neural_noise": {
+        "replace_copula": false,
+        "checks": {
+          "no_near_training_copies": true,
+          "no_collapsed_samples": true,
+          "raw_w1_noninferior": false,
+          "raw_energy_noninferior": false,
+          "robust_w1_noninferior": false,
+          "robust_energy_improves": false,
+          "robust_energy_at_least_seven_repeats": false,
+          "robust_coverage_improves": false,
+          "spread_not_worse": true,
+          "no_style_w1_regression": false,
+          "no_style_energy_regression": false
+        },
+        "raw_mean_w1_delta": 0.04987862385996852,
+        "raw_mean_energy_delta": 0.021098250236464777,
+        "robust_mean_w1_delta": 0.05083158082831486,
+        "robust_mean_energy_delta": 0.03534372513728114,
+        "robust_mean_coverage_delta": -0.1094320987654321,
+        "robust_mean_log_spread_error_delta": -0.06153042703703952,
+        "n_repeats_robust_energy_better": 0,
+        "primary_distribution": "style_copula_shrunk",
+        "physical_safety_certified": false,
+        "q1_retrained": false,
+        "gpu_used": true,
+        "notes": [
+          "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+          "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+        ]
+      },
+      "neural_curve": {
+        "replace_copula": false,
+        "checks": {
+          "no_near_training_copies": true,
+          "no_collapsed_samples": true,
+          "raw_w1_noninferior": false,
+          "raw_energy_noninferior": false,
+          "robust_w1_noninferior": false,
+          "robust_energy_improves": false,
+          "robust_energy_at_least_seven_repeats": false,
+          "robust_coverage_improves": false,
+          "spread_not_worse": true,
+          "no_style_w1_regression": false,
+          "no_style_energy_regression": false
+        },
+        "raw_mean_w1_delta": 0.04906141615033626,
+        "raw_mean_energy_delta": 0.020655035487850748,
+        "robust_mean_w1_delta": 0.04995447261316786,
+        "robust_mean_energy_delta": 0.03457247648443816,
+        "robust_mean_coverage_delta": -0.10646913580246914,
+        "robust_mean_log_spread_error_delta": -0.061808127287744846,
+        "n_repeats_robust_energy_better": 0,
+        "primary_distribution": "style_copula_shrunk",
+        "physical_safety_certified": false,
+        "q1_retrained": false,
+        "gpu_used": true,
+        "notes": [
+          "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+          "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+        ]
+      },
+      "neural_selected": {
+        "replace_copula": false,
+        "checks": {
+          "no_near_training_copies": true,
+          "no_collapsed_samples": true,
+          "raw_w1_noninferior": false,
+          "raw_energy_noninferior": false,
+          "robust_w1_noninferior": false,
+          "robust_energy_improves": false,
+          "robust_energy_at_least_seven_repeats": false,
+          "robust_coverage_improves": false,
+          "spread_not_worse": true,
+          "no_style_w1_regression": false,
+          "no_style_energy_regression": false
+        },
+        "raw_mean_w1_delta": 0.049900789971592065,
+        "raw_mean_energy_delta": 0.021104917544577304,
+        "robust_mean_w1_delta": 0.050850767170686755,
+        "robust_mean_energy_delta": 0.03535869723806094,
+        "robust_mean_coverage_delta": -0.1094320987654321,
+        "robust_mean_log_spread_error_delta": -0.06149414278280629,
+        "n_repeats_robust_energy_better": 0,
+        "primary_distribution": "style_copula_shrunk",
+        "physical_safety_certified": false,
+        "q1_retrained": false,
+        "gpu_used": true,
+        "notes": [
+          "替换仅依据训练内自适应选择方法；单一消融最佳值不另选为主线",
+          "原始尺度与分位敏感性同时报告，重复CV不等于独立外部确认试验"
+        ]
+      }
+    },
+    "neural_increment_supported": false,
+    "increments": {
+      "pca_noise": {
+        "supported": false,
+        "checks": {
+          "energy_gain": false,
+          "repeat_gain": false,
+          "w1_noninferior": false,
+          "coverage_noninferior": false,
+          "spread_noninferior": true,
+          "no_style_regression": false
+        },
+        "robust_energy_delta": 0.04039121714386755,
+        "robust_w1_delta": 0.050227637392411754,
+        "robust_coverage_delta": -0.17712345679012348,
+        "robust_log_spread_error_delta": -0.08606283266860172,
+        "energy_better_repeats": 0
+      },
+      "raw_mixture": {
+        "supported": false,
+        "checks": {
+          "energy_gain": false,
+          "repeat_gain": false,
+          "w1_noninferior": false,
+          "coverage_noninferior": false,
+          "spread_noninferior": true,
+          "no_style_regression": false
+        },
+        "robust_energy_delta": 0.03950769246430421,
+        "robust_w1_delta": 0.05305643044324932,
+        "robust_coverage_delta": -0.21135802469135803,
+        "robust_log_spread_error_delta": -0.10640691986328525,
+        "energy_better_repeats": 0
+      },
+      "neural_noise": {
+        "supported": false,
+        "checks": {
+          "energy_gain": false,
+          "repeat_gain": false,
+          "w1_noninferior": true,
+          "coverage_noninferior": true,
+          "spread_noninferior": true,
+          "no_style_regression": true
+        },
+        "robust_energy_delta": -0.0007712486528429671,
+        "robust_w1_delta": -0.0008771082151470137,
+        "robust_coverage_delta": 0.0029629629629629637,
+        "robust_log_spread_error_delta": -0.00027770025070530393,
+        "energy_better_repeats": 1
+      }
+    },
+    "clipping": {
+      "pca_noise": {
+        "acceptable": false,
+        "mean_local_cell_clipping": 0.2032778045000267,
+        "by_style": {
+          "Kriek": 0.22601491101491097,
+          "Lambic": 0.2447234247234247,
+          "Tripel": 0.13909507776174437
+        }
+      },
+      "neural_noise": {
+        "acceptable": false,
+        "mean_local_cell_clipping": 0.7894982630538186,
+        "by_style": {
+          "Kriek": 0.7999158249158249,
+          "Lambic": 0.8138263588263589,
+          "Tripel": 0.7547526054192721
+        }
+      },
+      "neural_curve": {
+        "acceptable": false,
+        "mean_local_cell_clipping": 0.7895159531826198,
+        "by_style": {
+          "Kriek": 0.7998460798460798,
+          "Lambic": 0.8138023088023087,
+          "Tripel": 0.754899470899471
+        }
+      },
+      "neural_selected": {
+        "acceptable": false,
+        "mean_local_cell_clipping": 0.7894528886751108,
+        "by_style": {
+          "Kriek": 0.7998220298220299,
+          "Lambic": 0.8137734487734487,
+          "Tripel": 0.754763187429854
+        }
+      }
+    },
+    "selection_status": "retain_frozen_distribution",
+    "q1_retrained": false,
+    "nnls_refit": false,
+    "kaggle_used_for_training": false,
+    "gpu_used": true,
+    "physical_safety_certified": false,
+    "existing_full_data_profiles_and_migrations_replaced": false,
+    "notes": [
+      "内层仅用官方化学谱，网络无感官标签/外部数据/外折早停",
+      "神经选择六候选，PCA三候选；外折不参与选择，预算差异保留",
+      "残差噪声与曲率增量分开；同风格训练范围剪裁不等于缺陷安全认证",
+      "重复交叉验证是探索性比较，不等于独立外部确认"
+    ]
+  },
+  "audit_source_sha256": "24601fbe606d9ae286f765a6b986fe992b629037727ec66d31a8d6edd838afcc",
+  "input_manifest_sha256": "f8c433cea78a4165774beec5b0bdc1a6a761f71e7b93091687b66227fd61f53a",
+  "output_sha256": {
+    "q3_replacement_decision_E213.json": "223422323fd745d0f7e272e39d9b8049c37e14cfea4b514637ef78e663e271c0",
+    "q3_paired_comparisons_E213.csv": "4c97af33d6040bbb6b9bb1c235f94d31406efcd33c37537f246dba40f4794297",
+    "q3_comparisons_by_style_E213.csv": "d4ef5b92a44ac598e6d8b0a0cf2270c04d168f033db2f43096a18d43eeb4c663",
+    "q3_frozen_baseline_reproduction_E213.csv": "85474db403270aaaac4cee9211dbece753be1d8f723abcd95648925e2dd8bb8d",
+    "q3_neural_replay_audit_E213.csv": "9e8d44ff39b371f9322211b28e1c498547e085e2bb31b84a2e2409178a3bdaa1",
+    "q3_repeat_cluster_sensitivity_E213.csv": "33261e48a0e6873c4aec7fbd8376bb14b7bb7f9c3d5effbb5b197cc4594be308",
+    "q3_all_method_summary_E213.csv": "551fa87589b9ed187a8c2cd80b39d625bb87a3ad55bd3de6327d585af8dfc5d4"
+  },
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "kaggle_used_for_training": false,
+  "gpu_used": true
+}

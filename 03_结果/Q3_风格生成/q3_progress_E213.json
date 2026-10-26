@@ -1,5 +1,4 @@
 {
-  "status": "running",
-  "completed_folds": 1,
-  "last_fold": "R00F0"
+  "status": "complete",
+  "completed_folds": 30
 }

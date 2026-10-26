@@ -1,0 +1,34 @@
+{
+  "status": "verified",
+  "test_result": "138 passed, 53 subtests passed",
+  "source_test_commit": "d5b522e",
+  "hash_checks": [
+    {
+      "manifest": "q3_run_manifest_E213.json",
+      "all_present_hashes_valid": true
+    },
+    {
+      "manifest": "q3_e213_audit_manifest.json",
+      "all_present_hashes_valid": true
+    },
+    {
+      "manifest": "q3_abv_prior_split_manifest.json",
+      "all_present_hashes_valid": true
+    },
+    {
+      "manifest": "q3_run_manifest_E205.json",
+      "frozen_outputs_valid": true
+    },
+    {
+      "manifest": "q3_run_manifest_E209.json",
+      "frozen_outputs_valid": true
+    }
+  ],
+  "paper_prose_scan": {
+    "scope": "05_论文/Q3_风格生成/04_模型建立与求解.md",
+    "forbidden_hits": 0
+  },
+  "completed_runner_reentry": "verified_without_training_or_rewriting",
+  "q1_q2_frozen_files_modified": false,
+  "new_figures_or_docx_generated": false
+}

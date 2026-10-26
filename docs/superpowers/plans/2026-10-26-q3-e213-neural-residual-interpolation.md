@@ -41,10 +41,12 @@
 
 ## 3. 实施与审计
 
-- [ ] `tests/test_neural_interpolation.py`先失败，再实现`src/neural_interpolation.py`：仿射/端点曲率恒等式、种子、常量、零修正与旧局部原语、独立噪声、训练范围/剪裁、CPU权重恢复一致。
-- [ ] `tests/test_e213_runner.py`先失败，再实现`src/run_e213_neural_interpolation.py`：内层完整选参、模型训练史/来源、200固定步、30折checkpoint、保存可回放的权重、原始/稳健及未剪裁敏感性、完整谱来源。
-- [ ] `tests/test_e213_audit.py`先失败，再实现`src/audit_e213.py`：完整30折、5400评价/1620内层行、原基线复现、神经相对线性/普通混合的增量、剪裁、随机流/谱逐条恢复、哈希与固定决定。
-- [ ] 首折工程核验后再全30折；`CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1`运行；模型训练遇非有限值直接报错，不自行降条件。
-- [ ] 测试、审计、逐风格/重复/不利指标、模型登记与交接，分段commit/push。新分布候选不能直接覆盖900份画像/迁移；全数据重拟合与缺陷复核另登记。
+- [x] `tests/test_neural_interpolation.py`先失败，再实现`src/neural_interpolation.py`：仿射/端点曲率恒等式、种子、常量、零修正与旧局部原语、独立噪声、训练范围/剪裁、CPU权重恢复一致。
+- [x] `tests/test_e213_runner.py`先失败，再实现`src/run_e213_neural_interpolation.py`：内层完整选参、模型训练史/来源、200固定步、30折checkpoint、保存可回放的权重、原始/稳健及未剪裁敏感性、完整谱来源。
+- [x] `tests/test_e213_audit.py`先失败，再实现`src/audit_e213.py`：完整30折、5400评价/1620内层行、原基线复现、神经相对线性/普通混合的增量、剪裁、随机流/谱逐条恢复、哈希与固定决定。
+- [x] 首折工程核验后再全30折；`CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1`运行；模型训练遇非有限值直接报错，不自行降条件。
+- [x] 测试、审计、逐风格/重复/不利指标、模型登记与交接，分段commit/push。新分布候选不能直接覆盖900份画像/迁移；全数据重拟合与缺陷复核另登记。
 
 ABV弱先验本轮仅准备按酒厂分组的固定prior/holdout清单，不消耗holdout作选模。强化学习缺真实动作转移，不启动。
+
+执行完成：30/30、5400评价/1620内层记录/136输入哈希，138测试+53 subtests。神经无增量，PCA基础条件虽满足但局部cell剪裁20.33%超过登记15%，按固定顺序保留Copula。首折采样因子回放问题先以失败测试定位后修复，原工程谱归档，最终所有谱回放误差≤1.82e-12。ABV仅完成167条/78酒厂固定划分，无训练或留出模型评价。
