@@ -47,10 +47,10 @@ def make(path,story):
  doc=SimpleDocTemplate(str(path),pagesize=A4,rightMargin=1.7*cm,leftMargin=1.7*cm,topMargin=1.6*cm,bottomMargin=1.5*cm)
  doc.build(story,onFirstPage=footer,onLaterPages=footer)
 
-make(Q/'第三问_论文正文_v1.pdf',main_story())
-make(Q/'模型假设_Q3_v1.pdf',build_short('assump'))
-make(Q/'问题分析_Q3_v1.pdf',build_short('analysis'))
+make(Q/'第三问_论文正文_v2.pdf',main_story())
+make(Q/'模型假设_Q3_v2.pdf',build_short('assump'))
+make(Q/'问题分析_Q3_v2.pdf',build_short('analysis'))
 # combined audit PDF: title plus the three independently generated sections.
 combined=[P('第三问论文审计合订本','CNTitle'),P('本合订本包含正文、模型假设和问题分析三份交付文档，图稿采用用户已确认的审计版。','CNBody'),PageBreak()]+main_story()+[PageBreak()]+build_short('assump')+[PageBreak()]+build_short('analysis')
-make(Q/'Q3_论文审计合订本_v1.pdf',combined)
+make(Q/'Q3_论文审计合订本_v2.pdf',combined)
 print('pdfs written')

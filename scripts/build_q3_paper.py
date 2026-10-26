@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+# Legacy v1 builder retained for provenance.  The accepted Q3 document is
+# rebuilt from the Q2 v5 Word mother document by build_q3_from_q2.py.
+
 from copy import deepcopy
 from pathlib import Path
 from zipfile import ZipFile

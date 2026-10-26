@@ -58,16 +58,20 @@ def main() -> None:
     figs = sorted([p for p in figdir.glob("*") if p.suffix.lower() in {".png", ".pdf", ".svg"}]) if figdir.exists() else []
     qlist = figdir / f"{key}_图清单.csv" if figdir.exists() else None
 
+    q3_version = "v1"
+    q3_version_note = qdir / "当前版本说明.md"
     if key == "Q1":
         docx = qdir / "第一问_论文正文_v1.docx"
         assumptions = qdir / "模型假设_Q1.docx"
         analysis = qdir / "问题分析_Q1.docx"
         figs = [figdir / name for name in Q1_REQUIRED_FIGURES]
     elif key == "Q3":
+        q3_version = "v2" if (qdir / "第三问_论文正文_v2.docx").exists() else "v1"
+        q3_version_note = qdir / ("当前版本说明_v2.md" if q3_version == "v2" else "当前版本说明.md")
         figdir = figdir / "draft_v2"
-        docx = qdir / "第三问_论文正文_v1.docx"
-        assumptions = qdir / "模型假设_Q3_v1.docx"
-        analysis = qdir / "问题分析_Q3_v1.docx"
+        docx = qdir / f"第三问_论文正文_{q3_version}.docx"
+        assumptions = qdir / f"模型假设_Q3_{q3_version}.docx"
+        analysis = qdir / f"问题分析_Q3_{q3_version}.docx"
         figs = [figdir / "图1_生成质量与多样性.png",
                 figdir / "图2_三风格感官画像.png",
                 figdir / "图3_迁移收益与审计状态.png"]
@@ -82,15 +86,15 @@ def main() -> None:
         if not fig.is_file(): missing.append(f"指定图片（{fig}）")
     if not qlist or not qlist.is_file(): missing.append(f"图清单（{figdir}/{key}_图清单.csv）")
     if key == "Q3":
-        for required in [qdir / "第三问_论文正文_v1.pdf", qdir / "模型假设_Q3_v1.pdf",
-                         qdir / "问题分析_Q3_v1.pdf", qdir / "Q3_论文审计合订本_v1.pdf",
-                         qdir / "当前版本说明.md", qdir / "数据与结果", qdir / "附录核心代码"]:
+        for required in [qdir / f"第三问_论文正文_{q3_version}.pdf", qdir / f"模型假设_Q3_{q3_version}.pdf",
+                         qdir / f"问题分析_Q3_{q3_version}.pdf", qdir / f"Q3_论文审计合订本_{q3_version}.pdf",
+                         q3_version_note, qdir / "数据与结果", qdir / "附录核心代码"]:
             if not required.exists(): missing.append(f"Q3交付项（{required}）")
     if missing:
         raise SystemExit("交付包缺项：\n- " + "\n- ".join(missing))
 
     stamp = datetime.now().strftime("%Y%m%d")
-    zip_path = outdir / f"{args.question}_交付包.zip"
+    zip_path = outdir / (f"{args.question}_交付包_{q3_version}.zip" if key == "Q3" else f"{args.question}_交付包.zip")
     with tempfile.TemporaryDirectory() as td:
         stage = Path(td) / args.question
         (stage / "图片").mkdir(parents=True, exist_ok=True)
@@ -98,10 +102,10 @@ def main() -> None:
         shutil.copy2(assumptions, stage / assumptions.name)
         shutil.copy2(analysis, stage / analysis.name)
         if key == "Q3":
-            for pdf in [qdir / "第三问_论文正文_v1.pdf", qdir / "模型假设_Q3_v1.pdf",
-                        qdir / "问题分析_Q3_v1.pdf", qdir / "Q3_论文审计合订本_v1.pdf"]:
+            for pdf in [qdir / f"第三问_论文正文_{q3_version}.pdf", qdir / f"模型假设_Q3_{q3_version}.pdf",
+                        qdir / f"问题分析_Q3_{q3_version}.pdf", qdir / f"Q3_论文审计合订本_{q3_version}.pdf"]:
                 shutil.copy2(pdf, stage / pdf.name)
-            shutil.copy2(qdir / "当前版本说明.md", stage / "当前版本说明.md")
+            shutil.copy2(q3_version_note, stage / q3_version_note.name)
             shutil.copytree(qdir / "数据与结果", stage / "数据与结果")
             shutil.copytree(qdir / "附录核心代码", stage / "附录核心代码")
         for f in figs:
