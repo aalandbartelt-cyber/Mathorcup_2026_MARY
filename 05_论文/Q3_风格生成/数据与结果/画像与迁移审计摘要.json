@@ -1,0 +1,20 @@
+{
+  "generation_model": "风格条件收缩Copula",
+  "n_outer_repeats": 10,
+  "n_outer_folds": 30,
+  "n_generated_profiles": 900,
+  "n_profile_summary_rows": 150,
+  "n_source_target_tasks": 33,
+  "status_counts": {
+    "待实测统计候选": 2,
+    "直接化学证据不足": 26,
+    "感官代理不稳定": 1,
+    "未找到搜索可行谱": 4
+  },
+  "physical_safety_certified": false,
+  "notes": [
+    "画像是生成样本的预测描述，不是实测评分",
+    "迁移候选需要直接浓度和工艺验证",
+    "未知源浓度与未知阈值不计入缺陷约束通过分母"
+  ]
+}

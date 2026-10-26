@@ -1,0 +1,16 @@
+{
+  "n_source_target_tasks": 33,
+  "n_sources": 11,
+  "n_target_styles": 3,
+  "selection_rule": "最小谱改动",
+  "n_spectra_with_structural_candidate": 29,
+  "status_counts": {
+    "待实测统计候选": 2,
+    "直接化学证据不足": 26,
+    "感官代理不稳定": 1,
+    "未找到搜索可行谱": 4
+  },
+  "physical_safety_certified": false,
+  "candidate_source": "啤酒230",
+  "candidate_targets": ["Tripel", "Kriek"]
+}
