@@ -1,0 +1,49 @@
+experiment: E211
+target_styles: [Tripel, Kriek, Lambic]
+n_repeats: 10
+n_folds: 3
+seeds: [20261025, 20261026, 20261027, 20261028, 20261029]
+inner_folds: 2
+inner_seeds: [20261026, 20261027, 20261028]
+inner_split_seed: 20261026
+inner_spread_log_weight: 0.25
+methods: [raw_mixture, pca_mixture, basis_mixture]
+mixture_probabilities: [0.25, 0.5, 0.75]
+geometry:
+  n_strict_fields: 218
+  winsor_quantiles: [0.01, 0.99]
+  coordinate_dim: 4
+  prototype_count: 8
+  prototype_seed: 20261026
+  bandwidth_multipliers: [0.5, 1.0]
+  neighbors: 3
+  pca_support_neighbors: 6
+  basis_zero_tolerance: 1.0e-8
+  stability_bootstraps: 5
+  stability_dimensions: [3, 5]
+  stability_minimum_median_jaccard: 0.5
+replacement_rules:
+  candidate: basis_mixture
+  raw_w1_max_increase: 0.01
+  raw_energy_max_increase: 0.02
+  robust_w1_max_increase: 0.01
+  robust_energy_min_decrease: 0.005
+  robust_energy_better_repeats: 7
+  robust_coverage_min_increase: 0.05
+  robust_log_spread_error_max_increase: 0.05
+  each_style_robust_w1_max_increase: 0.02
+  each_style_robust_energy_max_increase: 0.02
+  near_duplicate_fraction_max: 0.0
+basis_increment_rules:
+  comparison_methods: [raw_mixture, pca_mixture]
+  robust_energy_min_decrease: 0.002
+  energy_better_repeats: 7
+  robust_w1_max_increase: 0.005
+  robust_coverage_max_decrease: 0.02
+  robust_log_spread_error_max_increase: 0.02
+  each_style_w1_energy_max_increase: 0.02
+  each_style_minimum_active_basis_fraction: 0.5
+fallback_order: [basis_with_increment, raw_if_base_rules, frozen_copula]
+q1_retrained: false
+nnls_refit: false
+gpu_used: false
