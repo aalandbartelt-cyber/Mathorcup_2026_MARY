@@ -1,0 +1,25 @@
+{
+  "signature": "979851e4cfd75d4a162f7815971dbd969c0bbad52aaeb21b516e1941379cadfa",
+  "beer": 139,
+  "n_paths": 5796,
+  "n_primary_feasible": 2055,
+  "n_locked": 3,
+  "single_target_max_abs_error": 9.298117831235686e-16,
+  "model_cache_sha256": {
+    "R00F2": "18436ff961f3bff73d8665574e2c550be97db258d29de1626fb185ce285dce6b",
+    "R01F2": "ebd6c23b5060795c301fd755a35f24c141af1d01d750f5ccad3bbfa908ea1fb1",
+    "R02F1": "37656eb08139207a1f0ac404605e192fe190a28f3c73966e9f6b9d6b9669c40d",
+    "R03F2": "957a2ba449dc8df2403a5f8fe9007e19256371eb6f3b6a5339f6ea8155f0de60",
+    "R04F0": "faa503f7d02a4b7a15766b352b8140c7cd5f2a1d6b85dced7cb4151ac76d4937",
+    "R05F2": "5147180c4ac58e43cb8e6437c18c72a50f841cc99401804d9b25cdf54ee407fb",
+    "R06F2": "8df61efdd935cfe445779acaa45f816f80ca1ab2a40ec09a016682f189f1901e",
+    "R07F2": "521029017b59c6b77ac9eb55e2a8443f7bcf3ac7f6508cc8484a494d539a4390",
+    "R08F2": "f8703fd51d4a2b3f4f3ed92fa925ae0cb0ed4d768ecb5dca7ce78e47d8ef6701",
+    "R09F1": "7178f7405529391ea92cd89e31f8c78bab94187b4069d8c4c7afc268c727c236"
+  },
+  "output_sha256": {
+    "selected.csv": "516dfb90145202cb1b27988fb4110a92207879d31c26268b7bf126579b0974c5",
+    "spectra.csv.gz": "a6eeddada5d711617c4dd974f6b4982149e533dbfffccfcc45fc22ff6f81cadd",
+    "diagnostics.csv.gz": "537e1185dce00c8a9995dd27e852fe24625ddebbd9517752a27d0fcec5269338"
+  }
+}

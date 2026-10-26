@@ -1,0 +1,25 @@
+{
+  "signature": "979851e4cfd75d4a162f7815971dbd969c0bbad52aaeb21b516e1941379cadfa",
+  "beer": 230,
+  "n_paths": 5796,
+  "n_primary_feasible": 385,
+  "n_locked": 3,
+  "single_target_max_abs_error": 6.38378239159465e-16,
+  "model_cache_sha256": {
+    "R00F0": "a72b3b89cb84a0574679304d9dae5d360d75868797045510be673b3671c31369",
+    "R01F0": "93d4dfa86bdcc81350ea5d026be46d766212896fbd2f6bcc5ef6981192b38bd6",
+    "R02F0": "ff81db16a324471ec3054084da810dfb0b126b56f01ae123b7ff627dced46466",
+    "R03F0": "4fb31080e830a60affa63e7a28f7b34b60a54c5f2155607a81eb47e8b517d4d2",
+    "R04F2": "0950271df1bd6a1b4266f901cc436123155093103c0c836e25c36eaa10a6f94f",
+    "R05F1": "7010894b14ce5cdedb11bf5ffe93d6d1cd70e3dd7d3542979e8bdc71c7881f5f",
+    "R06F0": "50c0faa00924c2ca47694967ea11fa9160e88ba58b892d9f18b65e8c6d16e1d6",
+    "R07F0": "7812ca4c5f062b21cf13e2b137782b90201e5510d74acebbf6adf4fdfc3a4b6f",
+    "R08F1": "943ad96f999ab8b5dca5ee12a258cfa8a1a4f91a500feb020ce70ae6b18ba102",
+    "R09F2": "13849dd9e54a6dc8321bac87b8ab27765badcad8f2f3cdcb43513afa1a988bf5"
+  },
+  "output_sha256": {
+    "selected.csv": "2fe5c4f3d38fdbafde335d427db1c3dbae2cc5fe72cc3202e15e4a250cfe8041",
+    "spectra.csv.gz": "442b9a25f6019c7383ee9f2b2394b7a93881aed38fe3e576a459486464e81731",
+    "diagnostics.csv.gz": "6912448b11d41e637b0ad4b9396235674efe87ad918f6bb960b7b1f33c1dcc5f"
+  }
+}
