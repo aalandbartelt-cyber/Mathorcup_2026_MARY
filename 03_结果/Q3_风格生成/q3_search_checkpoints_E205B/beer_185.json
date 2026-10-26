@@ -1,0 +1,24 @@
+{
+  "signature": "194ae4356e7028c90e6bf9b8448173cbd0c43efef0ef01ccf2c7ebe22f1d430d",
+  "beer": 185,
+  "single_target_max_abs_error": 2.3592239273284576e-16,
+  "cache_sha256": {
+    "R00F1": "94336947e78bb0d4ac1c56e7bcc073a257b07d974a0ed814a5324332ba4ff7ac",
+    "R01F0": "93d4dfa86bdcc81350ea5d026be46d766212896fbd2f6bcc5ef6981192b38bd6",
+    "R02F2": "e9d7eca1394afbdf6dff0dd3435ab2be8d9114764557c63edc1cd04382aeb6ce",
+    "R03F2": "957a2ba449dc8df2403a5f8fe9007e19256371eb6f3b6a5339f6ea8155f0de60",
+    "R04F1": "b390de0d010fb35ff4970f4293af4aed88cb3d53f775b53b067662fc8f326f43",
+    "R05F1": "7010894b14ce5cdedb11bf5ffe93d6d1cd70e3dd7d3542979e8bdc71c7881f5f",
+    "R06F1": "38cd8cb18d1cefd907fd24ae8665f417c1d8f48150b04299f044c87836052dca",
+    "R07F1": "ae429777fc9a16da7e7eab5611b747045f8e10377f46ec701b2eb680b3ce6c36",
+    "R08F2": "f8703fd51d4a2b3f4f3ed92fa925ae0cb0ed4d768ecb5dca7ce78e47d8ef6701",
+    "R09F2": "13849dd9e54a6dc8321bac87b8ab27765badcad8f2f3cdcb43513afa1a988bf5"
+  },
+  "n_selected": 9,
+  "n_primary_feasible": 428,
+  "output_sha256": {
+    "beer_185_selected.csv": "f6126b3f6a65c5f8ad4bd745ffb81edaec12dd93aa89988c872ab68003b0e6a9",
+    "beer_185_spectra.csv.gz": "3a26cade2c80c67f27831afe56674ed2fe64a729a854bcef1d76d6ec00d38a4f",
+    "beer_185_search.csv.gz": "09a5ab43ce64d5d47662d7fb6421d6ccc30fb8730b5c01971d6808ecd73e42e2"
+  }
+}

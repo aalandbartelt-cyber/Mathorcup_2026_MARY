@@ -1,0 +1,10 @@
+selection_id,beer,target_style,scenario,selection_rule,candidate_available,physical_safety_certified,n_primary_feasible,n_search_points,auditor_accessed,anchor_index,lambda,candidate_distance,source_distance,relative_target_gain,source_change_rms,anchor_pool_id,primary_mean_delta,primary_repeat_q90_delta,support_repeat_fraction,n_direct_failed,n_direct_unknown,search_status
+96_Tripel_minimum_change,96,Tripel,C1,minimum_change,True,False,16,1799,False,236.0,0.5,0.7001463103947502,1.1629380932059654,0.3979504889511356,0.5911289642638552,1786.0,-0.04505180302181459,-0.023290452063961676,1.0,0.0,1.0,locked_primary_candidate
+96_Tripel_maximum_target_gain,96,Tripel,C1,maximum_target_gain,True,False,16,1799,False,207.0,0.75,0.595868111693091,1.1629380932059654,0.4876183735194251,0.8811729775406955,777.0,-0.06872156122199294,-0.024555844053467703,1.0,0.0,1.0,locked_primary_candidate
+96_Tripel_maximum_proxy_margin,96,Tripel,C1,maximum_proxy_margin,True,False,16,1799,False,137.0,1.0,0.7894920955621603,1.1629380932059654,0.3211228523904453,1.1626833758105237,287.0,-0.11432952493656542,-0.050305028173992086,1.0,0.0,1.0,locked_primary_candidate
+96_Kriek_minimum_change,96,Kriek,C1,minimum_change,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+96_Kriek_maximum_target_gain,96,Kriek,C1,maximum_target_gain,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+96_Kriek_maximum_proxy_margin,96,Kriek,C1,maximum_proxy_margin,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+96_Lambic_minimum_change,96,Lambic,C1,minimum_change,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+96_Lambic_maximum_target_gain,96,Lambic,C1,maximum_target_gain,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+96_Lambic_maximum_proxy_margin,96,Lambic,C1,maximum_proxy_margin,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate

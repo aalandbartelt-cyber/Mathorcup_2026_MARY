@@ -1,0 +1,10 @@
+selection_id,beer,target_style,scenario,selection_rule,candidate_available,physical_safety_certified,n_primary_feasible,n_search_points,auditor_accessed,anchor_index,lambda,candidate_distance,source_distance,relative_target_gain,source_change_rms,anchor_pool_id,primary_mean_delta,primary_repeat_q90_delta,support_repeat_fraction,n_direct_failed,n_direct_unknown,search_status
+209_Tripel_minimum_change,209,Tripel,C1,minimum_change,True,False,2,1799,False,81.0,1.0,0.7901809785827806,1.1620882469819767,0.32003358554315037,1.144946529126301,287.0,-0.09657199299834505,-0.011645602795029431,1.0,0.0,1.0,locked_primary_candidate
+209_Tripel_maximum_target_gain,209,Tripel,C1,maximum_target_gain,True,False,2,1799,False,81.0,1.0,0.7901809785827806,1.1620882469819767,0.32003358554315037,1.144946529126301,287.0,-0.09657199299834505,-0.011645602795029431,1.0,0.0,1.0,locked_primary_candidate
+209_Tripel_maximum_proxy_margin,209,Tripel,C1,maximum_proxy_margin,True,False,2,1799,False,134.0,1.0,0.818634211358394,1.1620882469819767,0.29554901404050554,1.16281564464851,911.0,-0.09508589812458425,-0.01798549637117406,1.0,0.0,1.0,locked_primary_candidate
+209_Kriek_minimum_change,209,Kriek,C1,minimum_change,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+209_Kriek_maximum_target_gain,209,Kriek,C1,maximum_target_gain,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+209_Kriek_maximum_proxy_margin,209,Kriek,C1,maximum_proxy_margin,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+209_Lambic_minimum_change,209,Lambic,C1,minimum_change,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+209_Lambic_maximum_target_gain,209,Lambic,C1,maximum_target_gain,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
+209_Lambic_maximum_proxy_margin,209,Lambic,C1,maximum_proxy_margin,False,False,0,1799,False,,,,,,,,,,,,,rejected_no_primary_feasible_candidate
