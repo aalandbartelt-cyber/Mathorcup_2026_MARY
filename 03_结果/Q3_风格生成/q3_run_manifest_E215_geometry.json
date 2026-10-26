@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E215",
+  "status": "complete",
+  "scope": "full_data_postselection_design_not_outer_validation",
+  "n_source_target_pairs": 33,
+  "n_nonzero_paths": 231,
+  "n_paths_including_source": 264,
+  "q1_final_oof_sha256": "ec80b4087347ccb0b2b312016ab3d8f67a4e5faaa1da352e4a548728e57ccc60",
+  "q1_retrained": false,
+  "nnls_refit": false,
+  "sensory_proxy_used": false,
+  "gpu_used": false,
+  "kaggle_used_for_training": false,
+  "physical_safety_certified": false,
+  "input_sha256": {
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/configs/E215_strict_eb_migration.yaml": "63f8579358898cd0c50ff69702946367d219e8057687f5feb49b7e1c4081613e",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/run_e215_strict_eb_migration.py": "85d87dc019bef58c0798aadf58d8cbc3133b00fe07f8e456552e58351d67cd9c",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/eb_migration.py": "c829d952ff2b346a6e48bd75d20da0494d90ca525478160b2f9af32b64efe23c",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/constrained_migration.py": "451dbdd23d5af6e2bc165dfcffed8405c75125004642a5c406e789468577467e",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/02_代码/Q3_风格生成/src/q3_constraints.py": "dd904b8635d2faee0f1250753065a5ef80be403c7be6c04f5c374ab7613aa95f",
+    "/home/mary/mathorcup/data/2026初赛/2026年MathorCup大数据挑战赛-赛道A初赛/附件/1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_source_defects_E200.csv": "2373e399cbb9bc00ba00c62bbc502fedb52813833805d14c698e67df51fd37e9",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_defect_registry_E200.csv": "788b00657d95c852612bd0d28d98f8f118a28db14bc5b811e046f64acd91881c",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_field_contract_E200.csv": "8987b6eea0b6724221f8c684a6f84cf8ad21faaf5614a318dd35f7e6311aa845",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_run_manifest_E200.json": "2a6bdaa9d29dc3cb5676517cd6e1ccf808872264ae151f27b05559094b9e1427",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_run_manifest_E204.json": "646be454be05406c82f9e46deee4bd6630c148f9af61645312ebe7e64990fa0c",
+    "/home/mary/mathorcup/.worktrees/q3-foundation/03_结果/Q3_风格生成/q3_migration_summary_E204.csv": "cfe627774067bbb991a2de2126e91696d317b8a40698345672b17aabc7e95267"
+  },
+  "output_sha256": {
+    "q3_geometry_endpoints_E215.csv": "765cb6f1d33da503145296063a0c3cb319bc149b23eb79f11d10596eebd7f53e",
+    "q3_geometry_paths_E215.csv": "e34c047cc9f35cdc64f02f30815246e7c6fba3cc1b2df49b955e44e3047c7122",
+    "q3_geometry_spectra_E215.csv.gz": "9fd742eacf3dab844404005b6a046d703d7d4654364ff4225b5d5614f591efd3",
+    "q3_geometry_vs_E204_E215.csv": "c774dce7d574911a93cc91a187c2967e4159304571f7e2d21f0a141f688d7e8d"
+  },
+  "elapsed_seconds": 0.5638150800004951
+}
