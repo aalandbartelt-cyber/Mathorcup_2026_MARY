@@ -1,0 +1,51 @@
+内层OOF与外层训练内堆叠流程摘录
+这是完整函数体摘录，不是独立运行入口。以下函数不应在本次交付中被执行。
+依赖：numpy、make_inner_splits、_candidates、_fit_base、_parameter_key、matrix_metrics、fit_nnls_stacking。
+输入：当前外层训练集、当前验证化学输入、固定基学习器候选配置、感官家族、收缩值、内层折数和种子。
+输出：各共享方式预测、参数、已选基模型、内层划分、内层OOF基预测、外层验证基预测。
+# Source logical name: nested_oof_stacking; SHA256: 5ca1210204bde18a815034ad5fd533aef1a3a71420ab0759e8fbd24bded73981
+
+def fit_outer_nnls(x_train, y_train, x_validation, *, base_config, groups,
+                   scopes, shrinkage, inner_splits, seed) -> dict:
+    """Rebuild base-model OOF entirely inside outer training, then fit NNLS."""
+    y = np.asarray(y_train, dtype=float)
+    splits = make_inner_splits(len(y), int(inner_splits), int(seed))
+    assignment = np.full(len(y), -1, dtype=int)
+    for fold, (_, valid) in enumerate(splits):
+        assignment[valid] = fold
+    inner_predictions, outer_predictions, selections = [], [], {}
+    for model_position, model in enumerate(base_config["base_models"]):
+        candidate_rows = []
+        for candidate_position, parameter in enumerate(_candidates(base_config, model)):
+            prediction = np.full_like(y, np.nan)
+            for fold, (train, valid) in enumerate(splits):
+                prediction[valid] = _fit_base(
+                    model, parameter, x_train[train], y[train], x_train[valid], base_config,
+                    random_state=int(seed) + model_position * 100000 + candidate_position * 1000 + fold,
+                )
+            if not np.isfinite(prediction).all():
+                raise RuntimeError("stacking base inner OOF is incomplete")
+            candidate_rows.append({"parameter": parameter, "prediction": prediction,
+                                   "metrics": matrix_metrics(y, prediction)})
+        selected = min(candidate_rows, key=lambda row: _parameter_key(row["metrics"]))
+        inner_predictions.append(selected["prediction"])
+        outer_predictions.append(_fit_base(
+            model, selected["parameter"], x_train, y, x_validation, base_config,
+            random_state=int(seed) + model_position * 100000,
+        ))
+        selections[model] = {
+            "parameter": selected["parameter"],
+            "candidate_metrics": [{"parameter": row["parameter"], "metrics": row["metrics"]}
+                                  for row in candidate_rows],
+        }
+    inner_stack, outer_stack = np.stack(inner_predictions, axis=-1), np.stack(outer_predictions, axis=-1)
+    predictions, parameters = {}, {}
+    for scope in scopes:
+        fitted = fit_nnls_stacking(inner_stack, y, groups=groups, scope=scope, shrinkage=shrinkage)
+        predictions[str(scope)] = fitted.predict(outer_stack)
+        parameters[str(scope)] = {"weights": fitted.weights.tolist(),
+                                  "intercept": fitted.intercept.tolist(),
+                                  "global_weights": fitted.global_weights.tolist()}
+    return {"predictions": predictions, "parameters": parameters, "base_selection": selections,
+            "inner_fold_assignment": assignment, "inner_prediction_stack": inner_stack,
+            "outer_base_stack": outer_stack}

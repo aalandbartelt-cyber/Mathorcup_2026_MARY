@@ -1,0 +1,234 @@
+软件与运行说明
+
+运行位置：04_支撑材料根目录。
+核心程序为平铺的Python与R文件；原始赛题附件需自行提供。
+依赖快照记录现有环境，并不表示其中所有软件均用于三问最终模型。
+
+一、实际软件与核心程序命令
+
+实际环境：WSL2 Ubuntu 22.04，Python 3.10.19，NumPy 2.2.6，SciPy 1.15.3，pandas 2.3.3，scikit-learn 1.7.2；R 4.5.3，绘图使用ggplot2、patchwork及ragg。
+
+在支撑材料根目录运行：
+
+conda run -n mathorcup python 01_源程序/Q1_06_感官预测运行.py --help
+conda run -n mathorcup python 01_源程序/Q1_06_感官预测运行.py --attachments 官方附件目录 --execute --output 运行结果
+conda run -n r Rscript 01_源程序/Q1_07_主图.R
+conda run -n r Rscript 01_源程序/Q2_09_主图.R
+conda run -n r Rscript 01_源程序/Q3_07_生成与迁移图.R
+
+Q1其余五个Python模块由运行入口调用；Q2八个文件给出候选选择、重采样、风格校正、四路排序、冻结预测、条件归因和化学核验核心函数；Q3六个文件给出Copula、浓度约束、迁移路径、画像推理和检验核心函数。模块间导入已随平铺文件名同步。
+
+三问核心计算使用CPU。配置参数已写入Python源代码，源程序目录不需要YAML或Markdown。绘图直接读取本交付的平铺CSV；复算图单独输出，不覆盖正式用图。
+
+二、版本核验
+
+conda run -n mathorcup python --version
+Python 3.10.19
+
+NumPy 2.2.6; SciPy 1.15.3; pandas 2.3.3; scikit-learn 1.7.2
+
+conda run -n r Rscript --version
+Rscript (R) version 4.5.3 (2026-03-11)
+
+三、Python环境依赖快照
+
+absl-py==2.5.1
+alembic==1.20.0
+altair==6.0.0
+asttokens==3.0.2
+attrs==26.1.0
+beautifulsoup4==4.14.3
+blinker==1.9.0
+cachetools==7.0.5
+certifi==2026.2.25
+cffi==2.0.0
+charset-normalizer==3.4.7
+clang-format==18.1.8
+click==8.3.2
+cloudpickle==3.1.2
+coloredlogs==15.0.1
+colorlog==6.12.0
+comm==0.2.3
+contourpy==1.3.2
+cryptography==48.0.0
+cuda-bindings==12.9.4
+cuda-pathfinder==1.2.2
+cuda-toolkit==12.8.1
+cycler==0.12.1
+debugpy==1.8.22
+decorator==5.3.1
+defusedxml==0.7.1
+et_xmlfile==2.0.0
+exceptiongroup==1.3.1
+executing==2.3.0
+filelock==3.20.0
+flatbuffers==25.12.19
+fonttools==4.62.0
+fsspec==2025.12.0
+gitdb==4.0.12
+GitPython==3.1.46
+greenlet==3.5.6
+grpcio==1.84.0
+humanfriendly==10.0
+idna==3.11
+ipykernel==7.3.0
+ipython==8.39.0
+jedi==0.20.1
+Jinja2==3.1.6
+joblib==1.5.3
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+jupyter_client==8.10.0
+jupyter_core==5.9.1
+kiwisolver==1.5.0
+lightgbm==4.6.0
+llvmlite==0.47.0
+lxml==6.1.0
+magika==0.6.3
+Mako==1.4.3
+Markdown==3.10.3
+markdownify==1.2.2
+markitdown==0.1.5
+MarkupSafe==3.0.2
+matplotlib==3.10.8
+matplotlib-inline==0.2.2
+mpmath==1.3.0
+narwhals==2.18.1
+nest-asyncio2==1.7.4
+networkx==3.4.2
+numba==0.65.0
+numpy==2.2.6
+nvidia-cublas-cu12==12.8.4.1
+nvidia-cuda-cupti-cu12==12.8.90
+nvidia-cuda-nvrtc-cu12==12.8.93
+nvidia-cuda-runtime-cu12==12.8.90
+nvidia-cudnn-cu12==9.19.0.56
+nvidia-cufft-cu12==11.3.3.83
+nvidia-cufile-cu12==1.13.1.3
+nvidia-curand-cu12==10.3.9.90
+nvidia-cusolver-cu12==11.7.3.90
+nvidia-cusparse-cu12==12.5.8.93
+nvidia-cusparselt-cu12==0.7.1
+nvidia-ml-py==13.615.71
+nvidia-nccl-cu12==2.29.3
+nvidia-nvjitlink-cu12==12.8.93
+nvidia-nvshmem-cu12==3.4.5
+nvidia-nvtx-cu12==12.8.90
+onnxruntime==1.23.2
+opencv-python==5.0.0.93
+openpyxl==3.1.5
+optuna==5.0.0
+packaging @ file:///home/task_176104877067765/conda-bld/packaging_1761049113113/work
+pandas==2.3.3
+parso==0.8.7
+pdfminer.six==20251230
+pdfplumber==0.11.9
+pexpect==4.9.0
+pillow==12.2.0
+platformdirs==4.12.4
+plotly==6.7.0
+polars==2.0.0
+polars-runtime-32==2.0.0
+prompt_toolkit==3.0.53
+protobuf==7.34.1
+psutil==7.2.2
+ptyprocess==0.7.0
+pure_eval==0.2.4
+pyarrow==23.0.1
+pycparser==3.0
+pydeck==0.9.1
+Pygments==2.21.0
+pymupdf==1.28.2
+pyparsing==3.3.2
+pypdf==6.11.0
+pypdfium2==5.8.0
+python-dateutil==2.9.0.post0
+python-docx==1.2.0
+python-dotenv==1.2.2
+python-pptx==1.0.2
+pytorch-triton==3.2.0+git4b3bb1f8
+pytz==2026.1.post1
+PyYAML==6.0.3
+pyzmq==27.2.0
+referencing==0.37.0
+reportlab==4.5.1
+requests==2.33.1
+rpds-py==0.30.0
+scikit-learn==1.7.2
+scipy==1.15.3
+seaborn==0.13.2
+shap==0.49.1
+six==1.17.0
+slicer==0.0.8
+smmap==5.0.3
+soupsieve==2.8.3
+SQLAlchemy==2.0.55
+stack-data==0.6.3
+streamlit==1.56.0
+sympy==1.14.0
+tenacity==9.1.4
+tensorboard==2.21.0
+tensorboard-data-server==0.7.2
+threadpoolctl==3.6.0
+toml==0.10.2
+tomli==2.5.0
+torch==2.12.0.dev20260310+cu128
+torchaudio==2.11.0.dev20260310+cu128
+torchvision==0.26.0.dev20260310+cu128
+tornado==6.5.5
+tqdm==4.67.3
+traitlets==5.16.1
+triton==3.6.0+git9844da95
+typing_extensions==4.15.0
+tzdata==2026.2
+ultralytics==8.4.183
+ultralytics-thop==2.2.3
+urllib3==2.6.3
+watchdog==6.0.0
+wcwidth==0.9.2
+Werkzeug==3.1.9
+xgboost==3.2.0
+xlsxwriter==3.2.9
+
+四、R环境会话快照
+
+R 环境快照
+生成时间: 2026-10-21 10:09:07 
+
+R version 4.5.3 (2026-03-11)
+Platform: x86_64-conda-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: CONDA_ROOT/envs/r/lib/libopenblasp-r0.3.34.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: Asia/Shanghai
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.5.3
+
+== 关键包版本 ==
+ggplot2          4.0.3
+dplyr            1.2.1
+tidyr            1.3.2
+readr            2.2.0
+data.table       1.18.6.1
+scales           1.4.0
+patchwork        1.3.2
+ggrepel          0.9.8
+ragg             1.5.2
+svglite          2.2.2
+showtext         0.9.8
+languageserver   0.3.20

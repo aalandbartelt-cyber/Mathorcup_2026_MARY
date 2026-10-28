@@ -1,0 +1,17 @@
+usage: Q1_06_感官预测运行.py [-h] [--attachments ATTACHMENTS] [--assets ASSETS]
+                       [--output OUTPUT] [--execute]
+                       [--predict-chemistry PREDICT_CHEMISTRY]
+                       [--recompute-oof RECOMPUTE_OOF]
+
+感官组收缩NNLS：复算指标、完整嵌套验证或新样本推断
+
+options:
+  -h, --help            show this help message and exit
+  --attachments ATTACHMENTS
+  --assets ASSETS
+  --output OUTPUT
+  --execute             执行完整10次重复3折嵌套验证
+  --predict-chemistry PREDICT_CHEMISTRY
+                        对新化学表预测；仅以现有250款训练
+  --recompute-oof RECOMPUTE_OOF
+                        只由已有归档复算，不训练

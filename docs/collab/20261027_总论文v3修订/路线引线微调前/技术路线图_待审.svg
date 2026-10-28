@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='532.80pt' height='331.20pt' viewBox='0 0 532.80 331.20'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MzIuODB8MC4wMHwzMzEuMjA='>
+    <rect x='0.00' y='0.00' width='532.80' height='331.20' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MzIuODB8MC4wMHwzMzEuMjA=)'>
+<rect x='0.00' y='0.00' width='532.80' height='331.20' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='5.98' y='7.97' width='516.86' height='316.26' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='83.21' y='15.02' width='407.06' height='30.54' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #F2F3F4;' />
+<text x='286.74' y='30.87' text-anchor='middle' style='font-size: 12.00px; font-family: "SimSun";' textLength='108.00px' lengthAdjust='spacingAndGlyphs'>数据核验与折内处理</text>
+<text x='286.74' y='42.28' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='220.00px' lengthAdjust='spacingAndGlyphs'>250款啤酒  |  231项测量  |  50维感官目标</text>
+<line x1='140.62' y1='45.56' x2='140.62' y2='54.96' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<line x1='140.62' y1='54.96' x2='68.60' y2='54.96' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<line x1='68.60' y1='54.96' x2='68.60' y2='251.39' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<line x1='68.60' y1='101.01' x2='83.21' y2='101.01' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<polygon points='77.81,104.13 83.21,101.01 77.81,97.90 ' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt; fill: #505050;' />
+<line x1='68.60' y1='176.20' x2='83.21' y2='176.20' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<polygon points='77.81,179.32 83.21,176.20 77.81,173.08 ' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt; fill: #505050;' />
+<line x1='68.60' y1='251.39' x2='83.21' y2='251.39' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt;' />
+<polygon points='77.81,254.51 83.21,251.39 77.81,248.27 ' style='stroke-width: 0.96; stroke: #505050; stroke-linecap: butt; fill: #505050;' />
+<text x='140.62' y='66.41' text-anchor='middle' style='font-size: 11.50px; font-family: "SimSun";' textLength='48.00px' lengthAdjust='spacingAndGlyphs'>方法构建</text>
+<text x='278.39' y='66.41' text-anchor='middle' style='font-size: 11.50px; font-family: "SimSun";' textLength='60.00px' lengthAdjust='spacingAndGlyphs'>融合与约束</text>
+<text x='424.52' y='66.41' text-anchor='middle' style='font-size: 11.50px; font-family: "SimSun";' textLength='60.00px' lengthAdjust='spacingAndGlyphs'>结果与解释</text>
+<rect x='83.21' y='77.52' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #EFF4F9;' />
+<rect x='220.99' y='77.52' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #EFF4F9;' />
+<rect x='358.76' y='77.52' width='131.51' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #EFF4F9;' />
+<rect x='83.21' y='152.71' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0F6F3;' />
+<rect x='220.99' y='152.71' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0F6F3;' />
+<rect x='358.76' y='152.71' width='131.51' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #F0F6F3;' />
+<rect x='83.21' y='227.89' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #FCF7EF;' />
+<rect x='220.99' y='227.89' width='114.81' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #FCF7EF;' />
+<rect x='358.76' y='227.89' width='131.51' height='46.99' style='stroke-width: 0.96; stroke: #303030; stroke-linecap: butt; stroke-linejoin: miter; fill: #FCF7EF;' />
+<text x='140.62' y='94.44' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='66.00px' lengthAdjust='spacingAndGlyphs'>四类基学习器</text>
+<text x='278.39' y='94.44' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='77.00px' lengthAdjust='spacingAndGlyphs'>感官组收缩NNLS</text>
+<text x='424.52' y='94.44' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='66.00px' lengthAdjust='spacingAndGlyphs'>50维相对评分</text>
+<text x='140.62' y='169.63' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='71.50px' lengthAdjust='spacingAndGlyphs'>218个严格单体</text>
+<text x='278.39' y='169.63' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='77.00px' lengthAdjust='spacingAndGlyphs'>四路稳健秩融合</text>
+<text x='424.52' y='169.63' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='49.50px' lengthAdjust='spacingAndGlyphs'>50维Top-3</text>
+<text x='140.62' y='244.81' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='77.00px' lengthAdjust='spacingAndGlyphs'>风格条件Copula</text>
+<text x='278.39' y='244.81' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='88.00px' lengthAdjust='spacingAndGlyphs'>最小改动路径搜索</text>
+<text x='424.52' y='244.81' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='77.00px' lengthAdjust='spacingAndGlyphs'>三风格谱及画像</text>
+<text x='140.62' y='104.86' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='76.00px' lengthAdjust='spacingAndGlyphs'>ExtraTrees / HGB</text>
+<text x='140.62' y='116.83' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='57.00px' lengthAdjust='spacingAndGlyphs'>Ridge / PLS2</text>
+<text x='278.39' y='110.84' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='85.50px' lengthAdjust='spacingAndGlyphs'>10×3外层；内层3折</text>
+<text x='424.52' y='110.84' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='80.75px' lengthAdjust='spacingAndGlyphs'>连续预测与0-6七档</text>
+<text x='140.62' y='186.03' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='85.50px' lengthAdjust='spacingAndGlyphs'>共表达描述与折内图</text>
+<text x='278.39' y='180.04' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='80.75px' lengthAdjust='spacingAndGlyphs'>总关联 / 分层自助</text>
+<text x='278.39' y='192.01' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='90.25px' lengthAdjust='spacingAndGlyphs'>风格校正 / 留一风格</text>
+<text x='424.52' y='186.03' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='76.00px' lengthAdjust='spacingAndGlyphs'>稳定性与化学核验</text>
+<text x='140.62' y='261.21' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='85.50px' lengthAdjust='spacingAndGlyphs'>经验边缘与收缩相关</text>
+<text x='278.39' y='261.21' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='85.50px' lengthAdjust='spacingAndGlyphs'>直接浓度与代理约束</text>
+<text x='424.52' y='261.21' text-anchor='middle' style='font-size: 9.50px; font-family: "SimSun";' textLength='85.50px' lengthAdjust='spacingAndGlyphs'>迁移候选与适用边界</text>
+<text x='36.04' y='97.70' text-anchor='middle' style='font-size: 11.50px;fill: #1F5A94; font-family: "SimSun";' textLength='36.00px' lengthAdjust='spacingAndGlyphs'>问题一</text>
+<text x='36.04' y='112.19' text-anchor='middle' style='font-size: 11.50px;fill: #1F5A94; font-family: "SimSun";' textLength='48.00px' lengthAdjust='spacingAndGlyphs'>感官评分</text>
+<text x='36.04' y='172.89' text-anchor='middle' style='font-size: 11.50px;fill: #67A995; font-family: "SimSun";' textLength='36.00px' lengthAdjust='spacingAndGlyphs'>问题二</text>
+<text x='36.04' y='187.38' text-anchor='middle' style='font-size: 11.50px;fill: #67A995; font-family: "SimSun";' textLength='60.00px' lengthAdjust='spacingAndGlyphs'>关键化合物</text>
+<text x='36.04' y='248.07' text-anchor='middle' style='font-size: 11.50px;fill: #D4A35B; font-family: "SimSun";' textLength='36.00px' lengthAdjust='spacingAndGlyphs'>问题三</text>
+<text x='36.04' y='262.56' text-anchor='middle' style='font-size: 11.50px;fill: #D4A35B; font-family: "SimSun";' textLength='48.00px' lengthAdjust='spacingAndGlyphs'>风格生成</text>
+<line x1='198.03' y1='101.01' x2='220.99' y2='101.01' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='215.59,104.13 220.99,101.01 215.59,97.90 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='335.80' y1='101.01' x2='358.76' y2='101.01' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='353.36,104.13 358.76,101.01 353.36,97.90 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='198.03' y1='176.20' x2='220.99' y2='176.20' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='215.59,179.32 220.99,176.20 215.59,173.08 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='335.80' y1='176.20' x2='358.76' y2='176.20' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='353.36,179.32 358.76,176.20 353.36,173.08 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='198.03' y1='251.39' x2='220.99' y2='251.39' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='215.59,254.51 220.99,251.39 215.59,248.27 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='335.80' y1='251.39' x2='358.76' y2='251.39' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='353.36,254.51 358.76,251.39 353.36,248.27 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<line x1='278.39' y1='124.51' x2='278.39' y2='139.55' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<line x1='278.39' y1='139.55' x2='511.15' y2='139.55' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<line x1='511.15' y1='139.55' x2='511.15' y2='294.62' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<line x1='511.15' y1='294.62' x2='278.39' y2='294.62' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<line x1='511.15' y1='190.30' x2='490.27' y2='190.30' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<polygon points='495.67,187.18 490.27,190.30 495.67,193.42 ' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt; fill: #1F5A94;' />
+<line x1='511.15' y1='251.39' x2='490.27' y2='251.39' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<polygon points='495.67,248.27 490.27,251.39 495.67,254.51 ' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt; fill: #1F5A94;' />
+<line x1='278.39' y1='294.62' x2='278.39' y2='274.88' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<polygon points='281.51,280.29 278.39,274.88 275.28,280.29 ' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt; fill: #1F5A94;' />
+<polygon points='365.66,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,144.53 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 431.18,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,134.56 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 365.66,144.53 ' style='stroke-width: 0.00; stroke: none; fill: #FFFFFF;' />
+<text x='398.42' y='143.14' text-anchor='middle' style='font-size: 10.50px;fill: #1F5A94; font-family: "SimSun";' textLength='63.00px' lengthAdjust='spacingAndGlyphs'>冻结感官接口</text>
+<text x='424.52' y='196.84' text-anchor='middle' style='font-size: 9.50px;fill: #1F5A94; font-family: "SimSun";' textLength='95.00px' lengthAdjust='spacingAndGlyphs'>独立归因（不改排序）</text>
+<text x='424.52' y='272.02' text-anchor='middle' style='font-size: 9.50px;fill: #1F5A94; font-family: "SimSun";' textLength='38.00px' lengthAdjust='spacingAndGlyphs'>感官画像</text>
+<polygon points='357.31,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,299.61 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 422.83,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,289.64 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 357.31,299.61 ' style='stroke-width: 0.00; stroke: none; fill: #FFFFFF;' />
+<text x='390.07' y='298.21' text-anchor='middle' style='font-size: 10.50px;fill: #1F5A94; font-family: "SimSun";' textLength='63.00px' lengthAdjust='spacingAndGlyphs'>感官代理检验</text>
+<line x1='83.21' y1='314.36' x2='107.01' y2='314.36' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt;' />
+<polygon points='102.84,316.77 107.01,314.36 102.84,311.95 ' style='stroke-width: 1.17; stroke: #303030; stroke-linecap: butt; fill: #303030;' />
+<text x='114.53' y='317.78' style='font-size: 10.00px; font-family: "SimSun";' textLength='70.00px' lengthAdjust='spacingAndGlyphs'>数据与求解流程</text>
+<line x1='289.87' y1='314.36' x2='313.67' y2='314.36' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt;' />
+<polygon points='309.50,316.77 313.67,314.36 309.50,311.95 ' style='stroke-width: 1.28; stroke: #1F5A94; stroke-dasharray: 3.41,3.41; stroke-linecap: butt; fill: #1F5A94;' />
+<text x='321.19' y='317.78' style='font-size: 10.00px; font-family: "SimSun";' textLength='80.00px' lengthAdjust='spacingAndGlyphs'>冻结预测器的调用</text>
+</g>
+</g>
+</svg>
