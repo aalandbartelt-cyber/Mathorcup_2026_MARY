@@ -1,0 +1,34 @@
+{
+  "scope": "publication_plot_inputs_only",
+  "source_sha256": {
+    "05_论文/Q1_感官评分/数据与结果/model_metrics_by_repeat.csv": "80a5948f5d36a1ba56f4cdab0044bd346f3212cc667eca3b9f68c8f909a1d815",
+    "05_论文/Q1_感官评分/数据与结果/validation_v1/q1_calibration_bins.csv": "9c8bbc260298e2d326f433c6c84924f9591145bac8b36b75b42f0a390d029451",
+    "05_论文/Q1_感官评分/数据与结果/validation_v1/q1_interval_coverage.csv": "a089860f3382915d780a3a6587b2906021f6032bebea13da5d6f8b09da1b6982",
+    "05_论文/Q1_感官评分/数据与结果/validation_v1/q1_target_reliability.csv": "33314ae659b7374fc2f01d8eedaed27264943e4c4526cfa062d2b549e2faf911",
+    "05_论文/Q1_感官评分/数据与结果/validation_ablation_v1/q1_ablation_summary.csv": "f3837b34f6195bce1cd887bf05ecc513895e88e60fa295d5cc4f94acbbfbb1aa",
+    "05_论文/Q1_感官评分/数据与结果/validation_ablation_v1/q1_leave_style_out.csv": "d99a491a7de2ff8c19dec81bfcd9567dbb960efe4d7d1a4717383525ab290797",
+    "02_代码/Q1_感官评分/src/plot_q1_final.R": "c34394d43e7203a1251eecb13bb1ec3fd5e894d813e8bfaf946c34991999bc47"
+  },
+  "generated_csv_sha256": {
+    "calibration_bins.csv": "6a44262ec9b90380718d1dcc4853a7f5de70b2147b44b8bec30827e673cf9268",
+    "model_repeats.csv": "1bd3256a85544c59cd6b2758595fffa8b8d22698af1882e2b47d08f9e8f62bb4",
+    "target_reliability.csv": "b6e142fd8274ff485022f68135ce4592cc3e4844776b4c4ea80bfc2197ffec58",
+    "interval_summary.csv": "cd986837f879fd6fce4bff0621a2140cd166424647def7c707a21b64560a9d64",
+    "ablation_summary.csv": "fed191ded9ee7752fa95668c1ff62295bf6c7311841bb9f6feb87893288b83f1",
+    "Q1_新增图清单_待审.csv": "67cace73218d250357538762eef8e8bf4908f0cf3a3a5e4b98c28ee3cf6d95ad",
+    "leave_style_out.csv": "73e645c55c32dbd93eaf68a185b2d60e450bf3e68444a3a205e15a99b52a3003"
+  },
+  "figure_outputs_sha256": {
+    "附图S3_逐目标预测可靠性.pdf": "e8be178973915d1d08fc9234c81107ebd1b4122d354ca12ecdaa085ab10b84e1",
+    "图5_重复验证稳定性与预测校准.pdf": "dceeaef1ca9f57ac729b75452c9b282d5d2df0cb3f0c66c5c9554b0bc45189e4",
+    "附图S2_消融与负对照.png": "b8eed39ffb96cf8fe81cfdf9d532e0ecacbd48f7b9a08eee9be958db384f79a7",
+    "附图S3_逐目标预测可靠性.png": "b8f938e91b12db5f82719ac26295a88b331189df73f81e0bf64c0081ba866d18",
+    "附图S2_消融与负对照.pdf": "dcc01d4bad7d66cafd1a143cc091ba9f3244eab803f0678362e7e9c86d40f7e2",
+    "图5_重复验证稳定性与预测校准.png": "b1e488fe29f5ab90a6537762de8e5c2e8272fcde3c81248c137549125a6acbf2"
+  },
+  "plotting_script_sha256": {
+    "plot_validation_drafts.R": "dad1081ee04ee94c1900dffdd296b92189cbe5f430075a77acf76b203dd8d586",
+    "prepare_figure_inputs.py": "39cd3861ddc98ab94d3fa136d16664fe2902a8b93a0e6afee2b18eac9dd58d89",
+    "make_qa.py": "a581ba4927528df1ee65a4a7c2d3c35e65965eb02aefbe3cca446db3cb02b9e8"
+  }
+}

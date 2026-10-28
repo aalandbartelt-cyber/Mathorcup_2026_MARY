@@ -1,0 +1,28 @@
+正式四路连接摘录：非独立入口
+输入total、bootstrap、adjusted、deletion分别是总关联、自助稳定、风格校正、留一风格汇总的完整名次表。
+deletion由aggregate_leave_one_style_ranks(..., expected_styles=22)得到。
+四表均须按target_code、feature_code覆盖全部候选；bootstrap使用bootstrap_rank，其他输入列名见函数。
+下面四个标签仅为可读路由名；支持数、倒数秩和平局顺序保留实际源算法。
+# Source logical name: four_evidence_connection; SHA256: 4c011e4d4a6dde6b52b97c812daaa6d48abfd22f0abd74e5e5af60045d029543
+
+LENS_TOTAL = "总关联"
+LENS_BOOTSTRAP = "分层自助"
+LENS_STYLE = "风格校正"
+LENS_DELETE = "留一风格"
+
+lenses = pd.concat(
+    [
+        _as_lens(total, "consensus_rank", LENS_TOTAL),
+        _as_lens(bootstrap, "bootstrap_rank", LENS_BOOTSTRAP),
+        _as_lens(adjusted, "consensus_rank", LENS_STYLE),
+        _as_lens(deletion, "aggregate_rank", LENS_DELETE),
+    ],
+    ignore_index=True,
+)
+consensus = reciprocal_rank_consensus(lenses, expected_methods=4, rrf_k=60)
+consensus = consensus.rename(
+    columns={
+        "method_top3_support": "lens_top3_support",
+        "method_top10_support": "lens_top10_support",
+    }
+)

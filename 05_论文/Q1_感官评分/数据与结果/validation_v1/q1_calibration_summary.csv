@@ -1,0 +1,51 @@
+﻿target_code,ece,mce,n,target_name_en,target_group,group_plot
+A_malt_all,0.09071294329548094,0.2323952210296737,250,Malt aroma - overall,Aroma,香气
+A_malt_grain,0.02001817251907804,0.03954236934813272,250,Malt aroma - grain,Aroma,香气
+A_malt_bread,0.04726539043130799,0.0880335182826322,250,Malt aroma - bread,Aroma,香气
+A_malt_cara,0.06451944913850496,0.10975135974898642,250,Malt aroma - caramel,Aroma,香气
+A_malt_burn,0.08279819195257684,0.1647201232833982,250,Malt aroma - smoked,Aroma,香气
+A_hops_all,0.04299213481706171,0.08960052733783852,250,Hops aroma - overall,Aroma,香气
+A_hops_citrus,0.02671994823871692,0.03775562424335372,250,Hops aroma - citrus,Aroma,香气
+A_hops_tropical,0.036645401810427886,0.07899928297611825,250,Hops aroma - tropical fruit,Aroma,香气
+A_hops_noble,0.05346639854852001,0.10862407259915394,250,Hops aroma - grassy,Aroma,香气
+A_hops_woody,0.05482414542298111,0.07318860716960462,250,Hops aroma - woody,Aroma,香气
+A_esters_all,0.026305280614168383,0.05188621060673537,250,Esters aroma - overall,Aroma,香气
+A_esters_ethac,0.037064310754937095,0.106015247220971,250,Esters aroma - nail polish,Aroma,香气
+A_esters_isoaa,0.07252259425109499,0.17175465353639377,250,Esters aroma - banana,Aroma,香气
+A_esters_flower,0.026835352884259624,0.04884800491715837,250,Esters aroma - floral,Aroma,香气
+A_esters_fruity,0.06259628511016602,0.11005199808458524,250,Esters aroma - fruity,Aroma,香气
+F_malt_all,0.08281567777285201,0.19095531213866668,250,Malt taste - overall,Flavour-core,风味
+F_malt_grain,0.0421021156095452,0.07094033540303174,250,Malt taste - grain,Flavour-core,风味
+F_malt_bread,0.05733784527355003,0.13531373380229855,250,Malt taste - bread,Flavour-core,风味
+F_malt_cara,0.05698351723945563,0.08915094743143703,250,Malt taste - caramel,Flavour-core,风味
+F_malt_burn,0.09022554449869291,0.18599067238021805,250,Malt taste - smoked,Flavour-core,风味
+F_hops_all,0.055639195490307436,0.08146103400905347,250,Hops taste - overall,Flavour-core,风味
+F_hops_citrus,0.06280947379227525,0.0826061754712249,250,Hops taste - citrus,Flavour-core,风味
+F_hops_tropical,0.043601687078668815,0.08363962414599851,250,Hops taste - tropical fruit,Flavour-core,风味
+F_hops_noble,0.034631999745995116,0.08510205592203257,250,Hops taste - grassy,Flavour-core,风味
+F_hops_woody,0.04243299661732891,0.06458754470244393,250,Hops taste - woody,Flavour-core,风味
+F_esters_all,0.07859708433114725,0.17028774338248293,250,Esters taste - overall,Flavour-core,风味
+F_esters_ethac,0.053980406747868685,0.12168513350655366,250,Esters taste - nail polish,Flavour-core,风味
+F_esters_isoaa,0.034138425991326854,0.05384598188074102,250,Esters taste - banana,Flavour-core,风味
+F_esters_flower,0.047997284526153844,0.07630757986212067,250,Esters taste - floral,Flavour-core,风味
+F_esters_fruity,0.05679517237006079,0.10814278312797146,250,Esters taste - fruity,Flavour-core,风味
+acidity,0.02765304498702371,0.03457537811174019,250,Acidity,Taste-other,味觉
+bitternes,0.04442596665476255,0.11237846401115015,250,Bitterness,Taste-other,味觉
+sweetness,0.10271856631239146,0.21323011870480324,250,Sweetness,Taste-other,味觉
+X4vg,0.08474033281565382,0.2090116192109699,250,4-vinyl guaiacol,Taste-other,味觉
+diacetyl,0.04936220610790353,0.08244387780420737,250,Diacetyl,Taste-other,味觉
+dms,0.03626184367483684,0.08789515598722375,250,Dimethyl sulfide,Taste-other,味觉
+metallic,0.03416977035122577,0.07616219162256066,250,Metallic,Taste-other,味觉
+stale_hops,0.033202243410079754,0.0685183393234254,250,Stale hops,Taste-other,味觉
+t2n,0.04249915295693057,0.0920638004998038,250,Trans-2-nonenal,Taste-other,味觉
+orange,0.08623606281823132,0.1647341776279171,250,Orange,Taste-other,味觉
+coriander,0.03508455573292388,0.07364908776032963,250,Coriander,Taste-other,味觉
+clove,0.036282534075379486,0.06312757018446313,250,Clove,Taste-other,味觉
+lactic,0.04707494136334724,0.08216149677450654,250,Lactic acid,Taste-other,味觉
+acetic,0.030760559908526306,0.059398133456222524,250,Acetic acid,Taste-other,味觉
+barnyard,0.030739864156662796,0.0618047810996361,250,Barnyard,Taste-other,味觉
+alcohol,0.037469876154623764,0.04981075395036827,250,Alcohol,Palate,口感
+aftertaste,0.07040899258445667,0.13048781870766152,250,Aftertaste,Palate,口感
+body,0.046155228838197504,0.07022211977454182,250,Body,Palate,口感
+co2,0.0731482361437774,0.15976756251413662,250,Carbonation,Palate,口感
+overall,0.0458422093851903,0.08674614598473968,250,Overall appreciation (Trained panel),Overall,总体

@@ -1,0 +1,6 @@
+﻿control,threshold,real_selected,null_or_shadow_selected,denominator,note
+null target permutation,0.6,24,0,50,风格内目标置换；0 表示没有 null 关系通过该入选频率阈值
+null target permutation,0.7,17,0,50,风格内目标置换；0 表示没有 null 关系通过该入选频率阈值
+null target permutation,0.8,11,0,50,风格内目标置换；0 表示没有 null 关系通过该入选频率阈值
+null target permutation,0.9,6,0,50,风格内目标置换；0 表示没有 null 关系通过该入选频率阈值
+shadow feature audit,,4476,1524,2000,2000 次目标—重复—半样本记录中的总入选次数；shadow 仍会进入局部 Top-3，不能写零误选

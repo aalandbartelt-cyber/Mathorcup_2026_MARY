@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "checks": {
+    "V12_existing_files_unchanged": true,
+    "delivery_existing_files_unchanged": true,
+    "windows_support_existing_files_unchanged": true,
+    "only_document_and_custom_styles_changed": true,
+    "all_images_bytes_unchanged": true,
+    "21_image_objects": true,
+    "page_settings_unchanged": true,
+    "23_displayed_equations_unchanged": true,
+    "native_math_empty_runs_zero": true,
+    "existing_content_table_numbers_unchanged": true,
+    "original_styles_semantically_unchanged": true,
+    "exact_source_C.1": true,
+    "exact_source_C.2": true,
+    "exact_source_D.1": true,
+    "exact_source_D.2": true,
+    "exact_source_D.3": true,
+    "exact_source_D.4": true,
+    "exact_source_D.5": true,
+    "exact_source_E.1": true,
+    "exact_source_E.2": true,
+    "exact_source_E.3": true,
+    "exact_source_E.4": true,
+    "exact_source_E.5": true,
+    "exact_source_E.6": true,
+    "exact_source_E.7": true,
+    "T5_body_internal_words_zero": true,
+    "no_old_core_subdirectories_or_modules": true,
+    "14_real_compile_commands": true,
+    "all_annex_source_names_in_A2": true,
+    "archive_181_files": true,
+    "archive_31_A2_paths_exist": true,
+    "AI_missing_file_marked_pending": true,
+    "14_reference_entries": true,
+    "technical_references_in_first_appearance_order": true,
+    "AI_1_2_cited_in_statement": true,
+    "all_references_cited": true,
+    "no_false_retrospective_preregistration": true,
+    "TOC_5_appendices_only": true,
+    "no_AI_statement_in_TOC": true,
+    "TOC_links_have_targets": true,
+    "PDF_same_Word_render_page_count": true,
+    "body_le_30_pages": true,
+    "title_abstract_and_team_id_retained": true,
+    "T1_named_final_PDF_exists_and_matches": true,
+    "PDF_text_within_page": true,
+    "tables_do_not_split_pages": true,
+    "TOC_numbers_match_Word_heading_pages": true,
+    "Toolkit_all_gates_pass": true,
+    "SDK_no_new_findings": true
+  },
+  "pdf_pages": 65,
+  "body_pages_including_references": 27,
+  "appendix_A_physical_page": 30,
+  "TOC_entries": 32,
+  "locations": {
+    "T7_Q1参数": [
+      8
+    ],
+    "T8_Q2重采样": [
+      16
+    ],
+    "T9_Q3端点": [
+      22,
+      23
+    ],
+    "T10_4VG解释": [
+      25
+    ],
+    "T5_口径解释": [
+      28
+    ],
+    "T4_参考文献": [
+      29
+    ],
+    "附录A": [
+      30
+    ],
+    "附录C": [
+      35
+    ],
+    "附录D": [
+      39
+    ],
+    "附录E": [
+      50
+    ]
+  },
+  "omml": 249,
+  "display_equations": 23,
+  "figures": 21,
+  "code_sections": 14,
+  "real_code_lines": 1040,
+  "technical_citation_order": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "AI_citation_order_exception": "AI1/2为用户固定工具条目，在文后声明引用；技术文献3-14按首次出现顺序排列。",
+  "unresolved": [
+    "AI工具使用详情说明.pdf尚未提供，未伪造，附录A已标待补。",
+    "包内TXT和部分绘图/默认数据路径原样保留，存在旧目录引用；本轮禁止修改30个扁平源文件，因此不宣称全工程一键复现。",
+    "是否达到90分需使用同一冻结框架独立复评，不能用任务加分预期冒充实评分。"
+  ],
+  "overflow": [],
+  "split_tables": [],
+  "TOC_page_mismatches": [],
+  "files": {
+    "2026_MathorCup_大数据竞赛_总论文_v13.docx": {
+      "bytes": 2971296,
+      "sha256": "4217090543b40ba140c0c793d18b319c983d78fe4e5dcd76c7cfb75b0174d5ec"
+    },
+    "2026_MathorCup_大数据竞赛_总论文_v13.pdf": {
+      "bytes": 3813992,
+      "sha256": "b6dacd95406dfc494a3ee38a4ee34adc8414a8bf857ead9b497ef7db03ea5bcd"
+    }
+  }
+}

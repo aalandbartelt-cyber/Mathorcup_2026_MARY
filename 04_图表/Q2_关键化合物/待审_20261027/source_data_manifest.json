@@ -1,0 +1,49 @@
+{
+  "figures": [
+    {
+      "figure": 1,
+      "output": "图1_共表达图阈值敏感性_v4.png",
+      "approved_bytes_retained": true,
+      "sha256": "5fd024a683c25bb86c1ea6a1656318f654713af05b9a916023c47c1531a1ef9c"
+    },
+    {
+      "figure": 2,
+      "output": "图2_模型性能与四路一致性_v4.png",
+      "approved_bytes_retained": true,
+      "sha256": "271d64c91d60da64aa5d079899ffbd9e9273f80628173d8d0321040494ff7e7c"
+    },
+    {
+      "figure": 3,
+      "output": "图3_候选稳定性与证据等级_v4.png",
+      "approved_bytes_retained": true,
+      "sha256": "272e83e7c76c87e2dc7a68732cee920c36ce8ad11060d58cecfbc8b7242ca297"
+    },
+    {
+      "figure": 4,
+      "output": "图4_A级关系四路排名与OAV_v4.png",
+      "approved_bytes_retained": true,
+      "sha256": "73230359e87c447737b23bf641adb3230f2c953b1fcc906e2f236658c8eacbfe"
+    }
+  ],
+  "supplemental_figure": {
+    "figure": 5,
+    "source_data": [
+      "source_data/图5a_影子字段入选槽.csv",
+      "source_data/图5b_直接锚点.csv",
+      "source_data/图5_目标置换阈值核验.csv"
+    ],
+    "script": "plot_q2_validation.R"
+  },
+  "source_data_sha256": {
+    "图5_目标置换阈值核验.csv": "adc4f558732c853b02fe3bc6dfad588c4c5f43a6bab4c8ebda2af2c196e4cfc2",
+    "图2b_四路一致性.csv": "a2c9cb7576672610f3ef42e8ee128071dfb62eb1f376fe77dc9d288d94c19ab1",
+    "图5a_影子字段入选槽.csv": "ff9e05db2e9985a9bed384f90ac3fbfcd8c37f7c005f1a88def373f0b0712876",
+    "图3_稳定性分箱汇总.csv": "5b955e51aced0cf73a83b7e66be868ae5f0b7705fdfabac6b5e7340ccbba77a5",
+    "图4_逐行排版核验.csv": "d9f8cced598eb75f83ff73c057d4defd99f7af7195564a7a774a08ddb98231e9",
+    "图3_候选稳定性.csv": "f0cba5dc5198ee20a978abe1140f21aa0131d5cbee87d468802682c967cee1c8",
+    "图4_A级关系名次与OAV.csv": "d00c36d71cadca7129e4c5beb08f7bb41630c8bba2d1016351f1a6e5bb6b8437",
+    "图2a_模型性能.csv": "9f9163077c9dad27bf03fb3484d1901817773fa000d753951d2c8be5cbfa0e8b",
+    "图1_阈值与网络结构.csv": "cfd1d0d57a93a8bd48f39441043869db630e7a3cc3eecb034523ffe0e100a205",
+    "图5b_直接锚点.csv": "490ceeb328f176050053344340a3e75667220662effe6df9e25c48c196e3626e"
+  }
+}

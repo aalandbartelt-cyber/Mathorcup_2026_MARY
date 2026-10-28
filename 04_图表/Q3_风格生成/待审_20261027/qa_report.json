@@ -1,0 +1,25 @@
+{
+  "status": "visual_qa_completed_user_review_pending",
+  "figure": "图4_联合结构独立置换检验.png",
+  "width_px": 2520,
+  "height_px": 1350,
+  "dpi": [
+    299.9994,
+    299.9994
+  ],
+  "r_backend": "ggplot2_theme_mcup",
+  "font_family": "SimSun",
+  "data_label_overlap_check": "Mean labels placed in a reserved right column beyond all data points.",
+  "grayscale_encoding": "Style names are direct axis labels; mean diamonds and repeat dots have different sizes and outlines.",
+  "panels": 2,
+  "top_level_title": false,
+  "svg_font_family_detected": true,
+  "visual_check_70pct": "Both panels, mean labels and symbolic legend remain readable; no data-label overlap or cropped elements observed.",
+  "visual_check_grayscale": "Rows are identified by explicit style names; dots, diamonds, horizontal SD segments and dashed zero references remain distinguishable.",
+  "scale_and_mean_line_are_descriptive": true,
+  "previews": [
+    "图4_70pct_gray.png",
+    "Q3_补充检验审图合页.png",
+    "图4_70pct.png"
+  ]
+}

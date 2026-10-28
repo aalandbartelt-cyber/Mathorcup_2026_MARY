@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='662.40pt' height='331.20pt' viewBox='0 0 662.40 331.20'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA='>
+    <rect x='0.00' y='0.00' width='662.40' height='331.20' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+<rect x='-0.000000000000064' y='0.00' width='662.40' height='331.20' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNjAuMzR8NjQ0Ljk3fDMxLjgwfDI1Ni41NA=='>
+    <rect x='60.34' y='31.80' width='584.63' height='224.74' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjAuMzR8NjQ0Ljk3fDMxLjgwfDI1Ni41NA==)'>
+</g>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpNS40OHwyNjYuMDV8NS40OHwzMjUuNzI='>
+    <rect x='5.48' y='5.48' width='260.57' height='320.24' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNS40OHwyNjYuMDV8NS40OHwzMjUuNzI=)'>
+<rect x='5.48' y='5.48' width='260.57' height='320.24' style='stroke-width: 1.12; stroke: none; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpMjY2LjA1fDY1Ni45Mnw1LjQ4fDMyNS43Mg=='>
+    <rect x='266.05' y='5.48' width='390.87' height='320.24' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjY2LjA1fDY1Ni45Mnw1LjQ4fDMyNS43Mg==)'>
+<rect x='266.05' y='5.48' width='390.87' height='320.24' style='stroke-width: 1.12; stroke: none; fill: #FFFFFF;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpNjAuMzR8MjQ4LjEyfDMxLjgwfDI1Ni41NA=='>
+    <rect x='60.34' y='31.80' width='187.78' height='224.74' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjAuMzR8MjQ4LjEyfDMxLjgwfDI1Ni41NA==)'>
+<rect x='60.34' y='31.80' width='187.78' height='224.74' style='stroke-width: 1.12; stroke: none; fill: #FFFFFF;' />
+<rect x='60.34' y='88.85' width='140.08' height='24.20' style='stroke-width: 0.85; stroke: #444444; stroke-linecap: butt; stroke-linejoin: miter; fill: #1F5A94;' />
+<rect x='60.34' y='175.29' width='47.70' height='24.20' style='stroke-width: 0.85; stroke: #444444; stroke-linecap: butt; stroke-linejoin: miter; fill: #D4A35B;' />
+<text x='207.85' y='104.72' style='font-size: 11.00px; font-family: "SimSun";' textLength='27.50px' lengthAdjust='spacingAndGlyphs'>2.238</text>
+<text x='115.46' y='191.15' style='font-size: 11.00px; font-family: "SimSun";' textLength='27.50px' lengthAdjust='spacingAndGlyphs'>0.762</text>
+<rect x='60.34' y='31.80' width='187.78' height='224.74' style='stroke-width: 0.96; stroke: #222222;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+<text x='56.45' y='191.15' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='44.00px' lengthAdjust='spacingAndGlyphs'>影子字段</text>
+<text x='56.45' y='104.72' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='44.00px' lengthAdjust='spacingAndGlyphs'>真实字段</text>
+<polyline points='58.74,187.39 60.34,187.39 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='58.74,100.95 60.34,100.95 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='60.34,258.14 60.34,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='91.64,258.14 91.64,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='122.93,258.14 122.93,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='154.23,258.14 154.23,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='185.52,258.14 185.52,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='216.82,258.14 216.82,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='248.12,258.14 248.12,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<text x='60.34' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='91.64' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>0.5</text>
+<text x='122.93' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>1.0</text>
+<text x='154.23' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>1.5</text>
+<text x='185.52' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>2.0</text>
+<text x='216.82' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>2.5</text>
+<text x='248.12' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>3.0</text>
+<text x='154.23' y='284.91' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='110.00px' lengthAdjust='spacingAndGlyphs'>每条记录平均入选槽数</text>
+<text x='60.34' y='22.31' style='font-size: 11.50px;fill: #252525; font-family: "SimSun";' textLength='138.00px' lengthAdjust='spacingAndGlyphs'>（a）真实字段与影子字段</text>
+</g>
+<defs>
+  <clipPath id='cpMzUzLjkxfDY0NC45N3wzMS44MHwyNTYuNTQ='>
+    <rect x='353.91' y='31.80' width='291.06' height='224.74' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzUzLjkxfDY0NC45N3wzMS44MHwyNTYuNTQ=)'>
+<rect x='353.91' y='31.80' width='291.06' height='224.74' style='stroke-width: 1.12; stroke: none; fill: #FFFFFF;' />
+<line x1='427.41' y1='256.54' x2='427.41' y2='31.80' style='stroke-width: 0.96; stroke: #777777; stroke-dasharray: 2.56,2.56; stroke-linecap: butt;' />
+<line x1='366.32' y1='50.53' x2='366.32' y2='50.53' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='81.75' x2='366.32' y2='81.75' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='112.96' x2='366.32' y2='112.96' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='144.17' x2='443.41' y2='144.17' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='175.39' x2='553.58' y2='175.39' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='206.60' x2='594.93' y2='206.60' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<line x1='366.32' y1='237.81' x2='617.78' y2='237.81' style='stroke-width: 1.39; stroke: #C6CDD4; stroke-linecap: butt;' />
+<circle cx='366.32' cy='50.53' r='3.73' style='stroke-width: 1.28; stroke: none; fill: #1F5A94;' />
+<circle cx='366.32' cy='81.75' r='3.73' style='stroke-width: 1.28; stroke: none; fill: #1F5A94;' />
+<circle cx='366.32' cy='112.96' r='3.73' style='stroke-width: 1.28; stroke: none; fill: #1F5A94;' />
+<circle cx='443.41' cy='144.17' r='3.73' style='stroke-width: 1.28; stroke: none; fill: #1F5A94;' />
+<polygon points='553.58,169.58 558.60,178.29 548.55,178.29 ' style='stroke-width: 1.28; stroke: #D4A35B;' />
+<polygon points='594.93,200.80 599.95,209.50 589.90,209.50 ' style='stroke-width: 1.28; stroke: #D4A35B;' />
+<polygon points='617.78,232.01 622.81,240.72 612.75,240.72 ' style='stroke-width: 1.28; stroke: #D4A35B;' />
+<text x='375.05' y='54.29' style='font-size: 11.00px; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='375.05' y='85.51' style='font-size: 11.00px; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='375.05' y='116.72' style='font-size: 11.00px; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='452.14' y='147.94' style='font-size: 11.00px; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='562.31' y='179.15' style='font-size: 11.00px; font-family: "SimSun";' textLength='11.00px' lengthAdjust='spacingAndGlyphs'>29</text>
+<text x='603.66' y='210.36' style='font-size: 11.00px; font-family: "SimSun";' textLength='11.00px' lengthAdjust='spacingAndGlyphs'>61</text>
+<text x='626.51' y='241.58' style='font-size: 11.00px; font-family: "SimSun";' textLength='11.00px' lengthAdjust='spacingAndGlyphs'>92</text>
+<rect x='353.91' y='31.80' width='291.06' height='224.74' style='stroke-width: 0.96; stroke: #222222;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2NjIuNDB8MC4wMHwzMzEuMjA=)'>
+<text x='350.02' y='241.58' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='77.00px' lengthAdjust='spacingAndGlyphs'>双乙酰—双乙酰</text>
+<text x='350.02' y='210.36' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='60.50px' lengthAdjust='spacingAndGlyphs'>反-2-壬烯醛</text>
+<text x='350.02' y='179.15' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='44.00px' lengthAdjust='spacingAndGlyphs'>DMS—DMS</text>
+<text x='350.02' y='147.94' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='61.59px' lengthAdjust='spacingAndGlyphs'>碳酸感—CO₂</text>
+<text x='350.02' y='116.72' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='55.00px' lengthAdjust='spacingAndGlyphs'>酒体—乙醇</text>
+<text x='350.02' y='85.51' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='66.00px' lengthAdjust='spacingAndGlyphs'>酒精感—乙醇</text>
+<text x='350.02' y='54.29' text-anchor='end' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='44.00px' lengthAdjust='spacingAndGlyphs'>4VG—4VG</text>
+<polyline points='352.32,237.81 353.91,237.81 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,206.60 353.91,206.60 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,175.39 353.91,175.39 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,144.17 353.91,144.17 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,112.96 353.91,112.96 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,81.75 353.91,81.75 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='352.32,50.53 353.91,50.53 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='366.32,258.14 366.32,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='427.41,258.14 427.41,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='494.37,258.14 494.37,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='555.46,258.14 555.46,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<polyline points='622.42,258.14 622.42,256.54 ' style='stroke-width: 0.75; stroke-linecap: butt;' />
+<text x='366.32' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='427.41' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='5.50px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='494.37' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='11.00px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='555.46' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='11.00px' lengthAdjust='spacingAndGlyphs'>30</text>
+<text x='622.42' y='267.95' text-anchor='middle' style='font-size: 11.00px;fill: #252525; font-family: "SimSun";' textLength='16.50px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='499.44' y='284.91' text-anchor='middle' style='font-size: 11.00px; font-family: "SimSun";' textLength='203.50px' lengthAdjust='spacingAndGlyphs'>bootstrap 名次（对数轴；虚线为第3名）</text>
+<circle cx='392.63' cy='311.77' r='3.52' style='stroke-width: 1.28; stroke: none; fill: #1F5A94;' />
+<polygon points='506.02,306.30 510.76,314.51 501.28,314.51 ' style='stroke-width: 1.28; stroke: #D4A35B;' />
+<text x='407.32' y='315.36' style='font-size: 10.50px;fill: #252525; font-family: "SimSun";' textLength='84.00px' lengthAdjust='spacingAndGlyphs'>最终融合前三保留</text>
+<text x='520.71' y='315.36' style='font-size: 10.50px;fill: #252525; font-family: "SimSun";' textLength='94.50px' lengthAdjust='spacingAndGlyphs'>未进入最终融合前三</text>
+<text x='353.91' y='22.31' style='font-size: 11.50px;fill: #252525; font-family: "SimSun";' textLength='102.00px' lengthAdjust='spacingAndGlyphs'>（b）直接锚点恢复</text>
+</g>
+</g>
+</svg>

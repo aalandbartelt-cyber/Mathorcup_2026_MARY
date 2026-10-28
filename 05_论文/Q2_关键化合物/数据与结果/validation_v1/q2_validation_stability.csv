@@ -1,0 +1,8 @@
+﻿scope,n_rows,median_selection_frequency,n_frequency_ge_0_6,mean_pairwise_jaccard,leave_style_mean,leave_style_median,note
+bootstrap Top-3（E107）,150.0,0.428,43.0,0.24522820000000004,0.641,,Bootstrap-selected candidate set; the paper currently quotes these 0.428/43/0.641 values.
+四路融合最终 Top-3（E112）,150.0,0.395,40.0,,0.6075757575757575,0.6590909090909091,Final fused answer; use these values for final-answer claims; differs from E107 candidate-set values.
+CPSS 互补半样本（E117）,10900.0,,24.0,0.08546000000000001,,,100 complementary pairs; mean pairwise Top-3 Jaccard 0.0855; median 0.
+三证据融合候选（E118）,,0.075,,,,,median_cpss_selection_probability: current 0.1425 -> candidate 0.0750; improved=False
+三证据融合候选（E118）,,,,0.1151099999999999,,,mean_reference_half_jaccard: current 0.1669 -> candidate 0.1151; improved=False
+三证据融合候选（E118）,,,,,0.4090909090909091,,median_leave_style_survival: current 0.6591 -> candidate 0.4091; improved=False
+三证据融合候选（E118）,,,,,,,mean_bootstrap_selection_frequency: current 0.4465 -> candidate 0.3597; improved=False

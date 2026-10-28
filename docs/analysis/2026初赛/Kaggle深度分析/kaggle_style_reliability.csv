@@ -1,0 +1,113 @@
+﻿kaggle_style,n_total,n_flavor_usable,usable_rate,abv_nonpositive,abv_high,rating_mean
+Altbier,50,50,1.0,0,0,3.7436000000000003
+Barleywine - American,50,50,1.0,0,0,4.0388
+Barleywine - English,50,50,1.0,0,0,4.1209999999999996
+Bitter - English,50,50,1.0,0,0,3.6201999999999996
+Bitter - English Extra Special / Strong Bitter (ESB),50,50,1.0,0,0,3.7512
+Blonde Ale - American,50,50,1.0,0,0,3.6075999999999997
+Blonde Ale - Belgian,50,50,1.0,0,0,3.7007999999999996
+Bock - Doppelbock,50,50,1.0,0,0,3.8848000000000003
+Bock - Maibock,50,50,1.0,0,0,3.7217999999999996
+Bock - Traditional,50,50,1.0,0,0,3.6182
+Bock - Weizenbock,50,50,1.0,0,0,3.9166000000000003
+Brown Ale - American,50,50,1.0,0,0,3.8812000000000006
+Brown Ale - Belgian Dark,50,50,1.0,2,0,3.733400000000001
+Brown Ale - English,50,50,1.0,0,0,3.6979999999999995
+California Common / Steam Beer,50,50,1.0,0,0,3.6351999999999993
+Chile Beer,50,50,1.0,0,0,3.5468
+Cream Ale,50,50,1.0,0,0,3.5591999999999997
+Dubbel,50,50,1.0,0,0,3.8706
+Farmhouse Ale - Bière de Garde,50,50,1.0,0,0,3.8592
+Farmhouse Ale - Saison,50,50,1.0,0,0,4.0906
+Fruit and Field Beer,50,50,1.0,0,0,3.5586
+Herb and Spice Beer,50,50,1.0,0,0,3.5890000000000004
+IPA - American,50,50,1.0,0,0,4.09
+IPA - Belgian,50,50,1.0,0,0,3.9142
+IPA - Black / Cascadian Dark Ale,50,50,1.0,0,0,3.9547999999999996
+IPA - Brut,50,50,1.0,0,0,3.8597999999999995
+IPA - English,50,50,1.0,0,0,3.6102
+IPA - Imperial,50,50,1.0,0,0,4.272
+IPA - New England,50,50,1.0,0,0,4.505
+Kölsch,50,50,1.0,0,0,3.6567999999999996
+Lager - Adjunct,50,50,1.0,0,0,2.6286
+Lager - American,50,50,1.0,0,0,3.4162
+Lager - American Amber / Red,50,50,1.0,2,0,3.425
+Lager - European / Dortmunder Export,50,50,1.0,0,0,3.505
+Lager - European Dark,50,50,1.0,0,0,3.4991999999999996
+Lager - European Pale,50,50,1.0,0,0,3.0029999999999997
+Lager - European Strong,50,50,1.0,0,0,2.9438
+Lager - Helles,50,50,1.0,0,0,3.705
+Lager - India Pale Lager (IPL),50,50,1.0,0,0,3.8859999999999997
+Lager - Kellerbier / Zwickelbier,50,50,1.0,0,0,3.8642000000000003
+Lager - Light,50,50,1.0,0,0,2.404
+Lager - Malt Liquor,50,50,1.0,0,0,2.3592
+Lager - Munich Dunkel,50,50,1.0,0,0,3.7138
+Lager - Märzen / Oktoberfest,50,50,1.0,0,0,3.6860000000000004
+Lager - Rauchbier,50,50,1.0,0,0,3.8486000000000002
+Lager - Schwarzbier,50,50,1.0,0,0,3.765
+Lager - Vienna,50,50,1.0,1,0,3.4794
+Low Alcohol Beer,50,50,1.0,0,0,2.8536
+Mild Ale - English Dark,50,50,1.0,1,0,3.6756000000000006
+Old Ale,50,50,1.0,0,0,4.0054
+Pale Ale - American,50,50,1.0,0,0,4.0680000000000005
+Pale Ale - Belgian,50,50,1.0,0,0,3.7502
+Pale Ale - English,50,50,1.0,0,0,3.52
+Pilsner - Bohemian / Czech,50,50,1.0,0,0,3.6342000000000003
+Pilsner - German,50,50,1.0,0,0,3.6556
+Pilsner - Imperial,50,50,1.0,0,0,3.7812
+Porter - American,50,50,1.0,0,0,3.8920000000000003
+Porter - Baltic,50,50,1.0,0,0,3.9985999999999997
+Porter - English,50,50,1.0,0,0,3.8190000000000004
+Porter - Imperial,50,50,1.0,0,0,4.178599999999999
+Porter - Robust,50,50,1.0,0,0,3.9751999999999996
+Porter - Smoked,50,50,1.0,1,0,3.9410000000000003
+Pumpkin Beer,50,50,1.0,0,0,3.7728
+Quadrupel (Quad),50,50,1.0,0,0,4.1508
+Red Ale - American Amber / Red,50,50,1.0,0,0,3.7876
+Red Ale - Imperial,50,50,1.0,0,0,3.9608
+Red Ale - Irish,50,50,1.0,0,0,3.5727999999999995
+Rye Beer,50,50,1.0,0,0,3.8798000000000004
+Scotch Ale / Wee Heavy,50,50,1.0,0,0,3.9457999999999998
+Scottish Ale,50,50,1.0,0,0,3.7321999999999997
+Smoked Beer,50,50,1.0,0,0,3.7929999999999997
+Stout - American,50,50,1.0,0,0,3.8952
+Stout - American Imperial,50,50,1.0,0,0,4.3678
+Stout - English,50,50,1.0,0,0,3.7738
+Stout - Foreign / Export,50,50,1.0,0,0,3.8709999999999996
+Stout - Irish Dry,50,50,1.0,0,0,3.7620000000000005
+Stout - Oatmeal,50,50,1.0,0,0,4.0304
+Stout - Russian Imperial,50,50,1.0,0,0,4.2332
+Stout - Sweet / Milk,50,50,1.0,0,0,4.059
+Strong Ale - American,50,50,1.0,0,1,4.0218
+Strong Ale - Belgian Dark,50,50,1.0,0,0,4.0424
+Strong Ale - Belgian Pale,50,50,1.0,0,0,3.9536
+Strong Ale - English,50,50,1.0,0,0,3.7244
+Tripel,50,50,1.0,0,0,3.9767999999999994
+Wheat Beer - American Pale,50,50,1.0,0,0,3.5412
+Wheat Beer - Dunkelweizen,50,50,1.0,1,0,3.7368
+Wheat Beer - Hefeweizen,50,50,1.0,0,0,3.8064
+Wheat Beer - Wheatwine,50,50,1.0,0,0,3.9906
+Wheat Beer - Witbier,50,50,1.0,0,0,3.6798000000000006
+Winter Warmer,50,50,1.0,0,0,3.7514
+Brett Beer,50,49,0.98,0,0,4.019
+Lambic - Fruit,49,49,1.0,0,0,4.110408163265306
+Lambic - Gueuze,49,49,1.0,0,0,4.087142857142857
+Sour - Berliner Weisse,49,49,1.0,0,0,4.02
+Sour - Flanders Oud Bruin,49,49,1.0,0,0,3.9895918367346934
+Sour - Flanders Red Ale,49,49,1.0,0,0,4.068163265306122
+Sour - Gose,49,49,1.0,0,0,3.949591836734694
+Wild Ale,49,49,1.0,0,0,4.305510204081632
+Kvass,50,48,0.96,0,0,3.414399999999999
+Gruit / Ancient Herbed Ale,50,47,0.94,0,0,3.7717999999999994
+Wheat Beer - American Dark,50,45,0.9,4,0,3.613
+Mild Ale - English Pale,50,44,0.88,3,0,3.5787999999999998
+Wheat Beer - Kristallweizen,50,44,0.88,4,0,3.6106
+Braggot,50,43,0.86,0,0,3.8500000000000005
+Lager - Japanese Rice,50,43,0.86,0,0,3.2956000000000008
+Lambic - Traditional,49,40,0.8163265306122449,0,0,4.073469387755103
+Bière de Champagne / Bière Brut,50,36,0.72,0,0,3.8933999999999997
+Rye Beer - Roggenbier,50,36,0.72,0,0,3.7536
+Happoshu,50,34,0.68,0,0,3.0128
+Bock - Eisbock,50,32,0.64,0,3,3.9162
+Farmhouse Ale - Sahti,50,28,0.56,0,0,3.8218
+Lambic - Faro,16,14,0.875,0,0,3.69625

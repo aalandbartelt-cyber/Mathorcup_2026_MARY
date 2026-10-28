@@ -1,0 +1,246 @@
+{
+  "multivariate_alignment": {
+    "n_styles": 22,
+    "n_dimensions": 9,
+    "mantel_r": 0.40373257898501824,
+    "mantel_perm_p": 0.0003999200159968006,
+    "rv": 0.4321163432975452,
+    "rv_perm_p": 0.0015996800639872025,
+    "procrustes_disparity": 0.5636534463936003,
+    "procrustes_corr": 0.43634655360639973,
+    "note": "Moderate overall alignment; CCA is omitted because 9 dimensions on 22 styles is overfit-prone."
+  },
+  "bootstrap_ci": [
+    {
+      "metric": "body",
+      "observed_rho": 0.2682100508187465,
+      "boot_ci_low": 0.14398644833427443,
+      "boot_ci_high": 0.35406549971767365,
+      "n_boot": 1000
+    },
+    {
+      "metric": "alcohol",
+      "observed_rho": 0.4895539243365331,
+      "boot_ci_low": 0.38562958780350093,
+      "boot_ci_high": 0.5415302089215134,
+      "n_boot": 1000
+    },
+    {
+      "metric": "bitternes",
+      "observed_rho": 0.5561829474872955,
+      "boot_ci_low": 0.47823263692828916,
+      "boot_ci_high": 0.6544607566346698,
+      "n_boot": 1000
+    },
+    {
+      "metric": "sweetness",
+      "observed_rho": 0.6047430830039526,
+      "boot_ci_low": 0.3312817617165444,
+      "boot_ci_high": 0.7165725578769058,
+      "n_boot": 1000
+    },
+    {
+      "metric": "acidity",
+      "observed_rho": 0.8893280632411069,
+      "boot_ci_low": 0.730067758328628,
+      "boot_ci_high": 0.9209486166007905,
+      "n_boot": 1000
+    },
+    {
+      "metric": "F_hops_all",
+      "observed_rho": 0.5098814229249012,
+      "boot_ci_low": 0.4048560135516658,
+      "boot_ci_high": 0.6172219085262564,
+      "n_boot": 1000
+    },
+    {
+      "metric": "F_malt_all",
+      "observed_rho": 0.5189158667419538,
+      "boot_ci_low": 0.36194240542066636,
+      "boot_ci_high": 0.6250705815923208,
+      "n_boot": 1000
+    },
+    {
+      "metric": "F_esters_fruity",
+      "observed_rho": 0.4466403162055336,
+      "boot_ci_low": 0.12927724449463582,
+      "boot_ci_high": 0.6307453416149069,
+      "n_boot": 1000
+    },
+    {
+      "metric": "spices_proxy",
+      "observed_rho": 0.453416149068323,
+      "boot_ci_low": 0.12363071710897801,
+      "boot_ci_high": 0.532495765104461,
+      "n_boot": 1000
+    },
+    {
+      "metric": "overall",
+      "observed_rho": 0.4940711462450593,
+      "boot_ci_low": 0.17893845285149637,
+      "boot_ci_high": 0.6160643704121966,
+      "n_boot": 1000
+    },
+    {
+      "metric": "ABV",
+      "observed_rho": 0.7746685715954488,
+      "boot_ci_low": 0.6609704087972336,
+      "boot_ci_high": 0.8283864652462282,
+      "n_boot": 1000
+    }
+  ],
+  "target_flavor_scan": {
+    "n_tests": 550,
+    "n_q_lt_0_05_abs_rho_ge_0_6": 23,
+    "top_pairs": [
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Sour",
+        "rho": 0.8893280632411069,
+        "p": 3.128247795681075e-08,
+        "q_bh": 1.7205362876245913e-05
+      },
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Malty",
+        "rho": -0.8339920948616601,
+        "p": 1.4184576231301995e-06,
+        "q_bh": 0.0003900758463608049
+      },
+      {
+        "official_target": "A_malt_bread",
+        "kaggle_dimension": "Alcohol",
+        "rho": 0.7730095990965559,
+        "p": 2.46899985243988e-05,
+        "q_bh": 0.0031016920019941935
+      },
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Body",
+        "rho": -0.7730095990965559,
+        "p": 2.46899985243988e-05,
+        "q_bh": 0.0031016920019941935
+      },
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Astringency",
+        "rho": 0.769621682665161,
+        "p": 2.8197200018129034e-05,
+        "q_bh": 0.0031016920019941935
+      },
+      {
+        "official_target": "X4vg",
+        "kaggle_dimension": "Spices",
+        "rho": 0.7583286278938454,
+        "p": 4.32295178422619e-05,
+        "q_bh": 0.003689595005554839
+      },
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Fruits",
+        "rho": 0.7560700169395823,
+        "p": 4.695848188887977e-05,
+        "q_bh": 0.003689595005554839
+      },
+      {
+        "official_target": "A_malt_cara",
+        "kaggle_dimension": "Astringency",
+        "rho": -0.7447769621682666,
+        "p": 7.012307345222718e-05,
+        "q_bh": 0.004820961299840618
+      },
+      {
+        "official_target": "acetic",
+        "kaggle_dimension": "Sour",
+        "rho": 0.7368718238283457,
+        "p": 9.174588774353496e-05,
+        "q_bh": 0.005606693139882692
+      },
+      {
+        "official_target": "lactic",
+        "kaggle_dimension": "Sour",
+        "rho": 0.7312252964426879,
+        "p": 0.00011053822478870218,
+        "q_bh": 0.0060796023633786205
+      },
+      {
+        "official_target": "lactic",
+        "kaggle_dimension": "Malty",
+        "rho": -0.7221908526256353,
+        "p": 0.00014756306307060483,
+        "q_bh": 0.007378153153530242
+      },
+      {
+        "official_target": "acetic",
+        "kaggle_dimension": "Malty",
+        "rho": -0.7188029361942406,
+        "p": 0.00016398606680619978,
+        "q_bh": 0.007516028061950824
+      },
+      {
+        "official_target": "acetic",
+        "kaggle_dimension": "Bitter",
+        "rho": -0.6962168266516093,
+        "p": 0.0003196255714679013,
+        "q_bh": 0.013522620331334285
+      },
+      {
+        "official_target": "lactic",
+        "kaggle_dimension": "Bitter",
+        "rho": -0.6792772444946359,
+        "p": 0.0005078261231138768,
+        "q_bh": 0.01995031197947373
+      },
+      {
+        "official_target": "F_malt_all",
+        "kaggle_dimension": "Astringency",
+        "rho": -0.6758893280632412,
+        "p": 0.000555137220115529,
+        "q_bh": 0.020355031404236064
+      },
+      {
+        "official_target": "F_malt_bread",
+        "kaggle_dimension": "Alcohol",
+        "rho": 0.6453980801806889,
+        "p": 0.00117985017210295,
+        "q_bh": 0.037014637205682155
+      },
+      {
+        "official_target": "lactic",
+        "kaggle_dimension": "Body",
+        "rho": -0.6453980801806889,
+        "p": 0.00117985017210295,
+        "q_bh": 0.037014637205682155
+      },
+      {
+        "official_target": "acetic",
+        "kaggle_dimension": "Fruits",
+        "rho": 0.6442687747035574,
+        "p": 0.001211388126731416,
+        "q_bh": 0.037014637205682155
+      },
+      {
+        "official_target": "acidity",
+        "kaggle_dimension": "Bitter",
+        "rho": -0.6408808582721628,
+        "p": 0.0013103389444030248,
+        "q_bh": 0.037930864180087565
+      },
+      {
+        "official_target": "F_malt_cara",
+        "kaggle_dimension": "Astringency",
+        "rho": -0.6386222473178995,
+        "p": 0.0013800529356872634,
+        "q_bh": 0.03795145573139975
+      }
+    ],
+    "caution": "Style-level confounding inflates many pairs; do not expand primary proxies from this scan alone."
+  },
+  "mapping_shape_audit": {
+    "n_styles": 22,
+    "median_best_primary_rank": 6.5,
+    "n_rank_le_10": 12,
+    "n_rank_gt_20": 9,
+    "note": "Shape-only diagnostic; semantic mapping remains primary. Do not silently remap from it."
+  }
+}

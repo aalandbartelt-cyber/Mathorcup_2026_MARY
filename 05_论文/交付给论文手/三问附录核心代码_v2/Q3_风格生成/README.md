@@ -1,0 +1,53 @@
+# 第三问附录核心计算模块
+
+## 软件与命令（排在本问题代码之前）
+
+本问题核心代码使用 WSL2 Ubuntu 中 conda 环境 `mathorcup` 的 Python 3.10.19，依赖 NumPy 2.2.6、SciPy 1.15.3、pandas 2.3.3 和 scikit-learn 1.7.2。代码段前先执行 `python -m py_compile Q3_风格生成/*.py`，随后执行 `python verify_core.py`。这里只做语法、导入和哈希核对，不生成新谱、不搜索新路径、不重算正文指标，也不占用 GPU。
+
+
+这些文件供论文手编排核心代码附录，直接摘自正式实现的完整函数/类，保持运算、数值检查、并列秩及边界处理。它们不是完整工程，不包含原数据、外层验证runner、模型训练、参数搜索或大体积缓存，不能单独重现全部正文数字。
+
+## 文件与编排
+
+| 文件 | 内容 | 附录取舍 |
+|---|---|---|
+| style_copula.py | 风格经验边缘、平均秩正态化、Ledoit-Wolf相关收缩、PSD因子及抽样 | 优先；比较分支保留以避免改写正式类的运算 |
+| sensory_inference.py | 已拟合四基学习器的非负加权推理、自由截距、相对量表、单目标等价推理、源缺失掩码与支持域 | 优先；输入为调用者已核验的最终模型对象和训练参考 |
+| concentration_constraints.py | raw/log10浓度转换、三种直接约束、经验秩端点和Pareto判断 | 优先；不能把存储对数值直接当浓度作上限 |
+| migration_search.py | 固定端点/比例路径及最小改动等预定选择规则 | 优先；输出只针对有限候选集合 |
+| evidence_status.py | 已知/未知测量、数值容差、直接违反、目标收益、双模型代理与支持域状态 | 优先；中文四类展示状态应由完整状态归并得到 |
+| distribution_diagnostics.py | W1、能量距离、几何覆盖、秩相关误差与近复制检查 | 按版面择要；指标需要真实留出谱和训练尺度 |
+| 核心流程摘录.txt | 实际画像汇总的内联语句及依赖变量 | 仅摘录，不是独立运行入口 |
+
+## 依赖与导入
+
+Python 3.10及以上；NumPy、SciPy、pandas、scikit-learn。核心文件不要求GPU。
+仓库环境快照对应NumPy 2.2.6、SciPy 1.15.3、pandas 2.3.3、scikit-learn 1.7.2。
+
+在本目录中，或将本目录加入PYTHONPATH后，可导入：
+
+```python
+from style_copula import StyleGaussianGenerator
+from sensory_inference import FrozenFoldNNLS, empirical_cdf_grade
+from migration_search import constrained_paths, select_candidates
+from evidence_status import audit_concentrations, proxy_screen, candidate_status
+```
+
+导入不会读取赛题、训练、抽样、搜索、写结果或加载缓存。函数需由调用者显式提供数据。
+FrozenFoldNNLS接收已经拟合的四个基学习器、最终非负权重、自由截距和完整特征顺序；不拟合权重，不能传入未训练的模型。单目标等价推理只适用于正式四模型结构。真实缓存的身份/哈希核验由完整工程负责；此包没有缓存加载或自动重训回退。
+
+## 输入契约与使用边界
+
+- 主键为beer，原模型输入为完整有序231字段；缺失值由已拟合模型原预处理处理，源缺失掩码不得被补值伪装成已知浓度。
+- 风格Copula中有些fit分支用于既有比较。正式生成使用style_copula_shrunk，而非style_copula或全局高斯分支。
+- 原来的0.5是感官融合权重收缩口径；本生成器的潜空间相关结构由Ledoit-Wolf估计，不能把固定0.5误写成Copula相关收缩参数。
+- 0-6只为训练目标经验分布上的相对强度，不是原评分反演；画像汇总的模型标准差不提供独立覆盖保证。
+- 约束的C1/C2/C3分别是相对源浓度不升、超阈负担不升、不升且阈下。正式最小改动主搜索使用C1，其他情景作比较或敏感性；未知源值/阈值不算通过。
+- 搜索要求目标接近、NNLS代理均值和重复90%分位、预测支持域均符合既定条件。先锁定候选，再用不同模型族独立复核；不能按审计表现重选。
+- 最小改动是固定有限端点与路径集合内的规范化RMS最小，不是全化学谱空间全局最优。
+- 状态含待实测、证据不足、代理不稳及无谱；直接测量或物理工艺尚未验证时，不认证可酿造性或安全性。
+- 本包未使用后续经验贝叶斯/箱投影变体替代正式迁移主规则。没有读取或改动正式结果。
+
+## 来源与完整性
+
+文件为正式函数/类的运算等价摘录；包内不携带内部实验路径或代号。SHA256SUMS列出本目录文件内容哈希，SOURCE_INFO.json记录中性来源功能与核验方式。SHA256只用于识别本包内容，不能代替独立全量复现实验。

@@ -1,0 +1,10 @@
+[
+  {
+    "logical_source": "sensory_group_nnls",
+    "source_sha256": "505255b748458880969b78cdc8582c842a95c8278428172f7bf5f7b12b2c2814"
+  },
+  {
+    "logical_source": "nested_oof_stacking",
+    "source_sha256": "5ca1210204bde18a815034ad5fd533aef1a3a71420ab0759e8fbd24bded73981"
+  }
+]

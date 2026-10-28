@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "final_model_oof.npz": "ec80b4087347ccb0b2b312016ab3d8f67a4e5faaa1da352e4a548728e57ccc60",
+    "model_metrics_by_repeat.csv": "80a5948f5d36a1ba56f4cdab0044bd346f3212cc667eca3b9f68c8f909a1d815",
+    "target_metrics_final.csv": "2ef598b70c9d1c7ce8de2e9ec3a13e90a1427e4f1d40aef04621368adb526801"
+  },
+  "outputs": [
+    "q1_calibration_bins.csv",
+    "q1_calibration_summary.csv",
+    "q1_interval_coverage.csv",
+    "q1_repeat_metrics_summary.csv",
+    "q1_repeat_model_ranks.csv",
+    "q1_target_reliability.csv"
+  ],
+  "notes": [
+    "No model retraining; all calculations use frozen OOF predictions.",
+    "Calibration uses 5 prediction-quantile bins per target.",
+    "Interval coverage has two methods: repeat_sd uses the SD across the 10 repeats; cross_repeat_residual uses residuals from the other 9 repeats. The latter is a calibration check, not an independent conformal guarantee.",
+    "Per-target R2 CI uses 1000 beer-level bootstrap resamples."
+  ]
+}

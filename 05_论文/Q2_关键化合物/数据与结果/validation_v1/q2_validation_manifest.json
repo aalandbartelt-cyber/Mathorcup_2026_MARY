@@ -1,0 +1,24 @@
+{
+  "inputs": {
+    "q2_bootstrap_top3_E107.csv": "e26294f5f108b119d31335896d01065c5123579a5a056e4f4a316a3fd4a429a4",
+    "q2_final_top3_E112.csv": "6e1e73916abeccc7eab53efbe9598d97acbb1ee7bd50fc90edc04219a656b9d3",
+    "q2_audit_E117.json": "2e071d20f726d2ce3a5a36c481ed4e8862fc64dabd511fcf088dcf7201060931",
+    "q2_graph_decision_E113.json": "10235f9c7c5d5f8bec588e7c77a75553017457f1d70b697e454b42a0418b6da0",
+    "q2_replacement_decision_E118.json": "8d23bdc535319a1d26cd5bc5dd12986708614e0611dd92c8ddec52b86f6a1c6e",
+    "最终感官模型Top3删除敏感性.csv": "2e6b449a99b8e009dd4e6fdf0a51fa07179e96d0b81a10623fb59d8ed167c260"
+  },
+  "outputs": [
+    "q2_validation_anchor.csv",
+    "q2_validation_completeness.csv",
+    "q2_validation_deletion.csv",
+    "q2_validation_negative_controls.csv",
+    "q2_validation_sensitivity.csv",
+    "q2_validation_stability.csv"
+  ],
+  "notes": [
+    "No model retraining; all tables are derived from frozen results.",
+    "E107 bootstrap candidate set and E112 final fused Top-3 are reported separately; they have different stability values.",
+    "Shadow features are not zero: report the observed 1524/2000 shadow selections; only null target permutation is zero.",
+    "Deletion sensitivity is ΔMAE (masked minus baseline), not ΔR2."
+  ]
+}

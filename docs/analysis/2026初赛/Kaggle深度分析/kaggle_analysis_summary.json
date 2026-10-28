@@ -1,0 +1,121 @@
+{
+  "n_official_styles": 22,
+  "n_kaggle_styles": 112,
+  "dimension_roles": {
+    "Body": "exploratory_only",
+    "Alcohol": "secondary_external_check",
+    "Bitter": "primary_external_check",
+    "Sweet": "primary_external_check",
+    "Sour": "primary_external_check",
+    "Hoppy": "primary_external_check",
+    "Malty": "primary_external_check",
+    "Fruits": "secondary_external_check",
+    "Spices": "secondary_external_check"
+  },
+  "primary_dimensions": [
+    "Bitter",
+    "Sweet",
+    "Sour",
+    "Hoppy",
+    "Malty"
+  ],
+  "secondary_dimensions": [
+    "Alcohol",
+    "Fruits",
+    "Spices"
+  ],
+  "exploratory_dimensions": [
+    "Body"
+  ],
+  "numeric_checks": [
+    {
+      "check": "ABV",
+      "official_field": "official_abv_median",
+      "kaggle_field": "abv_median",
+      "n_styles": 22,
+      "rho": 0.7746685715954488,
+      "perm_p": 0.0001999600079984003,
+      "loo_min": 0.7408139874604761,
+      "loo_max": 0.8364238699509852,
+      "note": "official 10**ethanol style median vs Kaggle ABV median"
+    },
+    {
+      "check": "Overall rating",
+      "official_field": "overall",
+      "kaggle_field": "rating_mean",
+      "n_styles": 22,
+      "rho": 0.4940711462450593,
+      "perm_p": 0.021995600879824034,
+      "loo_min": 0.41818181818181815,
+      "loo_max": 0.5987012987012986,
+      "note": "official overall style mean vs Kaggle average rating"
+    }
+  ],
+  "flavor_structure": {
+    "n_usable_rows": 5426,
+    "pca_explained_variance_ratio": [
+      0.2916888396800359,
+      0.22029950464244175,
+      0.10839619503347979,
+      0.09748714130629534
+    ],
+    "top_abs_correlations": [
+      {
+        "a": "Sour",
+        "b": "Fruits",
+        "rho": 0.8237893879596039
+      },
+      {
+        "a": "Sour",
+        "b": "Malty",
+        "rho": -0.7563764284736005
+      },
+      {
+        "a": "Fruits",
+        "b": "Malty",
+        "rho": -0.7519964916446122
+      },
+      {
+        "a": "Body",
+        "b": "Sour",
+        "rho": -0.6598898364430008
+      },
+      {
+        "a": "Bitter",
+        "b": "Hoppy",
+        "rho": 0.6532636418377321
+      },
+      {
+        "a": "Body",
+        "b": "Malty",
+        "rho": 0.6073564324391928
+      },
+      {
+        "a": "Body",
+        "b": "Fruits",
+        "rho": -0.607352684942555
+      },
+      {
+        "a": "Bitter",
+        "b": "Fruits",
+        "rho": -0.4675330611249062
+      },
+      {
+        "a": "Sweet",
+        "b": "Hoppy",
+        "rho": -0.464160966737636
+      },
+      {
+        "a": "Astringency",
+        "b": "Sweet",
+        "rho": -0.4038521243829519
+      }
+    ]
+  },
+  "notes": [
+    "Raw official 4.csv style means vs Kaggle word-frequency profiles; no model predictions.",
+    "Small official styles (Faro n=3, Brut n=4) are excluded in the n>=5 sensitivity.",
+    "Salty and Astringency remain do_not_use; no clean official target.",
+    "Mapping and proxy must be frozen before any model-based external validation."
+  ]
+}

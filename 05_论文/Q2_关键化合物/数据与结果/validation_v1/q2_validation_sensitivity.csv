@@ -1,0 +1,5 @@
+﻿perturbation,result,decision,note
+折内 Graphical Lasso 图 vs 既有稳定模块,candidate coclustering 0.250 vs reference 0.488,不替换正式图,E113 折内图只作结构审计
+三证据等权融合（E118）,CPSS 0.1425→0.0750；Jaccard 0.1669→0.1151；留一风格 0.6591→0.4091,不替换，0/3 稳定性改善,冻结预测器不变；E119 保持 blocked
+CPSS/互补半样本,confirmed 24 条；mean Jaccard 0.0855,确认/探索分层,null target 各阈值 0；shadow 仍有 1524 次入选
+化学证据后验,A/B/C/D=8/16/78/48；OAV 可用 73 条,不进入排名,统计排名冻结后追加

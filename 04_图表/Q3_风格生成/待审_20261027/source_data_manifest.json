@@ -1,0 +1,16 @@
+{
+  "scope": "supplementary_frozen_spectrum_validation_pending_review",
+  "source_tables": {
+    "05_论文/Q3_风格生成/待审_20261027/数据与结果/validation_v1/独立置换逐重复差.csv": "3f1a1a8b314ca86a534e78ce627dd28c063ec29d63d021bdd843b25b934cf155",
+    "05_论文/Q3_风格生成/待审_20261027/数据与结果/validation_v1/独立置换汇总.csv": "03782ee3107da6f3148a9c435cbf97f1224d53fbe144db7d668a3523b5ac6e53"
+  },
+  "plot_source": {
+    "path": "04_图表/Q3_风格生成/待审_20261027/plot_q3_validation.R",
+    "sha256": "ee30ea22bb525b6a8b0d155bf85ae8aa83acc9ccee08b2549a2b25c71768c3aa"
+  },
+  "outputs": {
+    "图4_联合结构独立置换检验.svg": "d993e12a98f522569bebdf8b9b6bf9213b47142da294ce0f6514d908abfb2ff7",
+    "Q3_补充图清单.csv": "3543fa19e4dc4066d62f057d37974b293594aba2feaf80cf720d560870eac34c",
+    "图4_联合结构独立置换检验.png": "4ea4cb4dc4ffa2605cec088135db4e5e5d05e1b8a272303c76b1f6ff06cb454e"
+  }
+}

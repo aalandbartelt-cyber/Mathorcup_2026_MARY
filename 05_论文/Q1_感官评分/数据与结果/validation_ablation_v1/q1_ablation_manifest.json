@@ -1,0 +1,15 @@
+{
+  "scope": "Q1 validation retrain; repeat 0 for ablations, 22 leave-one-style fits",
+  "config": "Q1 validation ablation pipeline",
+  "input_hashes": {
+    "1.csv": null,
+    "q1_cv_splits.csv": "9f139644c4b24d5d90eb98ca3df4d09bdd517b91a17274e5d2fea3204d696fd1"
+  },
+  "elapsed_seconds": 1675.3427398470085,
+  "notes": [
+    "Same NNLS pipeline; no final model or delivered result changes.",
+    "Summary ablation removes esters_sum, aroma_hops_sum, acids_sum, sulfur_sum.",
+    "Label permutation shuffles beer rows once; it is a pipeline leakage check, not a model comparison.",
+    "Leave-one-style-out trains on 21 styles and predicts the held-out style; small styles are descriptive."
+  ]
+}

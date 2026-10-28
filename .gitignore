@@ -11,8 +11,27 @@ docs/analysis/txt/
 docs/analysis/txt_official/
 06_交付/00_官方模板与规范/
 06_交付/01_论文/*.pdf
+!06_交付/01_论文/A2601605.pdf
 06_交付/03_承诺书/*
 !06_交付/03_承诺书/.gitkeep
 06_交付/04_支撑材料/*
 !06_交付/04_支撑材料/.gitkeep
 06_交付/05_AI工具使用说明/*.pdf
+
+# Post-competition local history, generated archives and build artifacts
+_archive/
+**/bin/
+**/obj/
+docs/collab/**/*.zip
+docs/collab/**/*.pdf
+docs/collab/**/*.png
+docs/collab/**/*.docx
+docs/collab/**/*.xlsx
+05_论文/总论文/2026_MathorCup_大数据竞赛_总论文_v[2-9].*
+05_论文/总论文/2026_MathorCup_大数据竞赛_总论文_v1[0-2].*
+05_论文/总论文/v2_准备稿/
+05_论文/总论文/首页_待审计/
+05_论文/总论文/图稿_待审计/
+05_论文/总论文/附录图_v2/
+05_论文/总论文/图表_v3_字符统一/
+05_论文/总论文/数据与结果_v2/

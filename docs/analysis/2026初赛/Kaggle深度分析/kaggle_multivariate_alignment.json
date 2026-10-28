@@ -1,0 +1,11 @@
+{
+  "n_styles": 22,
+  "n_dimensions": 9,
+  "mantel_r": 0.40373257898501824,
+  "mantel_perm_p": 0.0003999200159968006,
+  "rv": 0.4321163432975452,
+  "rv_perm_p": 0.0015996800639872025,
+  "procrustes_disparity": 0.5636534463936003,
+  "procrustes_corr": 0.43634655360639973,
+  "note": "Moderate overall alignment; CCA is omitted because 9 dimensions on 22 styles is overfit-prone."
+}

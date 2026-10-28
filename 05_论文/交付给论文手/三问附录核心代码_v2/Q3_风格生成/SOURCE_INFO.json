@@ -1,0 +1,76 @@
+{
+  "scope": "function_level_appendix_modules_not_full_pipeline",
+  "extraction": "complete original functions and classes; import paths adapted to neutral sibling modules; computations retained",
+  "verification": "23 complete callable ASTs equal archived originals; all six modules compiled and imported without executing a model or writing bytecode",
+  "modules": {
+    "style_copula.py": {
+      "origin_role": "style conditional generation",
+      "functions": [
+        "_psd_factor",
+        "_correlation_from_covariance",
+        "StyleGaussianGenerator"
+      ]
+    },
+    "concentration_constraints.py": {
+      "origin_role": "stored-scale concentration and candidate geometry",
+      "functions": [
+        "concentrations_from_stored",
+        "stored_from_concentrations",
+        "direct_limits",
+        "project_direct_constraints",
+        "empirical_quantile_anchor",
+        "pareto_mask"
+      ]
+    },
+    "migration_search.py": {
+      "origin_role": "fixed finite candidate path selection",
+      "functions": [
+        "constrained_paths",
+        "select_candidates"
+      ]
+    },
+    "sensory_inference.py": {
+      "origin_role": "final fitted sensory predictor callback and support diagnostics",
+      "functions": [
+        "FrozenFoldNNLS",
+        "empirical_cdf_grade",
+        "verify_archived_prediction",
+        "migration_model_input",
+        "support_audit",
+        "predict_single_target"
+      ]
+    },
+    "evidence_status.py": {
+      "origin_role": "direct and model-proxy evidence",
+      "functions": [
+        "audit_concentrations",
+        "project_upper_bounds",
+        "summarize_migration",
+        "proxy_screen",
+        "candidate_status"
+      ]
+    },
+    "distribution_diagnostics.py": {
+      "origin_role": "held-out generation distribution metrics",
+      "functions": [
+        "distribution_diagnostics"
+      ]
+    }
+  },
+  "does_not_include": [
+    "data",
+    "fitted_models",
+    "model_training",
+    "runner",
+    "full_pipeline_reproduction"
+  ],
+  "validation": {
+    "compile_modules": 6,
+    "import_modules": 6,
+    "archived_AST_matches": 23,
+    "training_invoked": false,
+    "prediction_invoked": false,
+    "cache_load_invoked": false,
+    "torch_loaded": false
+  }
+}

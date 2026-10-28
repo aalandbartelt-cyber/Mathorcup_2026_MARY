@@ -1,0 +1,30 @@
+[
+  {
+    "logical_source": "support_aware_rank_fusion",
+    "source_sha256": "84ff0f46cf8fdf4577fbfff6cf3eb8deaab496d9ea5575f61eaff45ba79f2dce"
+  },
+  {
+    "logical_source": "leave_style_rank_aggregation",
+    "source_sha256": "1b8a9d049a2136ab85e438a9e7ebafe7d77e43b27e88b6b41b9cf4aca06f0b12"
+  },
+  {
+    "logical_source": "four_evidence_connection",
+    "source_sha256": "4c011e4d4a6dde6b52b97c812daaa6d48abfd22f0abd74e5e5af60045d029543"
+  },
+  {
+    "logical_source": "frozen_sensory_nnls_interface",
+    "source_sha256": "facf4d043c999208c3a9d3bad56b6e18400c222a384ce5fd7e31e923d7b768b8"
+  },
+  {
+    "logical_source": "conditional_residual_model",
+    "source_sha256": "17d4745dc0fdf0c58b750b5a1c3044f287394001a48e9799515cadca97293693"
+  },
+  {
+    "logical_source": "final_nnls_hierarchical_attribution",
+    "source_sha256": "9bab3fb361c66e1f721a1eb11b89bd975a44bd8ca0809c5efd86f1cb2879f8f1"
+  },
+  {
+    "logical_source": "official_chemical_grading",
+    "source_sha256": "f8f14fd6f30f0cd30fb007fba204109fde6cc6a7d05c0f528e379cf381fa2bcd"
+  }
+]

@@ -1,0 +1,23 @@
+﻿official_style,n_official,best_primary_kaggle_style,best_primary_shape_rho,best_primary_rank,top1_kaggle_style,top1_shape_rho,n_kaggle_candidates
+Christmas,9,Winter Warmer,0.7333333333333334,1,Winter Warmer,0.7333333333333334,113
+Brown,12,Brown Ale - American,0.8166666666666667,2,Stout - Russian Imperial,0.8833333333333333,113
+Faro,3,Lambic - Faro,0.7833333333333333,2,Kvass,0.9833333333333333,113
+Fruitbeer,8,Fruit and Field Beer,0.7999999999999999,3,Blonde Ale - Belgian,0.8499999999999999,113
+Kriek,10,Lambic - Fruit (Kriek/Cherry/Cerise),0.9333333333333332,3,Lambic - Fruit,0.9333333333333332,113
+Pils/Lager,11,Pilsner - German,0.33333333333333337,3,Low Alcohol Beer,0.43333333333333335,113
+Lambic,11,Lambic - Gueuze,0.8499999999999999,4,Lambic - Fruit,0.8833333333333333,113
+Scotch,5,Scotch Ale / Wee Heavy,0.5333333333333333,4,Bock - Doppelbock,0.6666666666666667,113
+Strong ale,18,Strong Ale - English,0.75,4,Stout - Russian Imperial,0.8666666666666667,113
+West Flanders ale,7,Sour - Flanders Red Ale,0.5833333333333334,5,Lambic - Faro,0.7333333333333334,113
+Flanders old brown,5,Sour - Flanders Oud Bruin,0.8333333333333333,6,Lambic - Traditional,0.9,113
+Stout/Porter,13,Stout - Oatmeal,0.8666666666666667,7,Brown Ale - American,0.9333333333333332,113
+Hoppy,17,IPA - American,0.6333333333333333,12,IPA - Black / Cascadian Dark Ale,0.8833333333333333,113
+Wheat,12,Wheat Beer - Witbier,0.18333333333333335,26,IPA - Belgian,0.5666666666666667,113
+Saison,10,Farmhouse Ale - Saison,0.18333333333333335,37,IPA - Belgian,0.75,113
+Amber,12,Lager - American Amber / Red,0.21666666666666667,53,Low Alcohol Beer,0.7333333333333334,113
+Brut,4,Bière de Champagne / Bière Brut,-0.03333333333333333,60,Lager - Light,0.5666666666666667,113
+Brett/cofermented,6,Brett Beer,-0.13333333333333333,73,IPA - Black / Cascadian Dark Ale,0.9166666666666666,113
+Blond,31,Blonde Ale - Belgian,-0.13333333333333333,75,Lager - Helles,0.6333333333333333,113
+Dubbel,10,Dubbel,-0.25,79,Porter - Smoked,0.9,113
+Tripel,28,Tripel,-0.3666666666666667,88,Low Alcohol Beer,0.8666666666666667,113
+Low/No alcohol,8,Low Alcohol Beer,-0.7833333333333333,113,Farmhouse Ale - Bière de Garde,0.5499999999999999,113

@@ -1,0 +1,15 @@
+﻿附录,文件,函数或流程,输入,输出,正文对应,建议用途
+C,Q1_感官预测/nnls_core.py,NNLSStackingFit/_solve/fit_nnls_stacking,训练折内层OOF张量、目标和家族标签,非负收缩权重、自由截距、融合预测,式(2)-(5),核心
+C,Q1_感官预测/inner_oof_excerpt.txt,外层训练内拟合流程,训练样本、内层划分、四模型候选配置,内层OOF和外层拟合结果,5.2-5.3,上下文摘录
+D,Q2_关键化合物/rank_core.py,reciprocal_rank_consensus/aggregate_leave_one_style_ranks,各路完整候选名次、留一风格完整名次,四路融合排名、稳定性汇总,式(13)-(14),核心
+D,Q2_关键化合物/four_route_excerpt.txt,四路排名连接,总关联、分层自助、风格校正、留一风格表,融合输入和正式排名,6.1,上下文摘录
+D,Q2_关键化合物/frozen_nnls_core.py,FrozenFoldNNLS/raw_module_permutation,已拟合4模型、权重、截距、231字段、训练模块,固定预测器的原始/置换预测,式(12),核心
+D,Q2_关键化合物/conditional_core.py,条件期望/残差置换/_fold_field_rows,训练模块同伴和风格、验证观测和固定预测器,字段条件置换后的MAE差,式(12),核心
+D,Q2_关键化合物/chemical_core.py,_oav_summary/_grade,同单位浓度/阈值、既有语义和统计证据,OAV汇总、既有A-D证据规则,式(15),核心
+E,Q3_风格生成/style_copula.py,StyleGaussianGenerator,训练风格标签及有限化学矩阵,条件生成化学谱,式(16)-(19),核心
+E,Q3_风格生成/concentration_constraints.py,浓度转换/直接投影/秩端点,raw或log10字段、源浓度与已知掩码,候选的直接浓度约束,式(20)-(21),核心
+E,Q3_风格生成/migration_search.py,constrained_paths/select_candidates,固定端点、路径比例、代理与距离,有限集合内候选和最小改动选择,式(20)-(23),核心
+E,Q3_风格生成/sensory_inference.py,冻结推理/经验CDF/支持域,调用者已核验的最终模型及训练参照,画像预测、相对量表、支持域诊断,7.1-7.2,支撑核心
+E,Q3_风格生成/evidence_status.py,audit_concentrations/proxy_screen/candidate_status,直接证据、代理、收益和支持域,完整候选证据状态,7.2-7.3,核心
+E,Q3_风格生成/distribution_diagnostics.py,distribution_diagnostics,真实留出谱、生成谱及训练尺度,分布距离、几何覆盖等,7.3,支撑核心
+E,Q3_风格生成/核心流程摘录.txt,画像汇总流程,已生成化学谱和冻结预测器,风格-目标画像统计,7.2,上下文摘录

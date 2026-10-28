@@ -1,0 +1,84 @@
+{
+  "records": [
+    {
+      "stem": "图5_重复验证稳定性与预测校准",
+      "pixels": [
+        2520,
+        1680
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "white_outer_margins_px": [
+        38,
+        38,
+        47,
+        48
+      ],
+      "pdf_pages": 1,
+      "pdf_sha256": "dceeaef1ca9f57ac729b75452c9b282d5d2df0cb3f0c66c5c9554b0bc45189e4",
+      "png_sha256": "b1e488fe29f5ab90a6537762de8e5c2e8272fcde3c81248c137549125a6acbf2",
+      "pdf_text_characters": 312,
+      "forbidden_text_hits": []
+    },
+    {
+      "stem": "附图S2_消融与负对照",
+      "pixels": [
+        2580,
+        2160
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "white_outer_margins_px": [
+        44,
+        38,
+        47,
+        53
+      ],
+      "pdf_pages": 1,
+      "pdf_sha256": "dcc01d4bad7d66cafd1a143cc091ba9f3244eab803f0678362e7e9c86d40f7e2",
+      "png_sha256": "b8eed39ffb96cf8fe81cfdf9d532e0ecacbd48f7b9a08eee9be958db384f79a7",
+      "pdf_text_characters": 768,
+      "forbidden_text_hits": []
+    },
+    {
+      "stem": "附图S3_逐目标预测可靠性",
+      "pixels": [
+        2580,
+        2100
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "white_outer_margins_px": [
+        46,
+        38,
+        47,
+        48
+      ],
+      "pdf_pages": 1,
+      "pdf_sha256": "e8be178973915d1d08fc9234c81107ebd1b4122d354ca12ecdaa085ab10b84e1",
+      "png_sha256": "b8f938e91b12db5f82719ac26295a88b331189df73f81e0bf64c0081ba866d18",
+      "pdf_text_characters": 423,
+      "forbidden_text_hits": []
+    }
+  ],
+  "manual_review": {
+    "reviewed": [
+      "color originals of all three figures",
+      "70% grayscale of all three figures"
+    ],
+    "result": "No visible clipping, label overlap or data-covering legends in the reviewed drafts; all 50 target labels are Chinese or proper chemical names; shared reliability legend contains all three shapes.",
+    "specific_fixes": [
+      "S2(b) is a point plot",
+      "S2 sample-size groups use circle vs hollow triangle with a shared legend",
+      "S3 legend merged after explicitly retaining all shape levels",
+      "S2 value annotations changed to dark text and the negative value moved clear of zero reference line"
+    ],
+    "status": "draft_ready_for_root_and_user_review"
+  }
+}

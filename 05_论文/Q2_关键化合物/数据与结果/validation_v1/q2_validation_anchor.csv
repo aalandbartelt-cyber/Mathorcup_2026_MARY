@@ -1,0 +1,12 @@
+﻿target_code,target_name_en,direct_anchor,bootstrap_rank,e107_selection_frequency,median_rank,status,current_top3,e118_candidate_top3,final_features,final_grades
+A_malt_cara,Malt aroma - caramel,color.EBC.,,,,not_a_compound_candidate,False,False,X2.ethyl.1.hexanol|X2.acetylfuran|acetaldehyde,D/C/C
+X4vg,4-vinyl guaiacol,X4VG,1.0,0.992,1.0,recovered_in_final_top3,True,True,X4VG|delta.terpinyl.acetate|ethyl_isovalerate,A/C/C
+acidity,Acidity,pH,,,,not_a_compound_candidate,False,False,lactic_acid.mg.L.|E.cinnamaldehyde|isopentyl_acetate,A/D/D
+alcohol,Alcohol,ethanol..v.v.,1.0,0.92,1.0,recovered_in_final_top3,True,True,ethanol..v.v.|ethyl_octanoate|ethyl_hexanoate,A/C/C
+bitternes,Bitterness,bitterness,,,,not_a_compound_candidate,False,False,ethyl_octanoate|ethyl_decanoate|cis.dihydro.beta.terpineol,C/C/D
+body,Body,ethanol..v.v.,1.0,0.812,1.0,recovered_in_final_top3,True,True,ethyl_octanoate|ethanol..v.v.|glycerol,C/A/B
+co2,Carbonation,CO2.PSI.,4.0,0.318,5.0,recovered_in_final_top3,True,False,ethyl_octanoate|ethyl_hexanoate|CO2.PSI.,C/C/A
+diacetyl,Diacetyl,X2.3.butanedione,92.0,0.0,103.0,not_recovered,False,False,ethyl_decanoate|X2.butyloctanoate|beta.phellandrene,C/D/D
+dms,Dimethyl sulfide,DMS,29.0,0.022,60.0,not_recovered,False,False,SO2.mg.L.|beta.phellandrene|caryophylla.4.12..8.13..dien.5.alpha.ol,D/D/D
+lactic,Lactic acid,acids_sum,,,,not_a_compound_candidate,False,False,lactic_acid.mg.L.|isopentyl_acetate|ethyl.phenylacetate,A/D/C
+t2n,Trans-2-nonenal,X.E..2.nonenal,61.0,0.004,50.0,not_recovered,False,False,beta.phellandrene|glycerol|alpha.phellandrene,C/C/D
